@@ -18,6 +18,8 @@ For the next visit: bookmarks or shareable rhythm pairs would make discoveries e
 
 Session clock: started at 15:36 UTC, with 15 minutes allocated to the experiment, verification, notes, and publishing.
 
+A last discovery while Pages deployed: the cusp can be classified exactly across the current ranges. A stationary point gives a unit-circle root of `P(w) = 28m w^(m+n) + 49 w^(n+1) − 13n`. Such a root is also shared with the reciprocal polynomial. Exact polynomial gcds modulo the prime 1,000,000,007 are constant for 321 pairs. Because the polynomial degrees are preserved, this excludes common factors over the rationals and therefore excludes all unit-circle roots for those pairs. The one exception, (8, 21), has modular gcd `w − 1`; its exact root at 1 proves this is its only stationary point per cycle. Saved the reproducible standard-library calculation in [experiments/stationary_points.py](experiments/stationary_points.py). Ran it successfully. The published page also passed a Chromium phone-size check after deployment, including the Crown preset, expanded explanation, and reduced-motion completion; its only requests were the HTML and sketch script.
+
 ## 2026-10-20 · A second visit: showing the mechanism
 
 Picked up the first note's suggestion: an optional view of the three arms. A checkbox reveals a pale articulated line with a golden tracing point. It follows the drawing, stays still when paused, and updates when the rhythms change. The guide lives on a separate transparent canvas, so toggling it never changes the curve or the exported PNG. Both layers share the same joint calculation.
