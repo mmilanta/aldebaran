@@ -17,6 +17,10 @@
     .layout { display: grid; grid-template-columns: minmax(0, 1fr) 16rem; gap: 2rem; margin-top: 2rem; align-items: start; }
     .drawing { border: 1px solid #383b50; border-radius: 1rem; overflow: hidden; background: #0b0e1a; }
     canvas { display: block; width: 100%; aspect-ratio: 1; }
+    .canvas-stack { position: relative; }
+    #arms { position: absolute; inset: 0; pointer-events: none; }
+    .toggle { display: flex; align-items: center; gap: .6rem; }
+    .toggle input { width: auto; }
     .caption { margin: 0; padding: .8rem 1rem; border-top: 1px solid #383b50; font-size: .8rem; }
     label { display: block; font-size: .9rem; margin: 1.5rem 0 .6rem; }
     input { width: 100%; accent-color: #e8b66e; }
@@ -39,7 +43,10 @@
     <p>Three turning arms, one wandering point. Let their rhythms leave a trail, or change the rhythm and start a new drawing.</p>
     <div class="layout">
       <section class="drawing" aria-label="Orbital drawing">
-        <canvas id="sketch" width="1000" height="1000" role="img" aria-label="A fine golden and blue curve traced by three rotating arms.">Your browser needs canvas support to display this drawing.</canvas>
+        <div class="canvas-stack">
+          <canvas id="sketch" width="1000" height="1000" role="img" aria-label="A fine golden and blue curve traced by three rotating arms.">Your browser needs canvas support to display this drawing.</canvas>
+          <canvas id="arms" width="1000" height="1000" aria-hidden="true"></canvas>
+        </div>
         <p class="caption">Study 001 · Three circles make a garden</p>
       </section>
       <aside aria-label="Drawing controls">
@@ -48,8 +55,9 @@
         <input id="rhythm" type="range" min="2" max="15" step="1" value="7">
         <label for="echo">Inner rhythm <output id="echo-value" for="echo">13</output></label>
         <input id="echo" type="range" min="3" max="25" step="1" value="13">
+        <label class="toggle"><input id="show-arms" type="checkbox"> Show the turning arms</label>
         <button class="download" id="save" type="button">Save drawing ↓</button>
-        <p>The point sits at the end of three invisible arms. Each arm rotates at a different speed; their movements add together to make the line.</p>
+        <p>The point sits at the end of three turning arms. Each arm rotates at a different speed; their movements add together to make the line. Show the arms to follow the mechanism; saved drawings contain only the curve.</p>
         <p>Try 7 and 14 for a repeating flower, or 8 and 21 for a tighter weave. A drawing completes after one full cycle.</p>
         <p id="status" role="status"></p>
       </aside>

@@ -2,6 +2,9 @@
 
 const canvas = document.querySelector('#sketch');
 const ctx = canvas.getContext('2d');
+const arms = document.querySelector('#arms');
+const armCtx = arms.getContext('2d');
+const showArms = document.querySelector('#show-arms');
 const rhythm = document.querySelector('#rhythm');
 const echo = document.querySelector('#echo');
 const pause = document.querySelector('#pause');
@@ -14,11 +17,35 @@ let running = !reducedMotion.matches;
 let frame = null;
 let lastTime = null;
 
+function joints(t) {
+  const points = [[500, 500]];
+  for (const [length, angle] of [[245, t], [140, Number(rhythm.value) * t], [65, -Number(echo.value) * t]]) {
+    const [x, y] = points[points.length - 1];
+    points.push([x + length * Math.cos(angle), y + length * Math.sin(angle)]);
+  }
+  return points;
+}
+
 function point(t) {
-  return [
-    500 + 245 * Math.cos(t) + 140 * Math.cos(Number(rhythm.value) * t) + 65 * Math.cos(-Number(echo.value) * t),
-    500 + 245 * Math.sin(t) + 140 * Math.sin(Number(rhythm.value) * t) + 65 * Math.sin(-Number(echo.value) * t)
-  ];
+  return joints(t)[3];
+}
+
+function drawArms() {
+  armCtx.clearRect(0, 0, arms.width, arms.height);
+  if (!showArms.checked) return;
+  const points = joints(step / totalSteps * cycle);
+  armCtx.lineWidth = 2;
+  armCtx.strokeStyle = 'rgba(244, 241, 232, 0.75)';
+  armCtx.beginPath();
+  armCtx.moveTo(...points[0]);
+  for (const p of points.slice(1)) armCtx.lineTo(...p);
+  armCtx.stroke();
+  for (const [index, p] of points.entries()) {
+    armCtx.beginPath();
+    armCtx.arc(...p, index === 3 ? 6 : 4, 0, cycle);
+    armCtx.fillStyle = index === 3 ? '#e8b66e' : '#f4f1e8';
+    armCtx.fill();
+  }
 }
 
 function draw(count) {
@@ -33,6 +60,7 @@ function draw(count) {
     ctx.lineTo(...b);
     ctx.stroke();
   }
+  drawArms();
   if (step === totalSteps) {
     running = false;
     pause.textContent = 'Draw again';
@@ -84,6 +112,7 @@ pause.addEventListener('click', () => {
   schedule();
 });
 document.querySelector('#restart').addEventListener('click', restart);
+showArms.addEventListener('change', drawArms);
 for (const control of [rhythm, echo]) control.addEventListener('input', restart);
 document.querySelector('#save').addEventListener('click', () => {
   const link = document.createElement('a');
