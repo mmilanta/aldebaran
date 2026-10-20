@@ -24,12 +24,20 @@
     .caption { margin: 0; padding: .8rem 1rem; border-top: 1px solid #383b50; font-size: .8rem; }
     label { display: block; font-size: .9rem; margin: 1.5rem 0 .6rem; }
     input { width: 100%; accent-color: #e8b66e; }
+    select { width: 100%; font: inherit; color: inherit; background: #22263b; border: 1px solid #555b78; border-radius: .5rem; padding: .7rem; }
+    .study-label { margin-top: 0; }
     button, .download { font: inherit; color: #f4f1e8; background: #22263b; border: 1px solid #555b78; border-radius: .5rem; padding: .7rem 1rem; cursor: pointer; text-decoration: none; display: inline-block; }
     button:hover, .download:hover { background: #333a55; }
     :focus-visible { outline: 3px solid #e8b66e; outline-offset: 4px; }
     .buttons { display: flex; gap: .6rem; flex-wrap: wrap; }
     .download { margin-top: .6rem; }
     aside p { font-size: .9rem; }
+    details { margin: 1rem 0; color: #c7c7d4; font-size: .9rem; line-height: 1.7; }
+    summary { color: #e8b66e; cursor: pointer; }
+    details p { margin-bottom: 0; }
+    .sectors { display: flex; align-items: center; gap: 1rem; margin: 1rem 0; }
+    .sectors svg { width: 6rem; flex: 0 0 6rem; }
+    .sectors figcaption { font-size: .85rem; }
     output { color: #e8b66e; font-variant-numeric: tabular-nums; }
     footer { margin-top: 2rem; border-top: 1px solid #383b50; padding-top: 1rem; color: #9999ae; font-size: .85rem; line-height: 1.7; }
     a { color: #e8b66e; }
@@ -50,6 +58,15 @@
         <p class="caption">Study 001 · Three circles make a garden</p>
       </section>
       <aside aria-label="Drawing controls">
+        <label class="study-label" for="study">Start with a shape</label>
+        <select id="study" aria-describedby="symmetry">
+          <option value="7,13">Garden · 7 / 13</option>
+          <option value="7,14">Clover · 7 / 14</option>
+          <option value="6,9">Star · 6 / 9</option>
+          <option value="9,23">Crown · 9 / 23</option>
+          <option value="custom" disabled>Custom rhythms</option>
+        </select>
+        <p id="symmetry">2-fold symmetry. The curve repeats twice around its center.</p>
         <div class="buttons"><button id="pause" type="button">Pause</button><button id="restart" type="button">Start again</button></div>
         <label for="rhythm">Outer rhythm <output id="rhythm-value" for="rhythm">7</output></label>
         <input id="rhythm" type="range" min="2" max="15" step="1" value="7">
@@ -58,7 +75,20 @@
         <label class="toggle"><input id="show-arms" type="checkbox"> Show the turning arms</label>
         <button class="download" id="save" type="button">Save drawing ↓</button>
         <p>The point sits at the end of three turning arms. Each arm rotates at a different speed; their movements add together to make the line. Show the arms to follow the mechanism; saved drawings contain only the curve.</p>
-        <p>Try 7 and 14 for a repeating flower, or 8 and 21 for a tighter weave. A drawing completes after one full cycle.</p>
+        <details>
+          <summary>Where do the folds come from?</summary>
+          <p>The first arm turns once. The outer arm turns forwards; the inner arm turns backwards. Count their turns relative to the first arm: subtract 1 from the outer rhythm and add 1 to the inner rhythm.</p>
+          <p id="symmetry-reason">For 7 and 13, that gives 6 and 14. Their greatest common divisor is 2, so there are 2 equal sectors.</p>
+          <figure class="sectors">
+            <svg viewBox="-52 -52 104 104" aria-hidden="true">
+              <path id="sector-wedge" d="M0 0 L0 -44 A44 44 0 0 1 0 44 Z" fill="#e8b66e" fill-opacity=".25"/>
+              <circle r="44" fill="none" stroke="#9999ae"/>
+              <path id="sector-spokes" d="M0 -44 L0 44" fill="none" stroke="#e8b66e"/>
+            </svg>
+            <figcaption id="sector-caption">One highlighted sector is 1/2 of a turn.</figcaption>
+          </figure>
+          <p>After each sector, the arms have the same arrangement, rotated together around the center. Color follows the point through the full cycle.</p>
+        </details>
         <p id="status" role="status"></p>
       </aside>
     </div>

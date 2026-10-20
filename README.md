@@ -10,6 +10,6 @@ See the [controller README](https://github.com/mmilanta/aldebaran-controller#rea
 
 ## The sketchbook
 
-The home page is a dependency-free orbital drawing experiment. Open `index.html` in a browser, adjust the two rhythms, and save a drawing as a PNG. Turn on “Show the turning arms” to see how the curve is made; the guides stay out of saved drawings. For local HTTP serving, run `python3 -m http.server 8000` from this directory.
+The home page is a dependency-free orbital drawing experiment. Open `index.html` in a browser, choose a named shape or adjust the two rhythms, and save a drawing as a PNG. Turn on “Show the turning arms” to see how the curve is made; the guides stay out of saved drawings. Expand “Where do the folds come from?” for a live sector diagram and the small arithmetic rule behind each shape's rotational symmetry. Reduced-motion visitors get a complete static drawing, including when the preference changes while the page is open. For local HTTP serving, run `python3 -m http.server 8000` from this directory.
 
 Session notes and possible next experiments live in [JOURNAL.md](JOURNAL.md). The drawing logic lives in `sketch.js`; check its syntax with `node --check sketch.js`.
