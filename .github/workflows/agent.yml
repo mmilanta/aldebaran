@@ -1,0 +1,115 @@
+name: Run Codex agent
+
+on:
+  workflow_dispatch:
+    inputs:
+      task:
+        description: What should the agent do in this repository?
+        required: true
+        type: string
+
+# A dispatch on another ref must not run an edited copy of this workflow.
+permissions: {}
+
+jobs:
+  agent:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    container: node:22-bookworm
+    # Allow installation, up to 5 minutes for interactive login, and patch export.
+    timeout-minutes: 25
+    permissions:
+      contents: read
+    outputs:
+      has_changes: ${{ steps.patch.outputs.has_changes }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Install Codex
+        shell: bash
+        run: |
+          apt-get update
+          apt-get install -y --no-install-recommends git ca-certificates
+          npm install -g --ignore-scripts @openai/codex@0.163.0
+      - name: Sign in with ChatGPT Plus (required on every run)
+        shell: bash
+        env:
+          CODEX_HOME: ${{ runner.temp }}/codex-home
+        run: |
+          mkdir -p "$CODEX_HOME"
+          echo 'Watch this step for a device code; complete sign-in in your browser within 5 minutes.'
+          timeout --signal=TERM --kill-after=10s 5m codex login --device-auth
+      - name: Run Codex (15 minutes, no repository write token)
+        shell: bash
+        env:
+          CODEX_HOME: ${{ runner.temp }}/codex-home
+          TASK: ${{ inputs.task }}
+        run: |
+          # Codex runs inside the ephemeral job container; network access is intentional.
+          timeout --signal=TERM --kill-after=10s 15m \
+            codex exec --ephemeral --ignore-user-config --ignore-rules \
+              --dangerously-bypass-approvals-and-sandbox "$TASK"
+      - name: Export changes as an untrusted patch
+        id: patch
+        shell: bash
+        run: |
+          git add -A
+          if git diff --cached --quiet; then
+            echo 'has_changes=false' >> "$GITHUB_OUTPUT"
+          else
+            git diff --cached --binary --no-ext-diff --no-textconv > "$RUNNER_TEMP/changes.patch"
+            echo 'has_changes=true' >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/upload-artifact@v4
+        if: steps.patch.outputs.has_changes == 'true'
+        with:
+          name: agent-changes
+          path: ${{ runner.temp }}/changes.patch
+          if-no-files-found: error
+          retention-days: 7
+
+  publish:
+    needs: agent
+    if: needs.agent.outputs.has_changes == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      # Fresh checkout: no agent process, git config, hooks, or files from the first job.
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@v4
+        with:
+          name: agent-changes
+          path: ${{ runner.temp }}/agent-changes
+      - name: Validate, commit, and push an agent branch
+        shell: bash
+        run: |
+          git apply --check "$RUNNER_TEMP/agent-changes/changes.patch"
+          git apply --index "$RUNNER_TEMP/agent-changes/changes.patch"
+          # Validate the *result*, not just patch text. No job configuration may be changed.
+          while IFS= read -r -d '' path; do
+            case "$path" in
+              .github|.github/*)
+                echo "Refusing to publish changes to $path" >&2
+                exit 1
+                ;;
+            esac
+          done < <(git diff --cached --name-only -z)
+          if git diff --cached --quiet; then
+            echo 'No effective changes'; exit 0
+          fi
+          branch="agent/run-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          git switch -c "$branch"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git -c core.hooksPath=/dev/null -c commit.gpgsign=false commit -m "Agent changes (run ${GITHUB_RUN_ID})"
+          echo "Pushing $branch"
+          git -c credential.helper= \
+            -c "http.https://github.com/.extraheader=AUTHORIZATION: basic $(printf 'x-access-token:%s' "$GH_TOKEN" | base64 | tr -d '\n')" \
+            push origin "HEAD:refs/heads/$branch"
+        env:
+          GH_TOKEN: ${{ github.token }}
