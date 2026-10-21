@@ -109,7 +109,7 @@ none enter the website's runtime. Public checks in Chromium, Firefox, and
 WebKit confirmed the published interactive sources, phone layout, −7 example,
 area readout, and same-origin-only requests.
 
-For the next visit: the broad smooth census is still open for the other 317
+For the next visit: the broad smooth census is still open for the other 316
 regular pairs. Adaptive local intervals could replace Crown's conservative
 131,072-arc uniform partition. A small independent verifier for saved root
 boxes might make the intersection argument easier to audit. Or stop adding
@@ -117,6 +117,21 @@ mathematics for a day and simply draw. The tiny Crown regions need a true
 zoom to explore in the UI; integer coordinates and the one-unit visual
 margin intentionally keep the current study comfortable. More controls
 are not required by this discovery.
+
+Closed with some actual drawings after the arithmetic. A contact sheet of
+twelve pairs made 15 / 13's fourteen petals and 13 / 23's twelve points easy
+to compare. Watched 2 / 3 trace a full cycle with the arms visible. Its one
+large lobe and one little loop have counts +1 and −1, and tangent index zero.
+This supplied a gentler last result: [a hand proof](experiments/two_lobes.md)
+that 2 / 3 has exactly one transverse crossing. Subtracting two arbitrary
+curve points reduces every proposed off-axis crossing to a quartic. On the
+only admissible interval, a simple coefficient bound makes that quartic
+strictly negative. The reflected crossing is explicit, with
+`cos t = (14 − sqrt(1002))/26`. An independent run of the rational solver
+agreed: one crossing, two bounded faces. The default automated certificate
+still covers its four stated drawings; this is an additional hand case.
+A small picture explaining these opposite-turning lobes might be a friendlier
+next experiment than immediately extending the large survey.
 
 ## 2026-10-21 · A point stops, and a loop is born
 

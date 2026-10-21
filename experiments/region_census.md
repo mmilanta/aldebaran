@@ -120,5 +120,7 @@ while pairs of crossings appear or disappear. A proof of the smooth region
 census must exclude hidden intersections and tangencies throughout the
 continuous parameter domain. [That exclusion is now complete for Garden,
 2 / 25, Star, and Crown](smooth_census.md); the remaining 317 regular pairs
-still have only the sampled census. Refinement comparisons alone do not
-supply the missing exclusion argument for them.
+are outside that certificate. A separate [hand proof for 2 / 3](two_lobes.md)
+establishes its single crossing, leaving 316 regular pairs without a complete
+smooth census. Refinement comparisons alone do not supply the missing
+exclusion argument for them.

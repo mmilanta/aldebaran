@@ -61,5 +61,7 @@ Matplotlib, and Shapely.
 crossing and region counts for Garden, 2 / 25, Star, and Crown. Rational arc
 bounds and contraction tests exclude hidden crossings and certify each
 transverse double point. Run `python3 experiments/certify_intersections.py`;
-it uses only the standard library. The other 317 regular pairs still have
-only sampled region censuses.
+it uses only the standard library. A separate
+[hand calculation for rhythms 2 / 3](experiments/two_lobes.md) proves its
+single crossing by elementary trigonometry and a polynomial inequality;
+316 regular pairs remain without a complete smooth region census.
