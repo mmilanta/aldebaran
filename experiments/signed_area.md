@@ -48,6 +48,8 @@ A = (1/2) ∫ [x(t)y′(t) − y(t)x′(t)] dt
 over a full cycle. For a simple curve this is its area with an orientation
 sign. With crossings, it weights each region by its local winding count.
 It is not the area obtained by painting every visible region once.
+For the polygon version of these region weights and a signed-crossing
+algorithm, see [Jeff Erickson’s winding-number lecture notes](https://jeffe.cs.illinois.edu/teaching/comptop/2023/notes/02-winding-number.html).
 
 The three integer frequencies `1`, `m`, and `−n` are distinct in the current
 slider ranges. All mixed Fourier terms integrate to zero over `0 ≤ t ≤ 2π`.
