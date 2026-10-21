@@ -10,6 +10,9 @@ const echo = document.querySelector('#echo');
 const study = document.querySelector('#study');
 const pause = document.querySelector('#pause');
 const status = document.querySelector('#status');
+const shareStatus = document.querySelector('#share-status');
+const shareFallback = document.querySelector('#share-fallback');
+const drawingLink = document.querySelector('#drawing-link');
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 const totalSteps = 24000;
 const cycle = Math.PI * 2;
@@ -17,6 +20,58 @@ let step = 0;
 let running = !reducedMotion.matches;
 let frame = null;
 let lastTime = null;
+let shareAttempt = 0;
+let linkTimer = null;
+let lastLinkWrite = -Infinity;
+
+function rhythmsFromLink(url) {
+  const params = new URL(url).searchParams;
+  // Treat the pair as a unit: malformed or incomplete links keep the default.
+  const values = [params.getAll('outer'), params.getAll('inner')];
+  if (values.some(entries => entries.length !== 1 || !/^\d+$/.test(entries[0]))) return null;
+  const [outer, inner] = values.map(entries => Number(entries[0]));
+  if (outer < Number(rhythm.min) || outer > Number(rhythm.max) ||
+      inner < Number(echo.min) || inner > Number(echo.max)) return null;
+  return [outer, inner];
+}
+
+function readLink() {
+  const pair = rhythmsFromLink(window.location.href);
+  if (pair === null) return false;
+  const [outer, inner] = pair;
+  rhythm.value = String(outer);
+  echo.value = String(inner);
+  return true;
+}
+
+function linkToDrawing() {
+  const url = new URL(window.location.href);
+  url.searchParams.set('outer', rhythm.value);
+  url.searchParams.set('inner', echo.value);
+  return url.href;
+}
+
+function writeLink() {
+  linkTimer = null;
+  if (drawingLink.value === window.location.href) return;
+  lastLinkWrite = performance.now();
+  // Replacing this entry keeps slider gestures out of the browser's Back stack.
+  try { window.history.replaceState(null, '', drawingLink.value); }
+  catch { /* The copyable link still works when history changes are unavailable. */ }
+}
+
+function updateLink() {
+  shareAttempt++;
+  shareStatus.textContent = '';
+  shareFallback.hidden = true;
+  drawingLink.value = linkToDrawing();
+  // WebKit limits history writes. Keep at most one pending update while dragging.
+  const delay = Math.max(0, 250 - (performance.now() - lastLinkWrite));
+  if (delay === 0) {
+    if (linkTimer !== null) clearTimeout(linkTimer);
+    writeLink();
+  } else if (linkTimer === null) linkTimer = setTimeout(writeLink, delay);
+}
 
 function greatestCommonDivisor(a, b) {
   while (b !== 0) [a, b] = [b, a % b];
@@ -47,6 +102,8 @@ function describeRhythms() {
   const folds = greatestCommonDivisor(outer - 1, inner + 1);
   const pair = `${outer},${inner}`;
   study.value = Array.from(study.options).some(option => option.value === pair) ? pair : 'custom';
+  const name = study.value === 'custom' ? 'Rhythms' : study.selectedOptions[0].textContent.split(' · ')[0];
+  document.querySelector('#drawing-caption').textContent = `Study 001 · ${name} · ${outer} / ${inner}`;
   document.querySelector('#symmetry').textContent = folds === 1
     ? 'One full turn. This pair has no smaller repeating sector.'
     : `${folds}-fold symmetry. The curve repeats ${folds === 2 ? 'twice' : `${folds} times`} around its center.`;
@@ -55,13 +112,14 @@ function describeRhythms() {
     `Their greatest common divisor is ${folds}, so ${folds === 1 ? 'the whole curve is one sector' : `there are ${folds} equal sectors`}.`;
   canvas.setAttribute('aria-label',
     `A golden and blue orbital curve with rhythms ${outer} and ${inner}. ` +
-    (folds === 1 ? 'No smaller repeating sector.' : `${folds}-fold rotational symmetry.`));
+    (folds === 1 ? 'No smaller repeating sector.' : `${folds}-fold rotational symmetry.`) +
+    (pair === '8,21' ? ' The point stops and turns at a single cusp on the rightmost tip.' : ''));
   describeSectors(folds);
 }
 
-function joints(t) {
+function joints(t, outer = Number(rhythm.value), inner = Number(echo.value)) {
   const points = [[500, 500]];
-  for (const [length, angle] of [[245, t], [140, Number(rhythm.value) * t], [65, -Number(echo.value) * t]]) {
+  for (const [length, angle] of [[245, t], [140, outer * t], [65, -inner * t]]) {
     const [x, y] = points[points.length - 1];
     points.push([x + length * Math.cos(angle), y + length * Math.sin(angle)]);
   }
@@ -70,6 +128,19 @@ function joints(t) {
 
 function point(t) {
   return joints(t)[3];
+}
+
+function drawCusp() {
+  // A fixed view of Needle, independent of the current drawing's rhythms.
+  for (const [id, start, end] of [['cusp-arriving', -0.04, 0], ['cusp-leaving', 0, 0.04]]) {
+    const path = [];
+    for (let sample = 0; sample <= 160; sample++) {
+      const t = start + (end - start) * sample / 160;
+      const [x, y] = joints(t, 8, 21)[3];
+      path.push(`${sample === 0 ? 'M' : 'L'}${260 + (x - 950) * 7} ${110 + (y - 500) * 7}`);
+    }
+    document.querySelector(`#${id}`).setAttribute('d', path.join(' '));
+  }
 }
 
 function drawArms() {
@@ -137,6 +208,7 @@ function restart() {
   document.querySelector('#rhythm-value').value = rhythm.value;
   document.querySelector('#echo-value').value = echo.value;
   describeRhythms();
+  updateLink();
   status.textContent = running ? 'Tracing a full cycle…' : 'Paused. Press Play to trace the curve.';
   pause.textContent = running ? 'Pause' : 'Play';
   // A static complete drawing respects reduced-motion preferences.
@@ -161,6 +233,11 @@ study.addEventListener('change', () => {
   [rhythm.value, echo.value] = study.value.split(',');
   restart();
 });
+document.querySelector('#try-needle').addEventListener('click', () => {
+  rhythm.value = '8';
+  echo.value = '21';
+  restart();
+});
 showArms.addEventListener('change', drawArms);
 reducedMotion.addEventListener('change', () => {
   if (!reducedMotion.matches) return;
@@ -170,10 +247,42 @@ reducedMotion.addEventListener('change', () => {
   draw(totalSteps);
 });
 for (const control of [rhythm, echo]) control.addEventListener('input', restart);
+document.querySelector('#share').addEventListener('click', async () => {
+  const url = linkToDrawing();
+  const attempt = ++shareAttempt;
+  shareStatus.textContent = '';
+  shareFallback.hidden = true;
+  try {
+    await navigator.clipboard.writeText(url);
+    if (attempt === shareAttempt) shareStatus.textContent = 'Link copied. It remembers these two rhythms.';
+  } catch {
+    if (attempt !== shareAttempt) return;
+    shareStatus.textContent = 'Copy the link below. It remembers these two rhythms.';
+    drawingLink.value = url;
+    shareFallback.hidden = false;
+    drawingLink.focus();
+    drawingLink.select();
+  }
+});
+window.addEventListener('popstate', () => {
+  if (!readLink()) {
+    rhythm.value = rhythm.defaultValue;
+    echo.value = echo.defaultValue;
+  }
+  restart();
+});
+window.addEventListener('pagehide', () => {
+  // Save a final slider change before navigation freezes a cached page's timer.
+  if (linkTimer === null) return;
+  clearTimeout(linkTimer);
+  writeLink();
+});
 document.querySelector('#save').addEventListener('click', () => {
   const link = document.createElement('a');
   link.download = `aldebaran-orbits-${rhythm.value}-${echo.value}.png`;
   link.href = canvas.toDataURL('image/png');
   link.click();
 });
+readLink();
+drawCusp();
 restart();

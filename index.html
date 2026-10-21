@@ -12,7 +12,7 @@
     body { margin: 0; }
     main { margin: auto; padding: clamp(1.2rem, 4vw, 3rem); max-width: 76rem; }
     .eyebrow { color: #e8b66e; font-size: .75rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
-    h1 { font-size: clamp(2.5rem, 6vw, 5rem); letter-spacing: -.06em; line-height: 1.05; margin: .8rem 0; }
+    h1 { font-size: clamp(2.5rem, 6vw, 5rem); letter-spacing: -.06em; line-height: 1.05; margin: .8rem 0; overflow-wrap: anywhere; }
     p { color: #c7c7d4; line-height: 1.7; max-width: 42rem; }
     .layout { display: grid; grid-template-columns: minmax(0, 1fr) 16rem; gap: 2rem; margin-top: 2rem; align-items: start; }
     .drawing { border: 1px solid #383b50; border-radius: 1rem; overflow: hidden; background: #0b0e1a; }
@@ -31,13 +31,23 @@
     :focus-visible { outline: 3px solid #e8b66e; outline-offset: 4px; }
     .buttons { display: flex; gap: .6rem; flex-wrap: wrap; }
     .download { margin-top: .6rem; }
+    .share { margin-top: .6rem; }
+    .share p { margin: .6rem 0 0; }
+    .share input { font: inherit; color: inherit; background: #0b0e1a; border: 1px solid #555b78; border-radius: .3rem; padding: .5rem; }
+    .share label { margin: .6rem 0 .3rem; }
+    [hidden] { display: none !important; }
     aside p { font-size: .9rem; }
     details { margin: 1rem 0; color: #c7c7d4; font-size: .9rem; line-height: 1.7; }
     summary { color: #e8b66e; cursor: pointer; }
     details p { margin-bottom: 0; }
-    .sectors { display: flex; align-items: center; gap: 1rem; margin: 1rem 0; }
+    .sectors { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; margin: 1rem 0; }
     .sectors svg { width: 6rem; flex: 0 0 6rem; }
     .sectors figcaption { font-size: .85rem; }
+    .cusp { margin: 1rem 0; }
+    .cusp svg { display: block; width: 100%; height: auto; border: 1px solid #383b50; border-radius: .5rem; background: #0b0e1a; }
+    .cusp figcaption { margin-top: .5rem; font-size: .8rem; }
+    .cusp text { font: 13px ui-sans-serif, system-ui, sans-serif; }
+    .equation { color: #f4f1e8; font-variant-numeric: tabular-nums; }
     output { color: #e8b66e; font-variant-numeric: tabular-nums; }
     footer { margin-top: 2rem; border-top: 1px solid #383b50; padding-top: 1rem; color: #9999ae; font-size: .85rem; line-height: 1.7; }
     a { color: #e8b66e; }
@@ -55,7 +65,7 @@
           <canvas id="sketch" width="1000" height="1000" role="img" aria-label="A fine golden and blue curve traced by three rotating arms.">Your browser needs canvas support to display this drawing.</canvas>
           <canvas id="arms" width="1000" height="1000" aria-hidden="true"></canvas>
         </div>
-        <p class="caption">Study 001 · Three circles make a garden</p>
+        <p class="caption" id="drawing-caption">Study 001 · Garden · 7 / 13</p>
       </section>
       <aside aria-label="Drawing controls">
         <label class="study-label" for="study">Start with a shape</label>
@@ -64,6 +74,7 @@
           <option value="7,14">Clover · 7 / 14</option>
           <option value="6,9">Star · 6 / 9</option>
           <option value="9,23">Crown · 9 / 23</option>
+          <option value="8,21">Needle · 8 / 21</option>
           <option value="custom" disabled>Custom rhythms</option>
         </select>
         <p id="symmetry">2-fold symmetry. The curve repeats twice around its center.</p>
@@ -74,6 +85,14 @@
         <input id="echo" type="range" min="3" max="25" step="1" value="13">
         <label class="toggle"><input id="show-arms" type="checkbox"> Show the turning arms</label>
         <button class="download" id="save" type="button">Save drawing ↓</button>
+        <div class="share">
+          <button id="share" type="button">Copy link</button>
+          <p id="share-status" role="status"></p>
+          <div id="share-fallback" hidden>
+            <label for="drawing-link">Link to these rhythms</label>
+            <input id="drawing-link" type="url" readonly spellcheck="false">
+          </div>
+        </div>
         <p>The point sits at the end of three turning arms. Each arm rotates at a different speed; their movements add together to make the line. Show the arms to follow the mechanism; saved drawings contain only the curve.</p>
         <details>
           <summary>Where do the folds come from?</summary>
@@ -88,6 +107,26 @@
             <figcaption id="sector-caption">One highlighted sector is 1/2 of a turn.</figcaption>
           </figure>
           <p>After each sector, the arms have the same arrangement, rotated together around the center. Color follows the point through the full cycle.</p>
+        </details>
+        <details>
+          <summary>One curve hides a cusp</summary>
+          <p>Of all 322 pairs on these sliders, only Needle (8 / 21) brings the point completely to rest.</p>
+          <figure class="cusp">
+            <svg viewBox="0 0 300 220" role="img" aria-labelledby="cusp-title cusp-description">
+              <title id="cusp-title">A close-up of Needle’s tip</title>
+              <desc id="cusp-description">The curve arrives from the upper left, stops at its rightmost tip, and leaves towards the lower left.</desc>
+              <path id="cusp-arriving" fill="none" stroke="#9fc7eb" stroke-width="2"/>
+              <path id="cusp-leaving" fill="none" stroke="#e8b66e" stroke-width="2"/>
+              <circle cx="260" cy="110" r="3" fill="#f4f1e8"/>
+              <text x="30" y="50" fill="#9fc7eb">Arriving</text>
+              <text x="30" y="180" fill="#e8b66e">Leaving</text>
+              <text x="260" y="87" text-anchor="end" fill="#f4f1e8">A moment at rest</text>
+            </svg>
+            <figcaption>Blue arrives; gold leaves. Both meet at the same point.</figcaption>
+          </figure>
+          <p>At this tip, the forward and backward motions cancel exactly: <span class="equation">245 + 140 × 8 = 65 × 21</span>. The point stops for an instant and turns back, leaving a sharp cusp.</p>
+          <p><button id="try-needle" type="button">Draw Needle</button></p>
+          <p>A small change in arm length turns this cusp into a loop. <a href="experiments/loop.html">Look through the lens ↗</a></p>
         </details>
         <p id="status" role="status"></p>
       </aside>
