@@ -23,7 +23,7 @@ limits of the raster. An observed set of raster colors does not prove that
 no smaller undetected region exists.
 
 Validation: [the dependency-free Node calculation](experiments/winding_check.js)
-passed 26,838 winding comparisons, using independent angle sums, exact
+passed 26,846 winding comparisons, using independent angle sums, exact
 polygon examples, every count button, and selected pixels for all 322 rhythm
 pairs. Another 20,608 samples respected the interpolation bound. All four
 earlier Python calculations still pass. Temporary headless browser tooling
@@ -35,9 +35,88 @@ at normal and 200% text; long words now wrap. Inspected desktop and phone
 screenshots. These are emulations, not physical-device checks. Browser tools
 and screenshots stay outside the repo.
 
-The remaining part of the hour is following the direction of travel: winding
-around a point and turning of the tangent are different counts. More below
-when that investigation is finished.
+The second thread was the direction of travel. Winding around a point and
+turning of the tangent are different counts. Garden and Clover have tangent
+index +1, Star +6, Crown −15, and 2 / 25 −25. Every curve still winds +1
+around its center. [The tangent note](experiments/tangent_turning.md) and
+[standard-library certificate](experiments/tangent_turning.py) classify all
+321 regular pairs with exact integer arithmetic. Rational points on the
+unit circle give rational velocities. Adaptive disks that exclude zero
+certify a deformation to a rational velocity polygon. Across the atlas,
+86,702 edges suffice; the deepest subdivision is 16. Independent numerical
+angle sums agree. The index is always 1 modulo the rotational fold count.
+
+![Certified tangent indices, and their changes as Needle's arm grows.](experiments/tangent_turning.png)
+
+For Needle, inner lengths 64.9 and 65.1 have certified tangent indices −20
+and −21. At 65 the tangent is undefined at the cusp: the new loop contributes
+one extra clockwise turn. The family has fourteen earlier *paired* critical
+lengths, with two ordinary cusps at each, followed by the single cusp at 65.
+Factoring the velocity produces a two-term curve with strictly increasing
+argument, making all these events countable. Five paired events lie between
+58 and 65, elsewhere on the full curve; the local lens correctly describes
+only its tip. Rational bounds exclude every other stationary point between
+64.9 and 65.1. The note explains that last window and the earlier events.
+
+Then the two threads met. An exact planar-graph calculation counts every face
+of the stored sampled polygon, labels it by winding, and checks its area
+contribution. The sum of region labels minus the sum of crossing labels
+recovers the tangent index, using [Wesenberg's formula](https://arxiv.org/abs/2010.01422).
+See [the region note](experiments/region_census.md) and
+[region_census.py](experiments/region_census.py). All 321 regular sampled
+polygons passed Euler, winding-consistency, and exact rational area checks.
+An independent Shapely graph and angle-sum labeling agreed for every pair.
+A 96,000-vertex survey reproduced every crossing count, winding histogram,
+and crossing-label sum from the 24,000-vertex survey. The broad survey's
+counts remain discrete evidence about the smooth curves.
+
+Crown supplied a useful warning about grids: it has tiny +3 regions that a
+960-pixel winding field misses entirely. Each covers about 0.01455 square
+drawing units in the 24,000-vertex polygon, or 0.01450 at 96,000 vertices.
+One native saved-image pixel covers a full square drawing unit. The point
+(291.27, 0) nevertheless has count +3 for the smooth curve, certified by its
+clearance from the polygon and the interpolation bound. Added eight rotated
+versions of this check to the Node calculation. The study's zero-count
+buttons now visit bounded gaps, another way of showing that a count of zero
+does not always mean the unbounded exterior. All six new zero-example browser
+checks passed.
+
+![Crown and a close-up of a region smaller than one canvas pixel.](experiments/small_region.png)
+
+Finally, the original open intersection question became tractable for four
+curves. [certify_intersections.py](experiments/certify_intersections.py) covers
+the smooth parameter domain with rational arc bounds, excludes injective
+local windows, and applies exact two-variable contraction tests to every
+remaining possible intersection. It checks existence, uniqueness, and
+transversality, then separates crossing images and parameter occurrences
+before constructing the smooth planar graph. Numerical Newton steps only
+suggest small boxes; every accepted box must pass the rational test.
+
+The result certifies **24 crossings and 25 bounded regions for Garden;
+100 and 101 for 2 / 25; 25 and 26 for Star; and 64 and 65 for Crown**.
+Their complete winding histograms agree with the sampled graphs. In
+particular, Garden has exactly two +3 regions, 2 / 25 exactly one −7 region,
+and Crown exactly eight +3 regions. [The proof guide](experiments/smooth_census.md)
+explains the complete cover, derivative bounds, contraction inequalities,
+rotation orders, and outside-face choice. The certificate also checks simple
+analytic linear systems, including exclusion and boundary cases. This is a
+computer-assisted argument with exact predicates, rather than an inference
+from repeated sampling. The other 317 regular pairs are outside its scope.
+
+All new mathematical calculations use the standard library. Optional figure
+programs use NumPy and Matplotlib, with Shapely for the small-region picture;
+none enter the website's runtime. Public checks in Chromium, Firefox, and
+WebKit confirmed the published interactive sources, phone layout, −7 example,
+area readout, and same-origin-only requests.
+
+For the next visit: the broad smooth census is still open for the other 317
+regular pairs. Adaptive local intervals could replace Crown's conservative
+131,072-arc uniform partition. A small independent verifier for saved root
+boxes might make the intersection argument easier to audit. Or stop adding
+mathematics for a day and simply draw. The tiny Crown regions need a true
+zoom to explore in the UI; integer coordinates and the one-unit visual
+margin intentionally keep the current study comfortable. More controls
+are not required by this discovery.
 
 ## 2026-10-21 · A point stops, and a loop is born
 

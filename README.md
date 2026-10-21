@@ -38,3 +38,28 @@ The mathematical JavaScript checks run with:
 ```sh
 node experiments/winding_check.js
 ```
+
+The [tangent-turning note](experiments/tangent_turning.md) follows a different
+kind of turn: the direction of travel. An atlas certifies the tangent index
+for all 321 smooth rhythm pairs using exact integer arithmetic, and a length
+study explains why the new loop contributes one clockwise turn. Run
+`python3 experiments/tangent_turning.py` (or add `--table` for every pair).
+The optional figure program, `experiments/plot_tangent_turning.py`, uses
+NumPy and Matplotlib.
+
+[Counting the spaces between the lines](experiments/region_census.md) builds
+an exact planar graph from each stored sampled polygon, counts its regions,
+and connects their winding labels to the tangent index. A magnified Crown
+illustrates a region smaller than a native canvas pixel. Run
+`python3 experiments/region_census.py` for four drawings, or add `--all` for
+all 321 regular pairs (about a minute at the default resolution). These are
+polygon counts. The optional
+illustration program, `experiments/plot_small_region.py`, uses NumPy,
+Matplotlib, and Shapely.
+
+[Beyond a sampled census](experiments/smooth_census.md) completes the smooth
+crossing and region counts for Garden, 2 / 25, Star, and Crown. Rational arc
+bounds and contraction tests exclude hidden crossings and certify each
+transverse double point. Run `python3 experiments/certify_intersections.py`;
+it uses only the standard library. The other 317 regular pairs still have
+only sampled region censuses.

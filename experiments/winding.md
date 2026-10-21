@@ -17,6 +17,8 @@ blue regions with counts down to −7, even though its center still has count
 +1. Each button visits a point checked against the actual trigonometric curve,
 using the distance argument below. The rendered grid finds no counts beyond
 these, but a raster alone cannot exclude a smaller undetected region.
+The zero-count buttons visit bounded gaps inside the drawing, illustrating
+that zero need not mean the unbounded region outside the whole picture.
 
 The signed area adds each region's area multiplied by its winding count.
 The exact totals, **142300π** for Garden and **−6400π** for 2 / 25, come from
@@ -98,6 +100,10 @@ center receives the polygon's count; its whole square need not lie in one
 smooth region. The point readout checks distance independently of the image.
 The count buttons are examples, not a proof that every possible region is
 represented. The exact area formula has no raster approximation.
+An [exhaustive rational intersection certificate](smooth_census.md) now
+independently proves the complete region counts for both displayed shapes,
+as well as Star and Crown. It supplies the exclusion argument that a raster
+or a handful of point checks cannot give.
 
 ## Reproducible checks
 

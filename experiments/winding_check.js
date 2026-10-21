@@ -115,9 +115,9 @@ function orbitalCases() {
 
 function displayedCases() {
   for (const [outer, inner, examples, levels] of [
-    [7, 13, [[0, 460, 460], [1, 0, 0], [2, -5, -264], [3, 149, 0]], [0, 1, 2, 3]],
+    [7, 13, [[0, 0, 61], [1, 0, 0], [2, -5, -264], [3, 149, 0]], [0, 1, 2, 3]],
     [2, 25, [[-7, -154, 0], [-6, -138, 31], [-5, -110, -6], [-4, -192, -6],
-      [-3, -77, 7], [-2, -206, 52], [-1, -100, 287], [0, 460, 460], [1, 0, 0]],
+      [-3, -77, 7], [-2, -206, 52], [-1, -100, 287], [0, -130, 168], [1, 0, 0]],
     [-7, -6, -5, -4, -3, -2, -1, 0, 1]]
   ]) {
     const points = W.orbit(outer, inner);
@@ -135,7 +135,22 @@ function displayedCases() {
   assert.equal(W.areaCoefficient(2, 25), -6400);
 }
 
+function hiddenRegionCase() {
+  // Crown has true +3 points that a 960-pixel raster entirely misses.
+  const points = W.orbit(9, 23);
+  assert.deepEqual(W.field(points, 960, 480).levels, [0, 1, 2]);
+  for (let sector = 0; sector < 8; sector++) {
+    const angle = cycle * sector / 8;
+    const x = 291.27 * Math.cos(angle);
+    const y = 291.27 * Math.sin(angle);
+    const result = checkPoint(points, x, y, 3);
+    assert.equal(angleSum(points, x, y), 3);
+    assert.ok(result.distance > W.errorBound(9, 23));
+  }
+}
+
 polygonCases();
 orbitalCases();
 displayedCases();
+hiddenRegionCase();
 console.log(`${comparisons.toLocaleString('en')} winding comparisons passed, including every displayed count button.`);
