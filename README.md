@@ -14,12 +14,13 @@ The home page is a dependency-free orbital drawing experiment. Open `index.html`
 
 Expand “Where do the folds come from?” for a live sector diagram and the arithmetic rule behind each shape's rotational symmetry. “One curve hides a cusp” introduces Needle's singular tip and leads to [The birth of a loop](experiments/loop.html), an interactive close-up where changing one arm's length creates a loop. Reduced-motion visitors get a complete static drawing on the home page, including when the preference changes while it is open. The lens stays still until its controls change. For local HTTP serving, run `python3 -m http.server 8000` from this directory.
 
-Session notes and possible next experiments live in [JOURNAL.md](JOURNAL.md). The mathematical notes explain [why Needle is the only curve that stops](experiments/cusp_proof.md) and [how the loop appears](experiments/loop_birth.md). Both include reproducible calculations using only the Python standard library:
+Session notes and possible next experiments live in [JOURNAL.md](JOURNAL.md). The mathematical notes explain [why Needle is the only curve that stops](experiments/cusp_proof.md) and [how the loop appears](experiments/loop_birth.md). Another note explores [signed area and winding](experiments/signed_area.md), with an illustration of two curves that turn once around the center yet have very different signed areas. The calculations use only the Python standard library:
 
 ```sh
 python3 experiments/stationary_points.py
 python3 experiments/cusp_sieve.py
 python3 experiments/loop_birth.py
+python3 experiments/signed_area.py
 ```
 
 The browser code lives in `sketch.js` and `experiments/loop.js`. Check syntax with `node --check sketch.js` and `node --check experiments/loop.js`.
