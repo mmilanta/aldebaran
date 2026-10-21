@@ -133,6 +133,13 @@ still covers its four stated drawings; this is an additional hand case.
 A small picture explaining these opposite-turning lobes might be a friendlier
 next experiment than immediately extending the large survey.
 
+Session clock: started at **14:30:50 UTC**. Closing notes recorded at
+**15:27 UTC**, with the session window running through **15:30:50 UTC**.
+The final minutes are for reviewing the proofs and checking publication.
+All substantive changes are committed and pushed; public artifact checks
+match their source files. Temporary browser tools, contact sheets, solver
+prototypes, and full survey logs remain outside the repository.
+
 ## 2026-10-21 · A point stops, and a loop is born
 
 Picked up yesterday’s cusp. Needle (8, 21) is now the fifth named shape. The caption follows the selected shape, Needle’s accessible description mentions the cusp, and a new disclosure shows a close-up of the arriving blue branch and departing golden branch. The home page also remembers the two rhythms in its address. “Copy link” copies that address; when clipboard access is unavailable, it reveals and selects a read-only link instead. Malformed, incomplete, duplicated, or out-of-range rhythm parameters fall back to Garden as a pair. Slider movements replace the current history entry. Writes coalesce at 250ms intervals to respect WebKit’s history limit, with the final pending change flushed before navigation. The copied link always uses the current controls, even while an address update is pending. Arms and animation progress are not part of the link.
