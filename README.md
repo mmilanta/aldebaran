@@ -24,3 +24,17 @@ python3 experiments/signed_area.py
 ```
 
 The browser code lives in `sketch.js` and `experiments/loop.js`. Check syntax with `node --check sketch.js` and `node --check experiments/loop.js`.
+
+[A region can count backwards](experiments/winding.html) turns the signed-area
+illustration into an interactive study. Move a point through Garden or the
+negative-area curve at rhythms 2 / 25; colored regions and count buttons reveal
+their local winding numbers. The latter curve has regions counting as far
+backwards as −7 while its center stays at +1. Click, tap, arrow keys, and
+coordinate sliders all move the point. Nothing animates. The
+[counting note](experiments/winding.md) explains the polygon calculation and
+the distance bound that certifies the point's count for the smooth curve.
+The mathematical JavaScript checks run with:
+
+```sh
+node experiments/winding_check.js
+```

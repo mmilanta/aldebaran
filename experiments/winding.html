@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101323">
+  <meta name="description" content="Move a point through an orbital curve and discover regions that count backwards.">
+  <title>A region can count backwards · Aldebaran</title>
+  <style>
+    :root { color-scheme: dark; font-family: ui-sans-serif, system-ui, sans-serif; background: #101323; color: #f4f1e8; }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    main { max-width: 76rem; margin: auto; padding: clamp(1.2rem, 4vw, 3rem); overflow-wrap: anywhere; }
+    a { color: #e8b66e; text-underline-offset: .2em; }
+    .back { font-size: .85rem; }
+    .eyebrow { margin-top: 2rem; color: #e8b66e; font-size: .75rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+    h1 { margin: .7rem 0 1rem; max-width: 14ch; font-size: clamp(2.2rem, 6vw, 4.5rem); line-height: 1.05; letter-spacing: -.05em; overflow-wrap: anywhere; }
+    p { max-width: 43rem; color: #c7c7d4; line-height: 1.7; }
+    .presets { display: flex; flex-wrap: wrap; gap: .6rem; margin: 1.5rem 0; }
+    button { font: inherit; color: inherit; background: #22263b; border: 1px solid #555b78; border-radius: .5rem; padding: .7rem 1rem; cursor: pointer; }
+    button:hover { background: #333a55; }
+    button[aria-pressed="true"] { border-color: #e8b66e; background: #3c322c; }
+    :focus-visible { outline: 3px solid #e8b66e; outline-offset: 4px; }
+    .layout { display: grid; grid-template-columns: minmax(0, 1fr) 17rem; gap: 2rem; align-items: start; }
+    figure { margin: 0; min-width: 0; }
+    .map { position: relative; border: 1px solid #383b50; border-radius: 1rem; overflow: hidden; background: #0b0e1a; }
+    canvas { display: block; width: 100%; aspect-ratio: 1; }
+    #map { cursor: crosshair; }
+    #map:focus-visible { outline-offset: -5px; }
+    #probe { position: absolute; inset: 0; pointer-events: none; }
+    figcaption { margin-top: .7rem; color: #9999ae; font-size: .85rem; line-height: 1.7; }
+    .legend { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .8rem; }
+    .legend button { display: flex; align-items: center; gap: .4rem; padding: .4rem .6rem; min-height: 2.75rem; font-variant-numeric: tabular-nums; }
+    .swatch { display: inline-block; width: 1rem; height: 1rem; border: 1px solid #9999ae; border-radius: .2rem; }
+    .readout { border-left: 2px solid #e8b66e; padding: .8rem 1rem; background: #171b2e; }
+    h2 { font-size: 1.15rem; margin: 0; }
+    .readout p { font-size: .9rem; margin: .5rem 0 0; }
+    .readout output { display: block; font-size: 2.8rem; line-height: 1.2; margin: .4rem 0; }
+    output { color: #e8b66e; font-variant-numeric: tabular-nums; }
+    label { display: block; margin: 1.3rem 0 .5rem; font-size: .9rem; }
+    input { accent-color: #e8b66e; }
+    input[type="range"] { width: 100%; }
+    .toggle { display: flex; align-items: center; gap: .6rem; }
+    .center { margin-top: 1rem; }
+    .area { margin-top: 1.5rem; padding-top: 1.2rem; border-top: 1px solid #383b50; }
+    .area p { font-size: .9rem; margin: .5rem 0 0; }
+    #area { font-size: 1.4rem; }
+    details { margin-top: 2rem; color: #c7c7d4; line-height: 1.7; }
+    summary { color: #e8b66e; cursor: pointer; }
+    .equation { color: #f4f1e8; font-variant-numeric: tabular-nums; }
+    footer { border-top: 1px solid #383b50; margin-top: 2rem; padding-top: 1rem; color: #9999ae; font-size: .85rem; line-height: 1.7; }
+    @media (max-width: 700px) { .layout { grid-template-columns: minmax(0, 1fr); } }
+  </style>
+</head>
+<body>
+  <main>
+    <a class="back" href="../index.html">← Back to the sketchbook</a>
+    <div class="eyebrow">Study 003 · Counting turns</div>
+    <h1>A region can count backwards</h1>
+    <p>Follow a whole curve around a point. Counterclockwise turns add one; clockwise turns subtract one. Move the white point to discover how differently the same curve can wrap around its neighbors.</p>
+    <div class="presets" role="group" aria-label="Choose a curve">
+      <button type="button" data-shape="garden" aria-pressed="true">Garden · 7 / 13</button>
+      <button type="button" data-shape="backwards" aria-pressed="false">A negative total · 2 / 25</button>
+    </div>
+    <div class="layout">
+      <figure>
+        <div class="map">
+          <canvas id="map" width="960" height="960" tabindex="0" role="img" aria-label="Garden, colored by winding count" aria-describedby="map-help count-description">This drawing needs canvas support. Use the coordinate sliders and count buttons to explore the regions.</canvas>
+          <canvas id="probe" width="960" height="960" aria-hidden="true"></canvas>
+        </div>
+        <figcaption id="map-help">Tap or click to place the white point. With the drawing focused, use arrow keys to move it; hold Shift for smaller steps. Gold counts positive turns; blue counts negative turns. Brighter regions count more times. Choose a count below to visit an example.</figcaption>
+        <div id="legend" class="legend" role="group" aria-label="Visit a region by its winding count"></div>
+      </figure>
+      <aside aria-label="Point and area">
+        <div class="readout" role="status">
+          <h2>Around the white point</h2>
+          <output id="count">+1</output>
+          <p id="count-description">One net counterclockwise turn.</p>
+        </div>
+        <label for="point-x">Horizontal position <output id="x-value" for="point-x">0</output></label>
+        <input id="point-x" type="range" min="-470" max="470" step="1" value="0">
+        <label for="point-y">Vertical position <output id="y-value" for="point-y">0</output></label>
+        <input id="point-y" type="range" min="-470" max="470" step="1" value="0">
+        <button class="center" id="center" type="button">Return to the center</button>
+        <label class="toggle"><input id="show-colors" type="checkbox" checked> Color the regions</label>
+        <div class="area">
+          <h2>The whole curve’s signed area</h2>
+          <p><output id="area">142,300π</output> square units</p>
+          <p id="area-description">Each region’s area is multiplied by its count, then all the contributions are added.</p>
+          <p><a id="draw-link" href="../index.html?outer=7&amp;inner=13">Trace this curve in the sketchbook ↗</a></p>
+        </div>
+      </aside>
+    </div>
+    <details>
+      <summary>How can an area be negative?</summary>
+      <p>Ordinary painted area counts every painted patch once. Signed area remembers how the curve travels: a region with count +2 contributes twice its area, while a region with count −1 subtracts its area. A region with count zero contributes nothing.</p>
+      <p>For these three arms, the exact total is <span class="equation">π × (245² + 140² × outer rhythm − 65² × inner rhythm)</span>. The squared lengths give area; the rhythms give how many times each arm turns. Mixed terms cancel over a full cycle.</p>
+      <p>Try “A negative total.” Its backward loops outweigh its positive regions, yet the center still counts as +1. In fact, every point less than 40 units from the center counts as +1 in both drawings. The dotted circle marks that sheltered disk.</p>
+    </details>
+    <details>
+      <summary>What exactly am I seeing?</summary>
+      <p>These are the sketchbook’s curves reflected vertically so that positive turns run counterclockwise, as on a mathematical page. Their shapes and arm lengths are the same. Nothing moves until you change a control.</p>
+      <p>A count describes the curve’s total turning around the chosen point, with opposite turns canceling. It stays the same throughout a connected region and changes only when the point crosses the curve. Directly on the line, the count is undefined; near a boundary, move the point a little farther away.</p>
+      <p>The picture uses a finely sampled polygon, so very small regions may be hard to see. The count buttons visit examples, including thin overlaps. Away from the line, the point’s count is checked against a bound on the gap between the polygon and the smooth curve. The signed area above comes from the exact formula.</p>
+    </details>
+    <footer>Aldebaran · A point, a path, and the turns between them.<br><a href="../JOURNAL.md">Read the notebook ↗</a> · <a href="winding.md">How the counting works ↗</a> · <a href="signed_area.md">The area calculation ↗</a></footer>
+    <noscript><p>This study needs JavaScript to draw the regions. The mathematical notes and notebook remain available without it.</p></noscript>
+  </main>
+  <script src="winding_math.js"></script>
+  <script src="winding.js"></script>
+</body>
+</html>
