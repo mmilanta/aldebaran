@@ -63,8 +63,10 @@ bounds and contraction tests exclude hidden crossings and certify each
 transverse double point. Run `python3 experiments/certify_intersections.py`;
 it uses only the standard library. A separate
 [hand calculation for rhythms 2 / 3](experiments/two_lobes.md) proves its
-single crossing by elementary trigonometry and a polynomial inequality;
-316 regular pairs remain without a complete smooth region census.
+single crossing by elementary trigonometry and a polynomial inequality.
+The [three zero-tangent-index curves](experiments/zero_turns.md) have now
+also passed the rational smooth census, bringing the total to seven
+completed cases; 314 regular pairs remain without a complete smooth region census.
 
 [Two lobes, two ways to turn](experiments/two_lobes.html) is a quieter
 starting point for these counts. Follow rhythms 2 / 3 with a slider or
@@ -79,3 +81,9 @@ two lobe areas. Check its continuous angles and regenerate the figure with:
 node experiments/two_lobes_check.js
 python3 experiments/two_lobes.py --figure
 ```
+
+[When the direction's turns cancel](experiments/zero_turns.md) compares all
+three zero-index pairs. Rhythms 4 / 7 have eight bounded regions, all with
+counts 0, +1, or +2, while the tangent's net count is zero. Run
+`python3 experiments/zero_turns.py` for the exact certificates. Its optional
+`--figure` uses NumPy, Matplotlib, and Shapely to recreate the illustration.

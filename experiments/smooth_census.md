@@ -178,3 +178,13 @@ smooth area of that region. The continuous total signed areas retain their
 separate exact Fourier formula. Extending this complete crossing certificate
 to other rhythms would require completing all of its checks for those pairs,
 with a suitable partition; the 321-pair sampled survey alone does not do that.
+
+## Three additional cases
+
+[zero_turns.py](zero_turns.py) completes the same rational checks for
+2 / 3, 4 / 7, and 6 / 11, using quarter-circle partitions of 1,024, 2,048,
+and 8,192 intervals. Their crossing counts are 1, 7, and 19. The
+[zero-turns note](zero_turns.md) gives their full winding histograms.
+Rhythms 4 / 7 have no negative-winding region, despite tangent index zero.
+These checks bring the completed smooth census to seven of the 321 regular
+pairs. The default command above continues to reproduce the original four.

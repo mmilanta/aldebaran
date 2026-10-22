@@ -109,6 +109,12 @@ Star's +6 is 1 modulo 5. The program checks this congruence for every regular
 pair. Three supported regular pairs have tangent index zero: winding around
 the center is still +1.
 
+Those three pairs are **2 / 3, 4 / 7, and 6 / 11**. The
+[two-lobe study](two_lobes.html) follows the first with a slider and compares
+both angles. The [zero-turns note](zero_turns.md) certifies all three smooth
+region censuses. In particular, 4 / 7 has tangent index zero while all its
+region counts are nonnegative.
+
 ## The loop adds one clockwise turn
 
 For Needle, keep `m = 8` and `n = 21`, and vary the inner length `r`. The exact
