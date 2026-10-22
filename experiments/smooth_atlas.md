@@ -31,8 +31,9 @@ python3 experiments/verify_smooth_atlas.py --jobs 2
 
 The first command checks one curve; the second checks every archived case
 using two independent processes. Omitting `--jobs` uses a single process.
-The full run takes several minutes, with the slowest curves needing finer
-partitions. It fails if any proof, archived count, sampled graph comparison,
+The full rerun in this session took about ten minutes with four processes;
+time depends on the machine. The slowest curves need finer partitions.
+It fails if any proof, archived count, sampled graph comparison,
 or independent tangent certificate fails. An unresolved pair receives no
 count from this command.
 
