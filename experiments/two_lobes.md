@@ -1,6 +1,9 @@
 # One crossing, two lobes
 
-[Draw rhythms 2 / 3](../index.html?outer=2&inner=3).
+[Follow the point in the interactive study](two_lobes.html), or
+[draw rhythms 2 / 3 in the sketchbook](../index.html?outer=2&inner=3).
+
+![Rhythms 2 / 3 have a large counterclockwise gold lobe and a small clockwise blue loop. Their region winding counts are plus one and minus one. A close-up preserves the narrow loop's proportions. The whole curve winds once around the center, while its tangent makes zero net turns.](two_lobes.svg)
 
 This is a quieter example after all the overlapping regions. The curve has
 one transverse crossing and two bounded regions. The region labels are +1
@@ -109,5 +112,131 @@ two bounded regions by the planar graph count.
 
 This argument needs no numerical root isolation or enumeration of parameter
 pairs. The decimals above locate the crossing; the algebra proves its
-existence, uniqueness, and transversality. A small illustration of the two
-opposite-turning lobes could make a friendly starting point for a future visit.
+existence, uniqueness, and transversality.
+
+## Why the direction makes zero net turns
+
+The interactive study compares two angles. One is the direction from the
+fixed center to the point. The other is the tangent: the direction of the
+point's nonzero velocity. Both are counted continuously from the start,
+allowing clockwise motion to subtract earlier counterclockwise motion.
+Their net counts over a full orbit are **+1 and 0**, respectively.
+
+The center's +1 follows from factoring
+
+```
+z(t) = exp(it) [245 + 140 exp(it) + 65 exp(−4it)].
+```
+
+The bracket's real part is at least `245 − 140 − 65 = 40 > 0`. Its argument
+has a continuous choice between −π/2 and π/2 and returns to zero. Therefore
+the continuous direction of `z(t)` is `t` plus that argument, a total of
+one full turn. This explains the first browser counter without summing
+sampled angles.
+
+For the tangent, use `c = cos t`. Direct differentiation gives
+
+```
+x′(t) = −10 sin t P(c),     P(c) = 78c² + 56c + 5,
+y′(t) = 10 R(c),           R(c) = −78c³ + 56c² + 83c − 28.
+```
+
+To count turns of the velocity, count its signed crossings of the upward
+ray: `x′ = 0, y′ > 0`. Besides `sin t = 0`, the only possible times satisfy
+
+```
+c = (−28 ± √394)/78.
+```
+
+Both roots lie between −1 and 0. At a root of `P`, the identity
+
+```
+39 R(c) − (296c − 1372) = (−39c + 56) P(c)
+```
+
+gives `R(c) = (296c − 1372)/39 < 0`. These velocities point down, so they
+do not meet the upward ray. They are nonzero as well.
+
+There are consequently just two upward-ray crossings per orbit:
+
+| Time | Velocity | Horizontal acceleration | Signed crossing |
+| --- | --- | --- | --- |
+| 0, counted once modulo 2π | (0, 330) | −1390 | +1, counterclockwise |
+| π | (0, 230) | +270 | −1, clockwise |
+
+Their sum is **zero**. This calculation also proves that the velocity never
+vanishes: all possible zeros of its horizontal component have nonzero
+vertical component. No cusp interrupts the angle count.
+
+It gives a particularly simple continuous angle choice for the browser.
+Let `a(t) = atan2(−x′(t), y′(t))`, the principal tangent angle measured from
+up. In `0 < t < π`, choose its representative in `(0, 2π)`; in
+`π < t < 2π`, choose its representative in `(−2π, 0)`. At 0, π, and 2π the
+angle is zero. There are no interior upward-ray crossings to interrupt
+either choice. Dividing by `2π` gives the displayed tangent counter. The
+readouts round to two decimal places. The arrow itself uses the analytic
+velocity, not a finite difference.
+
+The whole curve's tangent count is not obtained by assigning +1 and −1 to
+two smooth closed tangent paths. Closing either lobe at the crossing joins
+different velocity directions, introducing a corner. The interactive
+point always follows the original smooth branch through the crossing.
+
+## The two lobe areas
+
+For this curve, the signed-area density is
+
+```
+(x y′ − y x′)/2
+  = [86550 + 102900 cos t − 31850 cos 4t − 9100 cos 5t]/2.
+```
+
+An antiderivative is
+
+```
+F(t) = 43275t + 51450 sin t − (15925/4) sin 4t − 910 sin 5t.
+```
+
+The little loop is traced between `t₀ = arccos c₀` and `2π−t₀`. Its
+signed area is `F(2π−t₀) − F(t₀) ≈ −4466.989530` square drawing units.
+The large lobe contributes approximately `+276371.833698`. Their sum is
+exactly `86550π`. The large lobe has about 61.87 times the ordinary area
+of the little one. Its positive contribution outweighs the small loop's
+negative contribution even though the tangent's turns cancel.
+
+## Reproducing the illustration and counters
+
+The website remains dependency-free. Its mathematical functions are in
+[two_lobes_math.js](two_lobes_math.js); the view is in
+[two_lobes.js](two_lobes.js). The plot has equal scales on both axes, with
+a separate magnified window onto the loop. The point starts at home, with
+the full curve visible. The slider and five stops retrace it without an
+animation. Start and Home occupy the same position but have different
+center counts. Without JavaScript, a static SVG replaces the controls.
+
+Run these independent checks:
+
+```sh
+python3 experiments/two_lobes.py
+node experiments/two_lobes_check.js
+```
+
+The Python calculation checks the integer polynomial identity above,
+the crossing's location and transversality, both lobe areas against
+polygonal shoelace sums, and region labels against angle sums. Clearance
+bounds transfer the three checked labels to the smooth curve. The Node
+calculation compares both continuous browser angles with 100,001
+independent accumulated-angle samples, tests either side of every tangent
+argument cut, and independently integrates the little loop's area. These
+are checks of the formulas; the complete crossing count is the algebraic
+argument above. The earlier [integer tangent certificate](tangent_turning.py)
+provides another independent proof of the zero tangent index.
+
+To regenerate the standalone SVG using only Python's standard library:
+
+```sh
+python3 experiments/two_lobes.py --figure
+```
+
+The still drawing can be saved directly from the study. No browser tools,
+plotting packages, or external network requests enter the website runtime.

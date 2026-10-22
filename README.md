@@ -65,3 +65,17 @@ it uses only the standard library. A separate
 [hand calculation for rhythms 2 / 3](experiments/two_lobes.md) proves its
 single crossing by elementary trigonometry and a polynomial inequality;
 316 regular pairs remain without a complete smooth region census.
+
+[Two lobes, two ways to turn](experiments/two_lobes.html) is a quieter
+starting point for these counts. Follow rhythms 2 / 3 with a slider or
+visit either crossing: the curve winds once around its center, while its
+direction of travel makes zero net turns. A close-up shows the little
+clockwise loop. Nothing animates. A standalone SVG also works without
+JavaScript and can be saved from the page. The [mathematical note](experiments/two_lobes.md)
+now includes a short algebraic proof of the zero tangent count and the
+two lobe areas. Check its continuous angles and regenerate the figure with:
+
+```sh
+node experiments/two_lobes_check.js
+python3 experiments/two_lobes.py --figure
+```

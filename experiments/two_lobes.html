@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101323">
+  <meta name="description" content="One orbital curve, two opposite-turning lobes. Follow the point and compare two ways of counting turns.">
+  <title>Two lobes, two ways to turn · Aldebaran</title>
+  <style>
+    :root { color-scheme: dark; font-family: ui-sans-serif, system-ui, sans-serif; background: #101323; color: #f4f1e8; }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    main { max-width: 72rem; margin: auto; padding: clamp(1.2rem, 4vw, 3rem); overflow-wrap: anywhere; }
+    a { color: #e8b66e; text-underline-offset: .2em; }
+    .back { font-size: .85rem; }
+    .eyebrow { margin-top: 2rem; color: #e8b66e; font-size: .75rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+    h1 { margin: .7rem 0 1rem; max-width: 15ch; font-size: clamp(2.2rem, 6vw, 4.5rem); line-height: 1.05; letter-spacing: -.05em; }
+    p { max-width: 43rem; color: #c7c7d4; line-height: 1.7; }
+    .explorer { display: grid; grid-template-columns: minmax(0, 1fr) 17rem; grid-template-areas: "controls readouts" "orbit inset"; gap: 1.5rem 2rem; margin-top: 2rem; align-items: start; }
+    .controls { grid-area: controls; }
+    label { display: block; margin-bottom: .5rem; font-size: .9rem; }
+    input[type="range"] { width: 100%; accent-color: #e8b66e; min-height: 2rem; }
+    output { color: #e8b66e; font-variant-numeric: tabular-nums; }
+    .stops { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .5rem; }
+    button { font: inherit; color: inherit; background: #22263b; border: 1px solid #555b78; border-radius: .5rem; padding: .65rem .85rem; cursor: pointer; }
+    button:hover { background: #333a55; }
+    button[aria-pressed="true"] { border-color: #e8b66e; background: #3c322c; }
+    :focus-visible { outline: 3px solid #e8b66e; outline-offset: 4px; }
+    .phase { margin: .7rem 0 0; min-height: 3.4em; font-size: .9rem; }
+    figure { margin: 0; min-width: 0; }
+    .orbit { grid-area: orbit; }
+    .inset { grid-area: inset; }
+    .panel { border: 1px solid #383b50; border-radius: 1rem; overflow: hidden; background: #0b0e1a; }
+    svg { display: block; width: 100%; height: auto; }
+    .large-fill { fill: #30281e; }
+    .small-fill { fill: #172c40; }
+    .outline { fill: none; stroke: #747889; stroke-width: 1.5; }
+    .trail { fill: none; stroke-width: 2.5; stroke-linecap: round; }
+    .gold { stroke: #e8b66e; }
+    .blue { stroke: #9fc7eb; }
+    .spoke { stroke: #e8b66e; stroke-width: 1.5; stroke-dasharray: 5 6; opacity: .7; }
+    .direction { fill: none; stroke: #f4f1e8; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .point { fill: #f4f1e8; stroke: #0b0e1a; stroke-width: 2; }
+    .crossing { fill: #0b0e1a; stroke: #f4f1e8; stroke-width: 1.5; }
+    .center-mark { stroke: #e8b66e; stroke-width: 1.5; }
+    .diagram-label { font: 16px ui-sans-serif, system-ui, sans-serif; fill: #c7c7d4; }
+    .region-label { font: 24px ui-sans-serif, system-ui, sans-serif; fill: #e8b66e; }
+    .inset .region-label { fill: #9fc7eb; }
+    figcaption { margin-top: .6rem; color: #9999ae; font-size: .85rem; line-height: 1.7; }
+    .readouts { grid-area: readouts; display: grid; gap: 1rem; }
+    .readout { display: grid; grid-template-columns: minmax(0, 1fr) 4rem; align-items: center; padding: .8rem 1rem; border-left: 2px solid #e8b66e; background: #171b2e; }
+    .readout h2 { margin: 0; font-size: .9rem; font-weight: 500; line-height: 1.5; }
+    .readout output { display: block; margin-top: .2rem; font-size: 2rem; line-height: 1.2; white-space: nowrap; }
+    .readout p { margin: .2rem 0 0; font-size: .8rem; }
+    .readout.tangent { border-color: #f4f1e8; }
+    .tangent output { color: #f4f1e8; }
+    .dial { color: #e8b66e; }
+    .tangent .dial { color: #f4f1e8; }
+    details { margin-top: 2rem; color: #c7c7d4; line-height: 1.7; }
+    summary { color: #e8b66e; cursor: pointer; }
+    .equation { color: #f4f1e8; font-variant-numeric: tabular-nums; }
+    footer { border-top: 1px solid #383b50; margin-top: 2rem; padding-top: 1rem; color: #9999ae; font-size: .85rem; line-height: 1.7; }
+    .fallback { display: none; }
+    @media (max-width: 700px) {
+      .explorer { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-areas: "controls controls" "readouts readouts" "orbit orbit" "inset inset"; gap: 1.2rem; }
+      .orbit .diagram-label { font-size: 28px; }
+      .orbit .region-label { font-size: 36px; }
+      .readouts { grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr)); }
+      .inset { max-width: 15rem; justify-self: center; }
+      .readout { grid-template-columns: minmax(0, 1fr); padding: .7rem; }
+      .readout .dial { display: none; }
+      .readout output { font-size: 1.8rem; }
+    }
+    @media (max-width: 380px) {
+      .explorer { grid-template-columns: minmax(0, 1fr); grid-template-areas: "controls" "readouts" "orbit" "inset"; }
+      .inset { max-width: 15rem; justify-self: center; }
+    }
+  </style>
+  <noscript><style>.explorer { display: none; } .fallback { display: block; } .fallback img { width: 100%; height: auto; }</style></noscript>
+</head>
+<body>
+  <main>
+    <a class="back" href="../index.html?outer=2&amp;inner=3">← Back to rhythms 2 / 3 in the sketchbook</a>
+    <div class="eyebrow">Study 004 · Following a direction</div>
+    <h1>Two lobes, two ways to turn</h1>
+    <p>One crossing makes two lobes: a large one traveled counterclockwise, and a little loop traveled clockwise. Follow the white point. A line from the center and an arrow along the path tell two different stories about turning.</p>
+    <div class="explorer">
+      <div class="controls">
+        <label for="progress">Follow the orbit <output id="progress-value" for="progress" aria-live="off">100%</output></label>
+        <input id="progress" type="range" min="0" max="1" step="any" value="1" aria-describedby="phase">
+        <div class="stops" role="group" aria-label="Visit a moment on the orbit">
+          <button type="button" data-stop="start" aria-pressed="false">Start</button>
+          <button type="button" data-stop="first" aria-pressed="false">First crossing</button>
+          <button type="button" data-stop="middle" aria-pressed="false">Inside the loop</button>
+          <button type="button" data-stop="second" aria-pressed="false">Second crossing</button>
+          <button type="button" data-stop="home" aria-pressed="true">Home</button>
+        </div>
+        <p id="phase" class="phase" role="status">Home. One net turn around the center; zero net turns of the direction of travel.</p>
+      </div>
+      <div class="readouts" aria-label="Net turns since the start">
+        <div class="readout">
+          <div>
+            <h2>Around the center</h2>
+            <output id="center-turns" for="progress" aria-live="off">+1.00</output>
+            <p>net turns</p>
+          </div>
+          <svg class="dial" viewBox="0 0 80 80" aria-hidden="true">
+            <circle cx="40" cy="40" r="30" fill="none" stroke="#555b78"/>
+            <path d="M68 40h5" stroke="currentColor"/>
+            <path id="center-dial" d="M15 40h50m-8-6 8 6-8 6" fill="none" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="readout tangent">
+          <div>
+            <h2>Direction of travel</h2>
+            <output id="tangent-turns" for="progress" aria-live="off">0.00</output>
+            <p>net turns</p>
+          </div>
+          <svg class="dial" viewBox="0 0 80 80" aria-hidden="true">
+            <circle cx="40" cy="40" r="30" fill="none" stroke="#555b78"/>
+            <path d="M40 7v5" stroke="currentColor"/>
+            <path id="tangent-dial" d="M15 40h50m-8-6 8 6-8 6" fill="none" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </div>
+      </div>
+      <figure class="orbit">
+        <div class="panel">
+          <svg id="orbit" viewBox="0 0 740 800" role="img" aria-labelledby="orbit-title orbit-description">
+            <title id="orbit-title">Two lobes with opposite winding counts</title>
+            <desc id="orbit-description">A large gold lobe has count plus one. A smaller blue loop on its left has count minus one. A white point is home at the far right of the curve.</desc>
+            <path id="large-fill" class="large-fill"/>
+            <path id="small-fill" class="small-fill"/>
+            <path id="outline" class="outline"/>
+            <path id="early-trail" class="trail gold"/>
+            <path id="loop-trail" class="trail blue"/>
+            <path id="late-trail" class="trail gold"/>
+            <line id="spoke" class="spoke" x1="230" y1="400"/>
+            <path d="M224 400h12 M230 394v12" class="center-mark"/>
+            <text x="245" y="424" class="diagram-label">Center</text>
+            <text x="405" y="380" class="region-label">+1</text>
+            <circle id="crossing" cy="400" r="4" class="crossing"/>
+            <path id="direction" class="direction"/>
+            <circle id="point" r="5" class="point"/>
+          </svg>
+        </div>
+        <figcaption>The dotted gold line points from the center to the moving point. The white arrow follows the direction of travel. Color traces the part of the orbit already visited.</figcaption>
+      </figure>
+      <figure class="inset">
+        <div class="panel">
+          <svg id="loop" viewBox="0 0 260 340" role="img" aria-labelledby="loop-title loop-description">
+            <title id="loop-title">A close-up of the small clockwise loop</title>
+            <desc id="loop-description">A narrow blue loop closes at the crossing on its right. The point visits the crossing twice, entering down and left, then leaving down and right.</desc>
+            <path id="inset-fill" class="small-fill"/>
+            <path id="inset-outline" class="outline"/>
+            <path id="inset-early" class="trail gold"/>
+            <path id="inset-trail" class="trail blue"/>
+            <path id="inset-late" class="trail gold"/>
+            <text x="95" y="178" class="region-label">−1</text>
+            <circle id="inset-crossing" cy="170" r="4" class="crossing"/>
+            <g id="inset-tracker">
+              <path id="inset-direction" class="direction"/>
+              <circle id="inset-point" r="5" class="point"/>
+            </g>
+          </svg>
+        </div>
+        <figcaption>A close-up of the little loop, with equal scales on both axes. Between the two visits to the crossing, the point goes clockwise.</figcaption>
+      </figure>
+
+    </div>
+    <figure class="fallback">
+      <img src="two_lobes.svg" width="1000" height="740" alt="Rhythms 2 / 3 make a large gold lobe with winding count plus one, and a small blue loop with count minus one. A close-up shows the clockwise loop. The whole curve winds once around the center, while its tangent makes zero net turns.">
+      <figcaption>JavaScript is off. This still drawing shows the two lobes and their directions. The mathematical notes below are available too.</figcaption>
+    </figure>
+    <details>
+      <summary>What are the two counters counting?</summary>
+      <p>Imagine standing at the center and watching the white point. The dotted line turns as the point moves. Its counter starts with the line pointing right. After the full orbit, it has made one net counterclockwise turn: <span class="equation">+1</span>.</p>
+      <p>Now imagine riding along the path. The white arrow is the way you are facing, also called the tangent direction. Its counter starts pointing up. Left turns add; right turns subtract. Over the whole orbit they cancel: <span class="equation">0</span>. Choose Start, then Home: the point and arrow return to the same place, but the center’s counter remembers a full turn.</p>
+      <p>The signs printed inside the lobes answer a related question: how many times does the <em>whole</em> curve wrap around a point in that region? Gold counts <span class="equation">+1</span>; blue counts <span class="equation">−1</span>. Those region labels stay fixed while the counters follow your progress.</p>
+      <p>With the slider focused, arrow keys move by 1% of the orbit; hold Shift for steps of 0.1%. Page Up and Page Down move by 10%. Home returns to the start; End finishes the orbit.</p>
+    </details>
+    <details>
+      <summary>What happens at the crossing?</summary>
+      <p>The same place is visited twice, about 37% and 63% of the way through the orbit. The first visit enters the little loop; the second leaves it. Keep following the smooth branch each time. Switching to the other branch would make a corner and change the path.</p>
+      <p>The two branches are almost parallel here. The close-up uses equal scales horizontally and vertically, so the thinness is real. These are the sketchbook’s rhythms <span class="equation">2 / 3</span>, reflected vertically so that positive turns look counterclockwise. Nothing moves until you change a control.</p>
+      <p>A <a href="two_lobes.md">short trigonometric proof</a> shows there is exactly one crossing and explains why the tangent’s net count is zero. For curves with many overlaps, <a href="winding.html">move a point between the regions</a>.</p>
+    </details>
+    <footer>Aldebaran · One path, two lobes, and two kinds of turn.<br><a href="../JOURNAL.md">Read the notebook ↗</a> · <a href="two_lobes.md">The mathematics ↗</a> · <a href="two_lobes.svg" download>Save the still drawing ↧</a></footer>
+  </main>
+  <script src="two_lobes_math.js"></script>
+  <script src="two_lobes.js"></script>
+</body>
+</html>
