@@ -175,9 +175,10 @@ their absence from the 960-pixel color raster.
 The illustrations still approximate boundaries and region **areas** by sampled
 polygons. A certified region count does not make a polygon area the exact
 smooth area of that region. The continuous total signed areas retain their
-separate exact Fourier formula. Extending this complete crossing certificate
-to other rhythms would require completing all of its checks for those pairs,
-with a suitable partition; the 321-pair sampled survey alone does not do that.
+separate exact Fourier formula. The [complete smooth atlas](smooth_atlas.md)
+now repeats all of these checks for every one of the 321 regular pairs,
+with suitable partitions. The earlier sampled survey remains an independent
+comparison.
 
 ## Three additional cases
 
@@ -186,5 +187,6 @@ with a suitable partition; the 321-pair sampled survey alone does not do that.
 and 8,192 intervals. Their crossing counts are 1, 7, and 19. The
 [zero-turns note](zero_turns.md) gives their full winding histograms.
 Rhythms 4 / 7 have no negative-winding region, despite tangent index zero.
-These checks bring the completed smooth census to seven of the 321 regular
-pairs. The default command above continues to reproduce the original four.
+These seven cases are included in the complete atlas of all 321 regular
+pairs. The default command above continues to reproduce the original four;
+`verify_smooth_atlas.py` reproduces the full atlas or a selected pair.

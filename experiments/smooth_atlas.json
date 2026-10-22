@@ -1,0 +1,4533 @@
+{
+  "version": 1,
+  "date": "2026-10-22",
+  "lengths": [
+    245,
+    140,
+    65
+  ],
+  "outer_range": [
+    2,
+    15
+  ],
+  "inner_range": [
+    3,
+    25
+  ],
+  "singular": [
+    [
+      8,
+      21
+    ]
+  ],
+  "method": "certify_intersections.IntersectionCertificate",
+  "certificate_code_sha256": "0666a7ac397108125e8e661dcd54fe2e6504e0863103ceba967c11d51225d096",
+  "verified": [
+    {
+      "outer": 2,
+      "inner": 3,
+      "partition": 1024,
+      "crossings": 1,
+      "bounded_regions": 2,
+      "winding_regions": {
+        "-1": 1,
+        "1": 1
+      },
+      "tangent_index": 0
+    },
+    {
+      "outer": 2,
+      "inner": 4,
+      "partition": 1024,
+      "crossings": 2,
+      "bounded_regions": 3,
+      "winding_regions": {
+        "-1": 2,
+        "1": 1
+      },
+      "tangent_index": -1
+    },
+    {
+      "outer": 2,
+      "inner": 5,
+      "partition": 1024,
+      "crossings": 5,
+      "bounded_regions": 6,
+      "winding_regions": {
+        "-1": 3,
+        "0": 2,
+        "1": 1
+      },
+      "tangent_index": -2
+    },
+    {
+      "outer": 2,
+      "inner": 6,
+      "partition": 1024,
+      "crossings": 8,
+      "bounded_regions": 9,
+      "winding_regions": {
+        "-2": 1,
+        "-1": 6,
+        "0": 1,
+        "1": 1
+      },
+      "tangent_index": -3
+    },
+    {
+      "outer": 2,
+      "inner": 7,
+      "partition": 1024,
+      "crossings": 7,
+      "bounded_regions": 8,
+      "winding_regions": {
+        "-1": 5,
+        "0": 2,
+        "1": 1
+      },
+      "tangent_index": -4
+    },
+    {
+      "outer": 2,
+      "inner": 8,
+      "partition": 4096,
+      "crossings": 12,
+      "bounded_regions": 13,
+      "winding_regions": {
+        "-2": 1,
+        "-1": 10,
+        "0": 1,
+        "1": 1
+      },
+      "tangent_index": -7
+    },
+    {
+      "outer": 2,
+      "inner": 9,
+      "partition": 1024,
+      "crossings": 18,
+      "bounded_regions": 19,
+      "winding_regions": {
+        "-3": 1,
+        "-2": 3,
+        "-1": 12,
+        "0": 2,
+        "1": 1
+      },
+      "tangent_index": -9
+    },
+    {
+      "outer": 2,
+      "inner": 10,
+      "partition": 1024,
+      "crossings": 21,
+      "bounded_regions": 22,
+      "winding_regions": {
+        "-2": 3,
+        "-1": 15,
+        "0": 3,
+        "1": 1
+      },
+      "tangent_index": -10
+    },
+    {
+      "outer": 2,
+      "inner": 11,
+      "partition": 1024,
+      "crossings": 22,
+      "bounded_regions": 23,
+      "winding_regions": {
+        "-3": 1,
+        "-2": 3,
+        "-1": 16,
+        "0": 2,
+        "1": 1
+      },
+      "tangent_index": -11
+    },
+    {
+      "outer": 2,
+      "inner": 12,
+      "partition": 1024,
+      "crossings": 29,
+      "bounded_regions": 30,
+      "winding_regions": {
+        "-4": 1,
+        "-3": 4,
+        "-2": 4,
+        "-1": 17,
+        "0": 3,
+        "1": 1
+      },
+      "tangent_index": -12
+    },
+    {
+      "outer": 2,
+      "inner": 13,
+      "partition": 1024,
+      "crossings": 28,
+      "bounded_regions": 29,
+      "winding_regions": {
+        "-3": 1,
+        "-2": 5,
+        "-1": 18,
+        "0": 4,
+        "1": 1
+      },
+      "tangent_index": -13
+    },
+    {
+      "outer": 2,
+      "inner": 14,
+      "partition": 1024,
+      "crossings": 31,
+      "bounded_regions": 32,
+      "winding_regions": {
+        "-4": 1,
+        "-3": 4,
+        "-2": 4,
+        "-1": 19,
+        "0": 3,
+        "1": 1
+      },
+      "tangent_index": -14
+    },
+    {
+      "outer": 2,
+      "inner": 15,
+      "partition": 1024,
+      "crossings": 40,
+      "bounded_regions": 41,
+      "winding_regions": {
+        "-4": 3,
+        "-3": 7,
+        "-2": 10,
+        "-1": 16,
+        "0": 4,
+        "1": 1
+      },
+      "tangent_index": -15
+    },
+    {
+      "outer": 2,
+      "inner": 16,
+      "partition": 1024,
+      "crossings": 43,
+      "bounded_regions": 44,
+      "winding_regions": {
+        "-4": 1,
+        "-3": 6,
+        "-2": 8,
+        "-1": 23,
+        "0": 5,
+        "1": 1
+      },
+      "tangent_index": -16
+    },
+    {
+      "outer": 2,
+      "inner": 17,
+      "partition": 1024,
+      "crossings": 48,
+      "bounded_regions": 49,
+      "winding_regions": {
+        "-5": 1,
+        "-4": 3,
+        "-3": 7,
+        "-2": 11,
+        "-1": 20,
+        "0": 6,
+        "1": 1
+      },
+      "tangent_index": -17
+    },
+    {
+      "outer": 2,
+      "inner": 18,
+      "partition": 1024,
+      "crossings": 53,
+      "bounded_regions": 54,
+      "winding_regions": {
+        "-5": 2,
+        "-4": 5,
+        "-3": 8,
+        "-2": 12,
+        "-1": 21,
+        "0": 5,
+        "1": 1
+      },
+      "tangent_index": -18
+    },
+    {
+      "outer": 2,
+      "inner": 19,
+      "partition": 1024,
+      "crossings": 58,
+      "bounded_regions": 59,
+      "winding_regions": {
+        "-5": 1,
+        "-4": 5,
+        "-3": 11,
+        "-2": 11,
+        "-1": 24,
+        "0": 6,
+        "1": 1
+      },
+      "tangent_index": -19
+    },
+    {
+      "outer": 2,
+      "inner": 20,
+      "partition": 1024,
+      "crossings": 61,
+      "bounded_regions": 62,
+      "winding_regions": {
+        "-6": 1,
+        "-5": 4,
+        "-4": 6,
+        "-3": 12,
+        "-2": 10,
+        "-1": 23,
+        "0": 5,
+        "1": 1
+      },
+      "tangent_index": -20
+    },
+    {
+      "outer": 2,
+      "inner": 21,
+      "partition": 1024,
+      "crossings": 72,
+      "bounded_regions": 73,
+      "winding_regions": {
+        "-6": 2,
+        "-5": 5,
+        "-4": 9,
+        "-3": 9,
+        "-2": 15,
+        "-1": 24,
+        "0": 8,
+        "1": 1
+      },
+      "tangent_index": -21
+    },
+    {
+      "outer": 2,
+      "inner": 22,
+      "partition": 1024,
+      "crossings": 77,
+      "bounded_regions": 78,
+      "winding_regions": {
+        "-6": 1,
+        "-5": 4,
+        "-4": 8,
+        "-3": 16,
+        "-2": 14,
+        "-1": 27,
+        "0": 7,
+        "1": 1
+      },
+      "tangent_index": -22
+    },
+    {
+      "outer": 2,
+      "inner": 23,
+      "partition": 1024,
+      "crossings": 82,
+      "bounded_regions": 83,
+      "winding_regions": {
+        "-7": 1,
+        "-6": 3,
+        "-5": 9,
+        "-4": 7,
+        "-3": 13,
+        "-2": 15,
+        "-1": 24,
+        "0": 10,
+        "1": 1
+      },
+      "tangent_index": -23
+    },
+    {
+      "outer": 2,
+      "inner": 24,
+      "partition": 1024,
+      "crossings": 95,
+      "bounded_regions": 96,
+      "winding_regions": {
+        "-7": 2,
+        "-6": 5,
+        "-5": 8,
+        "-4": 12,
+        "-3": 14,
+        "-2": 16,
+        "-1": 29,
+        "0": 9,
+        "1": 1
+      },
+      "tangent_index": -24
+    },
+    {
+      "outer": 2,
+      "inner": 25,
+      "partition": 512,
+      "crossings": 100,
+      "bounded_regions": 101,
+      "winding_regions": {
+        "-7": 1,
+        "-6": 3,
+        "-5": 11,
+        "-4": 13,
+        "-3": 17,
+        "-2": 15,
+        "-1": 30,
+        "0": 10,
+        "1": 1
+      },
+      "tangent_index": -25
+    },
+    {
+      "outer": 3,
+      "inner": 3,
+      "partition": 1024,
+      "crossings": 2,
+      "bounded_regions": 3,
+      "winding_regions": {
+        "1": 1,
+        "2": 2
+      },
+      "tangent_index": 3
+    },
+    {
+      "outer": 3,
+      "inner": 4,
+      "partition": 1024,
+      "crossings": 0,
+      "bounded_regions": 1,
+      "winding_regions": {
+        "1": 1
+      },
+      "tangent_index": 1
+    },
+    {
+      "outer": 3,
+      "inner": 5,
+      "partition": 1024,
+      "crossings": 0,
+      "bounded_regions": 1,
+      "winding_regions": {
+        "1": 1
+      },
+      "tangent_index": 1
+    },
+    {
+      "outer": 3,
+      "inner": 6,
+      "partition": 1024,
+      "crossings": 6,
+      "bounded_regions": 7,
+      "winding_regions": {
+        "-1": 2,
+        "0": 4,
+        "1": 1
+      },
+      "tangent_index": -1
+    },
+    {
+      "outer": 3,
+      "inner": 7,
+      "partition": 1024,
+      "crossings": 6,
+      "bounded_regions": 7,
+      "winding_regions": {
+        "-1": 2,
+        "0": 4,
+        "1": 1
+      },
+      "tangent_index": -1
+    },
+    {
+      "outer": 3,
+      "inner": 8,
+      "partition": 1024,
+      "crossings": 8,
+      "bounded_regions": 9,
+      "winding_regions": {
+        "-1": 4,
+        "0": 4,
+        "1": 1
+      },
+      "tangent_index": -3
+    },
+    {
+      "outer": 3,
+      "inner": 9,
+      "partition": 4096,
+      "crossings": 20,
+      "bounded_regions": 21,
+      "winding_regions": {
+        "-2": 2,
+        "-1": 12,
+        "0": 6,
+        "1": 1
+      },
+      "tangent_index": -7
+    },
+    {
+      "outer": 3,
+      "inner": 10,
+      "partition": 8192,
+      "crossings": 14,
+      "bounded_regions": 15,
+      "winding_regions": {
+        "-1": 10,
+        "0": 4,
+        "1": 1
+      },
+      "tangent_index": -9
+    },
+    {
+      "outer": 3,
+      "inner": 11,
+      "partition": 1024,
+      "crossings": 24,
+      "bounded_regions": 25,
+      "winding_regions": {
+        "-2": 2,
+        "-1": 16,
+        "0": 6,
+        "1": 1
+      },
+      "tangent_index": -11
+    },
+    {
+      "outer": 3,
+      "inner": 12,
+      "partition": 1024,
+      "crossings": 25,
+      "bounded_regions": 26,
+      "winding_regions": {
+        "-2": 2,
+        "-1": 15,
+        "0": 8,
+        "1": 1
+      },
+      "tangent_index": -12
+    },
+    {
+      "outer": 3,
+      "inner": 13,
+      "partition": 1024,
+      "crossings": 26,
+      "bounded_regions": 27,
+      "winding_regions": {
+        "-2": 2,
+        "-1": 18,
+        "0": 6,
+        "1": 1
+      },
+      "tangent_index": -13
+    },
+    {
+      "outer": 3,
+      "inner": 14,
+      "partition": 1024,
+      "crossings": 31,
+      "bounded_regions": 32,
+      "winding_regions": {
+        "-2": 4,
+        "-1": 21,
+        "0": 6,
+        "1": 1
+      },
+      "tangent_index": -14
+    },
+    {
+      "outer": 3,
+      "inner": 15,
+      "partition": 1024,
+      "crossings": 32,
+      "bounded_regions": 33,
+      "winding_regions": {
+        "-2": 2,
+        "-1": 20,
+        "0": 10,
+        "1": 1
+      },
+      "tangent_index": -15
+    },
+    {
+      "outer": 3,
+      "inner": 16,
+      "partition": 1024,
+      "crossings": 41,
+      "bounded_regions": 42,
+      "winding_regions": {
+        "-2": 6,
+        "-1": 25,
+        "0": 10,
+        "1": 1
+      },
+      "tangent_index": -16
+    },
+    {
+      "outer": 3,
+      "inner": 17,
+      "partition": 1024,
+      "crossings": 38,
+      "bounded_regions": 39,
+      "winding_regions": {
+        "-2": 4,
+        "-1": 26,
+        "0": 8,
+        "1": 1
+      },
+      "tangent_index": -17
+    },
+    {
+      "outer": 3,
+      "inner": 18,
+      "partition": 1024,
+      "crossings": 47,
+      "bounded_regions": 48,
+      "winding_regions": {
+        "-3": 2,
+        "-2": 8,
+        "-1": 29,
+        "0": 8,
+        "1": 1
+      },
+      "tangent_index": -18
+    },
+    {
+      "outer": 3,
+      "inner": 19,
+      "partition": 1024,
+      "crossings": 56,
+      "bounded_regions": 57,
+      "winding_regions": {
+        "-3": 2,
+        "-2": 16,
+        "-1": 28,
+        "0": 10,
+        "1": 1
+      },
+      "tangent_index": -19
+    },
+    {
+      "outer": 3,
+      "inner": 20,
+      "partition": 1024,
+      "crossings": 53,
+      "bounded_regions": 54,
+      "winding_regions": {
+        "-3": 2,
+        "-2": 12,
+        "-1": 29,
+        "0": 10,
+        "1": 1
+      },
+      "tangent_index": -20
+    },
+    {
+      "outer": 3,
+      "inner": 21,
+      "partition": 1024,
+      "crossings": 70,
+      "bounded_regions": 71,
+      "winding_regions": {
+        "-4": 2,
+        "-3": 8,
+        "-2": 16,
+        "-1": 34,
+        "0": 10,
+        "1": 1
+      },
+      "tangent_index": -21
+    },
+    {
+      "outer": 3,
+      "inner": 22,
+      "partition": 1024,
+      "crossings": 63,
+      "bounded_regions": 64,
+      "winding_regions": {
+        "-3": 4,
+        "-2": 14,
+        "-1": 33,
+        "0": 12,
+        "1": 1
+      },
+      "tangent_index": -22
+    },
+    {
+      "outer": 3,
+      "inner": 23,
+      "partition": 1024,
+      "crossings": 72,
+      "bounded_regions": 73,
+      "winding_regions": {
+        "-3": 6,
+        "-2": 16,
+        "-1": 40,
+        "0": 10,
+        "1": 1
+      },
+      "tangent_index": -23
+    },
+    {
+      "outer": 3,
+      "inner": 24,
+      "partition": 1024,
+      "crossings": 77,
+      "bounded_regions": 78,
+      "winding_regions": {
+        "-4": 2,
+        "-3": 8,
+        "-2": 20,
+        "-1": 35,
+        "0": 12,
+        "1": 1
+      },
+      "tangent_index": -24
+    },
+    {
+      "outer": 3,
+      "inner": 25,
+      "partition": 1024,
+      "crossings": 78,
+      "bounded_regions": 79,
+      "winding_regions": {
+        "-4": 2,
+        "-3": 8,
+        "-2": 22,
+        "-1": 34,
+        "0": 12,
+        "1": 1
+      },
+      "tangent_index": -25
+    },
+    {
+      "outer": 4,
+      "inner": 3,
+      "partition": 1024,
+      "crossings": 5,
+      "bounded_regions": 6,
+      "winding_regions": {
+        "1": 3,
+        "2": 3
+      },
+      "tangent_index": 4
+    },
+    {
+      "outer": 4,
+      "inner": 4,
+      "partition": 1024,
+      "crossings": 3,
+      "bounded_regions": 4,
+      "winding_regions": {
+        "1": 1,
+        "2": 3
+      },
+      "tangent_index": 4
+    },
+    {
+      "outer": 4,
+      "inner": 5,
+      "partition": 1024,
+      "crossings": 3,
+      "bounded_regions": 4,
+      "winding_regions": {
+        "1": 1,
+        "2": 3
+      },
+      "tangent_index": 4
+    },
+    {
+      "outer": 4,
+      "inner": 6,
+      "partition": 1024,
+      "crossings": 6,
+      "bounded_regions": 7,
+      "winding_regions": {
+        "0": 3,
+        "1": 1,
+        "2": 3
+      },
+      "tangent_index": 1
+    },
+    {
+      "outer": 4,
+      "inner": 7,
+      "partition": 2048,
+      "crossings": 7,
+      "bounded_regions": 8,
+      "winding_regions": {
+        "0": 4,
+        "1": 1,
+        "2": 3
+      },
+      "tangent_index": 0
+    },
+    {
+      "outer": 4,
+      "inner": 8,
+      "partition": 1024,
+      "crossings": 12,
+      "bounded_regions": 13,
+      "winding_regions": {
+        "0": 3,
+        "1": 7,
+        "2": 3
+      },
+      "tangent_index": 1
+    },
+    {
+      "outer": 4,
+      "inner": 9,
+      "partition": 1024,
+      "crossings": 9,
+      "bounded_regions": 10,
+      "winding_regions": {
+        "0": 6,
+        "1": 1,
+        "2": 3
+      },
+      "tangent_index": -2
+    },
+    {
+      "outer": 4,
+      "inner": 10,
+      "partition": 8192,
+      "crossings": 14,
+      "bounded_regions": 15,
+      "winding_regions": {
+        "-1": 4,
+        "0": 5,
+        "1": 3,
+        "2": 3
+      },
+      "tangent_index": -5
+    },
+    {
+      "outer": 4,
+      "inner": 11,
+      "partition": 1024,
+      "crossings": 15,
+      "bounded_regions": 16,
+      "winding_regions": {
+        "-1": 6,
+        "0": 6,
+        "1": 1,
+        "2": 3
+      },
+      "tangent_index": -8
+    },
+    {
+      "outer": 4,
+      "inner": 12,
+      "partition": 8192,
+      "crossings": 16,
+      "bounded_regions": 17,
+      "winding_regions": {
+        "-1": 6,
+        "0": 7,
+        "1": 1,
+        "2": 3
+      },
+      "tangent_index": -9
+    },
+    {
+      "outer": 4,
+      "inner": 13,
+      "partition": 2048,
+      "crossings": 28,
+      "bounded_regions": 29,
+      "winding_regions": {
+        "-2": 1,
+        "-1": 14,
+        "0": 11,
+        "1": 1,
+        "2": 2
+      },
+      "tangent_index": -13
+    },
+    {
+      "outer": 4,
+      "inner": 14,
+      "partition": 1024,
+      "crossings": 21,
+      "bounded_regions": 22,
+      "winding_regions": {
+        "-1": 9,
+        "0": 9,
+        "1": 1,
+        "2": 3
+      },
+      "tangent_index": -14
+    },
+    {
+      "outer": 4,
+      "inner": 15,
+      "partition": 1024,
+      "crossings": 30,
+      "bounded_regions": 31,
+      "winding_regions": {
+        "-1": 14,
+        "0": 11,
+        "1": 3,
+        "2": 3
+      },
+      "tangent_index": -15
+    },
+    {
+      "outer": 4,
+      "inner": 16,
+      "partition": 1024,
+      "crossings": 31,
+      "bounded_regions": 32,
+      "winding_regions": {
+        "-1": 17,
+        "0": 11,
+        "1": 3,
+        "2": 1
+      },
+      "tangent_index": -16
+    },
+    {
+      "outer": 4,
+      "inner": 17,
+      "partition": 1024,
+      "crossings": 42,
+      "bounded_regions": 43,
+      "winding_regions": {
+        "-1": 18,
+        "0": 15,
+        "1": 7,
+        "2": 3
+      },
+      "tangent_index": -17
+    },
+    {
+      "outer": 4,
+      "inner": 18,
+      "partition": 1024,
+      "crossings": 41,
+      "bounded_regions": 42,
+      "winding_regions": {
+        "-2": 1,
+        "-1": 21,
+        "0": 16,
+        "1": 3,
+        "2": 1
+      },
+      "tangent_index": -18
+    },
+    {
+      "outer": 4,
+      "inner": 19,
+      "partition": 1024,
+      "crossings": 44,
+      "bounded_regions": 45,
+      "winding_regions": {
+        "-2": 2,
+        "-1": 22,
+        "0": 17,
+        "1": 3,
+        "2": 1
+      },
+      "tangent_index": -19
+    },
+    {
+      "outer": 4,
+      "inner": 20,
+      "partition": 1024,
+      "crossings": 51,
+      "bounded_regions": 52,
+      "winding_regions": {
+        "-2": 6,
+        "-1": 33,
+        "0": 12,
+        "1": 1
+      },
+      "tangent_index": -20
+    },
+    {
+      "outer": 4,
+      "inner": 21,
+      "partition": 1024,
+      "crossings": 50,
+      "bounded_regions": 51,
+      "winding_regions": {
+        "-2": 2,
+        "-1": 26,
+        "0": 17,
+        "1": 5,
+        "2": 1
+      },
+      "tangent_index": -21
+    },
+    {
+      "outer": 4,
+      "inner": 22,
+      "partition": 1024,
+      "crossings": 49,
+      "bounded_regions": 50,
+      "winding_regions": {
+        "-2": 2,
+        "-1": 29,
+        "0": 16,
+        "1": 3
+      },
+      "tangent_index": -22
+    },
+    {
+      "outer": 4,
+      "inner": 23,
+      "partition": 1024,
+      "crossings": 54,
+      "bounded_regions": 55,
+      "winding_regions": {
+        "-2": 3,
+        "-1": 24,
+        "0": 18,
+        "1": 7,
+        "2": 3
+      },
+      "tangent_index": -23
+    },
+    {
+      "outer": 4,
+      "inner": 24,
+      "partition": 1024,
+      "crossings": 65,
+      "bounded_regions": 66,
+      "winding_regions": {
+        "-2": 6,
+        "-1": 33,
+        "0": 22,
+        "1": 5
+      },
+      "tangent_index": -24
+    },
+    {
+      "outer": 4,
+      "inner": 25,
+      "partition": 1024,
+      "crossings": 70,
+      "bounded_regions": 71,
+      "winding_regions": {
+        "-2": 8,
+        "-1": 38,
+        "0": 22,
+        "1": 3
+      },
+      "tangent_index": -25
+    },
+    {
+      "outer": 5,
+      "inner": 3,
+      "partition": 1024,
+      "crossings": 4,
+      "bounded_regions": 5,
+      "winding_regions": {
+        "1": 1,
+        "2": 4
+      },
+      "tangent_index": 5
+    },
+    {
+      "outer": 5,
+      "inner": 4,
+      "partition": 1024,
+      "crossings": 4,
+      "bounded_regions": 5,
+      "winding_regions": {
+        "1": 1,
+        "2": 4
+      },
+      "tangent_index": 5
+    },
+    {
+      "outer": 5,
+      "inner": 5,
+      "partition": 1024,
+      "crossings": 8,
+      "bounded_regions": 9,
+      "winding_regions": {
+        "1": 3,
+        "2": 4,
+        "3": 2
+      },
+      "tangent_index": 5
+    },
+    {
+      "outer": 5,
+      "inner": 6,
+      "partition": 1024,
+      "crossings": 6,
+      "bounded_regions": 7,
+      "winding_regions": {
+        "1": 2,
+        "2": 4,
+        "3": 1
+      },
+      "tangent_index": 5
+    },
+    {
+      "outer": 5,
+      "inner": 7,
+      "partition": 1024,
+      "crossings": 4,
+      "bounded_regions": 5,
+      "winding_regions": {
+        "1": 1,
+        "2": 4
+      },
+      "tangent_index": 5
+    },
+    {
+      "outer": 5,
+      "inner": 8,
+      "partition": 8192,
+      "crossings": 10,
+      "bounded_regions": 11,
+      "winding_regions": {
+        "0": 2,
+        "1": 2,
+        "2": 6,
+        "3": 1
+      },
+      "tangent_index": 3
+    },
+    {
+      "outer": 5,
+      "inner": 9,
+      "partition": 1024,
+      "crossings": 12,
+      "bounded_regions": 13,
+      "winding_regions": {
+        "-1": 2,
+        "0": 4,
+        "1": 3,
+        "2": 4
+      },
+      "tangent_index": 1
+    },
+    {
+      "outer": 5,
+      "inner": 10,
+      "partition": 1024,
+      "crossings": 10,
+      "bounded_regions": 11,
+      "winding_regions": {
+        "0": 6,
+        "1": 1,
+        "2": 4
+      },
+      "tangent_index": -1
+    },
+    {
+      "outer": 5,
+      "inner": 11,
+      "partition": 8192,
+      "crossings": 16,
+      "bounded_regions": 17,
+      "winding_regions": {
+        "0": 4,
+        "1": 9,
+        "2": 4
+      },
+      "tangent_index": 1
+    },
+    {
+      "outer": 5,
+      "inner": 12,
+      "partition": 2048,
+      "crossings": 16,
+      "bounded_regions": 17,
+      "winding_regions": {
+        "-1": 3,
+        "0": 8,
+        "1": 2,
+        "2": 4
+      },
+      "tangent_index": -5
+    },
+    {
+      "outer": 5,
+      "inner": 13,
+      "partition": 2048,
+      "crossings": 20,
+      "bounded_regions": 21,
+      "winding_regions": {
+        "-1": 6,
+        "0": 8,
+        "1": 3,
+        "2": 4
+      },
+      "tangent_index": -7
+    },
+    {
+      "outer": 5,
+      "inner": 14,
+      "partition": 8192,
+      "crossings": 24,
+      "bounded_regions": 25,
+      "winding_regions": {
+        "-1": 6,
+        "0": 14,
+        "1": 1,
+        "2": 4
+      },
+      "tangent_index": -11
+    },
+    {
+      "outer": 5,
+      "inner": 15,
+      "partition": 4096,
+      "crossings": 48,
+      "bounded_regions": 49,
+      "winding_regions": {
+        "-1": 16,
+        "0": 12,
+        "1": 13,
+        "2": 8
+      },
+      "tangent_index": -15
+    },
+    {
+      "outer": 5,
+      "inner": 16,
+      "partition": 1024,
+      "crossings": 31,
+      "bounded_regions": 32,
+      "winding_regions": {
+        "-1": 12,
+        "0": 12,
+        "1": 4,
+        "2": 4
+      },
+      "tangent_index": -16
+    },
+    {
+      "outer": 5,
+      "inner": 17,
+      "partition": 1024,
+      "crossings": 38,
+      "bounded_regions": 39,
+      "winding_regions": {
+        "-1": 16,
+        "0": 12,
+        "1": 7,
+        "2": 4
+      },
+      "tangent_index": -17
+    },
+    {
+      "outer": 5,
+      "inner": 18,
+      "partition": 1024,
+      "crossings": 33,
+      "bounded_regions": 34,
+      "winding_regions": {
+        "-1": 14,
+        "0": 12,
+        "1": 4,
+        "2": 4
+      },
+      "tangent_index": -18
+    },
+    {
+      "outer": 5,
+      "inner": 19,
+      "partition": 1024,
+      "crossings": 28,
+      "bounded_regions": 29,
+      "winding_regions": {
+        "-1": 12,
+        "0": 12,
+        "1": 1,
+        "2": 4
+      },
+      "tangent_index": -19
+    },
+    {
+      "outer": 5,
+      "inner": 20,
+      "partition": 1024,
+      "crossings": 39,
+      "bounded_regions": 40,
+      "winding_regions": {
+        "-2": 2,
+        "-1": 16,
+        "0": 14,
+        "1": 4,
+        "2": 4
+      },
+      "tangent_index": -20
+    },
+    {
+      "outer": 5,
+      "inner": 21,
+      "partition": 1024,
+      "crossings": 54,
+      "bounded_regions": 55,
+      "winding_regions": {
+        "-2": 4,
+        "-1": 22,
+        "0": 20,
+        "1": 5,
+        "2": 4
+      },
+      "tangent_index": -21
+    },
+    {
+      "outer": 5,
+      "inner": 22,
+      "partition": 1024,
+      "crossings": 49,
+      "bounded_regions": 50,
+      "winding_regions": {
+        "-2": 2,
+        "-1": 20,
+        "0": 20,
+        "1": 4,
+        "2": 4
+      },
+      "tangent_index": -22
+    },
+    {
+      "outer": 5,
+      "inner": 23,
+      "partition": 1024,
+      "crossings": 40,
+      "bounded_regions": 41,
+      "winding_regions": {
+        "-1": 16,
+        "0": 16,
+        "1": 5,
+        "2": 4
+      },
+      "tangent_index": -23
+    },
+    {
+      "outer": 5,
+      "inner": 24,
+      "partition": 1024,
+      "crossings": 47,
+      "bounded_regions": 48,
+      "winding_regions": {
+        "-2": 2,
+        "-1": 20,
+        "0": 18,
+        "1": 4,
+        "2": 4
+      },
+      "tangent_index": -24
+    },
+    {
+      "outer": 5,
+      "inner": 25,
+      "partition": 1024,
+      "crossings": 50,
+      "bounded_regions": 51,
+      "winding_regions": {
+        "-1": 22,
+        "0": 16,
+        "1": 9,
+        "2": 4
+      },
+      "tangent_index": -25
+    },
+    {
+      "outer": 6,
+      "inner": 3,
+      "partition": 1024,
+      "crossings": 9,
+      "bounded_regions": 10,
+      "winding_regions": {
+        "1": 4,
+        "2": 5,
+        "3": 1
+      },
+      "tangent_index": 6
+    },
+    {
+      "outer": 6,
+      "inner": 4,
+      "partition": 1024,
+      "crossings": 5,
+      "bounded_regions": 6,
+      "winding_regions": {
+        "1": 1,
+        "2": 5
+      },
+      "tangent_index": 6
+    },
+    {
+      "outer": 6,
+      "inner": 5,
+      "partition": 1024,
+      "crossings": 7,
+      "bounded_regions": 8,
+      "winding_regions": {
+        "1": 3,
+        "2": 5
+      },
+      "tangent_index": 6
+    },
+    {
+      "outer": 6,
+      "inner": 6,
+      "partition": 1024,
+      "crossings": 5,
+      "bounded_regions": 6,
+      "winding_regions": {
+        "1": 1,
+        "2": 5
+      },
+      "tangent_index": 6
+    },
+    {
+      "outer": 6,
+      "inner": 7,
+      "partition": 1024,
+      "crossings": 5,
+      "bounded_regions": 6,
+      "winding_regions": {
+        "1": 1,
+        "2": 5
+      },
+      "tangent_index": 6
+    },
+    {
+      "outer": 6,
+      "inner": 8,
+      "partition": 1024,
+      "crossings": 5,
+      "bounded_regions": 6,
+      "winding_regions": {
+        "1": 1,
+        "2": 5
+      },
+      "tangent_index": 6
+    },
+    {
+      "outer": 6,
+      "inner": 9,
+      "partition": 1024,
+      "crossings": 25,
+      "bounded_regions": 26,
+      "winding_regions": {
+        "1": 6,
+        "2": 15,
+        "3": 5
+      },
+      "tangent_index": 6
+    },
+    {
+      "outer": 6,
+      "inner": 10,
+      "partition": 2048,
+      "crossings": 12,
+      "bounded_regions": 13,
+      "winding_regions": {
+        "0": 3,
+        "1": 4,
+        "2": 5,
+        "3": 1
+      },
+      "tangent_index": 3
+    },
+    {
+      "outer": 6,
+      "inner": 11,
+      "partition": 8192,
+      "crossings": 19,
+      "bounded_regions": 20,
+      "winding_regions": {
+        "-1": 1,
+        "0": 8,
+        "1": 6,
+        "2": 5
+      },
+      "tangent_index": 0
+    },
+    {
+      "outer": 6,
+      "inner": 12,
+      "partition": 2048,
+      "crossings": 18,
+      "bounded_regions": 19,
+      "winding_regions": {
+        "-1": 1,
+        "0": 9,
+        "1": 4,
+        "2": 5
+      },
+      "tangent_index": -1
+    },
+    {
+      "outer": 6,
+      "inner": 13,
+      "partition": 8192,
+      "crossings": 17,
+      "bounded_regions": 18,
+      "winding_regions": {
+        "-1": 1,
+        "0": 10,
+        "1": 2,
+        "2": 5
+      },
+      "tangent_index": -4
+    },
+    {
+      "outer": 6,
+      "inner": 14,
+      "partition": 2048,
+      "crossings": 20,
+      "bounded_regions": 21,
+      "winding_regions": {
+        "0": 15,
+        "1": 1,
+        "2": 5
+      },
+      "tangent_index": -9
+    },
+    {
+      "outer": 6,
+      "inner": 15,
+      "partition": 4096,
+      "crossings": 19,
+      "bounded_regions": 20,
+      "winding_regions": {
+        "-1": 2,
+        "0": 12,
+        "1": 1,
+        "2": 5
+      },
+      "tangent_index": -8
+    },
+    {
+      "outer": 6,
+      "inner": 16,
+      "partition": 8192,
+      "crossings": 28,
+      "bounded_regions": 29,
+      "winding_regions": {
+        "-1": 5,
+        "0": 17,
+        "1": 2,
+        "2": 5
+      },
+      "tangent_index": -11
+    },
+    {
+      "outer": 6,
+      "inner": 17,
+      "partition": 8192,
+      "crossings": 42,
+      "bounded_regions": 43,
+      "winding_regions": {
+        "-1": 14,
+        "0": 16,
+        "1": 8,
+        "2": 5
+      },
+      "tangent_index": -17
+    },
+    {
+      "outer": 6,
+      "inner": 18,
+      "partition": 2048,
+      "crossings": 37,
+      "bounded_regions": 38,
+      "winding_regions": {
+        "-1": 12,
+        "0": 17,
+        "1": 4,
+        "2": 5
+      },
+      "tangent_index": -18
+    },
+    {
+      "outer": 6,
+      "inner": 19,
+      "partition": 1024,
+      "crossings": 50,
+      "bounded_regions": 51,
+      "winding_regions": {
+        "-1": 20,
+        "0": 10,
+        "1": 16,
+        "2": 5
+      },
+      "tangent_index": -19
+    },
+    {
+      "outer": 6,
+      "inner": 20,
+      "partition": 1024,
+      "crossings": 39,
+      "bounded_regions": 40,
+      "winding_regions": {
+        "-1": 14,
+        "0": 17,
+        "1": 4,
+        "2": 5
+      },
+      "tangent_index": -20
+    },
+    {
+      "outer": 6,
+      "inner": 21,
+      "partition": 1024,
+      "crossings": 44,
+      "bounded_regions": 45,
+      "winding_regions": {
+        "-1": 18,
+        "0": 14,
+        "1": 8,
+        "2": 5
+      },
+      "tangent_index": -21
+    },
+    {
+      "outer": 6,
+      "inner": 22,
+      "partition": 1024,
+      "crossings": 43,
+      "bounded_regions": 44,
+      "winding_regions": {
+        "-1": 18,
+        "0": 15,
+        "1": 6,
+        "2": 5
+      },
+      "tangent_index": -22
+    },
+    {
+      "outer": 6,
+      "inner": 23,
+      "partition": 1024,
+      "crossings": 48,
+      "bounded_regions": 49,
+      "winding_regions": {
+        "-2": 2,
+        "-1": 18,
+        "0": 18,
+        "1": 6,
+        "2": 5
+      },
+      "tangent_index": -23
+    },
+    {
+      "outer": 6,
+      "inner": 24,
+      "partition": 1024,
+      "crossings": 65,
+      "bounded_regions": 66,
+      "winding_regions": {
+        "-2": 5,
+        "-1": 30,
+        "0": 20,
+        "1": 6,
+        "2": 5
+      },
+      "tangent_index": -24
+    },
+    {
+      "outer": 6,
+      "inner": 25,
+      "partition": 1024,
+      "crossings": 58,
+      "bounded_regions": 59,
+      "winding_regions": {
+        "-2": 2,
+        "-1": 22,
+        "0": 24,
+        "1": 6,
+        "2": 5
+      },
+      "tangent_index": -25
+    },
+    {
+      "outer": 7,
+      "inner": 3,
+      "partition": 1024,
+      "crossings": 14,
+      "bounded_regions": 15,
+      "winding_regions": {
+        "1": 7,
+        "2": 6,
+        "3": 2
+      },
+      "tangent_index": 7
+    },
+    {
+      "outer": 7,
+      "inner": 4,
+      "partition": 1024,
+      "crossings": 8,
+      "bounded_regions": 9,
+      "winding_regions": {
+        "1": 2,
+        "2": 6,
+        "3": 1
+      },
+      "tangent_index": 7
+    },
+    {
+      "outer": 7,
+      "inner": 5,
+      "partition": 1024,
+      "crossings": 6,
+      "bounded_regions": 7,
+      "winding_regions": {
+        "1": 1,
+        "2": 6
+      },
+      "tangent_index": 7
+    },
+    {
+      "outer": 7,
+      "inner": 6,
+      "partition": 1024,
+      "crossings": 8,
+      "bounded_regions": 9,
+      "winding_regions": {
+        "1": 2,
+        "2": 6,
+        "3": 1
+      },
+      "tangent_index": 7
+    },
+    {
+      "outer": 7,
+      "inner": 7,
+      "partition": 1024,
+      "crossings": 6,
+      "bounded_regions": 7,
+      "winding_regions": {
+        "1": 1,
+        "2": 6
+      },
+      "tangent_index": 7
+    },
+    {
+      "outer": 7,
+      "inner": 8,
+      "partition": 1024,
+      "crossings": 18,
+      "bounded_regions": 19,
+      "winding_regions": {
+        "1": 4,
+        "2": 12,
+        "3": 3
+      },
+      "tangent_index": 7
+    },
+    {
+      "outer": 7,
+      "inner": 9,
+      "partition": 1024,
+      "crossings": 6,
+      "bounded_regions": 7,
+      "winding_regions": {
+        "1": 1,
+        "2": 6
+      },
+      "tangent_index": 7
+    },
+    {
+      "outer": 7,
+      "inner": 10,
+      "partition": 1024,
+      "crossings": 14,
+      "bounded_regions": 15,
+      "winding_regions": {
+        "1": 3,
+        "2": 10,
+        "3": 2
+      },
+      "tangent_index": 7
+    },
+    {
+      "outer": 7,
+      "inner": 11,
+      "partition": 1024,
+      "crossings": 18,
+      "bounded_regions": 19,
+      "winding_regions": {
+        "1": 7,
+        "2": 6,
+        "3": 6
+      },
+      "tangent_index": 7
+    },
+    {
+      "outer": 7,
+      "inner": 12,
+      "partition": 8192,
+      "crossings": 16,
+      "bounded_regions": 17,
+      "winding_regions": {
+        "0": 4,
+        "1": 6,
+        "2": 6,
+        "3": 1
+      },
+      "tangent_index": 3
+    },
+    {
+      "outer": 7,
+      "inner": 13,
+      "partition": 2048,
+      "crossings": 24,
+      "bounded_regions": 25,
+      "winding_regions": {
+        "0": 6,
+        "1": 7,
+        "2": 10,
+        "3": 2
+      },
+      "tangent_index": 1
+    },
+    {
+      "outer": 7,
+      "inner": 14,
+      "partition": 4096,
+      "crossings": 36,
+      "bounded_regions": 37,
+      "winding_regions": {
+        "-1": 3,
+        "0": 12,
+        "1": 7,
+        "2": 12,
+        "3": 3
+      },
+      "tangent_index": 1
+    },
+    {
+      "outer": 7,
+      "inner": 15,
+      "partition": 8192,
+      "crossings": 26,
+      "bounded_regions": 27,
+      "winding_regions": {
+        "-1": 2,
+        "0": 16,
+        "1": 3,
+        "2": 6
+      },
+      "tangent_index": -5
+    },
+    {
+      "outer": 7,
+      "inner": 16,
+      "partition": 32768,
+      "crossings": 26,
+      "bounded_regions": 27,
+      "winding_regions": {
+        "-1": 2,
+        "0": 14,
+        "1": 5,
+        "2": 6
+      },
+      "tangent_index": -5
+    },
+    {
+      "outer": 7,
+      "inner": 17,
+      "partition": 1024,
+      "crossings": 24,
+      "bounded_regions": 25,
+      "winding_regions": {
+        "0": 18,
+        "1": 1,
+        "2": 6
+      },
+      "tangent_index": -11
+    },
+    {
+      "outer": 7,
+      "inner": 18,
+      "partition": 32768,
+      "crossings": 42,
+      "bounded_regions": 43,
+      "winding_regions": {
+        "-1": 6,
+        "0": 24,
+        "1": 5,
+        "2": 8
+      },
+      "tangent_index": -13
+    },
+    {
+      "outer": 7,
+      "inner": 19,
+      "partition": 16384,
+      "crossings": 44,
+      "bounded_regions": 45,
+      "winding_regions": {
+        "-1": 12,
+        "0": 20,
+        "1": 7,
+        "2": 6
+      },
+      "tangent_index": -19
+    },
+    {
+      "outer": 7,
+      "inner": 20,
+      "partition": 2048,
+      "crossings": 69,
+      "bounded_regions": 70,
+      "winding_regions": {
+        "-1": 21,
+        "0": 30,
+        "1": 13,
+        "2": 6
+      },
+      "tangent_index": -20
+    },
+    {
+      "outer": 7,
+      "inner": 21,
+      "partition": 1024,
+      "crossings": 62,
+      "bounded_regions": 63,
+      "winding_regions": {
+        "-1": 20,
+        "0": 22,
+        "1": 15,
+        "2": 6
+      },
+      "tangent_index": -21
+    },
+    {
+      "outer": 7,
+      "inner": 22,
+      "partition": 1024,
+      "crossings": 53,
+      "bounded_regions": 54,
+      "winding_regions": {
+        "-1": 18,
+        "0": 18,
+        "1": 12,
+        "2": 6
+      },
+      "tangent_index": -22
+    },
+    {
+      "outer": 7,
+      "inner": 23,
+      "partition": 1024,
+      "crossings": 72,
+      "bounded_regions": 73,
+      "winding_regions": {
+        "-1": 24,
+        "0": 24,
+        "1": 19,
+        "2": 6
+      },
+      "tangent_index": -23
+    },
+    {
+      "outer": 7,
+      "inner": 24,
+      "partition": 1024,
+      "crossings": 53,
+      "bounded_regions": 54,
+      "winding_regions": {
+        "-1": 19,
+        "0": 22,
+        "1": 7,
+        "2": 6
+      },
+      "tangent_index": -24
+    },
+    {
+      "outer": 7,
+      "inner": 25,
+      "partition": 1024,
+      "crossings": 46,
+      "bounded_regions": 47,
+      "winding_regions": {
+        "-1": 16,
+        "0": 22,
+        "1": 3,
+        "2": 6
+      },
+      "tangent_index": -25
+    },
+    {
+      "outer": 8,
+      "inner": 3,
+      "partition": 1024,
+      "crossings": 15,
+      "bounded_regions": 16,
+      "winding_regions": {
+        "1": 6,
+        "2": 7,
+        "3": 3
+      },
+      "tangent_index": 8
+    },
+    {
+      "outer": 8,
+      "inner": 4,
+      "partition": 1024,
+      "crossings": 15,
+      "bounded_regions": 16,
+      "winding_regions": {
+        "1": 4,
+        "2": 9,
+        "3": 3
+      },
+      "tangent_index": 8
+    },
+    {
+      "outer": 8,
+      "inner": 5,
+      "partition": 1024,
+      "crossings": 15,
+      "bounded_regions": 16,
+      "winding_regions": {
+        "1": 6,
+        "2": 7,
+        "3": 3
+      },
+      "tangent_index": 8
+    },
+    {
+      "outer": 8,
+      "inner": 6,
+      "partition": 1024,
+      "crossings": 7,
+      "bounded_regions": 8,
+      "winding_regions": {
+        "1": 1,
+        "2": 7
+      },
+      "tangent_index": 8
+    },
+    {
+      "outer": 8,
+      "inner": 7,
+      "partition": 1024,
+      "crossings": 13,
+      "bounded_regions": 14,
+      "winding_regions": {
+        "1": 5,
+        "2": 7,
+        "3": 2
+      },
+      "tangent_index": 8
+    },
+    {
+      "outer": 8,
+      "inner": 8,
+      "partition": 1024,
+      "crossings": 11,
+      "bounded_regions": 12,
+      "winding_regions": {
+        "1": 3,
+        "2": 7,
+        "3": 2
+      },
+      "tangent_index": 8
+    },
+    {
+      "outer": 8,
+      "inner": 9,
+      "partition": 1024,
+      "crossings": 11,
+      "bounded_regions": 12,
+      "winding_regions": {
+        "1": 3,
+        "2": 7,
+        "3": 2
+      },
+      "tangent_index": 8
+    },
+    {
+      "outer": 8,
+      "inner": 10,
+      "partition": 1024,
+      "crossings": 15,
+      "bounded_regions": 16,
+      "winding_regions": {
+        "1": 5,
+        "2": 7,
+        "3": 4
+      },
+      "tangent_index": 8
+    },
+    {
+      "outer": 8,
+      "inner": 11,
+      "partition": 1024,
+      "crossings": 27,
+      "bounded_regions": 28,
+      "winding_regions": {
+        "1": 8,
+        "2": 13,
+        "3": 7
+      },
+      "tangent_index": 8
+    },
+    {
+      "outer": 8,
+      "inner": 12,
+      "partition": 1024,
+      "crossings": 21,
+      "bounded_regions": 22,
+      "winding_regions": {
+        "1": 8,
+        "2": 9,
+        "3": 5
+      },
+      "tangent_index": 8
+    },
+    {
+      "outer": 8,
+      "inner": 13,
+      "partition": 1024,
+      "crossings": 21,
+      "bounded_regions": 22,
+      "winding_regions": {
+        "1": 8,
+        "2": 7,
+        "3": 7
+      },
+      "tangent_index": 8
+    },
+    {
+      "outer": 8,
+      "inner": 14,
+      "partition": 16384,
+      "crossings": 18,
+      "bounded_regions": 19,
+      "winding_regions": {
+        "0": 3,
+        "1": 8,
+        "2": 7,
+        "3": 1
+      },
+      "tangent_index": 5
+    },
+    {
+      "outer": 8,
+      "inner": 15,
+      "partition": 16384,
+      "crossings": 27,
+      "bounded_regions": 28,
+      "winding_regions": {
+        "-1": 1,
+        "0": 6,
+        "1": 9,
+        "2": 9,
+        "3": 3
+      },
+      "tangent_index": 2
+    },
+    {
+      "outer": 8,
+      "inner": 16,
+      "partition": 4096,
+      "crossings": 34,
+      "bounded_regions": 35,
+      "winding_regions": {
+        "0": 9,
+        "1": 14,
+        "2": 9,
+        "3": 3
+      },
+      "tangent_index": -1
+    },
+    {
+      "outer": 8,
+      "inner": 17,
+      "partition": 8192,
+      "crossings": 39,
+      "bounded_regions": 40,
+      "winding_regions": {
+        "-1": 1,
+        "0": 14,
+        "1": 14,
+        "2": 9,
+        "3": 2
+      },
+      "tangent_index": -4
+    },
+    {
+      "outer": 8,
+      "inner": 18,
+      "partition": 16384,
+      "crossings": 40,
+      "bounded_regions": 41,
+      "winding_regions": {
+        "-2": 1,
+        "-1": 3,
+        "0": 18,
+        "1": 12,
+        "2": 7
+      },
+      "tangent_index": -7
+    },
+    {
+      "outer": 8,
+      "inner": 19,
+      "partition": 32768,
+      "crossings": 33,
+      "bounded_regions": 34,
+      "winding_regions": {
+        "-1": 3,
+        "0": 18,
+        "1": 6,
+        "2": 7
+      },
+      "tangent_index": -10
+    },
+    {
+      "outer": 8,
+      "inner": 20,
+      "partition": 4096,
+      "crossings": 56,
+      "bounded_regions": 57,
+      "winding_regions": {
+        "-1": 7,
+        "0": 35,
+        "1": 8,
+        "2": 7
+      },
+      "tangent_index": -13
+    },
+    {
+      "outer": 8,
+      "inner": 22,
+      "partition": 4096,
+      "crossings": 69,
+      "bounded_regions": 70,
+      "winding_regions": {
+        "-1": 18,
+        "0": 23,
+        "1": 22,
+        "2": 7
+      },
+      "tangent_index": -22
+    },
+    {
+      "outer": 8,
+      "inner": 23,
+      "partition": 2048,
+      "crossings": 70,
+      "bounded_regions": 71,
+      "winding_regions": {
+        "-1": 18,
+        "0": 26,
+        "1": 20,
+        "2": 7
+      },
+      "tangent_index": -23
+    },
+    {
+      "outer": 8,
+      "inner": 24,
+      "partition": 1024,
+      "crossings": 75,
+      "bounded_regions": 76,
+      "winding_regions": {
+        "-2": 1,
+        "-1": 22,
+        "0": 26,
+        "1": 20,
+        "2": 7
+      },
+      "tangent_index": -24
+    },
+    {
+      "outer": 8,
+      "inner": 25,
+      "partition": 1024,
+      "crossings": 68,
+      "bounded_regions": 69,
+      "winding_regions": {
+        "-1": 24,
+        "0": 22,
+        "1": 16,
+        "2": 7
+      },
+      "tangent_index": -25
+    },
+    {
+      "outer": 9,
+      "inner": 3,
+      "partition": 1024,
+      "crossings": 16,
+      "bounded_regions": 17,
+      "winding_regions": {
+        "1": 5,
+        "2": 8,
+        "3": 4
+      },
+      "tangent_index": 9
+    },
+    {
+      "outer": 9,
+      "inner": 4,
+      "partition": 1024,
+      "crossings": 16,
+      "bounded_regions": 17,
+      "winding_regions": {
+        "1": 4,
+        "2": 10,
+        "3": 3
+      },
+      "tangent_index": 9
+    },
+    {
+      "outer": 9,
+      "inner": 5,
+      "partition": 1024,
+      "crossings": 24,
+      "bounded_regions": 25,
+      "winding_regions": {
+        "1": 7,
+        "2": 12,
+        "3": 6
+      },
+      "tangent_index": 9
+    },
+    {
+      "outer": 9,
+      "inner": 6,
+      "partition": 1024,
+      "crossings": 24,
+      "bounded_regions": 25,
+      "winding_regions": {
+        "1": 8,
+        "2": 9,
+        "3": 8
+      },
+      "tangent_index": 9
+    },
+    {
+      "outer": 9,
+      "inner": 7,
+      "partition": 1024,
+      "crossings": 24,
+      "bounded_regions": 25,
+      "winding_regions": {
+        "1": 9,
+        "2": 8,
+        "3": 8
+      },
+      "tangent_index": 9
+    },
+    {
+      "outer": 9,
+      "inner": 8,
+      "partition": 1024,
+      "crossings": 14,
+      "bounded_regions": 15,
+      "winding_regions": {
+        "1": 4,
+        "2": 8,
+        "3": 3
+      },
+      "tangent_index": 9
+    },
+    {
+      "outer": 9,
+      "inner": 9,
+      "partition": 1024,
+      "crossings": 12,
+      "bounded_regions": 13,
+      "winding_regions": {
+        "1": 3,
+        "2": 8,
+        "3": 2
+      },
+      "tangent_index": 9
+    },
+    {
+      "outer": 9,
+      "inner": 10,
+      "partition": 1024,
+      "crossings": 16,
+      "bounded_regions": 17,
+      "winding_regions": {
+        "1": 4,
+        "2": 10,
+        "3": 3
+      },
+      "tangent_index": 9
+    },
+    {
+      "outer": 9,
+      "inner": 11,
+      "partition": 1024,
+      "crossings": 24,
+      "bounded_regions": 25,
+      "winding_regions": {
+        "1": 5,
+        "2": 16,
+        "3": 4
+      },
+      "tangent_index": 9
+    },
+    {
+      "outer": 9,
+      "inner": 12,
+      "partition": 1024,
+      "crossings": 28,
+      "bounded_regions": 29,
+      "winding_regions": {
+        "1": 9,
+        "2": 12,
+        "3": 8
+      },
+      "tangent_index": 9
+    },
+    {
+      "outer": 9,
+      "inner": 13,
+      "partition": 1024,
+      "crossings": 40,
+      "bounded_regions": 41,
+      "winding_regions": {
+        "1": 17,
+        "2": 16,
+        "3": 8
+      },
+      "tangent_index": 9
+    },
+    {
+      "outer": 9,
+      "inner": 14,
+      "partition": 1024,
+      "crossings": 34,
+      "bounded_regions": 35,
+      "winding_regions": {
+        "1": 17,
+        "2": 10,
+        "3": 8
+      },
+      "tangent_index": 9
+    },
+    {
+      "outer": 9,
+      "inner": 15,
+      "partition": 1024,
+      "crossings": 24,
+      "bounded_regions": 25,
+      "winding_regions": {
+        "1": 9,
+        "2": 8,
+        "3": 8
+      },
+      "tangent_index": 9
+    },
+    {
+      "outer": 9,
+      "inner": 16,
+      "partition": 32768,
+      "crossings": 26,
+      "bounded_regions": 27,
+      "winding_regions": {
+        "0": 4,
+        "1": 12,
+        "2": 8,
+        "3": 3
+      },
+      "tangent_index": 5
+    },
+    {
+      "outer": 9,
+      "inner": 17,
+      "partition": 8192,
+      "crossings": 48,
+      "bounded_regions": 49,
+      "winding_regions": {
+        "0": 8,
+        "1": 19,
+        "2": 14,
+        "3": 8
+      },
+      "tangent_index": 1
+    },
+    {
+      "outer": 9,
+      "inner": 18,
+      "partition": 8192,
+      "crossings": 42,
+      "bounded_regions": 43,
+      "winding_regions": {
+        "0": 6,
+        "1": 17,
+        "2": 12,
+        "3": 8
+      },
+      "tangent_index": -1
+    },
+    {
+      "outer": 9,
+      "inner": 19,
+      "partition": 8192,
+      "crossings": 56,
+      "bounded_regions": 57,
+      "winding_regions": {
+        "0": 16,
+        "1": 9,
+        "2": 24,
+        "3": 8
+      },
+      "tangent_index": -7
+    },
+    {
+      "outer": 9,
+      "inner": 20,
+      "partition": 16384,
+      "crossings": 46,
+      "bounded_regions": 47,
+      "winding_regions": {
+        "-1": 1,
+        "0": 16,
+        "1": 17,
+        "2": 10,
+        "3": 3
+      },
+      "tangent_index": -7
+    },
+    {
+      "outer": 9,
+      "inner": 21,
+      "partition": 16384,
+      "crossings": 48,
+      "bounded_regions": 49,
+      "winding_regions": {
+        "-1": 2,
+        "0": 20,
+        "1": 17,
+        "2": 8,
+        "3": 2
+      },
+      "tangent_index": -11
+    },
+    {
+      "outer": 9,
+      "inner": 22,
+      "partition": 65536,
+      "crossings": 56,
+      "bounded_regions": 57,
+      "winding_regions": {
+        "-1": 4,
+        "0": 24,
+        "1": 20,
+        "2": 8,
+        "3": 1
+      },
+      "tangent_index": -13
+    },
+    {
+      "outer": 9,
+      "inner": 23,
+      "partition": 32768,
+      "crossings": 64,
+      "bounded_regions": 65,
+      "winding_regions": {
+        "0": 24,
+        "1": 9,
+        "2": 24,
+        "3": 8
+      },
+      "tangent_index": -15
+    },
+    {
+      "outer": 9,
+      "inner": 24,
+      "partition": 4096,
+      "crossings": 73,
+      "bounded_regions": 74,
+      "winding_regions": {
+        "-1": 16,
+        "0": 24,
+        "1": 23,
+        "2": 10,
+        "3": 1
+      },
+      "tangent_index": -24
+    },
+    {
+      "outer": 9,
+      "inner": 25,
+      "partition": 2048,
+      "crossings": 82,
+      "bounded_regions": 83,
+      "winding_regions": {
+        "-1": 20,
+        "0": 24,
+        "1": 25,
+        "2": 12,
+        "3": 2
+      },
+      "tangent_index": -25
+    },
+    {
+      "outer": 10,
+      "inner": 3,
+      "partition": 1024,
+      "crossings": 23,
+      "bounded_regions": 24,
+      "winding_regions": {
+        "1": 9,
+        "2": 9,
+        "3": 6
+      },
+      "tangent_index": 10
+    },
+    {
+      "outer": 10,
+      "inner": 4,
+      "partition": 1024,
+      "crossings": 21,
+      "bounded_regions": 22,
+      "winding_regions": {
+        "1": 6,
+        "2": 11,
+        "3": 5
+      },
+      "tangent_index": 10
+    },
+    {
+      "outer": 10,
+      "inner": 5,
+      "partition": 1024,
+      "crossings": 27,
+      "bounded_regions": 28,
+      "winding_regions": {
+        "1": 10,
+        "2": 15,
+        "3": 3
+      },
+      "tangent_index": 10
+    },
+    {
+      "outer": 10,
+      "inner": 6,
+      "partition": 1024,
+      "crossings": 35,
+      "bounded_regions": 36,
+      "winding_regions": {
+        "1": 10,
+        "2": 16,
+        "3": 9,
+        "4": 1
+      },
+      "tangent_index": 10
+    },
+    {
+      "outer": 10,
+      "inner": 7,
+      "partition": 1024,
+      "crossings": 35,
+      "bounded_regions": 36,
+      "winding_regions": {
+        "1": 10,
+        "2": 15,
+        "3": 9,
+        "4": 2
+      },
+      "tangent_index": 10
+    },
+    {
+      "outer": 10,
+      "inner": 8,
+      "partition": 1024,
+      "crossings": 27,
+      "bounded_regions": 28,
+      "winding_regions": {
+        "1": 10,
+        "2": 9,
+        "3": 9
+      },
+      "tangent_index": 10
+    },
+    {
+      "outer": 10,
+      "inner": 9,
+      "partition": 1024,
+      "crossings": 21,
+      "bounded_regions": 22,
+      "winding_regions": {
+        "1": 7,
+        "2": 10,
+        "3": 4,
+        "4": 1
+      },
+      "tangent_index": 10
+    },
+    {
+      "outer": 10,
+      "inner": 10,
+      "partition": 1024,
+      "crossings": 21,
+      "bounded_regions": 22,
+      "winding_regions": {
+        "1": 5,
+        "2": 9,
+        "3": 6,
+        "4": 2
+      },
+      "tangent_index": 10
+    },
+    {
+      "outer": 10,
+      "inner": 11,
+      "partition": 1024,
+      "crossings": 27,
+      "bounded_regions": 28,
+      "winding_regions": {
+        "1": 10,
+        "2": 9,
+        "3": 9
+      },
+      "tangent_index": 10
+    },
+    {
+      "outer": 10,
+      "inner": 12,
+      "partition": 1024,
+      "crossings": 29,
+      "bounded_regions": 30,
+      "winding_regions": {
+        "1": 9,
+        "2": 13,
+        "3": 8
+      },
+      "tangent_index": 10
+    },
+    {
+      "outer": 10,
+      "inner": 13,
+      "partition": 1024,
+      "crossings": 33,
+      "bounded_regions": 34,
+      "winding_regions": {
+        "1": 10,
+        "2": 15,
+        "3": 9
+      },
+      "tangent_index": 10
+    },
+    {
+      "outer": 10,
+      "inner": 14,
+      "partition": 1024,
+      "crossings": 57,
+      "bounded_regions": 58,
+      "winding_regions": {
+        "1": 16,
+        "2": 18,
+        "3": 21,
+        "4": 3
+      },
+      "tangent_index": 10
+    },
+    {
+      "outer": 10,
+      "inner": 15,
+      "partition": 1024,
+      "crossings": 41,
+      "bounded_regions": 42,
+      "winding_regions": {
+        "1": 18,
+        "2": 15,
+        "3": 9
+      },
+      "tangent_index": 10
+    },
+    {
+      "outer": 10,
+      "inner": 16,
+      "partition": 2048,
+      "crossings": 41,
+      "bounded_regions": 42,
+      "winding_regions": {
+        "1": 20,
+        "2": 10,
+        "3": 11,
+        "4": 1
+      },
+      "tangent_index": 10
+    },
+    {
+      "outer": 10,
+      "inner": 17,
+      "partition": 1024,
+      "crossings": 63,
+      "bounded_regions": 64,
+      "winding_regions": {
+        "1": 10,
+        "2": 18,
+        "3": 27,
+        "4": 9
+      },
+      "tangent_index": 10
+    },
+    {
+      "outer": 10,
+      "inner": 18,
+      "partition": 32768,
+      "crossings": 32,
+      "bounded_regions": 33,
+      "winding_regions": {
+        "0": 3,
+        "1": 16,
+        "2": 9,
+        "3": 5
+      },
+      "tangent_index": 7
+    },
+    {
+      "outer": 10,
+      "inner": 19,
+      "partition": 32768,
+      "crossings": 49,
+      "bounded_regions": 50,
+      "winding_regions": {
+        "0": 8,
+        "1": 15,
+        "2": 17,
+        "3": 10
+      },
+      "tangent_index": 2
+    },
+    {
+      "outer": 10,
+      "inner": 20,
+      "partition": 8192,
+      "crossings": 48,
+      "bounded_regions": 49,
+      "winding_regions": {
+        "0": 9,
+        "1": 16,
+        "2": 15,
+        "3": 9
+      },
+      "tangent_index": 1
+    },
+    {
+      "outer": 10,
+      "inner": 21,
+      "partition": 16384,
+      "crossings": 51,
+      "bounded_regions": 52,
+      "winding_regions": {
+        "0": 8,
+        "1": 22,
+        "2": 13,
+        "3": 9
+      },
+      "tangent_index": -4
+    },
+    {
+      "outer": 10,
+      "inner": 22,
+      "partition": 16384,
+      "crossings": 60,
+      "bounded_regions": 61,
+      "winding_regions": {
+        "0": 14,
+        "1": 22,
+        "2": 16,
+        "3": 9
+      },
+      "tangent_index": -7
+    },
+    {
+      "outer": 10,
+      "inner": 23,
+      "partition": 16384,
+      "crossings": 51,
+      "bounded_regions": 52,
+      "winding_regions": {
+        "-1": 3,
+        "0": 18,
+        "1": 16,
+        "2": 9,
+        "3": 6
+      },
+      "tangent_index": -8
+    },
+    {
+      "outer": 10,
+      "inner": 24,
+      "partition": 65536,
+      "crossings": 82,
+      "bounded_regions": 83,
+      "winding_regions": {
+        "-2": 1,
+        "-1": 8,
+        "0": 30,
+        "1": 31,
+        "2": 11,
+        "3": 2
+      },
+      "tangent_index": -15
+    },
+    {
+      "outer": 10,
+      "inner": 25,
+      "partition": 65536,
+      "crossings": 89,
+      "bounded_regions": 90,
+      "winding_regions": {
+        "-1": 13,
+        "0": 25,
+        "1": 37,
+        "2": 12,
+        "3": 3
+      },
+      "tangent_index": -20
+    },
+    {
+      "outer": 11,
+      "inner": 3,
+      "partition": 1024,
+      "crossings": 30,
+      "bounded_regions": 31,
+      "winding_regions": {
+        "1": 11,
+        "2": 10,
+        "3": 8,
+        "4": 2
+      },
+      "tangent_index": 11
+    },
+    {
+      "outer": 11,
+      "inner": 4,
+      "partition": 1024,
+      "crossings": 30,
+      "bounded_regions": 31,
+      "winding_regions": {
+        "1": 6,
+        "2": 20,
+        "3": 5
+      },
+      "tangent_index": 11
+    },
+    {
+      "outer": 11,
+      "inner": 5,
+      "partition": 1024,
+      "crossings": 30,
+      "bounded_regions": 31,
+      "winding_regions": {
+        "1": 7,
+        "2": 16,
+        "3": 6,
+        "4": 2
+      },
+      "tangent_index": 11
+    },
+    {
+      "outer": 11,
+      "inner": 6,
+      "partition": 1024,
+      "crossings": 40,
+      "bounded_regions": 41,
+      "winding_regions": {
+        "1": 10,
+        "2": 19,
+        "3": 10,
+        "4": 2
+      },
+      "tangent_index": 11
+    },
+    {
+      "outer": 11,
+      "inner": 7,
+      "partition": 1024,
+      "crossings": 46,
+      "bounded_regions": 47,
+      "winding_regions": {
+        "1": 11,
+        "2": 22,
+        "3": 10,
+        "4": 4
+      },
+      "tangent_index": 11
+    },
+    {
+      "outer": 11,
+      "inner": 8,
+      "partition": 1024,
+      "crossings": 40,
+      "bounded_regions": 41,
+      "winding_regions": {
+        "1": 10,
+        "2": 19,
+        "3": 10,
+        "4": 2
+      },
+      "tangent_index": 11
+    },
+    {
+      "outer": 11,
+      "inner": 9,
+      "partition": 1024,
+      "crossings": 30,
+      "bounded_regions": 31,
+      "winding_regions": {
+        "1": 11,
+        "2": 10,
+        "3": 10
+      },
+      "tangent_index": 11
+    },
+    {
+      "outer": 11,
+      "inner": 10,
+      "partition": 1024,
+      "crossings": 28,
+      "bounded_regions": 29,
+      "winding_regions": {
+        "1": 8,
+        "2": 12,
+        "3": 7,
+        "4": 2
+      },
+      "tangent_index": 11
+    },
+    {
+      "outer": 11,
+      "inner": 11,
+      "partition": 1024,
+      "crossings": 22,
+      "bounded_regions": 23,
+      "winding_regions": {
+        "1": 5,
+        "2": 10,
+        "3": 6,
+        "4": 2
+      },
+      "tangent_index": 11
+    },
+    {
+      "outer": 11,
+      "inner": 12,
+      "partition": 1024,
+      "crossings": 26,
+      "bounded_regions": 27,
+      "winding_regions": {
+        "1": 8,
+        "2": 12,
+        "3": 7
+      },
+      "tangent_index": 11
+    },
+    {
+      "outer": 11,
+      "inner": 13,
+      "partition": 1024,
+      "crossings": 30,
+      "bounded_regions": 31,
+      "winding_regions": {
+        "1": 11,
+        "2": 10,
+        "3": 10
+      },
+      "tangent_index": 11
+    },
+    {
+      "outer": 11,
+      "inner": 14,
+      "partition": 1024,
+      "crossings": 50,
+      "bounded_regions": 51,
+      "winding_regions": {
+        "1": 11,
+        "2": 30,
+        "3": 10
+      },
+      "tangent_index": 11
+    },
+    {
+      "outer": 11,
+      "inner": 15,
+      "partition": 1024,
+      "crossings": 50,
+      "bounded_regions": 51,
+      "winding_regions": {
+        "1": 19,
+        "2": 22,
+        "3": 10
+      },
+      "tangent_index": 11
+    },
+    {
+      "outer": 11,
+      "inner": 16,
+      "partition": 1024,
+      "crossings": 58,
+      "bounded_regions": 59,
+      "winding_regions": {
+        "1": 23,
+        "2": 22,
+        "3": 12,
+        "4": 2
+      },
+      "tangent_index": 11
+    },
+    {
+      "outer": 11,
+      "inner": 17,
+      "partition": 1024,
+      "crossings": 58,
+      "bounded_regions": 59,
+      "winding_regions": {
+        "1": 23,
+        "2": 16,
+        "3": 18,
+        "4": 2
+      },
+      "tangent_index": 11
+    },
+    {
+      "outer": 11,
+      "inner": 18,
+      "partition": 2048,
+      "crossings": 48,
+      "bounded_regions": 49,
+      "winding_regions": {
+        "1": 23,
+        "2": 14,
+        "3": 10,
+        "4": 2
+      },
+      "tangent_index": 11
+    },
+    {
+      "outer": 11,
+      "inner": 19,
+      "partition": 1024,
+      "crossings": 70,
+      "bounded_regions": 71,
+      "winding_regions": {
+        "1": 11,
+        "2": 20,
+        "3": 30,
+        "4": 10
+      },
+      "tangent_index": 11
+    },
+    {
+      "outer": 11,
+      "inner": 20,
+      "partition": 65536,
+      "crossings": 46,
+      "bounded_regions": 47,
+      "winding_regions": {
+        "0": 2,
+        "1": 18,
+        "2": 17,
+        "3": 10
+      },
+      "tangent_index": 9
+    },
+    {
+      "outer": 11,
+      "inner": 21,
+      "partition": 65536,
+      "crossings": 52,
+      "bounded_regions": 53,
+      "winding_regions": {
+        "0": 6,
+        "1": 15,
+        "2": 22,
+        "3": 10
+      },
+      "tangent_index": 5
+    },
+    {
+      "outer": 11,
+      "inner": 22,
+      "partition": 32768,
+      "crossings": 58,
+      "bounded_regions": 59,
+      "winding_regions": {
+        "0": 10,
+        "1": 23,
+        "2": 16,
+        "3": 10
+      },
+      "tangent_index": -1
+    },
+    {
+      "outer": 11,
+      "inner": 23,
+      "partition": 16384,
+      "crossings": 66,
+      "bounded_regions": 67,
+      "winding_regions": {
+        "-1": 2,
+        "0": 16,
+        "1": 21,
+        "2": 18,
+        "3": 10
+      },
+      "tangent_index": -5
+    },
+    {
+      "outer": 11,
+      "inner": 24,
+      "partition": 4096,
+      "crossings": 60,
+      "bounded_regions": 61,
+      "winding_regions": {
+        "0": 10,
+        "1": 21,
+        "2": 20,
+        "3": 10
+      },
+      "tangent_index": -9
+    },
+    {
+      "outer": 11,
+      "inner": 25,
+      "partition": 8192,
+      "crossings": 84,
+      "bounded_regions": 85,
+      "winding_regions": {
+        "0": 20,
+        "1": 35,
+        "2": 20,
+        "3": 10
+      },
+      "tangent_index": -11
+    },
+    {
+      "outer": 12,
+      "inner": 3,
+      "partition": 1024,
+      "crossings": 31,
+      "bounded_regions": 32,
+      "winding_regions": {
+        "1": 8,
+        "2": 11,
+        "3": 10,
+        "4": 3
+      },
+      "tangent_index": 12
+    },
+    {
+      "outer": 12,
+      "inner": 4,
+      "partition": 1024,
+      "crossings": 35,
+      "bounded_regions": 36,
+      "winding_regions": {
+        "1": 10,
+        "2": 13,
+        "3": 11,
+        "4": 2
+      },
+      "tangent_index": 12
+    },
+    {
+      "outer": 12,
+      "inner": 5,
+      "partition": 1024,
+      "crossings": 41,
+      "bounded_regions": 42,
+      "winding_regions": {
+        "1": 14,
+        "2": 19,
+        "3": 9
+      },
+      "tangent_index": 12
+    },
+    {
+      "outer": 12,
+      "inner": 6,
+      "partition": 1024,
+      "crossings": 53,
+      "bounded_regions": 54,
+      "winding_regions": {
+        "1": 14,
+        "2": 20,
+        "3": 17,
+        "4": 3
+      },
+      "tangent_index": 12
+    },
+    {
+      "outer": 12,
+      "inner": 7,
+      "partition": 1024,
+      "crossings": 53,
+      "bounded_regions": 54,
+      "winding_regions": {
+        "1": 12,
+        "2": 23,
+        "3": 15,
+        "4": 4
+      },
+      "tangent_index": 12
+    },
+    {
+      "outer": 12,
+      "inner": 8,
+      "partition": 1024,
+      "crossings": 47,
+      "bounded_regions": 48,
+      "winding_regions": {
+        "1": 12,
+        "2": 20,
+        "3": 12,
+        "4": 3,
+        "5": 1
+      },
+      "tangent_index": 12
+    },
+    {
+      "outer": 12,
+      "inner": 9,
+      "partition": 1024,
+      "crossings": 47,
+      "bounded_regions": 48,
+      "winding_regions": {
+        "1": 12,
+        "2": 19,
+        "3": 12,
+        "4": 4,
+        "5": 1
+      },
+      "tangent_index": 12
+    },
+    {
+      "outer": 12,
+      "inner": 10,
+      "partition": 1024,
+      "crossings": 33,
+      "bounded_regions": 34,
+      "winding_regions": {
+        "1": 12,
+        "2": 11,
+        "3": 11
+      },
+      "tangent_index": 12
+    },
+    {
+      "outer": 12,
+      "inner": 11,
+      "partition": 1024,
+      "crossings": 35,
+      "bounded_regions": 36,
+      "winding_regions": {
+        "1": 11,
+        "2": 14,
+        "3": 8,
+        "4": 3
+      },
+      "tangent_index": 12
+    },
+    {
+      "outer": 12,
+      "inner": 12,
+      "partition": 1024,
+      "crossings": 27,
+      "bounded_regions": 28,
+      "winding_regions": {
+        "1": 7,
+        "2": 11,
+        "3": 8,
+        "4": 2
+      },
+      "tangent_index": 12
+    },
+    {
+      "outer": 12,
+      "inner": 13,
+      "partition": 1024,
+      "crossings": 31,
+      "bounded_regions": 32,
+      "winding_regions": {
+        "1": 7,
+        "2": 13,
+        "3": 9,
+        "4": 3
+      },
+      "tangent_index": 12
+    },
+    {
+      "outer": 12,
+      "inner": 14,
+      "partition": 1024,
+      "crossings": 45,
+      "bounded_regions": 46,
+      "winding_regions": {
+        "1": 16,
+        "2": 15,
+        "3": 15
+      },
+      "tangent_index": 12
+    },
+    {
+      "outer": 12,
+      "inner": 15,
+      "partition": 1024,
+      "crossings": 53,
+      "bounded_regions": 54,
+      "winding_regions": {
+        "1": 13,
+        "2": 23,
+        "3": 14,
+        "4": 4
+      },
+      "tangent_index": 12
+    },
+    {
+      "outer": 12,
+      "inner": 16,
+      "partition": 1024,
+      "crossings": 61,
+      "bounded_regions": 62,
+      "winding_regions": {
+        "1": 19,
+        "2": 22,
+        "3": 18,
+        "4": 3
+      },
+      "tangent_index": 12
+    },
+    {
+      "outer": 12,
+      "inner": 17,
+      "partition": 1024,
+      "crossings": 71,
+      "bounded_regions": 72,
+      "winding_regions": {
+        "1": 28,
+        "2": 27,
+        "3": 15,
+        "4": 2
+      },
+      "tangent_index": 12
+    },
+    {
+      "outer": 12,
+      "inner": 18,
+      "partition": 1024,
+      "crossings": 81,
+      "bounded_regions": 82,
+      "winding_regions": {
+        "1": 28,
+        "2": 34,
+        "3": 17,
+        "4": 3
+      },
+      "tangent_index": 12
+    },
+    {
+      "outer": 12,
+      "inner": 19,
+      "partition": 1024,
+      "crossings": 75,
+      "bounded_regions": 76,
+      "winding_regions": {
+        "1": 28,
+        "2": 26,
+        "3": 19,
+        "4": 3
+      },
+      "tangent_index": 12
+    },
+    {
+      "outer": 12,
+      "inner": 20,
+      "partition": 2048,
+      "crossings": 63,
+      "bounded_regions": 64,
+      "winding_regions": {
+        "1": 24,
+        "2": 24,
+        "3": 13,
+        "4": 3
+      },
+      "tangent_index": 12
+    },
+    {
+      "outer": 12,
+      "inner": 21,
+      "partition": 1024,
+      "crossings": 55,
+      "bounded_regions": 56,
+      "winding_regions": {
+        "1": 12,
+        "2": 22,
+        "3": 11,
+        "4": 11
+      },
+      "tangent_index": 12
+    },
+    {
+      "outer": 12,
+      "inner": 22,
+      "partition": 65536,
+      "crossings": 57,
+      "bounded_regions": 58,
+      "winding_regions": {
+        "1": 21,
+        "2": 23,
+        "3": 12,
+        "4": 2
+      },
+      "tangent_index": 12
+    },
+    {
+      "outer": 12,
+      "inner": 23,
+      "partition": 32768,
+      "crossings": 67,
+      "bounded_regions": 68,
+      "winding_regions": {
+        "-1": 1,
+        "0": 10,
+        "1": 22,
+        "2": 21,
+        "3": 14
+      },
+      "tangent_index": 4
+    },
+    {
+      "outer": 12,
+      "inner": 24,
+      "partition": 131072,
+      "crossings": 72,
+      "bounded_regions": 73,
+      "winding_regions": {
+        "0": 11,
+        "1": 22,
+        "2": 24,
+        "3": 15,
+        "4": 1
+      },
+      "tangent_index": 1
+    },
+    {
+      "outer": 12,
+      "inner": 25,
+      "partition": 32768,
+      "crossings": 71,
+      "bounded_regions": 72,
+      "winding_regions": {
+        "-1": 1,
+        "0": 14,
+        "1": 21,
+        "2": 23,
+        "3": 11,
+        "4": 2
+      },
+      "tangent_index": -4
+    },
+    {
+      "outer": 13,
+      "inner": 3,
+      "partition": 1024,
+      "crossings": 52,
+      "bounded_regions": 53,
+      "winding_regions": {
+        "1": 13,
+        "2": 20,
+        "3": 12,
+        "4": 8
+      },
+      "tangent_index": 13
+    },
+    {
+      "outer": 13,
+      "inner": 4,
+      "partition": 1024,
+      "crossings": 44,
+      "bounded_regions": 45,
+      "winding_regions": {
+        "1": 12,
+        "2": 14,
+        "3": 15,
+        "4": 4
+      },
+      "tangent_index": 13
+    },
+    {
+      "outer": 13,
+      "inner": 5,
+      "partition": 1024,
+      "crossings": 72,
+      "bounded_regions": 73,
+      "winding_regions": {
+        "1": 13,
+        "2": 36,
+        "3": 12,
+        "4": 12
+      },
+      "tangent_index": 13
+    },
+    {
+      "outer": 13,
+      "inner": 6,
+      "partition": 1024,
+      "crossings": 62,
+      "bounded_regions": 63,
+      "winding_regions": {
+        "1": 17,
+        "2": 22,
+        "3": 20,
+        "4": 4
+      },
+      "tangent_index": 13
+    },
+    {
+      "outer": 13,
+      "inner": 7,
+      "partition": 1024,
+      "crossings": 68,
+      "bounded_regions": 69,
+      "winding_regions": {
+        "1": 13,
+        "2": 28,
+        "3": 20,
+        "4": 8
+      },
+      "tangent_index": 13
+    },
+    {
+      "outer": 13,
+      "inner": 8,
+      "partition": 1024,
+      "crossings": 66,
+      "bounded_regions": 67,
+      "winding_regions": {
+        "1": 10,
+        "2": 33,
+        "3": 18,
+        "4": 6
+      },
+      "tangent_index": 13
+    },
+    {
+      "outer": 13,
+      "inner": 9,
+      "partition": 1024,
+      "crossings": 60,
+      "bounded_regions": 61,
+      "winding_regions": {
+        "1": 11,
+        "2": 30,
+        "3": 14,
+        "4": 4,
+        "5": 2
+      },
+      "tangent_index": 13
+    },
+    {
+      "outer": 13,
+      "inner": 10,
+      "partition": 1024,
+      "crossings": 58,
+      "bounded_regions": 59,
+      "winding_regions": {
+        "1": 14,
+        "2": 25,
+        "3": 13,
+        "4": 6,
+        "5": 1
+      },
+      "tangent_index": 13
+    },
+    {
+      "outer": 13,
+      "inner": 11,
+      "partition": 1024,
+      "crossings": 36,
+      "bounded_regions": 37,
+      "winding_regions": {
+        "1": 13,
+        "2": 12,
+        "3": 12
+      },
+      "tangent_index": 13
+    },
+    {
+      "outer": 13,
+      "inner": 12,
+      "partition": 1024,
+      "crossings": 46,
+      "bounded_regions": 47,
+      "winding_regions": {
+        "1": 13,
+        "2": 16,
+        "3": 13,
+        "4": 4,
+        "5": 1
+      },
+      "tangent_index": 13
+    },
+    {
+      "outer": 13,
+      "inner": 13,
+      "partition": 1024,
+      "crossings": 36,
+      "bounded_regions": 37,
+      "winding_regions": {
+        "1": 7,
+        "2": 12,
+        "3": 8,
+        "4": 8,
+        "5": 2
+      },
+      "tangent_index": 13
+    },
+    {
+      "outer": 13,
+      "inner": 14,
+      "partition": 1024,
+      "crossings": 54,
+      "bounded_regions": 55,
+      "winding_regions": {
+        "1": 13,
+        "2": 18,
+        "3": 18,
+        "4": 6
+      },
+      "tangent_index": 13
+    },
+    {
+      "outer": 13,
+      "inner": 15,
+      "partition": 1024,
+      "crossings": 52,
+      "bounded_regions": 53,
+      "winding_regions": {
+        "1": 17,
+        "2": 20,
+        "3": 16
+      },
+      "tangent_index": 13
+    },
+    {
+      "outer": 13,
+      "inner": 16,
+      "partition": 1024,
+      "crossings": 70,
+      "bounded_regions": 71,
+      "winding_regions": {
+        "1": 20,
+        "2": 26,
+        "3": 19,
+        "4": 6
+      },
+      "tangent_index": 13
+    },
+    {
+      "outer": 13,
+      "inner": 17,
+      "partition": 1024,
+      "crossings": 72,
+      "bounded_regions": 73,
+      "winding_regions": {
+        "1": 19,
+        "2": 36,
+        "3": 18
+      },
+      "tangent_index": 13
+    },
+    {
+      "outer": 13,
+      "inner": 18,
+      "partition": 1024,
+      "crossings": 82,
+      "bounded_regions": 83,
+      "winding_regions": {
+        "1": 30,
+        "2": 34,
+        "3": 17,
+        "4": 2
+      },
+      "tangent_index": 13
+    },
+    {
+      "outer": 13,
+      "inner": 19,
+      "partition": 1024,
+      "crossings": 92,
+      "bounded_regions": 93,
+      "winding_regions": {
+        "1": 29,
+        "2": 32,
+        "3": 28,
+        "4": 4
+      },
+      "tangent_index": 13
+    },
+    {
+      "outer": 13,
+      "inner": 20,
+      "partition": 1024,
+      "crossings": 96,
+      "bounded_regions": 97,
+      "winding_regions": {
+        "1": 25,
+        "2": 42,
+        "3": 15,
+        "4": 12,
+        "5": 3
+      },
+      "tangent_index": 13
+    },
+    {
+      "outer": 13,
+      "inner": 21,
+      "partition": 1024,
+      "crossings": 108,
+      "bounded_regions": 109,
+      "winding_regions": {
+        "1": 29,
+        "2": 32,
+        "3": 26,
+        "4": 20,
+        "5": 2
+      },
+      "tangent_index": 13
+    },
+    {
+      "outer": 13,
+      "inner": 22,
+      "partition": 2048,
+      "crossings": 78,
+      "bounded_regions": 79,
+      "winding_regions": {
+        "1": 23,
+        "2": 30,
+        "3": 15,
+        "4": 10,
+        "5": 1
+      },
+      "tangent_index": 13
+    },
+    {
+      "outer": 13,
+      "inner": 23,
+      "partition": 2048,
+      "crossings": 108,
+      "bounded_regions": 109,
+      "winding_regions": {
+        "1": 13,
+        "2": 24,
+        "3": 24,
+        "4": 36,
+        "5": 12
+      },
+      "tangent_index": 13
+    },
+    {
+      "outer": 13,
+      "inner": 24,
+      "partition": 16384,
+      "crossings": 64,
+      "bounded_regions": 65,
+      "winding_regions": {
+        "1": 22,
+        "2": 25,
+        "3": 13,
+        "4": 4,
+        "5": 1
+      },
+      "tangent_index": 13
+    },
+    {
+      "outer": 13,
+      "inner": 25,
+      "partition": 16384,
+      "crossings": 76,
+      "bounded_regions": 77,
+      "winding_regions": {
+        "0": 8,
+        "1": 21,
+        "2": 26,
+        "3": 18,
+        "4": 4
+      },
+      "tangent_index": 5
+    },
+    {
+      "outer": 14,
+      "inner": 3,
+      "partition": 1024,
+      "crossings": 55,
+      "bounded_regions": 56,
+      "winding_regions": {
+        "1": 14,
+        "2": 13,
+        "3": 19,
+        "4": 9,
+        "5": 1
+      },
+      "tangent_index": 14
+    },
+    {
+      "outer": 14,
+      "inner": 4,
+      "partition": 1024,
+      "crossings": 53,
+      "bounded_regions": 54,
+      "winding_regions": {
+        "1": 16,
+        "2": 17,
+        "3": 15,
+        "4": 6
+      },
+      "tangent_index": 14
+    },
+    {
+      "outer": 14,
+      "inner": 5,
+      "partition": 1024,
+      "crossings": 65,
+      "bounded_regions": 66,
+      "winding_regions": {
+        "1": 18,
+        "2": 21,
+        "3": 20,
+        "4": 7
+      },
+      "tangent_index": 14
+    },
+    {
+      "outer": 14,
+      "inner": 6,
+      "partition": 1024,
+      "crossings": 83,
+      "bounded_regions": 84,
+      "winding_regions": {
+        "1": 20,
+        "2": 24,
+        "3": 29,
+        "4": 11
+      },
+      "tangent_index": 14
+    },
+    {
+      "outer": 14,
+      "inner": 7,
+      "partition": 1024,
+      "crossings": 71,
+      "bounded_regions": 72,
+      "winding_regions": {
+        "1": 14,
+        "2": 29,
+        "3": 23,
+        "4": 6
+      },
+      "tangent_index": 14
+    },
+    {
+      "outer": 14,
+      "inner": 8,
+      "partition": 1024,
+      "crossings": 67,
+      "bounded_regions": 68,
+      "winding_regions": {
+        "1": 14,
+        "2": 26,
+        "3": 23,
+        "4": 5
+      },
+      "tangent_index": 14
+    },
+    {
+      "outer": 14,
+      "inner": 9,
+      "partition": 1024,
+      "crossings": 73,
+      "bounded_regions": 74,
+      "winding_regions": {
+        "1": 14,
+        "2": 29,
+        "3": 22,
+        "4": 8,
+        "5": 1
+      },
+      "tangent_index": 14
+    },
+    {
+      "outer": 14,
+      "inner": 10,
+      "partition": 1024,
+      "crossings": 71,
+      "bounded_regions": 72,
+      "winding_regions": {
+        "1": 14,
+        "2": 26,
+        "3": 24,
+        "4": 5,
+        "5": 3
+      },
+      "tangent_index": 14
+    },
+    {
+      "outer": 14,
+      "inner": 11,
+      "partition": 1024,
+      "crossings": 79,
+      "bounded_regions": 80,
+      "winding_regions": {
+        "1": 12,
+        "2": 32,
+        "3": 20,
+        "4": 13,
+        "5": 3
+      },
+      "tangent_index": 14
+    },
+    {
+      "outer": 14,
+      "inner": 12,
+      "partition": 1024,
+      "crossings": 39,
+      "bounded_regions": 40,
+      "winding_regions": {
+        "1": 14,
+        "2": 13,
+        "3": 13
+      },
+      "tangent_index": 14
+    },
+    {
+      "outer": 14,
+      "inner": 13,
+      "partition": 1024,
+      "crossings": 55,
+      "bounded_regions": 56,
+      "winding_regions": {
+        "1": 16,
+        "2": 18,
+        "3": 15,
+        "4": 5,
+        "5": 2
+      },
+      "tangent_index": 14
+    },
+    {
+      "outer": 14,
+      "inner": 14,
+      "partition": 1024,
+      "crossings": 45,
+      "bounded_regions": 46,
+      "winding_regions": {
+        "1": 11,
+        "2": 13,
+        "3": 14,
+        "4": 6,
+        "5": 2
+      },
+      "tangent_index": 14
+    },
+    {
+      "outer": 14,
+      "inner": 15,
+      "partition": 1024,
+      "crossings": 49,
+      "bounded_regions": 50,
+      "winding_regions": {
+        "1": 13,
+        "2": 17,
+        "3": 15,
+        "4": 5
+      },
+      "tangent_index": 14
+    },
+    {
+      "outer": 14,
+      "inner": 16,
+      "partition": 1024,
+      "crossings": 55,
+      "bounded_regions": 56,
+      "winding_regions": {
+        "1": 14,
+        "2": 17,
+        "3": 19,
+        "4": 6
+      },
+      "tangent_index": 14
+    },
+    {
+      "outer": 14,
+      "inner": 17,
+      "partition": 1024,
+      "crossings": 79,
+      "bounded_regions": 80,
+      "winding_regions": {
+        "1": 19,
+        "2": 29,
+        "3": 21,
+        "4": 10,
+        "5": 1
+      },
+      "tangent_index": 14
+    },
+    {
+      "outer": 14,
+      "inner": 18,
+      "partition": 1024,
+      "crossings": 89,
+      "bounded_regions": 90,
+      "winding_regions": {
+        "1": 27,
+        "2": 28,
+        "3": 28,
+        "4": 7
+      },
+      "tangent_index": 14
+    },
+    {
+      "outer": 14,
+      "inner": 19,
+      "partition": 1024,
+      "crossings": 91,
+      "bounded_regions": 92,
+      "winding_regions": {
+        "1": 31,
+        "2": 35,
+        "3": 22,
+        "4": 4
+      },
+      "tangent_index": 14
+    },
+    {
+      "outer": 14,
+      "inner": 20,
+      "partition": 1024,
+      "crossings": 89,
+      "bounded_regions": 90,
+      "winding_regions": {
+        "1": 30,
+        "2": 36,
+        "3": 21,
+        "4": 3
+      },
+      "tangent_index": 14
+    },
+    {
+      "outer": 14,
+      "inner": 21,
+      "partition": 1024,
+      "crossings": 101,
+      "bounded_regions": 102,
+      "winding_regions": {
+        "1": 32,
+        "2": 41,
+        "3": 23,
+        "4": 6
+      },
+      "tangent_index": 14
+    },
+    {
+      "outer": 14,
+      "inner": 22,
+      "partition": 1024,
+      "crossings": 113,
+      "bounded_regions": 114,
+      "winding_regions": {
+        "1": 30,
+        "2": 40,
+        "3": 33,
+        "4": 11
+      },
+      "tangent_index": 14
+    },
+    {
+      "outer": 14,
+      "inner": 23,
+      "partition": 2048,
+      "crossings": 123,
+      "bounded_regions": 124,
+      "winding_regions": {
+        "1": 26,
+        "2": 40,
+        "3": 41,
+        "4": 15,
+        "5": 2
+      },
+      "tangent_index": 14
+    },
+    {
+      "outer": 14,
+      "inner": 24,
+      "partition": 2048,
+      "crossings": 101,
+      "bounded_regions": 102,
+      "winding_regions": {
+        "1": 24,
+        "2": 44,
+        "3": 23,
+        "4": 11
+      },
+      "tangent_index": 14
+    },
+    {
+      "outer": 14,
+      "inner": 25,
+      "partition": 2048,
+      "crossings": 117,
+      "bounded_regions": 118,
+      "winding_regions": {
+        "1": 14,
+        "2": 26,
+        "3": 26,
+        "4": 39,
+        "5": 13
+      },
+      "tangent_index": 14
+    },
+    {
+      "outer": 15,
+      "inner": 3,
+      "partition": 1024,
+      "crossings": 58,
+      "bounded_regions": 59,
+      "winding_regions": {
+        "1": 15,
+        "2": 14,
+        "3": 18,
+        "4": 10,
+        "5": 2
+      },
+      "tangent_index": 15
+    },
+    {
+      "outer": 15,
+      "inner": 4,
+      "partition": 1024,
+      "crossings": 60,
+      "bounded_regions": 61,
+      "winding_regions": {
+        "1": 19,
+        "2": 18,
+        "3": 18,
+        "4": 6
+      },
+      "tangent_index": 15
+    },
+    {
+      "outer": 15,
+      "inner": 5,
+      "partition": 1024,
+      "crossings": 82,
+      "bounded_regions": 83,
+      "winding_regions": {
+        "1": 19,
+        "2": 32,
+        "3": 18,
+        "4": 14
+      },
+      "tangent_index": 15
+    },
+    {
+      "outer": 15,
+      "inner": 6,
+      "partition": 1024,
+      "crossings": 98,
+      "bounded_regions": 99,
+      "winding_regions": {
+        "1": 15,
+        "2": 28,
+        "3": 21,
+        "4": 28,
+        "5": 7
+      },
+      "tangent_index": 15
+    },
+    {
+      "outer": 15,
+      "inner": 7,
+      "partition": 1024,
+      "crossings": 82,
+      "bounded_regions": 83,
+      "winding_regions": {
+        "1": 11,
+        "2": 30,
+        "3": 30,
+        "4": 12
+      },
+      "tangent_index": 15
+    },
+    {
+      "outer": 15,
+      "inner": 8,
+      "partition": 1024,
+      "crossings": 78,
+      "bounded_regions": 79,
+      "winding_regions": {
+        "1": 17,
+        "2": 27,
+        "3": 29,
+        "4": 6
+      },
+      "tangent_index": 15
+    },
+    {
+      "outer": 15,
+      "inner": 9,
+      "partition": 1024,
+      "crossings": 74,
+      "bounded_regions": 75,
+      "winding_regions": {
+        "1": 15,
+        "2": 28,
+        "3": 26,
+        "4": 6
+      },
+      "tangent_index": 15
+    },
+    {
+      "outer": 15,
+      "inner": 10,
+      "partition": 1024,
+      "crossings": 82,
+      "bounded_regions": 83,
+      "winding_regions": {
+        "1": 14,
+        "2": 31,
+        "3": 23,
+        "4": 12,
+        "5": 3
+      },
+      "tangent_index": 15
+    },
+    {
+      "outer": 15,
+      "inner": 11,
+      "partition": 1024,
+      "crossings": 78,
+      "bounded_regions": 79,
+      "winding_regions": {
+        "1": 15,
+        "2": 30,
+        "3": 24,
+        "4": 8,
+        "5": 2
+      },
+      "tangent_index": 15
+    },
+    {
+      "outer": 15,
+      "inner": 12,
+      "partition": 1024,
+      "crossings": 84,
+      "bounded_regions": 85,
+      "winding_regions": {
+        "1": 14,
+        "2": 33,
+        "3": 21,
+        "4": 14,
+        "5": 3
+      },
+      "tangent_index": 15
+    },
+    {
+      "outer": 15,
+      "inner": 13,
+      "partition": 1024,
+      "crossings": 70,
+      "bounded_regions": 71,
+      "winding_regions": {
+        "1": 15,
+        "2": 28,
+        "3": 14,
+        "4": 14
+      },
+      "tangent_index": 15
+    },
+    {
+      "outer": 15,
+      "inner": 14,
+      "partition": 1024,
+      "crossings": 60,
+      "bounded_regions": 61,
+      "winding_regions": {
+        "1": 15,
+        "2": 20,
+        "3": 17,
+        "4": 6,
+        "5": 3
+      },
+      "tangent_index": 15
+    },
+    {
+      "outer": 15,
+      "inner": 15,
+      "partition": 1024,
+      "crossings": 66,
+      "bounded_regions": 67,
+      "winding_regions": {
+        "1": 15,
+        "2": 14,
+        "3": 18,
+        "4": 14,
+        "5": 6
+      },
+      "tangent_index": 15
+    },
+    {
+      "outer": 15,
+      "inner": 16,
+      "partition": 1024,
+      "crossings": 62,
+      "bounded_regions": 63,
+      "winding_regions": {
+        "1": 15,
+        "2": 16,
+        "3": 21,
+        "4": 10,
+        "5": 1
+      },
+      "tangent_index": 15
+    },
+    {
+      "outer": 15,
+      "inner": 17,
+      "partition": 1024,
+      "crossings": 66,
+      "bounded_regions": 67,
+      "winding_regions": {
+        "1": 15,
+        "2": 18,
+        "3": 26,
+        "4": 8
+      },
+      "tangent_index": 15
+    },
+    {
+      "outer": 15,
+      "inner": 18,
+      "partition": 1024,
+      "crossings": 92,
+      "bounded_regions": 93,
+      "winding_regions": {
+        "1": 15,
+        "2": 32,
+        "3": 23,
+        "4": 20,
+        "5": 3
+      },
+      "tangent_index": 15
+    },
+    {
+      "outer": 15,
+      "inner": 19,
+      "partition": 1024,
+      "crossings": 106,
+      "bounded_regions": 107,
+      "winding_regions": {
+        "1": 29,
+        "2": 34,
+        "3": 30,
+        "4": 12,
+        "5": 2
+      },
+      "tangent_index": 15
+    },
+    {
+      "outer": 15,
+      "inner": 20,
+      "partition": 1024,
+      "crossings": 112,
+      "bounded_regions": 113,
+      "winding_regions": {
+        "1": 50,
+        "2": 42,
+        "3": 21
+      },
+      "tangent_index": 15
+    },
+    {
+      "outer": 15,
+      "inner": 21,
+      "partition": 1024,
+      "crossings": 102,
+      "bounded_regions": 103,
+      "winding_regions": {
+        "1": 33,
+        "2": 44,
+        "3": 24,
+        "4": 2
+      },
+      "tangent_index": 15
+    },
+    {
+      "outer": 15,
+      "inner": 22,
+      "partition": 1024,
+      "crossings": 104,
+      "bounded_regions": 105,
+      "winding_regions": {
+        "1": 32,
+        "2": 44,
+        "3": 23,
+        "4": 6
+      },
+      "tangent_index": 15
+    },
+    {
+      "outer": 15,
+      "inner": 23,
+      "partition": 1024,
+      "crossings": 122,
+      "bounded_regions": 123,
+      "winding_regions": {
+        "0": 2,
+        "1": 39,
+        "2": 44,
+        "3": 30,
+        "4": 8
+      },
+      "tangent_index": 15
+    },
+    {
+      "outer": 15,
+      "inner": 24,
+      "partition": 1024,
+      "crossings": 126,
+      "bounded_regions": 127,
+      "winding_regions": {
+        "1": 27,
+        "2": 40,
+        "3": 41,
+        "4": 18,
+        "5": 1
+      },
+      "tangent_index": 15
+    },
+    {
+      "outer": 15,
+      "inner": 25,
+      "partition": 2048,
+      "crossings": 130,
+      "bounded_regions": 131,
+      "winding_regions": {
+        "1": 23,
+        "2": 46,
+        "3": 46,
+        "4": 16
+      },
+      "tangent_index": 15
+    }
+  ],
+  "unresolved": []
+}

@@ -48,9 +48,9 @@ censuses. The 2 / 3 case also has its [hand proof](two_lobes.md).
 
 In particular, this is a statement about **all** regions of the smooth
 4 / 7 curve, including any too small to see in the image. It is not an
-inference from an absence of blue pixels. It adds two curves to the earlier
-five completed smooth censuses; 314 of the 321 regular rhythm pairs remain
-without such a census in this notebook.
+inference from an absence of blue pixels. These three examples are also
+included in the [complete smooth atlas](smooth_atlas.md), which now covers
+all 321 regular rhythm pairs.
 
 ## Where the zero goes in the region formula
 

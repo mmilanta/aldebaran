@@ -280,7 +280,10 @@ class IntersectionCertificate:
                 x -= (d * f.real - b * f.imag) / det
                 y -= (-c * f.real + a * f.imag) / det
             found = False
-            for bits in [30, 28, 26, 24]:
+            # Some valid roots sit very close to an isolating-box boundary.
+            # Try smaller image boxes too; every hint still needs the same
+            # exact inclusion, contraction, and transversality checks.
+            for bits in [40, 38, 36, 34, 32, 30, 28, 26, 24]:
                 radius = Fraction(1, 2**bits)
                 mx = Fraction(round(x * 2**44), 2**44)
                 my = Fraction(round(y * 2**44), 2**44)

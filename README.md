@@ -64,9 +64,16 @@ transverse double point. Run `python3 experiments/certify_intersections.py`;
 it uses only the standard library. A separate
 [hand calculation for rhythms 2 / 3](experiments/two_lobes.md) proves its
 single crossing by elementary trigonometry and a polynomial inequality.
-The [three zero-tangent-index curves](experiments/zero_turns.md) have now
-also passed the rational smooth census, bringing the total to seven
-completed cases; 314 regular pairs remain without a complete smooth region census.
+The [complete smooth atlas](experiments/smooth_atlas.md) now certifies
+crossings and winding regions for **all 321 regular pairs**. Needle's
+cusp remains separate. The [JSON record](experiments/smooth_atlas.json)
+stores counts and successful partitions; the verifier reruns the rational
+proofs independently of those counts:
+
+```sh
+python3 experiments/verify_smooth_atlas.py --pair 4 7
+python3 experiments/verify_smooth_atlas.py --jobs 2
+```
 
 [Two lobes, two ways to turn](experiments/two_lobes.html) is a quieter
 starting point for these counts. Follow rhythms 2 / 3 with a slider or
