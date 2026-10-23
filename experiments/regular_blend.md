@@ -11,6 +11,12 @@ of −2. Equal endpoint counts leave room for different routes. Here is
 an explicit route with a certificate over its **entire continuous
 parameter domain**, rather than a sampled sequence of regular drawings.
 
+Whitney’s [1937 deformation theorem, Theorem 1 on page 279](https://www.numdam.org/item/CM_1937__4__276_0.pdf)
+states that regular closed plane curves can be connected through regular
+curves exactly when their tangent rotation numbers agree. It guarantees
+that a route exists. The formula and certificates here give one particular
+route for these two drawings.
+
 ## Blend angles and distances
 
 Write the endpoint curves as

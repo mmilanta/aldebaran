@@ -122,3 +122,9 @@ An independent polynomial proof of the regular route runs with
 `python3 experiments/regular_blend_algebra.py`: all five possible
 non-axial cosine alignments give velocities pointing the same way,
 so no logarithmic-velocity segment can reach zero.
+
+A further [arm-length detour](experiments/arm_detour.md) connects all three
+original zero-turn curves using finite Fourier sums. Lengthen the first
+arm to 300 for 2 / 3 → 4 / 7, or to 700 for 4 / 7 → 6 / 11; blend there,
+then shorten it again. `python3 experiments/arm_detour.py` certifies all
+six continuous legs with positive speed bounds, using the standard library.
