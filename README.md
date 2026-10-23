@@ -94,3 +94,27 @@ three zero-index pairs. Rhythms 4 / 7 have eight bounded regions, all with
 counts 0, +1, or +2, while the tangent's net count is zero. Run
 `python3 experiments/zero_turns.py` for the exact certificates. Its optional
 `--figure` uses NumPy, Matplotlib, and Shapely to recreate the illustration.
+
+[Two routes between two zeros](experiments/blend.html) follows the next
+question: can the 2 / 3 drawing change into 4 / 7 without a stationary
+point? A straight blend develops exactly two pairs of ordinary cusps,
+near 22.63% and 50.89%, with tangent index −2 between them. A second route
+blends angles and distances and keeps its velocity nonzero throughout.
+Switch routes at the same blend weight; a whole drawing, a velocity
+trace, and a close-up show the difference. Nothing animates. A standalone
+SVG compares the routes without JavaScript. The
+[cusp calculation](experiments/blend_cusps.md) uses exact polynomial root
+isolation; the [regular-route certificate](experiments/regular_blend.md)
+covers every time and blend weight with rational bounds, proving speed
+greater than four drawing units per radian. Both use only the standard
+library:
+
+```sh
+python3 experiments/blend_cusps.py
+python3 experiments/regular_blend.py
+node experiments/blend_check.js
+```
+
+Add `--figure` to the first command to regenerate the still SVG. Syntax
+checks are `node --check experiments/blend_math.js` and
+`node --check experiments/blend.js`.

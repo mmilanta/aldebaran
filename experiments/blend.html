@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101323">
+  <meta name="description" content="Two routes between orbital drawings: a straight blend makes cusps; a blend of angles and distances keeps moving.">
+  <title>Aldebaran · Two routes between two zeros</title>
+  <style>
+    :root { color-scheme: dark; font-family: ui-sans-serif, system-ui, sans-serif; background: #101323; color: #f4f1e8; }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    main { margin: auto; padding: clamp(1.2rem, 4vw, 3rem); max-width: 76rem; }
+    a { color: #e8b66e; }
+    .back { display: inline-block; margin-bottom: 2rem; font-size: .85rem; }
+    .eyebrow { color: #e8b66e; font-size: .75rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
+    h1 { max-width: 54rem; font-size: clamp(2.5rem, 6vw, 5rem); letter-spacing: -.06em; line-height: 1.05; margin: .8rem 0 1rem; overflow-wrap: anywhere; }
+    p { color: #c7c7d4; line-height: 1.7; max-width: 47rem; }
+    .controls { margin: 2rem 0 1.6rem; }
+    fieldset { border: 0; padding: 0; margin: 0 0 .7rem; display: flex; flex-wrap: wrap; gap: .6rem 1rem; }
+    legend { color: #c7c7d4; font-size: .85rem; margin-bottom: .6rem; }
+    fieldset label { display: flex; gap: .5rem; align-items: center; background: #171b2e; border: 1px solid #555b78; border-radius: .5rem; padding: .55rem .8rem; font-size: .9rem; }
+    input[type="radio"] { accent-color: #e8b66e; width: 1rem; height: 1rem; margin: 0; flex-shrink: 0; }
+    #route-description { margin: 0 0 1.2rem; min-height: 3.4em; font-size: .9rem; }
+    .slider-label { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .6rem; font-size: 1rem; }
+    output { color: #e8b66e; font-variant-numeric: tabular-nums; }
+    input[type="range"] { display: block; width: 100%; min-height: 2.5rem; margin: .3rem 0; accent-color: #e8b66e; }
+    .intervals { display: flex; height: .4rem; margin: 0 .5rem 1rem; gap: 3px; }
+    .intervals span { background: #7e847f; border-radius: 2px; }
+    .intervals .middle { background: #9fc7eb; }
+    .intervals.regular span { background: #7e847f; }
+    .stops, .lens-controls { display: flex; gap: .5rem; flex-wrap: wrap; }
+    button { font: inherit; font-size: .9rem; color: inherit; background: #22263b; border: 1px solid #555b78; border-radius: .5rem; padding: .65rem .85rem; cursor: pointer; }
+    button:hover { background: #333a55; }
+    button[aria-pressed="true"] { border-color: #e8b66e; background: #3c322c; }
+    :focus-visible { outline: 3px solid #e8b66e; outline-offset: 4px; }
+    .readouts { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 2rem; row-gap: .4rem; margin-top: 1.2rem; }
+    .readouts p { margin: 0; }
+    .readouts output { font-size: 1.8rem; margin-right: .3rem; }
+    #phase { min-height: 3.4em; margin: .6rem 0 0; font-size: .9rem; }
+    .diagrams { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 1.5rem; align-items: start; }
+    figure { min-width: 0; margin: 0; }
+    .drawing { grid-row: span 2; }
+    .panel { background: #0b0e1a; border: 1px solid #383b50; border-radius: 1rem; overflow: hidden; }
+    svg { display: block; width: 100%; height: auto; }
+    .outline { fill: none; stroke: #9999ae; stroke-width: 1.4; }
+    .highlight { fill: none; stroke-width: 2.5; stroke-linecap: round; }
+    .gold { stroke: #e8b66e; }
+    .blue { stroke: #9fc7eb; }
+    .arrows { fill: none; stroke: #f4f1e8; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+    .marked { fill: #0b0e1a; stroke: #e8b66e; stroke-width: 2; }
+    .marked.blue { stroke: #9fc7eb; }
+    .origin { fill: #f4f1e8; }
+    .center { fill: none; stroke: #747889; stroke-width: 1.2; }
+    .diagram-label { fill: #c7c7d4; font: 14px ui-sans-serif, system-ui, sans-serif; }
+    figcaption { color: #9999ae; font-size: .85rem; line-height: 1.7; margin-top: .6rem; }
+    .lens-controls { margin-bottom: .6rem; }
+    .lens-controls button { font-size: .8rem; padding: .5rem .7rem; }
+    details { color: #c7c7d4; line-height: 1.7; margin-top: 1.5rem; }
+    summary { color: #e8b66e; cursor: pointer; }
+    .equation { color: #f4f1e8; overflow-wrap: anywhere; }
+    footer { border-top: 1px solid #383b50; margin-top: 2rem; padding-top: 1rem; color: #9999ae; font-size: .85rem; line-height: 1.7; }
+    .fallback { display: none; }
+    @media (max-width: 700px) {
+      .diagrams { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+      .drawing { grid-column: 1 / -1; grid-row: auto; }
+      .readouts { column-gap: 1.2rem; }
+    }
+    @media (max-width: 480px) {
+      .diagrams { grid-template-columns: minmax(0, 1fr); }
+      .drawing { grid-column: auto; }
+      .readouts p { font-size: .85rem; }
+      .readouts output { font-size: 1.5rem; }
+    }
+  </style>
+  <noscript><style>.explorer { display: none; } .fallback { display: block; } .fallback img { width: 100%; height: auto; }</style></noscript>
+</head>
+<body>
+  <main>
+    <a class="back" href="two_lobes.html">← Two lobes, two ways to turn</a>
+    <div class="eyebrow">Study 005 · Changing a drawing</div>
+    <h1>Two routes between two zeros</h1>
+    <p>These two drawings both have zero net turns of their direction of travel. Along a straight blend, two little clockwise loops appear, then disappear. Between those events, the direction makes <em>two net clockwise turns</em>. A second route keeps the point moving the whole way.</p>
+    <div class="explorer">
+      <div class="controls">
+        <fieldset aria-describedby="route-description">
+          <legend>Choose a route</legend>
+          <label><input type="radio" name="route" value="straight" checked> Straight blend</label>
+          <label><input type="radio" name="route" value="regular"> Keep moving</label>
+        </fieldset>
+        <p id="route-description">Match the two drawings’ points at the same moment. Each point moves along a straight line as you change the blend.</p>
+        <label for="blend" class="slider-label"><span>Blend from rhythms 2 / 3 to 4 / 7</span><output id="blend-value" for="blend">33.33%</output></label>
+        <input id="blend" type="range" min="0" max="1" step="any" value="0.3333333333333333" aria-describedby="phase">
+        <div id="intervals" class="intervals" aria-hidden="true"><span style="flex: .22629590822544784"></span><span class="middle" style="flex: .2826360742353586"></span><span style="flex: .4910680175391936"></span></div>
+        <div class="stops" role="group" aria-label="Visit a blend">
+          <button type="button" data-stop="start" aria-pressed="false">2 / 3</button>
+          <button type="button" data-stop="first" aria-pressed="false">First cusps</button>
+          <button type="button" data-stop="between" aria-pressed="true">Between</button>
+          <button type="button" data-stop="second" aria-pressed="false">Second cusps</button>
+          <button type="button" data-stop="finish" aria-pressed="false">4 / 7</button>
+        </div>
+        <div class="readouts" aria-label="Whole-orbit turn counts">
+          <p><output id="tangent-count" for="blend" aria-live="off">−2</output> direction’s net turns</p>
+          <p><output id="center-count" for="blend" aria-live="off">+1</output> around the center</p>
+        </div>
+        <p id="phase" role="status">Between the two cusp events. Two clockwise loops give the direction two extra clockwise turns.</p>
+      </div>
+      <div class="diagrams">
+        <figure class="drawing">
+          <div class="panel">
+            <svg id="drawing" viewBox="0 0 900 800" role="img" aria-labelledby="drawing-title drawing-description">
+              <title id="drawing-title">The blended orbital drawing</title>
+              <desc id="drawing-description">The straight blend has two small clockwise loops. The gold segment and its blue reflection are shown in the close-up.</desc>
+              <path id="drawing-outline" class="outline"/>
+              <path id="drawing-gold" class="highlight gold"/>
+              <path id="drawing-blue" class="highlight blue"/>
+              <path id="drawing-arrows" class="arrows"/>
+              <path d="M394 400h12 M400 394v12" class="center"/>
+              <text x="415" y="424" class="diagram-label">Center</text>
+              <circle id="drawing-mark-gold" r="4" class="marked"/>
+              <circle id="drawing-mark-blue" r="4" class="marked blue"/>
+            </svg>
+          </div>
+          <figcaption>The whole drawing. Gold follows one neighborhood that forms a cusp on the straight route; blue follows its reflection. Small arrows follow the direction of travel.</figcaption>
+        </figure>
+        <figure>
+          <div class="panel">
+            <svg id="velocity" viewBox="0 0 420 360" role="img" aria-labelledby="velocity-title velocity-description">
+              <title id="velocity-title">A drawing made from the velocities</title>
+              <desc id="velocity-description">Put every velocity arrow’s tail at the white dot. Their tips trace this second curve, which winds twice clockwise around the dot.</desc>
+              <path id="velocity-outline" class="outline"/>
+              <path id="velocity-gold" class="highlight gold"/>
+              <path id="velocity-blue" class="highlight blue"/>
+              <path id="velocity-arrows" class="arrows"/>
+              <circle cx="210" cy="170" r="3" class="origin"/>
+              <text x="222" y="190" class="diagram-label">Zero velocity</text>
+              <circle id="velocity-mark-gold" r="4" class="marked"/>
+              <circle id="velocity-mark-blue" r="4" class="marked blue"/>
+            </svg>
+          </div>
+          <figcaption>Place every velocity arrow’s tail at the white dot. Its tip traces this curve. Count its turns around the dot to count the direction’s turns. At a cusp it touches the dot.</figcaption>
+        </figure>
+        <figure>
+          <div class="lens-controls" role="group" aria-label="Choose a cusp neighborhood to magnify">
+            <button type="button" data-lens="0" aria-pressed="true">First event’s lens</button>
+            <button type="button" data-lens="1" aria-pressed="false">Second event’s lens</button>
+          </div>
+          <div class="panel">
+            <svg id="lens" viewBox="0 0 420 280" role="img" aria-labelledby="lens-title lens-description">
+              <title id="lens-title">Close-up of the first cusp neighborhood</title>
+              <desc id="lens-description">The gold segment of the upper branch, magnified with equal scales on both axes.</desc>
+              <path id="lens-path" class="highlight gold"/>
+              <path id="lens-arrows" class="arrows"/>
+              <circle id="lens-mark" r="3" class="marked"/>
+              <path id="lens-scale" class="center"/>
+              <text id="lens-scale-label" x="24" y="260" class="diagram-label"/>
+            </svg>
+          </div>
+          <figcaption id="lens-caption">A close-up of the gold segment, rotated and fitted to the window. Both axes have the same scale. The blue segment is its reflection.</figcaption>
+        </figure>
+      </div>
+    </div>
+    <figure class="fallback">
+      <img src="blend_cusps.svg" width="1200" height="760" alt="Four stills: rhythms 2 / 3, a one-third straight blend, a one-third angle-and-distance blend, and rhythms 4 / 7. Their direction’s net turn counts are 0, minus 2, 0, and 0. The velocity traces below them wind around a white dot with the same counts. The straight route develops two cusp pairs; the other route keeps moving.">
+      <figcaption>JavaScript is off. These stills compare both endpoints and both routes at a one-third blend. The explanation and mathematics below remain available.</figcaption>
+    </figure>
+    <details>
+      <summary>What is a straight blend?</summary>
+      <p>Match points reached at the same moment on the two original drawings. At 0% use the first point; at 100% use the second. Halfway through the blend, use their midpoint. Every matched pair moves along its own straight line as you move the slider. The complete drawing stays still until you change a control.</p>
+      <p>Both endpoints have zero net tangent turns: left and right turns cancel over the full orbit. That shared count does not promise a smooth trip along this particular route. Here the tracing point stops at two reflected places near <span class="equation">22.62959082%</span>, making cusps. Two clockwise loops open. Near <span class="equation">50.89319825%</span>, they close at another pair of cusps.</p>
+      <p>Other crossings can change during the blend too. This study counts where the tracing point stops; it does not claim that the two cusp events are the only changes in the drawing’s intersections.</p>
+    </details>
+    <details>
+      <summary>How does the other route keep moving?</summary>
+      <p>Choose “Keep moving” and revisit the same blend weights. This route combines the points’ angles around the center and their distances from it. At halfway, the angle is midway between the original angles; the distance is their geometric mean. Each point follows a curved route.</p>
+      <p>The direction’s net turn count stays <span class="equation">0</span> throughout. This is an explicit deformation between the two original drawings with no stationary point anywhere along the route. Crossings are still allowed. Gold and blue follow the same parameter windows as before, so the lenses let you compare the neighborhoods that formed cusps on the straight route.</p>
+      <p>A <a href="regular_blend.md">rational interval certificate</a> covers every orbit time and every blend weight. It proves a positive speed bound for the complete family, rather than inferring it from a sequence of pictures. Both routes also keep the center’s winding count at <span class="equation">+1</span>.</p>
+    </details>
+    <details>
+      <summary>Why does the direction’s count change?</summary>
+      <p>The velocity gives both speed and direction. Move each velocity arrow so that its tail is at the same fixed dot. Its tip traces the smaller diagram. The number of turns that trace makes around the dot is the tangent’s net turn count.</p>
+      <p>A nonzero velocity has a direction. At the cusp its arrow shrinks to zero, so the tangent direction and its count are undefined there. The velocity trace can then cross the dot, changing its winding count. Each cusp pair changes the count by two: first from <span class="equation">0 to −2</span>, then back to <span class="equation">0</span>.</p>
+      <p>The drawing itself always winds once around its center, including at the cusps. These are different counts. The <a href="two_lobes.html">previous study</a> follows them around a single drawing.</p>
+    </details>
+    <details>
+      <summary>Using the lens and checking the claim</summary>
+      <p>The lens follows a short, fixed interval of the orbit near one upper stopping point. Gold shows that interval; blue shows its reflection on the full drawing. Switching lenses does not change the blend. The lens rotates each event’s neighborhood and adjusts its magnification to fit; its scale bar reports drawing units. Thin loops stay thin.</p>
+      <p>Choose either cusp, then nudge the slider to see the loop open or close. Arrow keys change the blend by 1%; hold Shift for 0.1%. Page Up and Page Down change it by 10%. Home and End visit the two original drawings.</p>
+      <p>The cusp stops use rounded algebraic values. At these stops the readout says “Cusp”; extremely close blends receive the same warning. An <a href="blend_cusps.md">exact rational calculation</a> proves that these are the only two critical blends, each with two ordinary cusps. It also certifies the three regular turn counts. The pictures approximate the curves with line segments; the proof does not depend on their pixels.</p>
+    </details>
+    <footer>Aldebaran · Same endpoints, two routes.<br><a href="../index.html">The sketchbook ↗</a> · <a href="blend_cusps.md">The cusps ↗</a> · <a href="regular_blend.md">The route that keeps moving ↗</a> · <a href="blend_cusps.svg" download>Save the still drawing ↧</a> · <a href="../JOURNAL.md">Notebook ↗</a></footer>
+  </main>
+  <script src="blend_math.js"></script>
+  <script src="blend.js"></script>
+</body>
+</html>
