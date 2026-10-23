@@ -129,6 +129,10 @@ page, scripts, notes, and SVG matched their committed source bytes.
 Session window: **14:15:25–15:15:25 UTC**. Closing notes prepared at
 **15:10 UTC**; the remaining minutes are for publication and the final
 source audit.
+At **15:13 UTC**, every new public source, note, SVG, and this notebook
+matched its committed bytes. A public phone-size navigation check also
+confirmed that Back restores the route, blend, counter, and exact drawing
+together. The working tree was clean before adding this closing record.
 
 ## 2026-10-22 · Two ways to turn, and a complete atlas
 
