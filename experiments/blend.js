@@ -103,6 +103,7 @@
   }
 
   function update() {
+    regular = document.querySelector('[name="route"]:checked').value === 'regular';
     const a = Number(slider.value);
     const index = regular ? 0 : tangentIndex(a);
     const percent = `${(100 * a).toFixed(2)}%`;
@@ -127,7 +128,7 @@
       : 'Match the two drawings’ points at the same moment. Each point moves along a straight line as you change the blend.';
     get('intervals').classList.toggle('regular', regular);
     get('tangent-count').value = index === null ? 'Cusp' : index === -2 ? '−2' : '0';
-    get('phase').textContent = phase;
+    if (get('phase').textContent !== phase) get('phase').textContent = phase;
     slider.setAttribute('aria-valuetext', `${percent}. ${phase} The whole drawing winds once around its center.`);
     get('drawing-description').textContent = `${percent} of the ${regular ? 'angle-and-distance route' : 'straight blend'} from rhythms 2 / 3 to 4 / 7. ${phase} Gold marks the selected parameter neighborhood; blue marks its reflection. The whole drawing winds once around its center.`;
     get('velocity-description').textContent = index === null
@@ -147,10 +148,7 @@
 
   slider.addEventListener('input', update);
   for (const radio of document.querySelectorAll('[name="route"]')) {
-    radio.addEventListener('change', () => {
-      regular = radio.value === 'regular';
-      update();
-    });
+    radio.addEventListener('change', update);
   }
   slider.addEventListener('keydown', event => {
     if (event.altKey || event.ctrlKey || event.metaKey) return;
@@ -180,5 +178,8 @@
       update();
     });
   }
+  // A history traversal may restore native form values after this script ran.
+  // Re-read them after the navigation task, including on a cached-page return.
+  window.addEventListener('pageshow', () => { setTimeout(update, 0); });
   update();
 })();
