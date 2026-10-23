@@ -152,6 +152,74 @@ gives zero, so every intermediate curve also has tangent index zero.
 This is an explicit regular deformation, not an assertion that all
 equal-index curves are safely connected by this interpolation rule.
 
+## A separate polynomial proof
+
+There is a second proof of nonvanishing that uses no arc cover. A segment
+between nonzero complex numbers contains zero only when they point in
+exactly opposite directions. Find every possible parallel pair of
+logarithmic velocities, then check which way it points.
+
+For either endpoint, write `c = cos t`, `s = sin t`, and use
+
+```
+z/5 = X(c) + i s Y(c),
+X = 49c + 28T_m(c) + 13T_n(c),
+Y = 49 + 28U_(m−1)(c) − 13U_(n−1)(c).
+```
+
+Polynomial differentiation gives
+
+```
+D = cY − (1−c²)Y′,
+R = −X′X + YD,
+S = XD + (1−c²)YX′,
+N = X² + (1−c²)Y² > 0,
+z′/z = (sR + iS)/N.
+```
+
+Away from `s = 0`, parallelism requires
+
+```
+H(c) = R_A S_B − S_A R_B = 0.
+```
+
+Remove its positive integer content. For these endpoints this polynomial
+has degree 15. An exact Sturm sequence isolates **five** roots in `(−1,1)`:
+
+| Candidate cosine (approximate) | Sign of velocity dot product |
+| ---: | --- |
+| −0.973061213117 | Positive |
+| −0.660579729666 | Positive |
+| +0.356455981844 | Positive |
+| +0.822535894813 | Positive |
+| +0.964082961485 | Positive |
+
+Each cosine gives two reflected orbit times. Rational interval evaluation
+on every isolating interval proves positivity of the dot-product numerator
+
+```
+(1−c²) R_A R_B + S_A S_B.
+```
+
+At the two axial times, `s = 0`, both velocities are purely imaginary;
+exact evaluation gives `S_A S_B > 0` there too. The endpoint curves’
+velocities are independently certified nonzero. Every possible parallel
+pair therefore points the same way, never opposite ways. None of their
+segments can meet zero, completing a second full-family proof.
+
+```sh
+python3 experiments/regular_blend_algebra.py
+```
+
+This standard-library program generates its polynomials from Chebyshev
+recurrences, checks the resulting quotient formulas exactly at 136
+rational circle points across the two curves, then isolates and checks
+all candidate roots. It reuses polynomial arithmetic from the straight
+blend’s cusp program, but not the regular route’s interval cover or its
+speed estimate. The two proofs answer the same nonvanishing question
+with different exhaustive covers; the first also gives the explicit
+speed bound greater than four.
+
 ## Browser formulas and their separate checks
 
 [blend_math.js](blend_math.js) evaluates the position with real logarithms
@@ -169,6 +237,8 @@ blend weight and parameter window. On this route, the two cusp presets
 are labeled with their percentages instead; there is no cusp at either
 weight. The lens keeps the straight-route event’s orientation for an
 honest comparison, with one scale on both axes. Nothing animates.
+After browser history traversal, the view rereads any restored native
+control values so its geometry and counters stay in sync with the form.
 
 ```sh
 node experiments/blend_check.js

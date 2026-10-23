@@ -118,3 +118,7 @@ node experiments/blend_check.js
 Add `--figure` to the first command to regenerate the still SVG. Syntax
 checks are `node --check experiments/blend_math.js` and
 `node --check experiments/blend.js`.
+An independent polynomial proof of the regular route runs with
+`python3 experiments/regular_blend_algebra.py`: all five possible
+non-axial cosine alignments give velocities pointing the same way,
+so no logarithmic-velocity segment can reach zero.
