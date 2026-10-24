@@ -172,3 +172,9 @@ polynomials exactly, and rejects incompatible parity and endpoint signs.
 All six covers use **35 rectangles**. The browser bisects the unique
 axis return numerically; neither the mathematical claim nor the arc’s
 continuity relies on the sampled drawing.
+
+A further [calculation of selected branch meetings](arm_detour_events.md)
+finds three cubic contacts between the reflected end branches and three
+coincidences with the halfway visit. It explains how new crossings can
+appear while every branch keeps moving; it does not classify all changes
+in the full crossing graph.

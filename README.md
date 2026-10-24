@@ -145,3 +145,12 @@ python3 experiments/arm_detour_lens.py --figure
 
 The browser scripts are `experiments/arm_detour_math.js` and
 `experiments/arm_detour.js`; both support `node --check`.
+
+[Moving branches can meet](experiments/arm_detour_events.md) follows the
+lens’s selected axis return. Exact polynomial isolation finds three cubic
+contacts and three coincidences with the halfway visit across both detours.
+These are selected meetings, rather than a census of the full crossing graph.
+Run `python3 experiments/arm_detour_events.py`, optionally with `--numeric`
+for independent local-branch checks. The optional
+`experiments/plot_arm_contact.py` uses Matplotlib to regenerate its
+[branch-separation graph](experiments/arm_contact.svg).
