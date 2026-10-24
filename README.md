@@ -123,8 +123,25 @@ An independent polynomial proof of the regular route runs with
 non-axial cosine alignments give velocities pointing the same way,
 so no logarithmic-velocity segment can reach zero.
 
-A further [arm-length detour](experiments/arm_detour.md) connects all three
+[Room to keep moving](experiments/arm_detour.html) draws two
+[arm-length detours](experiments/arm_detour.md) connecting all three
 original zero-turn curves using finite Fourier sums. Lengthen the first
 arm to 300 for 2 / 3 → 4 / 7, or to 700 for 4 / 7 → 6 / 11; blend there,
 then shorten it again. `python3 experiments/arm_detour.py` certifies all
 six continuous legs with positive speed bounds, using the standard library.
+
+The whole drawing keeps a fixed scale during each detour; a separate lens
+follows the gold arc around halfway through the orbit. That arc can cross
+itself. A polynomial certificate proves that the lens’s choice of axis
+return stays unique and continuous on all six legs. Nothing animates, and a
+[standalone SVG](experiments/arm_detour.svg) also works without JavaScript.
+Run the lens proof, geometry checks, and optional figure generator with:
+
+```sh
+python3 experiments/arm_detour_lens.py
+node experiments/arm_detour_check.js
+python3 experiments/arm_detour_lens.py --figure
+```
+
+The browser scripts are `experiments/arm_detour_math.js` and
+`experiments/arm_detour.js`; both support `node --check`.

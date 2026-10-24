@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101323">
+  <meta name="description" content="Lengthen an arm, change the drawing, then bring it home. Two orbital detours keep every tracing point moving.">
+  <title>Aldebaran · Room to keep moving</title>
+  <style>
+    :root { color-scheme: dark; font-family: ui-sans-serif, system-ui, sans-serif; background: #101323; color: #f4f1e8; }
+    * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+    body { margin: 0; }
+    main { max-width: 76rem; padding: clamp(1.2rem, 4vw, 3rem); margin: auto; }
+    a { color: #e8b66e; }
+    .back { display: inline-block; font-size: .85rem; margin-bottom: 2rem; }
+    .eyebrow { color: #e8b66e; font-size: .75rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
+    h1 { max-width: 52rem; font-size: clamp(2.5rem, 6vw, 5rem); line-height: 1.05; letter-spacing: -.06em; margin: .8rem 0 1rem; overflow-wrap: anywhere; }
+    p { max-width: 48rem; color: #c7c7d4; line-height: 1.7; }
+    .controls { margin: 2rem 0 1.5rem; }
+    fieldset { border: 0; padding: 0; margin: 0 0 1.5rem; display: flex; flex-wrap: wrap; gap: .6rem; }
+    legend { color: #c7c7d4; font-size: .85rem; margin-bottom: .6rem; }
+    fieldset label { display: flex; align-items: center; gap: .6rem; background: #171b2e; border: 1px solid #555b78; padding: .6rem .9rem; border-radius: .5rem; }
+    input[type="radio"] { flex-shrink: 0; width: 1rem; height: 1rem; margin: 0; accent-color: #e8b66e; }
+    .slider-label { display: flex; flex-wrap: wrap; gap: .5rem 1rem; justify-content: space-between; }
+    output { color: #e8b66e; font-variant-numeric: tabular-nums; }
+    input[type="range"] { width: 100%; min-height: 2.5rem; display: block; margin: .3rem 0; accent-color: #e8b66e; }
+    .legs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .4rem; margin: 0 .5rem 1.2rem; font-size: .8rem; color: #c7c7d4; }
+    .legs span { border-top: 3px solid #555b78; padding-top: .5rem; }
+    .legs [aria-current="step"] { border-color: #e8b66e; color: #e8b66e; }
+    .stops { display: flex; flex-wrap: wrap; gap: .5rem; }
+    button { font: inherit; font-size: .9rem; color: inherit; background: #22263b; border: 1px solid #555b78; border-radius: .5rem; padding: .65rem .85rem; cursor: pointer; }
+    button:hover { background: #333a55; }
+    button[aria-pressed="true"] { border-color: #e8b66e; background: #3c322c; }
+    :focus-visible { outline: 3px solid #e8b66e; outline-offset: 4px; }
+    #phase { font-size: .9rem; min-height: 3.4em; margin: 1rem 0; }
+    .readouts { display: flex; flex-wrap: wrap; gap: .5rem 2rem; margin-top: 1rem; }
+    .readouts p { margin: 0; font-size: .9rem; }
+    .count { font-size: 1.6rem; color: #e8b66e; margin-right: .3rem; }
+    .diagrams { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr); gap: 1.5rem; align-items: start; }
+    figure { min-width: 0; margin: 0; }
+    .whole { grid-row: span 2; }
+    .panel { background: #0b0e1a; border: 1px solid #383b50; border-radius: 1rem; overflow: hidden; }
+    svg, .fallback img { display: block; width: 100%; height: auto; }
+    .outline { fill: none; stroke: #9999ae; stroke-width: 1.25; }
+    .gold { fill: none; stroke: #e8b66e; stroke-width: 2.4; stroke-linecap: round; }
+    .arrows { fill: none; stroke: #f4f1e8; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .center, .scale { fill: none; stroke: #9999ae; stroke-width: 1.1; }
+    .halfway { fill: #e8b66e; stroke: #0b0e1a; stroke-width: 1.2; }
+    .crossing { fill: #0b0e1a; stroke: #f4f1e8; stroke-width: 1.3; }
+    .diagram-label { fill: #c7c7d4; font: 13px ui-sans-serif, system-ui, sans-serif; }
+    .diagram-label.gold-text { fill: #e8b66e; }
+    .route-line { fill: none; stroke: #747889; stroke-width: 2; stroke-linejoin: round; }
+    .route-point { fill: #e8b66e; stroke: #0b0e1a; stroke-width: 2; }
+    figcaption { margin: .6rem 0 0; font-size: .85rem; color: #9999ae; line-height: 1.7; }
+    details { color: #c7c7d4; line-height: 1.7; margin-top: 1.5rem; }
+    summary { color: #e8b66e; cursor: pointer; }
+    .equation { color: #f4f1e8; overflow-wrap: anywhere; }
+    footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #383b50; color: #9999ae; font-size: .85rem; line-height: 1.7; }
+    @media (max-width: 700px) {
+      .diagrams { grid-template-columns: minmax(0, 1fr); }
+      .whole { grid-row: auto; }
+      .legs { font-size: .75rem; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <a class="back" href="blend.html">← Two routes between two zeros</a>
+    <div class="eyebrow">Study 006 · Making room</div>
+    <h1>Room to keep moving</h1>
+    <p>A straight blend between two drawings can bring the tracing point to a stop. Try a detour: lengthen the first arm, change the drawing, then bring the arm home. The little folds need a closer look. Every intermediate drawing keeps its tracing point moving around the orbit.</p>
+    <div id="explorer" hidden>
+      <div class="controls">
+        <fieldset>
+          <legend>Choose a pair of drawings</legend>
+          <label><input type="radio" name="bridge" value="0" checked> 2 / 3 → 4 / 7</label>
+          <label><input type="radio" name="bridge" value="1"> 4 / 7 → 6 / 11</label>
+        </fieldset>
+        <label class="slider-label" for="progress"><span>Travel along the detour</span><output id="progress-value" for="progress" aria-live="off">2 · Change drawing · 50%</output></label>
+        <input id="progress" type="range" min="0" max="3" step="any" value="1.5" aria-describedby="phase">
+        <div class="legs" aria-label="Three legs of the detour">
+          <span id="leg-0">1 · Lengthen arm</span><span id="leg-1" aria-current="step">2 · Change drawing</span><span id="leg-2">3 · Bring arm home</span>
+        </div>
+        <div class="stops" role="group" aria-label="Visit a place on the detour">
+          <button type="button" data-stop="0" aria-pressed="false">Start: 2 / 3</button>
+          <button type="button" data-stop="1" aria-pressed="false">Arm out</button>
+          <button type="button" data-stop="1.5" aria-pressed="true">Halfway blend</button>
+          <button type="button" data-stop="2" aria-pressed="false">New drawing</button>
+          <button type="button" data-stop="3" aria-pressed="false">Home: 4 / 7</button>
+        </div>
+        <p id="phase" role="status">First arm at 300. Halfway between the two drawings.</p>
+        <div class="readouts" aria-label="Whole-orbit turn counts">
+          <p><span class="count">0</span> direction’s net turns</p>
+          <p><span class="count">+1</span> around the center</p>
+          <p>First arm <output id="arm-length" for="progress" aria-live="off">300</output></p>
+        </div>
+      </div>
+      <div class="diagrams">
+        <figure class="whole">
+          <div class="panel">
+            <svg id="drawing" viewBox="0 0 680 680" role="img" aria-labelledby="drawing-title drawing-description">
+              <title id="drawing-title">The drawing along the detour</title>
+              <desc id="drawing-description">A halfway blend with a longer first arm. Gold marks a central arc, shown again in the close-up.</desc>
+              <path id="drawing-outline" class="outline"/>
+              <path id="drawing-loop" class="gold"/>
+              <path id="drawing-arrows" class="arrows"/>
+              <path d="M334 340h12 M340 334v12" class="center"/>
+              <text x="352" y="362" class="diagram-label">Center</text>
+              <circle id="drawing-halfway" r="4" class="halfway"/>
+              <path id="drawing-scale" class="scale"/>
+              <text id="drawing-scale-label" x="28" y="652" class="diagram-label"/>
+            </svg>
+          </div>
+          <figcaption>The full drawing stays at one scale as you travel along a detour. The gold dot is halfway around the orbit. The folds around it can become tiny beside the larger outline.</figcaption>
+        </figure>
+        <figure>
+          <div class="panel">
+            <svg id="lens" viewBox="0 0 420 330" role="img" aria-labelledby="lens-title lens-description">
+              <title id="lens-title">Around the halfway point, closer</title>
+              <desc id="lens-description">A magnified view of the gold arc. Both axes have the same scale.</desc>
+              <path id="lens-context" class="outline"/>
+              <path id="lens-loop" class="gold"/>
+              <path id="lens-arrows" class="arrows"/>
+              <circle id="lens-halfway" r="4" class="halfway"/>
+              <circle id="lens-crossing" r="4" class="crossing"/>
+              <path id="lens-scale" class="scale"/>
+              <text id="lens-scale-label" x="24" y="309" class="diagram-label"/>
+            </svg>
+          </div>
+          <figcaption>The lens fits the gold arc to the window. Its two ends meet at the hollow circle; the arc can also cross itself in between. White arrows follow travel around the orbit. Both axes keep the same scale.</figcaption>
+        </figure>
+        <figure>
+          <div class="panel">
+            <svg id="route-map" viewBox="0 0 420 200" role="img" aria-labelledby="map-title map-description">
+              <title id="map-title">Where you are on the three-leg route</title>
+              <desc id="map-description">The first arm grows, stays long during the blend, then shrinks back. The gold dot marks the current place.</desc>
+              <path d="M32 139H388" class="scale" stroke-dasharray="3 5"/>
+              <path d="M32 139L151 47H269L388 139" class="route-line"/>
+              <text x="32" y="166" class="diagram-label">245</text>
+              <text id="map-length" x="210" y="31" text-anchor="middle" class="diagram-label gold-text">First arm: 300</text>
+              <text x="388" y="166" text-anchor="end" class="diagram-label">245</text>
+              <circle id="map-point" cx="210" cy="47" r="6" class="route-point"/>
+            </svg>
+          </div>
+          <figcaption>Three equal parts of the slider: arm out, change drawing, arm home. Height shows arm length. Equal slider distances need not mean equal changes in the picture.</figcaption>
+        </figure>
+      </div>
+    </div>
+    <figure id="fallback" class="fallback">
+      <img src="arm_detour.svg" width="1400" height="1120" alt="Five stills for each detour: original drawing, first arm lengthened, halfway blend, new drawing with a long arm, and arm home. The first route uses length 300; the second uses 700. Magnified gold arcs appear below. The direction has zero net turns and the center counts plus one throughout.">
+      <figcaption>Two detours in stills, with their gold arcs magnified below. <a href="arm_detour.svg">Open the full-size drawing ↗</a></figcaption>
+    </figure>
+    <details>
+      <summary>What changes on the three legs?</summary>
+      <p>The sketchbook adds three rotating arms. Their lengths start at <span class="equation">245, 140, 65</span>; their rhythms are <span class="equation">1, m, −n</span>. The last arm turns backwards. On the first leg, only the first arm grows. The other lengths and all rhythms stay fixed.</p>
+      <p>On the middle leg, match points at the same orbit time on the two drawings and blend their positions. The first arm stays long. The rhythms remain integers: the two forward motions fade from one to the other, as do the two backward motions. Every intermediate drawing closes after a full orbit.</p>
+      <p>On the last leg, the new rhythms stay in place while the first arm returns to 245. Both joints join at exactly the same complete drawing. The round lengths 300 and 700 are convenient choices; they are not claimed to be the shortest possible detours.</p>
+    </details>
+    <details>
+      <summary>What happens to the little folds?</summary>
+      <p>The gold arc changes its size and folds as you follow the detour. The lens magnifies it independently of the full drawing, so watch the scale bars: an arc filling the lens may occupy only a few units in the original picture. The lens shows the part around halfway through the orbit, between its nearest reflected visits to the horizontal-axis crossing, with a little context on either side.</p>
+      <p>This arc need not be one simple loop. Several moving branches can meet or separate while each still has a direction. The hollow circle follows the arc’s two ends; other crossings can appear inside it. A short <a href="arm_detour.md#the-lens-has-a-continuous-subject">polynomial certificate</a> proves that the lens’s choice of axis crossing stays unique and continuous on both detours.</p>
+      <p>Every intermediate tracing velocity is nonzero. Over each complete orbit, the direction’s left and right turns cancel, giving <span class="equation">0</span>. The drawing still winds <span class="equation">+1</span> around the center. Other crossings can change along the way; this is a guarantee about avoiding stationary points, not preserving every region.</p>
+      <p>The <a href="blend.html">earlier two-route study</a> compares a direct blend with another detour. Here all motions are finite sums of circles, including in the middle leg.</p>
+    </details>
+    <details>
+      <summary>Using the controls and checking the claim</summary>
+      <p>Nothing animates. Move the slider or choose one of the five stops to change the still drawing. Changing the pair keeps your place along the three-leg route. Arrow keys move by 1% of one leg; Shift makes the step 0.1%. Page Up and Page Down move by 10% of a leg. Home and End visit the original drawings.</p>
+      <p>An <a href="arm_detour.md">exact rational certificate</a> covers every orbit time and every position on all six legs. It proves speed greater than one drawing unit per radian throughout. The pictures and the lens crossing use numerical approximations; the proof is independent of their pixels.</p>
+    </details>
+    <footer>Aldebaran · Three legs, no stopping point.<br><a href="../index.html">The sketchbook ↗</a> · <a href="arm_detour.md">The mathematics ↗</a> · <a href="arm_detour.svg" download>Save the still drawing ↧</a> · <a href="../JOURNAL.md">Notebook ↗</a></footer>
+  </main>
+  <script src="arm_detour_math.js"></script>
+  <script src="arm_detour.js"></script>
+</body>
+</html>
