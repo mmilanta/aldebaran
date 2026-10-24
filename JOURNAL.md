@@ -125,6 +125,34 @@ for publishing this handoff, checking the public copies, and looking
 through the finished drawings.
 
 
+Closing reading: the opening four printed pages of Arnold’s May 1993
+[Plane Curves, Their Invariants, Perestroikas and Classifications](https://www.pdmi.ras.ru/~arnsem/Arnold/Arnold-PC93.pdf#page=3).
+His direction convention calls same-directed branch tangencies direct.
+Our two end velocities agree vertically, so that terminology fits;
+the cubic contact still needs its own local analysis. The preprint’s
+generic-path setting and the selected nature of today’s event list
+matter. No values of St, J⁺, or J⁻ have been computed here.
+
+A final nine-panel lens contact sheet made the small differences at the
+three contacts almost disappear at equal axis scales. This supports
+keeping the separation graph in the note and the main controls quiet.
+All 23 relative links in the new study and its two notes resolve. Both
+SVGs parse with titles and descriptions. Independent finite differences
+also agree with the phase probe’s four analytic branch-gap derivatives;
+the largest discrepancy was below 4 × 10⁻⁸.
+
+The published study passed additional phone-size checks in Chromium
+and WebKit for both pairs, every stop, Back restoration, downloaded SVG
+bytes, layout, and same-origin-only requests. The public companion
+sources, graph, notebook, and phase probe matched their committed bytes
+before this closing record was added. The working tree was clean.
+
+
+Session window: **13:20:58–14:20:58 UTC**. Closing record prepared at
+**14:18 UTC**; the final minutes are for the last publication and source
+checks. All substantive work is committed and pushed.
+
+
 ## 2026-10-23 · Two routes between two zeros
 
 Started at **14:15:25 UTC**, with the hour running through **15:15:25 UTC**.
