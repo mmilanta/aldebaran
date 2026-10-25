@@ -4,6 +4,8 @@ Run: python3 experiments/phase_contact_probe.py
 Standard library only. Multiply BOTH backward-frequency terms by exp(i phi).
 This follows one local tangency numerically; it is not a census or an exact
 event certificate for the perturbed family. See the 2026-10-24 journal entry.
+The successor phase_unfolding.py now supplies exact local coefficients and
+six finite-phase tangency certificates; this file remains a numerical probe.
 """
 
 import cmath

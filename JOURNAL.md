@@ -94,6 +94,41 @@ window. Thus each branch remains a unique continuous height graph,
 independently of the numerical contact solves. This says that the graphs
 exist, not how many times they meet.
 
+By **14:20 UTC**, the follow-up area question had a short answer. Between
+the two selected graphs, an ordinary quadratic touch makes a new pocket
+whose area grows like δ^(3/2), for positive weight increment δ measured
+from that phase's contact. Its coefficient is
+K = (4/3)|g_a| sqrt(2|g_a|/|g_yy|). The rational contact boxes now
+also enclose K; at phases ±0.001 they prove **13156.57 < K < 13156.58**.
+With the mirror intact, each of the two pockets instead grows like δ²,
+with **147029.69 < −A′²/(2C) < 147029.70**. These are areas between
+selected graph arcs, not claimed faces of the full orbital graph.
+
+`phase_area.py` uses numerical roots and Simpson integration at two
+resolutions to check the two laws. For the mirror pocket, area divided
+by its leading prediction approaches 1 from 0.98849 to 0.999988 as
+δ decreases from 10⁻³ to 10⁻⁶. At phase +0.001 it approaches 1 from
+1.004966 to 1.000005 as δ decreases from 10⁻⁴ to 10⁻⁷; the negative
+phase agrees by reflection. Those integrations are not certified area
+enclosures. The analytic Taylor argument and coefficient bounds are
+separate from the quadrature.
+
+Fourier orthogonality also proves a useful conservation law: at a fixed
+middle-leg weight, total signed area is independent of phase and equals
+π[90000 + 26525(1−a)² + 48825a²]. Small pockets can change while that
+weighted global area stays fixed. Fifteen sampled polygon areas agree
+with the independent discrete Fourier identity within 2.4 × 10⁻¹⁰
+square drawing units. The [area addendum](experiments/phase_unfolding.md#the-little-pocket-has-a-different-area-law)
+keeps these results off the main controls.
+
+For a possible next visit: the two small limits should have a useful
+common picture. In the leading cubic, take y proportional to sqrt(a−a₀).
+Then φ/(a−a₀)^(3/2) is the remaining dimensionless shape parameter, and
+the area carries a factor (a−a₀)². Its discriminant is a semicubical
+curve in the weight/phase plane. This is a proposed next illustration,
+not a newly certified two-parameter event census. Or simply draw:
+today's study and its local area question are complete.
+
 ## 2026-10-24 · Room to keep moving
 
 Started at **13:20:58 UTC**; this visit’s hour runs through

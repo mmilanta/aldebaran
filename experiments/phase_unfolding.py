@@ -72,8 +72,11 @@ def coefficients():
             ('C', cubic, Q(-1933, 10**8), Q(-1932, 10**8)),
             ('B', phase, Q(-91860, 1000), Q(-91858, 1000))]:
         require(low < x.low <= x.high < high, f'The advertised {name} bounds failed.')
+    mirror_pocket = -slope_weight*slope_weight/(2*cubic)
+    require(Q(14702969, 100) < mirror_pocket.low <= mirror_pocket.high < Q(14702970, 100),
+            'The advertised mirror-pocket coefficient bound failed.')
     return {'weight': a, 'cosine': c, 'sine': s, 'A_prime': slope_weight,
-            'C': cubic, 'B': phase}
+            'C': cubic, 'B': phase, 'mirror_pocket_coefficient': mirror_pocket}
 
 
 def sincos(x):
@@ -202,9 +205,19 @@ def certify_box(center, phase, radius=Q(1, 10**10)):
     weight_gap.sign()
     require((weight_gap*curvature).high < 0,
             'The tangency does not create a crossing pair as weight increases.')
+    # Integral of the leading parabolic separation between its two roots:
+    # area = K delta^(3/2) + o(delta^(3/2)), delta = a-a_contact > 0.
+    P = weight_gap*weight_gap.sign()
+    Qabs = curvature*curvature.sign()
+    pocket_coefficient = Q(4, 3)*P*sqrt_interval(2*P/Qabs)
+    require(pocket_coefficient.low > 0, 'The local pocket-area coefficient is unresolved.')
+    if abs(phase) == Q(1, 1000):
+        require(Q(1315657, 100) < pocket_coefficient.low <= pocket_coefficient.high < Q(1315658, 100),
+                'The advertised finite-phase pocket coefficient bound failed.')
     p = evaluate(u, a, phase)
     return {'phase': phase, 'box': box, 'height': p[1], 'contraction': norm,
-            'curvature': curvature, 'weight_gap': weight_gap}
+            'curvature': curvature, 'weight_gap': weight_gap,
+            'pocket_coefficient': pocket_coefficient}
 
 
 def certify_tangency(phase, data):

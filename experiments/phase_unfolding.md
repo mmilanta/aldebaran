@@ -268,10 +268,92 @@ The direction’s net turn stays zero by continuity in phase. Factoring
 the center’s winding count stays +1. No claim that every region or
 crossing survives is needed for either conclusion.
 
+## The little pocket has a different area law
+
+This is an area **between the two selected graphs**. If some other part
+of the full orbit enters that pocket, it need not be one face of the
+complete crossing graph. No global region classification is assumed.
+
+At a fixed nonzero phase, put `δ = a−a_contact > 0` and measure height
+from the quadratic touch by η. The leading separation is
+
+```
+g = P δ + (Q/2) η² + higher terms,
+P = g_a,     Q = g_yy,     P Q < 0.
+```
+
+The new roots have leading height displacements
+`±sqrt(−2Pδ/Q)`. Integrating the absolute gap between them gives
+
+```
+pocket area = K δ^(3/2) + o(δ^(3/2)),
+K = (4/3) |P| sqrt(2|P|/|Q|).
+```
+
+The width in height grows like √δ, and the horizontal separation like
+δ; their product explains the three-halves power. The six rational
+tangency boxes also enclose P and Q and hence K. At phases ±0.001,
+
+```
+13156.57 < K < 13156.58.
+```
+
+At zero phase, the local picture has a persistent crossing at height
+zero and two new crossings at approximately `±sqrt(−A′δ/C)`. The
+two pockets, one on either side of zero, have equal unsigned areas.
+For **each** pocket,
+
+```
+pocket area = K₀ δ² + O(δ³),
+K₀ = −A′²/(2C),
+147029.69 < K₀ < 147029.70.
+```
+
+Here the leading horizontal gap is `2 A′ δ y + 2 C y³`. Integrating
+from zero to its positive root gives `−A′² δ²/(2C)` directly. The
+gap is odd, so its negative-height integral is the opposite, while
+the geometric areas agree. This quadratic law is different from the
+three-halves law at every fixed nonzero phase. The order of the two
+small limits matters: holding a nonzero phase fixed before letting
+δ tend to zero gives a different local model from setting phase zero first.
+
+Numerical root finding and Simpson quadrature supply a cross-check,
+separate from the Taylor argument and the coefficient enclosures:
+
+| Contact | Weight increment δ | Measured area / leading prediction |
+| --- | ---: | ---: |
+| Mirror; each pocket | 0.001 | 0.9884882 |
+| Mirror; each pocket | 0.0001 | 0.9988412 |
+| Mirror; each pocket | 0.00001 | 0.9998840 |
+| Mirror; each pocket | 0.000001 | 0.9999884 |
+| Phase +0.001; new pocket | 0.0001 | 1.0049661 |
+| Phase +0.001; new pocket | 0.00001 | 1.0004989 |
+| Phase +0.001; new pocket | 0.000001 | 1.0000499 |
+| Phase +0.001; new pocket | 0.0000001 | 1.0000050 |
+
+The negative-phase results agree by reflection. These numerical
+integrals are not interval enclosures of the actual areas.
+
+For a complementary global fact, the **total signed area** is independent
+of phase. Fourier orthogonality gives, on this middle leg,
+
+```
+signed area / π = 300²
+                + 140² [2(1−a)² + 4a²]
+                −  65² [3(1−a)² + 7a²]
+              = 90000 + 26525(1−a)² + 48825a².
+```
+
+A phase changes each backward Fourier coefficient's direction but not
+its absolute value. Consequently the little pockets can change while
+this weighted global area stays fixed. This does not assert that the
+total unweighted filled area is constant.
+
 ## Reproduce
 
 ```sh
 python3 experiments/phase_unfolding.py
+python3 experiments/phase_area.py
 node experiments/phase_check.js
 ```
 
@@ -283,6 +365,13 @@ all six continuous speed covers. Matrix, trigonometric,
 square-root, and exact halfway-derivative controls check the building
 blocks. A nearby box without a root, zero phase, and an out-of-range
 phase must be rejected.
+
+`phase_area.py` checks the two local area laws with numerical roots and
+quadrature at two resolutions. It also checks 15 sampled polygon areas
+against an independent discrete Fourier identity; their largest
+discrepancy is below 2.4 × 10⁻¹⁰ square drawing units. The local area
+integrals remain numerical checks, while the coefficient signs and
+enclosures come from the rational certificate.
 
 The JavaScript drawing uses numerical height inversion and tangency
 solves. Its checks compare independent complex powers, finite

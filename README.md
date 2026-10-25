@@ -168,6 +168,7 @@ certificates, not a census of the perturbed crossing graph.
 
 ```sh
 python3 experiments/phase_unfolding.py
+python3 experiments/phase_area.py
 node experiments/phase_check.js
 ```
 
