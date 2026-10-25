@@ -1,5 +1,9 @@
 # Moving branches can meet
 
+The next [visual study](phase.html) breaks reflection with a small phase.
+Its [local calculation](phase_unfolding.md) proves the first contact's
+two-thirds unfolding law and certifies six finite-phase tangencies.
+
 The [arm-detour lens](arm_detour.html) follows a closed gold arc around
 `t = π`. Its ends meet at the unique axis return `π±u`. The
 [lens certificate](arm_detour.md#the-lens-has-a-continuous-subject) keeps

@@ -154,3 +154,24 @@ Run `python3 experiments/arm_detour_events.py`, optionally with `--numeric`
 for independent local-branch checks. The optional
 `experiments/plot_arm_contact.py` uses Matplotlib to regenerate its
 [branch-separation graph](experiments/arm_contact.svg).
+
+[A small turn breaks the mirror](experiments/phase.html) rotates both
+backward arms slightly. The first mirror-symmetric cubic contact becomes
+a quadratic touch above or below the axis. A separation graph reveals
+what is almost invisible in the complete drawing; its markers follow the
+two selected branches in a local window. Nothing animates, and a
+[standalone SVG](experiments/phase.svg) preserves three stills without scripts.
+The [phase-unfolding note](experiments/phase_unfolding.md) proves the local
+two-thirds law for the contact-weight shift and certifies six specified
+nonzero-phase tangencies with rational contraction boxes. These are local
+certificates, not a census of the perturbed crossing graph.
+
+```sh
+python3 experiments/phase_unfolding.py
+node experiments/phase_check.js
+```
+
+Both use only their standard runtimes. The optional
+`python3 experiments/plot_phase.py` regenerates the still SVG with Matplotlib.
+The browser scripts are `experiments/phase_math.js` and
+`experiments/phase.js`; both support `node --check`.

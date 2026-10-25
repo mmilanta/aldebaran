@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101323">
+  <meta name="description" content="Turn two backward arms a little. A mirror-symmetric cubic contact becomes a touch away from the axis, while every tracing point keeps moving.">
+  <title>Aldebaran · A small turn breaks the mirror</title>
+  <style>
+    :root { color-scheme: dark; font-family: ui-sans-serif, system-ui, sans-serif; background: #101323; color: #f4f1e8; }
+    * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+    body { margin: 0; }
+    main { max-width: 75rem; padding: clamp(1.2rem, 4vw, 3rem); margin: auto; }
+    a { color: #e8b66e; }
+    .back { display: inline-block; font-size: .85rem; margin-bottom: 2rem; }
+    .eyebrow { color: #e8b66e; font-size: .75rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
+    h1 { max-width: 55rem; font-size: clamp(2rem, 6vw, 5rem); line-height: 1.05; letter-spacing: -.06em; margin: .8rem 0 1rem; overflow-wrap: anywhere; }
+    p { max-width: 49rem; color: #c7c7d4; line-height: 1.7; }
+    .controls { margin: 2rem 0 1.5rem; max-width: 54rem; }
+    .slider-label { display: flex; flex-wrap: wrap; gap: .5rem 1rem; justify-content: space-between; }
+    output { color: #e8b66e; font-variant-numeric: tabular-nums; }
+    input[type="range"] { width: 100%; min-height: 2.5rem; display: block; margin: .3rem 0 .8rem; accent-color: #e8b66e; }
+    .hint { font-size: .85rem; margin: -.3rem 0 1.4rem; }
+    .stops { display: flex; flex-wrap: wrap; gap: .5rem; }
+    button { font: inherit; font-size: .9rem; color: inherit; background: #22263b; border: 1px solid #555b78; border-radius: .5rem; padding: .65rem .85rem; cursor: pointer; }
+    button:hover { background: #333a55; }
+    button[aria-pressed="true"] { border-color: #e8b66e; background: #3c322c; }
+    :focus-visible { outline: 3px solid #e8b66e; outline-offset: 4px; }
+    #status { min-height: 3.4em; font-size: .95rem; margin-bottom: .8rem; }
+    .readouts { display: flex; flex-wrap: wrap; gap: .5rem 2rem; margin-bottom: 1.5rem; }
+    .readouts p { font-size: .9rem; margin: 0; }
+    .readouts output { font-size: 1.25rem; }
+    .diagrams { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr); gap: 1.5rem; align-items: start; }
+    figure { min-width: 0; margin: 0; }
+    .panel { background: #0b0e1a; border: 1px solid #383b50; border-radius: 1rem; overflow: hidden; }
+    svg, .fallback img { display: block; width: 100%; height: auto; }
+    .axis { fill: none; stroke: #74788e; stroke-width: 1; }
+    .grid { fill: none; stroke: #383b50; stroke-width: 1; stroke-dasharray: 3 5; }
+    .gap { fill: none; stroke: #e8b66e; stroke-width: 2.5; stroke-linejoin: round; }
+    .reference { fill: none; stroke: #b6b7c9; stroke-width: 1.5; stroke-dasharray: 6 5; }
+    .outline { fill: none; stroke: #74788e; stroke-width: 1.2; }
+    .plus { fill: none; stroke: #e8b66e; stroke-width: 3; stroke-linecap: round; }
+    .minus { fill: none; stroke: #9fc7eb; stroke-width: 2; stroke-linecap: round; }
+    .meeting { fill: #e8b66e; stroke: #0b0e1a; stroke-width: 1.5; }
+    .touch { fill: #0b0e1a; stroke: #f4f1e8; stroke-width: 2; }
+    .diagram-label { fill: #c7c7d4; font: 16px ui-sans-serif, system-ui, sans-serif; }
+    .small-label { fill: #c7c7d4; font: 15px ui-sans-serif, system-ui, sans-serif; }
+    .gold-label { fill: #e8b66e; }
+    figcaption { margin: .6rem 0 0; font-size: .85rem; color: #9999ae; line-height: 1.7; }
+    .legend { display: flex; flex-wrap: wrap; gap: .4rem 1.5rem; color: #c7c7d4; font-size: .85rem; margin: .7rem 0; }
+    .legend span { display: inline-flex; align-items: center; gap: .5rem; }
+    .swatch { width: 1.5rem; border-top: 2px solid #e8b66e; }
+    .swatch.reference { border-color: #b6b7c9; border-top-style: dashed; }
+    details { color: #c7c7d4; line-height: 1.7; margin-top: 1.5rem; }
+    summary { color: #e8b66e; cursor: pointer; }
+    .equation { color: #f4f1e8; overflow-wrap: anywhere; }
+    footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #383b50; color: #9999ae; font-size: .85rem; line-height: 1.7; }
+    @media (max-width: 700px) {
+      .diagrams { grid-template-columns: minmax(0, 1fr); }
+      #separation .diagram-label, #separation .small-label { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <a class="back" href="arm_detour.html">← Room to keep moving</a>
+    <div class="eyebrow">Study 007 · A broken mirror</div>
+    <h1>A small turn breaks the mirror</h1>
+    <p>Two branches of a drawing can touch while both keep moving. In the <a href="arm_detour.html">arm detour</a>, a mirror holds a special kind of contact on the horizontal axis. Turn the backward arms just a little: the contact moves off the axis, and its two branches begin to separate in a different way.</p>
+    <div id="explorer" hidden>
+      <div class="controls">
+        <label class="slider-label" for="phase"><span>Turn the backward arms</span><output id="phase-value" for="phase" aria-live="off">+1.00 milliradian</output></label>
+        <input id="phase" type="range" min="-1" max="1" step="0.01" value="1" aria-describedby="phase-hint">
+        <p id="phase-hint" class="hint">One milliradian is about 0.057°. Zero restores the mirror. Turning the other way reflects the contact.</p>
+        <label class="slider-label" for="weight"><span>Blend from rhythms 2 / 3 toward 4 / 7</span><output id="weight-value" for="weight" aria-live="off">14.22483%</output></label>
+        <input id="weight" type="range" min="0.13750512619441832" max="0.14550512619441832" step="any" value="0.1422483193673695">
+        <div class="stops" role="group" aria-label="Visit the local contact">
+          <button type="button" data-stop="-0.001" aria-pressed="false">Just before</button>
+          <button type="button" data-stop="0" aria-pressed="true">At contact</button>
+          <button type="button" data-stop="0.001" aria-pressed="false">Just after</button>
+          <button type="button" id="mirror">Restore the mirror</button>
+        </div>
+        <p id="status" role="status">Two meetings in the window: one crossing and one touch away from the axis.</p>
+      </div>
+      <div class="readouts" aria-label="The selected contact, located numerically">
+        <p>Contact weight <output id="contact-weight" for="phase" aria-live="off">14.22483%</output></p>
+        <p>Contact height <output id="contact-height" for="phase" aria-live="off">+10.504</output> units</p>
+      </div>
+      <div class="diagrams">
+        <figure>
+          <div class="panel">
+            <svg id="separation" viewBox="0 0 650 600" role="img" aria-labelledby="gap-title gap-description">
+              <title id="gap-title">How far apart are the branches at each height?</title>
+              <desc id="gap-description">A graph of horizontal separation against height. Each zero is a meeting of the selected branches.</desc>
+              <defs><clipPath id="graph-clip"><rect x="82" y="42" width="520" height="470"/></clipPath></defs>
+              <path d="M82 42V512H602 M342 42V512" class="axis"/>
+              <path d="M82 277H602 M82 159.5H602 M82 394.5H602 M212 42V512 M472 42V512" class="grid"/>
+              <text x="342" y="25" text-anchor="middle" class="diagram-label">Same position</text>
+              <g class="small-label" text-anchor="end">
+                <text x="70" y="47">+32</text><text x="70" y="164">+16</text><text x="70" y="282">0</text><text x="70" y="399">−16</text><text x="70" y="517">−32</text>
+              </g>
+              <g class="small-label" text-anchor="middle">
+                <text x="82" y="534">−2</text><text x="212" y="534">−1</text><text x="342" y="534">0</text><text x="472" y="534">+1</text><text x="602" y="534">+2</text>
+              </g>
+              <text x="342" y="567" text-anchor="middle" class="diagram-label">Horizontal separation (drawing units)</text>
+              <text transform="translate(24 277) rotate(-90)" text-anchor="middle" class="diagram-label">Height (drawing units)</text>
+              <g clip-path="url(#graph-clip)">
+                <path id="gap-reference" class="reference"/>
+                <path id="gap-line" class="gap"/>
+                <g id="meetings"/>
+              </g>
+            </svg>
+          </div>
+          <div class="legend" aria-label="Graph legend"><span><i class="swatch" aria-hidden="true"></i>Current turn</span><span><i class="swatch reference" aria-hidden="true"></i>Mirror at the same blend</span></div>
+          <figcaption>Read up and down for height. Read left and right for how far apart the branches are. A dot on the vertical zero line is a crossing; a hollow ring is a contact. This graph uses separate axis scales to make the small separation visible.</figcaption>
+        </figure>
+        <figure>
+          <div class="panel">
+            <svg id="drawing" viewBox="0 0 420 420" role="img" aria-labelledby="drawing-title drawing-description">
+              <title id="drawing-title">Where the two branches live</title>
+              <desc id="drawing-description">The full orbital drawing. A gold branch and a blue branch pass close together to the left of center.</desc>
+              <path id="outline" class="outline"/>
+              <path id="branch-plus" class="plus"/>
+              <path id="branch-minus" class="minus"/>
+              <path d="M206 210h8 M210 206v8" class="axis"/>
+              <rect id="patch" width="24" height="60" rx="4" fill="none" stroke="#f4f1e8" stroke-dasharray="3 4"/>
+              <path d="M26 375v-5h33.6634v5" class="axis"/>
+              <text x="26" y="398" class="small-label">100 drawing units</text>
+            </svg>
+          </div>
+          <figcaption>The full drawing keeps equal axis scales and a fixed size. Gold is the later visit, blue the earlier one. Their horizontal distance, gold minus blue at each height, makes the graph. The branches nearly overlap at this scale.</figcaption>
+        </figure>
+      </div>
+    </div>
+    <figure id="fallback" class="fallback">
+      <img src="phase.svg" width="1260" height="850" alt="Three branch-separation graphs: a mirror-symmetric cubic contact on the axis, a quadratic touch above it after a positive turn, and the reflected touch after a negative turn. Both branches keep moving.">
+      <figcaption>A contact with the mirror intact, then with a small turn either way. <a href="phase.svg">Open the full-size drawing ↗</a></figcaption>
+    </figure>
+    <details>
+      <summary>What does the mirror hold in place?</summary>
+      <p>With the mirror intact, a meeting stays on the axis throughout this little part of the blend. At the special contact weight, the two branches share both slope and curvature. Their first different term is cubic in height. Just after it, two extra nearby crossings appear, one above the axis and one below.</p>
+      <p>The small turn breaks this constraint. One meeting persists while another two are born together at a quadratic touch away from the axis. The touch moves upward for a positive turn and downward for a negative one. Select “Just before,” “At contact,” and “Just after” to see one, two, and three meetings in the window. At zero turn the middle picture has one cubic contact.</p>
+      <p>The dashed graph restores the mirror at the <em>same blend weight</em>. It does not follow its contact as you move the sliders. Its agreement or disagreement with the gold graph shows what the small turn changes.</p>
+    </details>
+    <details>
+      <summary>Why can a small turn make a visible difference?</summary>
+      <p>Call the turn <span class="equation">φ</span>. Close to the mirror contact, the separation has leading terms <span class="equation">2 A′ (a − a₀) y + 2 C y³ + B φ</span>, where y is height and a is blend weight. All three coefficients are nonzero. A small constant shift of a cubic can move a double meeting a surprisingly long way.</p>
+      <p>As the turn tends to zero, the contact height scales like its signed cube root. The change in contact weight scales like <span class="equation">|φ|<sup>2/3</sup></span>. Reducing the turn eightfold therefore roughly halves the height and quarters the weight shift. These are local limiting laws; the picture calculates the actual branches numerically.</p>
+      <p>The first arm stays at 300 throughout this study. Both backward-frequency terms receive the same phase, leaving every curve closed. The tracing point keeps moving: the earlier speed bound and a triangle inequality give speed greater than <span class="equation">0.285</span> on both complete detours whenever the turn is at most one milliradian. The direction’s net turn remains zero, and the curve winds once around the center.</p>
+    </details>
+    <details>
+      <summary>Controls, approximations, and the proof</summary>
+      <p>Nothing animates. Changing the turn keeps your current blend weight; “At contact” finds the new contact. “Restore the mirror” returns to zero turn at its cubic contact. For the blend slider, arrow keys change the weight by 0.01 percentage points; Shift makes the change ten times smaller. Page Up and Page Down change it by 0.1 percentage points. Home and End visit the ends of the displayed interval. The turn slider uses its native arrow-key steps.</p>
+      <p>The graph follows two local branches within 32 drawing units of the horizontal axis. Its meeting markers and readouts are numerical approximations. They count only those selected branches in this window. Other branches of the complete orbit can meet elsewhere.</p>
+      <p>The <a href="phase_unfolding.md">mathematical note</a> proves the local scaling law and explains rational contraction boxes that certify a quadratic tangency at six specified nonzero turns. This does not classify every event of every perturbed curve. A <a href="phase.svg">standalone SVG</a> preserves three stills without JavaScript.</p>
+    </details>
+    <footer>Aldebaran · A small turn, a different touch.<br><a href="../index.html">The sketchbook ↗</a> · <a href="phase_unfolding.md">The mathematics ↗</a> · <a href="phase.svg" download>Save the still drawing ↧</a> · <a href="../JOURNAL.md">Notebook ↗</a></footer>
+  </main>
+  <script src="phase_math.js"></script>
+  <script src="phase.js"></script>
+</body>
+</html>
