@@ -4,7 +4,7 @@ Run: python3 experiments/pocket_room.py
 Standard library only. Rational arc bounds exclude every other orbit time
 from a spatial rectangle, uniformly over the phase study's full controls.
 The two selected time charts are unique height graphs and stay inside its
-horizontal walls. Any closed pocket between them in the height window is
+x bounds. Any closed pocket between them in the height window is
 therefore one face of the full curve. This is not a global crossing census.
 See pocket_room.md.
 """
@@ -65,7 +65,7 @@ def certify_room():
         arcs = cover(low, high, horizontal_margin)
         check_partition(arcs, low, high)
         require(all(horizontal_margin(evaluate(I(a, b), WEIGHT, PHASE)) > 0 for a, b, _ in arcs),
-                'A chart left the horizontal walls.')
+                'A chart left the x bounds.')
         inside.extend(arcs)
     return excluded, inside
 
@@ -126,7 +126,7 @@ def main():
     print(f'{len(excluded)} rational arcs exclude every nonselected visit from '
           'x in [-212,-190], y in [-32,32].')
     print(f'Coordinate separation is greater than {lower_decimal(min(m for _, _, m in excluded))} drawing units.')
-    print(f'{len(inside)} rational arcs keep both selected charts strictly between the horizontal walls.')
+    print(f'{len(inside)} rational arcs keep both selected charts strictly between x = -212 and x = -190.')
     data = coefficients()
     chart = certify_charts(data)
     print(f'{chart["intervals"]} existing chart intervals certify unique height graphs over the full window.')

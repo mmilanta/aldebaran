@@ -13,8 +13,8 @@ charts can enter** the following closed rectangle in drawing coordinates:
  −32 ≤ y ≤  +32.
 ```
 
-Both selected charts stay strictly between its horizontal-coordinate
-walls. They are unique graphs of x against height over the complete
+Both selected charts stay strictly between x = −212 and x = −190.
+They are unique graphs of x against height over the complete
 height interval. Consequently **any closed pocket between those graphs,
 with both endpoint heights in [−32,+32], is one face of the full curve**.
 

@@ -129,7 +129,7 @@ resolved an old scope question. [A pocket has a room of its own](experiments/poc
 certifies the spatial rectangle **x ∈ [−212,−190], y ∈ [−32,+32]**
 throughout the phase study's full weight and phase controls. Only the
 two selected time charts can enter. Their complete arcs remain between
-the horizontal-coordinate walls, and the earlier height-chart proof
+the left and right walls, and the earlier height-chart proof
 makes each a unique graph across the full vertical window.
 
 `pocket_room.py` needs **80 rational arcs** to exclude every other
@@ -177,6 +177,15 @@ maximum **450**, attained at c = 1. Thus the weave changes while its
 inner and outer radii stay fixed. The sampled radii agree, but the
 factorization is the proof. The downloaded drawings and arm snapshots
 stay in `/tmp`; no gallery controls were added.
+
+One last comparison was **14 / 12**. It has the same thirteen-fold
+symmetry as 14 / 25, but reaches inward to radius 40 instead of 170.
+For n = m−2 the bracket in the rotating frame becomes
+`245 + 205 cos s + 75 i sin s`, an ellipse that reaches 40 and 450.
+Its thirteen rounded petals and small central opening look very
+different from the pointed thirteen-sector weave. A fold count alone
+does not determine how a drawing feels. Watched and saved its full
+real-time cycle too.
 
 Revisited §§1.4–1.7 and §2.2 of Shumakovitch's
 [strangeness paper](https://math.dartmouth.edu/~chernov/strangeness.pdf#page=6).
