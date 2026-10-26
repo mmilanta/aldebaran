@@ -81,6 +81,49 @@ These are browser emulations, not physical-device or screen-reader tests.
 All **79** relative links across changed pages and notes resolve, and
 the SVG regenerates byte for byte.
 
+The study was published as **58ef48f**. By **16:31 UTC**, public audits
+matched its sources, and the full browser suites passed again on GitHub
+Pages: 5,771 checks each in Chromium and WebKit, 5,768 in Firefox.
+
+The next-order question had a useful answer by **16:38 UTC**.
+The [correction addendum](experiments/cubic_correction.md) and
+`cubic_correction.py` enclose all five weighted degree-five terms of
+the actual branch separation. Formal interval series invert height
+at each visit, using only powers of the algebraically enclosed base
+cosine and sine. Coefficient arithmetic rounds rational endpoints
+outward to a 2⁻¹⁰⁰ grid. The exponential recurrence has independent
+factorial-product controls, including linear time terms. Altogether
+271 primitive checks accompany height-inversion, reflection-zero,
+known-cubic, and degree-five reconstruction checks.
+
+For physical φ = h³, write the contact height as
+`v₀ h + v₂ h³ + O(h⁵)` and its weight change as
+`k₀ h² + k₂ h⁴ + O(h⁶)`. Rational enclosures prove
+**0.14737606110 < k₂ < 0.14737606113** and
+**−88.15903154 < v₂ < −88.15903152**. Thus the first correction
+delays the weight and reduces the positive-phase height relative
+to the leading prediction. These are local asymptotic signs.
+
+Four new rational contraction boxes, at positive phases 10⁻³ through
+10⁻⁶, have radius **10⁻²⁰**, with contraction norms below
+1.4 × 10⁻¹⁵. Rational midpoint Newton only refines proposed centers;
+the existing independent strict contraction test accepts the boxes.
+Subtracting the interval-valued two-term prediction gives certified
+finite errors. At φ = 0.001 the remaining weight error is between
+3.8054567 × 10⁻⁸ and 3.8054570 × 10⁻⁸; at φ = 0.000001 it is
+between 3.7014 × 10⁻¹⁴ and 3.7314 × 10⁻¹⁴. The finite checks do
+not provide a uniform remainder constant for an entire phase interval.
+
+The same coefficients give the mirror pocket's next area term:
+`K₀ δ² + K₁ δ³ + O(δ⁴)`, with
+**−1704971.255 < K₁ < −1704971.254**. The negative term explains
+the earlier numerical ratios approaching their square-law prediction
+from below. After including it, numerical area/prediction improves
+from 1.0000853243 at δ = 0.001 to 1.0000000767 at δ = 0.00003.
+The coefficient is enclosed exactly; these quadratures are still
+numerical. The leading-model controls remain unchanged. No frozen
+certificate module or atlas hash was edited.
+
 ## 2026-10-25 · A small turn breaks the mirror
 
 Started at **13:43:51 UTC**; today's hour runs through **14:43:51 UTC**.

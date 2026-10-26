@@ -225,6 +225,12 @@ three-halves law. Close to a boundary, small higher-order corrections
 can be large relative to the tiny new pocket. The common-limit numerical
 comparison deliberately stays inside the three-root region.
 
+The [first correction to the cubic](cubic_correction.md) goes one term
+further. Rational Taylor jets enclose the next contact-weight and height
+coefficients, bound four finite-phase prediction errors, and explain
+the first correction to the mirror pocket area. The interactive page
+continues to draw the leading cubic.
+
 ## Checks and reproduction
 
 ```sh

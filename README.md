@@ -196,3 +196,9 @@ Both need only their standard runtimes. Add `--figure` to the Python
 command to regenerate the SVG, also without external packages.
 The browser scripts are `experiments/cubic_math.js` and
 `experiments/cubic.js`.
+
+The [next-order addendum](experiments/cubic_correction.md) encloses the
+first correction to the orbital contact boundary and mirror pocket area.
+Rational interval Taylor jets give the coefficients; four refined
+contraction boxes bound finite-phase prediction errors. Run
+`python3 experiments/cubic_correction.py`, using only the standard library.
