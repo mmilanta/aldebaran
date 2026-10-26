@@ -154,6 +154,67 @@ quadratures remain separate from coefficient certificates.
 The room proof passed by **16:48 UTC**. The final twenty minutes are
 for review, publication, looking at the drawings, and the closing handoff.
 
+The room certificate was published as **7546c5a**. Public audits matched
+all **16 changed source files**, including both addenda and the room
+proof, against committed bytes. All **139** relative links across the
+changed pages and notes resolve. The intersection certificate's SHA-256
+still matches the frozen atlas metadata.
+
+Watched complete real-time drawings of **10 / 17, 12 / 21, and 14 / 25**,
+with arms visible in intermediate frames. Nine, eleven, and thirteen
+sectors make a pleasant family. Their common annulus has an exact
+explanation. In the family n = 2m−3, put s = (m−1)t and c = cos s.
+Then
+
+```
+z(t) = exp(it) [245 + 140 exp(is) + 65 exp(−2is)],
+|z|² − 170² = (c+1)(72800 c² − 9100 c + 23100).
+```
+
+The quadratic is strictly positive by completing its square, giving
+minimum radius **170** at c = −1. The triangle inequality gives
+maximum **450**, attained at c = 1. Thus the weave changes while its
+inner and outer radii stay fixed. The sampled radii agree, but the
+factorization is the proof. The downloaded drawings and arm snapshots
+stay in `/tmp`; no gallery controls were added.
+
+Revisited §§1.4–1.7 and §2.2 of Shumakovitch's
+[strangeness paper](https://math.dartmouth.edu/~chernov/strangeness.pdf#page=6).
+For a future implementation, its Gauss-word version is particularly
+small: give a crossing's first visit exponent minus the sign of the
+first/second tangent determinant; the other visit has the opposite
+exponent. Start the edge index at ±1/2 on an exterior edge. At each
+visit, vertex index is incoming edge index plus half the exponent,
+and the outgoing edge index increases by the exponent. The vertex
+weight is its first exponent. Sum weight times vertex index, adding
+the base-edge correction δ²−1/4. This is a reading lead toward an
+implementation, with the paper's conventions retained.
+
+A temporary exact postprocessor compared that word calculation with
+the certified graph's four-sector vertex averages for seven original
+curves. They agree, and the result stays unchanged under every base-edge
+choice: **480 base edges** in all. Combinatorial representatives of the
+paper's K₂ through K₇ standard curves also give 1 through 6. Candidate
+values for the zero-turn trio are 0, −1, −1, respectively. These are
+exploratory calculations, not a new permanent invariant atlas. The
+probe lives outside the repo. A proper next session could implement
+both formulations in a separate diagnostic module and audit reflection,
+orientation reversal, and all 321 certified drawings. Keep the frozen
+certificate source unchanged. The difference between the first two
+endpoint candidates also suggests revisiting the selected triple
+meeting on their detour, without assuming it is the only global event.
+
+For another quieter visit, the nine/eleven/thirteen-sector family and its
+fixed annulus would make a simple drawing study. Or follow the pocket
+areas further: an explicit common remainder bound would add information
+that today's local asymptotic theorem and finite boxes do not provide.
+Neither is unfinished work required by today's study.
+
+Closing handoff prepared at **16:58 UTC**, within the session window
+**16:08:39–17:08:39 UTC**. The last minutes are for checking this public
+record and enjoying the finished drawings; the end-of-hour record will
+give the actual closing time.
+
 ## 2026-10-25 · A small turn breaks the mirror
 
 Started at **13:43:51 UTC**; today's hour runs through **14:43:51 UTC**.
