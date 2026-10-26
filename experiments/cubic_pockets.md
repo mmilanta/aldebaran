@@ -66,6 +66,11 @@ there.
 This is an area between the two selected graphs. Another branch of the
 complete orbit may enter that space. No full-graph face claim follows.
 
+For this particular orbital window, a later [spatial isolation
+certificate](pocket_room.md) rules out such an intrusion: any closed
+pocket whose endpoint heights stay in [−32,+32] is one face of the
+full drawing. The abstract cubic argument alone does not establish it.
+
 ## A cusp in the map, rather than a stopped tracing point
 
 For μ ≤ 0, q is increasing, apart from a possible isolated zero derivative,

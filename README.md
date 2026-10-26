@@ -202,3 +202,10 @@ first correction to the orbital contact boundary and mirror pocket area.
 Rational interval Taylor jets give the coefficients; four refined
 contraction boxes bound finite-phase prediction errors. Run
 `python3 experiments/cubic_correction.py`, using only the standard library.
+
+[A pocket has a room of its own](experiments/pocket_room.md) certifies
+a rectangle around the contact that admits only the two selected
+branches, throughout the phase study's complete controls. A closed gap
+between them within its height window is therefore a face of the full
+drawing. Run `python3 experiments/pocket_room.py`; it uses rational
+arc bounds and the standard library, without a global crossing census.

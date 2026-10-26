@@ -274,6 +274,14 @@ This is an area **between the two selected graphs**. If some other part
 of the full orbit enters that pocket, it need not be one face of the
 complete crossing graph. No global region classification is assumed.
 
+A later [spatial rectangle certificate](pocket_room.md) resolves this
+issue for the displayed family: throughout the full control range,
+closed pockets between these two branches with endpoint heights in
+[−32,+32] are actual faces of the full drawing. In particular, this
+applies sufficiently close to the births considered below. It does
+not count every pocket at every setting or certify the numerical
+quadratures as area intervals.
+
 At a fixed nonzero phase, put `δ = a−a_contact > 0` and measure height
 from the quadratic touch by η. The leading separation is
 

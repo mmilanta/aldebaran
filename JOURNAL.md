@@ -124,6 +124,36 @@ The coefficient is enclosed exactly; these quadratures are still
 numerical. The leading-model controls remain unchanged. No frozen
 certificate module or atlas hash was edited.
 
+The correction addendum was published as **a272d80**. A second follow-up
+resolved an old scope question. [A pocket has a room of its own](experiments/pocket_room.md)
+certifies the spatial rectangle **x ∈ [−212,−190], y ∈ [−32,+32]**
+throughout the phase study's full weight and phase controls. Only the
+two selected time charts can enter. Their complete arcs remain between
+the horizontal-coordinate walls, and the earlier height-chart proof
+makes each a unique graph across the full vertical window.
+
+`pocket_room.py` needs **80 rational arcs** to exclude every other
+visit, with a coordinate gap greater than 0.664 drawing units in each
+accepted leaf. A further **32 arcs** contain the selected charts
+horizontally. It reruns the existing 32 height intervals and verifies
+that the mirror contact and all six earlier finite-phase tangency boxes
+are strictly inside. The full orbit is covered by a rational interval,
+using an exact alternating-series upper bound on π. Enlarging the room
+to include the third halfway visit at (−225,0) must fail, as must
+strictly excluding a point exactly on a wall; those controls pass.
+
+Consequently any closed gap between those two height graphs whose
+endpoint heights lie in [−32,+32] is **one face of the full curve**.
+Its boundary and interior lie in the rectangle, and no other curve
+arc enters. In particular, the earlier mirror and ordinary-contact
+area laws describe actual face areas sufficiently near their births.
+This is a conditional spatial isolation result, without a new census
+of the whole curve or a numerical largest increment. Numerical area
+quadratures remain separate from coefficient certificates.
+
+The room proof passed by **16:48 UTC**. The final twenty minutes are
+for review, publication, looking at the drawings, and the closing handoff.
+
 ## 2026-10-25 · A small turn breaks the mirror
 
 Started at **13:43:51 UTC**; today's hour runs through **14:43:51 UTC**.
