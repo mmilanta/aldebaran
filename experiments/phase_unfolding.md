@@ -334,6 +334,12 @@ separate from the Taylor argument and the coefficient enclosures:
 The negative-phase results agree by reflection. These numerical
 integrals are not interval enclosures of the actual areas.
 
+[One cubic, two area laws](cubic.html) connects these two limits in a
+single rescaled model. Its [derivation](cubic_pockets.md) explains the
+cusp-shaped boundary and the common dimensionless phase/weight ratio.
+That exact model boundary supplies the leading orbital discriminant,
+rather than a new finite-scale event census.
+
 For a complementary global fact, the **total signed area** is independent
 of phase. Fourier orthogonality gives, on this middle leg,
 

@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title description">
+<title id="title">One cubic, two area laws</title>
+<desc id="description">Three graphs of the cubic separation against height: a cubic contact at opening zero and tilt zero; two equal pockets at opening one and tilt zero; and one surviving pocket at a quadratic touch at opening one and tilt one. The lower parameter map has a cusp separating one crossing from three. This is the leading model of two orbital branches, with independent normalized axis scales.</desc>
+<rect width="1200" height="760" fill="#101323"/>
+<g font-family="ui-sans-serif, system-ui, sans-serif">
+<text x="50" y="55" fill="#f4f1e8" font-size="32" text-anchor="start">One cubic, two area laws</text>
+<text x="50" y="90" fill="#c7c7d4" font-size="17" text-anchor="start">A leading model: q(v) = v³ − μv + 2τ/(3√3). Shading measures area between the graph and zero.</text>
+<text x="220" y="127" fill="#e8b66e" font-size="21" text-anchor="middle">A cubic contact</text>
+<text x="220" y="151" fill="#c7c7d4" font-size="16" text-anchor="middle">Opening 0 · tilt 0</text>
+<rect x="65" y="170" width="310" height="265" rx="10" fill="#0b0e1a"/>
+<clipPath id="clip-0"><rect x="70" y="175" width="300" height="255"/></clipPath>
+<path d="M70 300H370 M220 175V430" stroke="#74788e" fill="none" stroke-width="1" />
+<g clip-path="url(#clip-0)">
+<path d="M220.00000 300.00000 C220.00000 300.00000 220.00000 300.00000 220.00000 300.00000 L220.00000 300.00000 L220.00000 300.00000 Z" stroke="none" fill="#9fc7eb" stroke-width="1.5" fill-opacity=".35"/>
+<path d="M220.00000 300.00000 C220.00000 300.00000 220.00000 300.00000 220.00000 300.00000 L220.00000 300.00000 L220.00000 300.00000 Z" stroke="none" fill="#e8b66e" stroke-width="1.5" fill-opacity=".35"/>
+<path d="M-206.75187 455.10000 C646.75187 351.70000 -206.75187 248.30000 646.75187 144.90000" stroke="#f4f1e8" fill="none" stroke-width="2.3" />
+<circle cx="220.00000" cy="300.00000" r="6" fill="#0b0e1a" stroke="#f4f1e8" stroke-width="1.5"/>
+</g>
+<text x="59" y="399" fill="#c7c7d4" font-size="14" text-anchor="end">−1</text>
+<text x="59" y="305" fill="#c7c7d4" font-size="14" text-anchor="end">0</text>
+<text x="59" y="211" fill="#c7c7d4" font-size="14" text-anchor="end">1</text>
+<text x="125" y="453" fill="#c7c7d4" font-size="14" text-anchor="middle">−1</text>
+<text x="220" y="453" fill="#c7c7d4" font-size="14" text-anchor="middle">0</text>
+<text x="315" y="453" fill="#c7c7d4" font-size="14" text-anchor="middle">1</text>
+<text x="220" y="480" fill="#c7c7d4" font-size="16" text-anchor="middle">Separation q →</text>
+<text x="75" y="194" fill="#c7c7d4" font-size="14" text-anchor="start">Height v ↑</text>
+<text x="220" y="512" fill="#f4f1e8" font-size="17" text-anchor="middle">Lower 0.00 · upper 0.00</text>
+<text x="600" y="127" fill="#e8b66e" font-size="21" text-anchor="middle">Equal pockets</text>
+<text x="600" y="151" fill="#c7c7d4" font-size="16" text-anchor="middle">Opening 1 · tilt 0</text>
+<rect x="445" y="170" width="310" height="265" rx="10" fill="#0b0e1a"/>
+<clipPath id="clip-1"><rect x="450" y="175" width="300" height="255"/></clipPath>
+<path d="M450 300H750 M600 175V430" stroke="#74788e" fill="none" stroke-width="1" />
+<g clip-path="url(#clip-1)">
+<path d="M600.00000 394.00000 C663.33333 362.66667 631.66667 331.33333 600.00000 300.00000 L600.00000 300.00000 L600.00000 394.00000 Z" stroke="none" fill="#9fc7eb" stroke-width="1.5" fill-opacity=".35"/>
+<path d="M600.00000 300.00000 C568.33333 268.66667 536.66667 237.33333 600.00000 206.00000 L600.00000 206.00000 L600.00000 300.00000 Z" stroke="none" fill="#e8b66e" stroke-width="1.5" fill-opacity=".35"/>
+<path d="M329.99813 455.10000 C1079.00187 351.70000 120.99813 248.30000 870.00187 144.90000" stroke="#f4f1e8" fill="none" stroke-width="2.3" />
+<circle cx="600.00000" cy="394.00000" r="4" fill="#f4f1e8" stroke="#f4f1e8" stroke-width="1.5"/>
+<circle cx="600.00000" cy="300.00000" r="4" fill="#f4f1e8" stroke="#f4f1e8" stroke-width="1.5"/>
+<circle cx="600.00000" cy="206.00000" r="4" fill="#f4f1e8" stroke="#f4f1e8" stroke-width="1.5"/>
+</g>
+<text x="439" y="399" fill="#c7c7d4" font-size="14" text-anchor="end">−1</text>
+<text x="439" y="305" fill="#c7c7d4" font-size="14" text-anchor="end">0</text>
+<text x="439" y="211" fill="#c7c7d4" font-size="14" text-anchor="end">1</text>
+<text x="505" y="453" fill="#c7c7d4" font-size="14" text-anchor="middle">−1</text>
+<text x="600" y="453" fill="#c7c7d4" font-size="14" text-anchor="middle">0</text>
+<text x="695" y="453" fill="#c7c7d4" font-size="14" text-anchor="middle">1</text>
+<text x="600" y="480" fill="#c7c7d4" font-size="16" text-anchor="middle">Separation q →</text>
+<text x="455" y="194" fill="#c7c7d4" font-size="14" text-anchor="start">Height v ↑</text>
+<text x="600" y="512" fill="#f4f1e8" font-size="17" text-anchor="middle">Lower 0.25 · upper 0.25</text>
+<text x="980" y="127" fill="#e8b66e" font-size="21" text-anchor="middle">A tilted touch</text>
+<text x="980" y="151" fill="#c7c7d4" font-size="16" text-anchor="middle">Opening 1 · tilt 1</text>
+<rect x="825" y="170" width="310" height="265" rx="10" fill="#0b0e1a"/>
+<clipPath id="clip-2"><rect x="830" y="175" width="300" height="255"/></clipPath>
+<path d="M830 300H1130 M980 175V430" stroke="#74788e" fill="none" stroke-width="1" />
+<g clip-path="url(#clip-2)">
+<path d="M980.00000 408.54185 C1144.54483 354.27093 980.00000 300.00000 980.00000 245.72907 L980.00000 245.72907 L980.00000 408.54185 Z" stroke="none" fill="#9fc7eb" stroke-width="1.5" fill-opacity=".35"/>
+<path d="M980.00000 245.72907 C980.00000 245.72907 980.00000 245.72907 980.00000 245.72907 L980.00000 245.72907 L980.00000 245.72907 Z" stroke="none" fill="#e8b66e" stroke-width="1.5" fill-opacity=".35"/>
+<path d="M746.56364 455.10000 C1495.56739 351.70000 537.56364 248.30000 1286.56739 144.90000" stroke="#f4f1e8" fill="none" stroke-width="2.3" />
+<circle cx="980.00000" cy="408.54185" r="4" fill="#f4f1e8" stroke="#f4f1e8" stroke-width="1.5"/>
+<circle cx="980.00000" cy="245.72907" r="6" fill="#0b0e1a" stroke="#f4f1e8" stroke-width="1.5"/>
+</g>
+<text x="819" y="399" fill="#c7c7d4" font-size="14" text-anchor="end">−1</text>
+<text x="819" y="305" fill="#c7c7d4" font-size="14" text-anchor="end">0</text>
+<text x="819" y="211" fill="#c7c7d4" font-size="14" text-anchor="end">1</text>
+<text x="885" y="453" fill="#c7c7d4" font-size="14" text-anchor="middle">−1</text>
+<text x="980" y="453" fill="#c7c7d4" font-size="14" text-anchor="middle">0</text>
+<text x="1075" y="453" fill="#c7c7d4" font-size="14" text-anchor="middle">1</text>
+<text x="980" y="480" fill="#c7c7d4" font-size="16" text-anchor="middle">Separation q →</text>
+<text x="835" y="194" fill="#c7c7d4" font-size="14" text-anchor="start">Height v ↑</text>
+<text x="980" y="512" fill="#f4f1e8" font-size="17" text-anchor="middle">Lower 0.75 · upper 0.00</text>
+<text x="50" y="563" fill="#f4f1e8" font-size="22" text-anchor="start">Two routes through a parameter map</text>
+<text x="50" y="602" fill="#9fc7eb" font-size="18" text-anchor="start">Mirror: tilt zero, opening μ &gt; 0.</text>
+<text x="50" y="629" fill="#c7c7d4" font-size="18" text-anchor="start">Each pocket has area μ²/4.</text>
+<text x="50" y="672" fill="#e8b66e" font-size="18" text-anchor="start">Tilt +1: increase opening from 1 to 1 + ε.</text>
+<text x="50" y="699" fill="#c7c7d4" font-size="18" text-anchor="start">The new upper pocket has area ∼ (4/9) ε³⁄².</text>
+<path d="M1065.00000 730.53010 C685.00000 539.46990 685.00000 730.53010 1065.00000 539.46990 Z" stroke="none" fill="#e8b66e" stroke-width="1.5" fill-opacity=".12"/>
+<path d="M720 635H1090 M780 535V735" stroke="#74788e" fill="none" stroke-width="1" />
+<path d="M720 583H1090" stroke="#9fc7eb" fill="none" stroke-width="1" stroke-dasharray="5 5"/>
+<path d="M1065.00000 730.53010 C685.00000 539.46990 685.00000 730.53010 1065.00000 539.46990" stroke="#e8b66e" fill="none" stroke-width="1.5" />
+<circle cx="780" cy="635" r="5" fill="#f4f1e8"/>
+<circle cx="970" cy="635" r="5" fill="#f4f1e8"/>
+<circle cx="970" cy="583" r="5" fill="#f4f1e8"/>
+<text x="998" y="660" fill="#f4f1e8" font-size="14" text-anchor="start">3 crossings</text>
+<text x="828" y="555" fill="#c7c7d4" font-size="14" text-anchor="start">1 crossing</text>
+<text x="1085" y="628" fill="#c7c7d4" font-size="15" text-anchor="start">μ →</text>
+<text x="756" y="550" fill="#c7c7d4" font-size="15" text-anchor="start">τ ↑</text>
+<text x="50" y="741" fill="#c7c7d4" font-size="15" text-anchor="start">Normalized units, separate axis scales. The full orbital drawing has higher-order corrections.</text>
+</g>
+</svg>

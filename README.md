@@ -176,3 +176,23 @@ Both use only their standard runtimes. The optional
 `python3 experiments/plot_phase.py` regenerates the still SVG with Matplotlib.
 The browser scripts are `experiments/phase_math.js` and
 `experiments/phase.js`; both support `node --check`.
+
+[One cubic, two area laws](experiments/cubic.html) connects the two ways
+those small pockets grow. A rescaled cubic has two equal pockets along
+the mirror route, and one newly born pocket near a tilted touch. Move
+opening and tilt to explore its exact parameter boundary, a semicubical
+cusp, and its two pocket areas. This is the leading local model of the
+orbital branches; its boundary is not a finite-scale orbital event census.
+Nothing animates, and a [standalone SVG](experiments/cubic.svg) works
+without scripts. The [derivation](experiments/cubic_pockets.md) gives
+the common scaling limit and checks its approach numerically:
+
+```sh
+node experiments/cubic_check.js
+python3 experiments/cubic_pockets.py
+```
+
+Both need only their standard runtimes. Add `--figure` to the Python
+command to regenerate the SVG, also without external packages.
+The browser scripts are `experiments/cubic_math.js` and
+`experiments/cubic.js`.

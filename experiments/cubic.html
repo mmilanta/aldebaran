@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101323">
+  <meta name="description" content="One cubic connects two ways a small pocket can grow. Explore its crossings, areas, and cusp-shaped parameter map.">
+  <title>Aldebaran · One cubic, two area laws</title>
+  <style>
+    :root { color-scheme: dark; font-family: ui-sans-serif, system-ui, sans-serif; background: #101323; color: #f4f1e8; }
+    * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+    body { margin: 0; }
+    main { max-width: 75rem; padding: clamp(1.2rem, 4vw, 3rem); margin: auto; }
+    a { color: #e8b66e; }
+    .back { display: inline-block; font-size: .85rem; margin-bottom: 2rem; }
+    .eyebrow { color: #e8b66e; font-size: .75rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
+    h1 { max-width: 55rem; font-size: clamp(2rem, 6vw, 5rem); line-height: 1.05; letter-spacing: -.06em; margin: .8rem 0 1rem; overflow-wrap: anywhere; }
+    p { max-width: 49rem; color: #c7c7d4; line-height: 1.7; }
+    .controls { margin: 2rem 0 1.5rem; max-width: 54rem; }
+    .slider-label { display: flex; flex-wrap: wrap; gap: .5rem 1rem; justify-content: space-between; }
+    output { color: #e8b66e; font-variant-numeric: tabular-nums; }
+    input[type="range"] { width: 100%; min-height: 2.5rem; display: block; margin: .3rem 0 .8rem; accent-color: #e8b66e; }
+    .hint { font-size: .85rem; margin: -.3rem 0 1.2rem; }
+    .stops { display: flex; flex-wrap: wrap; gap: .5rem; }
+    button { font: inherit; font-size: .9rem; color: inherit; background: #22263b; border: 1px solid #555b78; border-radius: .5rem; padding: .65rem .85rem; cursor: pointer; }
+    button:hover { background: #333a55; }
+    button[aria-pressed="true"] { border-color: #e8b66e; background: #3c322c; }
+    :focus-visible { outline: 3px solid #e8b66e; outline-offset: 4px; }
+    #status { min-height: 3.4em; font-size: .95rem; }
+    .readouts { display: flex; flex-wrap: wrap; gap: .5rem 2rem; margin-bottom: 1.5rem; }
+    .readouts p { font-size: .9rem; margin: 0; }
+    .readouts output { font-size: 1.25rem; }
+    #area-0 { color: #9fc7eb; }
+    .diagrams { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); gap: 1.5rem; align-items: start; }
+    figure { min-width: 0; margin: 0; }
+    .panel { background: #0b0e1a; border: 1px solid #383b50; border-radius: 1rem; overflow: hidden; }
+    svg, .fallback img { display: block; width: 100%; height: auto; }
+    .axis { fill: none; stroke: #74788e; stroke-width: 1; }
+    .grid { fill: none; stroke: #383b50; stroke-width: 1; stroke-dasharray: 3 5; }
+    .model { fill: none; stroke: #f4f1e8; stroke-width: 2.5; }
+    .lower { fill: #9fc7eb; fill-opacity: .3; }
+    .upper { fill: #e8b66e; fill-opacity: .4; }
+    .crossing { fill: #f4f1e8; stroke: #0b0e1a; stroke-width: 1.5; }
+    .touch { fill: #0b0e1a; stroke: #f4f1e8; stroke-width: 2; }
+    .boundary { fill: none; stroke: #e8b66e; stroke-width: 2; }
+    .inside { fill: #e8b66e; fill-opacity: .12; }
+    .route { fill: none; stroke: #9fc7eb; stroke-width: 1.3; stroke-dasharray: 6 5; }
+    .diagram-label { fill: #c7c7d4; font: 17px ui-sans-serif, system-ui, sans-serif; }
+    .small-label { fill: #c7c7d4; font: 15px ui-sans-serif, system-ui, sans-serif; }
+    figcaption { margin: .6rem 0 0; font-size: .85rem; color: #9999ae; line-height: 1.7; }
+    .legend { display: flex; flex-wrap: wrap; gap: .4rem 1.5rem; color: #c7c7d4; font-size: .85rem; margin: .7rem 0; }
+    .legend span { display: inline-flex; align-items: center; gap: .5rem; }
+    .swatch { width: 1.5rem; border-top: 3px solid #e8b66e; }
+    .swatch.blue { border-color: #9fc7eb; }
+    details { color: #c7c7d4; line-height: 1.7; margin-top: 1.5rem; }
+    summary { color: #e8b66e; cursor: pointer; }
+    .equation { color: #f4f1e8; overflow-wrap: anywhere; }
+    footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #383b50; color: #9999ae; font-size: .85rem; line-height: 1.7; }
+    @media (max-width: 700px) {
+      .diagrams { grid-template-columns: minmax(0, 1fr); }
+      #model .diagram-label { font-size: 26px; }
+      #model .small-label { font-size: 24px; }
+      #parameters .diagram-label { font-size: 21px; }
+      #parameters .small-label { font-size: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <a class="back" href="phase.html">← A small turn breaks the mirror</a>
+    <div class="eyebrow">Study 008 · Areas near a contact</div>
+    <h1>One cubic, two area laws</h1>
+    <p>A small pocket appears when two branches of a drawing meet, then separate. With a mirror intact, two equal pockets open together. Break the mirror, and one is born on its own. A single cubic model connects these two ways to grow.</p>
+    <p>This picture follows the <em>leading model</em> of the <a href="phase.html">orbital contact</a>. Its units are rescaled. The model’s areas and parameter boundary are exact mathematical formulas; the complete orbital drawing has higher-order corrections.</p>
+    <div id="explorer" hidden>
+      <div class="controls">
+        <label class="slider-label" for="opening"><span>Opening <span aria-hidden="true">μ</span></span><output id="opening-value" for="opening" aria-live="off">+1.00</output></label>
+        <input id="opening" type="range" min="-0.5" max="1.5" step="0.01" value="1" aria-describedby="opening-hint">
+        <p class="hint" id="opening-hint">Increase the opening to make room between the branches. The parameter map moves from left to right.</p>
+        <label class="slider-label" for="tilt"><span>Tilt <span aria-hidden="true">τ</span></span><output id="tilt-value" for="tilt" aria-live="off">0.00</output></label>
+        <input id="tilt" type="range" min="-1.5" max="1.5" step="0.01" value="0" aria-describedby="tilt-hint">
+        <p class="hint" id="tilt-hint">Zero keeps the mirror. A tilt shifts the separation sideways; reversing it exchanges the two pockets.</p>
+        <div class="stops" role="group" aria-label="Starting points for two routes">
+          <button type="button" data-opening="0" data-tilt="0" aria-pressed="false">Cubic contact</button>
+          <button type="button" data-opening="1" data-tilt="0" aria-pressed="true">Equal pockets</button>
+          <button type="button" data-opening="1" data-tilt="1" aria-pressed="false">Tilted touch</button>
+          <button type="button" data-opening="1.25" data-tilt="1" aria-pressed="false">New pocket</button>
+        </div>
+        <p id="status" role="status">Three crossings. Two equal pockets, with the mirror intact.</p>
+      </div>
+      <p class="hint">Pocket areas, in normalized square units:</p>
+      <div class="readouts" role="group" aria-label="Model pocket areas in normalized square units">
+        <p>Lower pocket <output id="area-0" for="opening tilt" aria-live="off">0.25000</output></p>
+        <p>Upper pocket <output id="area-1" for="opening tilt" aria-live="off">0.25000</output></p>
+      </div>
+      <div class="diagrams">
+        <figure>
+          <div class="panel">
+            <svg id="model" viewBox="0 0 650 600" role="img" aria-labelledby="model-title model-description">
+              <title id="model-title">Pockets between a cubic and its zero line</title>
+              <desc id="model-description">The cubic crosses the vertical zero line at three heights. Two shaded pockets have equal area.</desc>
+              <defs><clipPath id="model-clip"><rect x="90" y="49" width="480" height="462"/></clipPath></defs>
+              <path d="M90 49V511H570 M330 49V511" class="axis"/>
+              <path d="M90 280H570 M90 140H570 M90 420H570 M170 49V511 M490 49V511" class="grid"/>
+              <text x="330" y="27" text-anchor="middle" class="diagram-label">Zero separation</text>
+              <g class="small-label" text-anchor="end"><text x="78" y="75">+1.5</text><text x="78" y="145">+1</text><text x="78" y="285">0</text><text x="78" y="425">−1</text><text x="78" y="495">−1.5</text></g>
+              <g class="small-label" text-anchor="middle"><text x="90" y="538">−1.5</text><text x="170" y="538">−1</text><text x="330" y="538">0</text><text x="490" y="538">+1</text><text x="570" y="538">+1.5</text></g>
+              <text x="330" y="578" text-anchor="middle" class="diagram-label">Separation q (normalized units)</text>
+              <text transform="translate(27 280) rotate(-90)" text-anchor="middle" class="diagram-label">Height v (normalized units)</text>
+              <g clip-path="url(#model-clip)">
+                <path id="pocket-0" class="lower"/><path id="pocket-1" class="upper"/>
+                <path id="model-line" class="model"/><g id="roots"/>
+              </g>
+            </svg>
+          </div>
+          <div class="legend"><span><i class="swatch blue" aria-hidden="true"></i>Lower pocket</span><span><i class="swatch" aria-hidden="true"></i>Upper pocket</span></div>
+          <figcaption>A filled dot is a crossing; a hollow ring is a contact. Shading measures area between the cubic and its zero line. The two axes use different scales. These are areas of the rescaled model, rather than faces counted in the complete orbital drawing.</figcaption>
+        </figure>
+        <figure>
+          <div class="panel">
+            <svg id="parameters" viewBox="0 0 450 430" role="img" aria-labelledby="plane-title plane-description">
+              <title id="plane-title">A cusp in the map of parameters</title>
+              <desc id="plane-description">The current opening and tilt sit inside two curved boundaries. There are three crossings inside and one outside.</desc>
+              <path id="cusp-fill" class="inside"/>
+              <path d="M65 58V362H395 M147.5 58V362" class="axis"/>
+              <path d="M65 210H395 M65 134H395" class="route"/>
+              <path id="cusp-boundary" class="boundary"/>
+              <g class="small-label" text-anchor="end"><text x="53" y="63">+2</text><text x="53" y="139">+1</text><text x="53" y="215">0</text><text x="53" y="291">−1</text><text x="53" y="367">−2</text></g>
+              <g class="small-label" text-anchor="middle"><text x="65" y="388">−0.5</text><text x="147.5" y="388">0</text><text x="230" y="388">0.5</text><text x="312.5" y="388">1</text><text x="395" y="388">1.5</text></g>
+              <text x="230" y="419" text-anchor="middle" class="diagram-label">Opening μ</text>
+              <text transform="translate(22 210) rotate(-90)" text-anchor="middle" class="diagram-label">Tilt τ</text>
+              <text x="230" y="28" text-anchor="middle" class="diagram-label">Three crossings inside the cusp</text>
+              <circle id="parameter-point" r="6" fill="#f4f1e8" stroke="#0b0e1a" stroke-width="2"/>
+            </svg>
+          </div>
+          <figcaption>The white point follows the sliders. Gold boundaries are quadratic touches; their tip is the cubic contact. Dashed lines mark two routes: tilt zero through the tip, and tilt +1 through an ordinary touch. The cusp belongs to this parameter map; it does not mean the orbital tracing point stops.</figcaption>
+        </figure>
+      </div>
+    </div>
+    <figure id="fallback" class="fallback">
+      <img src="cubic.svg" width="1200" height="760" alt="Three cubic separation graphs: a cubic contact with no pocket, a symmetric pair of equal pockets, and a tilted touch with one surviving pocket. A cusp-shaped parameter map connects them.">
+      <figcaption>One cubic connects two ways a pocket grows. <a href="cubic.svg">Open the full-size drawing ↗</a></figcaption>
+    </figure>
+    <details>
+      <summary>Try the two routes</summary>
+      <p>Start at “Cubic contact,” then increase the opening with tilt held at zero. Two equal pockets appear at once. Each has area <span class="equation">μ²/4</span>: doubling the opening multiplies its area by four.</p>
+      <p>Now start at “Tilted touch” and increase the opening a little beyond 1, keeping tilt at +1. The upper pocket is new; the lower one already exists. For a small increment <span class="equation">ε = μ − 1</span>, the new pocket’s area is approximately <span class="equation">(4/9) ε<sup>3/2</sup></span>. Its height grows like the square root of the increment, and its separation grows like the increment. Their product gives the three-halves power.</p>
+      <p>One route passes through the tip of the parameter cusp. The other crosses a smooth boundary. Those different routes explain the different powers. Reversing the tilt reflects the picture and exchanges the upper and lower pockets.</p>
+    </details>
+    <details>
+      <summary>The cubic and its areas</summary>
+      <p>The graph is <span class="equation">q(v) = v³ − μv + 2τ/(3√3)</span>. The opening μ changes its middle slope; the tilt τ shifts the graph sideways. Three distinct roots occur exactly when <span class="equation">μ³ &gt; τ²</span>. Equality with μ positive gives a quadratic touch. At μ = τ = 0 all three roots meet.</p>
+      <p>If consecutive roots are a and b, and the remaining root is c, the pocket between them has area <span class="equation">|c − (a+b)/2| (b−a)³/6</span>. This exact formula stays useful even when a tiny pocket makes two roots almost coincide. At the tilted touch, the surviving pocket has area 3/4; the new one has area zero.</p>
+      <p>At a fixed positive opening, tilt grows one pocket and shrinks the other. Their combined area increases as the tilt moves away from zero, from <span class="equation">μ²/2</span> at the mirror to <span class="equation">3μ²/4</span> at either touch. This describes the two local model pockets.</p>
+      <p>The mathematical boundary and area identities are exact for this cubic. The slider readouts and root locations use floating-point arithmetic. A relative rounding tolerance recognizes the boundary. Nothing animates, and the sliders support their native arrow, Home, and End keys.</p>
+    </details>
+    <details>
+      <summary>How does this return to the orbital drawing?</summary>
+      <p>Near the original mirror contact, height, blend weight, and phase can be rescaled so that the branch separation approaches this cubic. The small scale h multiplies height by h, weight change by h², and phase by h³. The area then carries a factor h⁴. In particular, after a positive weight change δ, phase divided by <span class="equation">δ<sup>3/2</sup></span> selects the limiting shape, and area carries a factor δ².</p>
+      <p>The <a href="cubic_pockets.md">mathematical note</a> derives the common limit and both area laws, and compares them numerically with the actual orbital branches. The golden cusp is the model’s exact boundary. The finite-scale orbital boundary has corrections; this page is not a new census of its events or regions.</p>
+    </details>
+    <footer>Aldebaran · A small pocket, seen at two scales.<br><a href="../index.html">The sketchbook ↗</a> · <a href="cubic_pockets.md">The mathematics ↗</a> · <a href="cubic.svg" download>Save the still drawing ↧</a> · <a href="../JOURNAL.md">Notebook ↗</a></footer>
+  </main>
+  <script src="cubic_math.js"></script>
+  <script src="cubic.js"></script>
+</body>
+</html>
