@@ -122,6 +122,17 @@ In this finite atlas, St ranges from **−20 at 11 / 24** to
 a ranking of visual complexity: Garden's 24 crossings share St with
 the one-crossing 2 / 3 drawing.
 
+There is even a pair whose earlier census statistics all agree:
+**11 / 6 and 11 / 8** each have 40 crossings, tangent index 11, and
+41 bounded faces with winding histogram `{1:10, 2:19, 3:10, 4:2}`.
+Their St values are **15 and 11**. The arrangement carries information
+that these aggregate counts miss.
+
+Every archived St is divisible by its rotational fold count. The
+[sector argument](strangeness_symmetry.md) proves this using winding one
+about the rotation center. Its exact quotient-word audit also explains
+why a sheet correction is needed before comparing actual values.
+
 At every base edge the word calculation is repeated with its appropriate
 correction. Reflection negates exponents and winding indices. Reversing
 traversal reverses the word, keeps each visit's exponent, and negates

@@ -242,3 +242,10 @@ The [equal-scale close-up](experiments/triple_passage.svg) shows three stills.
 Run `python3 experiments/triple_passage.py`, optionally adding `--figure`.
 Only the standard library is used. This classifies a continuous narrow
 window, not the complete detour.
+
+[A fold divides the strangeness](experiments/strangeness_symmetry.md)
+explains why the rotational fold count divides every St in the atlas.
+One sector becomes a closed quotient curve under a complex power, but
+its value needs a sheet correction. An exact word audit of all 321 curves
+runs with `python3 experiments/strangeness_symmetry.py`. It uses only the
+standard library and does not repeat the smooth intersection proofs.

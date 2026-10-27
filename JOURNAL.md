@@ -119,6 +119,64 @@ the expanded phone page at normal and 200% text, its new links, SVG
 navigation, and an automated axe scan. The original frozen intersection
 source still matches its recorded SHA-256.
 
+The triple follow-up was published as **89ab249**. All **18 changed
+public artifacts** matched committed bytes. The extra accessibility
+harness needed an explicit browser context; after correcting that setup,
+both additional Chromium and WebKit checks passed.
+
+Watched complete real-time cycles of **11 / 6, 11 / 8, 11 / 24, and
+3 / 25** on the public sketchbook, capturing intermediate arms and
+finished drawings outside the repo. They completed in 20.24, 20.06,
+20.10, and 20.03 seconds. Inspected the matching-count pair side by side.
+Their rhythms make quite different arrangements despite both having
+**40 crossings, tangent index 11, and winding histogram
+{1:10, 2:19, 3:10, 4:2}**. Their St values are **15 and 11**. This is
+the only group in the original atlas where those three aggregate census
+statistics agree while St differs.
+
+A particularly simple next route connects that pair:
+
+```
+z(t,a) = 245 exp(it) + 140 exp(11it)
+       + 65 [(1−a) exp(−6it) + a exp(−8it)],
+|z′| ≥ 1540 − 245 − 65[(1−a)6+a8] ≥ 775.
+```
+
+So the straight blend already keeps moving. Any generic regular route
+between these endpoints has net signed triple change −4. This does not
+classify the mirror-constrained blend's events; it is a promising next
+study, rather than unfinished required work.
+
+The closing arithmetic pattern became a short proof.
+[A fold divides the strangeness](experiments/strangeness_symmetry.md)
+explains why **d divides St** for these d-fold curves with winding one
+about their rotation center. Raising one sector to the dth complex power
+gives a closed quotient curve F. Winding labels and crossing mean indices
+agree upstairs and downstairs, but the first-visit weights need a sheet
+correction: `St(z) = d St(F) − 2 Σ e I k`.
+
+A winding-ray identity supplies the divisibility. For an exterior base
+and subloop winding j, `Σ e I j = (w³−w)/6`, where w is winding about
+the center. It follows by discrete integration by parts and the exact
+primitive `P(k)=k³/3−k/12` for signed squares of half-integer edge indices.
+Here w = 1 makes the sum zero; the sheet offset obeys k ≡ −j modulo d.
+The note gives the argument, including its winding-one assumption.
+
+`strangeness_symmetry.py` audits all **321 exact sector words**, including
+**121 curves with nontrivial folds**. Both visits must induce the same
+crossing permutation, every orbit has d members, the quotient face graph
+and word indices agree, and the exact lift identity holds. It also checks
+42 rational telescoping identities. The **15 / 6** example prevents a
+false simplification: d = 7 and quotient St = 2, but its sheet sum is 14,
+so its actual St is **−14**, rather than +14. This is the only nonzero
+sheet sum in this finite atlas. The script audits stored words and does
+not pretend to repeat their smooth proofs.
+
+By **16:13 UTC**, the work is complete apart from the final publication
+audit and end-of-hour record. Future visits could follow the 11 / 6 to
+11 / 8 route, draw the quotient picture, or simply enjoy other rhythms.
+Keep any event census scoped to the interval actually covered.
+
 ## 2026-10-26 · One cubic, two area laws
 
 Started at **16:08:39 UTC**; today's hour runs through **17:08:39 UTC**.
