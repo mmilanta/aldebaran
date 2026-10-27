@@ -149,6 +149,13 @@ all branches. These endpoint values do not identify which events
 account for the difference on that specific route. The equal values
 at 4 / 7 and 6 / 11 do not exclude triple events: signed changes can cancel.
 
+A [continuous-window certificate](triple_passage.md) now isolates one
+negative triple passage on that first detour. Throughout weights
+0.4641–0.4642 every crossing belongs to three specified branches,
+and exactly one triple event occurs. Its St jump is −1. A
+[magnified still](triple_passage.svg) shows the little triangle switching
+sides. This classifies that narrow interval, rather than the full route.
+
 ## Reproduce
 
 Only Python's standard library or Node is needed:

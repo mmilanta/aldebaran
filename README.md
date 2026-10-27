@@ -232,3 +232,13 @@ words without repeating the smooth proofs; `--all` repeats all 321.
 and still SVG from three fresh proofs, using only the standard library.
 The browser scripts are `experiments/strangeness_data.js`,
 `experiments/strangeness_math.js`, and `experiments/strangeness.js`.
+
+[A triangle switches sides](experiments/triple_passage.md) isolates one
+negative triple passage on the first arm detour. A uniform rational cover
+of every time and every weight in **[0.4641, 0.4642]** proves that exactly
+this one event occurs there. Its three pairwise crossings make a tiny
+triangle with winding −1 before and +2 after; strangeness drops by one.
+The [equal-scale close-up](experiments/triple_passage.svg) shows three stills.
+Run `python3 experiments/triple_passage.py`, optionally adding `--figure`.
+Only the standard library is used. This classifies a continuous narrow
+window, not the complete detour.

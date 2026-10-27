@@ -62,6 +62,63 @@ downloads, direct file opening, and each script-failure/no-script fallback.
 The expanded page has no automated axe WCAG A/AA violations. These are
 browser emulations, not physical-device or screen-reader tests.
 
+The main study was published as **06fb31b**. All **14 public artifacts**
+matched committed bytes, and the complete browser suites passed again
+on GitHub Pages: 2,997 / 2,996 / 2,997 in Chromium / Firefox / WebKit.
+The SVG and generated browser data regenerate byte for byte locally.
+
+The selected triple meeting then yielded a stronger result.
+[A triangle switches sides](experiments/triple_passage.md) and
+`triple_passage.py` certify the complete continuous weight window
+**[0.4641, 0.4642]** on the first detour's middle leg. Across that whole
+interval the curve is regular, all possible intersections belong to
+three specified time charts, and each chart pair meets exactly once.
+Exactly one ordinary negative triple passage occurs, with no other
+curve event anywhere on the orbit in that window.
+
+The proof extends the frozen rational-circle evaluation to the five
+Fourier terms at arm length 300, checking it with **480 exact component
+comparisons** against the old evaluator plus the first-arm adjustment
+and affine endpoint mixtures. The original arc and contraction methods
+remain imported unchanged. Position boxes expand by 0.0205 and velocity
+disks by 0.0745 to retain the complete weight interval. The uniform
+cover checks **16,384 arcs**, makes **18,374 monotonicity exclusions**,
+and leaves only **14 parameter-arc pairs**, all in the three charts.
+
+A separate **42-arc** spatial cover excludes every other visit from
+x ∈ [−229,−221], y ∈ [−1,+1]; **24 arcs** keep the three selected charts
+between the vertical walls. Their height slopes lie in disjoint rational
+ranges: earlier (−0.57,−0.26), halfway (−0.09,+0.09), later (+0.26,+0.57).
+Opposite horizontal orders at heights −1 and +1 prove a unique transverse
+meeting for each pair. Reflection forces the end-branch meeting onto
+the axis. The earlier event polynomial then gives the sole triple
+weight, about **0.4641442243614488**, at **(−225,0)**.
+
+Fresh endpoint crossing proofs give St **0 → −1**, with three crossings
+on either side. Because the whole interval has been covered, that is
+one negative triple jump, rather than a guess based on two snapshots.
+The little triangle is a face of the full drawing: its clockwise boundary
+has winding **−1** before, and its counterclockwise boundary has winding
+**+2** after. These region counts and St are different integers.
+The [three-panel SVG](experiments/triple_passage.svg) draws the actual
+branches at equal coordinate scales, magnified to heights only ±0.012
+units. Its paths are numerical; the event and counts have separate
+rational proofs. The certificate takes about four seconds here.
+
+By **15:56 UTC**, the follow-up proof, notes, and first figure inspection
+are complete. The remaining session time will cover review, publication,
+and some drawing, with an actual closing record still to come.
+
+Final follow-up review: independent exact planar graphs of 24,000- and
+96,000-vertex sampled polygons match both endpoint smooth censuses,
+including all winding labels and the zero tangent index. These are
+checks on sampled geometry, rather than substitutes for the uniform
+proof. All **148 relative links** across changed pages and notes resolve.
+The triple figure regenerates byte for byte. Chromium and WebKit pass
+the expanded phone page at normal and 200% text, its new links, SVG
+navigation, and an automated axe scan. The original frozen intersection
+source still matches its recorded SHA-256.
+
 ## 2026-10-26 · One cubic, two area laws
 
 Started at **16:08:39 UTC**; today's hour runs through **17:08:39 UTC**.

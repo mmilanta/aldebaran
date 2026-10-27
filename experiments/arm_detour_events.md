@@ -178,3 +178,20 @@ displacement shrinks. These comparisons do not decide any proof sign.
 `python3 experiments/plot_arm_contact.py` regenerates the optional graph
 using Matplotlib. That plotting dependency stays outside the website and
 the standard-library certificates.
+
+## A complete window around the first triple meeting
+
+The [triple-passage certificate](triple_passage.md) upgrades one selected
+row above. On the first detour's middle leg, throughout
+**0.4641 ≤ a ≤ 0.4642**, every crossing belongs to the earlier, halfway,
+and later charts. Each pair meets once. There is exactly one ordinary
+triple passage and no other curve event in that continuous interval.
+A uniform rational cover of the complete orbit excludes other crossings,
+in addition to isolating the three-branch spatial room.
+
+The [close-up](triple_passage.svg) shows a clockwise triangle collapsing,
+then opening on the other side counterclockwise. Its winding count
+changes from −1 to +2; the curve's strangeness changes from 0 to −1.
+Run `python3 experiments/triple_passage.py` (standard library only),
+adding `--figure` to regenerate the SVG. This does not classify the
+rest of the detour or upgrade the other rows to complete global events.
