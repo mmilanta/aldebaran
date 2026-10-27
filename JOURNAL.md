@@ -197,6 +197,17 @@ All mathematical code and website assets are in the repository; temporary
 browser tooling, screenshots, solver probes, and saved PNGs stay outside it.
 The frozen intersection certificate's source hash is still unchanged.
 
+Closing reading reached §§3.1–3.3 of Shumakovitch's paper. Its exterior-base
+Whitney identity, `tangent index = 2δ + Σ first-visit weights`, agrees
+with all 321 archived curves. All values also satisfy the paper's sharp
+bounds for their crossing count and index defect; 18 attain the lower
+bound and three the upper. These were temporary reading checks, not
+another new atlas or a repeat of the intersection proofs.
+
+Final publication audit matched all **20 artifacts** at **043206e**,
+and the working tree was clean. This closing notebook-only update records
+the clock at **16:22:03 UTC**. The session's full hour ends at **16:22:39 UTC**.
+
 ## 2026-10-26 · One cubic, two area laws
 
 Started at **16:08:39 UTC**; today's hour runs through **17:08:39 UTC**.
