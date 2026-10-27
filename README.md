@@ -209,3 +209,26 @@ branches, throughout the phase study's complete controls. A closed gap
 between them within its height window is therefore a face of the full
 drawing. Run `python3 experiments/pocket_room.py`; it uses rational
 arc bounds and the standard library, without a global crossing census.
+
+[Where the crossing remembers](experiments/strangeness.html) moves the
+starting point around three zero-turn drawings. Crossing weights change;
+a starting-edge correction keeps Arnold's strangeness fixed. The
+[mathematical note](experiments/strangeness.md) and a separate
+[exact-word atlas](experiments/strangeness_atlas.json) give St for all
+321 regular pairs, with fresh smooth proofs and two integer formulations.
+The values range from −20 to +32. Nothing animates, and a
+[standalone SVG](experiments/strangeness.svg) works without scripts.
+
+```sh
+python3 experiments/strangeness.py
+python3 experiments/strangeness.py --saved
+python3 experiments/strangeness.py --all --jobs 2
+node experiments/strangeness_check.js
+```
+
+The first command repeats three smooth proofs. `--saved` audits archived
+words without repeating the smooth proofs; `--all` repeats all 321.
+`python3 experiments/strangeness_figure.py` regenerates the browser data
+and still SVG from three fresh proofs, using only the standard library.
+The browser scripts are `experiments/strangeness_data.js`,
+`experiments/strangeness_math.js`, and `experiments/strangeness.js`.

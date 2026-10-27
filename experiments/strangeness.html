@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101323">
+  <meta name="description" content="Move the starting point of an orbital drawing. Crossing weights change; Arnold’s strangeness stays fixed.">
+  <title>Aldebaran · Where the crossing remembers</title>
+  <style>
+    :root { color-scheme: dark; font-family: ui-sans-serif, system-ui, sans-serif; background: #101323; color: #f4f1e8; }
+    * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+    body { margin: 0; }
+    main { max-width: 74rem; padding: clamp(1.2rem, 4vw, 3rem); margin: auto; overflow-wrap: anywhere; }
+    a { color: #e8b66e; text-underline-offset: .2em; }
+    .back { display: inline-block; font-size: .85rem; margin-bottom: 2rem; }
+    .eyebrow { color: #e8b66e; font-size: .75rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
+    h1 { max-width: 14ch; font-size: clamp(2.1rem, 6vw, 4.7rem); line-height: 1.05; letter-spacing: -.055em; margin: .8rem 0 1rem; }
+    p { max-width: 49rem; color: #c7c7d4; line-height: 1.7; }
+    .controls { margin: 2rem 0 1.2rem; max-width: 46rem; }
+    label { display: block; margin-bottom: .5rem; }
+    select, button { font: inherit; color: inherit; background: #22263b; border: 1px solid #555b78; border-radius: .5rem; padding: .65rem .85rem; max-width: 100%; }
+    select { width: 100%; margin-bottom: 1.2rem; }
+    button { cursor: pointer; }
+    button:hover { background: #333a55; }
+    button[aria-pressed="true"] { border-color: #e8b66e; background: #3c322c; }
+    :focus-visible { outline: 3px solid #e8b66e; outline-offset: 4px; }
+    input[type="range"] { display: block; width: 100%; min-height: 2.5rem; accent-color: #e8b66e; }
+    .slider-label { display: flex; flex-wrap: wrap; gap: .4rem 1rem; justify-content: space-between; }
+    output { color: #e8b66e; font-variant-numeric: tabular-nums; }
+    .buttons { display: flex; flex-wrap: wrap; gap: .5rem; margin: .5rem 0; }
+    .hint { font-size: .85rem; }
+    #status { min-height: 3.4em; font-size: .95rem; }
+    .study { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 1.5rem; align-items: start; }
+    figure { min-width: 0; margin: 0; }
+    .panel { background: #0b0e1a; border: 1px solid #383b50; border-radius: 1rem; overflow: hidden; }
+    svg, .fallback img { display: block; width: 100%; height: auto; }
+    #curve-line { fill: none; stroke: #c7c7d4; stroke-width: 1.5; }
+    .positive { fill: #0b0e1a; stroke: #9fc7eb; stroke-width: 2; }
+    .negative { fill: #0b0e1a; stroke: #e8b66e; stroke-width: 2; }
+    #selected-ring { fill: none; stroke: #f4f1e8; stroke-width: 1.8; }
+    #start-point { fill: #f4f1e8; stroke: #0b0e1a; stroke-width: 2; }
+    #start-arrow { fill: none; stroke: #f4f1e8; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .diagram-label { font: 17px ui-sans-serif, system-ui, sans-serif; fill: #c7c7d4; }
+    figcaption { margin: .6rem 0 0; font-size: .85rem; color: #9999ae; line-height: 1.7; }
+    .legend { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; margin: .8rem 0; font-size: .85rem; color: #c7c7d4; }
+    .legend .blue { color: #9fc7eb; }
+    .legend .gold { color: #e8b66e; }
+    .calculation { padding: 1.3rem; }
+    h2 { margin: 0; font-size: 1.1rem; }
+    .equation { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; font-size: 2rem; margin: 1rem 0 .5rem; font-variant-numeric: tabular-nums; }
+    .equation output { color: #f4f1e8; }
+    #invariant { color: #e8b66e; }
+    .breakdown { color: #c7c7d4; font-size: .85rem; line-height: 1.7; }
+    .selected { padding-top: 1rem; margin-top: 1rem; border-top: 1px solid #383b50; }
+    #selection { min-height: 5em; font-size: .9rem; }
+    .word { display: flex; flex-wrap: wrap; gap: .35rem; padding: 0; list-style: none; font-variant-numeric: tabular-nums; }
+    .word li { border: 1px solid #555b78; border-radius: .3rem; padding: .2rem .45rem; }
+    .word li.current { border-color: #f4f1e8; background: #333a55; }
+    .word sup { color: #9fc7eb; }
+    .word sup.minus { color: #e8b66e; }
+    details { color: #c7c7d4; line-height: 1.7; margin-top: 1.5rem; }
+    summary { color: #e8b66e; cursor: pointer; }
+    .table-scroll { overflow-x: auto; margin-top: 1rem; }
+    table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; font-size: .9rem; }
+    caption { text-align: left; color: #c7c7d4; margin: 0 0 .7rem; }
+    th, td { border-bottom: 1px solid #383b50; padding: .5rem .6rem; text-align: right; }
+    th:first-child, td:first-child { text-align: left; }
+    td button { font-size: .85rem; min-width: 2.8rem; }
+    footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #383b50; color: #9999ae; font-size: .85rem; line-height: 1.7; }
+    @media (max-width: 700px) {
+      .study { grid-template-columns: minmax(0, 1fr); }
+      .diagram-label { font-size: 26px; }
+      .calculation { padding: 1rem; }
+      th, td { padding: .5rem .35rem; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <a class="back" href="two_lobes.html">← Two lobes, two ways to turn</a>
+    <div class="eyebrow">Study 009 · Remembering a crossing</div>
+    <h1>Where the crossing remembers</h1>
+    <p>These three drawings share a curious fact: their direction of travel makes zero net turns. Their crossings carry another integer, called <em>strangeness</em>. It stays fixed when two branches touch and separate, but can change when three branches pass through the same point.</p>
+    <p>Choose where to begin traveling around a drawing. A crossing’s weight depends on which branch you meet first. Moving the start changes the weights and their sum. A small correction keeps the final answer fixed.</p>
+    <div id="explorer" hidden>
+      <div class="controls">
+        <label for="curve">Drawing</label>
+        <select id="curve">
+          <option value="0">2 / 3 · One crossing</option>
+          <option value="1" selected>4 / 7 · Seven crossings</option>
+          <option value="2">6 / 11 · Nineteen crossings</option>
+        </select>
+        <label class="slider-label" for="base"><span>Where to begin</span><output id="base-value" for="base" aria-live="off">Edge 1 of 14</output></label>
+        <input id="base" type="range" min="0" max="13" step="1" value="0" aria-describedby="base-hint">
+        <p class="hint" id="base-hint">Each step moves the start past one crossing visit. The white dot marks the starting edge; the arrow shows travel direction.</p>
+        <div class="buttons">
+          <button type="button" id="next">Next edge</button>
+          <button type="button" id="outside">Start on the outside</button>
+        </div>
+        <p id="status" role="status">Strangeness −1, with no starting-edge correction.</p>
+      </div>
+      <div class="study">
+        <figure>
+          <div class="panel">
+            <svg id="drawing" viewBox="0 0 640 640" role="img" aria-labelledby="drawing-title drawing-description">
+              <title id="drawing-title">Crossing weights on an orbital drawing</title>
+              <desc id="drawing-description">Blue rings mark weight plus one and gold squares mark weight minus one. A white point marks the chosen starting edge.</desc>
+              <path id="curve-line"/>
+              <g id="crossings"/>
+              <circle id="selected-ring" r="12"/>
+              <path id="start-arrow"/>
+              <circle id="start-point" r="5"/>
+              <text x="24" y="37" id="drawing-label" class="diagram-label">4 / 7 · Tangent index 0</text>
+              <text x="24" y="614" id="crossing-label" class="diagram-label">White ring: selected crossing 1</text>
+            </svg>
+          </div>
+          <div class="legend"><span class="blue">○ Weight +1</span><span class="gold">□ Weight −1</span><span>● Start and direction →</span></div>
+          <figcaption>The drawing stays still. Moving its start changes the bookkeeping. The paths and marker positions are rounded; the crossing counts and arithmetic are exact.</figcaption>
+        </figure>
+        <div class="panel calculation">
+          <h2>The sum that stays put</h2>
+          <div class="equation" aria-label="Weighted sum plus starting-edge correction equals strangeness">
+            <output id="weighted" for="curve base" aria-live="off">−1</output><span>+</span>
+            <output id="correction" for="curve base" aria-live="off">0</output><span>=</span>
+            <output id="invariant" for="curve base" aria-live="off">−1</output>
+          </div>
+          <p class="breakdown">Weighted crossings + starting-edge correction = strangeness.</p>
+          <p id="edge-description" class="breakdown">The starting edge has winding index ½. Its correction is 0.</p>
+          <div class="selected">
+            <h2 id="selection-title">Crossing 1</h2>
+            <p id="selection">Its mean winding count and the sign of its first encounter give its contribution.</p>
+            <div class="buttons">
+              <button type="button" id="previous-crossing" aria-label="Select previous crossing">← Crossing</button>
+              <button type="button" id="next-crossing" aria-label="Select next crossing">Crossing →</button>
+            </div>
+          </div>
+          <details>
+            <summary>The order of visits</summary>
+            <p class="hint">Each number appears twice, with opposite signs. Its first sign is its weight. The outlined pair belongs to the selected crossing. Read from left to right.</p>
+            <ol id="word" class="word" aria-label="Signed crossing visits in travel order"></ol>
+          </details>
+        </div>
+      </div>
+      <details id="ledger">
+        <summary>All crossing contributions</summary>
+        <p>At each crossing, average the winding counts of its four surrounding sectors. Multiply that integer by its weight. Select a crossing to locate it in the picture.</p>
+        <div class="table-scroll" tabindex="0" role="region" aria-label="Crossing contribution table">
+          <table>
+            <caption id="table-caption">Crossing contributions for rhythms 4 / 7</caption>
+            <thead><tr><th scope="col">Crossing</th><th scope="col">Weight</th><th scope="col">Mean count</th><th scope="col">Product</th></tr></thead>
+            <tbody id="contributions"></tbody>
+          </table>
+        </div>
+      </details>
+    </div>
+    <figure id="fallback" class="fallback">
+      <img src="strangeness.svg" width="1200" height="750" alt="Three zero-turn orbital drawings have strangeness 0 at rhythms 2/3, minus 1 at 4/7, and minus 1 at 6/11. Blue rings and gold squares mark crossing weights when starting at the rightmost point.">
+      <figcaption>Three drawings with zero tangent index and different strangeness. <a href="strangeness.svg">Open the full-size drawing ↗</a></figcaption>
+    </figure>
+    <details>
+      <summary>What is a crossing’s weight?</summary>
+      <p>At your first visit to a crossing, look in your direction of travel. If the other branch points from left to right across your path, give the crossing weight +1. If it points from right to left, give it weight −1. On the second visit the sign is opposite. Keep the first one as the weight.</p>
+      <p>The mean count is the average of the winding numbers in the four sectors around the crossing. A sector counts how many times the complete curve circles a point in it, with counterclockwise turns positive. All four sectors count, even when the same region appears twice.</p>
+      <p>The starting edge has the average count of the two regions beside it. This is a half-integer δ. Its correction is δ² − ¼. On an outside edge δ = ±½ and the correction vanishes. Farther inside it can be 2, 6, or more.</p>
+    </details>
+    <details>
+      <summary>Why does moving the start leave the answer alone?</summary>
+      <p>Moving the start past a single crossing visit flips that crossing’s weight. The change in its contribution is exactly canceled by the change in δ². All other crossing weights stay as they were. This is why you can choose any starting edge.</p>
+      <p>The two drawings with values 0 and −1 share the same tangent index, but a route between them that keeps moving must encounter a multiple-branch event. Along a generic route with only ordinary touches and isolated triple meetings, the difference in strangeness requires at least one triple meeting. Equal strangeness alone does not rule such meetings out.</p>
+      <p>The <a href="arm_detour.html">arm detour</a> already gives a route that keeps moving. Its mirror symmetry forces special contacts; a list of selected local meetings is not a complete event census. These endpoint values do not supply that missing census.</p>
+    </details>
+    <footer>Aldebaran · The crossing, and the order of its visits.<br><a href="../index.html">The sketchbook ↗</a> · <a href="strangeness.md">The mathematics and complete atlas ↗</a> · <a href="strangeness.svg" download>Save the still drawing ↧</a> · <a href="../JOURNAL.md">Notebook ↗</a></footer>
+  </main>
+  <script src="strangeness_data.js"></script>
+  <script src="strangeness_math.js"></script>
+  <script src="strangeness.js"></script>
+</body>
+</html>
