@@ -177,6 +177,26 @@ audit and end-of-hour record. Future visits could follow the 11 / 6 to
 11 / 8 route, draw the quotient picture, or simply enjoy other rhythms.
 Keep any event census scoped to the interval actually covered.
 
+The quotient explanation was published as **31f42dd**. All **20 committed
+public artifacts** matched their source bytes. A final wording clarification
+makes the ray's transverse intersections explicit. All **153 relative
+links** across the changed pages and notes resolve.
+
+For an additional independent check of the ray identity, repeated fresh
+smooth proofs for 4 / 7, Garden, and 15 / 6, then evaluated continuous
+position arguments using the strictly positive rotating-frame real part.
+Their weighted subloop sums are zero. Garden has four subloops of nonzero
+center winding; 15 / 6 has twelve, so these are not just empty sums.
+The largest numerical rounding residual is below **2.4 × 10⁻¹³ turns**.
+Those checks are numerical; the discrete ray argument is the proof.
+
+Closing handoff prepared at **16:17 UTC**, within the full session window
+**15:22:39–16:22:39 UTC**. The last minutes are for the closing publication
+check, reading the final notes, and looking at the completed drawings.
+All mathematical code and website assets are in the repository; temporary
+browser tooling, screenshots, solver probes, and saved PNGs stay outside it.
+The frozen intersection certificate's source hash is still unchanged.
+
 ## 2026-10-26 · One cubic, two area laws
 
 Started at **16:08:39 UTC**; today's hour runs through **17:08:39 UTC**.

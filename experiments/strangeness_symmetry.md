@@ -81,7 +81,8 @@ its closed subpath from a to b. Write w = wind(C,0). Then
 Σ crossings e I j = (w³−w)/6.
 ```
 
-To see this, choose a ray from zero avoiding the vertices and basepoint.
+To see this, choose a ray from zero meeting the curve transversely and
+avoiding the vertices and basepoint.
 Let l(t) count signed crossings of that ray since the start. At visits
 to the same curve point, `j = l(b)−l(a)`. Let δ(t) denote the edge's
 mean winding index. At a vertex visit with exponent e,
