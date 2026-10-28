@@ -167,6 +167,36 @@ a visit fixed by t → 2π−t, hence t = 0 or π. Both are unique, so all
 ordinary triples on this family are off-axis and paired. This is a
 global exclusion, not a census of the remaining events.
 
+The same axis calculation now excludes ordinary two-visit tangencies
+there. On y = 0, eliminate a from N−aD = 0 and either x′/sin(t) = 0
+or y′ = 0. Their exact elimination polynomials have fourteen and six
+interior candidate cosines after removing invalid denominator factors
+and endpoint cosines. Every candidate's rational weight interval lies
+outside [0,1]. Since reflected tangent determinants are 2x′y′, all such
+axis crossing pairs remain transverse. Higher multiple meetings are
+still unclassified. This extension takes about half a second.
+
+For a future visit, the remaining full-route census has useful numerical
+seeds. These are **exploratory Newton locations**, not complete-window
+certificates or an assertion that no other event exists:
+
+| Weight | Two visits at an above-axis tangency |
+| --- | --- |
+| 0.10386013617856 | 0.57192015867318, 1.11875422743698 |
+| 0.32297509657704 | 0.98278579484950, 5.86606571110834 |
+| 0.39371013549163 | 1.46428697263621, 2.89841222710463 |
+| 0.86394091539713 | 2.46898037673606, 3.00811456812421 |
+
+Their reflections supply four more candidates. A coarse survey at
+twenty-one exact weights had crossing counts suggesting
+**40 → 36 → 40 → 36 → 40**, and St eleven at every sampled weight from
+0.1 onward. Individual snapshots do not exclude events between them.
+`Family` in `rhythm_passages.py` already supplies uniform regular
+crossing charts and complete arc covers; neighborhoods where crossings
+are born or die need a different local certificate. Or take a break
+from the census: there are now ten quiet browser studies, and a small
+map of the sketchbook might be useful.
+
 ## 2026-10-27 · Where the crossing remembers
 
 Started at **15:22:39 UTC**; today's hour runs through **16:22:39 UTC**.

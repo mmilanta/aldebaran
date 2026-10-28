@@ -297,3 +297,28 @@ t = 0 or π. Both are unique, so no such triple exists. Every ordinary
 triple of this family is off the axis and has a reflected partner.
 This does not classify those off-axis events or exclude other types
 of meeting elsewhere on the full route.
+
+The same program also excludes **ordinary two-visit axis tangencies**.
+For reflected visits, `z′(2π−t)=−conj(z′(t))`, so their determinant
+is `2x′(t)y′(t)`. On y = 0 and 0 < t < π, the two possible zero
+components can be written as H₀+aH₁ = 0:
+
+| Component | H₀ | H₁ |
+| --- | --- | --- |
+| x′/sin(t), after using y = 0 | 2450−1105U_5 | 1105U_5−1235U_7 |
+| y′ | 245c+1540T_11−390T_6 | 390T_6−520T_8 |
+
+Eliminate a against N−aD = 0 using `N H₁+D H₀`. Factors shared with
+D cannot represent an axis visit, since N and D have constant gcd;
+remove them and the excluded boundary cosines. Sturm isolation leaves
+**fourteen** interior candidates for zero horizontal velocity and
+**six** for zero vertical velocity. At all twenty candidates, exact
+interval bounds for N/D lie outside [0,1]. The program checks the
+horizontal simplification as a polynomial identity too.
+
+Thus every reflection pair meeting on the axis has transverse tangents.
+A point with exactly two visits there must be such a pair, because the
+two reflection-fixed visits are unique and have different positions.
+Ordinary tangencies, like ordinary triples, must therefore lie off the
+axis and have reflected partners. These exclusions still do not classify
+off-axis events or rule out higher multiple meetings on the axis.

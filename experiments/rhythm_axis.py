@@ -4,7 +4,8 @@ Run: python3 experiments/rhythm_axis.py
 Standard library only. Exact elimination and Sturm isolation exclude a
 second visit to z(pi) = -320 for all weights in [0,1]. Consequently this
 mirror-symmetric family has no point with exactly three visits on its axis.
-This does not classify the off-axis events. See rhythm_passages.md.
+It also excludes ordinary two-visit axis tangencies. This does not
+classify off-axis events or higher multiple meetings. See rhythm_passages.md.
 """
 
 from fractions import Fraction as Q
@@ -22,6 +23,28 @@ def chebyshev():
     return T, U
 
 
+def gcd(p, q):
+    while q != (0,):
+        p, q = q, remainder(p, q)
+    return scale(p, 1/p[-1])
+
+
+def exclude_axis_contact(N, D, H0, H1, name, expected):
+    """Eliminate a between N-aD=0 and H0+aH1=0, then reject weights."""
+    polynomial = add(product(N, H1), product(D, H0))
+    # A zero of D cannot be an axis visit, since gcd(N,D)=1.
+    polynomial = quotient(polynomial, gcd(polynomial, D))
+    for endpoint in (-1, 1):
+        while value(polynomial, endpoint) == 0:
+            polynomial = quotient(polynomial, (-endpoint, 1))
+    roots = isolate_roots(polynomial, bits=54)
+    require(len(roots) == expected, 'The axis-contact Sturm count changed.')
+    for low, high in roots:
+        weight = bound(N, I(low, high))/bound(D, I(low, high))
+        require(weight.high < 0 or weight.low > 1, 'An axis-contact candidate has admissible weight.')
+    print(f'{name}: all {len(roots)} interior contact candidates have exact weight bounds outside [0,1].')
+
+
 def main():
     T, U = chebyshev()
     N = add((245,), add(scale(U[10], 140), scale(U[5], -65)))
@@ -33,10 +56,7 @@ def main():
             'The exact elimination identity failed.')
     # If D vanished at a return, N would vanish too. Their constant gcd
     # rules out that exceptional denominator over the complex numbers.
-    a, b = N, D
-    while b != (0,):
-        a, b = b, remainder(a, b)
-    require(len(a) == 1 and a[0] != 0, 'An elimination denominator needs separate analysis.')
+    require(gcd(N, D) == (1,), 'An elimination denominator needs separate analysis.')
     require(value(P, -1) == 0 and value(P, 1) != 0, 'The boundary factor changed.')
     interior = quotient(P, (1, 1))
     require(len(interior) == 18 and value(interior, -1) != 0, 'The remaining polynomial has the wrong degree or boundary root.')
@@ -55,7 +75,20 @@ def main():
     print('All 9 interior candidates rejected by exact rational intervals: 4 below 0, 5 above 1.')
     print('For every a in [0,1], z(t,a)=-320 only at t=pi modulo 2pi.')
     print('The rightmost visit is also unique; no axis point has exactly three visits.')
-    print('This excludes axis triples, not off-axis triple passages or tangencies.')
+    # On y=0, x'/sin(t) simplifies after eliminating sin(11t).
+    X0 = add((2450,), scale(U[5], -1105))
+    X1 = add(scale(U[5], 1105), scale(U[7], -1235))
+    # Check that simplification modulo the y/sin(t) equation exactly.
+    raw_X0 = add((-245,), add(scale(U[10], -1540), scale(U[5], -390)))
+    raw_X1 = add(scale(U[5], 390), scale(U[7], -520))
+    require(add(raw_X0, scale(N, 11)) == X0 and add(raw_X1, scale(D, -11)) == X1,
+            'The horizontal-velocity simplification failed.')
+    Y0 = add((0, 245), add(scale(T[11], 1540), scale(T[6], -390)))
+    Y1 = add(scale(T[6], 390), scale(T[8], -520))
+    exclude_axis_contact(N, D, X0, X1, 'Horizontal velocity', 14)
+    exclude_axis_contact(N, D, Y0, Y1, 'Vertical velocity', 6)
+    print('Every reflected pair of axis visits is transverse; no ordinary two-visit axis tangency occurs.')
+    print('Off-axis events and higher multiple meetings remain outside this exclusion.')
 
 
 if __name__ == '__main__':

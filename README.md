@@ -281,3 +281,5 @@ One additional [global exclusion](experiments/rhythm_passages.md#the-halfway-vis
 rules out triples on the mirror axis for this whole blend. Run
 `python3 experiments/rhythm_axis.py`; exact polynomial elimination and
 Sturm isolation show that the halfway visit at −320 never meets another.
+The same program excludes ordinary two-visit axis tangencies; higher
+multiple meetings and the full off-axis census remain separate questions.
