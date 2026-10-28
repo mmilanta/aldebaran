@@ -249,3 +249,24 @@ One sector becomes a closed quotient curve under a complex power, but
 its value needs a sheet correction. An exact word audit of all 321 curves
 runs with `python3 experiments/strangeness_symmetry.py`. It uses only the
 standard library and does not repeat the smooth intersection proofs.
+
+[The same counts, a different weave](experiments/weave.html) compares
+11 / 6 and 11 / 8: forty crossings, identical winding-region counts,
+and tangent index eleven, but strangeness fifteen and eleven. Magnify
+either of two triple meetings and its reflection as a small triangle
+switches sides. A straight blend keeps speed at least 775 throughout.
+The [continuous-window proof](experiments/rhythm_passages.md) covers the
+whole orbit on each of two short weight intervals, with exactly two
+reflected negative triple passages per interval. It does not classify
+the full route. Nothing animates, and a [standalone SVG](experiments/weave.svg)
+works without scripts.
+
+```sh
+python3 experiments/rhythm_passages.py
+python3 experiments/weave_figure.py
+node experiments/weave_check.js
+```
+
+Only standard runtimes are needed. The generator repeats fresh endpoint
+and event-window proofs. The browser scripts are `experiments/weave_data.js`,
+`experiments/weave_math.js`, and `experiments/weave.js`.

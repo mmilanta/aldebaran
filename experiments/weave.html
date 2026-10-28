@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101323">
+  <meta name="description" content="Two orbital drawings share all their crossing and region counts. Magnify the triple passages that change their strangeness.">
+  <title>Aldebaran · The same counts, a different weave</title>
+  <style>
+    :root { color-scheme: dark; font-family: ui-sans-serif, system-ui, sans-serif; background: #101323; color: #f4f1e8; }
+    * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+    body { margin: 0; }
+    main { max-width: 74rem; padding: clamp(1.2rem, 4vw, 3rem); margin: auto; overflow-wrap: anywhere; }
+    a { color: #e8b66e; text-underline-offset: .2em; }
+    .back { display: inline-block; font-size: .85rem; margin-bottom: 2rem; }
+    .eyebrow { color: #e8b66e; font-size: .75rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
+    h1 { max-width: 17ch; font-size: clamp(2.1rem, 6vw, 4.7rem); line-height: 1.05; letter-spacing: -.055em; margin: .8rem 0 1rem; }
+    h2 { font-size: 1.5rem; line-height: 1.3; letter-spacing: -.02em; margin: 0 0 1rem; }
+    p { max-width: 49rem; color: #c7c7d4; line-height: 1.7; }
+    figure { min-width: 0; margin: 0; }
+    figcaption { margin: .7rem 0 0; color: #c7c7d4; font-size: .85rem; line-height: 1.7; }
+    .pair, .study { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1.5rem; }
+    .pair { margin-top: 2rem; }
+    .panel { border: 1px solid #383b50; border-radius: 1rem; background: #0b0e1a; overflow: hidden; }
+    svg, .fallback img { display: block; width: 100%; height: auto; }
+    .endpoint path { fill: none; stroke-width: 1.5; }
+    #first-curve { stroke: #9fc7eb; }
+    #second-curve { stroke: #e8b66e; }
+    .pair figcaption { display: flex; flex-wrap: wrap; gap: .5rem 1rem; justify-content: space-between; font-size: 1rem; }
+    .pair strong { color: #f4f1e8; font-variant-numeric: tabular-nums; }
+    .shared { margin: 1.6rem 0 2.8rem; }
+    .counts { display: flex; flex-wrap: wrap; gap: .5rem 1rem; padding: 0; list-style: none; color: #c7c7d4; font-size: .9rem; }
+    .counts li { border: 1px solid #383b50; border-radius: .4rem; padding: .5rem .7rem; }
+    .controls { max-width: 46rem; margin: 1.5rem 0; }
+    label { display: block; margin-bottom: .5rem; }
+    select, button { font: inherit; color: inherit; background: #22263b; border: 1px solid #555b78; border-radius: .5rem; padding: .65rem .85rem; max-width: 100%; }
+    select { width: 100%; margin-bottom: 1rem; }
+    button { cursor: pointer; }
+    button:hover { background: #333a55; }
+    button[aria-pressed="true"] { border-color: #e8b66e; background: #3c322c; }
+    :focus-visible { outline: 3px solid #e8b66e; outline-offset: 4px; }
+    input[type="range"] { display: block; width: 100%; min-height: 2.5rem; accent-color: #e8b66e; }
+    input[type="checkbox"] { accent-color: #e8b66e; width: 1.1rem; height: 1.1rem; flex: 0 0 auto; }
+    .toggle { display: flex; align-items: center; gap: .6rem; margin: .8rem 0 1.4rem; }
+    .slider-label { display: flex; flex-wrap: wrap; gap: .4rem 1rem; justify-content: space-between; }
+    output { color: #e8b66e; font-variant-numeric: tabular-nums; }
+    .buttons { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .5rem; }
+    .hint { font-size: .85rem; }
+    #status { min-height: 3.4em; }
+    #current-curve { fill: none; stroke: #9999ae; stroke-width: 1.3; }
+    #room { fill: none; stroke: #f4f1e8; stroke-width: 1.5; }
+    #room-ring { fill: none; stroke: #f4f1e8; stroke-width: 1; stroke-dasharray: 4 4; }
+    .branch { fill: none; stroke-width: 2.6; stroke-linecap: round; }
+    #pocket { fill: #f4f1e8; fill-opacity: .22; stroke: none; }
+    .crossing { fill: #f4f1e8; stroke: #0b0e1a; stroke-width: 1.2; }
+    .legend { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; margin: .8rem 0; color: #c7c7d4; font-size: .85rem; }
+    .early { color: #9fc7eb; }
+    .middle { color: #e8b66e; }
+    .late { color: #d1b6ea; }
+    .note { margin-top: 2rem; }
+    details { color: #c7c7d4; line-height: 1.7; margin-top: 1.5rem; }
+    summary { color: #e8b66e; cursor: pointer; }
+    .formula { font-variant-numeric: tabular-nums; color: #f4f1e8; }
+    footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #383b50; color: #9999ae; font-size: .85rem; line-height: 1.7; }
+    @media (max-width: 640px) { .pair, .study { grid-template-columns: minmax(0, 1fr); } }
+  </style>
+</head>
+<body>
+  <main>
+    <a class="back" href="strangeness.html">← Where the crossing remembers</a>
+    <div class="eyebrow">Study 010 · A different weave</div>
+    <h1>The same counts, a different weave</h1>
+    <p>Forty crossings. Forty-one enclosed regions. Eleven turns of the direction of travel. These two drawings agree on all three counts, and even on how many regions have each winding number. Their crossing order carries a difference: strangeness is 15 in the first drawing and 11 in the second.</p>
+    <div id="explorer" hidden>
+      <div class="pair">
+        <figure>
+          <div class="panel"><svg class="endpoint" viewBox="0 0 520 520" role="img" aria-labelledby="first-title first-description">
+            <title id="first-title">Rhythms 11 / 6</title>
+            <desc id="first-description">An orbital drawing with forty crossings and strangeness fifteen.</desc>
+            <path id="first-curve"/>
+          </svg></div>
+          <figcaption><span>11 / 6</span><strong>Strangeness 15</strong></figcaption>
+        </figure>
+        <figure>
+          <div class="panel"><svg class="endpoint" viewBox="0 0 520 520" role="img" aria-labelledby="second-title second-description">
+            <title id="second-title">Rhythms 11 / 8</title>
+            <desc id="second-description">An orbital drawing with forty crossings and strangeness eleven.</desc>
+            <path id="second-curve"/>
+          </svg></div>
+          <figcaption><span>11 / 8</span><strong>Strangeness 11</strong></figcaption>
+        </figure>
+      </div>
+      <div class="shared">
+        <p>Both have the same enclosed regions, counted by winding:</p>
+        <ul class="counts" aria-label="Shared winding counts"><li>+1: 10 regions</li><li>+2: 19 regions</li><li>+3: 10 regions</li><li>+4: 2 regions</li></ul>
+      </div>
+      <section aria-labelledby="passage-heading">
+        <h2 id="passage-heading">A little triangle switches sides</h2>
+        <p>Blend the two backward arms, keeping the other motions fixed. The point keeps moving throughout the route. Near the beginning, three branches meet above the axis, with a reflected meeting below. It happens again a little later. Each of these four passages lowers strangeness by one.</p>
+        <div class="controls">
+          <label for="event">A meeting to magnify</label>
+          <select id="event"><option value="0">First pair · near 4.712% of the blend</option><option value="1">Second pair · near 7.551% of the blend</option></select>
+          <label class="toggle"><input type="checkbox" id="reflected"> Look below the axis</label>
+          <label class="slider-label" for="progress"><span>Through the passage</span><output id="progress-value" for="event progress reflected" aria-live="off">Before · 4.412% of the blend</output></label>
+          <input id="progress" type="range" min="-100" max="100" step="1" value="-100" aria-describedby="progress-hint">
+          <div class="buttons" aria-label="Passage stops"><button type="button" id="before" aria-pressed="true">Before</button><button type="button" id="meeting" aria-pressed="false">Meeting</button><button type="button" id="after" aria-pressed="false">After</button></div>
+          <p id="progress-hint" class="hint">The slider covers only a small neighborhood of the selected meeting. At its center, rounded coordinates approximate the exact event. Nothing animates.</p>
+          <p id="status" role="status">Before the first passage above the axis. Three branches enclose a small triangle.</p>
+        </div>
+        <div class="study">
+          <figure>
+            <div class="panel"><svg id="whole" viewBox="0 0 600 600" role="img" aria-labelledby="whole-title whole-description">
+              <title id="whole-title">The complete drawing near the selected passage</title>
+              <desc id="whole-description">A small white square and a larger dashed ring locate the magnified meeting.</desc>
+              <path id="current-curve"/>
+              <g id="highlights"></g>
+              <rect id="room"/>
+              <circle id="room-ring" r="13"/>
+            </svg></div>
+            <figcaption>The complete drawing at this blend weight. The square locates the lens; the larger ring helps you find it.</figcaption>
+          </figure>
+          <figure>
+            <div class="panel"><svg id="lens" viewBox="0 0 600 600" role="img" aria-labelledby="lens-title lens-description">
+              <title id="lens-title">Three branches at a triple passage</title>
+              <desc id="lens-description">A pale triangle lies between blue, gold, and lilac branches. It shrinks to their meeting and opens on the other side. Arrows follow the curve’s direction.</desc>
+              <defs><clipPath id="lens-clip"><rect width="600" height="600"/></clipPath></defs>
+              <g clip-path="url(#lens-clip)"><path id="pocket"/><g id="branches"></g><g id="arrows"></g><g id="crossings"></g></g>
+            </svg></div>
+            <figcaption id="lens-caption">Equal scales on both axes. Each color follows one visit; white dots mark their pairwise crossings.</figcaption>
+          </figure>
+        </div>
+        <div class="legend"><span class="early">— Earlier visit</span><span class="middle">— Middle visit</span><span class="late">— Later visit</span><span>→ Direction of travel</span></div>
+      </section>
+    </div>
+    <figure id="fallback" class="fallback">
+      <img src="weave.svg" width="1200" height="1120" alt="Rhythms 11/6 and 11/8 have the same crossing, region, and tangent counts, but strangeness 15 and 11. Three close-ups show one triple passage before, at, and after its meeting.">
+      <figcaption>Two drawings and a magnified triple passage. <a href="weave.svg">Open the full-size still ↗</a></figcaption>
+    </figure>
+    <p class="note">A count can miss how the lines are woven together. Strangeness remembers some of that order. It stays fixed at an ordinary two-branch touch, and changes by one at an ordinary triple passage.</p>
+    <details>
+      <summary>Why does the point keep moving?</summary>
+      <p>The arm turning eleven times has speed 140 × 11 = 1540. All the other speeds together are at most 245 + 65 × 8 = 765. Even when they oppose it, a speed of at least <span class="formula">1540 − 765 = 775</span> remains, in drawing units per radian.</p>
+      <p>The route is a straight blend: <span class="formula">z(t,a) = 245 exp(it) + 140 exp(11it) + 65[(1−a) exp(−6it) + a exp(−8it)]</span>. At a = 0 it is 11 / 6; at a = 1 it is 11 / 8. Its tangent index stays eleven throughout.</p>
+    </details>
+    <details>
+      <summary>What do the event certificates cover?</summary>
+      <p>Rational bounds cover every point of the orbit and every weight in two short windows: <span class="formula">0.0471–0.0472</span> and <span class="formula">0.0755–0.0756</span>. Each window has exactly two reflected triple passages, forty pairwise crossings away from the events, and no other curve event. Fresh endpoint proofs give strangeness <span class="formula">15 → 13</span> and <span class="formula">13 → 11</span>.</p>
+      <p>The pictures use rounded coordinates and a wider local slider neighborhood. The continuous event census applies to the two stated windows. The four individual jumps sum to the endpoint difference; this does not exclude further events elsewhere whose signed jumps cancel. <a href="rhythm_passages.md">Read and reproduce the proofs ↗</a></p>
+    </details>
+    <footer>Aldebaran · Following the order between the lines.<br><a href="../index.html">The sketchbook ↗</a> · <a href="strangeness.html">Where the crossing remembers ↗</a> · <a href="weave.svg" download>Save the still drawing ↧</a> · <a href="../JOURNAL.md">Notebook ↗</a></footer>
+  </main>
+  <script src="weave_data.js"></script>
+  <script src="weave_math.js"></script>
+  <script src="weave.js"></script>
+</body>
+</html>

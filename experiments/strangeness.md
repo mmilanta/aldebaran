@@ -169,6 +169,14 @@ sides. This classifies that narrow interval, rather than the full route.
 
 ## Reproduce
 
+[The same counts, a different weave](weave.html) follows a different
+route: a regular straight blend from 11 / 6 to 11 / 8. Those endpoints
+have identical crossing, tangent, and winding-region counts, but St
+15 and 11. Two complete short windows each contain exactly one
+reflected pair of negative triple passages. The
+[certificate](rhythm_passages.md) accounts for every crossing on each
+whole window, without claiming a full-route event census.
+
 Only Python's standard library or Node is needed:
 
 ```sh
