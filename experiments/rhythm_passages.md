@@ -178,8 +178,10 @@ four-dimensional contraction test for `X−R F(X)`.
 
 A larger box contains the **entire weight window and every potentially
 coincident visit** in that group. Its time and weight radii are both
-0.0002. The contraction norm is below 0.477 in the first window and
-below 0.639 in the second, proving uniqueness on these whole boxes.
+0.0002. For the above-axis boxes, the contraction norms are below
+0.477 and 0.639 in the first and second windows. The reflected boxes
+have norms below 0.592 and 0.360, respectively. All four are strictly
+below one, proving uniqueness on these whole boxes.
 These tests use the global bound `L ≤ 89990`, so they remain valid
 where the larger box extends beyond the window.
 

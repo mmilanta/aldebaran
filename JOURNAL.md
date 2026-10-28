@@ -26,8 +26,9 @@ one crossing per product chart for every weight. Only two groups of
 three charts have overlapping visit slots. Four-dimensional rational
 contraction boxes contain every potentially coincident visit and the
 complete weight window, proving a unique triple in each group; smaller
-boxes place the events inside the windows. The larger contraction norms
-are below **0.477** and **0.639**.
+boxes place the events inside the windows. The above-axis larger
+contraction norms are below **0.477** and **0.639**; the reflected
+counterparts are below **0.592** and **0.360**, respectively.
 
 Fresh endpoint proofs, exact words, and planar face walks give St
 **15 → 13** and **13 → 11**. Strict containment of rational boxes
@@ -196,6 +197,23 @@ crossing charts and complete arc covers; neighborhoods where crossings
 are born or die need a different local certificate. Or take a break
 from the census: there are now ten quiet browser studies, and a small
 map of the sketchbook might be useful.
+
+The axis-return exclusion was published as **428fde7**, and the axis
+transversality extension and remaining-event leads as **0b8263d**.
+All **18 public artifacts** matched the committed source at 0b8263d.
+Final reading corrected the quoted contraction norms for the reflected
+boxes: the four large-box bounds are **0.477 / 0.592** for the first
+window and **0.639 / 0.360** for the second, above / below the axis.
+Exact rational comparisons confirm all four. The proof code already
+required each norm to be strictly below one; this was a description fix.
+The frozen intersection source still matches its original SHA-256.
+
+Closing handoff prepared at **16:59 UTC**, within the full session window
+**16:03:03–17:03:03 UTC**. The last minutes are for reading these notes
+against the drawings and checking publication. All mathematical programs,
+browser assets, and reproducible figures are in the repository. Temporary
+browser tools, screenshots, sampled-graph audits, solver probes, polygon
+controls, and saved PNGs stay outside it.
 
 ## 2026-10-27 · Where the crossing remembers
 
