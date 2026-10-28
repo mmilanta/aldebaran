@@ -270,3 +270,9 @@ node experiments/weave_check.js
 Only standard runtimes are needed. The generator repeats fresh endpoint
 and event-window proofs. The browser scripts are `experiments/weave_data.js`,
 `experiments/weave_math.js`, and `experiments/weave.js`.
+
+The [triangle-area follow-up](experiments/triple_area.md) proves a
+quadratic local law on both sides of an ordinary triple passage and
+encloses its two coefficients. Run `python3 experiments/triple_area.py`;
+add `--figure` to regenerate its [area-ratio plot](experiments/triple_area.svg).
+Only the standard library is used.

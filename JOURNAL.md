@@ -73,6 +73,68 @@ original frozen intersection solver still matches its recorded SHA-256.
 The next part of this hour will cover publication and the triangle's
 local area law, with a closing record still to come.
 
+The main study was published as **4c26006**. All **14 public artifacts**
+matched committed bytes. The browser suites then passed on GitHub Pages
+too: **19,338 / 19,335 / 19,338** in Chromium / Firefox / WebKit. The two
+missing checks per engine are the local-file checks, which apply only
+to the local run. Both generated artifacts regenerate byte for byte.
+
+The area follow-up became [a short local theorem](experiments/triple_area.md).
+At an ordinary transverse triple, write V_i for the three tangents and
+W_i for their weight motions. After translating and dividing coordinates
+by the weight offset δ, the branches approach three lines
+`W_i + span(V_i)`. Their triangle has area
+
+```
+K = (b_0 D_12 + b_1 D_20 + b_2 D_01)^2 / (2 |D_01 D_12 D_20|),
+D_ij = det(V_i,V_j),       b_i = det(V_i,W_i).
+```
+
+Thus the curved triangle has **A(δ)=Kδ²+O(|δ|³)**. Curvature moves an
+edge off its chord by O(δ²), contributing only O(|δ|³) to area. The
+formula is unchanged by tangent rescaling, tangential branch motion,
+or a common moving frame, and transforms like area under a spatial
+linear map. Its square loses the sign of the strangeness jump.
+
+`triple_area.py` repeats both whole-window proofs, refines all four event
+boxes to radius **10⁻¹²**, and encloses the coefficients rationally:
+**15122.05655 < K_first < 15122.05659** and
+**34410.95224 < K_second < 34410.95230**. Both reflected evaluations
+pass separately. An independent exact line-intersection / shoelace
+calculation passes **258** transformed examples and degenerate controls.
+The original frozen proof source remains unchanged.
+
+Numerical areas of the actual curved triangles approach the law through
+six offset scales, on both sides. At |δ| = 10⁻⁵, A/(Kδ²) is
+**0.999974858 / 1.000025142** for the first meeting, and
+**0.999901236 / 1.000098791** for the second, before / after. Increasing
+edge samples from 128 to 512 changes each computed area by less than
+one part per million. The [ratio plot](experiments/triple_area.svg) has
+numerical blue paths and separately certified gold limiting values;
+it does not bound the finite-offset remainder. Its generator uses only
+the standard library.
+
+By **16:38 UTC**, the follow-up proof, plot, and first visual review are
+complete. The remaining time is for review, publication, some drawing,
+and a handoff about the rest of the route.
+
+The unsquared numerator gives another useful result: with branches in
+visit order, **ΔSt = sign(H)**. On the first branch, swapping the two
+first crossing visits preserves their combined weighted contribution.
+Only the middle branch's first encounter contributes a change. Its two
+linearized crossing times differ by `−H/(D_01 D_12)`, giving the sign
+formula directly from the Gauss-word convention. All four refined boxes
+certify H < 0, independently confirming the −1 jumps from endpoint words.
+The 258 exact line checks also verify this middle-time difference.
+
+Independent sampled planar graphs at **24,000 and 96,000 vertices** agree
+with all six smooth censuses: both original endpoints and all four window
+ends. That is twelve polygon graphs, with all winding labels and tangent
+indices agreeing. These compare a separate geometry algorithm with the
+smooth proofs; they do not replace those proofs. The area SVG regenerates
+byte for byte, and **166 relative links** across the changed notes and
+pages resolve.
+
 ## 2026-10-27 · Where the crossing remembers
 
 Started at **15:22:39 UTC**; today's hour runs through **16:22:39 UTC**.

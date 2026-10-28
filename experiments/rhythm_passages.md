@@ -236,3 +236,7 @@ The slider deliberately shows a wider local neighborhood, ±0.003 in
 weight, so the triangle is visible. The event census remains limited
 to the two specified windows. “Meeting” uses rounded coordinates; its
 nearly coincident markers approximate the exact algebraic event.
+
+[A triple triangle grows quadratically](triple_area.md) follows its area:
+`A(δ)=Kδ²+O(|δ|³)` on both sides. A formula for three linearized branch
+lines and refined rational event boxes enclose both coefficients.
