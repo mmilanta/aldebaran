@@ -240,3 +240,60 @@ nearly coincident markers approximate the exact algebraic event.
 [A triple triangle grows quadratically](triple_area.md) follows its area:
 `A(δ)=Kδ²+O(|δ|³)` on both sides. A formula for three linearized branch
 lines and refined rational event boxes enclose both coefficients.
+
+## The halfway visit stays alone on the full route
+
+There is one additional global exclusion, separate from the two short
+event windows. For every weight in [0,1], the halfway point
+`z(π,a)=−320` has **no other visit**. Together with the unique rightmost
+visit at t = 0, this rules out ordinary triples on the mirror axis.
+
+Put c = cos(t), excluding t = 0 and π for the moment. With Chebyshev
+polynomials T_k and U_k, the conditions for a return to −320 are
+
+```
+N(c) − a D(c) = 0,
+R(c) + 65a [T_8(c)−T_6(c)] = 0,
+
+N = 245+140U_10−65U_5,
+D = 130T_7,
+R = 320+245c+140T_11+65T_6.
+```
+
+The first equation is y/sin(t) = 0, using `U_7−U_5=2T_7`.
+Eliminating a gives the exact identity
+
+```
+R D + 65(T_8−T_6)N = 650 P,
+P(c) = 49T_8(c)+28T_18(c)+13c+64T_7(c).
+```
+
+The simplification is just cosine addition: for example,
+`T_7T_11−(1−c²)U_6U_10=T_18`.
+The polynomials N and D have constant rational gcd, so a candidate
+return cannot have D = 0.
+
+Remove the factor c+1 from P, which accounts for the excluded t = π.
+The remaining degree-seventeen polynomial has exactly **nine** roots
+in (−1,1), by a rational Sturm calculation. At each isolated root,
+rational interval evaluation of a = N/D puts the weight strictly
+outside [0,1]: **four below zero and five above one**. The closest
+rejected weight is about −0.006755388; its entire rational enclosure
+is negative. The endpoint t = 0 gives 450, and t = π is the original
+halfway visit. This proves the stated global exclusion.
+
+```sh
+python3 experiments/rhythm_axis.py
+```
+
+Only the standard library is used. The program derives the Chebyshev
+polynomials, checks the elimination identity exactly, checks the constant
+gcd, and isolates and rejects all nine interior candidates. Rounded
+printed cosines and weights do not decide acceptance.
+
+At a point on the mirror axis, reflection pairs visits t and 2π−t.
+A set of exactly three visits would therefore contain a fixed visit,
+t = 0 or π. Both are unique, so no such triple exists. Every ordinary
+triple of this family is off the axis and has a reflected partner.
+This does not classify those off-axis events or exclude other types
+of meeting elsewhere on the full route.

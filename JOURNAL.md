@@ -135,6 +135,38 @@ smooth proofs; they do not replace those proofs. The area SVG regenerates
 byte for byte, and **166 relative links** across the changed notes and
 pages resolve.
 
+The area-and-sign follow-up was published as **e75fe40**; all seven changed
+public artifacts matched committed bytes. Chromium and WebKit passed the
+expanded phone page at normal and 200% text, the new area-note link,
+the standalone ratio figure, and axe checks. Another temporary exact
+polygon calculation varied the three branch motions in 64 examples.
+Its freshly intersected signed words agreed with sign(H) for **30 negative
+and 34 positive** passages.
+
+Watched complete public drawing cycles of **11 / 6, 11 / 8, and 15 / 6**
+with the arms visible, saving their intermediate views, finished drawings,
+and PNGs outside the repository. They completed in **20.09, 20.06, and
+20.01 seconds**. The drawing harness initially waited for a disabled
+button; this home page signals completion with “Draw again.” Correcting
+that temporary condition let the three visits finish normally.
+
+One useful global exclusion emerged during the closing review:
+**the halfway visit z(π,a)=−320 stays alone for the entire blend**.
+For an interior cosine c, eliminating a from x = −320 and y = 0 gives
+`P(c)=49T_8(c)+28T_18(c)+13c+64T_7(c)=0`. Remove c+1; the remaining
+degree-seventeen polynomial has nine interior real roots. At each,
+the exact interval for `a=(245+140U_10−65U_5)/(130T_7)` lies outside
+[0,1]: four below zero, five above one. A constant polynomial gcd
+excludes a vanishing denominator. `rhythm_axis.py` reproduces the
+Chebyshev identity, Sturm isolation, and exclusions using the standard
+library. The [weave note](experiments/rhythm_passages.md) includes the
+argument.
+
+A mirror-axis point with exactly three visits would have to contain
+a visit fixed by t → 2π−t, hence t = 0 or π. Both are unique, so all
+ordinary triples on this family are off-axis and paired. This is a
+global exclusion, not a census of the remaining events.
+
 ## 2026-10-27 · Where the crossing remembers
 
 Started at **15:22:39 UTC**; today's hour runs through **16:22:39 UTC**.

@@ -276,3 +276,8 @@ quadratic local law on both sides of an ordinary triple passage and
 encloses its two coefficients. Run `python3 experiments/triple_area.py`;
 add `--figure` to regenerate its [area-ratio plot](experiments/triple_area.svg).
 Only the standard library is used.
+
+One additional [global exclusion](experiments/rhythm_passages.md#the-halfway-visit-stays-alone-on-the-full-route)
+rules out triples on the mirror axis for this whole blend. Run
+`python3 experiments/rhythm_axis.py`; exact polynomial elimination and
+Sturm isolation show that the halfway visit at −320 never meets another.
