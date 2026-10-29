@@ -147,6 +147,7 @@ def certify_event(index, reflected=False):
     require(low < C.low <= C.high < high, 'The advertised lens-area coefficient enclosure failed.')
     require(proof['pocket_side'] == EXPECTED_SIDE[index], 'The pocket opens on the wrong side.')
     require(proof['direct'] == EXPECTED_DIRECT[index], 'The branch directions changed.')
+    require(proof['norm'] < Q(23, 10**8), 'The advertised contraction bound failed.')
     weight = proof['box'][2]
     scale = 10**12
     low_weight = weight.low*scale
@@ -156,7 +157,7 @@ def certify_event(index, reflected=False):
     weight_text = f'({lo//scale}.{lo%scale:012d}, {hi//scale}.{hi%scale:012d})'
     print(f'Touch {index+1}, {"below" if reflected else "above"}: '
           f'a in {weight_text}; '
-          f'contraction < {float(proof["norm"]):.3g}; '
+          f'contraction norm (rounded) {float(proof["norm"]):.3g}; '
           f'{float(low):.2f} < K < {float(high):.2f}; '
           f'pocket {"before" if proof["pocket_side"] < 0 else "after"}, '
           f'{"same" if proof["direct"] else "opposite"} travel directions.')
@@ -217,6 +218,7 @@ def certify_isolation(index, proof):
                 exclude((q, low, high))
     finally:
         solver.evaluate.cache_clear()
+    require(min(margins) > 618, 'The advertised isolation-slot speed bound failed.')
     print(f'  Whole-orbit isolation over a0 ± .003: {count} rational arcs stay outside '
           f'radius {radius}; both admitted slots are monotone, |coordinate speed| > {int(min(margins))}.')
     return {'radius': radius, 'arcs': count, 'slots': slots, 'weight': weight, 'origin': origin}

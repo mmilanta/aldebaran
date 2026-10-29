@@ -44,11 +44,12 @@ For **each of these eight selected events**, the certificate proves:
   branch slot has a strictly monotone physical coordinate. The contact
   is therefore an isolated two-branch meeting, with no third visit.
 
-This is a **local list, not a complete event census** of the route or of
-the browser's slider neighborhoods. In particular, nearby snapshots do
-not rule out events between their weights. The isolated local lens is a
-face of the full drawing sufficiently close to the contact; this local
-statement does not classify every pocket elsewhere in the drawing.
+These small event boxes alone are a **local list**. A separate argument
+below classifies four complete short weight windows. The browser's slider
+neighborhoods are wider still; neither calculation classifies the full
+route. The isolated local lens is a face of the full drawing sufficiently
+close to the contact; this local statement does not classify every pocket
+elsewhere in the drawing.
 
 ## A rational contact calculation
 
@@ -121,6 +122,62 @@ proofs. The contact box lies strictly within its disk.
 This rules out a third visit at the event, and prevents an unrelated arc
 from cutting a lens that lies in the disk. It does not count all meetings
 of the two admitted branches through the full displayed weight range.
+
+## Four complete continuous windows
+
+[rhythm_touch_windows.py](rhythm_touch_windows.py) adds a whole-orbit,
+continuous-weight census around each contact. These are exact decimal
+rational endpoints, centered on the source hints with radius **1/100000**:
+
+| Touch pair | Complete weight window | Crossings at its ends |
+| --- | --- | --- |
+| First | [0.10385013617856, 0.10387013617856] | 40 → 36 |
+| Second | [0.32296509657704, 0.32298509657704] | 36 → 40 |
+| Third | [0.39370013549163, 0.39372013549163] | 40 → 36 |
+| Fourth | [0.86393091539713, 0.86395091539713] | 36 → 40 |
+
+**Each whole window has exactly two reflected ordinary tangencies and no
+other event.** Every persistent crossing lies in one of **36 regular
+product charts**, each with exactly one transverse crossing at every
+weight. Two additional product charts admit the selected contact pairs.
+All individual visit slots are disjoint. Hence no third or fourth visit
+can join any crossing anywhere in the window. A cover of **4096 rational
+arcs** excludes all other crossings at every weight, using the earlier
+uniform `Family` cover. The contact charts are accepted by containment
+in that cover, rather than mistaken for regular charts.
+
+Inside a contact chart each s-slot has radius **1/1000**. Split it into
+sixteen subintervals. Interval velocities, accelerations, and weight
+motions prove that the selected physical coordinate stays monotone, and
+that the separation g has **g_XX and g_a of fixed nonzero signs** on the
+entire product chart and weight interval. Each branch is a graph over
+a common physical-coordinate interval about X₀: half-width 1 for the
+first touch, and 1/2 for the others. Endpoint bounds bracket this interval
+at every weight.
+
+To locate the critical point, enclose both graph inverses at X₀ using
+the mean value theorem and the uniform coordinate-speed bounds. This
+gives an interval for g_X(X₀,a). Its magnitude is smaller than the
+minimum |g_XX| times the common half-width. Thus g_X has opposite signs
+at the two common endpoints, and strict curvature gives one critical
+point m(a) at every weight. It depends smoothly on a. Its value has
+
+```
+d/da g(m(a),a) = g_a(m(a),a),
+```
+
+because g_X vanishes there. This derivative has a fixed nonzero sign,
+so the critical value can pass through zero only once in the entire
+window. The small contraction box already proves one such zero. This
+classifies the tangencies even though the crossing equations themselves
+are singular at the contact. Two false-chart controls reject a repeated
+branch and a displaced contact slot.
+
+Fresh smooth censuses at the eight exact window endpoints confirm the
+crossing counts in the table and St = 11. These are distinct from the
+slightly more distant snapshots used for the J⁺/J⁻ table below. The
+continuous argument rules out intervening events **inside these four
+windows**. It leaves the gaps between windows to a separate census.
 
 ## The lens's three-halves law
 
@@ -222,6 +279,7 @@ All commands use only their standard runtimes:
 ```sh
 python3 experiments/rhythm_tangencies.py
 python3 experiments/rhythm_tangencies.py --snapshots
+python3 experiments/rhythm_touch_windows.py --controls
 python3 experiments/touch_figure.py
 node experiments/touch_check.js
 node --check experiments/touch_math.js

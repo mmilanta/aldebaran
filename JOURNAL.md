@@ -70,6 +70,38 @@ complete. Next: final visual reading, publication, and an exploratory
 attempt to cover the gaps between the known event windows. The statements
 above do not claim that this remaining continuous census has been done.
 
+The main study was published as **1ac8111**. All **13 public artifacts**
+matched the committed bytes. The full browser suites passed on GitHub
+Pages too: **48,276 / 48,274 / 48,276** checks in Chromium / Firefox /
+WebKit. Each public run omits the one local-file check. Both generated
+browser artifacts regenerate byte for byte. Final visual reading moved
+the travel arrows away from the crossing markers and enlarged the
+separation graph's labels on narrow screens.
+
+The first continuous extension is now complete:
+[four whole touch windows](experiments/rhythm_tangencies.md#four-complete-continuous-windows),
+each centered on its exact source hint with weight radius **1/100000**.
+Each has **exactly two reflected ordinary tangencies and no other event**,
+with **36 persistent regular crossings**. A **4096-arc** uniform cover
+admits only those regular charts and the two contact product charts.
+All their individual visit slots are disjoint, excluding all triple visits.
+
+The singular charts need a different argument. Over their full product
+domains and weight intervals, graph curvature g_XX and weight separation
+g_a have fixed nonzero signs. A common coordinate interval brackets
+one critical point m(a) at every weight. Its value has derivative g_a,
+so it can vanish once; the small contraction box proves that it does.
+Fresh smooth endpoint proofs give **40 → 36 / 36 → 40 / 40 → 36 / 36 → 40**,
+with St eleven throughout. Repeated-branch and displaced-chart controls
+are rejected. Run `python3 experiments/rhythm_touch_windows.py --controls`.
+
+By **16:52 UTC**, the remaining full-route calculation is still in
+progress. A direct four-variable exclusion for possible triple meetings
+proved much faster than demanding disjoint visit slots on every regular
+weight interval: the first gap now needs eight intervals rather than
+seventy-seven. A rational change of circle-chart seam handles crossings
+passing a chart boundary. Only completed proofs will enter a final census.
+
 ## 2026-10-28 · The same counts, a different weave
 
 Started at **16:03:03 UTC**; today's hour runs through **17:03:03 UTC**.

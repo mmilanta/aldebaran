@@ -294,11 +294,13 @@ without scripts. The [calculation](experiments/rhythm_tangencies.md)
 certifies eight selected ordinary tangencies, excludes third branches
 from their contact disks throughout the controls, and encloses all four
 area coefficients. Fresh nearby smooth snapshots also check J⁺ and J⁻.
-It does not classify every event on the full route.
+Four complete short windows each have exactly two reflected ordinary
+tangencies and no other event. The full route remains a separate census.
 
 ```sh
 python3 experiments/rhythm_tangencies.py
 python3 experiments/rhythm_tangencies.py --snapshots
+python3 experiments/rhythm_touch_windows.py --controls
 python3 experiments/touch_figure.py
 node experiments/touch_check.js
 ```
