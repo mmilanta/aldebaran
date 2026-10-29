@@ -283,3 +283,27 @@ rules out triples on the mirror axis for this whole blend. Run
 Sturm isolation show that the halfway visit at −320 never meets another.
 The same program excludes ordinary two-visit axis tangencies; higher
 multiple meetings and the full off-axis census remain separate questions.
+
+[Two ways to touch](experiments/touch.html) follows four later contacts on
+the same blend, each with a reflected partner. A small lens closes or
+opens while arrows reveal matching or opposing travel directions. An
+equal-scale close-up keeps its shape honest; a separation graph makes
+the thin gap visible. The lens area approaches a three-halves power law.
+Nothing animates, and a [standalone SVG](experiments/touch.svg) works
+without scripts. The [calculation](experiments/rhythm_tangencies.md)
+certifies eight selected ordinary tangencies, excludes third branches
+from their contact disks throughout the controls, and encloses all four
+area coefficients. Fresh nearby smooth snapshots also check J⁺ and J⁻.
+It does not classify every event on the full route.
+
+```sh
+python3 experiments/rhythm_tangencies.py
+python3 experiments/rhythm_tangencies.py --snapshots
+python3 experiments/touch_figure.py
+node experiments/touch_check.js
+```
+
+Only standard runtimes are needed. The generator repeats fresh proofs
+before writing the browser data and still SVG. The browser scripts are
+`experiments/touch_data.js`, `experiments/touch_math.js`, and
+`experiments/touch.js`; each supports `node --check`.

@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101323">
+  <meta name="description" content="Two orbital branches touch. A little lens closes or opens, while arrows reveal two different ways to meet.">
+  <title>Aldebaran · Two ways to touch</title>
+  <style>
+    :root { color-scheme: dark; font-family: ui-sans-serif, system-ui, sans-serif; background: #101323; color: #f4f1e8; }
+    * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+    body { margin: 0; }
+    main { max-width: 74rem; padding: clamp(1.2rem, 4vw, 3rem); margin: auto; overflow-wrap: anywhere; }
+    a { color: #e8b66e; text-underline-offset: .2em; }
+    .back { display: inline-block; font-size: .85rem; margin-bottom: 2rem; }
+    .eyebrow { color: #e8b66e; font-size: .75rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
+    h1 { max-width: 16ch; font-size: clamp(2.1rem, 6vw, 4.7rem); line-height: 1.05; letter-spacing: -.055em; margin: .8rem 0 1rem; }
+    h2 { font-size: 1.5rem; line-height: 1.3; letter-spacing: -.02em; margin: 2.4rem 0 1rem; }
+    p { max-width: 49rem; color: #c7c7d4; line-height: 1.7; }
+    figure { min-width: 0; margin: 0; }
+    figcaption { margin: .7rem 0 0; color: #c7c7d4; font-size: .85rem; line-height: 1.7; }
+    .study { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1.5rem; }
+    .panel { border: 1px solid #383b50; border-radius: 1rem; background: #0b0e1a; overflow: hidden; }
+    svg, .fallback img { display: block; width: 100%; height: auto; }
+    .controls { max-width: 46rem; margin: 1.5rem 0; }
+    label { display: block; margin-bottom: .5rem; }
+    select, button { font: inherit; color: inherit; background: #22263b; border: 1px solid #555b78; border-radius: .5rem; padding: .65rem .85rem; max-width: 100%; }
+    select { width: 100%; margin-bottom: 1rem; }
+    button { cursor: pointer; }
+    button:hover { background: #333a55; }
+    button[aria-pressed="true"] { border-color: #e8b66e; background: #3c322c; }
+    :focus-visible { outline: 3px solid #e8b66e; outline-offset: 4px; }
+    input[type="range"] { display: block; width: 100%; min-height: 2.5rem; accent-color: #e8b66e; }
+    input[type="checkbox"] { accent-color: #e8b66e; width: 1.1rem; height: 1.1rem; flex: 0 0 auto; }
+    .toggle { display: flex; align-items: center; gap: .6rem; margin: .8rem 0 1.4rem; }
+    .slider-label { display: flex; flex-wrap: wrap; gap: .4rem 1rem; justify-content: space-between; }
+    output { color: #e8b66e; font-variant-numeric: tabular-nums; }
+    .buttons { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .5rem; }
+    .hint { font-size: .85rem; }
+    #status { min-height: 3.4em; }
+    #outline { fill: none; stroke: #9999ae; stroke-width: 1.3; }
+    #room { fill: none; stroke: #f4f1e8; stroke-width: 1.5; stroke-dasharray: 4 4; }
+    #pocket, #gap-fill { fill: #f4f1e8; fill-opacity: .22; stroke: none; }
+    .meeting { fill: #f4f1e8; stroke: #0b0e1a; stroke-width: 1.4; }
+    .legend { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; margin: .8rem 0; color: #c7c7d4; font-size: .85rem; }
+    .early { color: #9fc7eb; } .late { color: #e8b66e; }
+    .graph { margin-top: 1.5rem; }
+    .graph text { fill: #c7c7d4; font-size: 20px; font-family: inherit; }
+    #gap-line { fill: none; stroke: #f4f1e8; stroke-width: 2.6; }
+    #gap-reference { fill: none; stroke: #9999ae; stroke-width: 1.5; stroke-dasharray: 6 5; }
+    .axis { fill: none; stroke: #555b78; stroke-width: 1; }
+    .measurements { display: flex; flex-wrap: wrap; gap: 1rem 2rem; padding: 1rem 0; }
+    .measurements div { min-width: 0; }
+    dt { color: #c7c7d4; font-size: .85rem; line-height: 1.6; }
+    dd { margin: .3rem 0 0; font-variant-numeric: tabular-nums; font-size: 1.3rem; }
+    details { color: #c7c7d4; line-height: 1.7; margin-top: 1.5rem; }
+    summary { color: #e8b66e; cursor: pointer; }
+    .formula { font-variant-numeric: tabular-nums; color: #f4f1e8; }
+    footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #383b50; color: #9999ae; font-size: .85rem; line-height: 1.7; }
+    @media (max-width: 640px) { .study { grid-template-columns: minmax(0, 1fr); } .graph text { font-size: 26px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <a class="back" href="weave.html">← The same counts, a different weave</a>
+    <div class="eyebrow">Study 011 · Two ways to touch</div>
+    <h1>Two ways to touch</h1>
+    <p>A little lens lies between two crossings. Move the drawing towards a touch: the lens narrows, its ends meet, and the crossings disappear. Both branches keep moving. Sometimes they travel together; sometimes they face each other.</p>
+    <div id="explorer" hidden>
+      <div class="controls">
+        <label for="event">A touch to magnify</label>
+        <select id="event">
+          <option value="0">First · lens closes · same direction</option>
+          <option value="1">Second · lens opens · opposite directions</option>
+          <option value="2">Third · lens closes · opposite directions</option>
+          <option value="3">Fourth · lens opens · same direction</option>
+        </select>
+        <label class="toggle"><input type="checkbox" id="reflected"> Look below the axis</label>
+        <label class="slider-label" for="progress"><span>Through the touch</span><output id="progress-value" for="event progress reflected" aria-live="off">Before</output></label>
+        <input id="progress" type="range" min="-100" max="100" step="1" value="-100" aria-describedby="progress-hint">
+        <div class="buttons" aria-label="Touch stops"><button type="button" id="before" aria-pressed="true">Before</button><button type="button" id="meeting" aria-pressed="false">Touch</button><button type="button" id="after" aria-pressed="false">After</button></div>
+        <p id="progress-hint" class="hint">A small neighborhood of one touch on the blend from rhythms 11 / 6 to 11 / 8. The center uses rounded event coordinates. Nothing animates.</p>
+        <p id="status" role="status">Two crossings enclose a little lens.</p>
+      </div>
+      <div class="study">
+        <figure>
+          <div class="panel"><svg id="whole" viewBox="0 0 600 600" role="img" aria-labelledby="whole-title whole-description">
+            <title id="whole-title">The complete drawing</title>
+            <desc id="whole-description">A dashed ring locates the two selected branches.</desc>
+            <path id="outline"/><g id="highlights"></g><circle id="room"/>
+          </svg></div>
+          <figcaption>The full drawing stays at a fixed scale. A ring locates the selected touch.</figcaption>
+        </figure>
+        <figure>
+          <div class="panel"><svg id="lens" viewBox="0 0 600 600" role="img" aria-labelledby="lens-title lens-description">
+            <title id="lens-title">Two branches near a touch</title>
+            <desc id="lens-description">Earlier blue and later gold branches enclose a pale lens before they touch. Arrows follow their direction of travel.</desc>
+            <defs><clipPath id="lens-clip"><rect width="600" height="600"/></clipPath></defs>
+            <g clip-path="url(#lens-clip)"><path id="pocket"/><g id="branches"></g><g id="arrows"></g><g id="markers"></g></g>
+          </svg></div>
+          <figcaption id="lens-caption">Equal scales, rotated to make the common tangent horizontal. Arrows follow travel.</figcaption>
+        </figure>
+      </div>
+      <div class="legend"><span class="early">— Earlier visit</span><span class="late">— Later visit</span><span>→ Direction of travel</span><span>● A crossing</span></div>
+      <h2>The small gap makes the lens</h2>
+      <p>The opening is easier to see when we subtract one branch from the other. A zero means that they meet; the shaded area between the two zeros equals the lens area. Here the vertical scale is enlarged. The dashed reference holds the drawing at its touch.</p>
+      <figure class="graph">
+        <div class="panel"><svg id="gap-graph" viewBox="0 0 600 360" role="img" aria-labelledby="gap-title gap-description">
+          <title id="gap-title">Separation between the branches</title>
+          <desc id="gap-description">Earlier minus later branch, plotted along their common tangent. The horizontal and vertical scales differ.</desc>
+          <defs><clipPath id="graph-clip"><rect x="55" y="35" width="490" height="250"/></clipPath></defs>
+          <path class="axis" d="M55,160 H545 M300,35 V285"/>
+          <g clip-path="url(#graph-clip)"><path id="gap-fill"/><path id="gap-reference"/><path id="gap-line"/><g id="gap-markers"></g></g>
+          <text x="55" y="308" id="x-low" text-anchor="middle">−18</text><text x="300" y="308" text-anchor="middle">0</text><text x="545" y="308" id="x-high" text-anchor="middle">18</text>
+          <text x="45" y="62" id="y-high" text-anchor="end">2</text><text x="45" y="166" text-anchor="end">0</text><text x="45" y="272" id="y-low" text-anchor="end">−2</text>
+          <text x="300" y="346" text-anchor="middle">Distance along the common tangent</text>
+          <text x="55" y="23">Normal separation · drawing units</text>
+        </svg></div>
+        <figcaption>Scales differ on this separation graph. Both coordinates measure drawing units. The picture and quadrature use floating-point arithmetic.</figcaption>
+      </figure>
+      <dl class="measurements" aria-label="Local lens area">
+        <div><dt>Lens area · drawing units²</dt><dd><output id="area" for="event progress reflected" aria-live="off">—</output></dd></div>
+        <div><dt>Area / |weight offset|<sup>3/2</sup></dt><dd><output id="ratio" for="event progress reflected" aria-live="off">—</output></dd></div>
+        <div><dt>Limiting coefficient</dt><dd id="limit">—</dd></div>
+      </dl>
+    </div>
+    <figure id="fallback" class="fallback">
+      <img src="touch.svg" width="1200" height="1060" alt="Two rows of equal-scale close-ups: matching travel directions erase a little lens; opposite directions open one. White dots mark crossings; arrows follow the moving branches.">
+      <figcaption>A lens closes between two moving branches. <a href="touch.svg">Open the full-size still ↗</a></figcaption>
+    </figure>
+    <details>
+      <summary>Why a three-halves power?</summary>
+      <p>Near an ordinary touch, the separation is a nonzero multiple of the weight change plus a quadratic bend along the tangent. The opening is proportional to the weight offset; the distance between crossings is proportional to its square root. Integrating their parabolic gap gives an area proportional to <span class="formula">|weight offset|<sup>3/2</sup></span>.</p>
+      <p>The coefficient above is enclosed separately by rational arithmetic. The changing area is numerical, and its ratio approaches that coefficient as the lens shrinks. This is a limiting law; the displayed finite lenses do not obey it exactly. <a href="rhythm_tangencies.md">Read the calculation and its scope ↗</a></p>
+    </details>
+    <details>
+      <summary>What does the direction change?</summary>
+      <p>A touch with matching travel directions is called direct. Opposing directions give an inverse touch. Either creates or destroys two crossings locally; strangeness stays fixed. Two other integers, J⁺ and J⁻, tell these touches apart: a direct touch changes J⁺, while an inverse touch changes J⁻.</p>
+      <p>Each selected touch has a reflected partner at the same weight. The four reflected pairs were certified individually. Their nearby drawings have 40 → 36 → 40 → 36 → 40 crossings and strangeness eleven, at the specified sampled weights. This study does not certify a complete event census between those weights. <a href="rhythm_tangencies.md#two-integers-for-two-kinds-of-touch">Follow the winding-number calculation ↗</a></p>
+    </details>
+    <details>
+      <summary>What has been proved?</summary>
+      <p>Eight rational contraction boxes each contain exactly one selected tangent meeting. Nonzero relative curvature and nonzero separation speed prove each touch is ordinary, determine which side has the small lens, and enclose its area coefficient. A separate whole-orbit cover excludes other branches from a small disk around each contact throughout the controls. The point keeps moving on the whole route, with speed at least 775 drawing units per radian.</p>
+      <p>These local event boxes cover much less than the slider neighborhoods. Neither a count of every event in a neighborhood nor a census of the whole blend is asserted here. The drawings use rounded coordinates. <a href="rhythm_tangencies.md">Reproduce the certificates ↗</a></p>
+    </details>
+    <footer>Aldebaran · Watching a little space close.<br><a href="../index.html">The sketchbook ↗</a> · <a href="weave.html">A different weave ↗</a> · <a href="touch.svg" download>Save the still drawing ↧</a> · <a href="../JOURNAL.md">Notebook ↗</a></footer>
+  </main>
+  <script src="touch_data.js"></script>
+  <script src="touch_math.js"></script>
+  <script src="touch.js"></script>
+</body>
+</html>
