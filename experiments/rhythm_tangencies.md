@@ -46,8 +46,8 @@ For **each of these eight selected events**, the certificate proves:
 
 These small event boxes alone are a **local list**. A separate argument
 below classifies four complete short weight windows. The browser's slider
-neighborhoods are wider still; neither calculation classifies the full
-route. The isolated local lens is a face of the full drawing sufficiently
+neighborhoods are wider still. A separate [whole-route census](rhythm_route.md)
+now fills all the gaps. The isolated local lens is a face of the full drawing sufficiently
 close to the contact; this local statement does not classify every pocket
 elsewhere in the drawing.
 
@@ -177,7 +177,8 @@ Fresh smooth censuses at the eight exact window endpoints confirm the
 crossing counts in the table and St = 11. These are distinct from the
 slightly more distant snapshots used for the J⁺/J⁻ table below. The
 continuous argument rules out intervening events **inside these four
-windows**. It leaves the gaps between windows to a separate census.
+windows**. The [whole-route census](rhythm_route.md) proves there are no
+additional events in the gaps between all six known event windows.
 
 ## The lens's three-halves law
 

@@ -65,10 +65,10 @@ The cover accounts for the entire orbit and every weight in the stated
 windows, beyond locating numerical roots or comparing snapshots.
 
 These four local jumps total −4, matching the endpoint difference.
-This is **not a complete event census of the full route**. Additional
-events outside the windows could have cancelling signed jumps. Numerical
-exploration also finds two-branch tangencies elsewhere, which do not
-change St. No exhaustive claim about them is made here.
+These two windows alone do not classify the rest of the route. The later
+[whole-route census](rhythm_route.md) now completes that task: exactly
+these four triple passages and eight ordinary tangencies occur, with
+no further event. The [touch study](touch.html) magnifies those tangencies.
 
 ## A rational calculation with a real parameter
 

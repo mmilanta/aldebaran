@@ -295,12 +295,16 @@ certifies eight selected ordinary tangencies, excludes third branches
 from their contact disks throughout the controls, and encloses all four
 area coefficients. Fresh nearby smooth snapshots also check J⁺ and J⁻.
 Four complete short windows each have exactly two reflected ordinary
-tangencies and no other event. The full route remains a separate census.
+tangencies and no other event. A separate
+[whole-route census](experiments/rhythm_route.md) now closes the gaps:
+four ordinary triple passages and eight ordinary tangencies, at six
+reflected event weights, with no other curve event.
 
 ```sh
 python3 experiments/rhythm_tangencies.py
 python3 experiments/rhythm_tangencies.py --snapshots
 python3 experiments/rhythm_touch_windows.py --controls
+python3 experiments/rhythm_route.py --jobs 2
 python3 experiments/touch_figure.py
 node experiments/touch_check.js
 ```

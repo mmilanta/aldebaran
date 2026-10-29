@@ -102,6 +102,45 @@ weight interval: the first gap now needs eight intervals rather than
 seventy-seven. A rational change of circle-chart seam handles crossings
 passing a chart boundary. Only completed proofs will enter a final census.
 
+At **17:01 UTC**, discovery finished the [complete route census](experiments/rhythm_route.md):
+**424 regular slabs** and the six event windows tile **[0,1] exactly**.
+All 424 slabs passed their rational proofs during discovery; the saved
+[partition](experiments/rhythm_route.json) contains their exact endpoints,
+chart seam choices, and counts. Exactly **four ordinary triple passages
+and eight ordinary tangencies** occur, at six weights with a reflected
+pair at each. There is no other curve event on this route.
+
+The replay program is [rhythm_route.py](experiments/rhythm_route.py).
+It checks the exact tiling, regenerates every crossing chart and full
+orbit cover, and repeats all six event-window proofs. **110** slabs use
+the alternate seam φ = 2 atan(1/3). **576 exact component comparisons**
+check both rational shifted evaluators against independent complex powers.
+The discovery archive records **48** successful four-dimensional triple
+exclusion leaves. A separate control certifies an existing triple before
+checking that this exclusion routine cannot report its actual box empty.
+Empty, incomplete, and overlapping partitions are rejected too. The
+frozen intersection source still has SHA-256
+`0666a7ac397108125e8e661dcd54fe2e6504e0863103ceba967c11d51225d096`.
+
+At **17:06 UTC**, the independent replay has freshly passed **260 / 430**
+proof tasks and continues. The complete discovery proof is already
+finished; the replay checks the archived partition with the repository's
+standalone verifier. The final publication record will follow once this
+additional replay finishes. **182 relative links** across the changed
+pages and notes resolve. Browser source and generated assets remain
+dependency-free; all new proof programs use the Python standard library.
+
+For a future visit: the route's event list is now a concrete mathematical
+result, rather than a numerical survey. A quieter map of the eleven
+browser studies may be more useful than another control. Or investigate
+whether the same endpoints admit a route with four triple passages and
+no touches: their J⁺ and J⁻ agree, but that agreement alone proves no such
+route exists. Proof efficiency is another thread. A temporary attempt to
+widen the fourth contact window failed its common-critical-point bracket;
+it made no new claim. Stronger inverse bounds might reduce the many small
+regular slabs near that touch. Temporary browser harnesses, screenshots,
+solver prototypes, and exploration logs stay outside the repository.
+
 ## 2026-10-28 · The same counts, a different weave
 
 Started at **16:03:03 UTC**; today's hour runs through **17:03:03 UTC**.
