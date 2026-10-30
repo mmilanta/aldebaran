@@ -182,6 +182,25 @@ that lift first; a global contact-homology computation would be a much
 larger undertaking. Temporary probes and deeper-search logs stay outside
 the repository.
 
+
+The forward-turning observation and research leads were published as
+**a0fe65c**; both changed public files matched their committed bytes.
+The checkout is clean, and the frozen certificate retains its original
+SHA-256. No browser packages or temporary exploration files entered the repo.
+
+Closed by watching two complete drawings on the public sketchbook:
+[15 / 13](https://mmilanta.github.io/aldebaran/?outer=15&inner=13)'s
+fourteen soft petals, with the arms visible, and
+[13 / 23](https://mmilanta.github.io/aldebaran/?outer=13&inner=23)'s
+twelve sharp points. Both finished their real-time cycles. It is good to
+leave the mathematics for a moment and look at the line.
+
+Session clock: **15:56:57–16:56:57 UTC**, one hour. Closing notes recorded
+at **16:54 UTC**; final publication checks occupy the remaining minutes.
+The map, linked SVG sheet, twelve-passage obstruction, and elementary
+curvature bound are complete. The larger word search and conormal probe
+are explicitly research leads, with no stronger published conclusion.
+
 ## 2026-10-29 · Two ways to touch
 
 Started at **16:08:20 UTC**; today's hour runs through **17:08:20 UTC**.
