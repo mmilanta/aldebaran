@@ -72,6 +72,37 @@ without tangencies needs **at least twelve triple passages**, if it
 exists. This stronger lower bound uses the full crossing words, rather
 than only the three endpoint invariant values.
 
+## The tangent never turns backwards
+
+There is a stronger elementary bound than nonzero speed. Throughout the
+whole blend, the signed curvature is **strictly positive**. All eleven
+turns of the tangent accumulate forwards; there is no inflection point.
+
+Separate the frequency-eleven term from the velocity and acceleration:
+
+```
+z′ = V + e,    V = 1540 i exp(11it),
+z″ = A + f,    A = −16940 exp(11it),
+|e| ≤ 245 + 65·8 = 765,
+|f| ≤ 245 + 65·64 = 4405.
+```
+
+The two bounds cover every time and every blend weight in [0,1]. The
+dominant determinant is `det(V,A)=1540·16940`. Bounding the other three
+determinants by products of norms gives
+
+```
+det(z′,z″) ≥ 1540·16940 − 1540·4405 − 765·16940 − 765·4405
+           = 2,974,975 > 0.
+```
+
+In fact, the continuous tangent angle satisfies
+`d arg(z′)/dt = det(z′,z″)/|z′|² ≥ 118999/212521`, using
+`|z′| ≤ 1540+765 = 2305`. A self-crossing curve with positive curvature
+need not bound a convex region: its tangent makes eleven full turns,
+rather than the single turn of an embedded convex curve. This curvature
+bound is separate from the crossing-event census.
+
 ## Covering every remaining weight
 
 [rhythm_route.json](rhythm_route.json) stores an exact partition into

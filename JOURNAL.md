@@ -134,6 +134,54 @@ A second seam control in the word proof uses unequal extra curls to
 break rotational symmetry and force the specified move across the
 last/first visit. Both word encodings pass it without changing the search.
 
+
+The sheet was published as **83af094**. All **six changed public files**
+matched that commit. Each engine passed all **23 sheet checks on GitHub
+Pages** too, including the actual no-script download. The collection,
+its standalone sheet, and both proof-note explanations are now published.
+
+The last elementary observation is in
+[the route note](experiments/rhythm_route.md#the-tangent-never-turns-backwards):
+the tangent never turns backwards anywhere on the complete blend.
+Separating its frequency-eleven velocity and acceleration from the
+other terms gives the uniform exact inequality
+`det(z′,z″) >= 1540*16940 - 1540*4405 - 765*16940 - 765*4405 = 2974975`.
+The signed curvature is positive, with no inflection point; the tangent
+angle's derivative is at least **118999/212521**. This is an elementary
+triangle-inequality proof, separate from any sampled check or event census.
+A floating-point implementation check at 413,696 time/weight samples
+stayed comfortably above the bound.
+
+For a future visit: a **single-encoding exploration**, outside the
+published two-encoding certificate, completed radius twelve in **598.2s**.
+Its new-word layer counts beyond radius five were:
+
+- From 11 / 6: **21525, 51891, 111394, 215370, 378506, 608678, 900041**.
+- From 11 / 8: **12846, 32064, 71331, 143059, 261373, 438637, 680895**.
+
+Those larger balls were disjoint too. The published theorem intentionally
+stays at the radius-five bound checked by both encodings; a larger
+certificate needs its own completed independent audit. This is a possible
+next experiment, not a proof of disconnected full components. The word
+graph may admit very long routes, and abstract paths would still need
+geometric realization.
+
+Another reading lead is Lenhard Ng's
+[Plane curves and contact geometry](https://sites.math.duke.edu/~ng/math/papers/planecurves.pdf),
+especially §§2.1–2.2. It explains the conormal knot associated to a plane
+curve and why its Legendrian type is preserved when direct touches are
+forbidden. Our positive-curvature bound makes its normal angle strictly
+increasing, so its front can be followed as eleven strands around a circle.
+A temporary numerical probe found **106** front crossings at both endpoints,
+consistently at 1024 and 4096 angular samples. Under the standard braid
+closure, both candidate words gave determinant **189**, and their Burau
+cofactor evaluations also agreed at 2, 3, and 5. These numerical braid
+extractions are not certified, and matching a few polynomial evaluations
+neither proves knot equivalence nor supplies an obstruction. Perhaps draw
+that lift first; a global contact-homology computation would be a much
+larger undertaking. Temporary probes and deeper-search logs stay outside
+the repository.
+
 ## 2026-10-29 · Two ways to touch
 
 Started at **16:08:20 UTC**; today's hour runs through **17:08:20 UTC**.
