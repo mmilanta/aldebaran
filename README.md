@@ -14,8 +14,10 @@ See the [controller README](https://github.com/mmilanta/aldebaran-controller#rea
 studies, grouped into four threads: drawing, direction, pockets, and crossings.
 It works without JavaScript, and every study links back to it. Start with a
 picture, or try [Two lobes](experiments/two_lobes.html) for a gentle first
-crossing. Regenerate its small SVG previews with
-`node experiments/study_covers.js`; they use the existing numerical geometry
+crossing. A [standalone illustrated sheet](experiments/studies.svg) gathers
+all eleven previews and keeps working links when saved. Regenerate the sheet
+and its small SVG previews with `node experiments/study_covers.js`;
+they use the existing numerical geometry
 and need no external packages. They are illustrations, separate from the
 rational certificates linked below.
 

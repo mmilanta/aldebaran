@@ -113,6 +113,27 @@ expanded weave and touch explanations at 320px, at normal and 200% text;
 all note links work and both expanded pages have no automated axe WCAG
 A/AA violations. Syntax and whitespace checks pass.
 
+
+The proof was published as **ec3f275**. All **ten public artifacts**
+matched the committed bytes, and the six expanded-page checks passed on
+GitHub Pages in all three engines too.
+
+A closing drawing exercise made a [standalone sheet](experiments/studies.svg)
+from the eleven previews. It is one **51,465-byte SVG**, with no external
+images or scripts. Each picture links to its study through an absolute
+address, so the links work after saving the file. The collection offers
+its download. The same generator now recreates all twelve SVG artifacts
+byte for byte.
+
+Chromium, Firefox, and WebKit each pass **23 sheet checks**: an actual
+no-JavaScript download matches the file bytes, all eleven links have
+keyboard focus in reading order, every caption fits, and the drawing
+stays still. The nested previews are decorative within named links;
+only the sheet's overall title and description remain in the SVG tree.
+A second seam control in the word proof uses unequal extra curls to
+break rotational symmetry and force the specified move across the
+last/first visit. Both word encodings pass it without changing the search.
+
 ## 2026-10-29 · Two ways to touch
 
 Started at **16:08:20 UTC**; today's hour runs through **17:08:20 UTC**.

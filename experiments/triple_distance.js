@@ -179,6 +179,13 @@ function checks() {
   validate(triangle);
   assert(neighbors(canonical(triangle)).size > 0);
   assert(gapNeighbors(rotateMinimum(gaps(triangle))).size > 0);
+  // Unequal extra curls break rotational symmetry. The specified move needs
+  // the last/first edge, so a missing cyclic edge cannot hide behind a rotation.
+  const seam = [0, 6, 7, 2, 1, 8, 9, 4, 3, 5], seamMoved = [...seam];
+  validate(seam);
+  for (const [a, b] of [[3, 4], [7, 8], [9, 0]]) [seamMoved[a], seamMoved[b]] = [seamMoved[b], seamMoved[a]];
+  assert(neighbors(String.fromCharCode(...seam)).has(canonical(seamMoved)));
+  assert(gapNeighbors(String.fromCharCode(...gaps(seam))).has(rotateMinimum(gaps(seamMoved))));
   const fixtures = [triangle, [0, 1, 2, 3, 4, 5], [0, 2, 4, 1, 3, 5]];
   for (const word of fixtures) {
     validate(word);
