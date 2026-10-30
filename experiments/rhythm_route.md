@@ -31,6 +31,47 @@ crossing and winding-region counts, and tangent index. Their strangeness
 differs by four. This particular route realizes those four negative triple
 passages, together with cancelling pairs of both kinds of tangency.
 
+## Four triple passages are unavoidable
+
+This route uses the fewest possible ordinary triple passages between
+these endpoints. To see the lower bound, consider any **generic regular
+homotopy** from 11 / 6 to 11 / 8, allowing ordinary self-tangencies but
+keeping the tracing velocity nonzero. Let T₊ and T₋ count its positive
+and negative triple passages, individually at their spatial locations.
+
+Arnold's strangeness is unchanged at self-tangencies and gains one at a
+positive triple passage. These are the axioms in
+[Shumakovitch, Theorem 1.3.A(ii)](https://math.dartmouth.edu/~chernov/strangeness.pdf#page=5).
+The certified endpoint values therefore give
+
+```
+T₊ − T₋ = 11 − 15 = −4,
+T₊ + T₋ = 4 + 2T₊ ≥ 4.
+```
+
+The whole-route census attains this bound with four negative passages.
+Its mirror symmetry places them at two weights, with two distinct
+spatial meetings at each. Count four passages, not two. Strictly, the
+symmetric route has simultaneous isolated events; arbitrarily small
+local perturbations can separate their weights into a generic route
+with the same event counts and fixed endpoints. Each ordinary meeting
+has its own disjoint space-time neighborhood, and the regular parts
+remain regular under sufficiently small perturbations.
+
+This minimizes the **triple count**. It does not show that twelve is
+the smallest total number of events, or that the eight tangencies can
+be removed from some other route. Equality of the endpoint J⁺ and J⁻
+only makes their signed tangency changes cancel; it proves neither the
+existence nor the impossibility of a route without tangencies. The
+bound concerns generic regular routes; a route using cusps or higher
+multiple meetings is outside this event-count statement.
+
+A later [exact word search](triple_distance.md) now excludes a route
+with four triples and no tangencies. In fact, any generic regular route
+without tangencies needs **at least twelve triple passages**, if it
+exists. This stronger lower bound uses the full crossing words, rather
+than only the three endpoint invariant values.
+
 ## Covering every remaining weight
 
 [rhythm_route.json](rhythm_route.json) stores an exact partition into

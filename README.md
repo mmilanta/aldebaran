@@ -322,3 +322,12 @@ Only standard runtimes are needed. The generator repeats fresh proofs
 before writing the browser data and still SVG. The browser scripts are
 `experiments/touch_data.js`, `experiments/touch_math.js`, and
 `experiments/touch.js`; each supports `node --check`.
+
+[Four triangles are not enough](experiments/triple_distance.md) follows
+a consequence of that census. Four is the smallest possible triple count
+between the two endpoint drawings, but a generic regular route without
+any tangencies needs **at least twelve** triple passages, if one exists.
+Two exact word enumerations agree on every reached state and find no
+connection within ten moves; strangeness supplies the parity step.
+Run `node experiments/triple_distance.js` for fresh smooth endpoint
+proofs and both searches, or add `--saved` to audit only the archived words.

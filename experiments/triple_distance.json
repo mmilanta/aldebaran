@@ -1,0 +1,39 @@
+{
+  "schema": "aldebaran-triple-distance-v1",
+  "method": "Two independent exact searches in a graph admitting every three-pair triangle swap, including non-geometric ones.",
+  "radius": 5,
+  "endpoints": [
+    {
+      "outer": 11,
+      "inner": 6,
+      "canonical_word_sha256": "e1a755f076014678eb7592667b73f2e6278854dbadb8bee4fb76475a4eaae924",
+      "layers": [
+        1,
+        16,
+        121,
+        615,
+        2419,
+        7809
+      ],
+      "ball_size": 10981
+    },
+    {
+      "outer": 11,
+      "inner": 8,
+      "canonical_word_sha256": "9f149ca1fd8b85d05174616ed1cbd3965f0f6fb2304be23d848af175e1908c60",
+      "layers": [
+        1,
+        11,
+        72,
+        352,
+        1374,
+        4524
+      ],
+      "ball_size": 6334
+    }
+  ],
+  "intersection_size": 0,
+  "excluded_triple_only_moves": 10,
+  "triple_only_lower_bound_with_strangeness_parity": 12,
+  "certificate_code_sha256": "0666a7ac397108125e8e661dcd54fe2e6504e0863103ceba967c11d51225d096"
+}

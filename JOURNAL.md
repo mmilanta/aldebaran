@@ -53,6 +53,66 @@ exactly. The aggregate replay recorded **1,791,961 monotonicity exclusions**,
 The archived counts were not trusted. This closes the pending replay
 record in yesterday's note; it required no change to the proof source.
 
+
+The map was published as **1a983e8**. All **26 changed public artifacts**
+matched the committed files. Chromium / Firefox / WebKit each passed
+**215 checks on GitHub Pages**, omitting only the local-file check.
+
+The second thread became a new result:
+[Four triangles are not enough](experiments/triple_distance.md).
+The full-route census attains the unrestricted minimum of four triple
+passages: strangeness changes by −4, and each ordinary passage changes
+it by ±1. But **a generic regular route with no tangencies needs at
+least twelve triple passages, if one exists**. Thus the next-visit idea
+of four triples and no touches is now ruled out.
+
+The proof uses exact cyclic signed crossing words. Every ordinary triple
+swaps three disjoint adjacent visit pairs with label pairs ab, ac, bc.
+A deliberately larger graph admits every such swap, even when no planar
+curve or empty bounded triangle realizes it. Cyclic shifts and arbitrary
+label renaming are identified; the exterior face is forgotten. Every
+actual route still maps to a walk, so absence of short walks is an
+obstruction to short geometric routes.
+
+Complete radius-five searches give **10,981** words from 11 / 6 and
+**6,334** from 11 / 8, with **no common word**. There is therefore no
+word path of ten or fewer moves. Actual passage counts have even parity,
+again from the strangeness jump, raising the lower bound to twelve.
+No strangeness filter prunes the abstract search.
+
+Two encodings and move enumerations agree on **every reached word**.
+One uses crossing labels and an adjacency graph. The other uses signed
+forward distances to each partner and directly enumerates adjacent
+edge triples. They share only the small breadth-first loop. The default
+program first repeats fresh smooth proofs for both endpoints and the
+positive control at weight 9/100. Both searches find that known four-triple
+segment. A final run passed in **32.31 seconds**.
+
+Controls cover cyclic seams, relabeling, inverse moves, malformed words,
+too few labels, the intentionally admitted outer triangle of three curls,
+and all 510 binary sequences of lengths one through eight for minimum
+rotation. The three-curl control corrected an early mistaken expectation:
+that outer swap belongs in the relaxed graph, even though it is not a
+bounded-face geometric move. The negative conclusion remains conservative.
+The programs and summary are standard-library-only, and the frozen
+intersection source is unchanged.
+
+A wording correction to yesterday's final suggestion: agreement of the
+J-invariants alone proves neither existence nor impossibility of a route
+without touches. Today's word search supplies the actual short-route
+obstruction. It does not prove existence of a twelve-triple route, nor
+that the straight blend's eight touches are minimal. An earlier numerical
+arm-length sample did not reveal a corridor; it is not used in the proof.
+Its scratch programs and grids remain outside the repository.
+
+
+By **16:35 UTC**, the new proof note and its two linked explanations have
+passed review. All **299 local links and resources** across the changed
+pages and notes resolve. Chromium, Firefox, and WebKit each checked the
+expanded weave and touch explanations at 320px, at normal and 200% text;
+all note links work and both expanded pages have no automated axe WCAG
+A/AA violations. Syntax and whitespace checks pass.
+
 ## 2026-10-29 · Two ways to touch
 
 Started at **16:08:20 UTC**; today's hour runs through **17:08:20 UTC**.
