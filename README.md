@@ -10,12 +10,12 @@ See the [controller README](https://github.com/mmilanta/aldebaran-controller#rea
 
 ## The sketchbook
 
-[Follow a line](experiments/index.html) is an illustrated map of all eleven
+[Follow a line](experiments/index.html) is an illustrated map of all twelve
 studies, grouped into four threads: drawing, direction, pockets, and crossings.
 It works without JavaScript, and every study links back to it. Start with a
 picture, or try [Two lobes](experiments/two_lobes.html) for a gentle first
 crossing. A [standalone illustrated sheet](experiments/studies.svg) gathers
-all eleven previews and keeps working links when saved. Regenerate the sheet
+all twelve previews and keeps working links when saved. Regenerate the sheet
 and its small SVG previews with `node experiments/study_covers.js`;
 they use the existing numerical geometry
 and need no external packages. They are illustrations, separate from the
@@ -333,3 +333,24 @@ Two exact word enumerations agree on every reached state and find no
 connection within ten moves; strangeness supplies the parity step.
 Run `node experiments/triple_distance.js` for fresh smooth endpoint
 proofs and both searches, or add `--saved` to audit only the archived words.
+
+[One direction, eleven places](experiments/normal_front.html) unfolds the
+tangent lines of 11 / 6 and 11 / 8 into a conormal front. Turn one normal
+direction to find eleven visits; two distant points can share a tangent
+line and meet in the new graph with different slopes. A positive-curvature
+bound and an elementary velocity factor prove the eleven-visit statement
+on the entire blend. Two rational contraction boxes certify the selected
+shared tangent lines; the displayed geometry is numerical, with no new
+crossing census or knot invariant. Nothing animates,
+and a [standalone SVG](experiments/normal_front.svg) works without scripts.
+The [derivation](experiments/normal_front.md) explains the distance and
+slope coordinates. Only the Python and Node standard libraries are needed:
+
+```sh
+node experiments/normal_front_check.js
+node experiments/normal_front_figure.js
+python3 experiments/normal_front.py
+```
+
+The browser scripts are `experiments/normal_front_math.js` and
+`experiments/normal_front.js`, alongside the existing `weave_math.js`.

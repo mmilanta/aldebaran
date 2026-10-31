@@ -17,6 +17,7 @@ const Touch = require('./touch_math.js');
 const TouchData = require('./touch_data.js');
 const StrangenessData = require('./strangeness_data.js');
 const Strangeness = require('./strangeness_math.js');
+const Front = require('./normal_front_math.js');
 
 const blue = '#9fc7eb', gold = '#e8b66e', white = '#f4f1e8', muted = '#555b78';
 const cycle = 2 * Math.PI;
@@ -74,12 +75,12 @@ function write(name, title, description, body) {
 
 function sheet() {
   const destinations = ['../index.html', 'loop.html', 'winding.html', 'two_lobes.html',
-    'blend.html', 'arm_detour.html', 'phase.html', 'cubic.html', 'strangeness.html', 'weave.html', 'touch.html'];
+    'blend.html', 'arm_detour.html', 'phase.html', 'cubic.html', 'strangeness.html', 'weave.html', 'touch.html', 'normal_front.html'];
   const root = 'https://mmilanta.github.io/aldebaran/experiments/';
   const escape = s => s.replaceAll('&', '&amp;').replaceAll('<', '&lt;');
   const pieces = covers.map(({ name, title, svg }, i) => {
     const column = i % 3, row = Math.floor(i / 3);
-    const x = 45 + 375 * column + (row === 3 ? 187.5 : 0), y = 170 + 332 * row;
+    const x = 45 + 375 * column, y = 170 + 332 * row;
     const heading = i === 0 ? 'Orbital sketchbook' : title;
     // A downloadable sheet uses absolute links so it works away from the site.
     const href = new URL(destinations[i], root).href;
@@ -97,11 +98,11 @@ function sheet() {
       lines.map((line, j) => `<text x="${x + 18}" y="${y + 276 + j * 21}" fill="${white}" font-size="19" font-weight="600">${escape(line)}</text>`).join('') + '</a>';
   });
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1570" viewBox="0 0 1200 1570" role="group" aria-labelledby="title description">\n` +
-    '<title id="title">Follow a line: eleven studies</title>\n' +
-    '<desc id="description">An illustrated sheet of Aldebaran’s eleven orbital studies, in reading order. Each picture links to its study. The small previews use numerical geometry; separation graphs magnify one axis.</desc>\n' +
+    '<title id="title">Follow a line: twelve studies</title>\n' +
+    '<desc id="description">An illustrated sheet of Aldebaran’s twelve orbital studies, in reading order. Each picture links to its study. The small previews use numerical geometry; some graphs use different axes or scales.</desc>\n' +
     '<style>text{font-family:ui-sans-serif,system-ui,sans-serif}.card:focus .frame{stroke:#e8b66e;stroke-width:3}.card:hover .frame{stroke:#9999ae}</style>\n' +
     '<rect width="1200" height="1570" fill="#101323"/>\n' +
-    `<text x="45" y="53" fill="${gold}" font-size="13" letter-spacing="3">ALDEBARAN · ELEVEN STUDIES</text>` +
+    `<text x="45" y="53" fill="${gold}" font-size="13" letter-spacing="3">ALDEBARAN · TWELVE STUDIES</text>` +
     `<text x="45" y="112" fill="${white}" font-size="55" font-weight="650" letter-spacing="-2">Follow a line.</text>` +
     '<text x="45" y="143" fill="#c7c7d4" font-size="18">Circles, crossings, and the small spaces between. Choose a picture to explore.</text>\n' +
     pieces.join('\n') +
@@ -218,8 +219,19 @@ function main() {
     fill(map(lens, 320, 200, 23), white) + [0, 1].map(i => line(map(edge(i, -13.5, 13.5), 320, 200, 23), i ? gold : blue, 2.5)).join('') +
     roots.map(x => dot(map([[x, Touch.branch(touch, 0, x).y]], 320, 200, 23)[0])).join(''));
 
+  const normalExample = Front.sharedTangent(6, 0, 6, 102 * Math.PI / 180, 103 * Math.PI / 180);
+  const frontMap = points => points.map(([beta, h]) => [40 + 560 * beta / cycle, 210 - .36 * h]);
+  const frontStrands = Front.front(6, 180);
+  write('012', 'One direction, eleven places',
+    'Eleven strands of the conormal front for 11 / 6. Gold and lilac share one normal direction and tangent-line distance, but different slopes. The horizontal coordinate is angle; the vertical coordinate is signed distance.',
+    '<path d="M40,210H600" stroke="#383b50"/>' +
+    frontStrands.map((strand, i) => line(frontMap(strand), i === 0 ? gold : i === 6 ? '#d1b6ea' : blue,
+      i === 0 || i === 6 ? 2.5 : 1.2, `opacity="${i === 0 || i === 6 ? 1 : .4}"`)).join('') +
+    line(frontMap([[normalExample.beta, -450], [normalExample.beta, 450]]), '#9999ae', 1, 'stroke-dasharray="4 6"') +
+    dot(frontMap([[normalExample.beta, normalExample.visits[0].distance]])[0], white, 5));
+
   sheet();
-  console.log('Wrote eleven study covers and their standalone sheet; the negative-count probe has smooth-curve clearance.');
+  console.log(`Wrote ${covers.length} study covers and their standalone sheet; the negative-count probe has smooth-curve clearance.`);
 }
 
 main();

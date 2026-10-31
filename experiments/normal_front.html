@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101323">
+  <meta name="description" content="Turn one normal direction to find eleven places on an orbital curve. Unfold their tangent lines into a conormal front.">
+  <title>Aldebaran · One direction, eleven places</title>
+  <style>
+    :root { color-scheme: dark; font-family: ui-sans-serif, system-ui, sans-serif; background: #101323; color: #f4f1e8; }
+    * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+    body { margin: 0; }
+    main { max-width: 78rem; padding: clamp(1.2rem, 4vw, 3rem); margin: auto; overflow-wrap: anywhere; }
+    a { color: #e8b66e; text-underline-offset: .2em; }
+    :focus-visible { outline: 3px solid #e8b66e; outline-offset: 5px; }
+    .back { display: inline-block; font-size: .85rem; margin-bottom: 2rem; }
+    .eyebrow { color: #e8b66e; font-size: .75rem; font-weight: 700; letter-spacing: .17em; text-transform: uppercase; }
+    h1 { max-width: 16ch; font-size: clamp(2.4rem, 6vw, 5rem); line-height: 1.05; letter-spacing: -.055em; margin: .8rem 0 1.2rem; }
+    p { max-width: 49rem; color: #c7c7d4; line-height: 1.75; }
+    .intro { font-size: 1.05rem; }
+    .study { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 1.3rem; }
+    figure { min-width: 0; margin: 0; }
+    .panel { border: 1px solid #383b50; border-radius: 1rem; background: #0b0e1a; overflow: hidden; }
+    svg, .fallback img { display: block; width: 100%; height: auto; }
+    figcaption { margin: .7rem 0 0; color: #c7c7d4; font-size: .85rem; line-height: 1.7; }
+    .controls { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr) minmax(0, 1fr); gap: 1.2rem; padding: 1.4rem; margin: 2rem 0 1.2rem; border: 1px solid #383b50; border-radius: 1rem; }
+    label { display: block; font-size: .88rem; font-weight: 650; }
+    select, button { font: inherit; color: #f4f1e8; background: #20253c; border: 1px solid #73768d; border-radius: .4rem; }
+    select { display: block; width: 100%; padding: .7rem .5rem; margin-top: .5rem; }
+    input[type=range] { display: block; width: 100%; margin: 1rem 0 .6rem; accent-color: #e8b66e; }
+    output { font-variant-numeric: tabular-nums; }
+    .range-value { display: block; font-size: .85rem; color: #c7c7d4; }
+    .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; margin: 1.2rem 0 2rem; }
+    button { cursor: pointer; padding: .75rem 1rem; }
+    button:hover { border-color: #e8b66e; }
+    .actions p { flex: 1 1 25rem; margin: 0; font-size: .9rem; }
+    .measurements { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 1.5rem 0 0; border-block: 1px solid #383b50; }
+    .measurements div { min-width: 0; padding: 1.2rem .8rem; }
+    dt { font-size: .8rem; color: #c7c7d4; line-height: 1.6; }
+    dd { font-size: 1.5rem; font-variant-numeric: tabular-nums; margin: .5rem 0 0; }
+    details { max-width: 55rem; border-top: 1px solid #383b50; margin-top: 1.5rem; padding-top: 1.2rem; }
+    summary { cursor: pointer; font-weight: 650; line-height: 1.6; }
+    .formula { font-family: ui-monospace, monospace; }
+    footer { margin-top: 3rem; color: #9999ae; font-size: .85rem; line-height: 1.9; }
+    @media (max-width: 800px) { .study { grid-template-columns: minmax(0, 1fr); } .controls { grid-template-columns: minmax(0, 1fr); } }
+    @media (max-width: 470px) { .measurements { grid-template-columns: minmax(0, 1fr); } .measurements div { padding: .8rem; } dd { font-size: 1.3rem; } }
+  </style>
+</head>
+<body>
+  <main>
+    <nav aria-label="Sketchbook navigation"><a class="back" href="index.html">← All studies</a></nav>
+    <header>
+      <div class="eyebrow">Aldebaran · Direction and distance</div>
+      <h1>One direction, eleven places.</h1>
+      <p class="intro">The curve’s direction keeps turning forward, eleven times around. Pick one normal direction: eleven different places face that way. Unfold their tangent lines into a second drawing.</p>
+    </header>
+    <div id="explorer" hidden>
+      <div class="controls">
+        <div><label for="rhythm">Drawing</label><select id="rhythm"><option value="6">Rhythms 11 / 6</option><option value="8">Rhythms 11 / 8</option></select></div>
+        <div><label for="direction">Turn the normal</label><input id="direction" type="range" min="0" max="360" step="any" value="45"><output id="direction-value" class="range-value" for="direction">225° · from the positive horizontal axis</output></div>
+        <div><label for="visit">Follow a visit</label><select id="visit"><option value="0">Visit 1 of 11</option><option value="1">Visit 2 of 11</option><option value="2" selected>Visit 3 of 11</option><option value="3">Visit 4 of 11</option><option value="4">Visit 5 of 11</option><option value="5">Visit 6 of 11</option><option value="6">Visit 7 of 11</option><option value="7">Visit 8 of 11</option><option value="8">Visit 9 of 11</option><option value="9">Visit 10 of 11</option><option value="10">Visit 11 of 11</option></select></div>
+      </div>
+      <div class="study">
+        <figure>
+          <div class="panel"><svg viewBox="0 0 600 600" role="img" aria-labelledby="whole-title whole-description">
+            <title id="whole-title">Eleven places on the original drawing</title>
+            <desc id="whole-description">Eleven dots share the same left normal. A gold arrow follows the selected normal, perpendicular to the dashed tangent line.</desc>
+            <defs><clipPath id="whole-clip"><rect x="18" y="18" width="564" height="564" rx="12"/></clipPath></defs>
+            <g clip-path="url(#whole-clip)">
+              <path d="M30,300H570M300,30V570" stroke="#282d43" fill="none"/>
+              <path id="whole-curve" fill="none" stroke="#737b99" stroke-width="1.3"/>
+              <g id="tangents"></g><g id="distance-lines"></g><g id="orbit-marks"></g>
+            </g>
+            <circle cx="300" cy="300" r="3" fill="#f4f1e8"/>
+            <g font-family="system-ui,sans-serif" font-size="17" fill="#c7c7d4"><text x="27" y="34">The original drawing</text><text x="27" y="577">Arrow: left normal · dash: tangent</text></g>
+          </svg></div>
+          <figcaption>All eleven points have the same travel direction and the same left normal. Gold follows your chosen visit. The short arrows point perpendicular to travel. Both axes have the same scale.</figcaption>
+        </figure>
+        <figure>
+          <div class="panel"><svg viewBox="0 0 660 600" role="img" aria-labelledby="front-title front-description">
+            <title id="front-title">The tangent lines, unfolded</title>
+            <desc id="front-description">Eleven strands show signed distance to the tangent line as the normal makes one full turn. A vertical cursor selects one direction.</desc>
+            <defs><clipPath id="front-clip"><rect x="65" y="65" width="560" height="450"/></clipPath></defs>
+            <g stroke="#282d43" fill="none"><path d="M65,65H625M65,177.5H625M65,290H625M65,402.5H625M65,515H625"/><path d="M65,65V515M205,65V515M345,65V515M485,65V515M625,65V515"/></g>
+            <g clip-path="url(#front-clip)"><g id="front-strands"></g><path id="cursor" fill="none" stroke="#c7c7d4" stroke-width="1" stroke-dasharray="4 6"/><g id="front-marks"></g></g>
+            <g font-family="system-ui,sans-serif" font-size="16" fill="#c7c7d4">
+              <text x="27" y="34">Signed distance to the tangent line</text>
+              <text x="53" y="71" text-anchor="end">450</text><text x="53" y="296" text-anchor="end">0</text><text x="53" y="521" text-anchor="end">−450</text>
+              <text x="65" y="545" text-anchor="middle">180°</text><text x="205" y="545" text-anchor="middle">270°</text><text x="345" y="545" text-anchor="middle">0°</text><text x="485" y="545" text-anchor="middle">90°</text><text x="625" y="545" text-anchor="middle">180°</text>
+              <text x="345" y="579" text-anchor="middle">Normal direction · left and right edges join</text>
+            </g>
+          </svg></div>
+          <figcaption>A direction-and-distance graph, called a conormal front. Each dot gives one tangent line. The horizontal coordinate is an angle; the vertical coordinate measures drawing units. The two axes have different meanings.</figcaption>
+        </figure>
+      </div>
+      <div class="actions"><button id="shared" type="button">Show a shared tangent</button><p id="status" role="status">Turn the normal, then follow any of its eleven visits.</p></div>
+      <dl class="measurements" aria-label="Selected visit">
+        <div><dt>Selected visit</dt><dd><output id="selected-value" for="visit rhythm direction">3 of 11</output></dd></div>
+        <div><dt>Signed distance · drawing units</dt><dd><output id="distance-value" for="visit rhythm direction">—</output></dd></div>
+        <div><dt>Slope · drawing units per radian</dt><dd><output id="slope-value" for="visit rhythm direction">—</output></dd></div>
+      </dl>
+    </div>
+    <figure id="fallback" class="fallback">
+      <img src="normal_front.svg" width="1240" height="870" alt="The 11 / 6 drawing beside eleven strands of its conormal front. Two distant places share a dashed tangent line. Their gold and lilac dots meet in the direction-and-distance graph.">
+      <figcaption>One oriented tangent line touches two distant places. Their distance agrees; their slopes differ. <a href="normal_front.svg">Open the full-size still ↗</a></figcaption>
+    </figure>
+    <details>
+      <summary>What do the two coordinates mean?</summary>
+      <p>The left normal is the travel direction turned a quarter-turn counterclockwise. A tangent line is perpendicular to that normal. Its signed distance h is the projection of the point onto the normal: <span class="formula">h = x cos θ + y sin θ</span>. The line consists of all points with that same projection. A negative value places it on the opposite side of the origin from the arrow.</p>
+      <p>The normal starts pointing left, at 180°. Turning it once reveals eleven visits because the curve’s direction makes eleven forward turns in one orbit. At the graph’s right edge, each strand joins the next strand’s left edge. The last joins the first: it is one closed trace, cut into eleven pieces.</p>
+    </details>
+    <details>
+      <summary>Why do two distant places meet in the graph?</summary>
+      <p>“Show a shared tangent” picks two places with the same normal and the same signed distance. Their tangent lines coincide, so their dots meet in the graph. They are still far apart in the original drawing.</p>
+      <p>The graph’s slope keeps the missing information: <span class="formula">dh/dθ = −x sin θ + y cos θ</span>. Together, distance and slope recover the original point. Equal distance with different slopes therefore describes two places on one line. Equal direction, distance, and slope would describe a meeting with matching travel directions, a <a href="touch.html">direct touch</a>.</p>
+    </details>
+    <details>
+      <summary>What is exact, and what is drawn?</summary>
+      <p>A uniform positive-curvature bound proves that the normal always turns forward, and an elementary velocity factor proves that it makes exactly eleven turns. Those statements hold on the whole blend between these two drawings. The displayed eleven visits follow from that argument; the controls show its two endpoints.</p>
+      <p>Two small rational contraction boxes certify the selected shared tangent lines, with their points more than 500 drawing units apart. The curves and inverse angles shown here use floating-point arithmetic. The picture does not count all shared tangents or distinguish the associated knots. It follows the coordinate construction in <a href="https://sites.math.duke.edu/~ng/math/papers/planecurves.pdf#page=4">Lenhard Ng’s <cite>Plane curves and contact geometry</cite>, §2.1</a>. <a href="normal_front.md">Read the derivation and checks ↗</a></p>
+    </details>
+    <footer>Aldebaran · A line has a direction and a distance.<br><a href="index.html">All studies ↗</a> · <a href="weave.html">A different weave ↗</a> · <a href="normal_front.svg" download>Save the still drawing ↓</a> · <a href="../JOURNAL.md">Notebook ↗</a></footer>
+  </main>
+  <script src="weave_math.js"></script>
+  <script src="normal_front_math.js"></script>
+  <script src="normal_front.js"></script>
+</body>
+</html>
