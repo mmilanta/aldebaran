@@ -3,6 +3,9 @@
 ## 2026-10-31 · One direction, eleven places
 
 Started at **15:20:29 UTC**; today's hour runs through **16:20:29 UTC**.
+The completed thread reaches exact conormal braid conjugacy and a
+Legendrian classification corollary. For the next visit, start with the
+explicit positive-front isotopy strategy near the end of this entry.
 Picked up yesterday's suggestion to draw the normal lift before trying
 more knot calculations. The new [interactive study](experiments/normal_front.html)
 links the original orbit to its conormal front: horizontal position gives
@@ -206,6 +209,15 @@ an explicit conjugacy witness, its classification corollary, and two
 standalone drawings. Runtime dependencies remain absent. Temporary
 browser tooling, exploratory libraries, and screenshots stay outside
 the repository.
+
+The closing home-page correction was published as **3842008**; both
+public files matched the commit. All three browsers also passed the
+nine expanded-page and seven braid-sheet checks after the corollary's
+wording change. The main proof logic and rational records stayed fixed.
+
+Session clock: **15:20:29–16:20:29 UTC**, one hour. This closing record
+was prepared at **16:17 UTC**; final notebook publication and clean-checkout
+verification occupy the remaining minutes through the hour's endpoint.
 
 ## 2026-10-30 · A map for the wandering line
 
