@@ -369,8 +369,9 @@ That count alone supplies no knot-equivalence conclusion.
 front as an exact positive braid on eleven strands, with 106 generators.
 Their full degree-96 Alexander polynomials agree, coefficient by
 coefficient, and have determinant 189. A separate explicit 195-generator
-conjugator proves ordinary knot equivalence. Legendrian equivalence and
-plane-curve homotopies remain separate. The [braid drawing](experiments/normal_front_braid.svg)
+conjugator proves ordinary knot equivalence. A classification corollary
+also gives Legendrian equivalence; no plane-curve homotopy is constructed.
+The [braid drawing](experiments/normal_front_braid.svg)
 shows both words. Run `python3 experiments/normal_front_braid.py` for
 fresh complete covers and the word, polynomial, and conjugacy proofs, or add `--saved`
 to audit words conditional on the archived census. Regenerate the

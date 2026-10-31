@@ -9,10 +9,11 @@ normalized with constant and leading coefficient one. At −1 its value
 is **189**. All 97 coefficients agree.
 
 The knot equivalence comes from the conjugacy witness, beyond matching
-polynomials. This calculation certifies ordinary isotopy of the closures; it
-does not certify a Legendrian isotopy or a plane-curve route without
-direct touches. The [crossing-word lower bound](triple_distance.md)
-still applies to routes without either kind of touch.
+polynomials. The explicit calculation certifies ordinary isotopy of the
+closures. A classification corollary below also gives existence of a
+Legendrian isotopy. No plane-curve route is constructed. The
+[crossing-word lower bound](triple_distance.md) still applies to routes
+without either kind of touch.
 
 The [record](normal_front_braid.json) contains both words, section charts,
 the conjugator, its full free-group images, and polynomial coefficients
@@ -145,6 +146,22 @@ commutation, a single generator, nested cancellation, and invalid inputs.
 A temporary **libbraiding** search found C. The literal witness is all
 the verifier retains: the published check uses only Python's standard
 library and does not trust or rerun that search.
+
+### A classification corollary
+
+**The two lifts are also Legendrian isotopic**, by
+[Etnyre–Vértesi, *Legendrian satellites*, Theorem 4.4 and §4.1.1](https://etnyre.math.gatech.edu/preprints/papers/braidsatellites.pdf#page=19).
+Here is the application. Scale `(p,h)` uniformly to put the lifts inside
+their standard solid torus; `dh−p dθ` scales by the same positive factor.
+Conjugacy identifies the underlying closed-braid pattern. Each front has
+106 positive crossings and no cusps, so its relative Thurston–Bennequin
+number is 106, equal to the positive word length. The theorem gives
+uniqueness at that maximal value.
+
+This is an inference from a classification theorem. The programs
+construct no Legendrian isotopy. Projecting one back to a regular
+plane-curve route would require a further argument keeping its tracing
+velocity nonzero; no such route is supplied here.
 
 ## The entire polynomial, not sample agreement
 

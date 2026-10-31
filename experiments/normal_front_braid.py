@@ -542,7 +542,7 @@ def main():
         )
         print("Wrote normal_front_braid.json after both complete proofs.", flush=True)
     print(
-        f"Completed in {monotonic()-start:.2f}s. Ordinary knot equivalence is certified; Legendrian equivalence and plane-curve homotopies remain separate.",
+        f"Completed in {monotonic()-start:.2f}s. Ordinary knot equivalence is certified; explicit Legendrian and plane-curve isotopies are not constructed.",
         flush=True,
     )
 

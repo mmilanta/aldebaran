@@ -160,6 +160,21 @@ The frozen intersection source retains SHA-256
 `0666a7ac397108125e8e661dcd54fe2e6504e0863103ceba967c11d51225d096`.
 Closing publication checks follow below.
 
+The braid computation and drawing were published as **408e17d**. All
+**fourteen canonical public files** matched that commit. Chromium,
+Firefox, and WebKit each passed **274 public viewer checks** and
+**seven no-script braid-sheet checks**, including all caption bounds,
+446 strand/bridge paths, and self-contained resources. Each expanded
+viewer again has no automated axe A/AA violations.
+
+The final reading supplied a **classification corollary**: the two lifts
+are Legendrian isotopic by [Etnyre–Vértesi, Theorem 4.4](https://etnyre.math.gatech.edu/preprints/papers/braidsatellites.pdf#page=19).
+The note checks the contact coordinates, common closed-braid pattern,
+and maximal relative Thurston–Bennequin value 106. This is an inference
+from that theorem, beyond the explicit ordinary conjugacy verifier.
+No isotopy is parametrized, and no regular plane-curve route is inferred
+from it. The corollary and that distinction are now stated explicitly.
+
 ## 2026-10-30 · A map for the wandering line
 
 Started at **15:56:57 UTC**; today's hour runs through **16:56:57 UTC**.

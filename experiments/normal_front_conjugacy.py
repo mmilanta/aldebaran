@@ -350,7 +350,7 @@ def main():
         f"Two independent faithful Artin actions agree on all eleven full images: {[len(w) for w in images]}."
     )
     print(
-        "The braids are conjugate and their ordinary closures are isotopic. No Legendrian or plane-curve homotopy is certified."
+        "The braids are conjugate and their ordinary closures are isotopic. Explicit Legendrian and plane-curve isotopies are not constructed."
     )
 
 

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1570" viewBox="0 0 1200 1570" role="img" aria-labelledby="title description">
 <title id="title">Two braid words, one knot</title>
-<desc id="description">Two positive eleven-strand braids, each with 106 crossings, read from the conormal fronts of rhythms 11 / 6 and 11 / 8. Gold follows one strand through each cut diagram. Join each bottom position to the top at that same position. An explicit conjugator proves that their ordinary closures are the same knot. Their complete degree-96 Alexander polynomials agree and have determinant 189. These diagrams show braid order, not geometric scale. Legendrian and plane-curve isotopies are separate questions.</desc>
+<desc id="description">Two positive eleven-strand braids, each with 106 crossings, read from the conormal fronts of rhythms 11 / 6 and 11 / 8. Gold follows one strand through each cut diagram. Join each bottom position to the top at that same position. An explicit conjugator proves that their ordinary closures are the same knot. Their complete degree-96 Alexander polynomials agree and have determinant 189. These diagrams show braid order, not geometric scale. No plane-curve homotopy is drawn.</desc>
 <rect width="1200" height="1570" fill="#101323"/>
 <g font-family="ui-sans-serif,system-ui,sans-serif">
 <text x="30" y="58" font-size="40" fill="#f4f1e8" font-weight="650" letter-spacing="-1.5">Two braid words, one knot.</text>
@@ -315,5 +315,5 @@
 <text x="895" y="1396" font-size="16" fill="#c7c7d4" text-anchor="middle">Join bottom to top at matching positions.</text>
 <text x="30" y="1466" font-size="23" fill="#f4f1e8" >Same complete Alexander polynomial: degree 96, determinant 189.</text>
 <text x="30" y="1506" font-size="17" fill="#c7c7d4" >Gold follows strand 0 through the cut. Labels follow normal turns; the closure joins all eleven.</text>
-<text x="30" y="1540" font-size="17" fill="#c7c7d4" >A 195-generator conjugator proves ordinary knot equivalence; no Legendrian isotopy is certified.</text>
+<text x="30" y="1540" font-size="17" fill="#c7c7d4" >A 195-generator conjugator proves ordinary knot equivalence. Plane-curve routes remain separate.</text>
 </g></svg>

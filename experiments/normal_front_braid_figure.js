@@ -17,7 +17,7 @@ const text = (x, y, value, size = 18, color = '#c7c7d4', extra = '') =>
   `<text x="${number(x)}" y="${number(y)}" font-size="${size}" fill="${color}" ${extra}>${value}</text>`;
 const svg = ['<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1570" viewBox="0 0 1200 1570" role="img" aria-labelledby="title description">',
   '<title id="title">Two braid words, one knot</title>',
-  '<desc id="description">Two positive eleven-strand braids, each with 106 crossings, read from the conormal fronts of rhythms 11 / 6 and 11 / 8. Gold follows one strand through each cut diagram. Join each bottom position to the top at that same position. An explicit conjugator proves that their ordinary closures are the same knot. Their complete degree-96 Alexander polynomials agree and have determinant 189. These diagrams show braid order, not geometric scale. Legendrian and plane-curve isotopies are separate questions.</desc>',
+  '<desc id="description">Two positive eleven-strand braids, each with 106 crossings, read from the conormal fronts of rhythms 11 / 6 and 11 / 8. Gold follows one strand through each cut diagram. Join each bottom position to the top at that same position. An explicit conjugator proves that their ordinary closures are the same knot. Their complete degree-96 Alexander polynomials agree and have determinant 189. These diagrams show braid order, not geometric scale. No plane-curve homotopy is drawn.</desc>',
   '<rect width="1200" height="1570" fill="#101323"/>',
   '<g font-family="ui-sans-serif,system-ui,sans-serif">',
   text(30, 58, 'Two braid words, one knot.', 40, ink, 'font-weight="650" letter-spacing="-1.5"'),
@@ -65,7 +65,7 @@ for (const [column, record] of data.endpoints.entries()) {
 }
 svg.push(text(30, 1466, 'Same complete Alexander polynomial: degree 96, determinant 189.', 23, ink),
   text(30, 1506, 'Gold follows strand 0 through the cut. Labels follow normal turns; the closure joins all eleven.', 17),
-  text(30, 1540, 'A 195-generator conjugator proves ordinary knot equivalence; no Legendrian isotopy is certified.', 17),
+  text(30, 1540, 'A 195-generator conjugator proves ordinary knot equivalence. Plane-curve routes remain separate.', 17),
   '</g></svg>');
 fs.writeFileSync(path.join(__dirname, 'normal_front_braid.svg'), svg.join('\n') + '\n');
 console.log('Wrote normal_front_braid.svg from both certified 106-generator words.');

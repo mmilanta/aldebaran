@@ -147,4 +147,5 @@ verification.
 A later [strand-order calculation](normal_front_braid.md) reads these
 106 crossings as exact positive braid words. Their complete Alexander
 polynomials agree, and a separate explicit conjugator proves ordinary
-knot equivalence. It supplies no Legendrian or plane-curve isotopy.
+knot equivalence. A classification corollary gives Legendrian equivalence;
+no plane-curve isotopy is constructed.
