@@ -49,6 +49,45 @@ scripts. All **179 local HTML links/resources** resolve, and the three
 new or changed SVG documents parse. Further exploration and closing
 publication checks will be recorded below.
 
+The study was published as **c63ad43**. All **sixteen public artifacts**
+matched the committed bytes. Chromium, Firefox, and WebKit each passed
+**271 public browser checks**, omitting the two local-only checks.
+
+By **15:40 UTC**, the larger experiment became a complete new result:
+[one hundred and six shared tangent lines](experiments/normal_front_census.md).
+Both endpoint conormal fronts have exactly **106 ordinary crossings**,
+with no cusp or higher meeting. The proof covers the whole orbit in
+**2048 rational arcs** for each endpoint. L1-normalized normals and
+scaled line distances give rational front boxes without square roots.
+Positive curvature excludes nearby equal normals, including the seam;
+integer spatial buckets and exact comparisons retain every possible
+remaining pair. Rational contraction/exclusion covers all **8510** and
+**8350** surviving product rectangles, subdividing when necessary.
+
+The two complete proofs took **141.09s** and **155.06s**. Each finished
+with **106 unique-root leaves**. Refined rational boxes certify matching
+travel directions and distinct original points, then **5565 pairwise
+box separations** show that no two bitangents share a front point.
+Thus no line has three or more contacts with the same left normal.
+These are cooriented tangent-line counts, separate from the original
+forty double points. Numerical Newton hints only refine roots already
+certified by the cover. The archived roots never seed discovery.
+
+The census controls now also check actual bucket inclusion of known
+certified roots, shifted-root exclusion, negative-coordinate floor,
+the near-diagonal argument, and the exact global derivative constants.
+The proof source uses the standard library and leaves the frozen
+intersection solver unchanged. A separate preliminary run at **8192 arcs**
+also returned 106 roots for 11 / 8; the published small-box and
+front-separation certificates come from the completed 2048-arc runs.
+
+One small identity reconnects the new drawing with the earlier signed
+area study: **Area = ½ ∮(h²−p²) dθ**, integrating all eleven normal turns.
+The boundary terms cancel across the cyclic strand joins. Front
+quadrature recovers **250275π** and **241825π** independently of the
+original Fourier formula. Two additional checks bring the JavaScript
+total to **150,649**. The equal front crossing counts do not fix area.
+
 ## 2026-10-30 · A map for the wandering line
 
 Started at **15:56:57 UTC**; today's hour runs through **16:56:57 UTC**.

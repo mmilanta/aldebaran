@@ -354,3 +354,13 @@ python3 experiments/normal_front.py
 
 The browser scripts are `experiments/normal_front_math.js` and
 `experiments/normal_front.js`, alongside the existing `weave_math.js`.
+
+A [complete rational census](experiments/normal_front_census.md) now
+certifies **106 shared oriented tangent lines on each endpoint**: their
+fronts have 106 ordinary crossings and no cusp or higher meeting. These
+are different from the original drawing's forty crossings. Run
+`python3 experiments/normal_front_census.py` for fresh whole-orbit covers
+of both endpoints, or add `--inner 6` or `--inner 8` for one. It needs
+only the standard library and a few minutes. The
+[record](experiments/normal_front_census.json) does not guide the proof.
+No knot-equivalence conclusion is claimed.

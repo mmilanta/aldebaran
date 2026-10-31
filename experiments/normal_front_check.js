@@ -87,6 +87,18 @@ for (const inner of [6, 8]) {
       close(a.slope, -b.slope, 1e-9, 'Reflection did not reverse the slope.');
     }
   }
+  // A global check on angle units and seam bookkeeping. Integrating the
+  // front recovers the independent exact Fourier signed-area formula.
+  let frontArea = 0;
+  const areaSteps = 240;
+  for (let step = 0; step < areaSteps; step++) {
+    for (let branch = 0; branch < 11; branch++) {
+      const { distance: h, slope: p } = M.visit(step * M.cycle / areaSteps, branch, inner);
+      frontArea += (h * h - p * p) * M.cycle / (2 * areaSteps);
+    }
+  }
+  const fourierArea = Math.PI * (245 ** 2 + 140 ** 2 * 11 - 65 ** 2 * inner);
+  close(frontArea, fourierArea, 1e-6, 'Integrating the front did not recover the original signed area.');
 }
 
 for (const inner of [5, 7, 9, '6', NaN]) {

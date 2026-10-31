@@ -87,6 +87,26 @@ h + h″ = −ρ.
 The minus sign comes from using the left normal: for a counterclockwise
 circle centered at the origin, h is its negative radius.
 
+### The old signed area reappears
+
+The same coordinates recover the [signed area](signed_area.md), including
+overlapping regions with their winding weights. From the reconstruction,
+
+```
+det(q,dq/dθ) = h(h+h″),
+Area = ½ ∮ (h²−p²) dθ.
+```
+
+Integrate over all eleven normal turns. Integration by parts replaces
+`h h″` by `−(h′)²`; the boundary terms cancel because the eleven pieces
+join cyclically. An individual strand need not close, so it cannot be
+treated as a separate closed curve for that cancellation.
+
+The independent Fourier formula gives **250275π** for 11 / 6 and
+**241825π** for 11 / 8. The numerical front integral recovers both values.
+This is an identity for signed area; the front's 106 crossing count does
+not determine area, and the two endpoints have different areas.
+
 ## Cutting one closed trace into eleven strands
 
 For the controls, write `θ = π + β` modulo 2π, with `0 ≤ β ≤ 2π`.
@@ -124,6 +144,11 @@ selected bitangents. This does **not** count all
 shared tangents, exclude multiple meetings of the front, or certify a
 braid word. A front crossing is a shared tangent line; it is not a crossing
 of the original curve.
+
+A later [complete rational cover](normal_front_census.md) now certifies
+exactly **106 cooriented bitangents on each endpoint**, with distinct
+front crossing points and no higher meeting. That global argument is
+separate from these two selected examples.
 
 ### Two rational boxes
 
