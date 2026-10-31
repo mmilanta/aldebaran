@@ -175,6 +175,38 @@ from that theorem, beyond the explicit ordinary conjugacy verifier.
 No isotopy is parametrized, and no regular plane-curve route is inferred
 from it. The corollary and that distinction are now stated explicitly.
 
+The corollary was published as **e5d2e1b**; all **nine canonical public
+files** matched the commit. Every browser passed the nine expanded-page
+checks again, including normal/200% text layouts and axe A/AA. The
+braid caption and description now distinguish the explicit conjugacy
+from the literature-based classification result.
+
+Watched the two original endpoint drawings complete their public cycles,
+with the turning arms visible: **20.3s** and **20.1s**. That last look
+caught a stale “eleven studies” link on the home page; it now says twelve,
+matching the collection and its sheet.
+
+For the next visit: try an **explicit positive-front isotopy** between
+the two words, keeping the normal projection increasing. The conjugacy
+witness certifies existence of an ordinary closed-braid isotopy but
+provides no sequence of local front moves. A useful projection formula
+is `q_u = (p_u + h θ_u) N′` for a Legendrian family, since `h_u=p θ_u`.
+The original oriented curves require this scalar coefficient to stay
+negative. If θ_u stays strictly positive, subtracting one sufficiently
+large common constant from h makes that coefficient negative throughout
+a compact isotopy. The endpoint offset legs already preserve this sign
+by positive curvature. This suggests a concrete route-building strategy;
+its required positive-front isotopy has **not** been supplied here.
+Keep the twelve-triple lower bound for routes without either touch in
+view; eliminating direct touches is a different target.
+
+The day's deliverables are the twelfth interactive study, complete
+106-bitangent counts, exact braid words and Alexander polynomials,
+an explicit conjugacy witness, its classification corollary, and two
+standalone drawings. Runtime dependencies remain absent. Temporary
+browser tooling, exploratory libraries, and screenshots stay outside
+the repository.
+
 ## 2026-10-30 · A map for the wandering line
 
 Started at **15:56:57 UTC**; today's hour runs through **16:56:57 UTC**.
