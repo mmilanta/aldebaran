@@ -13,7 +13,7 @@ const graph = ([beta, h]) => [660 + 510 * beta / M.cycle, 420 - .44 * h];
 const number = x => String(Math.round(x * 100) / 100);
 const line = (points, project, color, width = 1.5, extra = '') =>
   `<path d="M${points.map(p => project(p).map(number).join(',')).join('L')}" fill="none" stroke="${color}" stroke-width="${width}" ${extra}/>`;
-const dot = ([x, y], color, r) => `<circle cx="${number(x)}" cy="${number(y)}" r="${r}" fill="#0b0e1a" stroke="${color}" stroke-width="2"/>`;
+const dot = ([x, y], color, r, fill = '#0b0e1a') => `<circle cx="${number(x)}" cy="${number(y)}" r="${r}" fill="${fill}" stroke="${color}" stroke-width="2"/>`;
 const text = (x, y, value, size = 18, color = '#c7c7d4', extra = '') =>
   `<text x="${x}" y="${y}" font-size="${size}" fill="${color}" ${extra}>${value}</text>`;
 const v = visits[0], [nx, ny] = v.normal;
@@ -58,7 +58,7 @@ for (const i of [...Array(11).keys()].filter(i => i !== 0 && i !== 6).concat(0, 
 svg.push(line([[example.beta, -450], [example.beta, 450]], graph, '#c7c7d4', 1, 'stroke-dasharray="4 6"'));
 for (const i of [...Array(11).keys()].filter(i => i !== 0 && i !== 6).concat(0, 6)) {
   svg.push(dot(graph([example.beta, visits[i].distance]), i === 0 ? gold : i === 6 ? lilac : blue,
-    i === 0 ? 5 : i === 6 ? 8 : 3));
+    i === 0 ? 5 : i === 6 ? 8 : 3, i === 6 ? 'none' : '#0b0e1a'));
 }
 svg.push('</g>');
 for (const [i, label] of ['180°', '270°', '0°', '90°', '180°'].entries()) {

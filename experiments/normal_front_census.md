@@ -143,3 +143,8 @@ local angle exclusions, and floor at negative bucket coordinates.
 The original frozen intersection solver is unchanged. This is an exact
 computer-assisted argument with rational intervals, not a proof-assistant
 verification.
+
+A later [strand-order calculation](normal_front_braid.md) reads these
+106 crossings as exact positive braid words. Their complete Alexander
+polynomials agree, and a separate explicit conjugator proves ordinary
+knot equivalence. It supplies no Legendrian or plane-curve isotopy.

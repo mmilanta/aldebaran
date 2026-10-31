@@ -83,7 +83,7 @@
             <desc id="front-description">Eleven strands show signed distance to the tangent line as the normal makes one full turn. A vertical cursor selects one direction.</desc>
             <defs><clipPath id="front-clip"><rect x="65" y="65" width="560" height="450"/></clipPath></defs>
             <g stroke="#282d43" fill="none"><path d="M65,65H625M65,177.5H625M65,290H625M65,402.5H625M65,515H625"/><path d="M65,65V515M205,65V515M345,65V515M485,65V515M625,65V515"/></g>
-            <g clip-path="url(#front-clip)"><g id="front-strands"></g><path id="cursor" fill="none" stroke="#c7c7d4" stroke-width="1" stroke-dasharray="4 6"/><g id="front-marks"></g></g>
+            <g clip-path="url(#front-clip)"><g id="front-strands"></g><path id="cursor" fill="none" stroke="#c7c7d4" stroke-width="1" stroke-dasharray="4 6"/></g><g id="front-marks"></g>
             <g font-family="system-ui,sans-serif" font-size="16" fill="#c7c7d4">
               <text x="27" y="34">Signed distance to the tangent line</text>
               <text x="53" y="71" text-anchor="end">450</text><text x="53" y="296" text-anchor="end">0</text><text x="53" y="521" text-anchor="end">−450</text>
@@ -120,6 +120,7 @@
       <p>A uniform positive-curvature bound proves that the normal always turns forward, and an elementary velocity factor proves that it makes exactly eleven turns. Those statements hold on the whole blend between these two drawings. The displayed eleven visits follow from that argument; the controls show its two endpoints.</p>
       <p>A separate rational cover now certifies exactly <strong>106 shared oriented tangent lines on each endpoint</strong>, each represented by two distinct points traveling the same way. Their fronts have 106 ordinary crossings, with no cusp or higher meeting. These are different from the original drawing’s forty crossings. <a href="normal_front_census.md">Read the complete tangent-line count ↗</a></p>
       <p>Two small rational contraction boxes certify the selected shared tangent lines, with their points more than 500 drawing units apart. The curves and inverse angles shown here use floating-point arithmetic. The count does not distinguish the associated knots. The picture follows the coordinate construction in <a href="https://sites.math.duke.edu/~ng/math/papers/planecurves.pdf#page=4">Lenhard Ng’s <cite>Plane curves and contact geometry</cite>, §2.1</a>. <a href="normal_front.md">Read the derivation and checks ↗</a></p>
+      <p>Following the whole front gives two exact braid words. An explicit conjugator proves that their ordinary closures are the same knot; their complete Alexander polynomials agree too. This does not provide a Legendrian isotopy or a route between the plane drawings. <a href="normal_front_braid.svg">See the two braid drawings ↗</a> or <a href="normal_front_braid.md">follow the calculation ↗</a>.</p>
     </details>
     <footer>Aldebaran · A line has a direction and a distance.<br><a href="index.html">All studies ↗</a> · <a href="weave.html">A different weave ↗</a> · <a href="normal_front.svg" download>Save the still drawing ↓</a> · <a href="../JOURNAL.md">Notebook ↗</a></footer>
   </main>

@@ -88,6 +88,78 @@ quadrature recovers **250275π** and **241825π** independently of the
 original Fourier formula. Two additional checks bring the JavaScript
 total to **150,649**. The equal front crossing counts do not fix area.
 
+The full tangent-line census was published as **9602e71**. All **eight
+changed public artifacts** matched that commit. The expanded proof
+explanation passed **nine further public checks per browser engine**,
+including its new link, 320–1280px layouts at normal and 200% text, and
+an axe A/AA scan without violations.
+
+By **15:55 UTC**, the front could also be read as a certified braid:
+[Two braids, one polynomial](experiments/normal_front_braid.md).
+A rational section at normal **(3/5, 4/5)** has eleven separately
+certified visits. Rational arctangent bounds label each crossing's
+sheet and order its angle. Two groups of five crossings use disjoint
+strands and separated height bands, so their swaps commute; all other
+96 crossings are individually ordered. Every swap is adjacent. The
+final ordering verifies the full cyclic shift and one-component closure.
+Both exact positive words have **106 generators on eleven strands**.
+
+The complete **degree-96 Alexander polynomials agree coefficient by
+coefficient**; all 97 integers are stored with the words. Their value
+at −1 is **189**. The determinant numerator has degree at most 106 by
+a rank-one/multiaffine argument, so 107 exact integer evaluations and
+rational interpolation recover the entire polynomial, beyond yesterday's
+few matching evaluations. The program checks exact division by the
+closure factor, reciprocity, normalization, and additional evaluations
+outside its interpolation grid. It also passes unknot, trefoil, split-link,
+positive stabilization, braid-relation, and independent determinant controls.
+
+The default braid program repeats both full censuses before the angle,
+word, and polynomial proofs. That **complete run passed in 296.22s**;
+the two fresh covers took **131.57s** and **141.39s**. A separate saved-data
+audit passed in **25.15s**; it explicitly assumes the archived census's
+completeness. `--saved` cannot write a new record. No external package
+is needed for either proof or the new standalone braid drawing.
+
+This is another matching invariant, **not a knot-equivalence proof or a
+route without direct touches**. A temporary check of the whole reduced
+Burau characteristic polynomial also agreed at t=−1,2,3; that remains
+an exploratory observation, outside the published polynomial certificate.
+
+The next search found something stronger by **15:59 UTC**: the two
+positive braid words are **conjugate**, with an explicit positive word
+C of length **195** satisfying **A C = C B**. A temporary libbraiding
+1.1 search suggested C. A new standard-library verifier checks its
+faithful Artin action independently, comparing all eleven complete free
+words. An implementation updating two images with stack reduction agrees
+with literal reverse-order substitution and direct pair deletion. Their
+common images contain **805 letters**, with lengths
+67,69,65,69,65,89,73,93,83,71,61. Appending one generator to C fails.
+
+Thus the ordinary braid closures are **the same knot**, as proved by
+the conjugacy witness. This is a stronger conclusion than polynomial
+agreement. The final note and drawing are now titled
+[Two braid words, one knot](experiments/normal_front_braid.md).
+The published verifier does not depend on libbraiding, and no external
+search code is copied into the repository. Legendrian isotopy and
+plane-curve homotopies remain separate questions in these certificates.
+The complete end-to-end run including the witness **passed in 296.58s**,
+with fresh cover times **129.98s** and **144.03s**. Its final record
+contains both words, the 195-generator witness, all eleven full common
+images, and all 97 polynomial coefficients.
+
+A visual review corrected two details: the outer lilac meeting ring is
+now transparent so the inner gold ring remains visible, and graph markers
+remain whole at the joining edges. The standalone front drawing uses
+the same concentric rings. Chromium, Firefox, and WebKit each pass
+**276 final local checks**, including those details and the expanded
+explanation, with no automated axe A/AA violations. All **259 local
+links/resources** across the HTML pages, README, and new notes resolve.
+All **fifteen generated SVG artifacts** parse and regenerate byte for byte.
+The frozen intersection source retains SHA-256
+`0666a7ac397108125e8e661dcd54fe2e6504e0863103ceba967c11d51225d096`.
+Closing publication checks follow below.
+
 ## 2026-10-30 · A map for the wandering line
 
 Started at **15:56:57 UTC**; today's hour runs through **16:56:57 UTC**.

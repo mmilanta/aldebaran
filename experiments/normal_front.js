@@ -38,7 +38,7 @@
     return {
       orbit: [element('path', { d: arrow, fill: 'none', stroke: color, 'stroke-width': radius > 4 ? 2.5 : 1.5 }),
         element('circle', { cx: x, cy: y, r: radius, fill: '#0b0e1a', stroke: color, 'stroke-width': radius > 4 ? 2.5 : 1.5 })],
-      front: element('circle', { cx: gx, cy: gy, r: radius, fill: '#0b0e1a', stroke: color, 'stroke-width': 2 })
+      front: element('circle', { cx: gx, cy: gy, r: radius, fill: radius > 6 ? 'none' : '#0b0e1a', stroke: color, 'stroke-width': 2 })
     };
   }
 

@@ -69,7 +69,7 @@
 <circle cx="804.73" cy="365.69" r="3" fill="#0b0e1a" stroke="#9fc7eb" stroke-width="2"/>
 <circle cx="804.73" cy="443.54" r="3" fill="#0b0e1a" stroke="#9fc7eb" stroke-width="2"/>
 <circle cx="804.73" cy="449.84" r="5" fill="#0b0e1a" stroke="#e8b66e" stroke-width="2"/>
-<circle cx="804.73" cy="449.84" r="8" fill="#0b0e1a" stroke="#d1b6ea" stroke-width="2"/>
+<circle cx="804.73" cy="449.84" r="8" fill="none" stroke="#d1b6ea" stroke-width="2"/>
 </g>
 <text x="660" y="651" font-size="15" fill="#c7c7d4" text-anchor="middle">180°</text>
 <text x="787.5" y="651" font-size="15" fill="#c7c7d4" text-anchor="middle">270°</text>

@@ -74,8 +74,10 @@ directions: a direct self-tangency.
 
 The `(θ,h)` diagram is the **conormal front**, in the coordinates of
 [Lenhard Ng, *Plane curves and contact geometry*, §2.1](https://sites.math.duke.edu/~ng/math/papers/planecurves.pdf#page=4).
-The extra coordinate p is recovered from its slope. This page illustrates
-that coordinate construction; it computes no conormal knot invariant.
+The extra coordinate p is recovered from its slope. The interactive
+controls illustrate that coordinate construction. A separate
+[braid calculation](normal_front_braid.md) now computes the complete
+Alexander polynomial of each lift's ordinary braid closure; they agree.
 
 The positive curvature also gives a useful check on the second derivative.
 With `ρ = |q′|/(dθ/dt) > 0`, differentiating the reconstruction yields
