@@ -233,6 +233,19 @@ hidden triples, near-diagonal cases, and the M→∞ end will need a
 separate global argument. Do not promote a numerical root tally to a
 complete count.
 
+The selected offset triple was committed and pushed as **09da939**;
+its final Pages rollout is being checked in the closing minutes.
+
+Session clock: **16:02:46–17:02:46 UTC**, one hour. This closing record
+was prepared at **17:00 UTC**; the remaining window is for checking
+public artifacts and the clean checkout. Today's main deliverables are
+the thirteenth interactive study, the 6,367-move positive-front
+construction, the explicit regular projection bound, the complete
+66-touch offset census with isolated contact locations, two new still
+illustrations, and the two distinct local triple calculations. All
+changes are committed directly to the public repository. Exploratory
+future counts remain clearly labeled, and no runtime dependency was added.
+
 ## 2026-10-31 · One direction, eleven places
 
 Started at **15:20:29 UTC**; today's hour runs through **16:20:29 UTC**.
