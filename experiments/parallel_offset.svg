@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750" role="img" aria-labelledby="title description">
+<title id="title">The way out, and the way home</title>
+<desc id="description">Two step graphs count transverse crossing pairs along outward parallel offsets of the 11 / 6 and 11 / 8 curves. Each goes from forty to 106 by thirty-three inverse contact pairs at eighteen offset weights, including mirror partners at the same weight. Reversing the second leg gives thirty-three deaths. The middle of the positive-front construction avoids both types of touch, giving a generic route with sixty-six inverse touches and no direct ones. Values at contact weights are omitted. Horizontal positions are rounded from rational certificates.</desc>
+<rect width="1200" height="750" fill="#101323"/><g font-family="ui-sans-serif,system-ui,sans-serif">
+<text x="35" y="61" font-size="43" fill="#f4f1e8" font-weight="650" letter-spacing="-1.5">The way out, and the way home.</text>
+<text x="35" y="103" font-size="21" fill="#c7c7d4" >Every outward inverse touch creates two crossings. None of them takes a pair away.</text>
+<rect x="30" y="140" width="550" height="515" rx="14" fill="#0b0e1a" stroke="#383b50"/>
+<text x="305" y="182" font-size="26" fill="#f4f1e8" text-anchor="middle">Rhythms 11 / 6</text>
+<text x="95" y="222" font-size="17" fill="#c7c7d4" >Crossing pairs</text>
+<path d="M95,570H550" stroke="#383b50" fill="none" stroke-dasharray="3 5"/>
+<text x="83" y="575" font-size="16" fill="#c7c7d4" text-anchor="end">40</text>
+<path d="M95,480H550" stroke="#383b50" fill="none" stroke-dasharray="3 5"/>
+<text x="83" y="485" font-size="16" fill="#c7c7d4" text-anchor="end">60</text>
+<path d="M95,390H550" stroke="#383b50" fill="none" stroke-dasharray="3 5"/>
+<text x="83" y="395" font-size="16" fill="#c7c7d4" text-anchor="end">80</text>
+<path d="M95,300H550" stroke="#383b50" fill="none" stroke-dasharray="3 5"/>
+<text x="83" y="305" font-size="16" fill="#c7c7d4" text-anchor="end">100</text>
+<path d="M95,273H550" stroke="#383b50" fill="none" stroke-dasharray="3 5"/>
+<text x="83" y="278" font-size="16" fill="#c7c7d4" text-anchor="end">106</text>
+<path d="M95,570v7" stroke="#737b99"/>
+<text x="95" y="597" font-size="16" fill="#c7c7d4" text-anchor="middle">0</text>
+<path d="M202.06,570v7" stroke="#737b99"/>
+<text x="202.06" y="597" font-size="16" fill="#c7c7d4" text-anchor="middle">40</text>
+<path d="M309.12,570v7" stroke="#737b99"/>
+<text x="309.12" y="597" font-size="16" fill="#c7c7d4" text-anchor="middle">80</text>
+<path d="M416.18,570v7" stroke="#737b99"/>
+<text x="416.18" y="597" font-size="16" fill="#c7c7d4" text-anchor="middle">120</text>
+<path d="M523.24,570v7" stroke="#737b99"/>
+<text x="523.24" y="597" font-size="16" fill="#c7c7d4" text-anchor="middle">160</text>
+<path d="M95,240V570H550" stroke="#737b99" fill="none"/>
+<path d="M95,570H117.45V552H195.35V534H201.33V516H203.15V507H222.19V489H259.01V471H261.6V453H290.84V435H290.94V417H292.94V399H310.05V381H316.09V372H363.85V363H368.27V345H374.94V327H393.91V309H472.76V291H514.84V273H550" fill="none" stroke="#e8b66e" stroke-width="2.6" stroke-linejoin="round"/>
+<text x="305" y="630" font-size="18" fill="#c7c7d4" text-anchor="middle">Outward distance offset M →</text>
+<rect x="620" y="140" width="550" height="515" rx="14" fill="#0b0e1a" stroke="#383b50"/>
+<text x="895" y="182" font-size="26" fill="#f4f1e8" text-anchor="middle">Rhythms 11 / 8</text>
+<text x="685" y="222" font-size="17" fill="#c7c7d4" >Crossing pairs</text>
+<path d="M685,570H1140" stroke="#383b50" fill="none" stroke-dasharray="3 5"/>
+<text x="673" y="575" font-size="16" fill="#c7c7d4" text-anchor="end">40</text>
+<path d="M685,480H1140" stroke="#383b50" fill="none" stroke-dasharray="3 5"/>
+<text x="673" y="485" font-size="16" fill="#c7c7d4" text-anchor="end">60</text>
+<path d="M685,390H1140" stroke="#383b50" fill="none" stroke-dasharray="3 5"/>
+<text x="673" y="395" font-size="16" fill="#c7c7d4" text-anchor="end">80</text>
+<path d="M685,300H1140" stroke="#383b50" fill="none" stroke-dasharray="3 5"/>
+<text x="673" y="305" font-size="16" fill="#c7c7d4" text-anchor="end">100</text>
+<path d="M685,273H1140" stroke="#383b50" fill="none" stroke-dasharray="3 5"/>
+<text x="673" y="278" font-size="16" fill="#c7c7d4" text-anchor="end">106</text>
+<path d="M685,570v7" stroke="#737b99"/>
+<text x="685" y="597" font-size="16" fill="#c7c7d4" text-anchor="middle">0</text>
+<path d="M792.06,570v7" stroke="#737b99"/>
+<text x="792.06" y="597" font-size="16" fill="#c7c7d4" text-anchor="middle">40</text>
+<path d="M899.12,570v7" stroke="#737b99"/>
+<text x="899.12" y="597" font-size="16" fill="#c7c7d4" text-anchor="middle">80</text>
+<path d="M1006.18,570v7" stroke="#737b99"/>
+<text x="1006.18" y="597" font-size="16" fill="#c7c7d4" text-anchor="middle">120</text>
+<path d="M1113.24,570v7" stroke="#737b99"/>
+<text x="1113.24" y="597" font-size="16" fill="#c7c7d4" text-anchor="middle">160</text>
+<path d="M685,240V570H1140" stroke="#737b99" fill="none"/>
+<path d="M685,570H687V561H706.75V543H764.94V525H766.25V507H805.27V489H816.38V471H825.44V453H872.1V435H888.34V417H944.58V408H952.64V390H958.72V372H964.2V354H965.04V336H1014.54V318H1021.65V300H1033.77V291H1050.82V273H1140" fill="none" stroke="#9fc7eb" stroke-width="2.6" stroke-linejoin="round"/>
+<text x="895" y="630" font-size="18" fill="#c7c7d4" text-anchor="middle">Outward distance offset M →</text>
+<text x="35" y="700" font-size="23" fill="#f4f1e8" >33 births on the way out · 33 deaths on the way home · no touches in the middle</text>
+<text x="35" y="735" font-size="18" fill="#c7c7d4" >Away from contact weights. Mirror partners can occur together; each contact pair contributes its own jump.</text>
+</g></svg>

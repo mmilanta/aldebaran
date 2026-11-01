@@ -79,6 +79,66 @@ bound was added. The two original smooth plane censuses were freshly
 reverified too: **40 crossings each**, in 0.43s and 0.44s. Further
 exploration and closing publication checks will be recorded below.
 
+The study and route construction were published as **444652d**. All
+**thirteen checked canonical public files** matched the commit, and each
+browser passed **161 public viewer checks** (omitting the two file-only
+checks). The closing expanded-page checks passed too.
+
+By **16:38 UTC**, the outward offset legs have their own result:
+[The way out, and the way home](experiments/parallel_offset.md).
+The large-offset middle avoids **both** kinds of touch because opposite
+normals at the same point would require `h₁+h₂=2M`, impossible at the
+common large offset. Each original endpoint's outward leg has exactly
+**33 inverse contact pairs**, all births. In normal coordinates, a
+positive critical value of `H=h₁(θ)+h₂(θ+π)` has
+`H″=−ρ₁−ρ₂−2M<0`. Its ordinary local separation is
+`(κ₁+κ₂)X²/2−2ΔM`, so increasing M creates two crossings.
+
+A radial-deficit graph tends in C¹ to the conormal front as M→∞.
+The complete front census therefore gives **106** large-offset
+crossing pairs, versus the original **40**. Since every outward
+inverse contact is a birth, there must be `(106−40)/2=33`. The second
+leg reversed supplies 33 deaths: a generic version of the whole route
+has **66 inverse touches and no direct touches**. This is not claimed
+minimal, and its triple passages remain unclassified. Its middle has
+106 crossing pairs throughout. This is an analytic count based on the
+endpoint certificates, not an event search inferred from samples.
+
+The new count program reran both whole-orbit front covers and both
+original plane counts in **286.33s**, with front cover times **126.76s**
+and **157.36s**. The two fresh plane proofs took **0.44s** and **0.43s**.
+A separate event program then certifies all **66** locations by rational
+contraction boxes of radius **10⁻¹¹**, with norms below **10⁻⁶** and
+M enclosures narrower than **10⁻⁴**. It proves **528** pairwise box
+separations per endpoint. The theoretical count of 33 plus 33 certified
+distinct pairs supplies completeness; the numerical hints never prove it.
+
+Exact interval reflection maps identify **15 paired events and 3 fixed
+events** on each endpoint, at **18 strictly ordered weights**. All
+positive contacts lie below **M=157**. Outward rounding to 80-bit dyadics
+keeps the certificate below 150 kB rather than storing multi-megabyte
+intermediate rational fractions. No narrowing occurs in that rounding.
+
+Every contact also has a **whole-orbit third-branch exclusion**, uniform
+on its certified M interval. The covers exclude **18,672** and **19,603**
+rational arcs, with maximum additional depths **9** and **11**. Two
+admitted slots are monotone because `q_M′=(1+Mκ)q′`. Thus each contact
+really has exactly two branches, with no third transverse branch hidden
+at its point. Sixteen rational central-difference controls audit the new
+Jacobian, and 136 established evaluator/Jacobian comparisons run too.
+Shifted, reversed, coincident, negative-radius, and genuinely negative-
+offset controls are rejected. A quick `--pairs-only` audit cannot write
+a new full record without the third-branch covers.
+
+The [new standalone plot](experiments/parallel_offset.svg) shows both
+outward crossing-pair counts, from forty to 106. It uses the certified
+weight groups, with rounded horizontal positions, and omits values at
+the exact contact weights. Its text bounds pass in all three browsers.
+The viewer now links this follow-up; each browser passes the eleven
+expanded-page and collection-sheet checks again. There are **285**
+checked local HTML/selected-note links and **29** parseable SVGs.
+The thirteen-study count and older certificates are unchanged.
+
 ## 2026-10-31 · One direction, eleven places
 
 Started at **15:20:29 UTC**; today's hour runs through **16:20:29 UTC**.

@@ -227,7 +227,7 @@
     "endpoint_alignment_upper_bound": "5996024775/8",
     "core_upper_bound": "646080",
     "full_offset": 1000000000,
-    "scope": "The explicit C2 construction in positive_front.md, followed by smoothing with less than one unit of error in h+h_second."
+    "scope": "The explicit C2 construction in positive_front.md, followed by smoothing with individual errors below one half in h and h_second."
   },
   "moves": [
     [

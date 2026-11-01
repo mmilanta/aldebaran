@@ -233,7 +233,7 @@ def offset_bounds():
         "endpoint_alignment_upper_bound": str(endpoint),
         "core_upper_bound": str(core),
         "full_offset": 1_000_000_000,
-        "scope": "The explicit C2 construction in positive_front.md, followed by smoothing with less than one unit of error in h+h_second.",
+        "scope": "The explicit C2 construction in positive_front.md, followed by smoothing with individual errors below one half in h and h_second.",
     }
 
 

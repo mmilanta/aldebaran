@@ -386,8 +386,9 @@ Each rule and the literal final word are independently checked. Smooth
 local models show why a three-contact tangent line keeps its three
 original points apart. A [construction and offset argument](experiments/positive_front.md)
 then gives a regular positive-curvature plane route **without direct
-self-tangencies**. Inverse touches remain allowed; the full route's
-events are not counted. Nothing animates, and a
+self-tangencies**. The [offset follow-up](experiments/parallel_offset.md)
+counts **66 inverse touches** on a generic version, with none in its
+middle section; its triple passages remain unclassified. Nothing animates, and a
 [standalone SVG](experiments/positive_front.svg) works without scripts.
 
 ```sh
@@ -401,3 +402,21 @@ Only standard runtimes are needed. The calculation starts from the
 separately certified geometric braid words. The viewer replays the
 record before showing its controls; its models illustrate each local
 move rather than numerically parametrizing the entire plane route.
+
+The [outward-offset plot](experiments/parallel_offset.svg) follows each
+endpoint from 40 crossing pairs to 106, through exactly 33 inverse
+pair-births. Rational contraction boxes certify all 66 contact pairs,
+and whole-orbit arc exclusions rule out third branches at their contact
+points. Exact reflection pairing gives 18 ordered offset weights per
+endpoint. Reversing the second leg supplies the 33 deaths. Run:
+
+```sh
+python3 experiments/parallel_offset.py
+python3 experiments/parallel_offset_events.py
+node experiments/parallel_offset_figure.js
+```
+
+The first command repeats complete front and plane censuses; its
+`--saved` mode assumes the archived front cover. The event program's
+completeness uses that analytic count; it repeats the local root and
+third-branch proofs. Add `--write` to save those freshly proved boxes.

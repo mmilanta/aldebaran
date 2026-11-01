@@ -23,9 +23,10 @@ Together with the offset argument below, it proves:
 > drawings, with positive curvature throughout and **no direct
 > self-tangency**. Inverse self-tangencies are allowed.
 
-The construction does not give a census of that route's plane crossings,
-inverse touches, or triple passages. In particular it does not construct
-a route without **either** kind of touch, or attain the
+The [offset follow-up](parallel_offset.md) now counts **66 inverse
+touches** on a generic version of this route and certifies all its
+offset-leg contact locations. Its plane triple passages remain unclassified.
+In particular it does not construct a route without **either** kind of touch, or attain the
 [twelve-triple lower bound](triple_distance.md) for such a route.
 
 The [JSON record](positive_front.json) lists all moves; the
@@ -228,6 +229,13 @@ This works at the seam too: the actual and canonical words have the
 same strand permutation, and their cyclic jets agree. Apply it at both
 endpoints of the move list.
 
+The simultaneous groups can also be seen directly from reflection.
+At each horizontal normal, reflection fixes one of the eleven visits
+(t=0 or t=π) and pairs the other ten. A reflected pair has equal x
+coordinates and therefore equal tangent-line height. This gives five
+crossings at that angle. Their distinct height bands permit arbitrarily
+small independent shifts into the recorded order.
+
 The finite construction is C² in the front coordinate. One can smooth
 its joins in C², including in the family parameter, while keeping the
 endpoint fronts fixed. Embeddedness of the compact Legendrian family
@@ -341,7 +349,8 @@ The height interpolations joining the actual and canonical fronts also
 preserve an upper bound on h+h″ by linearity. Thus the unsmoothed
 finite family has h+h″ below 750,000,000 throughout. Smooth it with
 less than one unit of error in h+h″, fixing the smooth original
-endpoints. The bound stays below 750,000,001, well below **10⁹**.
+endpoints, with individual errors in h and h″ below 1/2. The bound stays
+below 750,000,001, well below **10⁹**; also `|h|<451` after smoothing.
 
 The program checks the polynomial factorizations, the two rational
 crossing brackets, and all these rational constants afresh. This is an

@@ -1,0 +1,254 @@
+# The way out, and the way home
+
+The [positive-front construction](positive_front.md) gives a regular
+route from 11 / 6 to 11 / 8 without direct self-tangencies. Its middle
+part, at a large common offset, actually avoids **both** kinds of touch.
+All the inverse touches occur while moving the endpoints outward or
+bringing the second one home.
+
+There are exactly **33 inverse contact pairs on each outward offset
+leg**. Every one creates two crossings. Reversing the second leg turns
+its births into deaths. After an arbitrarily small generic perturbation,
+the complete route therefore has **66 inverse touches and no direct
+touches**. This is a count for this construction, not a minimum.
+Its plane triple passages remain unclassified.
+
+![Each outward offset goes from 40 crossing pairs to 106, by 33 inverse pair-births. Mirror partners can occur at the same offset.](parallel_offset.svg)
+
+The graph counts transverse crossing pairs **away from the touch
+weights**. A higher transverse meeting can put several crossing pairs
+at one plane point; it does not alter this pair count. Its horizontal
+positions are rounded from the [certified intervals](parallel_offset_events.json).
+
+## No touch in the middle
+
+Keep the left-normal coordinates `q = hN+h′N′`. After subtracting a
+common constant M from every support distance,
+
+```
+q_M = (h−M)N+h′N′,
+q_M′ = (h+h″−M)N′.
+```
+
+The earlier construction has negative velocity coefficient and embedded
+Legendrian lift, so it has no direct touch. If two opposite-facing
+visits coincided, their normals would be N and −N. Taking the normal
+component of their equality would give
+
+```
+h₁+h₂ = 2M.
+```
+
+Before smoothing the constructed middle family has `|h|≤450`; choose
+the C² smoothing with `|h|<451`. Its offset is M=10⁹.
+That equality is impossible. Thus the middle has neither kind of
+self-tangency. A small generic perturbation can retain these strict
+properties. This does not remove the touches on the offset legs.
+
+## An outward parallel offset only creates inverse pairs
+
+At either original endpoint, `h+h″=−ρ`, with ρ strictly positive.
+Hence `q_M′=−(ρ+M)N′` is nonzero for every M≥0, and its curvature
+stays positive. The lifted front remains embedded: a common offset
+changes neither height differences nor slopes at equal normals.
+There is no direct touch at any outward offset.
+
+For a possible inverse touch, choose one normal direction θ and the
+opposite direction θ+π. Follow the two selected visits continuously
+in their local normal charts and write
+
+```
+H(θ) = h₁(θ)+h₂(θ+π).
+```
+
+The two offset points agree exactly when
+
+```
+H(θ)=2M,       H′(θ)=h₁′+h₂′=0.
+```
+
+At a positive-offset solution,
+
+```
+H″ = −ρ₁−ρ₂−H = −ρ₁−ρ₂−2M < 0.
+```
+
+Thus every positive critical value is a strict, nondegenerate maximum.
+There are finitely many such pairs on the compact angular cover: an
+accumulation would give a nonisolated zero of H′ at H≥0, contradicting
+that same strict inequality. The finitely many local charts glue
+cyclically; unordered visit pairs are counted once.
+
+The contact is ordinary and its opening parameter is transverse. In
+coordinates tangent and normal to the first branch, let Δ be the
+increase of M beyond contact. Positive curvature makes the two local
+graphs bend toward opposite sides. Their leading separation is
+
+```
+(κ₁+κ₂) X²/2 − 2Δ,       κ₁,κ₂ > 0.
+```
+
+For Δ<0 there is no nearby crossing, and for Δ>0 there are two.
+Every outward inverse event is therefore a **birth**, never a death.
+Also `|h|≤450` confines them all to M≤450. No sampled event search is
+used for these statements.
+
+## Why the crossing count eventually equals the front count
+
+For M>450, the position never reaches the origin. Write α for the
+continuous polar angle of −q_M. Then
+
+```
+α = θ − atan(h′/(M−h)),
+α′ = (h−M)(h+h″−M)/|q_M|² > 0.
+```
+
+It makes eleven turns, so each polar direction has exactly eleven
+radial visits. Their radial deficits
+
+```
+D_M(α) = M−|q_M|
+```
+
+converge to the support front h in C¹ as M→∞. To see the derivative
+as well as the value, use
+
+```
+dD_M/dα = h′ |q_M|/(M−h) → h′.
+```
+
+All endpoint h derivatives are bounded on their finite angular covers,
+and α tends to θ in C¹, so the convergence is uniform on all strands.
+The endpoint fronts have exactly 106 transverse crossings and no
+higher meeting. C¹ closeness preserves those simple crossings: a
+small neighborhood of each root has a strictly signed derivative of
+its height difference, and the compact complement has a nonzero
+height gap. Thus for sufficiently large M the plane has exactly
+**106 transverse crossing pairs**, as well as distinct crossing points.
+
+For every M>450 the offset curve has no direct touch and, by
+`h₁+h₂=2M`, no inverse touch either. Its pair count cannot change there;
+transverse triple passages merely relocate its three persistent pairs.
+Consequently the pair count is 106 for **every** M>450, although this
+argument does not exclude higher transverse meetings at particular
+finite offsets.
+
+The fresh smooth proofs give **40 crossings** at each original endpoint.
+Only births can change that count along an outward offset. Hence
+
+```
+number of inverse contact pairs = (106−40)/2 = 33.
+```
+
+This is an analytic corollary of the complete endpoint plane and front
+censuses. It is not a new exhaustive product-box search for offset
+events. The two input counts have independent rational certificates.
+
+## All 66 event pairs have rational boxes
+
+The count can be complemented with certified locations. For original
+positions q(t),q(u), put `v=q′(t)`, `w=q′(u)`, `A=q″(t)`, `B=q″(u)`,
+and `δ=q(t)−q(u)`. Solve
+
+```
+F(t,u) = (det(v,w), δ·v) = (0,0).
+
+DF = [ det(A,w)       det(v,B) ]
+     [ v·v+δ·A          −w·v  ].
+```
+
+Multiply the Jacobian columns by the rational circle-chart factors
+`2/(1+s²)`. Interval Fourier jets then give entirely rational F and DF.
+At each suggested pair, a square of chart radius **10⁻¹¹** is mapped
+strictly inside itself by `x↦x−RF(x)`, with contraction norm below
+**10⁻⁶**. This certifies existence and uniqueness.
+
+Further interval tests prove `v·w<0` and `δ·Jv>0`. The velocities
+are opposite and the chord points along the first left normal, giving
+the **positive** offset
+
+```
+M = |δ|/2,
+contact point = (q(t)+q(u))/2.
+```
+
+Rational square-root bounds enclose each offset in an interval narrower
+than **10⁻⁴**. There are 33 certified distinct unordered pairs per
+endpoint; **528** pairwise box comparisons prove their distinctness.
+Since the independent analytic theorem gives exactly 33, the certified
+list is complete. Numerical hints suggest centers but neither prove
+the count nor exclude any other location.
+
+Reflection sends a circle coordinate s to `(1−s)/(1+s)` and reverses
+the visit order. The verifier maps each tiny fixed-point enclosure
+inside its unique mate's larger contraction box. By uniqueness,
+the two roots are exact reflections and their M values agree. This
+identifies **15 reflected pairs and 3 mirror-fixed events** per
+endpoint, at **18 strictly ordered weights**. Different weight groups
+have disjoint rational intervals; close decimal agreement is not used
+to identify partners. All positive contacts lie below M=157.
+
+### A third branch is excluded at every contact
+
+Each certified contact now has an additional whole-orbit cover. Use
+`q_M(t)=q(t)−M Jq′(t)/|q′(t)|`. Interval Fourier jets and outward
+dyadic square-root bounds enclose the entire shifted arc, for the full
+certified M interval. The original uniform `775≤|q′|≤2305` bound
+sharpens broad interval norms. Every arc outside two admitted visit
+slots is separated from the contact's full position box in at least
+one coordinate. Subdivision continues until that strict separation
+has been proved everywhere.
+
+Inside each admitted slot, one original velocity component has a fixed
+nonzero sign. Positive curvature gives
+
+```
+q_M′(t) = (1+Mκ(t)) q′(t),       κ(t)>0,
+```
+
+so that coordinate of the offset curve is strictly monotone too.
+Each slot supplies at most one visit to the contact. Together with the
+two certified root visits, this proves **exactly two branches** at every
+contact point, with no third branch. The cover is uniform over its
+small certified M interval, not merely at the rounded event weight.
+
+The ordinary inverse contacts are therefore isolated from every other
+branch. Transverse triple passages elsewhere in the family remain
+unclassified. Small generic perturbations preserve these nondegenerate
+pair contacts and separate their simultaneous times and any unrelated
+events, while strict regularity and the absence of direct touches remain
+open. The first leg then has 33 ordinary inverse births, the reversed
+second leg 33 ordinary inverse deaths, and the middle has no touches.
+This proves the stated **66-touch generic route**. Its middle keeps
+106 transverse crossing pairs throughout; its triple events may put
+three of those pairs at a common point.
+
+## Reproduce
+
+Only the Python and Node standard libraries are needed:
+
+```sh
+python3 experiments/parallel_offset.py
+python3 experiments/parallel_offset.py --saved
+python3 experiments/parallel_offset_events.py
+python3 experiments/parallel_offset_events.py --write
+node experiments/parallel_offset_figure.js
+```
+
+The default count program repeats both complete rational front covers
+and both smooth plane counts. `--saved` assumes completeness of the
+archived front census, while still repeating the plane proofs. The
+event program certifies all 66 local roots; its completeness conclusion
+assumes the separate analytic count. It also repeats every whole-orbit
+third-branch exclusion. `--pairs-only` skips those exclusions for a
+quicker local-root audit and cannot write a new full record. `--write`
+records freshly proved boxes, isolation covers, and exact reflection
+and ordering data. Saved bounds are rounded outward to 80-bit dyadics;
+the very large exact intermediate fractions are not stored.
+
+The event Jacobian passes sixteen exact rational central-difference
+comparisons. Shifted, reversed, coincident, and negative-radius controls
+are rejected; two genuine negative-offset roots must reach and fail the
+offset sign test. Another 136 independent evaluator/previous-Jacobian
+checks compare the established implementation against the frozen
+intersection source.
