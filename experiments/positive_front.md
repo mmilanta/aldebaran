@@ -163,7 +163,84 @@ observation appears in [Etnyre–Vértesi, *Legendrian satellites*, §4.1.1](htt
 Here the formulas and literal move list provide the construction without
 using the uniqueness theorem to infer it.
 
-### Why the local model matches the full word
+## The plane triple comes at a different moment
+
+There is also a fully countable **three-arc plane model**, separate
+from the full eleven-strand route. Keep the local graphs f, δg, −f,
+use x itself as normal angle, and offset by any M≥25. They have exactly
+one ordinary plane triple as δ runs from −1/4 to 1/4. Its parameter
+is **positive**, whereas the front triple occurs at δ=0.
+
+All three projected arcs have increasing polar angle α of −q, from
+−1 to 1, because their h−M and h+h″−M are negative. At their endpoints
+the slopes vanish and the three heights stay distinct. They have no
+direct touch, since their front lifts are embedded, and no inverse
+touch, since their normal-angle range has length 2<π. As M→∞ their
+radial-deficit graphs converge in C¹ to the three support graphs, just
+as in the [offset count](parallel_offset.md). Each pair therefore has
+exactly one transverse crossing for sufficiently large M. Those pair
+counts cannot change as M decreases to 25: there is no tangency and no
+crossing can enter through the distinct radial boundary heights.
+
+Reflection exchanges the two outer arcs, so their unique intersection
+lies on the negative horizontal axis. The middle arc has just one visit
+to that axis, at normal angle zero, and its point is `(δ−M,0)`.
+The outer visits have normal angles x and −x, where
+
+```
+M = f(x)+f′(x) cot x,
+δ* = f(x)−f′(x) tan(x/2).
+```
+
+The first equation comes from setting the outer point's vertical
+coordinate `(f−M)sin x+f′cos x` to zero. The second equates its
+horizontal coordinate with δ−M.
+
+On 0<x<1, f′>0 and f″<0, so
+
+```
+d/dx [f+f′ cot x] = cot x (f″−f′ cot x) < 0.
+```
+
+It decreases from infinity to 1. For M≥25 the root lies in (0,1/8),
+as certified by the exact sign bracket below. Also δ*(x) increases
+from zero there: differentiating gives
+`(f′/2)(1−tan²(x/2))−f″tan(x/2)>0`. Since δ*<f(x)<15/64<1/4,
+it lies inside the model's controls. There is exactly one such triple.
+Its three tangent directions differ, and moving δ moves the middle
+axis point transversely past the fixed outer intersection. Thus this
+is an ordinary triple passage.
+
+At **M=25**, rational sine/cosine Taylor bounds give
+
+```
+0.074448001102865 < x  < 0.074448001102866,
+0.070019709433310 < δ* < 0.070019709433311.
+```
+
+The three points agree at `(δ*−25,0)`, using **three different normals**.
+At δ=0 instead, the front heights agree at one normal while its three
+original points stay apart. The viewer's right panel intentionally
+keeps a single normal direction fixed; it is not a plane-triple lens.
+
+Finally `f(x)~(15/8)x`, `f′(x)~15/8`, `cot x~1/x`, and
+`tan(x/2)~x/2`, so
+
+```
+M δ* → 225/128       as M→∞.
+```
+
+Run `python3 experiments/positive_front_projection.py` for exact sign
+bisections and δ enclosures at M=25,100,1000. Twelve alternating Taylor
+terms and the first omitted term supply rational trigonometric bounds;
+the checker also separates the four-variable triple-equation determinant
+from zero. Its absolute value is `ρ_outer² ρ_middle sin(2x)>0`, where
+`ρ_outer=M−f−f″` and `ρ_middle=M+5δ*`. No numerical root finder supplies
+a proof decision. The local result
+does **not** count the full plane route's triples: its blocks have
+angular rescalings and additional endpoint-straightening stages.
+
+## Why the local model matches the full word
 
 For a canonical word front, give each crossing its own small angular
 interval and use S there; outside it keep the integer height levels.

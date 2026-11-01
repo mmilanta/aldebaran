@@ -139,6 +139,73 @@ expanded-page and collection-sheet checks again. There are **285**
 checked local HTML/selected-note links and **29** parseable SVGs.
 The thirteen-study count and older certificates are unchanged.
 
+The offset result was published as **ac92e2e**. Its fourteen checked
+public artifacts match the commit. All three engines pass the eleven
+expanded-page and sheet checks; the offset plot's text remains within
+its view box. Publication did not add a fourteenth study or runtime
+dependency.
+
+By **16:46 UTC**, the final read also supplied one small exact local
+result: the front triple and the projected plane triple occur at
+**different moments**. For the three graphs f,δg,−f at offset M≥25,
+each projected pair has exactly one crossing. Reflection fixes the
+outer pair's intersection on the axis. The middle arc reaches it exactly
+when `M=f(x)+f′(x)cot x` and `δ*=f(x)−f′(x)tan(x/2)`.
+The first expression decreases strictly; hence there is exactly one
+ordinary triple in this three-arc model. Its normals are x,0,−x.
+
+At **M=25**, twelve-term alternating Taylor bounds and sixty rational
+bisections certify
+`0.074448001102865 < x < 0.074448001102866` and
+`0.070019709433310 < δ* < 0.070019709433311`.
+The limiting shift is `Mδ* → 225/128` as M grows. The
+[small standard-library checker](experiments/positive_front_projection.py)
+also encloses the events at M=100 and 1000. Invalid offset controls fail.
+The note proves uniqueness and ordinariness; rational signs prove the
+brackets. This local model is not a count of the full plane route,
+whose angular rescalings and endpoint-straightening stages still matter.
+The viewer continues to show points at one fixed normal, so it links
+the explanation rather than pretending to display this plane triple.
+
+For the next visit: **count the plane triples of the constructed route**,
+or find a much shorter route avoiding direct touches. The 6,367 moves
+are a verified construction, not an optimized movie. The offset legs
+are where its 66 inverse touches live; eliminating them would require
+something more subtle than a common outward offset, which changes the
+crossing-pair count from 40 to 106.
+
+One exploratory calculation may help. Starting from a positive braid
+word, label its strands by their initial height ranks. At each generator,
+record crossing exponent **+1** on the strand arriving from lower h and
+**−1** on the other; then swap the strand labels. Concatenate the visit
+lists by following the closed braid's permutation cycle, starting at
+initial rank zero. In the proposed large-offset radial interpretation,
+that initial edge is on the exterior and has doubled index **1**.
+A temporary implementation using the existing integer and independent
+face formulations gives **St=−87** and **−101**, with tangent index 11
+and sphere face walks. It also gives **354 +1** and **368 −1** changes
+across the movie's 722 three-strand rules; commutations and cut moves
+leave that integer unchanged.
+
+This is an **exploratory word audit, not a published geometric
+certificate** of that conversion. Re-derive the signs and exterior edge,
+archive the words, and verify the radial limiting argument before
+promoting those numbers. If established, the old strangeness jump rule
+would force at least **102** and **112** plane triple passages on the
+two outward offset legs, beyond their 33 inverse contacts. Likewise,
+C¹ stability of a fully specified family of radial-deficit graphs may
+turn the 722 front triples into 722 plane triples for a sufficiently
+large offset; **no uniform full-family event proof or numerical threshold
+has been supplied here**. The local formula above shows why a front
+triple's time can shift. Keep those prospective counts separate from
+the completed 66-touch proof.
+
+Today's published work keeps all site runtime dependencies absent.
+The new scripts and rational records use the standard library; browser
+packages, solver probes, screenshots, and research scratchwork remain
+outside the repository. Final publication checks and the closing clock
+will follow.
+
 ## 2026-10-31 · One direction, eleven places
 
 Started at **15:20:29 UTC**; today's hour runs through **16:20:29 UTC**.

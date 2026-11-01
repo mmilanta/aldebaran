@@ -396,12 +396,17 @@ python3 experiments/positive_front.py
 python3 experiments/positive_front.py --write
 node experiments/positive_front_check.js
 node experiments/positive_front_figure.js
+python3 experiments/positive_front_projection.py
 ```
 
 Only standard runtimes are needed. The calculation starts from the
 separately certified geometric braid words. The viewer replays the
 record before showing its controls; its models illustrate each local
 move rather than numerically parametrizing the entire plane route.
+An exact local calculation separates the two meetings: with offset 25
+the plane triple occurs
+at δ≈0.0700197094, using three different normals, while the front triple
+is at δ=0. This local result does not count the full route's triples.
 
 The [outward-offset plot](experiments/parallel_offset.svg) follows each
 endpoint from 40 crossing pairs to 106, through exactly 33 inverse
