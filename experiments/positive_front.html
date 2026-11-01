@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101323">
+  <meta name="description" content="Follow a checked sequence of small moves between two tangent-line braids. Three graph strands can meet while their original points stay apart.">
+  <title>Aldebaran · A knot, one move at a time</title>
+  <style>
+    :root { color-scheme: dark; font-family: ui-sans-serif, system-ui, sans-serif; background: #101323; color: #f4f1e8; }
+    * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+    body { margin: 0; }
+    main { max-width: 78rem; margin: auto; padding: clamp(1.2rem, 4vw, 3rem); overflow-wrap: anywhere; }
+    a { color: #e8b66e; text-underline-offset: .2em; }
+    :focus-visible { outline: 3px solid #e8b66e; outline-offset: 5px; }
+    .back { display: inline-block; font-size: .85rem; margin-bottom: 2rem; }
+    .eyebrow { color: #e8b66e; font-size: .75rem; font-weight: 700; letter-spacing: .17em; text-transform: uppercase; }
+    h1 { max-width: 17ch; font-size: clamp(2.4rem, 6vw, 5rem); line-height: 1.05; letter-spacing: -.055em; margin: .8rem 0 1.2rem; }
+    p { max-width: 51rem; color: #c7c7d4; line-height: 1.75; }
+    .intro { font-size: 1.05rem; }
+    .controls { margin: 2rem 0 1.5rem; padding: 1.3rem; border: 1px solid #383b50; border-radius: 1rem; }
+    .slider-label { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 1rem; font-size: .9rem; font-weight: 600; }
+    input[type=range] { width: 100%; min-height: 2.5rem; accent-color: #e8b66e; margin: .4rem 0; display: block; }
+    output { color: #e8b66e; font-variant-numeric: tabular-nums; }
+    .actions { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: .7rem; }
+    button { font: inherit; font-size: .85rem; color: inherit; background: #20253c; border: 1px solid #73768d; border-radius: .4rem; padding: .7rem .9rem; cursor: pointer; }
+    button:hover { border-color: #e8b66e; }
+    button:disabled { opacity: .45; cursor: default; }
+    #status { margin-bottom: 0; font-size: .9rem; min-height: 3.5em; }
+    figure { margin: 0; min-width: 0; }
+    .panel { border: 1px solid #383b50; border-radius: 1rem; background: #0b0e1a; overflow: hidden; }
+    svg, .fallback img { display: block; width: 100%; height: auto; }
+    .study { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 1.3rem; margin: 1.5rem 0; }
+    figcaption { color: #c7c7d4; font-size: .85rem; line-height: 1.7; margin-top: .7rem; }
+    .small { font-size: .85rem; }
+    .key { display: flex; gap: .7rem 1.5rem; flex-wrap: wrap; color: #c7c7d4; font-size: .85rem; margin: .8rem 0; }
+    .key span { display: inline-flex; align-items: center; gap: .5rem; }
+    .swatch { width: 1.5rem; border-top: 3px solid #e8b66e; }
+    .swatch.blue { border-color: #9fc7eb; } .swatch.lilac { border-color: #d1b6ea; } .swatch.white { border-color: #f4f1e8; }
+    details { max-width: 55rem; border-top: 1px solid #383b50; padding-top: 1.2rem; margin-top: 1.5rem; }
+    summary { font-weight: 600; line-height: 1.6; cursor: pointer; }
+    .formula { font-family: ui-monospace, monospace; }
+    footer { margin-top: 3rem; color: #9999ae; font-size: .85rem; line-height: 1.9; }
+    @media (max-width: 800px) { .study { grid-template-columns: minmax(0, 1fr); } }
+  </style>
+</head>
+<body>
+  <main>
+    <nav aria-label="Sketchbook navigation"><a class="back" href="index.html">← All studies</a></nav>
+    <header>
+      <div class="eyebrow">Aldebaran · Following the equivalence</div>
+      <h1>A knot, one move at a time.</h1>
+      <p class="intro">Two orbital drawings unfold into braids of tangent lines. Their knots agree. Now follow the small moves that connect them: exchange independent crossings, slide three strands, or move the cut around the circle.</p>
+      <p>Start with one three-strand move. As the little triangle switches sides, three graph heights agree for an instant. Their slopes keep the original three points apart.</p>
+    </header>
+    <div id="explorer" hidden>
+      <div class="controls">
+        <label class="slider-label" for="move"><span>Place in the complete sequence</span><output id="move-value" for="move">Move 40 of 6,367</output></label>
+        <input id="move" type="range" min="0" max="6366" step="1" value="39" aria-describedby="sequence-hint">
+        <p id="sequence-hint" class="small">From the 11 / 6 tangent-line braid to the 11 / 8 braid. The strip highlights the crossings used by this move.</p>
+        <div class="actions" role="group" aria-label="Choose a move">
+          <button id="previous" type="button">Previous move</button><button id="next" type="button">Next move</button>
+          <button id="triangle" type="button">Next three-strand move</button><button id="commute" type="button">Next independent swap</button><button id="cycle" type="button">Next cut move</button>
+          <button id="first" type="button">First</button><button id="last" type="button">Last</button>
+        </div>
+        <p id="status" role="status">A three-strand move exchanges two ways to make three crossings.</p>
+      </div>
+      <figure>
+        <div class="panel"><svg viewBox="0 0 1120 230" role="img" aria-labelledby="strip-title strip-description">
+          <title id="strip-title">The current eleven-strand word</title><desc id="strip-description">A compressed braid strip with the active crossings highlighted.</desc>
+          <g id="strip-strands"></g><g id="strip-highlights"></g>
+          <g font-family="system-ui,sans-serif" font-size="17" fill="#c7c7d4"><text x="24" y="29">Eleven strands · 106 crossings</text><text x="24" y="214">Normal direction → · join the right edge to the left at matching heights</text></g>
+        </svg></div>
+        <figcaption>This strip shows the word before the selected move. It records crossing order; its axes have schematic scales. Each endpoint of the sequence is the exact word read from a <a href="normal_front.html">tangent-line front</a>.</figcaption>
+      </figure>
+      <div class="controls">
+        <label class="slider-label" for="progress"><span id="progress-label">Move the three strands</span><output id="progress-value" for="progress">Before · 0%</output></label>
+        <input id="progress" type="range" min="0" max="100" step="1" value="0">
+        <div class="actions" role="group" aria-label="Positions within this move"><button type="button" data-progress="0">Before</button><button type="button" data-progress="50">Halfway</button><button type="button" data-progress="100">After</button></div>
+      </div>
+      <div class="study">
+        <figure>
+          <div class="panel"><svg viewBox="0 0 600 460" role="img" aria-labelledby="local-title local-description">
+            <title id="local-title">One local move in the tangent-line graph</title><desc id="local-description">Three colored strands exchange crossing order. A vertical guide marks the center normal.</desc>
+            <defs><clipPath id="local-clip"><rect x="55" y="55" width="500" height="335"/></clipPath></defs>
+            <path d="M55,390H555M305,55V390" fill="none" stroke="#737b99" stroke-dasharray="4 6"/>
+            <g clip-path="url(#local-clip)"><g id="local-strands"></g><g id="local-marks"></g><path id="cut" stroke="#f4f1e8" stroke-width="2" stroke-dasharray="5 5" hidden/></g>
+            <g font-family="system-ui,sans-serif" font-size="17" fill="#c7c7d4"><text x="24" y="29">Signed distance</text><text x="305" y="433" text-anchor="middle">Normal direction →</text></g>
+          </svg></div>
+          <div class="key"><span><i class="swatch" aria-hidden="true"></i>First strand</span><span><i class="swatch blue" aria-hidden="true"></i>Second</span><span><i class="swatch lilac" aria-hidden="true"></i>Third, when present</span><span><i class="swatch white" aria-hidden="true"></i>Fourth, when present</span></div>
+          <figcaption id="local-caption">A smooth model of the selected three-strand move. Its crossings have the same order as the highlighted word. Angle and distance have different units.</figcaption>
+        </figure>
+        <figure>
+          <div class="panel"><svg viewBox="0 0 600 460" role="img" aria-labelledby="points-title points-description">
+            <title id="points-title">The original points at the center direction</title><desc id="points-description">The points remain separate even when their tangent lines agree.</desc>
+            <defs><clipPath id="points-clip"><rect x="30" y="50" width="540" height="340"/></clipPath></defs>
+            <g clip-path="url(#points-clip)"><g id="point-lines"></g><g id="point-marks"></g></g>
+            <g font-family="system-ui,sans-serif" font-size="17" fill="#c7c7d4"><text x="24" y="29">At the center normal →</text><text id="points-note" x="300" y="433" text-anchor="middle">Three points · three different slopes</text></g>
+          </svg></div>
+          <figcaption id="points-caption">Distance places each tangent line; slope places the point along it. At halfway, all three lie on one line and stay distinct. This local reconstruction uses equal coordinate scales.</figcaption>
+        </figure>
+      </div>
+      <p class="small">Nothing animates. Sliders support arrow keys, Home, and End. Changing the selected move resets its local progress.</p>
+    </div>
+    <figure id="fallback" class="fallback"><img src="positive_front.svg" width="1200" height="800" alt="Three successive tangent-line graphs: a little triangle before a three-strand move, three strands crossing together with distinct slopes, and the triangle on the other side. Below, three separate points share a tangent line at the middle moment."><figcaption>A three-strand move in the graph keeps the original points apart. <a href="positive_front.svg">Open the full-size still ↗</a></figcaption></figure>
+    <details>
+      <summary>What do the three kinds of move do?</summary>
+      <p>An <strong>independent swap</strong> changes the order of two crossings that use separate strands. They pass at different heights and never meet. A <strong>three-strand move</strong> passes one crossing through a third strand. At halfway, all three graph heights agree, but their three slopes are distinct. The lifted knot stays embedded.</p>
+      <p>A <strong>cut move</strong> changes where we start reading a closed braid. Moving the cut past its first crossing puts that crossing at the end of the word. The local graph itself stays fixed; the white dashed cut moves.</p>
+      <p>The complete sequence contains <strong>5,450 independent swaps, 722 three-strand moves, and 195 cut moves</strong>. All its words have eleven strands and 106 positive crossings, with a one-component closure. The sequence is a checked route, with no claim that it is shortest.</p>
+    </details>
+    <details>
+      <summary>Why does a meeting in the graph keep the points apart?</summary>
+      <p>The graph records normal direction θ and signed line distance h. Its slope p supplies the coordinate along that line. With <span class="formula">N = (cos θ, sin θ)</span> and N′ its quarter-turn, the original point is <span class="formula">q = hN + pN′</span>.</p>
+      <p>Equal direction and distance therefore give one tangent line. Different slopes give different points along it. The halfway graph has slopes <span class="formula">15/8, 0, −15/8</span> in this model. It depicts a line touching three places, rather than three branches of the original drawing meeting at one point.</p>
+      <p>The right-hand picture reconstructs the local model after subtracting 25 from every distance. This moves the points along their normals and keeps their tracing velocities nonzero throughout each displayed move. Its coordinates illustrate the local formula; they are not positions on either original orbital endpoint.</p>
+    </details>
+    <details>
+      <summary>Does this give a route between the plane drawings?</summary>
+      <p>The local-move list now supplies a positive-front isotopy, rather than just an algebraic equality or a classification result. A common negative distance offset makes its plane projection regular; a deliberately loose bound of one billion works for the full construction. The positively curved endpoints can be offset and brought home without stopping or introducing a direct touch.</p>
+      <p>Consequently there is a regular route from 11 / 6 to 11 / 8 <strong>without direct self-tangencies</strong>. Opposite-facing touches remain allowed. The construction does not count its plane crossings or triple passages, and gives no route avoiding both kinds of touch. The <a href="triple_distance.md">twelve-triple lower bound</a> for a route without either touch remains a separate question.</p>
+      <p>The <a href="positive_front.md">construction note</a> explains the smoothing, the matching of endpoint fronts, and the offset argument. The viewer displays each local move; it does not numerically parametrize the entire plane route.</p>
+    </details>
+    <details>
+      <summary>What is checked, and what is illustrated?</summary>
+      <p>A small independent replayer checks every local rule and the exact final word. A separate search produces the moves by exposing and cycling the letters of the earlier conjugator. Exhaustive four-strand relation graphs through word length six supply 3,279 extraction controls. The browser also replays the full record before showing the controls.</p>
+      <p>The endpoint words inherit their completeness from the <a href="normal_front_braid.md">separate rational geometric proofs</a>. The polynomial local models and offset argument are explained in the note. Sampled paths and rounded readouts here are illustrations of those formulas, not a new global event census.</p>
+    </details>
+    <footer>Aldebaran · A large equivalence, seen in small moves.<br><a href="index.html">All studies ↗</a> · <a href="normal_front.html">The tangent-line front ↗</a> · <a href="positive_front.md">The construction ↗</a> · <a href="positive_front.svg" download>Save the still drawing ↓</a> · <a href="../JOURNAL.md">Notebook ↗</a></footer>
+  </main>
+  <script src="positive_front_data.js"></script><script src="positive_front_math.js"></script><script src="positive_front.js"></script>
+</body>
+</html>

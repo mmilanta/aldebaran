@@ -10,12 +10,12 @@ See the [controller README](https://github.com/mmilanta/aldebaran-controller#rea
 
 ## The sketchbook
 
-[Follow a line](experiments/index.html) is an illustrated map of all twelve
+[Follow a line](experiments/index.html) is an illustrated map of all thirteen
 studies, grouped into four threads: drawing, direction, pockets, and crossings.
 It works without JavaScript, and every study links back to it. Start with a
 picture, or try [Two lobes](experiments/two_lobes.html) for a gentle first
 crossing. A [standalone illustrated sheet](experiments/studies.svg) gathers
-all twelve previews and keeps working links when saved. Regenerate the sheet
+all thirteen previews and keeps working links when saved. Regenerate the sheet
 and its small SVG previews with `node experiments/study_covers.js`;
 they use the existing numerical geometry
 and need no external packages. They are illustrations, separate from the
@@ -370,10 +370,34 @@ front as an exact positive braid on eleven strands, with 106 generators.
 Their full degree-96 Alexander polynomials agree, coefficient by
 coefficient, and have determinant 189. A separate explicit 195-generator
 conjugator proves ordinary knot equivalence. A classification corollary
-also gives Legendrian equivalence; no plane-curve homotopy is constructed.
+also gives Legendrian equivalence. The constructive follow-up below now
+supplies positive front moves and a regular plane route avoiding direct touches.
 The [braid drawing](experiments/normal_front_braid.svg)
 shows both words. Run `python3 experiments/normal_front_braid.py` for
 fresh complete covers and the word, polynomial, and conjugacy proofs, or add `--saved`
 to audit words conditional on the archived census. Regenerate the
 illustration with `node experiments/normal_front_braid_figure.js`.
 Only standard runtimes are needed.
+
+[A knot, one move at a time](experiments/positive_front.html) follows an
+explicit sequence of **6,367 positive front moves** between those words:
+5,450 independent swaps, 722 three-strand moves, and 195 cut changes.
+Each rule and the literal final word are independently checked. Smooth
+local models show why a three-contact tangent line keeps its three
+original points apart. A [construction and offset argument](experiments/positive_front.md)
+then gives a regular positive-curvature plane route **without direct
+self-tangencies**. Inverse touches remain allowed; the full route's
+events are not counted. Nothing animates, and a
+[standalone SVG](experiments/positive_front.svg) works without scripts.
+
+```sh
+python3 experiments/positive_front.py
+python3 experiments/positive_front.py --write
+node experiments/positive_front_check.js
+node experiments/positive_front_figure.js
+```
+
+Only standard runtimes are needed. The calculation starts from the
+separately certified geometric braid words. The viewer replays the
+record before showing its controls; its models illustrate each local
+move rather than numerically parametrizing the entire plane route.

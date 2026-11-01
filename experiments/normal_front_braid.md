@@ -11,7 +11,9 @@ is **189**. All 97 coefficients agree.
 The knot equivalence comes from the conjugacy witness, beyond matching
 polynomials. The explicit calculation certifies ordinary isotopy of the
 closures. A classification corollary below also gives existence of a
-Legendrian isotopy. No plane-curve route is constructed. The
+Legendrian isotopy. A later [positive-front movie](positive_front.md)
+now supplies local moves and a regular plane route avoiding direct touches,
+with inverse touches allowed. The
 [crossing-word lower bound](triple_distance.md) still applies to routes
 without either kind of touch.
 
@@ -159,9 +161,9 @@ number is 106, equal to the positive word length. The theorem gives
 uniqueness at that maximal value.
 
 This is an inference from a classification theorem. The programs
-construct no Legendrian isotopy. Projecting one back to a regular
-plane-curve route would require a further argument keeping its tracing
-velocity nonzero; no such route is supplied here.
+construct no Legendrian isotopy. The later [explicit local-move construction](positive_front.md)
+supplies one, and a common support-distance offset keeps its plane
+projection regular. That route allows inverse touches while avoiding direct ones.
 
 ## The entire polynomial, not sample agreement
 

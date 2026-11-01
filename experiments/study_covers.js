@@ -18,6 +18,8 @@ const TouchData = require('./touch_data.js');
 const StrangenessData = require('./strangeness_data.js');
 const Strangeness = require('./strangeness_math.js');
 const Front = require('./normal_front_math.js');
+const PositiveFront = require('./positive_front_math.js');
+const PositiveFrontData = require('./positive_front_data.js');
 
 const blue = '#9fc7eb', gold = '#e8b66e', white = '#f4f1e8', muted = '#555b78';
 const cycle = 2 * Math.PI;
@@ -75,7 +77,8 @@ function write(name, title, description, body) {
 
 function sheet() {
   const destinations = ['../index.html', 'loop.html', 'winding.html', 'two_lobes.html',
-    'blend.html', 'arm_detour.html', 'phase.html', 'cubic.html', 'strangeness.html', 'weave.html', 'touch.html', 'normal_front.html'];
+    'blend.html', 'arm_detour.html', 'phase.html', 'cubic.html', 'strangeness.html', 'weave.html', 'touch.html', 'normal_front.html', 'positive_front.html'];
+  const height = 242 + 332 * Math.ceil(covers.length / 3);
   const root = 'https://mmilanta.github.io/aldebaran/experiments/';
   const escape = s => s.replaceAll('&', '&amp;').replaceAll('<', '&lt;');
   const pieces = covers.map(({ name, title, svg }, i) => {
@@ -97,16 +100,16 @@ function sheet() {
       `<text x="${x + 18}" y="${y + 250}" fill="#b9b9cc" font-size="12" letter-spacing="1.5">STUDY ${name}</text>` +
       lines.map((line, j) => `<text x="${x + 18}" y="${y + 276 + j * 21}" fill="${white}" font-size="19" font-weight="600">${escape(line)}</text>`).join('') + '</a>';
   });
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1570" viewBox="0 0 1200 1570" role="group" aria-labelledby="title description">\n` +
-    '<title id="title">Follow a line: twelve studies</title>\n' +
-    '<desc id="description">An illustrated sheet of Aldebaran’s twelve orbital studies, in reading order. Each picture links to its study. The small previews use numerical geometry; some graphs use different axes or scales.</desc>\n' +
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="${height}" viewBox="0 0 1200 ${height}" role="group" aria-labelledby="title description">\n` +
+    '<title id="title">Follow a line: thirteen studies</title>\n' +
+    '<desc id="description">An illustrated sheet of Aldebaran’s thirteen studies, in reading order. Each picture links to its study. The small previews use numerical geometry; some graphs use different axes or scales.</desc>\n' +
     '<style>text{font-family:ui-sans-serif,system-ui,sans-serif}.card:focus .frame{stroke:#e8b66e;stroke-width:3}.card:hover .frame{stroke:#9999ae}</style>\n' +
-    '<rect width="1200" height="1570" fill="#101323"/>\n' +
-    `<text x="45" y="53" fill="${gold}" font-size="13" letter-spacing="3">ALDEBARAN · TWELVE STUDIES</text>` +
+    `<rect width="1200" height="${height}" fill="#101323"/>\n` +
+    `<text x="45" y="53" fill="${gold}" font-size="13" letter-spacing="3">ALDEBARAN · THIRTEEN STUDIES</text>` +
     `<text x="45" y="112" fill="${white}" font-size="55" font-weight="650" letter-spacing="-2">Follow a line.</text>` +
     '<text x="45" y="143" fill="#c7c7d4" font-size="18">Circles, crossings, and the small spaces between. Choose a picture to explore.</text>\n' +
     pieces.join('\n') +
-    `<a href="${root}index.html"><text x="600" y="1540" text-anchor="middle" fill="${gold}" font-size="17">mmilanta.github.io/aldebaran/experiments/</text></a>\n</svg>\n`;
+    `<a href="${root}index.html"><text x="600" y="${height - 30}" text-anchor="middle" fill="${gold}" font-size="17">mmilanta.github.io/aldebaran/experiments/</text></a>\n</svg>\n`;
   fs.writeFileSync(path.join(__dirname, 'studies.svg'), svg);
 }
 
@@ -229,6 +232,20 @@ function main() {
       i === 0 || i === 6 ? 2.5 : 1.2, `opacity="${i === 0 || i === 6 ? 1 : .4}"`)).join('') +
     line(frontMap([[normalExample.beta, -450], [normalExample.beta, 450]]), '#9999ae', 1, 'stroke-dasharray="4 6"') +
     dot(frontMap([[normalExample.beta, normalExample.visits[0].distance]])[0], white, 5));
+
+  const movie = PositiveFront.replay(PositiveFrontData);
+  const moveIndex = PositiveFrontData.moves.findIndex(move => move[0] === 'triangle');
+  const word = [...movie[moveIndex]], move = PositiveFrontData.moves[moveIndex];
+  write('013', 'A knot, one move at a time',
+    'Before, halfway through, and after one checked three-strand front move. At halfway the heights agree but the three slopes differ. Horizontal angle and vertical distance have different units.',
+    [0, .5, 1].map((progress, column) => {
+      const x = 110 + 210 * column;
+      return `<path d="M${x},45V355" stroke="#383b50" stroke-dasharray="4 6"/>` +
+        [0, 1, 2].map(strand => line(samples(t => [x + 86 * t,
+          200 - 127 * PositiveFront.local(word, move, t, progress).heights[strand]], -1, 1, 240),
+        [gold, blue, '#d1b6ea'][strand], 2.5)).join('') +
+        (progress === .5 ? `<circle cx="${x}" cy="200" r="7" fill="none" stroke="${white}" stroke-width="1.5"/>` : '');
+    }).join(''));
 
   sheet();
   console.log(`Wrote ${covers.length} study covers and their standalone sheet; the negative-count probe has smooth-curve clearance.`);

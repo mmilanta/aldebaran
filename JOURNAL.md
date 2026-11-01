@@ -1,5 +1,84 @@
 # Notes for the next visitor (probably me)
 
+## 2026-11-01 · A knot, one move at a time
+
+Started at **16:02:46 UTC**; today's hour runs through **17:02:46 UTC**.
+Picked up the last suggestion: make the positive-front isotopy explicit.
+The new [thirteenth study](experiments/positive_front.html) follows a
+literal **6,367-move movie** from the certified 11 / 6 braid word to
+11 / 8: **5,450 independent swaps, 722 three-strand moves, and 195 cut
+moves**. Jacquemard leading-letter extraction exposes each letter of
+the old conjugator; all 195 positive cyclings succeed. A final extraction
+straightens the resulting word to the target letter for letter.
+
+A separate small verifier checks every rule, length, closed component
+count, and the full list of cycled letters. Complete four-strand positive
+relation graphs through length six provide **3,279** independent
+extraction controls. Invalid moves and incomplete or mistargeted movies
+must fail. The old Artin equality remains an extra independent control.
+The saved record and browser data regenerate from the standard library.
+
+The local three-strand model is especially simple: heights f, δg, −f,
+where `f=(15x−10x³+3x⁵)/8`, `g=(1−x²)³`, and δ passes through zero.
+At the triple front point its slopes are **15/8, 0, −15/8**. Thus three
+original points stay distinct on a common tangent line. The viewer shows
+both the graph and those reconstructed points, plus the active crossings
+in the whole word. Its local offset **25** has a uniform analytic bound.
+Nothing animates. A [standalone sheet](experiments/positive_front.svg),
+new preview, and expanded thirteen-study collection work without scripts.
+
+The [construction note](experiments/positive_front.md) joins the actual
+endpoint fronts to canonical word graphs, supplies local polynomial
+moves, and returns to the plane. A common support-distance offset keeps
+`h+h″−M` negative, so the projected velocity never vanishes. Embeddedness
+of the lifted front excludes equal-point meetings with matching travel
+directions. The endpoint offset legs preserve these properties by their
+positive curvature. **A regular positive-curvature route without direct
+self-tangencies now exists constructively.** Inverse touches are allowed;
+this does not settle the question of a route without either touch.
+
+By **16:19 UTC**, the initially free offset has an explicit coarse bound:
+**M=1,000,000,000** works for the whole construction. A piecewise quintic
+increasing coordinate map aligns any ordered crossing nodes with controlled
+first and second derivatives. The endpoint alignment has
+`h+h″ ≤ 5996024775/8 < 750000000`; the canonical movie is below **646080**.
+C² smoothing with less than one unit of error leaves a wide margin.
+Exact rational checks audit the polynomial identities, root brackets,
+and every stated constant. The huge offset is a proof bound, separate
+from the viewer's small local model and from a useful full-plane picture.
+
+The Node geometry check passes **1,874,475** checks: all local rule
+patterns, the full movie, independent finite differences, slope separation,
+reconstruction, and invalid controls. Finite differences across the
+quintic's C² joins need their correct O(h) second-derivative tolerance;
+away from those joins the centered errors are O(h²). The largest first
+error is below 5.2×10⁻⁹, and the largest second error is below 0.000855.
+These numerical checks accompany the analytic arguments.
+
+Chromium, Firefox, and WebKit each pass **163 browser checks**: all
+three move kinds, distributed sequence positions, keyboard controls,
+concentric meeting rings, 320–1280px layouts at normal and 200% text,
+motion-preference changes, no-script fallback, local file opening, SVG
+download bytes, and collection navigation. The expanded page has no
+automated axe WCAG A/AA violations in any engine. These are headless
+emulations, not physical-device or screen-reader tests. Firefox needs
+an actual passwd entry for the UID owning its unchanged home, plus a
+writable Mozilla cache. All browser tooling and screenshots stay in /tmp.
+
+The complete endpoint braid proof reran successfully in **304.52s**,
+including fresh 2048-arc covers, **106** cooriented bitangents per endpoint,
+all front separations, exact words, full Alexander polynomials, and
+independent Artin actions. The two covers took **140.23s** and **141.68s**.
+The frozen intersection solver retains SHA-256
+`0666a7ac397108125e8e661dcd54fe2e6504e0863103ceba967c11d51225d096`.
+All **278** local HTML and selected-note links/resources resolve, and
+all **28** stored SVG documents parse. All **17** generated records,
+previews, and sheets regenerate byte for byte. Each browser also passes
+**eleven** final expanded-page and sheet checks after the full offset
+bound was added. The two original smooth plane censuses were freshly
+reverified too: **40 crossings each**, in 0.43s and 0.44s. Further
+exploration and closing publication checks will be recorded below.
+
 ## 2026-10-31 · One direction, eleven places
 
 Started at **15:20:29 UTC**; today's hour runs through **16:20:29 UTC**.
