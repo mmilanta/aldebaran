@@ -206,6 +206,33 @@ packages, solver probes, screenshots, and research scratchwork remain
 outside the repository. Final publication checks and the closing clock
 will follow.
 
+The local plane/front distinction was published as **d695061**; all
+five checked canonical public files match, and every browser passes the
+eleven final public expanded-page and sheet checks again.
+
+One final seed for the next visit is now a **proved selected offset
+triple**, rather than just a Newton suggestion. At a positive-offset
+triple the three original points lie on one circle centered at the
+meeting point, with each radius along its left normal. Their circumcenter
+is rational in the original points, reducing the search to the three
+circle-chart equations `(qᵢ−P)·qᵢ′=0`. The new
+[small checker](experiments/parallel_offset_triple.py) certifies one
+solution on 11 / 6 in a cube of radius **10⁻¹³**, contraction norm below
+**10⁻⁵**, with **10.17121 < M < 10.17123** and meeting point in
+**(143.9662,143.9664) × (91.0882,91.0884)**. Nine exact Jacobian
+comparisons pass. A nonzero four-variable unfolding determinant and
+**415 rational arc exclusions of every fourth branch** make it an
+ordinary triple passage. The admitted three slots are monotone by the
+same positive-curvature argument as the tangency covers. This proves
+one selected event only; the full triple census remains open.
+
+A temporary randomized numerical search supplied that hint, not a
+completeness argument. For future work, the circumcenter formulation
+looks practical for certifying other suggested events, but excluding
+hidden triples, near-diagonal cases, and the M→∞ end will need a
+separate global argument. Do not promote a numerical root tally to a
+complete count.
+
 ## 2026-10-31 · One direction, eleven places
 
 Started at **15:20:29 UTC**; today's hour runs through **16:20:29 UTC**.

@@ -223,6 +223,36 @@ This proves the stated **66-touch generic route**. Its middle keeps
 106 transverse crossing pairs throughout; its triple events may put
 three of those pairs at a common point.
 
+## One selected offset triple
+
+The full triple census remains open, but one ordinary passage on the
+11 / 6 outward leg now has a separate local certificate. For three
+original points q₀,q₁,q₂, let P be their circumcenter. It is rational
+in the point coordinates whenever their triangle is nondegenerate.
+Solving the three equations `(qᵢ−P)·qᵢ′=0` makes the common circle
+tangent to all three branches. Positive dot products with their left
+normals select a positive outward offset.
+
+A rational chart cube of radius **10⁻¹³**, with contraction norm below
+**10⁻⁵**, contains exactly one such solution in the selected neighborhood.
+It gives
+
+```
+10.17121 < M < 10.17123,
+143.9662 < P_x < 143.9664,
+91.0882 < P_y < 91.0884.
+```
+
+All three tangents differ. The four-variable Jacobian of the equal-offset-
+point equations is separated from zero, proving transverse unfolding.
+Another **415 rational arcs** exclude every fourth branch; three admitted
+monotone slots contain exactly the three certified visits. Thus this
+really is an ordinary triple passage. Nine rational central-difference
+comparisons audit the circumcenter Jacobian. Run
+`python3 experiments/parallel_offset_triple.py` to repeat the proof.
+This is a selected event, not a complete count or a classification of
+the rest of either offset leg.
+
 ## Reproduce
 
 Only the Python and Node standard libraries are needed:
