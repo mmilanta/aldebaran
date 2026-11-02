@@ -222,6 +222,12 @@ The browser and exploratory tools remain outside it; the site has no
 runtime dependencies. Numerical candidate tallies remain clearly marked
 and separate from the completed proofs.
 
+Final checks: **594** local links/resources and Markdown anchors resolve,
+and all 32 SVGs parse. The tail proof and closing record were published
+as **94d566e**; all four changed canonical public files match it. The
+checkout is clean. This last publication receipt is recorded in the
+closing minutes of the stated hour.
+
 ## 2026-11-01 · A knot, one move at a time
 
 Started at **16:02:46 UTC**; today's hour runs through **17:02:46 UTC**.
