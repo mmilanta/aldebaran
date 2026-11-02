@@ -365,6 +365,50 @@ with its integration. Decreasing |δ| from 0.05 to 0.00003 brings both
 ratios monotonically toward K in the implementation checks. These
 finite-distance numerical checks do not certify a remainder bound.
 
+## A finite bound on the infinite-offset end
+
+For both original endpoints, **no triple or higher meeting occurs at
+any M ≥ 2,700,000,000**. This very coarse bound closes the infinite end
+of a future event census; it does not classify the finite interval below
+it, or supply a threshold for the constructed middle family.
+
+Here is a quantitative link to the conormal front. At an equal offset
+point, `qᵢ−qⱼ=M(Nᵢ−Nⱼ)`. Since every original point has norm at most
+450, the unit normals satisfy `|Nᵢ−Nⱼ|≤900/M`. With hᵢ=qᵢ·Nᵢ,
+
+```
+hᵢ−hⱼ = M |Nᵢ−Nⱼ|²/2 + qⱼ·(Nᵢ−Nⱼ),
+|hᵢ−hⱼ| ≤ 810000/M.
+```
+
+Normalize each unit normal instead by its L1 length L=|Nₓ|+|Nᵧ|.
+Use `G=(Nₓ/L, Nᵧ/L, h/(900L))`. The inequalities L≥1 and
+`|Lᵢ−Lⱼ|≤2|Nᵢ−Nⱼ|` give a componentwise bound
+`|Gᵢ−Gⱼ|∞≤2700/M`. At the stated threshold this is at most **10⁻⁶**.
+
+Expand every rational endpoint front-arc box by 10⁻⁶ in its two L1
+normal coordinates and by 900×10⁻⁶ in its unscaled height. Any three
+visits meeting at such an offset would give three expanded boxes with
+a common point. Integer bucket membership enumerates every overlapping
+pair, and every triangle in that pair graph enumerates a possible
+three-arc product. Then bisect the longest parameter interval until
+some coordinate separates two boxes. Both children are always covered;
+an unresolved depth limit rejects the proof.
+
+The diagonal exclusion is uniform in M. Positive curvature makes
+`q_M′=(1+Mκ)q′` a positive multiple of the original velocity. On an
+intervening arc with normal turn less than **3<π**, all velocities lie
+in one strict open half-plane, so its endpoints cannot coincide. The
+normal rate bound `21345/775` certifies these short-arc exclusions.
+Using the earlier full-turn bitangent exclusion here would be invalid.
+
+The complete rational covers have **12,173 and 11,612 candidate triple
+products**, excluded by **74,142 and 79,142 leaves**, with maximum
+additional depths **16 and 19**. No archived root or numerical hint
+enters this calculation. A higher meeting would contain a triple and
+is excluded too. Run `python3 experiments/offset_tail.py`; it uses
+only the standard library.
+
 ## Reproduce
 
 Only the Python and Node standard libraries are needed:

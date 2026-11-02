@@ -491,3 +491,10 @@ python3 experiments/offset_fourfold.py --write
 node experiments/offset_fourfold_check.js
 node experiments/offset_fourfold_figure.js
 ```
+
+A [global tail exclusion](experiments/parallel_offset.md#a-finite-bound-on-the-infinite-offset-end)
+rules out all endpoint offset triples and higher meetings for every
+M ≥ 2,700,000,000, using a rational cover of expanded conormal-front
+triple products. Run `python3 experiments/offset_tail.py`. This closes
+the infinite end with a coarse bound; the finite interval and the
+middle family's event-stability threshold remain separate questions.

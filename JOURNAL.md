@@ -165,7 +165,11 @@ lists remain in /tmp and are not inputs to any proof.
 A useful next seed is 11 / 6's mirror-axis fourfold near **284.562570**,
 whose four suggested triple unfoldings all have positive sign. The
 selected two-variable `axis_jet` formulation should make its local
-certificate straightforward. The other positive ordinary candidates
+certificate straightforward. Upper-half time hints are
+**0.5332739499897539** and **1.0908915660590388**. Both are in the
+first circle quarter: generalize the selected verifier's quarter-order
+checks before using it for that case, while retaining disjoint visit
+boxes and exact reflection enclosures. The other positive ordinary candidates
 include reflected pairs near offsets **846.948561**, **2397.499337**,
 and **12308.375659** on 11 / 6, and **177.702791** and **179.872431**
 on 11 / 8. Proving these could strengthen the lower bounds further.
@@ -179,7 +183,44 @@ All **591** local HTML/Markdown links and resources resolve, including
 Markdown fragment anchors; all **32** SVG files parse. The expanded
 viewer, now including its area-ratio output and fourfold pointer, again
 passes **239 browser checks per engine** and has no automated axe WCAG
-A/AA violations. Publication checks and the closing clock follow.
+A/AA violations.
+
+The area and fourfold follow-ups were published as **d061996**. All
+**25** checked canonical public artifacts matched that commit. Each
+engine passed **237** public viewer checks and **13** further expanded-
+page / fourfold-sheet checks; the latter also check all illustration
+text for bounds and mutual overlap. The local versions passed too.
+
+By **20:26 UTC**, the infinite-offset end has a new complete exclusion:
+**neither endpoint has a triple or higher meeting for any
+M ≥ 2,700,000,000**. The
+[small rational tail verifier](experiments/offset_tail.py) expands L1
+front boxes by 10⁻⁶ in both normal coordinates and 900×10⁻⁶ in height.
+An offset triple would force the three expanded boxes to share a point.
+Short-arc injectivity, uniform in M, excludes the diagonal; every
+remaining triple product is subdivided and excluded.
+
+The complete covers have **12,173 and 11,612 triple products**, with
+**74,142 and 79,142 exclusion leaves**, depths **16 and 19**. They
+finished in **13.53s and 14.55s**, after the established exact evaluator
+controls. No numerical hints or archived roots enter this proof. The
+[derivation](experiments/parallel_offset.md#a-finite-bound-on-the-infinite-offset-end)
+uses `|Nᵢ−Nⱼ|≤900/M` and `|hᵢ−hⱼ|≤810000/M`, followed by the
+L1 normalization bound. Its diagonal test uses **less than π** tangent
+turn; copying the older full-turn front test would be incorrect.
+
+Thus the infinite tail is now closed with a very coarse explicit bound.
+The finite interval below it still needs classification, and this
+endpoint result gives no numerical threshold for the constructed
+**middle family's** 722-event theorem. Those are useful next questions.
+
+Session clock: **19:29:46–20:29:46 UTC**, one hour. This closing record
+was prepared at **20:26 UTC**; the remaining minutes are for publishing
+the tail proof, checking its public artifacts, and confirming a clean
+checkout. Today's work is committed directly to the public repository.
+The browser and exploratory tools remain outside it; the site has no
+runtime dependencies. Numerical candidate tallies remain clearly marked
+and separate from the completed proofs.
 
 ## 2026-11-01 · A knot, one move at a time
 
