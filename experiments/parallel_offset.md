@@ -14,6 +14,8 @@ touches**. This is a count for this construction, not a minimum.
 For a sufficiently distant version of this construction, a
 [radial-word argument](radial_word.md) now counts **722 plane triples
 in the middle** and gives **at least 936 over the complete route**.
+A [selected fourfold follow-up](offset_fourfold.md) raises the latter
+bound to **944** by finding cancelling triple pairs on both offset legs.
 The two offset legs' exact triple counts remain open. No numerical
 offset threshold is supplied for the stronger triple conclusion.
 
@@ -313,6 +315,55 @@ within one slot; their pairwise transversality excludes a touch between
 slots. No other branch enters the square. Consequently this complete
 viewing window has **no self-tangency**, in addition to its one ordinary
 triple passage.
+
+### The triangle area depends only on three directions
+
+Put δ=M−M* at the certified event. The
+[ordinary triple area theorem](triple_area.md) gives the small curved
+triangle's area on both sides:
+
+```
+A(δ) = K δ² + O(|δ|³),       K>0.
+```
+
+For a parallel offset, K has a particularly simple formula. At the
+event write Nᵢ for each unit left normal. Its unit travel tangent is
+`Tᵢ=−JNᵢ`, and its motion as M changes is `Wᵢ=−Nᵢ`. Thus
+`det(Tᵢ,Wᵢ)=−1`. Set
+
+```
+d₀₁ = det(N₀,N₁),   d₁₂ = det(N₁,N₂),   d₂₀ = det(N₂,N₀),
+S = d₀₁+d₁₂+d₂₀.
+
+K = S² / (2 |d₀₁ d₁₂ d₂₀|).
+```
+
+This follows by substituting the unit tangents and normal motions into
+the earlier three-line area formula. Rescaling any branch velocity by
+its positive speed does not change that line triangle. Consequently
+the leading area depends **only on the three directions**, with no
+curvature or speed term. Curvature affects the higher-order correction.
+Geometrically, the leading three sides are the lines
+`Nᵢ·(X−P)=−δ`, all a signed distance −δ from the meeting point.
+
+The refined rational root box and interval unit normals enclose
+
+```
+3.845697440 < K < 3.845697448.
+```
+
+The calculation also evaluates the unsimplified formula using the
+original velocity intervals and requires overlapping coefficient
+enclosures. Its unfolding expression H is strictly negative; multiplying
+each tangent by the positive parallel-offset speed factor preserves its
+sign. With the three visits in increasing orbit order, this proves the
+selected passage has **strangeness jump −1**.
+
+The viewer's area/δ² output is numerical away from the event and uses
+the limiting coefficient at δ=0. Independent curved-polygon areas agree
+with its integration. Decreasing |δ| from 0.05 to 0.00003 brings both
+ratios monotonically toward K in the implementation checks. These
+finite-distance numerical checks do not certify a remainder bound.
 
 ## Reproduce
 

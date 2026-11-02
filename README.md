@@ -389,7 +389,9 @@ then gives a regular positive-curvature plane route **without direct
 self-tangencies**. The [offset follow-up](experiments/parallel_offset.md)
 counts **66 inverse touches** on a generic version, with none in its
 middle section. A [radial-word follow-up](experiments/radial_word.md) counts
-722 middle triple passages and bounds the full route by at least 936,
+722 middle triple passages. Together with two
+[selected fourfolds](experiments/offset_fourfold.md), it bounds the full
+route by at least 944,
 when the common offset is sufficiently large; no numerical threshold
 for that event conclusion is supplied. Nothing animates, and a
 [standalone SVG](experiments/positive_front.svg) works without scripts.
@@ -469,3 +471,23 @@ extraction, original plane proofs, both invariant formulations, and all
 it still repeats the original plane proofs and cannot write a new record.
 All new calculations and generators need only standard runtimes, and
 the website still has no external dependencies.
+
+The selected triple's [quadratic area law](experiments/parallel_offset.md#the-triangle-area-depends-only-on-three-directions)
+has **3.845697440 < K < 3.845697448**. Its coefficient depends only on
+the three branch normals; curvature enters later terms. The viewer
+shows area divided by squared distance approaching that limit.
+
+[Four visits, two cancelling pairs](experiments/offset_fourfold.md)
+certifies a mirror-axis fourfold on each outward leg, with no fifth
+branch. Small local normal shifts separate each into four ordinary
+triples, two positive and two negative. These selected events strengthen
+the outward lower bounds to **106 and 116**, and the full-route bound
+to **944 triples**. Their [standalone diagram](experiments/offset_fourfold.svg)
+shows the two circles and their separated first-order event weights.
+Exact offset-leg triple counts remain open.
+
+```sh
+python3 experiments/offset_fourfold.py --write
+node experiments/offset_fourfold_check.js
+node experiments/offset_fourfold_figure.js
+```

@@ -99,8 +99,87 @@ Mozilla cache. All browser tooling and screenshots stay in /tmp.
 
 The frozen intersection solver retains SHA-256
 `0666a7ac397108125e8e661dcd54fe2e6504e0863103ceba967c11d51225d096`.
-Publication, final artifact checks, further exploration, and the closing
-clock will be recorded below. No runtime dependency has been added.
+No runtime dependency has been added.
+
+The main study and radial-word results were published as **8c733eb**.
+All fourteen checked canonical public artifacts matched that commit.
+Each engine passed **237 public viewer checks**, omitting the two
+local-file checks, with no automated axe WCAG A/AA violations.
+
+By **20:00 UTC**, the triangle has a certified area coefficient:
+**3.845697440 < K < 3.845697448** in
+`A=K(M−M*)²+O(|M−M*|³)`. Unit tangents are `T=−JN` and outward
+motion is `W=−N`, so `det(T,W)=−1`. The general three-line formula
+reduces to `K=S²/(2|d01 d12 d20|)`, with d's the three normal
+determinants and S their sum. Curvature and speed disappear from the
+leading term. The unsquared expression proves this selected triple's
+St jump is **−1**. The viewer now shows area divided by squared offset
+distance, with the limit at zero. Its updated Node check passes
+**54,849** checks, including numerical convergence from both sides.
+
+The next search found something worth proving before reporting a tally:
+mirror-axis **fourfold meetings**. The
+[new selected certificates](experiments/offset_fourfold.md) prove one
+on each outward leg, near **M=57.58864556** for 11 / 6 and
+**M=110.66889031** for 11 / 8. Two rational equations in two upper-half
+visits enforce the same axis center and positive squared radius.
+Reflection supplies the other two visits. Norms are below 10⁻⁵ in
+chart squares of radius 10⁻¹²; **627 and 744** whole-orbit arc
+exclusions rule out a fifth branch. All six tangent pairs are transverse.
+
+Small local support shifts with coefficients **0,1,3,7** split each
+fourfold into four ordinary triples, **two positive and two negative**.
+Interval Cramer determinants prove four distinct first-order event
+weights and their order; eight rational difference controls audit the
+two axis-circle Jacobians. The implicit function theorem turns the
+linear perturbation into actual nearby curve events. A parameter bump
+fixes the original and distant endpoints. All **1,554** numerical
+checks of the actual curved resolutions pass, including convergence
+of the four weights and their expected signs and order.
+
+These selected cancelling pairs strengthen the outward-leg bounds to
+**106 and 116**, and the full sufficiently distant construction to
+**at least 944 triples**: at least **470 positive and 474 negative**,
+still with net change −4 and 66 inverse touches. The basic radial-word
+program correctly continues to report its independent weaker bound 936;
+the stronger 944 also uses the new local geometric certificates.
+The [new standalone diagram](experiments/offset_fourfold.svg) shows
+both four-point circles and their separated first-order triple weights.
+Close reflected visits on the second circle have separate leader labels.
+This follow-up is a note and supporting illustration; the sketchbook
+still has **fourteen** interactive studies.
+
+For the next visit: the complete offset-leg triple classification is
+still open. A temporary deterministic floating-point search with
+500,000 initial triples per endpoint found **138 and 132 triple-subset
+candidates**, with signed tallies **18−120=−102** and **10−122=−112**.
+Several subsets share a single fourfold point. These are **unproved
+candidate tallies**, not complete event counts or additional certificates.
+The matching net changes do not exclude missing positive/negative pairs.
+The search allowed offsets up to 100,000; its largest suggested roots
+were around 16,172.765 on 11 / 6 and 817.100 on 11 / 8. In particular,
+an assumed cutoff of 450 would miss triple candidates even though it
+already excludes further touches. The search and unsaved candidate
+lists remain in /tmp and are not inputs to any proof.
+
+A useful next seed is 11 / 6's mirror-axis fourfold near **284.562570**,
+whose four suggested triple unfoldings all have positive sign. The
+selected two-variable `axis_jet` formulation should make its local
+certificate straightforward. The other positive ordinary candidates
+include reflected pairs near offsets **846.948561**, **2397.499337**,
+and **12308.375659** on 11 / 6, and **177.702791** and **179.872431**
+on 11 / 8. Proving these could strengthen the lower bounds further.
+Excluding every missing triple still requires a global argument,
+including near-diagonal cases and the infinite-offset end. Keep
+numerical discovery, local certificates, and completeness distinct.
+
+All **20** new or collection-related generated records, previews, and
+sheets regenerate byte for byte, including both selected-event records.
+All **591** local HTML/Markdown links and resources resolve, including
+Markdown fragment anchors; all **32** SVG files parse. The expanded
+viewer, now including its area-ratio output and fourfold pointer, again
+passes **239 browser checks per engine** and has no automated axe WCAG
+A/AA violations. Publication checks and the closing clock follow.
 
 ## 2026-11-01 · A knot, one move at a time
 

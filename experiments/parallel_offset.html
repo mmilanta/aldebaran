@@ -104,15 +104,20 @@
       <p>The curve’s positive curvature keeps its offset velocity nonzero: <span class="formula">q<sub>M</sub>′ = (1 + Mκ) q′</span>. Each visit keeps traveling in its original direction. The three directions differ, so this event is a triple passage. For two branches facing opposite ways, an outward offset can instead create an <a href="touch.html">inverse touch</a>.</p>
     </details>
     <details>
+      <summary>Why does the triangle vanish so quickly?</summary>
+      <p>Its area shrinks like the square of the distance from the meeting: <span class="formula">A ≈ Kδ²</span>, with δ the extra outward distance and K about 3.84569744. Halving a sufficiently small distance leaves about a quarter of the area. The same leading coefficient works on both sides.</p>
+      <p>At this setting, area divided by squared distance is <output id="area-ratio" for="passage">3.931919</output>. At the meeting itself the triangle has zero area; the ratio is replaced by its limiting value. The limit is certified from the three branch normals, independently of the displayed finite triangles. <a href="parallel_offset.md#the-triangle-area-depends-only-on-three-directions">Follow the area calculation ↗</a>.</p>
+    </details>
+    <details>
       <summary>What is certified in this close-up?</summary>
       <p>Rational bounds prove one ordinary triple at an outward distance strictly between 10.17121 and 10.17123. Its three visits are near 3.50%, 15.40%, and 93.52% of the original orbit. The displayed circle, curves, crossings, and area use rounded numerical coordinates.</p>
-      <p>A whole-orbit rational cover excludes every other branch from the fixed viewing square throughout this slider’s interval. An additional four-variable calculation proves exactly one triple and no self-tangency inside the square over that entire interval. This does not classify events elsewhere on the curve or on the rest of its outward journey. <a href="parallel_offset.md#one-selected-offset-triple">Read the circle and window proofs ↗</a>.</p>
+      <p>A whole-orbit rational cover excludes every other branch from the fixed viewing square throughout this slider’s interval. An additional four-variable calculation proves exactly one triple and no self-tangency inside the square over that entire interval. This selected passage decreases strangeness by one. These proofs do not classify events elsewhere on the curve or on the rest of its outward journey. <a href="parallel_offset.md#one-selected-offset-triple">Read the circle and window proofs ↗</a>.</p>
     </details>
     <details>
       <summary>How much happens on the way out?</summary>
       <p>Quite a lot. Each of the 11 / 6 and 11 / 8 drawings starts with forty crossings. Far outward, each has 106 crossing pairs, with exactly 33 inverse pair-births on the way. The <a href="parallel_offset.svg">crossing-count graph</a> follows those births.</p>
       <p>The order of crossing visits changes too. Its strangeness goes from 15 to −87 for 11 / 6, and from 11 to −101 for 11 / 8. A generic outward journey continued sufficiently far therefore needs at least 102 and 112 triple passages. The selected meeting above is one piece of that longer story; those bounds do not locate or count all its other triples.</p>
-      <p>The earlier <a href="positive_front.html">front-move construction</a>, taken at a sufficiently large common offset, has exactly 722 triples in its middle and at least 936 along its full route. This argument supplies no numerical offset threshold for that event conclusion. <a href="radial_word.md">Follow the radial-word calculation ↗</a>.</p>
+      <p>The earlier <a href="positive_front.html">front-move construction</a>, taken at a sufficiently large common offset, has exactly 722 triples in its middle. Its full route needs at least 944: a <a href="offset_fourfold.md">selected fourfold calculation</a> finds cancelling pairs beyond the signed-change bounds. This argument supplies no numerical offset threshold for the middle-event conclusion. <a href="radial_word.md">Follow the radial-word calculation ↗</a>.</p>
     </details>
     <footer>Aldebaran · A little triangle on a long way around.<br><a href="index.html">All studies ↗</a> · <a href="positive_front.html">A knot, one move at a time ↗</a> · <a href="parallel_offset_triptych.svg" download>Save the still drawing ↓</a> · <a href="../JOURNAL.md">Notebook ↗</a></footer>
   </main>

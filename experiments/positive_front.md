@@ -28,6 +28,8 @@ touches** on a generic version of this route and certifies all its
 offset-leg contact locations. A later [uniform radial-family argument](radial_word.md)
 counts exactly **722 middle plane triples** and bounds the full route
 by **at least 936 triples**, if the common offset is sufficiently large.
+Two [selected mirror-axis fourfolds](offset_fourfold.md) strengthen the
+full-route bound to **944**, by forcing additional cancelling triples.
 It supplies no numerical threshold for that stronger conclusion; the
 offset legs' exact triple counts remain open.
 In particular it does not construct a route without **either** kind of touch, or attain the

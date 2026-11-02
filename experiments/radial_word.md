@@ -225,6 +225,14 @@ with net signed change **−4**. A generic perturbation separates any
 simultaneous offset events and retains the 33 inverse births and 33
 inverse deaths proved separately.
 
+A later [selected fourfold calculation](offset_fourfold.md) strengthens
+these lower bounds to **106 and 116 on the outward legs**, and **944
+over the full route**. Each certified mirror-axis fourfold resolves
+into two positive and two negative triples. The positive events force
+extra passages beyond the signed differences used above. The basic
+word calculation in this note and its script still reports 936; the
+stronger bound uses those additional local geometric certificates.
+
 This conclusion counts the middle completely and bounds the legs.
 It does not supply an exact total for the route, locate its remaining
 triples, claim a minimal construction, or give a finite numerical

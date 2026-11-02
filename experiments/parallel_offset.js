@@ -16,6 +16,9 @@
       }
       get('offset-value').textContent = format(state.offset, 5);
       const delta = progress * .0015;
+      get('area-ratio').textContent = progress === 0
+        ? `${ParallelOffsetData.areaCoefficient.toFixed(8)} (limit)`
+        : (triangle.area / (delta * delta)).toFixed(6);
       get('difference-value').textContent = `${delta > 0 ? '+' : ''}${format(delta, 4)}`;
       get('area-value').textContent = progress === 0 ? '0' : format(triangle.area, 6);
       const phrase = progress < 0 ? 'Before the meeting' : progress > 0 ? 'After the meeting' : 'At the selected meeting';

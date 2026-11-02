@@ -53,6 +53,20 @@ Data.times.forEach((t, branch) => {
   close(rational(proof.event.center[branch]), Math.tan((t - proof.event.quarters[branch] * Math.PI / 2) / 2), 5e-15);
 });
 
+check(Data.tripleSign === -1);
+check(Data.areaCoefficient > rational(proof.event.area_law.coefficient[0])
+  && Data.areaCoefficient < rational(proof.event.area_law.coefficient[1]));
+const previous = [Infinity, Infinity];
+for (const delta of [.05, .01, .003, .001, .0003, .0001, .00003]) {
+  [-1, 1].forEach((sign, side) => {
+    const area = Model.triangle(Model.state(sign * delta / .0015)).area;
+    const error = Math.abs(area / (delta * delta) - Data.areaCoefficient);
+    check(error < previous[side]);
+    previous[side] = error;
+  });
+}
+check(previous.every(error => error / Data.areaCoefficient < 6e-6));
+
 for (let progress = -100; progress <= 100; progress++) {
   const state = Model.state(progress), triangle = Model.triangle(state);
   check(state.offset >= rational(proof.event.viewer_window.offset[0])

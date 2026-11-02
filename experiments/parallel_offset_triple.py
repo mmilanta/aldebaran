@@ -168,6 +168,45 @@ def viewer_window(record):
     return result
 
 
+def area_coefficient(record):
+    """An ordinary negative triple and A = K (M-M*)² + O(|M-M*|³).
+
+    With unit tangents T=-JN and outward motion W=-N, det(T,W)=-1.
+    Thus the three-line formula simplifies to a function of the three
+    normals alone, independent of speed or curvature. The analytic local
+    area theorem is triple_area.md; this encloses its coefficient here.
+    """
+    from triple_area import coefficient, linear_data
+
+    parameters = record["viewer_window"]["unique_root_box"][:3]
+    normals, velocities = [], []
+    for quarter, bounds in zip(record["quarters"], parameters):
+        velocity = evaluate(quarter, I(*map(Q, bounds)), Q(0), 1)
+        speed = sqrt_interval(dot(velocity, velocity))
+        velocities.append(velocity)
+        normals.append((-velocity[1] / speed, velocity[0] / speed))
+    determinants = [cross(normals[i], normals[j]) for i, j in ((0, 1), (1, 2), (2, 0))]
+    for determinant in determinants:
+        determinant.sign()
+    total = sum(determinants, I.wrap(0))
+    require(total.low > 0, "The selected triple no longer has negative sign.")
+    product = determinants[0] * determinants[1] * determinants[2]
+    product *= product.sign()
+    coefficient_box = total * total / (2 * product)
+    motions = [tuple(-x for x in normal) for normal in normals]
+    independent = coefficient(velocities, motions)
+    _, unfolding = linear_data(velocities, motions)
+    require(unfolding.high < 0, "The unnormalized passage sign disagrees.")
+    require(max(coefficient_box.low, independent.low) < min(coefficient_box.high, independent.high),
+            "The normal-only and original-velocity area enclosures disagree.")
+    require(Q("3.845697440") < coefficient_box.low <= coefficient_box.high < Q("3.845697448"),
+            "The advertised quadratic area enclosure changed.")
+    print("The selected passage is negative (St jump -1); 3.845697440 < K < 3.845697448 in A=K*(M-M*)^2+O(|M-M*|^3).", flush=True)
+    return {"triple_sign": -1, "coefficient": compact_interval(coefficient_box),
+            "normal_determinants": [compact_interval(x) for x in determinants],
+            "normalized_unfolding": compact_interval(-total)}
+
+
 def certify():
     quarters = tuple(int(t / (pi / 2)) for t in HINT)
     center = tuple(Q(str(tan((t - q * pi / 2) / 2))) for q, t in zip(quarters, HINT))
@@ -245,6 +284,7 @@ def main():
     args = parser.parse_args()
     record = certify()
     record["viewer_window"] = viewer_window(record)
+    record["area_law"] = area_coefficient(record)
     if args.write:
         here = Path(__file__).resolve().parent
         (here / "parallel_offset_triple.json").write_text(json.dumps({
@@ -255,7 +295,9 @@ def main():
         data = {"times": [q * pi / 2 + 2 * atan(float(Q(s)))
                           for q, s in zip(record["quarters"], record["center"])],
                 "offset": midpoint(record["offset"]),
-                "point": [midpoint(bounds) for bounds in record["point"]]}
+                "point": [midpoint(bounds) for bounds in record["point"]],
+                "areaCoefficient": midpoint(record["area_law"]["coefficient"]),
+                "tripleSign": record["area_law"]["triple_sign"]}
         (here / "parallel_offset_data.js").write_text(
             "'use strict';\n\n// Rounded illustration coordinates from python3 experiments/parallel_offset_triple.py --write.\n"
             + "// The rational event certificate is parallel_offset_triple.json; this is not a census.\n"
