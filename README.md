@@ -10,12 +10,12 @@ See the [controller README](https://github.com/mmilanta/aldebaran-controller#rea
 
 ## The sketchbook
 
-[Follow a line](experiments/index.html) is an illustrated map of all thirteen
+[Follow a line](experiments/index.html) is an illustrated map of all fourteen
 studies, grouped into four threads: drawing, direction, pockets, and crossings.
 It works without JavaScript, and every study links back to it. Start with a
 picture, or try [Two lobes](experiments/two_lobes.html) for a gentle first
 crossing. A [standalone illustrated sheet](experiments/studies.svg) gathers
-all thirteen previews and keeps working links when saved. Regenerate the sheet
+all fourteen previews and keeps working links when saved. Regenerate the sheet
 and its small SVG previews with `node experiments/study_covers.js`;
 they use the existing numerical geometry
 and need no external packages. They are illustrations, separate from the
@@ -388,7 +388,10 @@ original points apart. A [construction and offset argument](experiments/positive
 then gives a regular positive-curvature plane route **without direct
 self-tangencies**. The [offset follow-up](experiments/parallel_offset.md)
 counts **66 inverse touches** on a generic version, with none in its
-middle section; its triple passages remain unclassified. Nothing animates, and a
+middle section. A [radial-word follow-up](experiments/radial_word.md) counts
+722 middle triple passages and bounds the full route by at least 936,
+when the common offset is sufficiently large; no numerical threshold
+for that event conclusion is supplied. Nothing animates, and a
 [standalone SVG](experiments/positive_front.svg) works without scripts.
 
 ```sh
@@ -425,3 +428,44 @@ The first command repeats complete front and plane censuses; its
 `--saved` mode assumes the archived front cover. The event program's
 completeness uses that analytic count; it repeats the local root and
 third-branch proofs. Add `--write` to save those freshly proved boxes.
+
+[Three visits, one circle](experiments/parallel_offset.html) follows one
+selected ordinary triple on the 11 / 6 outward leg. Three original
+visits lie on a tangent circle; offsetting by its radius brings them
+to the center. A fixed equal-scale lens shows the small triangle before,
+at, and after the meeting. A rational whole-orbit cover excludes every
+other branch from the viewing square throughout the slider interval;
+four-variable interval narrowing proves exactly one triple and no touch
+inside that complete window. This classifies the local square, not all
+events elsewhere on the curve. Nothing animates, and a
+[standalone SVG](experiments/parallel_offset_triptych.svg) works without scripts.
+
+```sh
+python3 experiments/parallel_offset_triple.py --write
+node experiments/parallel_offset_check.js
+node experiments/parallel_offset_stills.js
+```
+
+The [radial-word note](experiments/radial_word.md) derives the far-out
+strangeness values **−87 and −101** from the certified positive front
+words, with both integer and planar-face formulations. Thus the two
+outward legs continued sufficiently far need at least **102 and 112
+triple passages**. Uniform convergence in both angle and route parameter
+transfers exactly **722** middle events, **354 positive and 368 negative**,
+to the sufficiently distant plane movie. The complete constructed route
+therefore has at least **936 triples**, with net signed change −4, as
+well as its 66 inverse touches. Its offset-leg triple counts remain open;
+no numerical offset threshold for triple stabilization is asserted.
+
+```sh
+python3 experiments/radial_word.py
+python3 experiments/radial_word.py --write
+python3 experiments/radial_word.py --saved
+```
+
+The default repeats complete rational front covers, geometric word
+extraction, original plane proofs, both invariant formulations, and all
+6,367 movie moves. `--saved` assumes the archived geometric front words;
+it still repeats the original plane proofs and cannot write a new record.
+All new calculations and generators need only standard runtimes, and
+the website still has no external dependencies.

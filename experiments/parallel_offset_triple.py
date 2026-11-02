@@ -1,13 +1,17 @@
 """One selected three-visit meeting on the 11/6 outward offset leg.
 
-This is a selected local certificate with a whole-orbit fourth-branch
-exclusion, not an event census. Circumcenters reduce the search to three
-rational circle parameters. See the closing 2026-11-01 journal note.
+Circumcenters certify a selected event in three rational circle parameters.
+A separate four-variable enclosure classifies the viewer's entire room
+throughout its offset controls: exactly one triple and no touch. This is
+not an event census elsewhere on the curve. See parallel_offset.md.
 """
 
+import argparse
 from fractions import Fraction as Q
 from itertools import permutations
-from math import pi, tan
+import json
+from math import atan, pi, tan
+from pathlib import Path
 
 from blend_cusps import Interval as I, require
 from normal_front import dot
@@ -48,7 +52,123 @@ def equations(quarters, parameters):
     return F, J, center, radii, velocities
 
 
-def main():
+def offset_equations(quarters, parameters, offset):
+    """Equal shifted points and the four-variable circle-chart Jacobian."""
+    points, normals, velocities = [], [], []
+    for quarter, s in zip(quarters, parameters):
+        p = evaluate(quarter, s, Q(0))
+        v = evaluate(quarter, s, Q(0), 1)
+        a = evaluate(quarter, s, Q(0), 2)
+
+        def square(x):
+            low = Q(0) if x.low <= 0 <= x.high else min(x.low ** 2, x.high ** 2)
+            return I(low, max(x.low ** 2, x.high ** 2))
+
+        speed = sqrt_interval(sum((square(x) for x in v), I.wrap(0)))
+        normal = (-v[1] / speed, v[0] / speed)
+        curvature = cross(v, a) / (speed * speed * speed)
+        factor = I.wrap(2) / (1 + s * s)
+        points.append(tuple(x - offset * n for x, n in zip(p, normal)))
+        normals.append(normal)
+        velocities.append(tuple((1 + offset * curvature) * x * factor for x in v))
+    F, J = [], []
+    for other in (1, 2):
+        for axis in range(2):
+            F.append(points[0][axis] - points[other][axis])
+            J.append([velocities[0][axis],
+                      -velocities[1][axis] if other == 1 else I.wrap(0),
+                      -velocities[2][axis] if other == 2 else I.wrap(0),
+                      normals[other][axis] - normals[0][axis]])
+    return F, J
+
+
+def viewer_window(record):
+    """Exactly one triple and no touch inside the viewer's entire fixed room.
+
+    First exclude all but three monotone slots from the full room and M
+    interval. Then narrow every possible four-variable zero from the FULL
+    slot product by an exact mean-value enclosure. The last enclosure has
+    a contraction derivative. This proves uniqueness throughout the room,
+    not just in the tiny existence box. No numerical root search is used.
+    """
+    quarters = record["quarters"]
+    centers = list(map(Q, record["center"]))
+    offset = I(*map(Q, record["offset"]))
+    width = Q(3, 20)
+    window = {**record,
+              "offset": compact_interval(offset + I(-width, width)),
+              "point": [compact_interval(I(*map(Q, b)) + I(-1, 1)) for b in record["point"]]}
+    isolation = isolate_contact(window, 6)
+    slots = isolation["slots"]
+    require(all(Q(s["low"]) == c - Q(1, 1000) and Q(s["high"]) == c + Q(1, 1000)
+                for c, s in zip(centers, slots)), "The full viewer slots changed.")
+    origin = centers + [offset.midpoint()]
+    offset_window = I(*map(Q, window["offset"]))
+    domains = [I(Q(s["low"]) - c, Q(s["high"]) - c) for s, c in zip(slots, centers)]
+    domains.append(offset_window - origin[3])
+    F0, J0 = offset_equations(quarters, tuple(I.wrap(c) for c in centers), I.wrap(origin[3]))
+    R = inverse([[entry.midpoint() for entry in row] for row in J0])
+    # Any exact rational preconditioner works; outward dyadics keep its
+    # entries compact. This rounding is not an interval inverse assertion.
+    R = [[I(*map(Q, compact_interval(I.wrap(x)))).midpoint() for x in row] for row in R]
+    residual = [-sum(R[i][k] * F0[k] for k in range(4)) for i in range(4)]
+    rounds = 0
+    while True:
+        # The mean-value segment runs from the FIXED origin to each possible
+        # zero. A narrowed box can cease to contain that origin, so evaluate
+        # derivatives on their convex hull, not just on the narrowed box.
+        hull = [I(min(Q(0), d.low), max(Q(0), d.high)) for d in domains]
+        parameters = tuple(I(c + d.low, c + d.high) for c, d in zip(centers, hull[:3]))
+        _, J = offset_equations(quarters, parameters, origin[3] + hull[3])
+        E = [[Q(i == j) - sum(R[i][k] * J[k][j] for k in range(4)) for j in range(4)] for i in range(4)]
+        norm = max(sum(max(abs(x.low), abs(x.high)) for x in row) for row in E)
+        if norm < Q(1, 1000):
+            break
+        require(rounds < 16, "The complete viewer product did not narrow to a contraction.")
+        image = [residual[i] + sum(E[i][j] * domains[j] for j in range(4)) for i in range(4)]
+        narrowed = [I(max(x.low, y.low), min(x.high, y.high)) for x, y in zip(domains, image)]
+        require(all(x.low <= x.high for x in narrowed), "The known event was lost while narrowing.")
+        domains = [I(*map(Q, compact_interval(x))) for x in narrowed]
+        rounds += 1
+    # Compare the new shifted-point Jacobian against rational differences.
+    epsilon = Q(1, 10**8)
+    for axis in range(4):
+        plus, minus = origin[:], origin[:]
+        plus[axis] += epsilon
+        minus[axis] -= epsilon
+        fp = offset_equations(quarters, tuple(I.wrap(c) for c in plus[:3]), I.wrap(plus[3]))[0]
+        fm = offset_equations(quarters, tuple(I.wrap(c) for c in minus[:3]), I.wrap(minus[3]))[0]
+        for row in range(4):
+            error = (fp[row] - fm[row]) / (2 * epsilon) - J0[row][axis]
+            require(-Q(1, 10**4) < error.low <= error.high < Q(1, 10**4),
+                    "The shifted-point Jacobian disagrees with exact differences.")
+    # Prove all three tangent pairs stay transverse in the WHOLE slots.
+    velocities = []
+    for quarter, slot in zip(quarters, slots):
+        low, high = Q(slot["low"]), Q(slot["high"])
+        cuts = [low + (high - low) * k / 8 for k in range(9)]
+        velocities.append([evaluate(quarter, I(a, b), Q(0), 1) for a, b in zip(cuts, cuts[1:])])
+    comparisons, signs = 0, []
+    for i in range(3):
+        for j in range(i):
+            sign = cross(velocities[i][0], velocities[j][0]).sign()
+            for a in velocities[i]:
+                for b in velocities[j]:
+                    require(cross(a, b).sign() == sign, "A viewer tangent pair may become parallel.")
+                    comparisons += 1
+            signs.append(sign)
+    result = {"offset": window["offset"], "room": window["point"],
+              "isolation": isolation, "narrowing_rounds": rounds,
+              "unique_root_box": [compact_interval(c + d) for c, d in zip(origin, domains)],
+              "final_norm_upper": compact_interval(I.wrap(norm))[1],
+              "tangent_pair_comparisons": comparisons, "tangent_pair_signs": signs,
+              "jacobian_difference_comparisons": 16}
+    print(f"Viewer room: {isolation['excluded_arcs']} uniform arc exclusions, {rounds} mean-value narrowing rounds, exactly one triple and no touch throughout the controls.", flush=True)
+    print(f"  Sixteen shifted-point Jacobian controls and {comparisons} uniform tangent-pair comparisons passed.", flush=True)
+    return result
+
+
+def certify():
     quarters = tuple(int(t / (pi / 2)) for t in HINT)
     center = tuple(Q(str(tan((t - q * pi / 2) / 2))) for q, t in zip(quarters, HINT))
     radius = Q(1, 10**13)
@@ -104,14 +224,44 @@ def main():
             term *= G[i][j]
         determinant += term
     determinant.sign()
-    isolation = isolate_contact({"quarters": list(quarters), "center": list(map(str, center)),
-                                 "radius": str(radius), "offset": compact_interval(distance),
-                                 "point": [compact_interval(x) for x in location]}, 6)
+    record = {"quarters": list(quarters), "center": list(map(str, center)),
+              "radius": str(radius), "offset": compact_interval(distance),
+              "point": [compact_interval(x) for x in location],
+              "norm_upper": compact_interval(I.wrap(norm))[1],
+              "unfolding_determinant": compact_interval(determinant)}
+    isolation = isolate_contact(record, 6)
+    record["isolation"] = isolation
     print("Nine exact Jacobian difference comparisons passed.")
     print("One unique positive-offset three-visit circle in a chart cube of radius 1e-13; contraction norm < 1e-5.")
     print("10.17121 < M < 10.17123; meeting point in (143.9662,143.9664) x (91.0882,91.0884).")
     print(f"The four-variable unfolding determinant is nonzero; {isolation['excluded_arcs']} rational arcs exclude every fourth branch.")
     print("This is one selected ordinary triple passage, not a complete offset-event census.")
+    return record
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--write", action="store_true", help="save the freshly proved selected event and rounded browser coordinates")
+    args = parser.parse_args()
+    record = certify()
+    record["viewer_window"] = viewer_window(record)
+    if args.write:
+        here = Path(__file__).resolve().parent
+        (here / "parallel_offset_triple.json").write_text(json.dumps({
+            "description": "One selected ordinary positive-offset triple on 11/6, with a rational contraction, nonzero unfolding determinant, and whole-orbit fourth-branch exclusion. Not a census.",
+            "inner": 6, "event": record,
+        }, indent=2) + "\n")
+        midpoint = lambda bounds: float(sum(map(Q, bounds)) / 2)
+        data = {"times": [q * pi / 2 + 2 * atan(float(Q(s)))
+                          for q, s in zip(record["quarters"], record["center"])],
+                "offset": midpoint(record["offset"]),
+                "point": [midpoint(bounds) for bounds in record["point"]]}
+        (here / "parallel_offset_data.js").write_text(
+            "'use strict';\n\n// Rounded illustration coordinates from python3 experiments/parallel_offset_triple.py --write.\n"
+            + "// The rational event certificate is parallel_offset_triple.json; this is not a census.\n"
+            + "const ParallelOffsetData = " + json.dumps(data, separators=(",", ":")) + ";\n"
+            + "if (typeof module !== 'undefined' && module.exports) module.exports = ParallelOffsetData;\n")
+        print("Wrote the selected-event certificate and rounded browser coordinates.")
 
 
 if __name__ == "__main__":

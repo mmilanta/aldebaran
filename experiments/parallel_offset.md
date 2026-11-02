@@ -11,7 +11,14 @@ leg**. Every one creates two crossings. Reversing the second leg turns
 its births into deaths. After an arbitrarily small generic perturbation,
 the complete route therefore has **66 inverse touches and no direct
 touches**. This is a count for this construction, not a minimum.
-Its plane triple passages remain unclassified.
+For a sufficiently distant version of this construction, a
+[radial-word argument](radial_word.md) now counts **722 plane triples
+in the middle** and gives **at least 936 over the complete route**.
+The two offset legs' exact triple counts remain open. No numerical
+offset threshold is supplied for the stronger triple conclusion.
+
+The [interactive circle study](parallel_offset.html) follows one selected
+ordinary triple, with a certificate covering its full viewing window.
 
 ![Each outward offset goes from 40 crossing pairs to 106, by 33 inverse pair-births. Mirror partners can occur at the same offset.](parallel_offset.svg)
 
@@ -213,8 +220,8 @@ contact point, with no third branch. The cover is uniform over its
 small certified M interval, not merely at the rounded event weight.
 
 The ordinary inverse contacts are therefore isolated from every other
-branch. Transverse triple passages elsewhere in the family remain
-unclassified. Small generic perturbations preserve these nondegenerate
+branch. Their covers do not classify transverse triple passages elsewhere
+in the family. Small generic perturbations preserve these nondegenerate
 pair contacts and separate their simultaneous times and any unrelated
 events, while strict regularity and the absence of direct touches remain
 open. The first leg then has 33 ordinary inverse births, the reversed
@@ -251,7 +258,61 @@ really is an ordinary triple passage. Nine rational central-difference
 comparisons audit the circumcenter Jacobian. Run
 `python3 experiments/parallel_offset_triple.py` to repeat the proof.
 This is a selected event, not a complete count or a classification of
-the rest of either offset leg.
+the rest of either offset leg. The [viewer](parallel_offset.html) uses
+rounded coordinates from the [rational event record](parallel_offset_triple.json).
+
+### One triple in the viewer's entire room
+
+The fixed close-up is a square of half-width one, centered on the
+certified meeting. Its offset slider stays within **3/20** of that
+meeting's offset. Enlarge the rational meeting-point and offset intervals
+by those amounts, outward, so they contain the full numerical controls.
+Another whole-orbit cover supplies **445 rational arc exclusions**,
+uniform in both coordinates and the offset. Only the same three
+parameter slots remain, each of rational circle-chart radius **1/1000**.
+Each is strictly monotone in its x coordinate throughout the controls.
+
+The possible events in this room can now be classified completely.
+For three shifted points solve the four equations
+
+```
+G = (q_M(t₀)−q_M(t₁), q_M(t₀)−q_M(t₂)) = 0.
+```
+
+In rational chart variables, its time columns are the appropriate
+`(1+Mκ)q′ · 2/(1+s²)` components. Its last column is `N_other−N₀`.
+Square-root interval bounds make all entries rational enclosures.
+The program checks sixteen entries against exact rational central
+differences as supplementary implementation controls.
+
+Start with the **entire product** of the three admitted slots and the
+full offset interval. Choose one fixed rational center c and a rational
+matrix R approximating its Jacobian inverse. Every zero x must satisfy
+
+```
+x−c ∈ −R G(c) + [I−R DG(X)] (X−c).
+```
+
+Intersect X with this enclosure and round outward to dyadics. Repeat.
+The derivative enclosure always covers the convex hull of X and the
+**fixed center c**, even if a narrowed X ceases to contain c. Without
+that hull, the mean-value step would not be justified.
+
+After **nine** rounds, the derivative norm is below **1/1000**.
+There is at most one zero in that final box, and every zero of the full
+original product lies there. The separate small circle contraction
+already proves that a zero exists. Thus there is exactly **one triple
+in the viewing square over the entire slider interval**. This does not
+assert one triple on the whole curve during that interval.
+
+Finally split each admitted slot into eight cells. All **192** pairwise
+velocity determinant comparisons have strict fixed signs, over all
+three pairs of slots. The positive offset speed factor preserves those
+directions. The slots' monotone coordinates exclude equal-point returns
+within one slot; their pairwise transversality excludes a touch between
+slots. No other branch enters the square. Consequently this complete
+viewing window has **no self-tangency**, in addition to its one ordinary
+triple passage.
 
 ## Reproduce
 
@@ -263,6 +324,9 @@ python3 experiments/parallel_offset.py --saved
 python3 experiments/parallel_offset_events.py
 python3 experiments/parallel_offset_events.py --write
 node experiments/parallel_offset_figure.js
+python3 experiments/parallel_offset_triple.py --write
+node experiments/parallel_offset_check.js
+node experiments/parallel_offset_stills.js
 ```
 
 The default count program repeats both complete rational front covers
@@ -282,3 +346,11 @@ are rejected; two genuine negative-offset roots must reach and fail the
 offset sign test. Another 136 independent evaluator/previous-Jacobian
 checks compare the established implementation against the frozen
 intersection source.
+
+The selected-triple program repeats its small circle proof and the full
+viewer-window proof by default. `--write` stores the rational event and
+window records, plus rounded browser coordinates. The Node check covers
+every slider position and compares the Fourier geometry, offset velocity,
+and curved triangle area with independent formulas or calculations.
+The standalone still generator uses the same numerical geometry as the
+viewer; its paths are illustrations, separate from the rational proofs.

@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101323">
+  <meta name="description" content="Three visits of an orbital curve sit on a tangent circle. Move them outward along their normals and watch a little triangle pass through one triple meeting.">
+  <title>Aldebaran · Three visits, one circle</title>
+  <style>
+    :root { color-scheme: dark; font-family: ui-sans-serif, system-ui, sans-serif; background: #101323; color: #f4f1e8; }
+    * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+    body { margin: 0; }
+    main { max-width: 78rem; padding: clamp(1.2rem, 4vw, 3rem); margin: auto; overflow-wrap: anywhere; }
+    a { color: #e8b66e; text-underline-offset: .2em; }
+    :focus-visible { outline: 3px solid #e8b66e; outline-offset: 5px; }
+    .back { display: inline-block; font-size: .85rem; margin-bottom: 2rem; }
+    .eyebrow { color: #e8b66e; font-size: .75rem; font-weight: 700; letter-spacing: .17em; text-transform: uppercase; }
+    h1 { max-width: 16ch; font-size: clamp(2.4rem, 6vw, 5rem); line-height: 1.05; letter-spacing: -.055em; margin: .8rem 0 1.2rem; }
+    p { max-width: 49rem; color: #c7c7d4; line-height: 1.75; }
+    .intro { font-size: 1.05rem; }
+    .study { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.3rem; }
+    figure { min-width: 0; margin: 0; }
+    .panel { border: 1px solid #383b50; border-radius: 1rem; background: #0b0e1a; overflow: hidden; }
+    svg, .fallback img { display: block; width: 100%; height: auto; }
+    svg text { font-family: ui-sans-serif, system-ui, sans-serif; }
+    figcaption { margin: .7rem 0 0; color: #c7c7d4; font-size: .85rem; line-height: 1.7; }
+    .controls { padding: 1.4rem; margin: 2rem 0 1.2rem; border: 1px solid #383b50; border-radius: 1rem; }
+    label { display: block; font-size: .9rem; font-weight: 650; }
+    input[type=range] { display: block; width: 100%; margin: 1.2rem 0 .8rem; accent-color: #e8b66e; }
+    output { font-variant-numeric: tabular-nums; }
+    .range-value { display: block; font-size: .85rem; color: #c7c7d4; line-height: 1.7; }
+    .actions { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1rem; }
+    button { font: inherit; color: #f4f1e8; background: #20253c; border: 1px solid #73768d; border-radius: .4rem; cursor: pointer; padding: .7rem 1rem; }
+    button:hover { border-color: #e8b66e; }
+    button[aria-pressed=true] { border-color: #e8b66e; box-shadow: inset 0 0 0 1px #e8b66e; }
+    .measurements { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 1.5rem 0 0; border-block: 1px solid #383b50; }
+    .measurements div { min-width: 0; padding: 1.2rem .8rem; }
+    dt { font-size: .8rem; color: #c7c7d4; line-height: 1.6; }
+    dd { font-size: 1.4rem; font-variant-numeric: tabular-nums; margin: .5rem 0 0; }
+    #status { min-height: 3.5em; font-size: .9rem; }
+    details { max-width: 55rem; border-top: 1px solid #383b50; margin-top: 1.5rem; padding-top: 1.2rem; }
+    summary { cursor: pointer; font-weight: 650; line-height: 1.6; }
+    .formula { font-family: ui-monospace, monospace; }
+    footer { margin-top: 3rem; color: #9999ae; font-size: .85rem; line-height: 1.9; }
+    @media (max-width: 800px) { .study { grid-template-columns: minmax(0, 1fr); } }
+    @media (max-width: 470px) { .measurements { grid-template-columns: minmax(0, 1fr); } .measurements div { padding: .8rem; } dd { font-size: 1.3rem; } }
+  </style>
+</head>
+<body>
+  <main>
+    <nav aria-label="Sketchbook navigation"><a class="back" href="index.html">← All studies</a></nav>
+    <header>
+      <div class="eyebrow">Aldebaran · Moving along the normals</div>
+      <h1>Three visits, one circle.</h1>
+      <p class="intro">Three short pieces of the same curve touch one circle. Move every point outward, perpendicular to its direction of travel. After the circle’s radius, its three visits meet at the center. A little triangle changes sides.</p>
+    </header>
+    <div id="explorer" hidden>
+      <div class="controls">
+        <label for="passage">Move through the meeting</label>
+        <input id="passage" type="range" min="-100" max="100" step="1" value="-100" aria-describedby="passage-help">
+        <output id="passage-value" class="range-value" for="passage">Before the meeting</output>
+        <div class="actions" aria-label="Choose a passage position">
+          <button type="button" id="before" aria-pressed="true">Before</button>
+          <button type="button" id="meeting" aria-pressed="false">At the meeting</button>
+          <button type="button" id="after" aria-pressed="false">After</button>
+        </div>
+        <p id="passage-help">The whole drawing moves the same distance along its outward normals. This slider explores a small interval around one selected meeting. Nothing animates.</p>
+      </div>
+      <div class="study">
+        <figure>
+          <div class="panel"><svg viewBox="0 0 600 600" role="img" aria-labelledby="circle-title circle-description">
+            <title id="circle-title">One circle touches three original visits</title>
+            <desc id="circle-description">Gold, blue, and lilac branches of the 11 / 6 curve touch a circle of radius about 10.17122. Dashed radial segments point from the original visits toward its center. Arrows show travel along the curve.</desc>
+            <defs><clipPath id="circle-clip"><rect x="18" y="46" width="564" height="508"/></clipPath></defs>
+            <g id="circle-picture"></g>
+          </svg></div>
+          <figcaption>Three visits of the original 11 / 6 drawing. Each radius is perpendicular to its branch. Moving outward by the radius brings all three marked points to the white center. Travel arrows distinguish their directions.</figcaption>
+        </figure>
+        <figure>
+          <div class="panel"><svg viewBox="0 0 600 600" role="img" aria-labelledby="lens-title lens-description">
+            <title id="lens-title">A triangle changes sides in the offset drawing</title>
+            <desc id="lens-description">Three colored branches enclose a small triangle. Increasing the outward distance makes its three corners meet, then separates them on the other side.</desc>
+            <defs><clipPath id="lens-clip"><rect x="46" y="46" width="508" height="508"/></clipPath></defs>
+            <g id="lens-picture"></g>
+          </svg></div>
+          <figcaption>A fixed close-up, centered on the meeting. The white rings mark pairwise crossings; at the triple, colored rings share one point. Both views use equal horizontal and vertical scales, with different magnifications.</figcaption>
+        </figure>
+      </div>
+      <dl class="measurements" aria-label="Offset measurements">
+        <div><dt>Outward distance · drawing units</dt><dd><output id="offset-value" for="passage">—</output></dd></div>
+        <div><dt>Distance beyond the meeting</dt><dd><output id="difference-value" for="passage">—</output></dd></div>
+        <div><dt>Small triangle area · square units</dt><dd><output id="area-value" for="passage">—</output></dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+    </div>
+    <figure id="fallback" class="fallback">
+      <img src="parallel_offset_triptych.svg" width="1200" height="1420" alt="A circle touches three visits of the 11 / 6 curve. Three equal-scale close-ups show their outward offsets before, at, and after a triple meeting near distance 10.17122. A small triangle changes sides.">
+      <figcaption>One tangent circle and three stills of the selected passage. <a href="parallel_offset_triptych.svg">Open the full-size drawing ↗</a></figcaption>
+    </figure>
+    <details>
+      <summary>Why do three points meet at a circle’s center?</summary>
+      <p>A left normal is the travel direction turned a quarter-turn counterclockwise. The outward offset moves a point in the opposite direction: <span class="formula">q<sub>M</sub> = q − M N</span>, with N the unit left normal. At these three visits, the radii from the circle’s center point along their left normals. Subtracting one radius therefore takes each point to that same center.</p>
+      <p>The curve’s positive curvature keeps its offset velocity nonzero: <span class="formula">q<sub>M</sub>′ = (1 + Mκ) q′</span>. Each visit keeps traveling in its original direction. The three directions differ, so this event is a triple passage. For two branches facing opposite ways, an outward offset can instead create an <a href="touch.html">inverse touch</a>.</p>
+    </details>
+    <details>
+      <summary>What is certified in this close-up?</summary>
+      <p>Rational bounds prove one ordinary triple at an outward distance strictly between 10.17121 and 10.17123. Its three visits are near 3.50%, 15.40%, and 93.52% of the original orbit. The displayed circle, curves, crossings, and area use rounded numerical coordinates.</p>
+      <p>A whole-orbit rational cover excludes every other branch from the fixed viewing square throughout this slider’s interval. An additional four-variable calculation proves exactly one triple and no self-tangency inside the square over that entire interval. This does not classify events elsewhere on the curve or on the rest of its outward journey. <a href="parallel_offset.md#one-selected-offset-triple">Read the circle and window proofs ↗</a>.</p>
+    </details>
+    <details>
+      <summary>How much happens on the way out?</summary>
+      <p>Quite a lot. Each of the 11 / 6 and 11 / 8 drawings starts with forty crossings. Far outward, each has 106 crossing pairs, with exactly 33 inverse pair-births on the way. The <a href="parallel_offset.svg">crossing-count graph</a> follows those births.</p>
+      <p>The order of crossing visits changes too. Its strangeness goes from 15 to −87 for 11 / 6, and from 11 to −101 for 11 / 8. A generic outward journey continued sufficiently far therefore needs at least 102 and 112 triple passages. The selected meeting above is one piece of that longer story; those bounds do not locate or count all its other triples.</p>
+      <p>The earlier <a href="positive_front.html">front-move construction</a>, taken at a sufficiently large common offset, has exactly 722 triples in its middle and at least 936 along its full route. This argument supplies no numerical offset threshold for that event conclusion. <a href="radial_word.md">Follow the radial-word calculation ↗</a>.</p>
+    </details>
+    <footer>Aldebaran · A little triangle on a long way around.<br><a href="index.html">All studies ↗</a> · <a href="positive_front.html">A knot, one move at a time ↗</a> · <a href="parallel_offset_triptych.svg" download>Save the still drawing ↓</a> · <a href="../JOURNAL.md">Notebook ↗</a></footer>
+  </main>
+  <script src="weave_math.js"></script>
+  <script src="parallel_offset_data.js"></script>
+  <script src="parallel_offset_math.js"></script>
+  <script src="parallel_offset_view.js"></script>
+  <script src="parallel_offset.js"></script>
+</body>
+</html>

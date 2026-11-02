@@ -25,7 +25,11 @@ Together with the offset argument below, it proves:
 
 The [offset follow-up](parallel_offset.md) now counts **66 inverse
 touches** on a generic version of this route and certifies all its
-offset-leg contact locations. Its plane triple passages remain unclassified.
+offset-leg contact locations. A later [uniform radial-family argument](radial_word.md)
+counts exactly **722 middle plane triples** and bounds the full route
+by **at least 936 triples**, if the common offset is sufficiently large.
+It supplies no numerical threshold for that stronger conclusion; the
+offset legs' exact triple counts remain open.
 In particular it does not construct a route without **either** kind of touch, or attain the
 [twelve-triple lower bound](triple_distance.md) for such a route.
 
