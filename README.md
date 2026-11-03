@@ -10,12 +10,12 @@ See the [controller README](https://github.com/mmilanta/aldebaran-controller#rea
 
 ## The sketchbook
 
-[Follow a line](experiments/index.html) is an illustrated map of all fourteen
+[Follow a line](experiments/index.html) is an illustrated map of all fifteen
 studies, grouped into four threads: drawing, direction, pockets, and crossings.
 It works without JavaScript, and every study links back to it. Start with a
 picture, or try [Two lobes](experiments/two_lobes.html) for a gentle first
 crossing. A [standalone illustrated sheet](experiments/studies.svg) gathers
-all fourteen previews and keeps working links when saved. Regenerate the sheet
+all fifteen previews and keeps working links when saved. Regenerate the sheet
 and its small SVG previews with `node experiments/study_covers.js`;
 they use the existing numerical geometry
 and need no external packages. They are illustrations, separate from the
@@ -389,9 +389,9 @@ then gives a regular positive-curvature plane route **without direct
 self-tangencies**. The [offset follow-up](experiments/parallel_offset.md)
 counts **66 inverse touches** on a generic version, with none in its
 middle section. A [radial-word follow-up](experiments/radial_word.md) counts
-722 middle triple passages. Together with two
-[selected fourfolds](experiments/offset_fourfold.md), it bounds the full
-route by at least 944,
+722 middle triple passages. Together with the
+[selected positive passages](experiments/offset_positive.md), it bounds the full
+route by at least 992,
 when the common offset is sufficiently large; no numerical threshold
 for that event conclusion is supplied. Nothing animates, and a
 [standalone SVG](experiments/positive_front.svg) works without scripts.
@@ -492,9 +492,35 @@ node experiments/offset_fourfold_check.js
 node experiments/offset_fourfold_figure.js
 ```
 
+A [positive-passage follow-up](experiments/offset_positive.md) certifies
+eight selected fourfolds and five reflected ordinary-triple pairs.
+They force **18 positive passages on 11 / 6 and 10 on 11 / 8**, including
+a fourfold whose four signs all agree. The signed changes then force
+at least **138 and 132 outward triples**, and **992 over the sufficiently
+distant complete route**: at least 494 positive and 498 negative.
+The [standalone diagram](experiments/offset_positive.svg) explains the
+circle and signed balance. Exact leg counts remain open.
+
+[Four signs agree](experiments/four_visits.html), the fifteenth study,
+follows the four positive triples of the selected fourfold's first-order
+line model. Choose a meeting and move through it; a thin triangle changes
+sides while a unit-normal circle explains the common sign. Nothing animates.
+A [standalone SVG](experiments/four_visits.svg) preserves all four passages
+without scripts. These are rescaled straight local branches; no numerical
+orbital perturbation size is asserted.
+
+```sh
+python3 experiments/offset_positive.py --write
+node experiments/offset_fourfold_check.js experiments/offset_positive.json
+node experiments/offset_positive_check.js
+node experiments/offset_positive_figure.js
+node experiments/four_visits_check.js
+node experiments/four_visits_figure.js
+```
+
 A [global tail exclusion](experiments/parallel_offset.md#a-finite-bound-on-the-infinite-offset-end)
 rules out all endpoint offset triples and higher meetings for every
-M ≥ 2,700,000,000, using a rational cover of expanded conormal-front
+M ≥ 27,000,000, using a rational cover of expanded conormal-front
 triple products. Run `python3 experiments/offset_tail.py`. This closes
 the infinite end with a coarse bound; the finite interval and the
 middle family's event-stability threshold remain separate questions.

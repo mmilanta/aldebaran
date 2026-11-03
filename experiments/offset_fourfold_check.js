@@ -3,7 +3,9 @@
 // Numerical checks of the explicit small generic resolutions. The rational
 // certificates and the implicit-function argument are separate.
 const assert = require('node:assert/strict');
-const Orbit = require('./weave_math.js'), Data = require('./offset_fourfold.json');
+const Orbit = require('./weave_math.js');
+const Data = process.argv[2] ? JSON.parse(require('node:fs').readFileSync(process.argv[2], 'utf8')) : require('./offset_fourfold.json');
+const events = Data.events || Data.endpoints.flatMap(endpoint => endpoint.fourfolds);
 const rational = s => { const [a, b = '1'] = s.split('/'); return Number(a) / Number(b); };
 const middle = pair => pair.map(rational).reduce((a, b) => a + b) / 2;
 const cross = (a, b) => a[0] * b[1] - a[1] * b[0];
@@ -36,7 +38,7 @@ function solve(matrix, vector) {
   return out;
 }
 
-for (const event of Data.events) {
+for (const event of events) {
   const times = event.root_box.map((bounds, i) => event.quarters[i] * Math.PI / 2 + 2 * Math.atan(middle(bounds)));
   const offset = middle(event.offset), point = event.point.map(middle);
   times.forEach(t => check(Math.hypot(...jet(t, event.inner, offset).point.map((x, i) => x - point[i])) < 1e-6));

@@ -21,6 +21,7 @@ const Front = require('./normal_front_math.js');
 const PositiveFront = require('./positive_front_math.js');
 const PositiveFrontData = require('./positive_front_data.js');
 const Offset = require('./parallel_offset_math.js');
+const FourVisits = require('./four_visits_math.js');
 
 const blue = '#9fc7eb', gold = '#e8b66e', white = '#f4f1e8', muted = '#555b78';
 const cycle = 2 * Math.PI;
@@ -78,7 +79,7 @@ function write(name, title, description, body) {
 
 function sheet() {
   const destinations = ['../index.html', 'loop.html', 'winding.html', 'two_lobes.html',
-    'blend.html', 'arm_detour.html', 'phase.html', 'cubic.html', 'strangeness.html', 'weave.html', 'touch.html', 'normal_front.html', 'positive_front.html', 'parallel_offset.html'];
+    'blend.html', 'arm_detour.html', 'phase.html', 'cubic.html', 'strangeness.html', 'weave.html', 'touch.html', 'normal_front.html', 'positive_front.html', 'parallel_offset.html', 'four_visits.html'];
   const height = 242 + 332 * Math.ceil(covers.length / 3);
   const root = 'https://mmilanta.github.io/aldebaran/experiments/';
   const escape = s => s.replaceAll('&', '&amp;').replaceAll('<', '&lt;');
@@ -96,17 +97,17 @@ function sheet() {
       else lines[last] = (lines[last] + ' ' + word).trim();
     }
     return `<a class="card" href="${href}" aria-label="Study ${name}: ${escape(heading)}">` +
-      `<rect class="frame" x="${x}" y="${y}" width="360" height="305" rx="10" fill="#141829" stroke="#383b50"/>` +
+      `<rect class="frame" x="${x}" y="${y}" width="360" height="315" rx="10" fill="#141829" stroke="#383b50"/>` +
       `<svg x="${x + 1}" y="${y + 1}" width="358" height="224" viewBox="0 0 640 400" overflow="hidden" aria-hidden="true">${illustration}</svg>` +
       `<text x="${x + 18}" y="${y + 250}" fill="#b9b9cc" font-size="12" letter-spacing="1.5">STUDY ${name}</text>` +
-      lines.map((line, j) => `<text x="${x + 18}" y="${y + 276 + j * 21}" fill="${white}" font-size="19" font-weight="600">${escape(line)}</text>`).join('') + '</a>';
+      lines.map((line, j) => `<text x="${x + 18}" y="${y + 276 + j * 24}" fill="${white}" font-size="19" font-weight="600">${escape(line)}</text>`).join('') + '</a>';
   });
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="${height}" viewBox="0 0 1200 ${height}" role="group" aria-labelledby="title description">\n` +
-    '<title id="title">Follow a line: fourteen studies</title>\n' +
-    '<desc id="description">An illustrated sheet of Aldebaran’s fourteen studies, in reading order. Each picture links to its study. The small previews use numerical geometry; some graphs use different axes or scales.</desc>\n' +
+    '<title id="title">Follow a line: fifteen studies</title>\n' +
+    '<desc id="description">An illustrated sheet of Aldebaran’s fifteen studies, in reading order. Each picture links to its study. The small previews use numerical geometry; some graphs use different axes or scales.</desc>\n' +
     '<style>text{font-family:ui-sans-serif,system-ui,sans-serif}.card:focus .frame{stroke:#e8b66e;stroke-width:3}.card:hover .frame{stroke:#9999ae}</style>\n' +
     `<rect width="1200" height="${height}" fill="#101323"/>\n` +
-    `<text x="45" y="53" fill="${gold}" font-size="13" letter-spacing="3">ALDEBARAN · FOURTEEN STUDIES</text>` +
+    `<text x="45" y="53" fill="${gold}" font-size="13" letter-spacing="3">ALDEBARAN · FIFTEEN STUDIES</text>` +
     `<text x="45" y="112" fill="${white}" font-size="55" font-weight="650" letter-spacing="-2">Follow a line.</text>` +
     '<text x="45" y="143" fill="#c7c7d4" font-size="18">Circles, crossings, and the small spaces between. Choose a picture to explore.</text>\n' +
     pieces.join('\n') +
@@ -255,6 +256,24 @@ function main() {
     fill(local(offsetTriangle.points), gold) + offset.times.map((t, i) =>
       line(local(Offset.sample(t - .001, t + .001, 240, offset.offset)), [gold, blue, '#d1b6ea'][i], 2.7)).join('') +
     offsetTriangle.crossings.map(c => dot(local([c.point])[0], white, 4)).join(''));
+
+  write('015', 'Four signs agree',
+    'Before and after one of four positive triple passages in a first-order line model. Three bright lines enclose a thin triangle. The fourth line is faint and dashed. Each panel uses equal coordinate scales.',
+    [-85, 85].map((progress, column) => {
+      const state = FourVisits.state(0, progress), { event } = state;
+      const project = p => [165 + 310 * column + 125 * (p[0] - event.center[0]) / event.halfSize,
+        200 - 125 * (p[1] - event.center[1]) / event.halfSize];
+      const clip = `preview-four-${column}`;
+      return `<defs><clipPath id="${clip}"><rect x="${25 + 310 * column}" y="35" width="280" height="330"/></clipPath></defs><g clip-path="url(#${clip})">` +
+        fill(state.crossings.map(c => project(c.point)), gold) + FourVisits.normals.map((normal, i) => {
+          const tangent = [normal[1], -normal[0]], distance = FourVisits.shifts[i] - state.weight - FourVisits.dot(normal, event.center);
+          const center = event.center.map((v, k) => v + distance * normal[k]);
+          const ends = [-4, 4].map(side => project(center.map((v, k) => v + side * event.halfSize * tangent[k])));
+          const selected = event.indices.includes(i);
+          return line(ends, [gold, blue, '#d1b6ea', '#a7d9bb'][i], selected ? 2.5 : 1.2,
+            selected ? '' : 'opacity=".3" stroke-dasharray="4 5"');
+        }).join('') + state.crossings.map(c => dot(project(c.point), white, 3)).join('') + '</g>';
+    }).join(''));
 
   sheet();
   console.log(`Wrote ${covers.length} study covers and their standalone sheet; the negative-count probe has smooth-curve clearance.`);

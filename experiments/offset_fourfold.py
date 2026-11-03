@@ -56,13 +56,25 @@ def determinant(matrix):
     return total
 
 
-def certify(inner):
-    hints = HINTS[inner]
+def certify(inner, hints=None, expected_signs=(-1, -1, 1, 1), radius=Q(1, 10**12), refinement_steps=0):
+    require(type(inner) is int and inner in (6, 8), "Choose inner rhythm 6 or 8.")
+    hints = HINTS[inner] if hints is None else hints
+    require(len(hints) == 2 and 0 < hints[0] < hints[1] < pi,
+            "Order two distinct upper-half visits.")
     quarters = [int(t / (pi / 2)) for t in hints]
     centers = [Q(str(tan((t - q * pi / 2) / 2))) for q, t in zip(quarters, hints)]
-    radius = Q(1, 10**12)
+    require(type(radius) is Q and radius > 0, "Use a positive rational chart radius.")
+    require(type(refinement_steps) is int and 0 <= refinement_steps <= 4,
+            "Use zero to four untrusted center refinements.")
+    for _ in range(refinement_steps):
+        F, J = equations(quarters, [I.wrap(c) for c in centers], inner)
+        R = inverse([[x.midpoint() for x in row] for row in J])
+        centers = [I(*map(Q, compact_interval(I.wrap(c - sum(R[i][k] * F[k].midpoint()
+                           for k in range(2)))))).midpoint() for i, c in enumerate(centers)]
     box = [I(c - radius, c + radius) for c in centers]
-    require(all(0 < s.low < s.high < 1 for s in box) and quarters == [0, 1], "The two visits left their distinct upper-half charts.")
+    require(all(0 < s.low < s.high < 1 for s in box)
+            and (quarters[0] < quarters[1] or quarters[0] == quarters[1] and box[0].high < box[1].low),
+            "The upper-half visit boxes must be disjoint and in orbit order.")
     F0, J0 = equations(quarters, [I.wrap(c) for c in centers], inner)
     _, J = equations(quarters, box, inner)
     R = inverse([[x.midpoint() for x in row] for row in J0])
@@ -86,7 +98,9 @@ def certify(inner):
     full_box = [I(c - full_radius, c + full_radius) for c in full_centers]
     require(all(a.low < b.low <= b.high < a.high for a, b in zip(full_box[2:], reflected)),
             "Reflected root intervals left the four-visit boxes.")
-    require(full_quarters == [0, 1, 2, 3], "The four visits are not separately ordered.")
+    require(all(q < r or q == r and a.high < b.low
+                for q, r, a, b in zip(full_quarters, full_quarters[1:], full_box, full_box[1:])),
+            "The four visit boxes must be disjoint and in orbit order.")
     root_box = [I(*map(Q, compact_interval(x))) for x in half_root + reflected]
     record = {"inner": inner, "quarters": full_quarters,
               "center": list(map(str, full_centers)), "radius": str(full_radius),
@@ -117,7 +131,8 @@ def certify(inner):
         triples.append({"visits": list(indices), "strangeness_jump": sign,
                         "normalized_unfolding": compact_interval(H),
                         "first_order_weight": compact_interval(weight)})
-    require(sorted(t["strangeness_jump"] for t in triples) == [-1, -1, 1, 1], "The selected fourfold's sign inventory changed.")
+    signs = sorted(t["strangeness_jump"] for t in triples)
+    require(signs == sorted(expected_signs), "The selected fourfold's sign inventory changed.")
     ordered = sorted(range(4), key=lambda i: Q(triples[i]["first_order_weight"][0]))
     require(all(Q(triples[a]["first_order_weight"][1]) < Q(triples[b]["first_order_weight"][0])
                 for a, b in zip(ordered, ordered[1:])), "The explicit perturbation did not separate all four weights.")
@@ -126,7 +141,7 @@ def certify(inner):
     record["perturbed_order"] = ordered
     record["isolation"] = isolate_contact(record, inner)
     # Independent exact differences of the two-variable rational equations.
-    epsilon = Q(1, 10**10)
+    epsilon = Q(1, 10**13)
     for axis in range(2):
         plus, minus = centers[:], centers[:]
         plus[axis] += epsilon
@@ -137,7 +152,7 @@ def certify(inner):
             error = (fp[row] - fm[row]) / (2 * epsilon) - J0[row][axis]
             require(-Q(1, 1000) < error.low <= error.high < Q(1, 1000), "The axis-circle Jacobian disagrees with exact differences.")
     print(f"11/{inner}: one certified four-visit axis circle, M in {decimal_enclosure(offset, 12)}; no fifth branch ({record['isolation']['excluded_arcs']} arc exclusions).", flush=True)
-    print(f"  Normal shifts {shifts} separate four ordinary triples, two positive and two negative; perturbed order {ordered}.", flush=True)
+    print(f"  Normal shifts {shifts} separate four ordinary triples, {signs.count(1)} positive and {signs.count(-1)} negative; perturbed order {ordered}.", flush=True)
     return record
 
 

@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101323">
+  <meta name="description" content="A fourfold separates into four positive triple passages. Explore its straight local model and read the signs on a circle of normals.">
+  <title>Aldebaran · Four signs agree</title>
+  <style>
+    :root { color-scheme: dark; font-family: ui-sans-serif, system-ui, sans-serif; background: #101323; color: #f4f1e8; }
+    * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+    body { margin: 0; }
+    main { max-width: 75rem; padding: clamp(1.2rem, 4vw, 3rem); margin: auto; overflow-wrap: anywhere; }
+    a { color: #e8b66e; }
+    .back { display: inline-block; margin-bottom: 2rem; font-size: .85rem; }
+    .eyebrow { color: #e8b66e; font-size: .75rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
+    h1 { font-size: clamp(2rem, 6vw, 5rem); line-height: 1.05; letter-spacing: -.06em; margin: .8rem 0 1rem; overflow-wrap: anywhere; }
+    p { max-width: 51rem; color: #c7c7d4; line-height: 1.7; }
+    .controls { max-width: 55rem; margin: 2rem 0 1.5rem; }
+    .stops { display: flex; flex-wrap: wrap; gap: .5rem; margin: .7rem 0 1.2rem; }
+    button { font: inherit; color: inherit; font-size: .9rem; padding: .65rem .85rem; background: #22263b; border: 1px solid #555b78; border-radius: .5rem; cursor: pointer; }
+    button:hover { background: #333a55; }
+    button[aria-pressed="true"] { border-color: #e8b66e; background: #3c322c; }
+    :focus-visible { outline: 3px solid #e8b66e; outline-offset: 4px; }
+    .slider-label { display: flex; flex-wrap: wrap; gap: .5rem 1rem; justify-content: space-between; }
+    output { color: #e8b66e; font-variant-numeric: tabular-nums; }
+    input[type="range"] { display: block; width: 100%; min-height: 2.5rem; margin: .3rem 0 .8rem; accent-color: #e8b66e; }
+    .hint { font-size: .85rem; }
+    #status { min-height: 3.4em; font-size: .95rem; }
+    .readouts { display: flex; flex-wrap: wrap; gap: .5rem 2rem; margin-bottom: 1.5rem; }
+    .readouts p { margin: 0; font-size: .9rem; }
+    .readouts output { font-size: 1.25rem; }
+    .diagrams { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 1.5rem; align-items: start; }
+    figure { min-width: 0; margin: 0; }
+    .panel { background: #0b0e1a; border: 1px solid #383b50; border-radius: 1rem; overflow: hidden; }
+    svg, .fallback img { display: block; width: 100%; height: auto; }
+    svg text { font-family: ui-sans-serif, system-ui, sans-serif; }
+    figcaption { color: #9999ae; font-size: .85rem; line-height: 1.7; margin: .6rem 0 0; }
+    .legend { display: flex; flex-wrap: wrap; gap: .4rem 1.5rem; font-size: .85rem; color: #c7c7d4; margin: .7rem 0; }
+    .legend span { display: inline-flex; align-items: center; gap: .5rem; }
+    .swatch { width: 1.5rem; border-top: 3px solid var(--ink); }
+    details { color: #c7c7d4; line-height: 1.7; margin-top: 1.5rem; }
+    summary { color: #e8b66e; cursor: pointer; }
+    .formula { color: #f4f1e8; overflow-wrap: anywhere; }
+    footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #383b50; color: #9999ae; font-size: .85rem; line-height: 1.7; }
+    @media (max-width: 700px) { .diagrams { grid-template-columns: minmax(0, 1fr); } svg text { font-size: 25px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <a class="back" href="parallel_offset.html">← Three visits, one circle</a>
+    <div class="eyebrow">Study 015 · Reading signs on a circle</div>
+    <h1>Four signs agree</h1>
+    <p>Four visits of a drawing can meet at one point. Break the symmetry a little, and their four possible triples meet one at a time. At this fourfold, <em>all four passages have positive sign</em>. Each adds one to the drawing’s strangeness.</p>
+    <p>Follow the <strong>first-order local model</strong> of a certified meeting on rhythms 11 / 6, near outward distance 284.56257. Its straight lines describe the leading change after small normal shifts. The orbital branches have higher-order corrections.</p>
+    <div id="explorer" hidden>
+      <div class="controls">
+        <p class="hint" id="meeting-hint">Choose three of the four visits, in the order their meetings occur:</p>
+        <div class="stops" role="group" aria-label="Triple meeting to explore">
+          <button type="button" data-meeting="0" aria-pressed="true">Visits 1 · 3 · 4</button>
+          <button type="button" data-meeting="1" aria-pressed="false">Visits 2 · 3 · 4</button>
+          <button type="button" data-meeting="2" aria-pressed="false">Visits 1 · 2 · 3</button>
+          <button type="button" data-meeting="3" aria-pressed="false">Visits 1 · 2 · 4</button>
+        </div>
+        <label class="slider-label" for="passage"><span>Move through this meeting</span><output id="weight" for="passage">d = −93.88450</output></label>
+        <input id="passage" type="range" min="-100" max="100" step="1" value="-70" aria-describedby="passage-hint">
+        <p class="hint" id="passage-hint">Left is before; zero is the triple; right is after. Each close-up keeps the same scale on both sides of its meeting.</p>
+        <div class="stops" role="group" aria-label="Positions around the selected triple">
+          <button type="button" data-progress="-70" aria-pressed="true">Before</button>
+          <button type="button" data-progress="0" aria-pressed="false">At the triple</button>
+          <button type="button" data-progress="70" aria-pressed="false">After</button>
+        </div>
+        <p id="status" role="status">Before visits 1, 3, and 4 meet. A small triangle closes as the slider approaches zero.</p>
+      </div>
+      <div class="readouts" role="group" aria-label="Local model measurements">
+        <p>Passage sign <output id="sign">+1</output></p>
+        <p>Triangle area <output id="area" for="passage">0</output> model square units</p>
+      </div>
+      <div class="diagrams">
+        <figure>
+          <div class="panel"><svg id="model" viewBox="0 0 600 600" role="img" aria-labelledby="model-title model-description">
+            <title id="model-title">A triple in the first-order lines</title>
+            <desc id="model-description">Three selected lines bound a thin triangle. It closes at the triple and reopens on the other side.</desc>
+            <defs><clipPath id="four-window-clip"><rect x="57" y="57" width="486" height="486"/></clipPath></defs>
+            <g id="model-drawing"/>
+          </svg></div>
+          <div class="legend" aria-label="Visit colors">
+            <span><i class="swatch" style="--ink:#e8b66e" aria-hidden="true"></i>1</span>
+            <span><i class="swatch" style="--ink:#9fc7eb" aria-hidden="true"></i>2</span>
+            <span><i class="swatch" style="--ink:#d1b6ea" aria-hidden="true"></i>3</span>
+            <span><i class="swatch" style="--ink:#a7d9bb" aria-hidden="true"></i>4</span>
+          </div>
+          <figcaption>The chosen lines are bright; the fourth is faint and dashed. White dots mark their three crossings. Arrows follow travel. The triangle is genuinely thin: both axes have the same scale. Its area vanishes quadratically at the meeting.</figcaption>
+        </figure>
+        <figure>
+          <div class="panel"><svg id="directions" viewBox="0 0 600 600" role="img" aria-labelledby="directions-title directions-description">
+            <title id="directions-title">The sign is visible on the normal circle</title>
+            <desc id="directions-description">The four unit normals occur counterclockwise in order 1, 4, 3, 2. Each triple is clockwise in orbit order and has positive passage sign.</desc>
+            <g id="directions-drawing"/>
+          </svg></div>
+          <figcaption>A left normal is the direction of travel turned a quarter-turn counterclockwise. Read the highlighted triangle in orbit order. Its clockwise orientation gives a positive passage. Every three-visit choice has that same orientation here.</figcaption>
+        </figure>
+      </div>
+    </div>
+    <figure id="fallback" class="fallback">
+      <img src="four_visits.svg" width="1200" height="1650" alt="Four rows show before, at, and after views of the four first-order triple passages. In every row a thin triangle changes sides and the passage sign is positive.">
+      <figcaption>All four passages in the straight local model. <a href="four_visits.svg">Open the full-size drawing ↗</a></figcaption>
+    </figure>
+    <details>
+      <summary>Why are all four signs positive?</summary>
+      <p>The visits run around their original tangent circle in order 1, 4, 3, 2 counterclockwise. Read in orbit order, any three therefore go clockwise. The passage sign is minus the orientation of that triangle of normals, so each sign is positive.</p>
+      <p>Among the six possible cyclic orders of four distinct normals, one gives four positives, one gives four negatives, and the other four give two of each. The earlier <a href="offset_fourfold.svg">two-circle illustration</a> shows the cancelling case. <a href="offset_positive.md#a-fourfold-whose-four-signs-agree">Follow the sign calculation ↗</a>.</p>
+    </details>
+    <details>
+      <summary>What do these straight lines describe?</summary>
+      <p>Near each visit, shift its support distance by ε times 0, 1, 3, or 7. Measure the extra outward distance as εd and the displacement from the old meeting as εZ. The leading branch equation is <span class="formula">Nᵢ · Z + d = aᵢ</span>. The controls vary d; these model coordinates are rescaled.</p>
+      <p>Rational certificates prove four distinct positive orbital triples for sufficiently small positive ε, with first-order weights near −88.05677, −54.75546, 20.31006, and 53.61137. The viewer uses rounded normals and solves its straight-line model directly. It supplies no numerical allowed ε and does not simulate the orbital branches at a finite perturbation size. <a href="offset_positive.md">Read the proof and its scope ↗</a>.</p>
+    </details>
+    <details>
+      <summary>A few positive steps force a longer journey</summary>
+      <p>Eight selected fourfolds and five ordinary reflected pairs force at least 18 positive passages on the 11 / 6 outward leg and 10 on 11 / 8. Their net strangeness changes are −102 and −112, so at least 120 and 122 negative passages must occur too.</p>
+      <p>Together with the sufficiently distant middle and the reversed second leg, the specified route needs at least 992 triples. Exact leg counts remain open, and no numerical common-offset threshold is supplied for the middle-event theorem. The <a href="offset_positive.svg">signed-balance diagram</a> follows those counts.</p>
+    </details>
+    <footer>Aldebaran · Four choices, one sign.<br><a href="index.html">All studies ↗</a> · <a href="parallel_offset.html">Three visits, one circle ↗</a> · <a href="four_visits.svg" download>Save the still drawing ↓</a> · <a href="../JOURNAL.md">Notebook ↗</a></footer>
+  </main>
+  <script src="four_visits_data.js"></script>
+  <script src="four_visits_math.js"></script>
+  <script src="four_visits_view.js"></script>
+  <script src="four_visits.js"></script>
+</body>
+</html>

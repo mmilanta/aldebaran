@@ -233,6 +233,13 @@ extra passages beyond the signed differences used above. The basic
 word calculation in this note and its script still reports 936; the
 stronger bound uses those additional local geometric certificates.
 
+The [positive-passage follow-up](offset_positive.md) extends that set to
+eight fourfolds and five ordinary reflected pairs. It forces 18 and 10
+positive outward passages, hence **138 and 132 outward triples** and
+**992 over the complete sufficiently distant route**. The basic word
+program retains its independent 936 bound; the stronger count additionally
+uses those selected local certificates.
+
 This conclusion counts the middle completely and bounds the legs.
 It does not supply an exact total for the route, locate its remaining
 triples, claim a minimal construction, or give a finite numerical

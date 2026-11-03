@@ -1,6 +1,6 @@
-"""Exclude all endpoint offset triples at M >= 2,700,000,000.
+"""Exclude all endpoint offset triples at M >= 27,000,000.
 
-Expand the L1 conormal front by epsilon=1e-6 in scaled coordinates.
+Expand the L1 conormal front by epsilon=1e-4 in scaled coordinates.
 Every offset triple in that tail would give three expanded front boxes
 with a common point. A complete rational product cover excludes them.
 The short-arc exclusion uses positive curvature and less than pi tangent
@@ -16,7 +16,7 @@ from blend_cusps import Interval as I, require
 from normal_front_census import (ACCELERATION, MIN_SPEED, FrontCensus,
                                  controls, disjoint)
 
-EPSILON = Q(1, 10**6)
+EPSILON = Q(1, 10**4)
 THRESHOLD = 2700 / EPSILON
 
 
@@ -70,7 +70,7 @@ def prove(inner):
 
 if __name__ == "__main__":
     controls()
-    require(THRESHOLD == 2_700_000_000, "The advertised tail threshold changed.")
+    require(THRESHOLD == 27_000_000, "The advertised tail threshold changed.")
     for inner in (6, 8):
         prove(inner)
-    print("Both endpoint outward offsets have no triple or higher meeting for every M >= 2700000000. This is a coarse global tail exclusion, not a census below that bound.")
+    print("Both endpoint outward offsets have no triple or higher meeting for every M >= 27000000. This is a coarse global tail exclusion, not a census below that bound.")

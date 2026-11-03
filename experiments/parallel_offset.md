@@ -14,8 +14,8 @@ touches**. This is a count for this construction, not a minimum.
 For a sufficiently distant version of this construction, a
 [radial-word argument](radial_word.md) now counts **722 plane triples
 in the middle** and gives **at least 936 over the complete route**.
-A [selected fourfold follow-up](offset_fourfold.md) raises the latter
-bound to **944** by finding cancelling triple pairs on both offset legs.
+A [selected positive-passage follow-up](offset_positive.md) raises the latter
+bound to **992** by forcing 18 and 10 positive passages on the outward legs.
 The two offset legs' exact triple counts remain open. No numerical
 offset threshold is supplied for the stronger triple conclusion.
 
@@ -368,7 +368,7 @@ finite-distance numerical checks do not certify a remainder bound.
 ## A finite bound on the infinite-offset end
 
 For both original endpoints, **no triple or higher meeting occurs at
-any M ≥ 2,700,000,000**. This very coarse bound closes the infinite end
+any M ≥ 27,000,000**. This very coarse bound closes the infinite end
 of a future event census; it does not classify the finite interval below
 it, or supply a threshold for the constructed middle family.
 
@@ -384,10 +384,10 @@ hᵢ−hⱼ = M |Nᵢ−Nⱼ|²/2 + qⱼ·(Nᵢ−Nⱼ),
 Normalize each unit normal instead by its L1 length L=|Nₓ|+|Nᵧ|.
 Use `G=(Nₓ/L, Nᵧ/L, h/(900L))`. The inequalities L≥1 and
 `|Lᵢ−Lⱼ|≤2|Nᵢ−Nⱼ|` give a componentwise bound
-`|Gᵢ−Gⱼ|∞≤2700/M`. At the stated threshold this is at most **10⁻⁶**.
+`|Gᵢ−Gⱼ|∞≤2700/M`. At the stated threshold this is at most **10⁻⁴**.
 
-Expand every rational endpoint front-arc box by 10⁻⁶ in its two L1
-normal coordinates and by 900×10⁻⁶ in its unscaled height. Any three
+Expand every rational endpoint front-arc box by 10⁻⁴ in its two L1
+normal coordinates and by 900×10⁻⁴ in its unscaled height. Any three
 visits meeting at such an offset would give three expanded boxes with
 a common point. Integer bucket membership enumerates every overlapping
 pair, and every triangle in that pair graph enumerates a possible
@@ -402,9 +402,10 @@ in one strict open half-plane, so its endpoints cannot coincide. The
 normal rate bound `21345/775` certifies these short-arc exclusions.
 Using the earlier full-turn bitangent exclusion here would be invalid.
 
-The complete rational covers have **12,173 and 11,612 candidate triple
-products**, excluded by **74,142 and 79,142 leaves**, with maximum
-additional depths **16 and 19**. No archived root or numerical hint
+The complete rational covers have **12,373 and 11,827 candidate triple
+products**, excluded by **77,251 and 87,448 leaves**, with maximum
+additional depths **17 and 24**. These larger expansion boxes improve
+the earlier 2,700,000,000 threshold by a factor of 100. No archived root or numerical hint
 enters this calculation. A higher meeting would contain a triple and
 is excluded too. Run `python3 experiments/offset_tail.py`; it uses
 only the standard library.

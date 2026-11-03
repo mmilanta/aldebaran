@@ -28,9 +28,10 @@ def solve(A, b):
             (A[0][0] * b[1] - b[0] * A[1][0]) / determinant)
 
 
-def equations(quarters, parameters):
+def equations(quarters, parameters, inner=6):
+    require(type(inner) is int and inner in (6, 8), "Choose inner rhythm 6 or 8.")
     points, velocities, accelerations = [
-        [evaluate(q, s, Q(0), order) for q, s in zip(quarters, parameters)]
+        [evaluate(q, s, Q(inner - 6, 2), order) for q, s in zip(quarters, parameters)]
         for order in range(3)
     ]
     A = [tuple(2 * (x - y) for x, y in zip(points[k], points[0])) for k in (1, 2)]

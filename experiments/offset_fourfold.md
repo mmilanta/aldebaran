@@ -23,6 +23,10 @@ These are **two selected higher meetings**, with local resolution proofs.
 Their existence does not classify the other events or give exact total
 triple counts on either outward leg.
 
+The [positive-passage follow-up](offset_positive.md) certifies six further
+fourfolds and five ordinary reflected pairs, raising the complete-route
+lower bound to **992**. One of the new fourfolds has four positive signs.
+
 ![Two four-visit tangent circles and the four separated first-order triple weights after small local normal shifts. Each resolution has two positive and two negative triples.](offset_fourfold.svg)
 
 The circles use equal scales within each panel. The right-hand rows use
