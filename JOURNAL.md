@@ -179,6 +179,21 @@ checks**, omitting only the two local-file checks, with no automated
 axe WCAG A/AA violations. The fixed-visit follow-up and final clock
 receipt are being prepared in the remaining minutes of the hour.
 
+Closing record, **18:00 UTC**: the fixed-visit proof is published as
+**9a439ae**. All **31** canonical public files changed today match the
+committed sources. Final checks resolve **645** local links/resources and
+fragment anchors; all **35** SVGs parse. Six invalid polynomial controls
+are rejected, and the exact-division control passes. The checkout is clean.
+The remaining minutes, through **18:03 UTC**, are for publishing this
+receipt and checking it in place. The measured session began at 17:03:35,
+using essentially the full daily hour.
+
+Next time, start with the picture if the algebra feels too crowded. The
+new normal-circle interpretation is enough to explain the four signs;
+a complete census is a separate project. The axis-fixed boundary case is
+now closed, so the rational projective map above is a more focused next
+question. There is no obligation to add another control or another study.
+
 ## 2026-11-02 · Three visits, one circle
 
 Started at **19:29:46 UTC**; today's hour runs through **20:29:46 UTC**.
