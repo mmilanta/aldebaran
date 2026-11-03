@@ -154,6 +154,31 @@ exploratory polynomials and candidate lists stay outside the repository;
 the formulas above are enough to rebuild the experiment. Off-axis ordinary
 triples still require a different global argument.
 
+By **17:55 UTC**, one useful axis boundary case has a complete proof:
+**the starting and halfway visits both stay alone for every outward M≥0**.
+The [small new verifier](experiments/offset_axis_visits.py) uses no hints
+or saved roots. At the starting point, the radius-M tangent circle lies
+entirely beyond the supporting line x=450, so it admits no other visit.
+At the halfway point, its center must be X=−320−M. The polynomial
+`D−640A−102400V`, after exact removal of `(c+1)²`, has degree **25 or 27**.
+Complete Sturm isolation gives **nine interior roots for each endpoint**;
+five require inward offsets and four put the center on the wrong side.
+Exact coprimality of Y and V excludes denominator poles, and **80**
+independent rational Fourier/polynomial comparisons audit the formulas.
+
+Thus the unperturbed symmetric families have **no ordinary triple on
+their mirror axis**: without a fixed visit, every axis visit has a
+distinct reflected partner, so all multiple axis meetings have even
+branch counts. Fourfolds and higher even meetings remain possible.
+The [new derivation](experiments/parallel_offset.md#two-fixed-visits-stay-alone)
+keeps this global axis statement distinct from the open off-axis census.
+
+The main work was published as **723c2f1**. All **30** changed canonical
+public files matched the commit. Each engine passed **5,044 live-site
+checks**, omitting only the two local-file checks, with no automated
+axe WCAG A/AA violations. The fixed-visit follow-up and final clock
+receipt are being prepared in the remaining minutes of the hour.
+
 ## 2026-11-02 · Three visits, one circle
 
 Started at **19:29:46 UTC**; today's hour runs through **20:29:46 UTC**.

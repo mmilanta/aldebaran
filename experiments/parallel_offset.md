@@ -365,6 +365,71 @@ with its integration. Decreasing |δ| from 0.05 to 0.00003 brings both
 ratios monotonically toward K in the implementation checks. These
 finite-distance numerical checks do not certify a remainder bound.
 
+## Two fixed visits stay alone
+
+There is no **ordinary triple on the mirror axis** of either unperturbed
+outward-offset family, for any M≥0. This does not exclude the selected
+[axis fourfolds](offset_positive.md). The two visits fixed by reflection,
+t=0 and t=π, each stay alone throughout the entire outward leg.
+
+At t=0 the original point is (450,0), its left normal is (−1,0), and
+its outward offset is (450+M,0). Every original point has x≤450, with
+equality only at t=0: equality in the sum of three positive cosine terms
+requires cos t=1. The circle of radius M centered at (450+M,0) therefore
+cannot contain any other original point. No other offset visit can reach
+that center. This also handles M=0.
+
+At t=π the original point is (−320,0), its left normal is (1,0), and
+its outward offset is (−320−M,0). For a possible second visit in (0,π),
+put c=cos t and write, using Chebyshev polynomials,
+
+```
+x = 245c + 140 T₁₁(c) + 65 Tₙ(c),
+Y = 245 + 140 U₁₀(c) − 65 Uₙ₋₁(c),
+V = 245 + 1540 U₁₀(c) + 65n Uₙ₋₁(c),
+w = 245c + 1540 T₁₁(c) − 65n Tₙ(c).
+```
+
+Then y=sin(t)Y, vₓ=−sin(t)V, and vᵧ=w. Exact polynomial Euclidean
+division proves Y and V coprime for n=6 and n=8. Thus a nonfixed visit
+with vₓ=0 cannot reach the axis: its y would also have to vanish.
+
+When vₓ≠0 the earlier axis-circle equations give
+
+```
+L=−Y/V,       X=A/V,
+A=xV−Yw,     R=x²+(1−c²)Y²,     D=RV−2xA,
+M²−X²=D/V.
+```
+
+A meeting with the halfway visit requires M=−X−320≥0. Squaring this
+necessary condition gives the polynomial equation
+
+```
+P(c)=D(c)−640A(c)−102400V(c)=0.
+```
+
+Exact division removes `(c+1)²`, the identical halfway visit. The
+remaining polynomials have degrees **25 and 27**. Complete Sturm
+isolation on (−1,1) finds **nine roots each**. On their 70-bit dyadic
+enclosures, five have L<0, requiring an inward offset; the other four
+have X>−320, on the wrong side of the halfway point. These strict
+inequalities exclude every candidate, including at M=0. Reflection
+covers the lower-half visits. The two fixed offset points themselves
+are distinct for every M≥0.
+
+Run `python3 experiments/offset_axis_visits.py`. It uses only the standard
+library, with no numerical hints or saved root boxes. Eight rational
+circle-chart controls per endpoint compare the four polynomial
+coordinates and the eliminated circle equation with independent Fourier
+jets: **80 exact comparisons in all**.
+
+Every remaining axis visit is paired with its distinct reflection.
+Consequently each multiple meeting on the axis has an even number of
+visits. Ordinary three-visit axis events are excluded globally; fourfolds
+and higher even meetings still need classification. This conclusion
+concerns the mirror-symmetric families before their generic perturbation.
+
 ## A finite bound on the infinite-offset end
 
 For both original endpoints, **no triple or higher meeting occurs at

@@ -524,3 +524,10 @@ M ≥ 27,000,000, using a rational cover of expanded conormal-front
 triple products. Run `python3 experiments/offset_tail.py`. This closes
 the infinite end with a coarse bound; the finite interval and the
 middle family's event-stability threshold remain separate questions.
+
+A [fixed-visit exclusion](experiments/parallel_offset.md#two-fixed-visits-stay-alone)
+also proves that the starting and halfway visits stay alone for **every
+outward M≥0**. Reflection then rules out ordinary triples on the axis
+of either unperturbed family, while allowing fourfolds. Run
+`python3 experiments/offset_axis_visits.py`: a supporting-line argument
+and complete Sturm isolation prove this global axis statement.
