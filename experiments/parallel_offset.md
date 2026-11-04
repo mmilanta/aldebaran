@@ -454,7 +454,8 @@ hᵢ−hⱼ = M |Nᵢ−Nⱼ|²/2 + qⱼ·(Nᵢ−Nⱼ),
 Normalize each unit normal instead by its L1 length L=|Nₓ|+|Nᵧ|.
 Use `G=(Nₓ/L, Nᵧ/L, h/(900L))`. The inequalities L≥1 and
 `|Lᵢ−Lⱼ|≤2|Nᵢ−Nⱼ|` give a componentwise bound
-`|Gᵢ−Gⱼ|∞≤2700/M`. At the stated threshold this is at most **10⁻⁴**.
+`|Gᵢ−Gⱼ|∞≤2700/M`. At the older front-only threshold
+**M≥27,000,000**, this is at most **10⁻⁴**.
 
 Expand every rational endpoint front-arc box by 10⁻⁴ in its two L1
 normal coordinates and by 900×10⁻⁴ in its unscaled height. Any three
