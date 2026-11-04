@@ -1,0 +1,35 @@
+{
+  "scope": "Complete endpoint exclusion of every triple or higher meeting for all M>=270000. No finite-interval event count or middle-family threshold.",
+  "threshold": "270000",
+  "front_expansion": "1/100",
+  "endpoints": [
+    {
+      "inner": 6,
+      "pairs": 15476,
+      "triple_products": 37162,
+      "cover": {
+        "max_depth": 7,
+        "radius_bound": 33900,
+        "mixed_minor": 2944,
+        "normal_concurrency": 2445,
+        "circle_minor": 1368,
+        "bisections": 5067,
+        "front_exclusion": 1572
+      }
+    },
+    {
+      "inner": 8,
+      "pairs": 16525,
+      "triple_products": 43544,
+      "cover": {
+        "max_depth": 9,
+        "radius_bound": 40600,
+        "normal_concurrency": 7039,
+        "mixed_minor": 10822,
+        "bisections": 22496,
+        "front_exclusion": 7471,
+        "circle_minor": 108
+      }
+    }
+  ]
+}

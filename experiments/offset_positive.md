@@ -252,9 +252,12 @@ embedded conormal lift persist too. No direct touch is introduced.
 More cancelling pairs could raise these lower bounds. The local proofs
 do not establish that the selected positives are all the positives.
 The [global tail exclusion](parallel_offset.md#a-finite-bound-on-the-infinite-offset-end)
-now rules out endpoint triples for M≥27,000,000; the finite interval
-below it still needs a complete event classification. This endpoint tail
-result does not bound the middle family's event-stability threshold.
+now rules out endpoint triples for **M≥270,000**. A
+[circle-equation refinement](parallel_offset.md#a-smaller-tail-from-tangent-circle-equations)
+improves the original 27,000,000 front-only bound by 100. The finite
+interval below it still needs a complete off-axis classification. This
+endpoint tail result does not bound the middle family's event-stability
+threshold.
 
 ## Reproduce
 

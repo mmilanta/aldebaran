@@ -520,10 +520,14 @@ node experiments/four_visits_figure.js
 
 A [global tail exclusion](experiments/parallel_offset.md#a-finite-bound-on-the-infinite-offset-end)
 rules out all endpoint offset triples and higher meetings for every
-M ≥ 27,000,000, using a rational cover of expanded conormal-front
-triple products. Run `python3 experiments/offset_tail.py`. This closes
-the infinite end with a coarse bound; the finite interval and the
-middle family's event-stability threshold remain separate questions.
+**M ≥ 270,000**, using a rational cover of expanded conormal-front
+triple products, homogeneous tangent-circle equations, and circumradius
+bounds. Run `python3 experiments/offset_circle_tail.py`; independent
+controls run with `python3 experiments/offset_circle_tail_check.py`.
+The older front-only argument in `offset_tail.py` proves the looser
+27,000,000 bound. This closes the infinite end with a coarse bound;
+the finite interval and the middle family's event-stability threshold
+remain separate questions.
 
 A [fixed-visit exclusion](experiments/parallel_offset.md#two-fixed-visits-stay-alone)
 also proves that the starting and halfway visits stay alone for **every

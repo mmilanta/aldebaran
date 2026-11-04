@@ -115,6 +115,96 @@ the mounted home directory's owner. These are headless checks, not
 physical-device or screen-reader tests. Temporary browser tools,
 screenshots, and prototypes remain outside the repository.
 
+The main result was published as **408baa2**. All **12** changed public
+files matched the committed sources, and the same 82 Chromium/WebKit
+checks passed against the published study and atlas. Pages spent several
+minutes queued before its successful build; that was publication latency,
+not a source mismatch.
+
+At **18:02 UTC**, the remaining half-hour has also produced a useful
+[global tail refinement](experiments/parallel_offset.md#a-smaller-tail-from-tangent-circle-equations):
+**neither endpoint can have a triple or higher meeting at any M≥270,000**.
+This improves the earlier 27-million bound by **100**, while leaving the
+finite off-axis census and the middle-family threshold open.
+
+The new ingredient is a five-row rank condition. Three tangent rows
+`(vₓ,vᵧ,q·v)` and two circle-difference rows
+`(2Δx,2Δy,Δ|q|²)` must all annihilate `(Pₓ,Pᵧ,−1)` at a tangent-circle
+center P. All ten 3×3 minors must vanish. Strict interval minor signs
+exclude products without any division, including collinear and repeated
+point cases. If the two chord rows instead have a nonsingular first-two-
+column matrix, their interval circumcenter gives a radius upper bound.
+A bound below 270,000 excludes the whole tail product even without
+assuming tangency. This last test does most of the work.
+
+The [fresh verifier](experiments/offset_circle_tail.py) expands the
+original front boxes by **1/100**. Its complete initial covers have
+**37,162 and 43,544 triple products**, with **5,067 and 22,496 bisections**,
+and maximum added depths **7 and 9**. The exclusion totals are:
+
+| Endpoint | Front boxes | Small circumradius | Normal concurrency | Two-chord minor | Mixed minor |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| 11 / 6 | 1,572 | 33,900 | 2,445 | 1,368 | 2,944 |
+| 11 / 8 | 7,471 | 40,600 | 7,039 | 108 | 10,822 |
+
+Terminal leaves again equal initial products plus bisections. The short-
+arc exclusion is the earlier strict less-than-π velocity argument,
+uniform in outward M. Taylor position/velocity boxes use exact rational
+Fourier midpoints and acceleration bound 21,345, then round outward to
+80-bit dyadics before taking minors. This rounding made the new exact
+arithmetic comfortably small. The complete canonical proof took
+**155.15s**, with no archived roots or event counts read.
+
+The [6,360 controls](experiments/offset_circle_tail_check.py) include
+all 512 vertex determinants of each of twelve interval matrices,
+a genuine radius-five tangent circle retained above threshold four,
+that same circle correctly excluded above six, a limiting line left
+unresolved, collinear and repeated-point obstructions, exact Fourier
+checks of the Taylor boxes, and all **32** triple subsets of the eight
+earlier certified orbital circles retained above threshold one. Invalid
+and incomplete depth-zero covers reject. A vanishing rank condition is
+never mistaken for a finite-circle existence proof.
+
+For the next visit: **the complete higher-axis question is closed**.
+Do not rebuild the degree-440/522 resultants for that purpose. Remaining
+endpoint triples lie off the axis and in **0≤M<270,000**, after resolving
+the twenty known axis neighborhoods. The five homogeneous rows may help
+build a finite-interval census: they avoid circumcenter poles, with local
+circle contractions still available near genuine roots. The initial
+front-product filter only applies to the tail; a small-M global cover
+would need another completeness argument. The numerical totals 138 and
+132 remain suggestions for exact leg counts, not a theorem. There is no
+obligation to add another control or study; the twenty-circle picture
+could also be a good place to stop doing arithmetic for a day.
+
+A more specific possible finite-interval filter appeared during the
+closing review. Represent a circle by `(Pₓ,Pᵧ,C)`, where
+`C=|P|²−M²`. At one original visit q with velocity v, its outward
+tangent circles trace a **straight line**:
+
+```
+b(q) + L d(q,v),    L≥0,
+b=(x,y,|q|²),
+d=(vᵧ,−vₓ,2 det(q,v)),    M=L|v|.
+```
+
+Two visits can share a tangent circle only if
+`det(dᵢ,dⱼ,bⱼ−bᵢ)=0`. This suggests an exact **pair** filter before
+forming three-arc products, even at small M where the expanded-front
+filter becomes too broad. A complete pair graph's triangles would cover
+all possible three-visit circles, with the five-row tests and local
+contractions still needed afterward. Parallel lines and limiting circles
+must be retained unless separately excluded; pairwise coplanarity alone
+does not prove three-line concurrency. Checked **288 exact identities**
+for the circle coefficients, tangency, and circle equation at rational
+Fourier controls. This is an algebraic identity and a proposed search
+strategy, **not a finite-interval completeness certificate**. No partial
+global counts or numerical root lists were promoted into repository data.
+
+At **18:07 UTC**, the circle-tail record has regenerated byte for byte
+in a second full proof, taking **148.26s**. The new theorem and its
+documentation are ready for the final publication checks.
+
 ## 2026-11-03 · Four signs agree
 
 Started at **17:03:35 UTC**. The working hour runs into the closing

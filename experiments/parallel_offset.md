@@ -436,9 +436,11 @@ generic perturbation. The complete off-axis census remains open.
 ## A finite bound on the infinite-offset end
 
 For both original endpoints, **no triple or higher meeting occurs at
-any M ≥ 27,000,000**. This very coarse bound closes the infinite end
-of a future event census; it does not classify the finite interval below
-it, or supply a threshold for the constructed middle family.
+any M ≥ 270,000**. A first expanded-front proof gives the looser
+27,000,000 bound below; the [tangent-circle refinement](#a-smaller-tail-from-tangent-circle-equations)
+improves it by 100. This coarse bound closes the infinite end of a
+future event census; it does not classify the finite interval below it,
+or supply a threshold for the constructed middle family.
 
 Here is a quantitative link to the conormal front. At an equal offset
 point, `qᵢ−qⱼ=M(Nᵢ−Nⱼ)`. Since every original point has norm at most
@@ -477,6 +479,90 @@ the earlier 2,700,000,000 threshold by a factor of 100. No archived root or nume
 enters this calculation. A higher meeting would contain a triple and
 is excluded too. Run `python3 experiments/offset_tail.py`; it uses
 only the standard library.
+
+### A smaller tail from tangent-circle equations
+
+The [circle-tail verifier](offset_circle_tail.py) proves the stronger
+**M≥270,000** exclusion, still without numerical hints or archived roots.
+It uses expansion **ε=1/100** and T=2700/ε=270,000 in the same complete
+front-product cover. Larger expanded boxes alone do not suffice; the
+original curve's tangent-circle equations give further exclusions.
+
+At a common offset point P, three original visits qᵢ lie on a circle
+of radius M centered at P, with `(qᵢ−P)·vᵢ=0`. Construct five rows:
+
+```
+rᵢ = (vᵢₓ, vᵢᵧ, qᵢ·vᵢ),                   i=0,1,2,
+cⱼ = (2(qⱼ−q₀)ₓ, 2(qⱼ−q₀)ᵧ, |qⱼ|²−|q₀|²), j=1,2.
+```
+
+Every row is orthogonal to the same nonzero vector `(Pₓ,Pᵧ,−1)`.
+Therefore **all ten 3×3 minors must vanish**. A strict interval sign
+of any minor excludes every tangent circle in that product. The first
+minor tests concurrency of the three normals; three use both chord
+rows and one tangent, and six use one chord and two tangents.
+
+These are denominator-free exclusions. Collinear or coincident point
+boxes do not require a circumcenter division. Vanishing minors alone
+are never treated as existence: they can also describe a limiting line
+at infinity. An unresolved product must subdivide or reject the proof.
+
+If the two chord rows have a strictly nonsingular first-two-column
+matrix, interval Cramer formulas bound the unique circumcenter of any
+three points in the product. If the squared-distance upper bound from
+that center to q₀ is **less than T²**, no circle in this product can have
+radius M≥T. This test needs no tangency assumption. It supplies most of
+the successful exclusions.
+
+The position and velocity boxes use exact rational Fourier values at
+the chart midpoint. For chart width r, the time displacement δ satisfies
+|δ|≤r, because `|dt/ds|≤2`. With A=21,345,
+
+```
+q(t₀+δ) ∈ q(t₀)+v(t₀)[−r,r]+[−Ar²/2,Ar²/2]²,
+v(t₀+δ) ∈ v(t₀)+[−Ar,Ar]².
+```
+
+Round these boxes **outward** to 80-bit dyadics before testing minors.
+This keeps the exact rational arithmetic small. The rounding enlarges
+the boxes; it never assumes that a floating-point center is accurate.
+
+The two complete covers give:
+
+| Endpoint | Expanded pair products | Initial triple products | Bisections | Front exclusions | Radius exclusions | Normal-concurrency exclusions | Two-chord minors | Mixed minors | Maximum added depth |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| 11 / 6 | 15,476 | 37,162 | 5,067 | 1,572 | 33,900 | 2,445 | 1,368 | 2,944 | 7 |
+| 11 / 8 | 16,525 | 43,544 | 22,496 | 7,471 | 40,600 | 7,039 | 108 | 10,822 | 9 |
+
+Each row's exclusion leaves equal initial triple products plus bisections.
+Both closed children are always covered. The inherited short-arc exclusion
+uses the same positive-curvature and strict less-than-π velocity argument
+as the front-only proof. Thus every possible triple at M≥T enters this
+cover and is excluded. Every higher meeting contains a triple and is
+excluded too.
+
+The [small record](offset_circle_tail.json) stores the freshly proved
+threshold and cover totals. The [6,360 independent controls](offset_circle_tail_check.py)
+compare interval determinants against all vertex determinants of twelve
+matrices; preserve a genuine rational tangent circle, a limiting line,
+and all 32 triple subsets of the earlier eight certified orbital circles;
+exercise the collinear and repeated-point obstructions; compare Taylor
+boxes with independent exact Fourier jets; and reject malformed inputs
+and incomplete depth-zero covers.
+The orbital-circle controls use the old archive only as test cases;
+the fresh tail proof never reads it.
+
+Run:
+
+```sh
+python3 experiments/offset_circle_tail_check.py
+python3 experiments/offset_circle_tail.py
+python3 experiments/offset_circle_tail.py --write
+```
+
+This bound concerns only the two endpoint outward legs. It gives no
+middle-family event-stability threshold and no exact off-axis count in
+the finite interval 0≤M<270,000.
 
 ## Reproduce
 
