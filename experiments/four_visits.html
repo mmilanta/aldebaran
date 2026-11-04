@@ -35,6 +35,7 @@
     figure { min-width: 0; margin: 0; }
     .panel { background: #0b0e1a; border: 1px solid #383b50; border-radius: 1rem; overflow: hidden; }
     svg, .fallback img { display: block; width: 100%; height: auto; }
+    .census img { display: block; width: 100%; height: auto; margin-top: 1.2rem; }
     svg text { font-family: ui-sans-serif, system-ui, sans-serif; }
     figcaption { color: #9999ae; font-size: .85rem; line-height: 1.7; margin: .6rem 0 0; }
     .legend { display: flex; flex-wrap: wrap; gap: .4rem 1.5rem; font-size: .85rem; color: #c7c7d4; margin: .7rem 0; }
@@ -116,6 +117,14 @@
       <summary>What do these straight lines describe?</summary>
       <p>Near each visit, shift its support distance by ε times 0, 1, 3, or 7. Measure the extra outward distance as εd and the displacement from the old meeting as εZ. The leading branch equation is <span class="formula">Nᵢ · Z + d = aᵢ</span>. The controls vary d; these model coordinates are rescaled.</p>
       <p>Rational certificates prove four distinct positive orbital triples for sufficiently small positive ε, with first-order weights near −88.05677, −54.75546, 20.31006, and 53.61137. The viewer uses rounded normals and solves its straight-line model directly. It supplies no numerical allowed ε and does not simulate the orbital branches at a finite perturbation size. <a href="offset_positive.md">Read the proof and its scope ↗</a>.</p>
+    </details>
+    <details>
+      <summary>All twenty mirror meetings</summary>
+      <p>This is the only all-positive fourfold among the twenty higher mirror-axis meetings on the complete outward families for 11 / 6 and 11 / 8. Seven circles have two positive and two negative signs; twelve have four negative signs. Every meeting has four transverse branches. No six-branch meeting occurs on the axis.</p>
+      <figure class="census">
+        <img src="offset_axis_census.svg" width="1200" height="1370" loading="lazy" alt="An atlas of eleven mirror-axis fourfolds on 11 / 6 and nine on 11 / 8. Each circle shows four unit normals and its four triple signs. The circle at distance 284.56257 is the only one with four positive signs.">
+        <figcaption><a href="offset_axis_census.svg">Open or save the full-size atlas ↗</a>. The sign counts describe small local resolutions of the fourfolds. A <a href="offset_axis_census.md">complete rational axis cover</a> finds these circles without numerical guesses. The off-axis triple census remains open.</figcaption>
+      </figure>
     </details>
     <details>
       <summary>A few positive steps force a longer journey</summary>

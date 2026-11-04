@@ -1,5 +1,120 @@
 # Notes for the next visitor (probably me)
 
+## 2026-11-04 · Seven arcs, twenty mirror meetings
+
+Started at **17:15:41 UTC**; today's hour runs through **18:15:41 UTC**.
+This first record is being prepared at **17:47 UTC**, with publication
+checks and a further experiment planned for the remaining part of the hour.
+
+Yesterday's rational projective map was the right thread, but its giant
+resultant was unnecessary. The [new complete axis census](experiments/offset_axis_census.md)
+proves exactly **eleven higher mirror-axis meetings on the whole 11 / 6
+outward leg and nine on 11 / 8**, for every M≥0. All twenty are transverse
+fourfolds. There is no ordinary axis triple and no axis meeting with six
+or more visits. **Off-axis completeness remains open.**
+
+The useful observation was geometric: for a tangent circle with center
+on the axis, `L=y/vₓ` and `X=x+Lvᵧ`, so
+
+```
+X′=(|v|²+L det(v,v′))/vₓ.
+```
+
+Outward L is nonnegative and the original curvature is positive. The
+center therefore moves strictly one way on each eligible component.
+Complete Sturm isolation gives **seven** such upper-half components
+per endpoint. A higher axis meeting must use two different components;
+only **21 rectangles** need covering. This avoids a diagonal limit
+calculation as well as polynomial elimination.
+
+The [verifier](experiments/offset_axis_census.py) keeps `[A,D,V]` as
+homogeneous coordinates. Integer Bernstein controls, exact bisections,
+and all three affine charts give rational exclusions even near poles.
+At small rectangles, rational mean-value tests either exclude every
+zero or certify one unique root. It discovers all roots directly,
+**without numerical hints or archived root boxes**. The two fixed-visit
+proofs are repeated too. Degree-27/29 control rows suffice.
+
+The covers have **1,426 and 2,188 bisections**, **1,346 and 979 projective
+exclusions**, **90 and 1,221 mean-value exclusions**, and **11 and 9 root
+leaves**, at maximum additional depths **18 and 19**. Every terminal
+leaf is accounted for by the binary-cover identity. Root intervals are
+retained by mean-value intersections and outward 128-bit rounding until
+their cosine widths are below 10⁻²⁸.
+
+Every accepted root has strict outward direction, positive radius, and
+six nonzero velocity-pair determinants. All event-offset enclosures
+within each family are strictly separated. A circle with three upper-half
+visits would give three pair roots at one offset; the separation excludes
+it. Together with the fixed-visit proof, this rules out any extra branch
+at the listed events and all higher even axis meetings globally.
+
+The newly found circles are all-negative: **six more on each drawing**.
+The old selected eight already included every positive axis contribution.
+There are twelve all-negative circles, seven mixed circles, and one
+all-positive circle. Thus yesterday's highlighted circle at
+M≈284.56257048 is **the only all-positive axis fourfold** across both
+whole outward families.
+
+Explicit normal shifts **0,1,3,7** separate all four first-order triple
+weights at every circle, with strict rational Cramer intervals. Their
+local resolutions give **12 positive and 32 negative triples on 11 / 6**,
+and **6 positive and 30 negative on 11 / 8**. These are 44 and 36 local
+passages, with net changes −20 and −24. The other neighborhoods must
+supply net changes −82 and −88. Combining the earlier positive off-axis
+pairs recovers the existing **138 and 132** outward lower bounds and
+**992** for the sufficiently distant whole route. This closes the axis
+question; it does not make those total bounds exact.
+
+There is no higher axis meeting for **M≥875 on 11 / 6 or M≥253 on 11 / 8**.
+The separate 27,000,000 global tail theorem still matters for off-axis
+meetings. No numerical threshold for stability of the constructed middle
+is supplied by today's axis proof.
+
+The [twenty-circle atlas](experiments/offset_axis_census.svg) shows four
+unit normals and all four certified signs per event. Equal scales keep
+the near coincidences honest; some small normal dots overlap. Explicit
+plus/minus bars remain readable. The existing fifteenth study now has an
+"All twenty mirror meetings" disclosure, with the diagram and complete
+proof linked. No new study or runtime dependency was needed.
+
+The **2,019 exact controls** audit power/Bernstein conversion, degree
+elevation, bisection, derivatives, midpoint scales, genuine nodes, false
+two-equation pole roots, refinement, rescaling, outward rounding, invalid
+inputs, and depth-limited covers that must reject. Exact Fourier controls
+also check the center-derivative identity. Mapping all eight earlier
+selected root enclosures strictly inside the new unique coarse boxes
+identifies them without comparing rounded offsets. These comparisons
+assume the old archived selected proofs; the new complete census itself
+does not read their record.
+
+The **2,792 independent Node checks** reconstruct all twenty circles,
+their normals, tangent pairs, eighty signs and first-order weights, and
+actual curved local resolutions at three small scales per fourfold.
+Largest meeting error: **1.541×10⁻¹¹** drawing units; sign error:
+**3.519×10⁻¹⁴**; relative weight error: **7.839×10⁻¹³**; relative curved
+first-order prediction error: **5.328×10⁻⁶**. The earlier 19,330
+line-model checks pass too. These numerical controls do not decide the
+rational completeness argument.
+
+The complete fresh proof and both fixed-visit proofs take **36.11s**
+without the browser installation sharing the CPU. The JSON record and
+SVG regenerate byte for byte. At this writing **822** local links,
+resources, and fragment references resolve, and all **36** SVGs parse.
+The frozen intersection solver retains SHA-256
+`0666a7ac397108125e8e661dcd54fe2e6504e0863103ceba967c11d51225d096`.
+
+Chromium and WebKit each pass **82 browser checks**: all four triples
+at five slider positions, expanded disclosures, the new atlas, 320–1280px
+layouts with normal and doubled text, no-script fallback, local-file
+opening, same-origin-only requests, and strict SVG text bounds and
+non-overlap. Both expanded pages have no automated axe WCAG A/AA
+violations. Firefox was not checked successfully: its process failed
+at profile startup in this container, including under an account matching
+the mounted home directory's owner. These are headless checks, not
+physical-device or screen-reader tests. Temporary browser tools,
+screenshots, and prototypes remain outside the repository.
+
 ## 2026-11-03 · Four signs agree
 
 Started at **17:03:35 UTC**. The working hour runs into the closing

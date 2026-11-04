@@ -29,6 +29,14 @@ triples in its straight local model. Choose three visits and move through
 their meeting. A unit-normal circle explains the common sign. The
 [standalone stills](four_visits.svg) show all four passages without scripts.
 
+A subsequent [complete axis cover](offset_axis_census.md) proves that the
+highlighted circle is the **only all-positive mirror-axis fourfold** on
+the two complete outward families. There are eleven fourfolds on 11 / 6
+and nine on 11 / 8; all positive axis contributions already appear among
+the eight selected circles below. The twelve additional circles are
+all-negative. The [twenty-circle atlas](offset_axis_census.svg) shows the
+complete axis inventory. Off-axis completeness remains open.
+
 ## Eight circles and five reflected pairs
 
 Eight selected mirror-axis fourfold meetings have rational certificates.

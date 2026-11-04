@@ -531,3 +531,24 @@ outward M≥0**. Reflection then rules out ordinary triples on the axis
 of either unperturbed family, while allowing fourfolds. Run
 `python3 experiments/offset_axis_visits.py`: a supporting-line argument
 and complete Sturm isolation prove this global axis statement.
+
+The [complete mirror-axis census](experiments/offset_axis_census.md) now
+classifies all higher axis meetings for **every outward M≥0**: exactly
+**eleven fourfolds on 11 / 6 and nine on 11 / 8**, each with six transverse
+tangent pairs. There is no axis meeting with six or more visits. Seven
+eligible upper-half arcs per drawing reduce the proof to 21 rational
+rectangle covers; projective Bernstein bounds also cover the limits at
+arbitrarily large distances. No numerical guesses or saved roots enter
+the proof. The [normal-circle atlas](experiments/offset_axis_census.svg)
+shows all twenty, including the only all-positive circle followed in
+the fifteenth study. The complete off-axis census remains open.
+
+```sh
+python3 experiments/offset_axis_census_check.py
+python3 experiments/offset_axis_census.py
+node experiments/offset_axis_census_check.js
+node experiments/offset_axis_census_figure.js
+```
+
+Add `--write` to the Python census to archive a freshly repeated complete
+proof. All these tools use only standard runtimes.

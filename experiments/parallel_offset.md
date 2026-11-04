@@ -426,9 +426,12 @@ jets: **80 exact comparisons in all**.
 
 Every remaining axis visit is paired with its distinct reflection.
 Consequently each multiple meeting on the axis has an even number of
-visits. Ordinary three-visit axis events are excluded globally; fourfolds
-and higher even meetings still need classification. This conclusion
-concerns the mirror-symmetric families before their generic perturbation.
+visits. Ordinary three-visit axis events are excluded globally. The
+[complete axis follow-up](offset_axis_census.md) now classifies all the
+higher even meetings: **eleven transverse fourfolds on 11 / 6 and nine
+on 11 / 8**, with no sixfold or higher meeting anywhere on the axis.
+Both conclusions concern the mirror-symmetric families before their
+generic perturbation. The complete off-axis census remains open.
 
 ## A finite bound on the infinite-offset end
 
