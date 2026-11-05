@@ -41,7 +41,7 @@ census.endpoints.forEach((endpoint, row) => {
     const x = X(index + 1), before = value;
     const jump = event.positive_triples - event.negative_triples;
     value += jump;
-    ledger.push([`11/${endpoint.inner}`, index + 1, ...event.offset, middle(event.offset).toFixed(8),
+    ledger.push([`rhythms 11 / ${endpoint.inner}`, index + 1, ...event.offset, middle(event.offset).toFixed(8),
       event.kind === 'axis_fourfold' ? 'axis fourfold' : 'reflected triples',
       event.positive_triples, event.negative_triples, before, value].join(','));
     const color = jump > 0 ? colors.positive : jump < 0 ? colors.negative : colors.mixed;

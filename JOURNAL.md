@@ -163,6 +163,38 @@ At **18:11 UTC**, the main theorem is already published and these
 smaller additions are ready for their final source and publication
 checks. Today's measured window still runs through **18:25:28 UTC**.
 
+Follow-up receipt, **18:14 UTC**: **cb8c8a9** published the local auditor
+and last-circle drawing. Pages succeeded; all **29 canonical public
+files changed today** matched the committed sources. The new drawing
+passed the same 202 Chromium/WebKit checks on the public site.
+
+The final independent exact control uses **four equal-offset equations**
+in (s₁,s₂,s₃,M), with raw Fourier interval powers and unit normals,
+instead of the census's Taylor jets and circumcenter equations. Every
+one of the **270** archived roots admits a fresh strictly interior
+contraction in a larger box, after normalizing the unequal coordinate
+radii. The maximum normalized defect norm is **0.000844299** or less.
+This check is retained in `offset_leg_census_check.py`; the temporary
+prototype took **22.82s**. It proves local existence independently of
+the new circle equations, while the full cover still supplies
+completeness. The exact control suite now has **12,646 checks**.
+
+A further necessary filter for the middle probe is worth remembering:
+keep the multiplicity of each generator, and the least cyclic rotation
+of the word projected onto each adjacent pair (g,g+1). Independent
+commutations leave those projections unchanged; a cut change rotates
+them. The observed path has **723 distinct such signatures**, one per
+triangle level, with no signature recurring after a triangle. Thus
+free cut changes and commutations cannot simply connect two separated
+triangle levels already on this path. This does not bound paths that
+leave the observed states. The probe and its signatures remain outside
+the repository's proof records.
+
+The CSV's drawing labels now begin with “rhythms”, keeping them visibly
+textual when opened in a spreadsheet. All 115 exact weight bounds and
+signed changes are unchanged. Closing checks and this receipt are the
+only remaining work in the measured hour.
+
 ## 2026-11-04 · Seven arcs, twenty mirror meetings
 
 Started at **17:15:41 UTC**; today's hour runs through **18:15:41 UTC**.

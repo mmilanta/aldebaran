@@ -18,6 +18,10 @@ from offset_leg_census import (SCALE, candidates, clear_caches, contract, cover,
                                integer_jets, jets, minus, minor_exclusion, near,
                                pair_exclusion, plus, prove, reflect, scale, times)
 from parallel_offset_triple import equations as independent_equations
+from normal_front import dot as rational_dot
+from offset_circle_tail import compact
+from phase_unfolding import inverse, sqrt_interval
+from rhythm_tangencies import cross as rational_cross
 from rhythm_tangencies import evaluate
 
 CHECKS = 0
@@ -48,6 +52,60 @@ def exact_determinant(rows):
     return sum((-1) ** sum(order[i] > order[j] for i in range(3) for j in range(i + 1, 3))
                * rows[0][order[0]] * rows[1][order[1]] * rows[2][order[2]]
                for order in permutations(range(3)))
+
+
+def shifted_equations(quarters, parameters, offset, inner):
+    """Independent FOUR-variable formulation, with raw Fourier intervals.
+
+    Unlike the census, this uses unit normals and equal shifted points,
+    without any circumcenter or Taylor-jet enclosure.
+    """
+    data = []
+    for quarter, s in zip(quarters, parameters):
+        p, v, a = [tuple(map(compact, evaluate(quarter, s, Q(inner - 6, 2), order)))
+                   for order in range(3)]
+        speed = sqrt_interval(rational_dot(v, v), bits=100)
+        normal = tuple(map(compact, (-v[1] / speed, v[0] / speed)))
+        curvature = compact(rational_cross(v, a) / (speed * speed * speed))
+        factor = compact((1 + offset * curvature) * 2 / (1 + s * s))
+        data.append((tuple(compact(x - offset * n) for x, n in zip(p, normal)), normal,
+                     tuple(compact(x * factor) for x in v)))
+    F, J = [], []
+    for other in (1, 2):
+        for axis in (0, 1):
+            F.append(compact(data[0][0][axis] - data[other][0][axis]))
+            J.append([data[0][2][axis], -data[1][2][axis] if other == 1 else I.wrap(0),
+                      -data[2][2][axis] if other == 2 else I.wrap(0),
+                      compact(data[other][1][axis] - data[0][1][axis])])
+    return F, J
+
+
+def independent_root_controls(record):
+    maximum = Q(0)
+    for endpoint in record["endpoints"]:
+        for root in endpoint["roots"]:
+            center = [sum(map(Q, b)) / 2 for b in root["root_box"]]
+            center.append(sum(map(Q, root["offset"])) / 2)
+            radii = [Q(1, 10 ** 11)] * 3 + [Q(1, 10 ** 6)]
+            F0, J0 = shifted_equations(root["quarters"], [I.wrap(c) for c in center[:3]],
+                                       I.wrap(center[3]), endpoint["inner"])
+            _, J = shifted_equations(root["quarters"],
+                                      [I(c - r, c + r) for c, r in zip(center[:3], radii)],
+                                      I(center[3] - radii[3], center[3] + radii[3]), endpoint["inner"])
+            R = inverse([[x.midpoint() for x in row] for row in J0])
+            # Normalize the four different coordinate radii to [-1,1].
+            # Any rounded rational preconditioner is valid afterward.
+            R = [[compact(I.wrap(x / radii[i])).midpoint() for x in row] for i, row in enumerate(R)]
+            J = [[compact(x * radii[j]) for j, x in enumerate(row)] for row in J]
+            E = [[compact(Q(i == j) - sum(R[i][k] * J[k][j] for k in range(4)))
+                  for j in range(4)] for i in range(4)]
+            norm = max(sum(max(abs(x.low), abs(x.high)) for x in row) for row in E)
+            image = [compact(-sum(R[i][k] * F0[k] for k in range(4))
+                             + sum(E[i][j] * I(-1, 1) for j in range(4))) for i in range(4)]
+            check(norm < 1 and all(-1 < x.low <= x.high < 1 for x in image),
+                  "An independent four-variable existence-and-uniqueness contraction failed.")
+            maximum = max(maximum, norm)
+    print(f"All 270 independent four-variable exact contractions passed; maximum normalized norm {float(maximum):.12g}.")
 
 
 def main():
@@ -201,9 +259,10 @@ def main():
     corrupted = deepcopy(endpoint)
     corrupted["roots"].pop()
     rejects(audit_endpoint, corrupted, {"inner": 6})
+    independent_root_controls(json.loads((HERE / "offset_leg_census.json").read_text()))
     clear_caches()
     print(f"{CHECKS} independent integer-box, determinant-vertex, circle, singular-case, Fourier, "
-          "Taylor, preserved orbital-event, contraction, Jacobian, reflection, and rejection controls passed.")
+          "Taylor, preserved orbital-event, contraction, Jacobian, reflection, rejection, and independent four-variable controls passed.")
 
 
 if __name__ == "__main__":

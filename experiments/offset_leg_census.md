@@ -316,6 +316,13 @@ reflection, invalid inputs, and incomplete covers that must reject.
 The Node controls reconstruct the complete circles with independent
 floating-point Fourier geometry; these numerical checks do not decide
 the rational proof.
+The exact controls also reprove all 270 roots with a different system:
+four equal-offset-point equations in the three visits and M. Raw Fourier
+intervals and unit normals replace the census's Taylor jets and
+circumcenters. Normalizing the unequal coordinate radii gives a maximum
+contraction norm below **0.000845** in the tested boxes. These are local
+existence-and-uniqueness controls, using archived roots as proposals;
+the complete parameter cover remains the source of global completeness.
 
 For a faster exact **local** audit, run:
 
