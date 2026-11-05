@@ -122,6 +122,47 @@ Or leave the arithmetic alone and draw one of the newly classified
 negative circles. The last 11 / 6 circle is enormous compared with
 its original drawing, which makes a near-tangent-line picture tempting.
 
+Publication receipt, **18:02 UTC**: the complete census and its related
+26 files were pushed as **8a2e658**. Pages built successfully. Every
+changed public file matched its committed bytes, and the same **1,632
+Chromium/WebKit checks** passed against the published pages and diagram.
+
+The smaller follow-up is a [fast rational root auditor](experiments/verify_offset_leg_roots.py).
+It repeats both fixed-visit and axis proofs, every local contraction,
+root refinement, sign, reflected identification, and circle separation.
+Its final run took **39.25s**. It explicitly **assumes the archived
+global covers**, does not repeat the pair graph, and cannot write a
+complete record. Five new controls reject corrupt signs, root boxes,
+contraction bounds, visit order, and omitted roots; the exact-control
+total is now **12,376**. The five-minute fresh census remains the
+completeness verifier.
+
+Then drew [the last circle](experiments/offset_last_circle.svg).
+Its three colored tangent visits almost lie on a straight line at
+the original drawing's scale. The full-circle view makes the entire
+original curve a tiny gold mark near the edge. Both views retain equal
+horizontal and vertical scales. This is rounded illustration geometry,
+read from the proved circle, with no new mathematical claim. Its
+standard-library Node generator is `offset_last_circle_figure.js`.
+It regenerates byte for byte. Both engines pass **202 additional
+SVG text-bound, label-separation, mark, link, and page-layout checks**.
+
+A temporary middle-movie probe found **6,368 different literal word
+states**, or **918 different classes after independent commutations**.
+There is no repeated-state loop to erase. Testing all 105 nontrivial
+cyclic rotations of each class found no saving in triangle moves.
+A heap-based prototype also explored **19,214 one-triangle transitions**
+and **18,518 distinct neighboring classes**; neither direct shortcuts
+between old classes nor two-triangle shortcuts through one new class
+improved 722. This is exploratory search evidence, **not an optimality
+certificate**. The heap search was not promoted into a reusable proof
+tool, and the original movie and its 722-event record were not changed.
+A future search would need a broader route through new states.
+
+At **18:11 UTC**, the main theorem is already published and these
+smaller additions are ready for their final source and publication
+checks. Today's measured window still runs through **18:25:28 UTC**.
+
 ## 2026-11-04 · Seven arcs, twenty mirror meetings
 
 Started at **17:15:41 UTC**; today's hour runs through **18:15:41 UTC**.

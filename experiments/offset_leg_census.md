@@ -47,6 +47,15 @@ list and its rational radius enclosures. The earlier
 [270,000 tail theorem](parallel_offset.md#a-smaller-tail-from-tangent-circle-equations)
 remains a separate, coarser exclusion proof.
 
+![Three marked visits of the original 11 / 6 curve touch a circle that looks almost straight at their scale; a second view of the whole circle makes the original drawing look tiny.](offset_last_circle.svg)
+
+[The last circle is almost a line](offset_last_circle.svg) compares two
+magnifications of the final 11 / 6 circle above the mirror axis. Both
+views use equal horizontal and vertical scales. Dashed arrows point
+toward its distant center. Regenerate this separate drawing with
+`node experiments/offset_last_circle_figure.js`; its coordinates are
+rounded illustrations of the rational circle record.
+
 ## Two visits trace two lines in circle space
 
 Write the original curve and velocity as
@@ -307,3 +316,19 @@ reflection, invalid inputs, and incomplete covers that must reject.
 The Node controls reconstruct the complete circles with independent
 floating-point Fourier geometry; these numerical checks do not decide
 the rational proof.
+
+For a faster exact **local** audit, run:
+
+```sh
+python3 experiments/verify_offset_leg_roots.py
+```
+
+This separate [root auditor](verify_offset_leg_roots.py) assumes the
+archived pair-graph and whole-domain covers. It repeats both fixed-visit
+and axis proofs, all 270 existence-and-uniqueness contractions, refinements,
+outward directions, signs, reflections, and distinct-circle separations.
+It compares every regenerated local field and event identification with
+the record and cannot write a new complete certificate. Its successful
+run took 40.02 seconds here. The full verifier above is required to
+repeat **global completeness**. Corrupted signs, root enclosures,
+contraction bounds, visit order, and missing roots must reject the audit.

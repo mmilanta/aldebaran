@@ -579,6 +579,8 @@ construction; the middle's numerical stability threshold and finite
 perturbation sizes remain unspecified. The
 [signed event diagram](experiments/offset_leg_census.svg) accounts for
 each leg's complete change in strangeness.
+Another [drawing of the last circle](experiments/offset_last_circle.svg)
+shows how nearly straight its arc looks beside the original 11 / 6 curve.
 
 ```sh
 python3 experiments/offset_leg_census_check.py
@@ -591,3 +593,14 @@ The proof repeats the independent axis census, identifies its eighty
 triple subsets by uniqueness, pairs all remaining reflected roots, and
 separates every distinct circle to rule out extra branches. All tools
 use only standard runtimes.
+
+A separate [local root auditor](experiments/verify_offset_leg_roots.py)
+repeats all 270 rational circle proofs and the independent axis census
+more quickly, while explicitly assuming the archived global covers:
+
+```sh
+python3 experiments/verify_offset_leg_roots.py
+```
+
+It cannot write a complete certificate. Use `offset_leg_census.py` to
+repeat the exhaustive pair graph and whole-domain covers.

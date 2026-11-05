@@ -6,6 +6,7 @@ covers. They do not replace the fresh whole-domain proof.
 """
 
 from fractions import Fraction as Q
+from copy import deepcopy
 from itertools import combinations, permutations, product
 import json
 from pathlib import Path
@@ -190,6 +191,16 @@ def main():
     rejects(prove, 6, partition=0)
     rejects(prove, 6, partition=True)
     rejects(prove, 6, max_depth=-1)
+    from verify_offset_leg_roots import audit_endpoint
+    endpoint = json.loads((HERE / "offset_leg_census.json").read_text())["endpoints"][0]
+    for field, wrong in (("strangeness_jump", 0), ("norm_upper", "0"),
+                         ("root_box", [["0", "1"]] * 3), ("quarters", [3, 2, 1])):
+        corrupted = deepcopy(endpoint)
+        corrupted["roots"][0][field] = wrong
+        rejects(audit_endpoint, corrupted, {"inner": 6})
+    corrupted = deepcopy(endpoint)
+    corrupted["roots"].pop()
+    rejects(audit_endpoint, corrupted, {"inner": 6})
     clear_caches()
     print(f"{CHECKS} independent integer-box, determinant-vertex, circle, singular-case, Fourier, "
           "Taylor, preserved orbital-event, contraction, Jacobian, reflection, and rejection controls passed.")
