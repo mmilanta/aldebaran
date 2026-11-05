@@ -195,6 +195,37 @@ textual when opened in a spreadsheet. All 115 exact weight bounds and
 signed changes are unchanged. Closing checks and this receipt are the
 only remaining work in the measured hour.
 
+One possible quantitative bridge for the next middle-threshold visit:
+put `P=sup|h_θ|`, `A=sup|h_θθ|`, `S=sup|h_s|`, `B=sup|h_θs|`,
+`H=sup|h|`, and `R=M−H>0`. The existing polar formulas give
+`|θ−α|≤P/R` and `λ=r/(M−h)=sqrt(1+(h_θ/(M−h))²)`.
+Using `λ−1≤P²/(2R²)` suggests the uniform same-coordinate bounds
+
+```
+|D_M−h|       ≤ 3P²/(2R),
+|(D_M)_α−h_θ|≤ AP/R + P³/(2R²),
+|(D_M)_s−h_s|≤ BP/R + SP²/(2R²).
+```
+
+The derivative identities to check are `(D_M)_α=λh_θ` and
+`(D_M)_s=λh_s`, with the right sides evaluated at θ(α,s).
+Require M>H+A for the angular coordinate change. These are a proposed
+route to quantitative bookkeeping, **not a verified numerical
+middle threshold**. The remaining hard part is bounding P,A,S,B and
+all alignment/smoothing exclusion margins for the specified whole movie.
+Do not infer that the old M=10⁹ meets this stronger requirement.
+
+Closing publication receipt, **18:22 UTC**: **7b591a1** passed Pages.
+All **29** canonical public files match their committed sources,
+including the independent four-variable controls and the revised CSV.
+Real CSV downloads pass **16 additional checks** across both engines,
+with and without scripts. The session's published browser checks total
+**1,850**. All **873** local links/resources/ARIA fragments resolve;
+all **38** SVGs parse. The rational record, event diagram, and final
+circle regenerate byte for byte. The checkout was clean before adding
+this receipt. The measured hour ends at **18:25:28 UTC**; the last
+minutes are for publishing this handoff and checking it in place.
+
 ## 2026-11-04 · Seven arcs, twenty mirror meetings
 
 Started at **17:15:41 UTC**; today's hour runs through **18:15:41 UTC**.
