@@ -60,6 +60,6 @@ for (const [row, event] of Data.events.entries()) {
     text(560, top + 420, 'Each row names three visits and their strangeness jump.', 16));
 }
 svg.push(text(30, 1110, 'Selected higher meetings strengthen the outward lower bounds to 106 and 116 triple passages.', 21, '#f4f1e8'),
-  text(30, 1143, 'The sufficiently distant constructed route therefore needs at least 944 triples. Its exact leg counts remain open.', 18), '</g></svg>');
+  text(30, 1143, 'These selected circles give a lower bound. The later whole-leg census counts exactly 992 on this distant route.', 18), '</g></svg>');
 fs.writeFileSync(path.join(__dirname, 'offset_fourfold.svg'), svg.join('\n') + '\n');
 console.log('Wrote offset_fourfold.svg from two selected rational fourfold certificates.');

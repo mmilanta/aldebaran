@@ -511,5 +511,5 @@
 <text x="532" y="1268" font-size="18" fill="#a7d9bb" >4</text>
 <text x="650" y="1268" font-size="18" fill="#c7c7d4" >M = outward distance · X = center on the mirror axis</text>
 <text x="30" y="1306" font-size="19" fill="#c7c7d4" >Every circle uses equal coordinate scales. The sign counts refer to local generic resolutions of the fourfolds.</text>
-<text x="30" y="1340" font-size="18" fill="#c7c7d4" >Complete on the mirror axis for M ≥ 0. Off-axis triples remain open. No finite perturbation threshold is asserted.</text>
+<text x="30" y="1340" font-size="18" fill="#c7c7d4" >Axis census for M ≥ 0. The later whole-leg census also closes the off-axis question.</text>
 </g></svg>

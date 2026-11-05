@@ -10,6 +10,8 @@ least **102** ordinary triple passages for the first drawing and
 **112** for the second. The [33 inverse touches on each leg](parallel_offset.md)
 do not change strangeness and cannot account for these differences.
 These are triple **lower bounds**, not complete counts of those legs.
+The later [complete tangent-circle census](offset_leg_census.md) gives
+the exact resolved counts **138 and 132**.
 
 There is a further consequence for the [6,367-move construction](positive_front.md).
 For a sufficiently large common offset, its middle has exactly **722
@@ -18,6 +20,9 @@ Thus a sufficiently distant version of that particular complete route
 has at least **936 triple passages**, in addition to its **66 inverse
 touches**. This is a long route between two drawings whose strangeness
 differs by only four.
+Combining this middle count with the complete leg census makes the
+specified sufficiently distant full route's count **exactly 992**,
+with 494 positive and 498 negative passages.
 
 The offset can be chosen finite, but **no numerical threshold for these
 triple conclusions is supplied**. The earlier offset **10⁹** proves
@@ -244,6 +249,9 @@ This conclusion counts the middle completely and bounds the legs.
 It does not supply an exact total for the route, locate its remaining
 triples, claim a minimal construction, or give a finite numerical
 threshold for triple stabilization.
+The later [complete circle census](offset_leg_census.md) supplies the
+missing leg counts and the exact total 992; the numerical middle-family
+threshold and optimal-route question remain separate.
 
 ## Reproduce
 

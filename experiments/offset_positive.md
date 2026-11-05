@@ -17,6 +17,11 @@ This is a lower bound for small generic versions of the
 count or a minimum over all routes. The numerical common-offset threshold
 for its middle-event theorem remains unknown.
 
+The later [complete leg census](offset_leg_census.md) proves that these
+bounds are **equalities** for the specified locally resolved construction:
+138 and 132 outward triples, and exactly 992 over the distant full route.
+The selected-event argument below supplies the lower bound independently.
+
 ![An axis circle with four positive triple unfoldings, followed by the signed passage balance for the two outward legs and the complete route.](offset_positive.svg)
 
 [Open or save the full-size diagram](offset_positive.svg). Its circle
@@ -35,7 +40,8 @@ the two complete outward families. There are eleven fourfolds on 11 / 6
 and nine on 11 / 8; all positive axis contributions already appear among
 the eight selected circles below. The twelve additional circles are
 all-negative. The [twenty-circle atlas](offset_axis_census.svg) shows the
-complete axis inventory. Off-axis completeness remains open.
+complete axis inventory. The later [whole-leg cover](offset_leg_census.md)
+also classifies the off-axis events.
 
 ## Eight circles and five reflected pairs
 

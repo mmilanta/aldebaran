@@ -389,10 +389,10 @@ then gives a regular positive-curvature plane route **without direct
 self-tangencies**. The [offset follow-up](experiments/parallel_offset.md)
 counts **66 inverse touches** on a generic version, with none in its
 middle section. A [radial-word follow-up](experiments/radial_word.md) counts
-722 middle triple passages. Together with the
-[selected positive passages](experiments/offset_positive.md), it bounds the full
-route by at least 992,
-when the common offset is sufficiently large; no numerical threshold
+722 middle triple passages. The
+[complete outward-leg census](experiments/offset_leg_census.md) gives
+exactly 138 and 132 resolved leg triples, making **992** over the full
+route when the common offset is sufficiently large; no numerical threshold
 for that event conclusion is supplied. Nothing animates, and a
 [standalone SVG](experiments/positive_front.svg) works without scripts.
 
@@ -456,8 +456,10 @@ triple passages**. Uniform convergence in both angle and route parameter
 transfers exactly **722** middle events, **354 positive and 368 negative**,
 to the sufficiently distant plane movie. The complete constructed route
 therefore has at least **936 triples**, with net signed change −4, as
-well as its 66 inverse touches. Its offset-leg triple counts remain open;
-no numerical offset threshold for triple stabilization is asserted.
+well as its 66 inverse touches. These were signed-change lower bounds;
+the [complete leg census](experiments/offset_leg_census.md) now gives
+exactly 138 and 132 resolved outward triples and 992 over the full route.
+No numerical middle-family event-stability threshold is asserted.
 
 ```sh
 python3 experiments/radial_word.py
@@ -484,7 +486,8 @@ triples, two positive and two negative. These selected events strengthen
 the outward lower bounds to **106 and 116**, and the full-route bound
 to **944 triples**. Their [standalone diagram](experiments/offset_fourfold.svg)
 shows the two circles and their separated first-order event weights.
-Exact offset-leg triple counts remain open.
+The later [complete census](experiments/offset_leg_census.md) gives the
+exact resolved leg counts.
 
 ```sh
 python3 experiments/offset_fourfold.py --write
@@ -499,7 +502,9 @@ a fourfold whose four signs all agree. The signed changes then force
 at least **138 and 132 outward triples**, and **992 over the sufficiently
 distant complete route**: at least 494 positive and 498 negative.
 The [standalone diagram](experiments/offset_positive.svg) explains the
-circle and signed balance. Exact leg counts remain open.
+circle and signed balance. The later
+[complete census](experiments/offset_leg_census.md) proves that these
+lower bounds are exact for the specified resolved construction.
 
 [Four signs agree](experiments/four_visits.html), the fifteenth study,
 follows the four positive triples of the selected fourfold's first-order
@@ -525,9 +530,9 @@ triple products, homogeneous tangent-circle equations, and circumradius
 bounds. Run `python3 experiments/offset_circle_tail.py`; independent
 controls run with `python3 experiments/offset_circle_tail_check.py`.
 The older front-only argument in `offset_tail.py` proves the looser
-27,000,000 bound. This closes the infinite end with a coarse bound;
-the finite interval and the middle family's event-stability threshold
-remain separate questions.
+27,000,000 bound. This closes the infinite end with a coarse bound.
+The complete leg census below also closes the finite interval; the
+middle family's numerical event-stability threshold remains unspecified.
 
 A [fixed-visit exclusion](experiments/parallel_offset.md#two-fixed-visits-stay-alone)
 also proves that the starting and halfway visits stay alone for **every
@@ -545,7 +550,8 @@ rectangle covers; projective Bernstein bounds also cover the limits at
 arbitrarily large distances. No numerical guesses or saved roots enter
 the proof. The [normal-circle atlas](experiments/offset_axis_census.svg)
 shows all twenty, including the only all-positive circle followed in
-the fifteenth study. The complete off-axis census remains open.
+the fifteenth study. The later complete census below also closes the
+off-axis question.
 
 ```sh
 python3 experiments/offset_axis_census_check.py
@@ -556,3 +562,32 @@ node experiments/offset_axis_census_figure.js
 
 Add `--write` to the Python census to archive a freshly repeated complete
 proof. All these tools use only standard runtimes.
+
+[Every meeting on the way out](experiments/offset_leg_census.md) completes
+both whole outward legs for **every M≥0**. A complete graph of pairs of
+circle lines supplies all possible three-visit products; homogeneous
+minor tests and rational contractions close every product without a
+radius cutoff, numerical suggestions, or archived roots. There are
+**94 ordinary off-axis triples and eleven fourfolds on 11 / 6**, and
+**96 triples and nine fourfolds on 11 / 8**, with no other higher meeting.
+Local fourfold resolutions give exactly **138 and 132 ordinary triples**.
+There is no higher meeting at **M≥16,173 on 11 / 6 or M≥818 on 11 / 8**.
+Together with the 722 middle passages, the specified sufficiently
+distant full route has **exactly 992 triples**, 494 positive and 498
+negative, alongside its 66 inverse touches. This is a count for that
+construction; the middle's numerical stability threshold and finite
+perturbation sizes remain unspecified. The
+[signed event diagram](experiments/offset_leg_census.svg) accounts for
+each leg's complete change in strangeness.
+
+```sh
+python3 experiments/offset_leg_census_check.py
+python3 experiments/offset_leg_census.py --write
+node experiments/offset_leg_census_check.js
+node experiments/offset_leg_census_figure.js
+```
+
+The proof repeats the independent axis census, identifies its eighty
+triple subsets by uniqueness, pairs all remaining reflected roots, and
+separates every distinct circle to rule out extra branches. All tools
+use only standard runtimes.

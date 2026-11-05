@@ -361,7 +361,7 @@ def main():
     if args.write:
         (HERE / "offset_axis_census.json").write_text(json.dumps(result, indent=2) + "\n")
     print("Fixed visits stay alone; no ordinary axis triple or axis meeting with six or more visits occurs. "
-          "The complete off-axis census remains open.", flush=True)
+          "This verifier covers the axis; offset_leg_census.py also classifies off-axis events.", flush=True)
     print(f"Elapsed {monotonic() - started:.2f}s.")
 
 

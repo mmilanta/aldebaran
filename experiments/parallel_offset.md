@@ -16,8 +16,11 @@ For a sufficiently distant version of this construction, a
 in the middle** and gives **at least 936 over the complete route**.
 A [selected positive-passage follow-up](offset_positive.md) raises the latter
 bound to **992** by forcing 18 and 10 positive passages on the outward legs.
-The two offset legs' exact triple counts remain open. No numerical
-offset threshold is supplied for the stronger triple conclusion.
+A [complete tangent-circle census](offset_leg_census.md) now proves
+**exactly 138 and 132 triples on the resolved outward legs**, so the
+specified sufficiently distant full construction has **exactly 992**:
+494 positive and 498 negative. No numerical middle-family event-stability
+threshold or fourfold perturbation size is supplied.
 
 The [interactive circle study](parallel_offset.html) follows one selected
 ordinary triple, with a certificate covering its full viewing window.
@@ -234,8 +237,8 @@ three of those pairs at a common point.
 
 ## One selected offset triple
 
-The full triple census remains open, but one ordinary passage on the
-11 / 6 outward leg now has a separate local certificate. For three
+One ordinary passage on the 11 / 6 outward leg has a separate local
+certificate, independent of the later [complete census](offset_leg_census.md). For three
 original points q₀,q₁,q₂, let P be their circumcenter. It is rational
 in the point coordinates whenever their triangle is nondegenerate.
 Solving the three equations `(qᵢ−P)·qᵢ′=0` makes the common circle
@@ -431,16 +434,21 @@ visits. Ordinary three-visit axis events are excluded globally. The
 higher even meetings: **eleven transverse fourfolds on 11 / 6 and nine
 on 11 / 8**, with no sixfold or higher meeting anywhere on the axis.
 Both conclusions concern the mirror-symmetric families before their
-generic perturbation. The complete off-axis census remains open.
+generic perturbation. A later [complete leg census](offset_leg_census.md)
+also closes the off-axis question for every outward M≥0.
 
 ## A finite bound on the infinite-offset end
 
 For both original endpoints, **no triple or higher meeting occurs at
 any M ≥ 270,000**. A first expanded-front proof gives the looser
 27,000,000 bound below; the [tangent-circle refinement](#a-smaller-tail-from-tangent-circle-equations)
-improves it by 100. This coarse bound closes the infinite end of a
-future event census; it does not classify the finite interval below it,
+improves it by 100. This coarse bound closes the infinite end;
+it does not classify the finite interval below it,
 or supply a threshold for the constructed middle family.
+The later [complete circle census](offset_leg_census.md) closes the
+entire legs and sharpens the higher-meeting tails to **M≥16,173 on
+11 / 6 and M≥818 on 11 / 8**. The arguments below remain independent
+coarser proofs.
 
 Here is a quantitative link to the conormal front. At an equal offset
 point, `qᵢ−qⱼ=M(Nᵢ−Nⱼ)`. Since every original point has norm at most

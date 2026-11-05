@@ -78,7 +78,7 @@ function figure() {
     text(283 + 83 * i, 1268, String(i + 1), 18, color)));
   svg.push(text(650, 1268, 'M = outward distance · X = center on the mirror axis', 18),
     text(30, 1306, 'Every circle uses equal coordinate scales. The sign counts refer to local generic resolutions of the fourfolds.', 19),
-    text(30, 1340, 'Complete on the mirror axis for M ≥ 0. Off-axis triples remain open. No finite perturbation threshold is asserted.', 18),
+    text(30, 1340, 'Axis census for M ≥ 0. The later whole-leg census also closes the off-axis question.', 18),
     '</g></svg>');
   return svg.join('\n') + '\n';
 }

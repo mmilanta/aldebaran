@@ -89,7 +89,7 @@ svg.push(text(985, 1039, 'TOTAL', 16),
   text(985, 1085, '≥ 992', 43, ink, 'font-weight="650"'),
   text(985, 1120, '≥494+ / ≥498−', 18),
   text(30, 1210, 'A lower bound for the sufficiently distant constructed route. The net signed change remains −4.', 21, ink),
-  text(30, 1246, 'Exact outward-leg counts remain open. No numerical threshold for middle-event stability is supplied.', 18),
+  text(30, 1246, 'The later whole-leg census proves this bound is exact. No numerical middle-event threshold is supplied.', 18),
   '</g></svg>');
 fs.writeFileSync(path.join(__dirname, 'offset_positive.svg'), svg.join('\n') + '\n');
 console.log('Wrote offset_positive.svg from selected local certificates and separate radial-word inputs.');

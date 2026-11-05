@@ -7,7 +7,9 @@ There is no ordinary axis triple and no axis meeting with six or more
 visits, for any outward distance M≥0.
 
 This is a complete **axis** census of the original mirror-symmetric
-families. The off-axis triple census remains open. Ordinary two-visit
+families. The later [complete leg census](offset_leg_census.md) also
+classifies every off-axis triple, using this axis result to identify
+the fourfold subsets. Ordinary two-visit
 crossings and inverse touches are separate from the higher meetings
 counted here.
 
@@ -230,7 +232,7 @@ with the fixed-visit proof, this excludes every fifth or higher branch
 at the listed circles and every axis meeting with six or more visits
 anywhere on the outward legs.
 
-## The four signs, and what remains open
+## The four signs and the complete leg
 
 Order the visits as t₁<t₂<2π−t₂<2π−t₁. Their unit left normals give
 each triple's normalized unfolding
@@ -256,8 +258,9 @@ these local resolutions can be chosen together. No finite numerical
 perturbation-size threshold is asserted.
 
 The original axis census contains no ordinary triples. The local counts
-above concern the perturbed families. Triple passages away from these
-resolved neighborhoods are still a separate global question.
+above concern the perturbed families. The later
+[complete leg cover](offset_leg_census.md) classifies the ordinary
+triples away from these resolved neighborhoods too.
 
 The existing net outward changes −102 and −112 consequently leave net
 changes **−82 and −88** for those other passages. The selected off-axis
@@ -266,6 +269,9 @@ least 88 and 92 negatives there. Adding the resolved axis neighborhoods
 recovers the existing bounds **138 and 132 outward triples**, and **992**
 for the sufficiently distant complete construction. It does not improve
 those bounds or prove that they are exact.
+The complete leg cover supplies that final step: exactly 94 and 96
+off-axis triples, making all the displayed bounds equalities for the
+specified resolved construction.
 
 ## Reproduce
 

@@ -26,6 +26,9 @@ triple counts on either outward leg.
 The [positive-passage follow-up](offset_positive.md) certifies six further
 fourfolds and five ordinary reflected pairs, raising the complete-route
 lower bound to **992**. One of the new fourfolds has four positive signs.
+The later [complete leg census](offset_leg_census.md) proves exactly
+138 and 132 outward triples after local resolution, making 992 an
+exact count for the sufficiently distant full construction.
 
 ![Two four-visit tangent circles and the four separated first-order triple weights after small local normal shifts. Each resolution has two positive and two negative triples.](offset_fourfold.svg)
 

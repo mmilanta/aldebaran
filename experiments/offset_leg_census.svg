@@ -1,0 +1,641 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1140" viewBox="0 0 1200 1140" role="img" aria-labelledby="title description">
+<title id="title">Every meeting on the way out</title>
+<desc id="description">Two complete outward offset legs. Rhythms 11 / 6 have 94 ordinary off-axis triples and eleven mirror-axis fourfolds; 11 / 8 have 96 triples and nine fourfolds. Resolving the fourfolds gives 138 and 132 ordinary triples. Each plotted position is one ordered event weight, not an equal increment of offset distance. Gold segments increase strangeness, blue segments decrease it, and lilac diamonds mark cancelling fourfolds. The step counts end at minus 87 and minus 101. Hover an event for its distance and signs. The rational proof covers every nonnegative offset, including the infinite tail.</desc>
+<rect width="1200" height="1140" fill="#101323"/><g font-family="ui-sans-serif,system-ui,sans-serif">
+<text x="40" y="68" font-size="43" fill="#f4f1e8" >Every meeting on the way out.</text>
+<text x="40" y="108" font-size="22" fill="#c7c7d4" >A complete circle census accounts for both outward legs, at every distance M ≥ 0.</text>
+<path d="M40 147h27" stroke="#e8b66e" stroke-width="4"/>
+<text x="78" y="154" font-size="19" fill="#c7c7d4" >positive passage</text>
+<path d="M302 147h27" stroke="#9fc7eb" stroke-width="4"/>
+<text x="340" y="154" font-size="19" fill="#c7c7d4" >negative passage</text>
+<path d="M583 140l7 7-7 7-7-7Z" fill="#d1b6ea"/>
+<text x="604" y="154" font-size="19" fill="#c7c7d4" >fourfold: four triple subsets</text>
+<text x="40" y="212" font-size="27" fill="#f4f1e8" >11 / 6    94 ordinary triples + 11 fourfolds</text>
+<text x="40" y="247" font-size="20" fill="#c7c7d4" >After local resolution: 18 positive + 120 negative = 138 triples</text>
+<path d="M100 317.38461538461536H1128" stroke="#383b50" stroke-dasharray="4 5"/>
+<text x="84" y="323.38461538461536" font-size="17" fill="#9999ae" text-anchor="end">0</text>
+<path d="M100 400.8461538461538H1128" stroke="#383b50" stroke-dasharray="4 5"/>
+<text x="84" y="406.8461538461538" font-size="17" fill="#9999ae" text-anchor="end">−50</text>
+<path d="M100 484.3076923076923H1128" stroke="#383b50" stroke-dasharray="4 5"/>
+<text x="84" y="490.3076923076923" font-size="17" fill="#9999ae" text-anchor="end">−100</text>
+<text x="100" y="270" font-size="17" fill="#9999ae" >Strangeness</text>
+<path d="M100 292.34615384615387H117.42372881355932" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 1; M ≈ 10.17121787; two reflected ordinary triples; 0 positive, 2 negative; strangeness 15 to 13.</title>
+<path d="M117.42372881355932 292.34615384615387V295.68461538461537" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="117.42372881355932" cy="295.68461538461537" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M117.42372881355932 295.68461538461537H134.84745762711864" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 2; M ≈ 41.11911123; two reflected ordinary triples; 0 positive, 2 negative; strangeness 13 to 11.</title>
+<path d="M134.84745762711864 295.68461538461537V299.0230769230769" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="134.84745762711864" cy="299.0230769230769" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M134.84745762711864 299.0230769230769H152.27118644067798" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 3; M ≈ 48.90419062; two reflected ordinary triples; 0 positive, 2 negative; strangeness 11 to 9.</title>
+<path d="M152.27118644067798 299.0230769230769V302.3615384615385" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="152.27118644067798" cy="302.3615384615385" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M152.27118644067798 302.3615384615385H169.6949152542373" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 4; M ≈ 56.09622520; two reflected ordinary triples; 0 positive, 2 negative; strangeness 9 to 7.</title>
+<path d="M169.6949152542373 302.3615384615385V305.7" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="169.6949152542373" cy="305.7" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M169.6949152542373 305.7H187.1186440677966" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 5; M ≈ 57.58864556; one axis fourfold; 2 positive, 2 negative; strangeness 7 to 7.</title>
+<path d="M187.1186440677966 305.7V305.7" stroke="#d1b6ea" stroke-width="3"/>
+<path d="M187.1186440677966 301.7l4 4-4 4-4-4Z" fill="#d1b6ea"/>
+</g>
+<path d="M187.1186440677966 305.7H204.54237288135593" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 6; M ≈ 61.34951690; two reflected ordinary triples; 0 positive, 2 negative; strangeness 7 to 5.</title>
+<path d="M204.54237288135593 305.7V309.03846153846155" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="204.54237288135593" cy="309.03846153846155" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M204.54237288135593 309.03846153846155H221.96610169491527" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 7; M ≈ 63.44530835; one axis fourfold; 0 positive, 4 negative; strangeness 5 to 1.</title>
+<path d="M221.96610169491527 309.03846153846155V315.7153846153846" stroke="#9fc7eb" stroke-width="3"/>
+<path d="M221.96610169491527 311.7153846153846l4 4-4 4-4-4Z" fill="#9fc7eb"/>
+</g>
+<path d="M221.96610169491527 315.7153846153846H239.38983050847457" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 8; M ≈ 65.05883782; two reflected ordinary triples; 0 positive, 2 negative; strangeness 1 to -1.</title>
+<path d="M239.38983050847457 315.7153846153846V319.05384615384617" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="239.38983050847457" cy="319.05384615384617" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M239.38983050847457 319.05384615384617H256.81355932203394" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 9; M ≈ 73.65685522; two reflected ordinary triples; 0 positive, 2 negative; strangeness -1 to -3.</title>
+<path d="M256.81355932203394 319.05384615384617V322.39230769230767" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="256.81355932203394" cy="322.39230769230767" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M256.81355932203394 322.39230769230767H274.2372881355932" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 10; M ≈ 75.05275531; two reflected ordinary triples; 0 positive, 2 negative; strangeness -3 to -5.</title>
+<path d="M274.2372881355932 322.39230769230767V325.7307692307692" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="274.2372881355932" cy="325.7307692307692" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M274.2372881355932 325.7307692307692H291.66101694915255" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 11; M ≈ 76.40165503; two reflected ordinary triples; 0 positive, 2 negative; strangeness -5 to -7.</title>
+<path d="M291.66101694915255 325.7307692307692V329.0692307692308" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="291.66101694915255" cy="329.0692307692308" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M291.66101694915255 329.0692307692308H309.08474576271186" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 12; M ≈ 80.79169102; two reflected ordinary triples; 0 positive, 2 negative; strangeness -7 to -9.</title>
+<path d="M309.08474576271186 329.0692307692308V332.4076923076923" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="309.08474576271186" cy="332.4076923076923" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M309.08474576271186 332.4076923076923H326.50847457627117" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 13; M ≈ 83.85342888; two reflected ordinary triples; 0 positive, 2 negative; strangeness -9 to -11.</title>
+<path d="M326.50847457627117 332.4076923076923V335.74615384615385" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="326.50847457627117" cy="335.74615384615385" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M326.50847457627117 335.74615384615385H343.93220338983053" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 14; M ≈ 87.45870752; two reflected ordinary triples; 0 positive, 2 negative; strangeness -11 to -13.</title>
+<path d="M343.93220338983053 335.74615384615385V339.0846153846154" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="343.93220338983053" cy="339.0846153846154" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M343.93220338983053 339.0846153846154H361.35593220338984" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 15; M ≈ 88.13176049; two reflected ordinary triples; 0 positive, 2 negative; strangeness -13 to -15.</title>
+<path d="M361.35593220338984 339.0846153846154V342.4230769230769" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="361.35593220338984" cy="342.4230769230769" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M361.35593220338984 342.4230769230769H378.77966101694915" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 16; M ≈ 103.20416221; two reflected ordinary triples; 0 positive, 2 negative; strangeness -15 to -17.</title>
+<path d="M378.77966101694915 342.4230769230769V345.76153846153846" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="378.77966101694915" cy="345.76153846153846" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M378.77966101694915 345.76153846153846H396.20338983050846" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 17; M ≈ 103.40806949; one axis fourfold; 0 positive, 4 negative; strangeness -17 to -21.</title>
+<path d="M396.20338983050846 345.76153846153846V352.4384615384615" stroke="#9fc7eb" stroke-width="3"/>
+<path d="M396.20338983050846 348.4384615384615l4 4-4 4-4-4Z" fill="#9fc7eb"/>
+</g>
+<path d="M396.20338983050846 352.4384615384615H413.6271186440678" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 18; M ≈ 103.42418439; two reflected ordinary triples; 0 positive, 2 negative; strangeness -21 to -23.</title>
+<path d="M413.6271186440678 352.4384615384615V355.7769230769231" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="413.6271186440678" cy="355.7769230769231" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M413.6271186440678 355.7769230769231H431.0508474576271" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 19; M ≈ 105.51357669; two reflected ordinary triples; 0 positive, 2 negative; strangeness -23 to -25.</title>
+<path d="M431.0508474576271 355.7769230769231V359.11538461538464" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="431.0508474576271" cy="359.11538461538464" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M431.0508474576271 359.11538461538464H448.47457627118644" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 20; M ≈ 110.90439434; one axis fourfold; 2 positive, 2 negative; strangeness -25 to -25.</title>
+<path d="M448.47457627118644 359.11538461538464V359.11538461538464" stroke="#d1b6ea" stroke-width="3"/>
+<path d="M448.47457627118644 355.11538461538464l4 4-4 4-4-4Z" fill="#d1b6ea"/>
+</g>
+<path d="M448.47457627118644 359.11538461538464H465.89830508474574" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 21; M ≈ 111.40633170; one axis fourfold; 0 positive, 4 negative; strangeness -25 to -29.</title>
+<path d="M465.89830508474574 359.11538461538464V365.7923076923077" stroke="#9fc7eb" stroke-width="3"/>
+<path d="M465.89830508474574 361.7923076923077l4 4-4 4-4-4Z" fill="#9fc7eb"/>
+</g>
+<path d="M465.89830508474574 365.7923076923077H483.3220338983051" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 22; M ≈ 111.87216669; two reflected ordinary triples; 0 positive, 2 negative; strangeness -29 to -31.</title>
+<path d="M483.3220338983051 365.7923076923077V369.13076923076926" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="483.3220338983051" cy="369.13076923076926" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M483.3220338983051 369.13076923076926H500.7457627118644" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 23; M ≈ 112.80184361; two reflected ordinary triples; 0 positive, 2 negative; strangeness -31 to -33.</title>
+<path d="M500.7457627118644 369.13076923076926V372.46923076923076" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="500.7457627118644" cy="372.46923076923076" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M500.7457627118644 372.46923076923076H518.1694915254237" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 24; M ≈ 117.01061822; two reflected ordinary triples; 0 positive, 2 negative; strangeness -33 to -35.</title>
+<path d="M518.1694915254237 372.46923076923076V375.8076923076923" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="518.1694915254237" cy="375.8076923076923" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M518.1694915254237 375.8076923076923H535.593220338983" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 25; M ≈ 117.15082282; two reflected ordinary triples; 0 positive, 2 negative; strangeness -35 to -37.</title>
+<path d="M535.593220338983 375.8076923076923V379.1461538461539" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="535.593220338983" cy="379.1461538461539" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M535.593220338983 379.1461538461539H553.0169491525423" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 26; M ≈ 117.93134743; two reflected ordinary triples; 0 positive, 2 negative; strangeness -37 to -39.</title>
+<path d="M553.0169491525423 379.1461538461539V382.4846153846154" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="553.0169491525423" cy="382.4846153846154" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M553.0169491525423 382.4846153846154H570.4406779661017" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 27; M ≈ 120.29088761; one axis fourfold; 2 positive, 2 negative; strangeness -39 to -39.</title>
+<path d="M570.4406779661017 382.4846153846154V382.4846153846154" stroke="#d1b6ea" stroke-width="3"/>
+<path d="M570.4406779661017 378.4846153846154l4 4-4 4-4-4Z" fill="#d1b6ea"/>
+</g>
+<path d="M570.4406779661017 382.4846153846154H587.8644067796611" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 28; M ≈ 122.78860867; two reflected ordinary triples; 0 positive, 2 negative; strangeness -39 to -41.</title>
+<path d="M587.8644067796611 382.4846153846154V385.82307692307694" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="587.8644067796611" cy="385.82307692307694" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M587.8644067796611 385.82307692307694H605.2881355932203" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 29; M ≈ 127.53349690; two reflected ordinary triples; 0 positive, 2 negative; strangeness -41 to -43.</title>
+<path d="M605.2881355932203 385.82307692307694V389.16153846153844" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="605.2881355932203" cy="389.16153846153844" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M605.2881355932203 389.16153846153844H622.7118644067797" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 30; M ≈ 130.93702202; two reflected ordinary triples; 0 positive, 2 negative; strangeness -43 to -45.</title>
+<path d="M622.7118644067797 389.16153846153844V392.5" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="622.7118644067797" cy="392.5" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M622.7118644067797 392.5H640.1355932203389" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 31; M ≈ 131.91164993; two reflected ordinary triples; 0 positive, 2 negative; strangeness -45 to -47.</title>
+<path d="M640.1355932203389 392.5V395.83846153846156" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="640.1355932203389" cy="395.83846153846156" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M640.1355932203389 395.83846153846156H657.5593220338983" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 32; M ≈ 140.33895482; two reflected ordinary triples; 0 positive, 2 negative; strangeness -47 to -49.</title>
+<path d="M657.5593220338983 395.83846153846156V399.17692307692306" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="657.5593220338983" cy="399.17692307692306" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M657.5593220338983 399.17692307692306H674.9830508474577" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 33; M ≈ 141.34692217; one axis fourfold; 0 positive, 4 negative; strangeness -49 to -53.</title>
+<path d="M674.9830508474577 399.17692307692306V405.8538461538461" stroke="#9fc7eb" stroke-width="3"/>
+<path d="M674.9830508474577 401.8538461538461l4 4-4 4-4-4Z" fill="#9fc7eb"/>
+</g>
+<path d="M674.9830508474577 405.8538461538461H692.4067796610169" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 34; M ≈ 145.69370429; two reflected ordinary triples; 0 positive, 2 negative; strangeness -53 to -55.</title>
+<path d="M692.4067796610169 405.8538461538461V409.1923076923077" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="692.4067796610169" cy="409.1923076923077" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M692.4067796610169 409.1923076923077H709.8305084745763" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 35; M ≈ 149.01532461; two reflected ordinary triples; 0 positive, 2 negative; strangeness -55 to -57.</title>
+<path d="M709.8305084745763 409.1923076923077V412.53076923076924" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="709.8305084745763" cy="412.53076923076924" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M709.8305084745763 412.53076923076924H727.2542372881356" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 36; M ≈ 157.09102578; two reflected ordinary triples; 0 positive, 2 negative; strangeness -57 to -59.</title>
+<path d="M727.2542372881356 412.53076923076924V415.86923076923074" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="727.2542372881356" cy="415.86923076923074" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M727.2542372881356 415.86923076923074H744.6779661016949" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 37; M ≈ 160.54170588; two reflected ordinary triples; 0 positive, 2 negative; strangeness -59 to -61.</title>
+<path d="M744.6779661016949 415.86923076923074V419.2076923076923" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="744.6779661016949" cy="419.2076923076923" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M744.6779661016949 419.2076923076923H762.1016949152543" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 38; M ≈ 160.80570412; one axis fourfold; 0 positive, 4 negative; strangeness -61 to -65.</title>
+<path d="M762.1016949152543 419.2076923076923V425.88461538461536" stroke="#9fc7eb" stroke-width="3"/>
+<path d="M762.1016949152543 421.88461538461536l4 4-4 4-4-4Z" fill="#9fc7eb"/>
+</g>
+<path d="M762.1016949152543 425.88461538461536H779.5254237288135" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 39; M ≈ 165.10145692; two reflected ordinary triples; 0 positive, 2 negative; strangeness -65 to -67.</title>
+<path d="M779.5254237288135 425.88461538461536V429.2230769230769" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="779.5254237288135" cy="429.2230769230769" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M779.5254237288135 429.2230769230769H796.9491525423729" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 40; M ≈ 170.68604761; two reflected ordinary triples; 0 positive, 2 negative; strangeness -67 to -69.</title>
+<path d="M796.9491525423729 429.2230769230769V432.5615384615385" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="796.9491525423729" cy="432.5615384615385" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M796.9491525423729 432.5615384615385H814.3728813559322" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 41; M ≈ 175.41446343; two reflected ordinary triples; 0 positive, 2 negative; strangeness -69 to -71.</title>
+<path d="M814.3728813559322 432.5615384615385V435.9" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="814.3728813559322" cy="435.9" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M814.3728813559322 435.9H831.7966101694915" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 42; M ≈ 177.19800161; two reflected ordinary triples; 0 positive, 2 negative; strangeness -71 to -73.</title>
+<path d="M831.7966101694915 435.9V439.23846153846154" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="831.7966101694915" cy="439.23846153846154" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M831.7966101694915 439.23846153846154H849.2203389830509" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 43; M ≈ 189.19568230; two reflected ordinary triples; 0 positive, 2 negative; strangeness -73 to -75.</title>
+<path d="M849.2203389830509 439.23846153846154V442.5769230769231" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="849.2203389830509" cy="442.5769230769231" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M849.2203389830509 442.5769230769231H866.6440677966102" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 44; M ≈ 194.32737600; two reflected ordinary triples; 0 positive, 2 negative; strangeness -75 to -77.</title>
+<path d="M866.6440677966102 442.5769230769231V445.9153846153846" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="866.6440677966102" cy="445.9153846153846" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M866.6440677966102 445.9153846153846H884.0677966101695" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 45; M ≈ 211.83675477; two reflected ordinary triples; 0 positive, 2 negative; strangeness -77 to -79.</title>
+<path d="M884.0677966101695 445.9153846153846V449.25384615384615" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="884.0677966101695" cy="449.25384615384615" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M884.0677966101695 449.25384615384615H901.4915254237288" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 46; M ≈ 214.75357448; two reflected ordinary triples; 0 positive, 2 negative; strangeness -79 to -81.</title>
+<path d="M901.4915254237288 449.25384615384615V452.5923076923077" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="901.4915254237288" cy="452.5923076923077" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M901.4915254237288 452.5923076923077H918.9152542372881" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 47; M ≈ 232.36918145; two reflected ordinary triples; 0 positive, 2 negative; strangeness -81 to -83.</title>
+<path d="M918.9152542372881 452.5923076923077V455.9307692307692" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="918.9152542372881" cy="455.9307692307692" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M918.9152542372881 455.9307692307692H936.3389830508474" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 48; M ≈ 260.58900275; two reflected ordinary triples; 0 positive, 2 negative; strangeness -83 to -85.</title>
+<path d="M936.3389830508474 455.9307692307692V459.2692307692308" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="936.3389830508474" cy="459.2692307692308" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M936.3389830508474 459.2692307692308H953.7627118644068" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 49; M ≈ 284.56257048; one axis fourfold; 4 positive, 0 negative; strangeness -85 to -81.</title>
+<path d="M953.7627118644068 459.2692307692308V452.5923076923077" stroke="#e8b66e" stroke-width="3"/>
+<path d="M953.7627118644068 448.5923076923077l4 4-4 4-4-4Z" fill="#e8b66e"/>
+</g>
+<path d="M953.7627118644068 452.5923076923077H971.1864406779661" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 50; M ≈ 286.73021921; two reflected ordinary triples; 0 positive, 2 negative; strangeness -81 to -83.</title>
+<path d="M971.1864406779661 452.5923076923077V455.9307692307692" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="971.1864406779661" cy="455.9307692307692" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M971.1864406779661 455.9307692307692H988.6101694915254" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 51; M ≈ 377.76845959; two reflected ordinary triples; 0 positive, 2 negative; strangeness -83 to -85.</title>
+<path d="M988.6101694915254 455.9307692307692V459.2692307692308" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="988.6101694915254" cy="459.2692307692308" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M988.6101694915254 459.2692307692308H1006.0338983050848" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 52; M ≈ 640.95259232; one axis fourfold; 0 positive, 4 negative; strangeness -85 to -89.</title>
+<path d="M1006.0338983050848 459.2692307692308V465.94615384615383" stroke="#9fc7eb" stroke-width="3"/>
+<path d="M1006.0338983050848 461.94615384615383l4 4-4 4-4-4Z" fill="#9fc7eb"/>
+</g>
+<path d="M1006.0338983050848 465.94615384615383H1023.457627118644" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 53; M ≈ 846.94856087; two reflected ordinary triples; 2 positive, 0 negative; strangeness -89 to -87.</title>
+<path d="M1023.457627118644 465.94615384615383V462.60769230769233" stroke="#e8b66e" stroke-width="3"/>
+<circle cx="1023.457627118644" cy="462.60769230769233" r="2.5" fill="#e8b66e"/>
+</g>
+<path d="M1023.457627118644 462.60769230769233H1040.8813559322034" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 54; M ≈ 874.43418806; one axis fourfold; 2 positive, 2 negative; strangeness -87 to -87.</title>
+<path d="M1040.8813559322034 462.60769230769233V462.60769230769233" stroke="#d1b6ea" stroke-width="3"/>
+<path d="M1040.8813559322034 458.60769230769233l4 4-4 4-4-4Z" fill="#d1b6ea"/>
+</g>
+<path d="M1040.8813559322034 462.60769230769233H1058.3050847457625" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 55; M ≈ 1621.02010375; two reflected ordinary triples; 0 positive, 2 negative; strangeness -87 to -89.</title>
+<path d="M1058.3050847457625 462.60769230769233V465.94615384615383" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="1058.3050847457625" cy="465.94615384615383" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M1058.3050847457625 465.94615384615383H1075.7288135593221" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 56; M ≈ 2397.49933729; two reflected ordinary triples; 2 positive, 0 negative; strangeness -89 to -87.</title>
+<path d="M1075.7288135593221 465.94615384615383V462.60769230769233" stroke="#e8b66e" stroke-width="3"/>
+<circle cx="1075.7288135593221" cy="462.60769230769233" r="2.5" fill="#e8b66e"/>
+</g>
+<path d="M1075.7288135593221 462.60769230769233H1093.1525423728813" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 57; M ≈ 12308.37565917; two reflected ordinary triples; 2 positive, 0 negative; strangeness -87 to -85.</title>
+<path d="M1093.1525423728813 462.60769230769233V459.2692307692308" stroke="#e8b66e" stroke-width="3"/>
+<circle cx="1093.1525423728813" cy="459.2692307692308" r="2.5" fill="#e8b66e"/>
+</g>
+<path d="M1093.1525423728813 459.2692307692308H1110.5762711864406" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 58; M ≈ 16172.76506281; two reflected ordinary triples; 0 positive, 2 negative; strangeness -85 to -87.</title>
+<path d="M1110.5762711864406 459.2692307692308V462.60769230769233" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="1110.5762711864406" cy="462.60769230769233" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M1110.5762711864406 462.60769230769233H1128" stroke="#c7c7d4" stroke-width="2"/>
+<text x="86" y="290.34615384615387" font-size="18" fill="#f4f1e8" text-anchor="end">+15</text>
+<text x="1142" y="468.60769230769233" font-size="18" fill="#f4f1e8" >−87</text>
+<path d="M100 525H1128" stroke="#383b50"/>
+<path d="M274.2372881355932 525v6" stroke="#9999ae"/>
+<text x="274.2372881355932" y="552" font-size="16" fill="#9999ae" text-anchor="middle">10</text>
+<path d="M448.47457627118644 525v6" stroke="#9999ae"/>
+<text x="448.47457627118644" y="552" font-size="16" fill="#9999ae" text-anchor="middle">20</text>
+<path d="M622.7118644067797 525v6" stroke="#9999ae"/>
+<text x="622.7118644067797" y="552" font-size="16" fill="#9999ae" text-anchor="middle">30</text>
+<path d="M796.9491525423729 525v6" stroke="#9999ae"/>
+<text x="796.9491525423729" y="552" font-size="16" fill="#9999ae" text-anchor="middle">40</text>
+<path d="M971.1864406779661 525v6" stroke="#9999ae"/>
+<text x="971.1864406779661" y="552" font-size="16" fill="#9999ae" text-anchor="middle">50</text>
+<text x="100" y="584" font-size="18" fill="#c7c7d4" >58 ordered event weights · horizontal spacing is event order, not offset distance</text>
+<text x="100" y="614" font-size="18" fill="#c7c7d4" >First: M ≈ 10.17122</text>
+<text x="1128" y="614" font-size="18" fill="#c7c7d4" text-anchor="end">Last: M ≈ 16172.76506</text>
+<text x="40" y="652" font-size="27" fill="#f4f1e8" >11 / 8    96 ordinary triples + 9 fourfolds</text>
+<text x="40" y="687" font-size="20" fill="#c7c7d4" >After local resolution: 10 positive + 122 negative = 132 triples</text>
+<path d="M100 757.3846153846154H1128" stroke="#383b50" stroke-dasharray="4 5"/>
+<text x="84" y="763.3846153846154" font-size="17" fill="#9999ae" text-anchor="end">0</text>
+<path d="M100 840.8461538461538H1128" stroke="#383b50" stroke-dasharray="4 5"/>
+<text x="84" y="846.8461538461538" font-size="17" fill="#9999ae" text-anchor="end">−50</text>
+<path d="M100 924.3076923076924H1128" stroke="#383b50" stroke-dasharray="4 5"/>
+<text x="84" y="930.3076923076924" font-size="17" fill="#9999ae" text-anchor="end">−100</text>
+<text x="100" y="710" font-size="17" fill="#9999ae" >Strangeness</text>
+<path d="M100 739.0230769230769H117.72413793103448" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 1; M ≈ 64.75421650; two reflected ordinary triples; 0 positive, 2 negative; strangeness 11 to 9.</title>
+<path d="M117.72413793103448 739.0230769230769V742.3615384615384" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="117.72413793103448" cy="742.3615384615384" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M117.72413793103448 742.3615384615384H135.44827586206895" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 2; M ≈ 67.07903474; two reflected ordinary triples; 0 positive, 2 negative; strangeness 9 to 7.</title>
+<path d="M135.44827586206895 742.3615384615384V745.7" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="135.44827586206895" cy="745.7" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M135.44827586206895 745.7H153.17241379310343" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 3; M ≈ 82.44183224; two reflected ordinary triples; 0 positive, 2 negative; strangeness 7 to 5.</title>
+<path d="M153.17241379310343 745.7V749.0384615384615" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="153.17241379310343" cy="749.0384615384615" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M153.17241379310343 749.0384615384615H170.89655172413794" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 4; M ≈ 82.51016807; two reflected ordinary triples; 0 positive, 2 negative; strangeness 5 to 3.</title>
+<path d="M170.89655172413794 749.0384615384615V752.376923076923" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="170.89655172413794" cy="752.376923076923" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M170.89655172413794 752.376923076923H188.6206896551724" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 5; M ≈ 83.22880552; two reflected ordinary triples; 0 positive, 2 negative; strangeness 3 to 1.</title>
+<path d="M188.6206896551724 752.376923076923V755.7153846153847" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="188.6206896551724" cy="755.7153846153847" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M188.6206896551724 755.7153846153847H206.3448275862069" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 6; M ≈ 86.74391656; two reflected ordinary triples; 0 positive, 2 negative; strangeness 1 to -1.</title>
+<path d="M206.3448275862069 755.7153846153847V759.0538461538462" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="206.3448275862069" cy="759.0538461538462" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M206.3448275862069 759.0538461538462H224.0689655172414" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 7; M ≈ 89.02910261; two reflected ordinary triples; 0 positive, 2 negative; strangeness -1 to -3.</title>
+<path d="M224.0689655172414 759.0538461538462V762.3923076923077" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="224.0689655172414" cy="762.3923076923077" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M224.0689655172414 762.3923076923077H241.79310344827587" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 8; M ≈ 89.23284065; two reflected ordinary triples; 0 positive, 2 negative; strangeness -3 to -5.</title>
+<path d="M241.79310344827587 762.3923076923077V765.7307692307693" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="241.79310344827587" cy="765.7307692307693" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M241.79310344827587 765.7307692307693H259.51724137931035" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 9; M ≈ 101.75709621; two reflected ordinary triples; 0 positive, 2 negative; strangeness -5 to -7.</title>
+<path d="M259.51724137931035 765.7307692307693V769.0692307692308" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="259.51724137931035" cy="769.0692307692308" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M259.51724137931035 769.0692307692308H277.2413793103448" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 10; M ≈ 104.36506179; two reflected ordinary triples; 0 positive, 2 negative; strangeness -7 to -9.</title>
+<path d="M277.2413793103448 769.0692307692308V772.4076923076923" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="277.2413793103448" cy="772.4076923076923" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M277.2413793103448 772.4076923076923H294.9655172413793" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 11; M ≈ 104.64929602; two reflected ordinary triples; 0 positive, 2 negative; strangeness -9 to -11.</title>
+<path d="M294.9655172413793 772.4076923076923V775.7461538461539" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="294.9655172413793" cy="775.7461538461539" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M294.9655172413793 775.7461538461539H312.6896551724138" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 12; M ≈ 104.91723255; two reflected ordinary triples; 0 positive, 2 negative; strangeness -11 to -13.</title>
+<path d="M312.6896551724138 775.7461538461539V779.0846153846154" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="312.6896551724138" cy="779.0846153846154" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M312.6896551724138 779.0846153846154H330.41379310344826" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 13; M ≈ 105.24982350; two reflected ordinary triples; 0 positive, 2 negative; strangeness -13 to -15.</title>
+<path d="M330.41379310344826 779.0846153846154V782.4230769230769" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="330.41379310344826" cy="782.4230769230769" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M330.41379310344826 782.4230769230769H348.1379310344828" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 14; M ≈ 105.72073704; two reflected ordinary triples; 0 positive, 2 negative; strangeness -15 to -17.</title>
+<path d="M348.1379310344828 782.4230769230769V785.7615384615385" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="348.1379310344828" cy="785.7615384615385" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M348.1379310344828 785.7615384615385H365.86206896551727" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 15; M ≈ 106.21296785; two reflected ordinary triples; 0 positive, 2 negative; strangeness -17 to -19.</title>
+<path d="M365.86206896551727 785.7615384615385V789.1" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="365.86206896551727" cy="789.1" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M365.86206896551727 789.1H383.58620689655174" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 16; M ≈ 106.27571101; two reflected ordinary triples; 0 positive, 2 negative; strangeness -19 to -21.</title>
+<path d="M383.58620689655174 789.1V792.4384615384615" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="383.58620689655174" cy="792.4384615384615" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M383.58620689655174 792.4384615384615H401.3103448275862" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 17; M ≈ 110.66889031; one axis fourfold; 2 positive, 2 negative; strangeness -21 to -21.</title>
+<path d="M401.3103448275862 792.4384615384615V792.4384615384615" stroke="#d1b6ea" stroke-width="3"/>
+<path d="M401.3103448275862 788.4384615384615l4 4-4 4-4-4Z" fill="#d1b6ea"/>
+</g>
+<path d="M401.3103448275862 792.4384615384615H419.0344827586207" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 18; M ≈ 114.65898949; two reflected ordinary triples; 0 positive, 2 negative; strangeness -21 to -23.</title>
+<path d="M419.0344827586207 792.4384615384615V795.7769230769231" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="419.0344827586207" cy="795.7769230769231" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M419.0344827586207 795.7769230769231H436.7586206896552" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 19; M ≈ 116.25548123; two reflected ordinary triples; 0 positive, 2 negative; strangeness -23 to -25.</title>
+<path d="M436.7586206896552 795.7769230769231V799.1153846153846" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="436.7586206896552" cy="799.1153846153846" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M436.7586206896552 799.1153846153846H454.48275862068965" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 20; M ≈ 116.40720685; two reflected ordinary triples; 0 positive, 2 negative; strangeness -25 to -27.</title>
+<path d="M454.48275862068965 799.1153846153846V802.4538461538461" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="454.48275862068965" cy="802.4538461538461" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M454.48275862068965 802.4538461538461H472.2068965517241" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 21; M ≈ 118.74773654; two reflected ordinary triples; 0 positive, 2 negative; strangeness -27 to -29.</title>
+<path d="M472.2068965517241 802.4538461538461V805.7923076923076" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="472.2068965517241" cy="805.7923076923076" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M472.2068965517241 805.7923076923076H489.9310344827586" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 22; M ≈ 122.58183958; two reflected ordinary triples; 0 positive, 2 negative; strangeness -29 to -31.</title>
+<path d="M489.9310344827586 805.7923076923076V809.1307692307693" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="489.9310344827586" cy="809.1307692307693" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M489.9310344827586 809.1307692307693H507.6551724137931" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 23; M ≈ 123.51212425; two reflected ordinary triples; 0 positive, 2 negative; strangeness -31 to -33.</title>
+<path d="M507.6551724137931 809.1307692307693V812.4692307692308" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="507.6551724137931" cy="812.4692307692308" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M507.6551724137931 812.4692307692308H525.3793103448276" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 24; M ≈ 125.78080943; two reflected ordinary triples; 0 positive, 2 negative; strangeness -33 to -35.</title>
+<path d="M525.3793103448276 812.4692307692308V815.8076923076923" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="525.3793103448276" cy="815.8076923076923" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M525.3793103448276 815.8076923076923H543.1034482758621" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 25; M ≈ 125.79181834; two reflected ordinary triples; 0 positive, 2 negative; strangeness -35 to -37.</title>
+<path d="M543.1034482758621 815.8076923076923V819.1461538461539" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="543.1034482758621" cy="819.1461538461539" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M543.1034482758621 819.1461538461539H560.8275862068965" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 26; M ≈ 126.05856867; two reflected ordinary triples; 0 positive, 2 negative; strangeness -37 to -39.</title>
+<path d="M560.8275862068965 819.1461538461539V822.4846153846154" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="560.8275862068965" cy="822.4846153846154" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M560.8275862068965 822.4846153846154H578.551724137931" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 27; M ≈ 126.14441008; two reflected ordinary triples; 0 positive, 2 negative; strangeness -39 to -41.</title>
+<path d="M578.551724137931 822.4846153846154V825.8230769230769" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="578.551724137931" cy="825.8230769230769" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M578.551724137931 825.8230769230769H596.2758620689656" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 28; M ≈ 126.47422424; one axis fourfold; 0 positive, 4 negative; strangeness -41 to -45.</title>
+<path d="M596.2758620689656 825.8230769230769V832.5" stroke="#9fc7eb" stroke-width="3"/>
+<path d="M596.2758620689656 828.5l4 4-4 4-4-4Z" fill="#9fc7eb"/>
+</g>
+<path d="M596.2758620689656 832.5H614" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 29; M ≈ 127.58670380; two reflected ordinary triples; 0 positive, 2 negative; strangeness -45 to -47.</title>
+<path d="M614 832.5V835.8384615384615" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="614" cy="835.8384615384615" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M614 835.8384615384615H631.7241379310345" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 30; M ≈ 129.74279405; two reflected ordinary triples; 0 positive, 2 negative; strangeness -47 to -49.</title>
+<path d="M631.7241379310345 835.8384615384615V839.1769230769231" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="631.7241379310345" cy="839.1769230769231" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M631.7241379310345 839.1769230769231H649.448275862069" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 31; M ≈ 129.88209562; two reflected ordinary triples; 0 positive, 2 negative; strangeness -49 to -51.</title>
+<path d="M649.448275862069 839.1769230769231V842.5153846153846" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="649.448275862069" cy="842.5153846153846" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M649.448275862069 842.5153846153846H667.1724137931035" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 32; M ≈ 130.27875074; two reflected ordinary triples; 0 positive, 2 negative; strangeness -51 to -53.</title>
+<path d="M667.1724137931035 842.5153846153846V845.8538461538461" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="667.1724137931035" cy="845.8538461538461" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M667.1724137931035 845.8538461538461H684.8965517241379" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 33; M ≈ 132.94645462; two reflected ordinary triples; 0 positive, 2 negative; strangeness -53 to -55.</title>
+<path d="M684.8965517241379 845.8538461538461V849.1923076923077" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="684.8965517241379" cy="849.1923076923077" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M684.8965517241379 849.1923076923077H702.6206896551724" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 34; M ≈ 133.06233295; one axis fourfold; 2 positive, 2 negative; strangeness -55 to -55.</title>
+<path d="M702.6206896551724 849.1923076923077V849.1923076923077" stroke="#d1b6ea" stroke-width="3"/>
+<path d="M702.6206896551724 845.1923076923077l4 4-4 4-4-4Z" fill="#d1b6ea"/>
+</g>
+<path d="M702.6206896551724 849.1923076923077H720.3448275862069" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 35; M ≈ 136.38029272; two reflected ordinary triples; 0 positive, 2 negative; strangeness -55 to -57.</title>
+<path d="M720.3448275862069 849.1923076923077V852.5307692307692" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="720.3448275862069" cy="852.5307692307692" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M720.3448275862069 852.5307692307692H738.0689655172414" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 36; M ≈ 137.41480855; one axis fourfold; 0 positive, 4 negative; strangeness -57 to -61.</title>
+<path d="M738.0689655172414 852.5307692307692V859.2076923076922" stroke="#9fc7eb" stroke-width="3"/>
+<path d="M738.0689655172414 855.2076923076922l4 4-4 4-4-4Z" fill="#9fc7eb"/>
+</g>
+<path d="M738.0689655172414 859.2076923076922H755.7931034482758" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 37; M ≈ 138.35000996; one axis fourfold; 0 positive, 4 negative; strangeness -61 to -65.</title>
+<path d="M755.7931034482758 859.2076923076922V865.8846153846154" stroke="#9fc7eb" stroke-width="3"/>
+<path d="M755.7931034482758 861.8846153846154l4 4-4 4-4-4Z" fill="#9fc7eb"/>
+</g>
+<path d="M755.7931034482758 865.8846153846154H773.5172413793103" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 38; M ≈ 139.87765826; two reflected ordinary triples; 0 positive, 2 negative; strangeness -65 to -67.</title>
+<path d="M773.5172413793103 865.8846153846154V869.2230769230769" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="773.5172413793103" cy="869.2230769230769" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M773.5172413793103 869.2230769230769H791.2413793103449" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 39; M ≈ 140.29905845; two reflected ordinary triples; 0 positive, 2 negative; strangeness -67 to -69.</title>
+<path d="M791.2413793103449 869.2230769230769V872.5615384615385" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="791.2413793103449" cy="872.5615384615385" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M791.2413793103449 872.5615384615385H808.9655172413793" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 40; M ≈ 141.40844171; one axis fourfold; 0 positive, 4 negative; strangeness -69 to -73.</title>
+<path d="M808.9655172413793 872.5615384615385V879.2384615384615" stroke="#9fc7eb" stroke-width="3"/>
+<path d="M808.9655172413793 875.2384615384615l4 4-4 4-4-4Z" fill="#9fc7eb"/>
+</g>
+<path d="M808.9655172413793 879.2384615384615H826.6896551724138" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 41; M ≈ 144.55049269; one axis fourfold; 0 positive, 4 negative; strangeness -73 to -77.</title>
+<path d="M826.6896551724138 879.2384615384615V885.9153846153846" stroke="#9fc7eb" stroke-width="3"/>
+<path d="M826.6896551724138 881.9153846153846l4 4-4 4-4-4Z" fill="#9fc7eb"/>
+</g>
+<path d="M826.6896551724138 885.9153846153846H844.4137931034483" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 42; M ≈ 144.78484629; two reflected ordinary triples; 0 positive, 2 negative; strangeness -77 to -79.</title>
+<path d="M844.4137931034483 885.9153846153846V889.2538461538461" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="844.4137931034483" cy="889.2538461538461" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M844.4137931034483 889.2538461538461H862.1379310344828" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 43; M ≈ 144.95430747; two reflected ordinary triples; 0 positive, 2 negative; strangeness -79 to -81.</title>
+<path d="M862.1379310344828 889.2538461538461V892.5923076923077" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="862.1379310344828" cy="892.5923076923077" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M862.1379310344828 892.5923076923077H879.8620689655172" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 44; M ≈ 146.96672633; two reflected ordinary triples; 0 positive, 2 negative; strangeness -81 to -83.</title>
+<path d="M879.8620689655172 892.5923076923077V895.9307692307692" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="879.8620689655172" cy="895.9307692307692" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M879.8620689655172 895.9307692307692H897.5862068965517" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 45; M ≈ 148.98297642; two reflected ordinary triples; 0 positive, 2 negative; strangeness -83 to -85.</title>
+<path d="M897.5862068965517 895.9307692307692V899.2692307692307" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="897.5862068965517" cy="899.2692307692307" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M897.5862068965517 899.2692307692307H915.3103448275862" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 46; M ≈ 149.94849255; two reflected ordinary triples; 0 positive, 2 negative; strangeness -85 to -87.</title>
+<path d="M915.3103448275862 899.2692307692307V902.6076923076923" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="915.3103448275862" cy="902.6076923076923" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M915.3103448275862 902.6076923076923H933.0344827586207" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 47; M ≈ 162.98024505; two reflected ordinary triples; 0 positive, 2 negative; strangeness -87 to -89.</title>
+<path d="M933.0344827586207 902.6076923076923V905.9461538461538" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="933.0344827586207" cy="905.9461538461538" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M933.0344827586207 905.9461538461538H950.7586206896551" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 48; M ≈ 163.27050972; two reflected ordinary triples; 0 positive, 2 negative; strangeness -89 to -91.</title>
+<path d="M950.7586206896551 905.9461538461538V909.2846153846153" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="950.7586206896551" cy="909.2846153846153" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M950.7586206896551 909.2846153846153H968.4827586206897" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 49; M ≈ 177.47997204; one axis fourfold; 0 positive, 4 negative; strangeness -91 to -95.</title>
+<path d="M968.4827586206897 909.2846153846153V915.9615384615385" stroke="#9fc7eb" stroke-width="3"/>
+<path d="M968.4827586206897 911.9615384615385l4 4-4 4-4-4Z" fill="#9fc7eb"/>
+</g>
+<path d="M968.4827586206897 915.9615384615385H986.2068965517242" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 50; M ≈ 177.70279112; two reflected ordinary triples; 2 positive, 0 negative; strangeness -95 to -93.</title>
+<path d="M986.2068965517242 915.9615384615385V912.623076923077" stroke="#e8b66e" stroke-width="3"/>
+<circle cx="986.2068965517242" cy="912.623076923077" r="2.5" fill="#e8b66e"/>
+</g>
+<path d="M986.2068965517242 912.623076923077H1003.9310344827586" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 51; M ≈ 179.87243117; two reflected ordinary triples; 2 positive, 0 negative; strangeness -93 to -91.</title>
+<path d="M1003.9310344827586 912.623076923077V909.2846153846153" stroke="#e8b66e" stroke-width="3"/>
+<circle cx="1003.9310344827586" cy="909.2846153846153" r="2.5" fill="#e8b66e"/>
+</g>
+<path d="M1003.9310344827586 909.2846153846153H1021.6551724137931" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 52; M ≈ 233.17434935; two reflected ordinary triples; 0 positive, 2 negative; strangeness -91 to -93.</title>
+<path d="M1021.6551724137931 909.2846153846153V912.623076923077" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="1021.6551724137931" cy="912.623076923077" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M1021.6551724137931 912.623076923077H1039.3793103448274" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 53; M ≈ 235.34752474; two reflected ordinary triples; 0 positive, 2 negative; strangeness -93 to -95.</title>
+<path d="M1039.3793103448274 912.623076923077V915.9615384615385" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="1039.3793103448274" cy="915.9615384615385" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M1039.3793103448274 915.9615384615385H1057.103448275862" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 54; M ≈ 252.31763521; one axis fourfold; 2 positive, 2 negative; strangeness -95 to -95.</title>
+<path d="M1057.103448275862 915.9615384615385V915.9615384615385" stroke="#d1b6ea" stroke-width="3"/>
+<path d="M1057.103448275862 911.9615384615385l4 4-4 4-4-4Z" fill="#d1b6ea"/>
+</g>
+<path d="M1057.103448275862 915.9615384615385H1074.8275862068965" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 55; M ≈ 296.05879351; two reflected ordinary triples; 0 positive, 2 negative; strangeness -95 to -97.</title>
+<path d="M1074.8275862068965 915.9615384615385V919.3" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="1074.8275862068965" cy="919.3" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M1074.8275862068965 919.3H1092.5517241379312" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 56; M ≈ 784.36997929; two reflected ordinary triples; 0 positive, 2 negative; strangeness -97 to -99.</title>
+<path d="M1092.5517241379312 919.3V922.6384615384616" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="1092.5517241379312" cy="922.6384615384616" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M1092.5517241379312 922.6384615384616H1110.2758620689656" fill="none" stroke="#c7c7d4" stroke-width="2"/>
+<g><title>Event 57; M ≈ 817.10006534; two reflected ordinary triples; 0 positive, 2 negative; strangeness -99 to -101.</title>
+<path d="M1110.2758620689656 922.6384615384616V925.9769230769231" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="1110.2758620689656" cy="925.9769230769231" r="2.5" fill="#9fc7eb"/>
+</g>
+<path d="M1110.2758620689656 925.9769230769231H1128" stroke="#c7c7d4" stroke-width="2"/>
+<text x="86" y="737.0230769230769" font-size="18" fill="#f4f1e8" text-anchor="end">+11</text>
+<text x="1142" y="931.9769230769231" font-size="18" fill="#f4f1e8" >−101</text>
+<path d="M100 965H1128" stroke="#383b50"/>
+<path d="M277.2413793103448 965v6" stroke="#9999ae"/>
+<text x="277.2413793103448" y="992" font-size="16" fill="#9999ae" text-anchor="middle">10</text>
+<path d="M454.48275862068965 965v6" stroke="#9999ae"/>
+<text x="454.48275862068965" y="992" font-size="16" fill="#9999ae" text-anchor="middle">20</text>
+<path d="M631.7241379310345 965v6" stroke="#9999ae"/>
+<text x="631.7241379310345" y="992" font-size="16" fill="#9999ae" text-anchor="middle">30</text>
+<path d="M808.9655172413793 965v6" stroke="#9999ae"/>
+<text x="808.9655172413793" y="992" font-size="16" fill="#9999ae" text-anchor="middle">40</text>
+<path d="M986.2068965517242 965v6" stroke="#9999ae"/>
+<text x="986.2068965517242" y="992" font-size="16" fill="#9999ae" text-anchor="middle">50</text>
+<text x="100" y="1024" font-size="18" fill="#c7c7d4" >57 ordered event weights · horizontal spacing is event order, not offset distance</text>
+<text x="100" y="1054" font-size="18" fill="#c7c7d4" >First: M ≈ 64.75422</text>
+<text x="1128" y="1054" font-size="18" fill="#c7c7d4" text-anchor="end">Last: M ≈ 817.10007</text>
+<text x="40" y="1103" font-size="20" fill="#f4f1e8" >The sufficiently distant full construction has 138 + 722 + 132 = 992 triples, after local generic resolution.</text>
+</g></svg>

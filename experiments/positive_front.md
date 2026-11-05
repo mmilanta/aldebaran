@@ -30,8 +30,10 @@ counts exactly **722 middle plane triples** and bounds the full route
 by **at least 936 triples**, if the common offset is sufficiently large.
 A set of [selected positive passages](offset_positive.md) strengthens the
 full-route bound to **992**, by forcing additional cancelling triples.
-It supplies no numerical threshold for that stronger conclusion; the
-offset legs' exact triple counts remain open.
+A later [complete circle census](offset_leg_census.md) proves exactly
+138 and 132 resolved outward triples, making **992 an exact count** for
+this sufficiently distant construction. The numerical middle-family
+event-stability threshold and local perturbation size remain unspecified.
 In particular it does not construct a route without **either** kind of touch, or attain the
 [twelve-triple lower bound](triple_distance.md) for such a route.
 

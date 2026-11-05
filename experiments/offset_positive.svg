@@ -82,5 +82,5 @@
 <text x="985" y="1085" font-size="43" fill="#f4f1e8" font-weight="650">≥ 992</text>
 <text x="985" y="1120" font-size="18" fill="#c7c7d4" >≥494+ / ≥498−</text>
 <text x="30" y="1210" font-size="21" fill="#f4f1e8" >A lower bound for the sufficiently distant constructed route. The net signed change remains −4.</text>
-<text x="30" y="1246" font-size="18" fill="#c7c7d4" >Exact outward-leg counts remain open. No numerical threshold for middle-event stability is supplied.</text>
+<text x="30" y="1246" font-size="18" fill="#c7c7d4" >The later whole-leg census proves this bound is exact. No numerical middle-event threshold is supplied.</text>
 </g></svg>
