@@ -429,6 +429,13 @@ python3 experiments/radial_limit.py --write
 node experiments/radial_limit_figure.js
 ```
 
+A [companion drawing](experiments/radial_triangle.svg) shows the thin
+plane pocket still present at the graph's triple moment. Exact arc
+integrals enclose its area; multiplying by distance tends to
+3375/2048. Regenerate its rational data and illustration with
+`python3 experiments/radial_triangle.py --write` and
+`node experiments/radial_triangle_figure.js`.
+
 The [outward-offset plot](experiments/parallel_offset.svg) follows each
 endpoint from 40 crossing pairs to 106, through exactly 33 inverse
 pair-births. Rational contraction boxes certify all 66 contact pairs,

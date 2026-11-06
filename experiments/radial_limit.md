@@ -334,6 +334,137 @@ straightening, or smoothing. It is expressly **not** a numerical
 threshold for the 722-event middle family. The rational scaled-root
 checker includes w=3/53, C=10, M=7813, as well as much narrower blocks.
 
+## The triangle left at the front triple
+
+![The thin curved pocket at offset 25, first at equal physical coordinate scales and then with horizontal distances stretched by 25.](radial_triangle.svg)
+
+The graph's triple moment is δ=0. At that same moment the middle
+plane arc is a radius-M circle, while the two outer arcs still enclose
+a curved pocket against it. At M=25 its area is enclosed by
+
+```
+0.065642804255745 < area < 0.065642804255746.
+```
+
+These are square drawing units. The first picture uses equal coordinate
+scales; the narrowness is physical. The second explicitly stretches
+horizontal distances by 25, leaving vertical distances alone. Its area
+is consequently 25 times the original area. This is the isolated
+three-arc model, with no claim that the whole movie has an empty face
+in this position.
+
+There are exact arc-area enclosures at four distances:
+
+| M | Area, decimal guide | M × area, decimal guide |
+| ---: | ---: | ---: |
+| 25 | 0.06564280425575 | 1.641070106394 |
+| 100 | 0.01647514990853 | 1.647514990853 |
+| 1000 | 0.00164794487360 | 1.647944873600 |
+| 10000 | 0.00016479491753 | 1.647949175298 |
+
+Put a=15/8. If x is the outer–outer crossing angle used above, let
+u be the outer–circle crossing angle. It is the unique root in
+(0,1/8) of the exact polynomial equation
+
+```
+f(u)² − 2M f(u) + f′(u)² = 0.
+```
+
+Its derivative is `2f′(u)[f(u)+f″(u)−M]<0` in that interval.
+Rational bisection therefore isolates the crossing independently of
+the trigonometric equation for x. The circle's upper polar opening is
+
+```
+v = 2atan(f(u)/f′(u)) − u > 0.
+```
+
+For any support graph, Green's area integrand is
+`det(q_M,q_M′)=(h−M)(h+h″−M)`. Follow the two outer pocket arcs and
+the returning circle arc. Reflection gives the unsigned curved area
+
+```
+A_M = M² v − ∫[u,x] (f−M)(f+f″−M) dθ
+
+    = M²[2atan(f(u)/f′(u))−x]
+      + M∫[u,x] (2f+f″) dθ − ∫[u,x] f(f+f″) dθ.
+```
+
+The last two integrals have rational polynomial primitives. Alternating
+arctangent bounds enclose the remaining term. Cancellation between
+large pieces is done in rational arithmetic, before rounding the
+positive result outward to 96-bit dyadics. Independent sampled boundary
+areas at 256 and 1024 segments per arc converge quadratically to those
+enclosures; sampling supplies no proof decision.
+
+### Three limiting parabolas
+
+As M grows, `Mx→a` and `Mu→a/2`. Translate the pocket by (+M,0)
+and introduce coordinates
+
+```
+X = M(qₓ+M),       Y=qᵧ.
+```
+
+On the positive outer arc set θ=σ/M. Taylor expansion gives
+`X→σ²/2`, `Y→a−σ`. Reflection supplies the other outer arc;
+the circle has `X→Y²/2`. Thus the three boundary curves approach
+
+```
+X = (a−Y)²/2,       X = Y²/2,       X = (a+Y)²/2.
+```
+
+The bounded pocket has `−a/2≤Y≤a/2`. The horizontal gap between
+its right and left boundaries is `a²/2−a|Y|`. Its limiting area is
+
+```
+∫[−a/2,a/2] (a²/2−a|Y|) dY = a³/4 = 3375/2048.
+```
+
+The rescaling multiplies physical area by M, so
+**M A_M→3375/2048**, or `A_M∼3375/(2048M)`. The exact finite-distance
+area enclosures above check this limit independently. They are not
+uniform remainder bounds for the area asymptotic.
+
+### The same area constant at any ordinary front triple
+
+The earlier first correction also gives a universal version. At the
+front triple parameter s=s₀, use `ζ=M(α−α₀)` and
+`Z=M(D_M−h₀)`. The three rescaled graph strands approach the lines
+
+```
+Zᵢ = pᵢ ζ + pᵢ²/2.
+```
+
+The triangle they bound has area
+`V/8`, where `V=|(p₀−p₁)(p₀−p₂)(p₁−p₂)|`. Radial coordinates
+have area Jacobian M−D_M, while the two graph rescalings divide area
+by M². Hence the three selected plane branches enclose local area
+
+```
+A_M(s₀) = V/(8M) + O(M⁻²).
+```
+
+This describes the triangle of those three branches for sufficiently
+large M. Calling it a face of a larger drawing additionally requires
+excluding other branches.
+
+More generally, at `s=s₀+μ/M`, the limiting lines have extra intercepts
+bᵢμ. Their triangle area is
+
+```
+(det J)² (μ−c₁)² / (2V).
+```
+
+This is the [quadratic triple-area law](triple_area.md) in the new
+scale: the triangle vanishes at the shifted clock value μ=c₁. At μ=0,
+substituting the time-shift formula reduces it to V/8. Exact controls
+compare direct rational line intersections, shoelace areas, and the
+older independent determinant formula, including relabelings and the
+concurrent limit. The finite-M curved area has this leading expression
+divided by M away from μ=c₁. At μ=c₁ the limiting expression vanishes;
+this calculation alone says that the area is o(1/M). No numerical
+full-movie threshold follows.
+
 ## Reproduce
 
 Only the Python and Node standard libraries are needed:
@@ -343,15 +474,21 @@ python3 experiments/radial_limit_check.py
 python3 experiments/radial_limit.py
 python3 experiments/radial_limit.py --write
 node experiments/radial_limit_figure.js
+python3 experiments/radial_triangle.py --write
+node experiments/radial_triangle_figure.js
 ```
 
 The [JSON record](radial_limit.json) stores rational derivative bounds,
 error envelopes, drift coefficients, the four uniform residual sign
 bounds, and four freshly certified local root brackets, rounded outward
-to 128-bit dyadics. The uniform
-height estimates and general triple-shift theorem are analytic arguments
+to 128-bit dyadics. The uniform height estimates and general triple-shift
+theorem are analytic arguments
 above; the fifth-order local remainder also has an exact polynomial
 certificate. The controls check the algebra and compare independent
 numerical geometry. Rounded SVG paths are illustrations. None of these
 calculations certifies a new complete event census or the full movie's
 numerical threshold.
+
+The [companion area record](radial_triangle.json) is regenerated from
+fresh rational roots and exact arc integrals. Its numerical polygon
+checks and rounded SVG paths are separate from the area enclosures.

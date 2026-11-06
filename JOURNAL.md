@@ -71,6 +71,56 @@ A/AA violations or page errors. These are headless checks, not physical
 device or screen-reader tests. Tooling, screenshots, and exploratory
 polynomials stay outside the repository.
 
+First publication receipt, **17:22 UTC**: **e9b7161** passed Pages;
+the same **1,608 Chromium/WebKit checks** passed against the published
+study and diagram. The follow-up below is being prepared during the
+remaining part of the measured hour.
+
+The smaller drawing question was how much plane triangle remains
+at the front's δ=0 meeting. The middle arc is then a radius-M circle.
+Its intersection with an outer arc satisfies an exact polynomial
+equation, separate from the outer–outer trigonometric equation.
+Green's formula reduces the curved area to two rational polynomial
+primitives and one arctangent. Alternating rational bounds handle
+that term, and all cancellation happens before outward rounding.
+
+At M=25 the area lies strictly between **0.065642804255745** and
+**0.065642804255746** square drawing units. The
+[companion picture](experiments/radial_triangle.svg) first shows its
+true thin proportions with equal coordinate scales, then stretches
+horizontal distances by exactly 25. It is the isolated three-arc
+model; no whole-movie face exclusion is claimed.
+
+Translate the pocket by (+M,0), then stretch horizontally by M.
+Three limiting parabolas give **M × area → 3375/2048**. More generally,
+the residual triangle at an ordinary front triple has leading area
+`|(p₀−p₁)(p₀−p₂)(p₁−p₂)|/(8M)`. Letting the parameter move by μ/M
+recovers the old quadratic area law, vanishing at the new shifted clock
+value μ=c₁. Direct rational intersections, shoelace areas, and the older
+independent determinant formula agree, including relabelings and the
+concurrent limit. The new area program passes **1,274 controls**,
+and fresh finite-distance curved-area enclosures extend through M=10000.
+Two sampled boundary resolutions independently show quadratic convergence
+to those enclosures. The analytic inverse-distance area law has no
+claimed uniform finite-distance remainder.
+
+The universal formulas received two additional controls beyond the
+three-arc examples. Exact signed Taylor jets check the inverse-angle
+and second-order height expansions. A different periodic support family
+crosses the eleven-turn seam, with route derivatives and offsets as
+small as 4, just above its regularity threshold. All **2,160** such
+numerical controls pass; worst derivative discrepancies are below
+6.61×10⁻¹⁰. The first program now has **9,482 exact controls**, alongside
+its earlier 14,772 local numerical controls. The extra seam checks do
+not alter its rational record or its uniform certificate.
+
+All **eleven** files from the first publication have been fetched and
+matched against the bytes in e9b7161. Both engines pass a further **372
+checks** on the new physical drawing: label bounds and separation,
+unclipped crossing marks, exact ×25 horizontal scaling and unchanged
+vertical scaling, pocket fills, arcs, certified area digits, and links.
+The follow-up's final publication checks are next.
+
 ## 2026-11-05 · Every meeting on the way out
 
 Started at **17:25:28 UTC**; today's hour runs through **18:25:28 UTC**.

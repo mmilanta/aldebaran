@@ -9,11 +9,11 @@ they do not make proof decisions. Standard library only.
 from fractions import Fraction as Q
 from itertools import combinations, permutations, product
 import json
-from math import atan2, cos, hypot, sin
+from math import atan2, cos, hypot, pi, sin
 
 from unittest.mock import patch
 
-from blend_cusps import derivative, product as multiply, require, trim, value
+from blend_cusps import add, derivative, product as multiply, require, scale, trim, value
 from positive_front_projection import certify
 import radial_limit as limit
 from radial_limit import Bounds, FIRST, THIRD, LOCAL, certify_drift_tail, scaled_triple, triple_drift
@@ -62,6 +62,22 @@ def exact_controls():
     require(Q(6, 4) < 3 and Q(15, 8) > Q(2, 4),
             "The middle branch exceeds the common derivative bounds.")
     checks += 6
+
+    # Formal epsilon jets independently verify the coordinate inversion and
+    # the second-order height term at arbitrary signed height/slope jets.
+    epsilon = (Q(0), Q(1))
+    for h, p, a in product((Q(-3), Q(0), Q(2)), (Q(-2), Q(0), Q(3, 2)), (Q(-5), Q(1))):
+        shift = (Q(0), p, p*(h+a))
+        composed_h = add(add((h,), scale(shift, p)), scale(multiply(shift, shift), a/2))
+        composed_p = add((p,), scale(shift, a))
+        inversion = add(multiply(epsilon, composed_p), multiply(multiply(epsilon, epsilon), multiply(composed_h, composed_p)))
+        require(trim(inversion[:3]) == trim(shift), "The inverse-angle epsilon jet changed.")
+        square = multiply(composed_p, composed_p)
+        deficit = add(add(composed_h, scale(multiply(epsilon, square), Q(-1, 2))),
+                      scale(multiply(multiply(epsilon, epsilon), multiply(composed_h, square)), Q(-1, 2)))
+        require(trim(deficit[:3]) == trim((h, p*p/2, p*p*(h+a)/2)),
+                "The same-coordinate second-order height correction changed.")
+        checks += 2
 
     # Independently solve the two equations by subtracting after division
     # by the slope differences; compare with the determinant solution.
@@ -262,15 +278,69 @@ def numeric_controls():
     return checks, worst_angle, worst_route
 
 
+def periodic_controls():
+    """Exercise a different support family across an eleven-turn seam."""
+    bounds = Bounds(Q(7, 2), Q(15, 22), Q(47, 242), Q(1), Q(5, 11))
+    period = 22*pi
+
+    def jet(theta, s):
+        t = theta/11
+        return (2*sin(t)+cos(3*t)+s*cos(5*t),
+                (2*cos(t)-3*sin(3*t)-5*s*sin(5*t))/11,
+                (-2*sin(t)-9*cos(3*t)-25*s*cos(5*t))/121,
+                cos(5*t), -5*sin(5*t)/11)
+
+    def invert(alpha, s, offset):
+        lo, hi = alpha-pi/2, alpha+pi/2
+        for _ in range(55):
+            theta = (lo+hi)/2
+            h, p, *_ = jet(theta, s)
+            if theta-atan2(p, offset-h) < alpha:
+                lo = theta
+            else:
+                hi = theta
+        theta = (lo+hi)/2
+        h, p, a, b, mixed = jet(theta, s)
+        radius = hypot(offset-h, p)
+        return (h-p*p/(radius+offset-h), theta,
+                p*radius/(offset-h), b*radius/(offset-h))
+
+    checks, worst_a, worst_s = 0, 0., 0.
+    angles = [k*2*pi+delta for k in (-12, -1, 0, 1, 10, 11, 12, 22)
+              for delta in (-1e-6, 0., 1e-6)]
+    for offset, s, alpha in product((4, 10, 1000), (-.5, -.13, 0., .31, .5), angles):
+        envelope = {k: float(v) for k, v in bounds.at(Q(offset)).items()}
+        d, theta, da, ds = invert(alpha, s, offset)
+        h, p, a, b, mixed = jet(alpha, s)
+        require(-1e-13 <= d-h <= envelope["height"]+1e-13, "A periodic strand violated one-sided convergence.")
+        require(abs(theta-alpha) <= envelope["angle"]+1e-13, "The periodic coordinate change left its bound.")
+        require(abs(da-p) <= envelope["angle_derivative"]+1e-13
+                and abs(ds-b) <= envelope["route_derivative"]+1e-13, "A periodic derivative left its bound.")
+        require(abs(d-h-p*p/(2*offset)) <= envelope["first_order_remainder"]+1e-13,
+                "A periodic first correction left its remainder bound.")
+        shifted = invert(alpha+period, s, offset)
+        require(abs(shifted[0]-d) < 5e-14 and abs(shifted[1]-theta-period) < 5e-14,
+                "The eleven-turn coordinate seam changed the deficit or inverse.")
+        step = 1e-5
+        fd_a = (invert(alpha+step, s, offset)[0]-invert(alpha-step, s, offset)[0])/(2*step)
+        fd_s = (invert(alpha, s+step, offset)[0]-invert(alpha, s-step, offset)[0])/(2*step)
+        worst_a, worst_s = max(worst_a, abs(fd_a-da)), max(worst_s, abs(fd_s-ds))
+        require(abs(fd_a-da) < 2e-8 and abs(fd_s-ds) < 2e-8, "Periodic derivative finite differences disagree.")
+        checks += 6
+    return checks, worst_a, worst_s
+
+
 def main():
     exact = exact_controls()
     require(json.loads((limit.HERE / "radial_limit.json").read_text()) == limit.record(),
             "The archived illustration record differs from fresh rational proofs.")
     exact += 1
     numeric, angle_error, route_error = numeric_controls()
+    periodic, seam_angle, seam_route = periodic_controls()
     print(f"{exact:,} exact controls: derivative cancellations, local polynomial suprema, independent drift solutions, relabeling, coordinate changes, and invalid inputs.")
     print(f"{numeric:,} numerical controls: Cartesian polar inversion, analytic envelopes, both derivatives, monotonicity, and local plane triples.")
     print(f"Largest finite-difference errors: angular {angle_error:.4g}, route {route_error:.4g}.")
+    print(f"{periodic:,} additional periodic controls cross the eleven-turn seam; finite-difference errors {seam_angle:.4g}, {seam_route:.4g}.")
     print("Uniform estimates and the general event-shift theorem are analytic; sampled checks do not establish a full-movie threshold.")
 
 
