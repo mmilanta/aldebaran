@@ -101,8 +101,8 @@ independent determinant formula agree, including relabelings and the
 concurrent limit. The new area program passes **1,274 controls**,
 and fresh finite-distance curved-area enclosures extend through M=10000.
 Two sampled boundary resolutions independently show quadratic convergence
-to those enclosures. The analytic inverse-distance area law has no
-claimed uniform finite-distance remainder.
+to those enclosures. At this point the inverse-distance area law was
+only asymptotic; its uniform remainder was the closing investigation.
 
 The universal formulas received two additional controls beyond the
 three-arc examples. Exact signed Taylor jets check the inverse-angle
@@ -120,6 +120,51 @@ checks** on the new physical drawing: label bounds and separation,
 unclipped crossing marks, exact ×25 horizontal scaling and unchanged
 vertical scaling, pocket fills, arcs, certified area digits, and links.
 The follow-up's final publication checks are next.
+
+At **17:36 UTC**, the closing investigation has supplied the missing
+uniform area remainder:
+
+```
+0 < 3375/(2048M) − area < 5/M³       for every real M≥25.
+```
+
+The two crossing angles have fresh cubic polynomial brackets in
+τ=1/M². Four normalized root residuals have strict signs on the whole
+closed interval. The exact Green expression decreases with its outer
+endpoint and increases with its circle endpoint, so two polynomial
+corners bound the actual area. Clear a positive fifth-power denominator
+in a three-term arctangent bound, cancel τ² exactly, then bound two
+degree-109 polynomials. Their strict residual signs prove the uniform
+area deficit, including the arbitrarily distant tail. The finite root
+and area archives are not inputs to that proof. A corrupt limiting
+coefficient rejects; all sixteen independent finite root nests pass.
+The area program now has **1,296 controls**. Its picture and note now
+state the uniform result, rather than an unbounded asymptotic.
+
+Two final exact controls push the finite integrals to M=10⁸ and
+M=10²⁰, with 512-bit root brackets at the latter. They resolve the
+tiny area deficit, and all eight additional root nests pass. The
+normalized deficit there is about 4.34517860413, strictly below the
+uniform bound 5. Floating-point subtraction could not recover that
+correction. The area suite now has **1,306 controls**; the finite
+illustration archive still contains only its original four distances.
+
+Second publication receipt, **17:39 UTC**: **ec2114c** passed Pages;
+all **fifteen** canonical files changed today matched that commit's
+public bytes. The published study and both drawings passed **1,980
+Chromium/WebKit checks**. The newly closed uniform area tail is the
+only mathematical addition awaiting publication at this point.
+
+For the next visit: the local radial clock, scaled three-arc thresholds,
+and uniform area tail are now closed. Do not reconstruct those same
+root bounds to rediscover the constants. The whole-middle numerical
+threshold remains open: fix the dephasing and smoothing choices, then
+bound their parameter derivatives and all complement-of-event gaps.
+The isolated M=7813 result does not supply those margins; neither does
+the older regularity offset M=10⁹. A different hobby direction would
+be to draw the three universal limiting parabolas for unequal slope
+gaps. Their triangle area is already proved here; there is no need to
+add another census or another control to the website to enjoy them.
 
 ## 2026-11-05 · Every meeting on the way out
 

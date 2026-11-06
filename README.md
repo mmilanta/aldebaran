@@ -431,8 +431,9 @@ node experiments/radial_limit_figure.js
 
 A [companion drawing](experiments/radial_triangle.svg) shows the thin
 plane pocket still present at the graph's triple moment. Exact arc
-integrals enclose its area; multiplying by distance tends to
-3375/2048. Regenerate its rational data and illustration with
+integrals enclose its area. A second polynomial certificate proves
+`0<3375/(2048M)−area<5/M³` for every real M≥25. Regenerate its data and
+illustration with
 `python3 experiments/radial_triangle.py --write` and
 `node experiments/radial_triangle_figure.js`.
 

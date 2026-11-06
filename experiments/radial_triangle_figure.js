@@ -20,7 +20,9 @@ function decimalPrefix(box, places = 11) {
   return `${floors[0] / scale}.${String(floors[0] % scale).padStart(places, '0')}…`;
 }
 const row = record.examples.find(r => r.offset === 25);
-if (!row || record.scaled_area_limit !== '3375/2048') throw new Error('Regenerate the rational pocket-area record first.');
+if (!row || record.scaled_area_limit !== '3375/2048' || record.uniform_area_tail?.positive_area_deficit_upper !== '5/M^3') {
+  throw new Error('Regenerate the rational pocket-area record first.');
+}
 const outer = middle(row.outer), circle = middle(row.circle), polar = middle(row.polar);
 const offset = row.offset, colors = ['#e8b66e', '#9fc7eb', '#d1b6ea'];
 const n = x => x.toFixed(4);
@@ -80,7 +82,7 @@ parts.push(`<path d="M125,446H265L${n(target[0] - 6)},${n(target[1])}" fill="non
   text(35, 805, 'In the stretched coordinates, its boundaries approach three parabolas.', 22),
   text(35, 845, 'Integrating between them gives:  M × area → 3375/2048 = 1.64794921875.', 23),
   '<a href="radial_limit.md#the-triangle-left-at-the-front-triple">',
-  text(35, 891, 'Exact arc-area enclosures and the limiting parabolas ↗', 19, '#e8b66e'),
+  text(35, 891, 'Every M ≥ 25:  0 < 3375/(2048M) − area < 5/M³.  Exact proof ↗', 19, '#e8b66e'),
   '</a></g></svg>');
 fs.writeFileSync(path.join(__dirname, 'radial_triangle.svg'), parts.join('\n') + '\n');
 console.log('Wrote radial_triangle.svg: the physical pocket and an explicitly stretched view.');

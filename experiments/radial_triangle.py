@@ -11,11 +11,12 @@ import argparse
 from fractions import Fraction as Q
 from itertools import combinations, permutations, product as combinations_product
 import json
-from math import atan, cos, fsum, sin
+from math import atan, cos, factorial, fsum, sin
+from unittest.mock import patch
 
-from blend_cusps import Interval as I, add, bound, derivative, product, require, scale
+from blend_cusps import Interval as I, add, bound, derivative, product, require, scale, value
 from positive_front_projection import certify, f, first
-from radial_limit import HERE, outward, triple_drift
+from radial_limit import HERE, outward, power, trig_polynomial, triple_drift
 from triple_area import coefficient, cross, linear_intersection
 
 F = (Q(0), Q(15, 8), Q(0), Q(-5, 4), Q(0), Q(3, 8))
@@ -69,6 +70,106 @@ def area_certificate(offset, bits=120):
     return {"outer": outer, "circle": circle, "polar": polar, "parameter": delta, "area": area}
 
 
+def certify_area_tail():
+    """Prove 0<LIMIT/M-area<5/M³ on the entire real half-line M>=25.
+
+    Four scaled polynomial brackets enclose the two crossing angles.
+    Monotonicity of the exact integral in each endpoint bounds its area
+    by two corners. Clearing a positive denominator permits cancellation
+    of tau² before rational interval evaluation, including tau=0.
+    """
+    domain = I(Q(0), Q(1, 625))
+    tau = (Q(0), Q(1))
+    a, b, c = Q(15, 8), Q(-5, 4), Q(3, 8)
+    outer_low = (a, Q(-1125, 128), Q(860625, 8192), Q(-1650))
+    outer_high = (a, Q(-1125, 128), Q(860625, 8192), Q(-1500))
+    circle_low = (a/2, Q(-7875, 4096), Q(10479375, 1048576), Q(-70))
+    circle_high = (a/2, Q(-7875, 4096), Q(10479375, 1048576), Q(-64))
+    root_proofs = []
+
+    def jets(U):
+        odd = add(add(scale(U, a), scale(product(tau, power(U, 3)), b)),
+                  scale(product(power(tau, 2), power(U, 5)), c))
+        p = add(add((a,), scale(product(tau, power(U, 2)), 3*b)),
+                scale(product(power(tau, 2), power(U, 4)), 5*c))
+        return odd, p
+
+    def magnitude(polynomial):
+        interval = bound(polynomial, domain)
+        return max(abs(interval.low), abs(interval.high))
+
+    for kind, side, U in (("outer", "lower", outer_low), ("outer", "upper", outer_high),
+                          ("circle", "lower", circle_low), ("circle", "upper", circle_high)):
+        enclosure = bound(U, domain)
+        require(0 < enclosure.low <= enclosure.high < 2, "An area-tail root bracket left its Taylor window.")
+        odd, p = jets(U)
+        error = Q(0)
+        if kind == "outer":
+            z = product(tau, power(U, 2))
+            coefficient = add(product(tau, product(odd, U)), scale(U, -1))
+            equation = add(product(coefficient, trig_polynomial(z, sinc=True)), product(p, trig_polynomial(z)))
+            error = (magnitude(coefficient)*Q(4**5, factorial(11))
+                     + magnitude(p)*Q(4**5, factorial(10))) * domain.high**2
+        else:
+            equation = add(add(product(tau, product(odd, odd)), scale(odd, -2)), product(p, p))
+        require(equation[:3] == (0, 0, 0), "The scaled area-root coefficients did not cancel.")
+        residual = bound(equation[3:], domain)
+        residual = I(residual.low-error, residual.high+error)
+        require(residual.low > 0 if side == "lower" else residual.high < 0,
+                "A scaled area-root bracket lost its strict sign.")
+        root_proofs.append({"kind": kind, "side": side, "polynomial": list(map(str, U)),
+                            "residual": outward(residual)})
+
+    require(bound(outer_low, domain).low > bound(circle_high, domain).high,
+            "The globally bracketed pocket endpoints overlap.")
+    # A_x<0. For A_u, 1<=f'<=2, 0<=f<=1/4 and -3<=f''<=0
+    # give A_u >= (32/65)M²-(7/2)M-13/16 > 0 for M>=25.
+    require(a*(Q(63, 64))**2 > 1 and Q(15, 64) < Q(1, 4), "The endpoint monotonicity bounds failed.")
+    require(Q(32, 65)*25**2-Q(7, 2)*25-Q(13, 16) > 0
+            and Q(64, 65)*25-Q(7, 2) > 0, "The endpoint area derivative is not uniformly positive.")
+
+    def scaled_primitive(polynomial, U, shift):
+        result = (Q(0),)
+        for k, coefficient in enumerate(polynomial):
+            if coefficient:
+                require(k >= shift and (k-shift) % 2 == 0, "An area primitive has the wrong parity.")
+                term = product(power(tau, (k-shift)//2), power(U, k))
+                result = add(result, scale(term, coefficient))
+        return result
+
+    area_proofs = []
+    for side, X, U, correction in (("lower", outer_high, circle_low, Q(-5)),
+                                  ("upper", outer_low, circle_high, Q(0))):
+        odd, p = jets(U)
+        p5 = power(p, 5)
+        # Three arctangent terms, after multiplying by the positive p^5.
+        angle = add(add(scale(product(odd, power(p, 4)), 2),
+                        scale(product(tau, product(power(odd, 3), power(p, 2))), Q(-2, 3))),
+                    scale(product(power(tau, 2), power(odd, 5)), Q(2, 5)))
+        numerator = add(angle, scale(product(X, p5), -1))
+        rest = add(add(scaled_primitive(G0, X, 2), scale(scaled_primitive(G0, U, 2), -1)),
+                   scale(product(tau, add(scaled_primitive(G1, X, 3),
+                                          scale(scaled_primitive(G1, U, 3), -1))), -1))
+        rest = add(rest, (-LIMIT, -correction))
+        numerator = add(numerator, product(tau, product(p5, rest)))
+        require(numerator[:2] == (0, 0), "The area-limit coefficient did not cancel.")
+        interval = bound(numerator[2:], domain)
+        po = bound(p, domain)
+        require(po.low > 0 and bound(odd, domain).low > 0,
+                "The cleared area denominator or arctangent argument is not positive.")
+        ratio = magnitude(odd)/po.low
+        require(domain.high*ratio**2 < Q(1, 64), "The uniform arctangent argument left its window.")
+        error = 2*po.high**5*domain.high*ratio**7/7
+        # Three terms end positive: atan lies below this partial sum.
+        residual = I(interval.low-error, interval.high)
+        require(residual.low > 0 if side == "lower" else residual.high < 0,
+                "The uniform curved-area residual lost its strict sign.")
+        area_proofs.append({"side": side, "correction": str(correction),
+                            "numerator_degree": len(numerator)-1, "residual": outward(residual)})
+    return {"offset_from": 25, "positive_area_deficit_upper": "5/M^3",
+            "root_proofs": root_proofs, "area_proofs": area_proofs}
+
+
 def point(theta, offset, which):
     """Independent numerical coordinates, shifted by (+M,0) for stability."""
     sign = 1 if which == 0 else -1 if which == 2 else 0
@@ -92,9 +193,29 @@ def controls():
     require(arctangent(Q(0)) == I(Q(0), Q(0)), "The exact angle at the origin changed.")
     require(Q(15, 8)**3/4 == LIMIT, "The parabolic limiting area constant changed.")
     checks = 4
+    tail = certify_area_tail()
+    require(len(tail["root_proofs"]) == 4 and len(tail["area_proofs"]) == 2,
+            "The area-tail proof is incomplete.")
+    checks += 1
+    with patch(__name__+".LIMIT", LIMIT+Q(1, 10**12)):
+        try:
+            certify_area_tail()
+        except ValueError:
+            checks += 1
+        else:
+            raise ValueError("A corrupt area-limit coefficient passed the uniform proof.")
     for offset in (25, 100, 1000, 10000):
         proof = area_certificate(offset)
         actual = float(proof["area"].midpoint())
+        require(0 < LIMIT/offset-proof["area"].high < LIMIT/offset-proof["area"].low < Q(5, offset**3),
+                "Fresh area brackets left the all-offset area remainder law.")
+        checks += 1
+        for root in tail["root_proofs"]:
+            angle = value(tuple(map(Q, root["polynomial"])), Q(1, offset**2))/offset
+            bracket = proof[root["kind"]]
+            require(angle < bracket.low if root["side"] == "lower" else angle > bracket.high,
+                    "The independent finite root does not nest in its global polynomial bracket.")
+            checks += 1
         if offset == 25:
             require(Q("0.065642804255745") < proof["area"].low < proof["area"].high
                     < Q("0.065642804255746"), "The advertised area interval changed.")
@@ -112,6 +233,19 @@ def controls():
         require(abs(float(proof["polar"].midpoint())-(2*atan(float(f(proof["circle"].midpoint())/first(proof["circle"].midpoint())))-u)) < 1e-15,
                 "The independent circle angle disagrees.")
         checks += 4
+    # Resolve a correction far below floating-point relative precision,
+    # and independently nest the angles inside the global tail brackets.
+    for offset, bits in ((10**8, 224), (10**20, 512)):
+        proof = area_certificate(offset, bits=bits)
+        require(0 < LIMIT/offset-proof["area"].high < LIMIT/offset-proof["area"].low < Q(5, offset**3),
+                "An extreme-distance exact area left the uniform remainder.")
+        checks += 1
+        for root in tail["root_proofs"]:
+            angle = value(tuple(map(Q, root["polynomial"])), Q(1, offset**2))/offset
+            bracket = proof[root["kind"]]
+            require(angle < bracket.low if root["side"] == "lower" else angle > bracket.high,
+                    "An extreme-distance root left its global polynomial bracket.")
+            checks += 1
     for offset in (0, 24, True, 25.0):
         try:
             area_certificate(offset)
@@ -163,7 +297,7 @@ def record():
                      **{k: outward(v, bits=96) for k, v in proof.items()},
                      "scaled_area": outward(proof["area"]*offset, bits=96)})
     return {"scope": "Curved pocket of the isolated three-arc plane model at delta=0; no global face claim.",
-            "scaled_area_limit": str(LIMIT), "examples": rows}
+            "scaled_area_limit": str(LIMIT), "uniform_area_tail": certify_area_tail(), "examples": rows}
 
 
 def main():
@@ -182,6 +316,7 @@ def main():
         require(json.loads((HERE/"radial_triangle.json").read_text()) == result,
                 "The archived pocket areas differ from fresh exact arc integrals.")
     print("The analytic scaled-area limit is 3375/2048; this counts the isolated three-arc pocket only.")
+    print("Every real M>=25: 0 < 3375/(2048M)-area < 5/M^3, by a fresh rational polynomial certificate.")
 
 
 if __name__ == "__main__":

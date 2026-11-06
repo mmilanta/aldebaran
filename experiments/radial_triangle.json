@@ -1,6 +1,88 @@
 {
   "scope": "Curved pocket of the isolated three-arc plane model at delta=0; no global face claim.",
   "scaled_area_limit": "3375/2048",
+  "uniform_area_tail": {
+    "offset_from": 25,
+    "positive_area_deficit_upper": "5/M^3",
+    "root_proofs": [
+      {
+        "kind": "outer",
+        "side": "lower",
+        "polynomial": [
+          "15/8",
+          "-1125/128",
+          "860625/8192",
+          "-1650"
+        ],
+        "residual": [
+          "43647863543061/1099511627776",
+          "93488807135979/1099511627776"
+        ]
+      },
+      {
+        "kind": "outer",
+        "side": "upper",
+        "polynomial": [
+          "15/8",
+          "-1125/128",
+          "860625/8192",
+          "-1500"
+        ],
+        "residual": [
+          "-121278880623339/1099511627776",
+          "-73757219370261/1099511627776"
+        ]
+      },
+      {
+        "kind": "circle",
+        "side": "lower",
+        "polynomial": [
+          "15/16",
+          "-7875/4096",
+          "10479375/1048576",
+          "-70"
+        ],
+        "residual": [
+          "6348380025/536870912",
+          "2052415288011/137438953472"
+        ]
+      },
+      {
+        "kind": "circle",
+        "side": "upper",
+        "polynomial": [
+          "15/16",
+          "-7875/4096",
+          "10479375/1048576",
+          "-64"
+        ],
+        "residual": [
+          "-5731215495/536870912",
+          "-4229423130631/549755813888"
+        ]
+      }
+    ],
+    "area_proofs": [
+      {
+        "side": "lower",
+        "correction": "-5",
+        "numerator_degree": 109,
+        "residual": [
+          "6439810960847/549755813888",
+          "260704828125/17179869184"
+        ]
+      },
+      {
+        "side": "upper",
+        "correction": "0",
+        "numerator_degree": 109,
+        "residual": [
+          "-110724436697137/1099511627776",
+          "-26105237606115/274877906944"
+        ]
+      }
+    ]
+  },
   "examples": [
     {
       "offset": 25,

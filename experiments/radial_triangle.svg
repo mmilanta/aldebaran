@@ -43,5 +43,5 @@
 <text x="35" y="805" font-size="22" fill="#c7c7d4" >In the stretched coordinates, its boundaries approach three parabolas.</text>
 <text x="35" y="845" font-size="23" fill="#c7c7d4" >Integrating between them gives:  M × area → 3375/2048 = 1.64794921875.</text>
 <a href="radial_limit.md#the-triangle-left-at-the-front-triple">
-<text x="35" y="891" font-size="19" fill="#e8b66e" >Exact arc-area enclosures and the limiting parabolas ↗</text>
+<text x="35" y="891" font-size="19" fill="#e8b66e" >Every M ≥ 25:  0 &lt; 3375/(2048M) − area &lt; 5/M³.  Exact proof ↗</text>
 </a></g></svg>

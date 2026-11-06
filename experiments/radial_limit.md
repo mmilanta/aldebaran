@@ -423,7 +423,87 @@ its right and left boundaries is `a²/2−a|Y|`. Its limiting area is
 The rescaling multiplies physical area by M, so
 **M A_M→3375/2048**, or `A_M∼3375/(2048M)`. The exact finite-distance
 area enclosures above check this limit independently. They are not
-uniform remainder bounds for the area asymptotic.
+used to infer the uniform remainder proved next.
+
+### A uniform area remainder on the whole half-line
+
+The area also admits a rigorous one-sided remainder:
+
+```
+0 < 3375/(2048M) − A_M < 5/M³       for every real M≥25.
+```
+
+Thus the scaled area approaches its limit from below, with error less
+than 5/M². This is a fresh polynomial certificate, independent of the
+four finite-distance area values.
+
+Again set τ=1/M², now with x=√τ X and u=√τ U. The scaled outer
+root lies between
+
+```
+X_− = 15/8 − (1125/128)τ + (860625/8192)τ² − 1650τ³,
+X_+ = 15/8 − (1125/128)τ + (860625/8192)τ² − 1500τ³.
+```
+
+The scaled circle root lies between
+
+```
+U_− = 15/16 − (7875/4096)τ + (10479375/1048576)τ² − 70τ³,
+U_+ = 15/16 − (7875/4096)τ + (10479375/1048576)τ² − 64τ³.
+```
+
+The constant, linear, and quadratic coefficients cancel exactly in
+the corresponding root equations. After division by τ³, rational
+Horner intervals on `[0,1/625]`, including the outer equation's
+trigonometric remainder, give:
+
+| Root equation at a bracket | Residual enclosure, rounded outward |
+| --- | --- |
+| Outer equation at X_− | (39.697, 85.028) |
+| Outer equation at X_+ | (−110.303, −67.081) |
+| Circle equation at U_− | (11.824, 14.934) |
+| Circle equation at U_+ | (−10.676, −7.693) |
+
+For the algebraic area expression A(x,u;M), holding M fixed,
+
+```
+A_x = −(f−M)(f+f″−M) < 0,
+A_u = 2M²(f′²−ff″)/(f′²+f²) − M(2f+f″) + f(f+f″) > 0.
+```
+
+The second sign holds throughout the positive Taylor window: use
+`1≤f′≤2`, `0≤f≤1/4`, and `−3≤f″≤0` to obtain
+`A_u≥(32/65)M²−(7/2)M−13/16>0` for every M≥25.
+Consequently the corner `(X_+,U_−)` bounds the actual area from below,
+and `(X_−,U_+)` bounds it from above. This monotonicity step avoids
+treating independently varying endpoint intervals as exact roots.
+
+Write `f(√τ U)=√τ O` and `f′(√τ U)=P`, where O and P are
+polynomials in τ. Three arctangent terms bound
+`atan(√τ O/P)` from above; the negative remainder has magnitude at
+most `(√τ O/P)⁷/7`. Substitute this bound in M A, subtract
+`3375/2048+Kτ`, and clear the positive denominator P⁵. The resulting
+numerator is divisible by τ² exactly. Both remaining polynomials have
+degree 109. Their rational interval bounds, including the normalized
+arctangent error, are:
+
+| Area corner and comparison | Residual enclosure, rounded outward |
+| --- | --- |
+| Lower corner, K=−5 | (11.713, 15.176) |
+| Upper corner, K=0 | (−100.704, −94.970) |
+
+These strict signs give `3375/2048−5τ < M A_M < 3375/2048`.
+τ=0 is only a normalized limit; every positive τ in the covered
+interval corresponds to a finite real offset. The proof reads no
+saved area or root record. A corrupted limiting coefficient fails
+the exact cancellation check. Independent finite root intervals nest
+strictly between all four global polynomial brackets.
+
+The exact controls include M=10⁸ and M=10²⁰. At the latter distance,
+512-bit root brackets resolve the area deficit and nest inside the
+global polynomial angle brackets even though floating-point subtraction
+cannot recover that correction. The four modest-distance examples
+remain the only finite areas stored in the illustration record.
 
 ### The same area constant at any ordinary front triple
 
