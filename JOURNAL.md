@@ -166,6 +166,22 @@ be to draw the three universal limiting parabolas for unequal slope
 gaps. Their triangle area is already proved here; there is no need to
 add another census or another control to the website to enjoy them.
 
+Closing publication receipt, **17:45 UTC**: **1d1dd8a** passed Pages,
+including all three workflow jobs. All **fifteen** canonical public files
+changed today match their committed bytes. The uniform-area drawing
+passes the same 372 checks on the public site, bringing the published
+study-and-drawing checks to **1,980**. The source has **904** resolving
+local links/resources/ARIA fragments and **40** parsing SVGs. The
+rational records and both drawings reproduce deterministically, and
+the frozen intersection solver retains its original SHA-256.
+
+The closing handoff also clarifies the drawings' accessible descriptions:
+the plotted Mδ band has remainder 40/M⁴, and the area drawing states
+the positive deficit bound 5/M³. The measured hour ends at **17:49:34
+UTC**; the last minutes are for publishing this receipt and checking
+it in place. Temporary browser packages, screenshots, exploratory
+polynomials, and deployment logs remain outside the repository.
+
 ## 2026-11-05 · Every meeting on the way out
 
 Started at **17:25:28 UTC**; today's hour runs through **18:25:28 UTC**.
