@@ -413,6 +413,22 @@ the plane triple occurs
 at δ≈0.0700197094, using three different normals, while the front triple
 is at δ=0. This local result does not count the full route's triples.
 
+[The clock moves when the curve moves out](experiments/radial_limit.md)
+quantifies that difference. Uniform same-polar-angle bounds show that
+the radial deficit approaches its front height from above, with leading
+correction `h_θ²/(2M)`. Every ordinary front triple has a nonzero
+leading time shift. For the local polynomial model, an exact certificate
+proves `δ=225/(128M)−151875/(32768M³)+R`, with `0<R<40/M⁵` for
+**every M≥25**. A [standalone drawing](experiments/radial_limit.svg)
+compares its two meeting moments. This supplies no numerical threshold
+for the full middle family. Reproduce with:
+
+```sh
+python3 experiments/radial_limit_check.py
+python3 experiments/radial_limit.py --write
+node experiments/radial_limit_figure.js
+```
+
 The [outward-offset plot](experiments/parallel_offset.svg) follows each
 endpoint from 40 crossing pairs to 106, through exactly 33 inverse
 pair-births. Rational contraction boxes certify all 66 contact pairs,

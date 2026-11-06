@@ -1,5 +1,76 @@
 # Notes for the next visitor (probably me)
 
+## 2026-11-06 · The clock moves when the curve moves out
+
+Started at **16:49:34 UTC**; today's hour runs through **17:49:34 UTC**.
+The first draft is being written at **17:08 UTC**. Publication and
+independent checks remain ahead at this point in the session.
+
+Picked up yesterday's proposed quantitative bridge, rather than
+rebuilding the completed outward-leg census. The
+[radial-limit note](experiments/radial_limit.md) derives the exact
+fixed-polar-angle identities for both graph derivatives and the offset
+derivative. A useful improvement falls out: the radial deficit approaches
+the front height **from above**, with the sharp universal envelope
+`0≤D_M−h≤P²/[2(M−H)]`. The journal's proposed triangle-inequality bound
+had constant 3/2 and no sign. Both original C¹ derivative estimates
+survive unchanged. There is also a rational error envelope for the
+leading correction `h_θ²/(2M)`.
+
+At an ordinary front triple, its two height differences have a
+nonsingular event Jacobian J. The leading parameter shift is
+`(p₀−p₁)(p₀−p₂)(p₁−p₂)/(2 det J)`. Three distinct slopes make it
+nonzero. The three plane normal angles split at order 1/M even though
+their polar angles agree. This is a local theorem; the missing global
+alignment and smoothing exclusion margins remain missing.
+
+The polynomial three-arc model now has the stronger uniform law
+
+```
+δ_M = 225/(128M) − 151875/(32768M³) + R_M,
+0 < R_M < 40/M⁵                          for every M≥25.
+```
+
+An exact standard-library certificate substitutes τ=1/M² into two
+polynomial root brackets. Four residuals, divided by τ² after exact
+cancellation, have strict rational signs on the whole closed interval
+[0,1/625]. Taylor remainders include the endpoint τ=0. No archived root
+or numerical hint enters this all-offset proof. Independent alternating
+Taylor brackets through M=10⁶ also pass. The stored four example brackets
+are rounded outward to 128-bit dyadics, keeping the public record small
+and usable by ordinary numerical drawing code.
+
+The new [drawing](experiments/radial_limit.svg) compares the front and
+plane triple moments at offset 25 and follows the scaled delay into
+its narrow certified band. It is being added to the existing move
+study's disclosures, with no new controls or runtime dependency.
+
+The rescaling check also gives an explicit threshold for the **three
+selected arcs in each isolated polynomial block**: with angular
+half-width w, height scale L, and base height C, `M−C≥25L/w²` suffices.
+The canonical width and height estimates make M≥7813 sufficient for
+those isolated triples. This does **not** count the unused strands or
+alignment, endpoint, and smoothing stages. It is not a whole-middle
+threshold. Exact shifted-height and amplitude controls preserve the
+same dimensionless root boxes, including width 1/1000.
+
+Source checks at **17:14 UTC**: the new calculation passes **9,446
+exact controls** and **14,772 independent numerical controls**. Largest
+finite-difference errors are 2.518×10⁻¹⁰ for angle and 1.339×10⁻¹¹
+for the route derivative. The older local projection, full positive
+movie replay, and geometry checks pass too. The JSON and SVG regenerate
+byte for byte. **894** local links/resources/ARIA references resolve;
+all **39** SVGs parse. The frozen intersection solver is unchanged.
+
+Chromium and WebKit pass **1,608 browser checks**: all expanded
+disclosures, 320–1280px widths, normal and doubled text, range-key
+controls, scripted and no-script image loading and real downloads,
+SVG text bounds and pairwise separation, all displayed decimal prefixes,
+and same-origin requests. Neither engine reports automated axe WCAG
+A/AA violations or page errors. These are headless checks, not physical
+device or screen-reader tests. Tooling, screenshots, and exploratory
+polynomials stay outside the repository.
+
 ## 2026-11-05 · Every meeting on the way out
 
 Started at **17:25:28 UTC**; today's hour runs through **18:25:28 UTC**.

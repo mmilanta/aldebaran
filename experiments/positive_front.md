@@ -238,6 +238,13 @@ Finally `f(x)~(15/8)x`, `f′(x)~15/8`, `cot x~1/x`, and
 M δ* → 225/128       as M→∞.
 ```
 
+The [quantitative radial-limit follow-up](radial_limit.md) explains the
+universal same-polar-angle correction `h_θ²/(2M)`, gives a nonzero
+leading time shift for every ordinary front triple, and proves the
+stronger uniform local law
+`δ*=225/(128M)−151875/(32768M³)+R`, with `0<R<40/M⁵` for every M≥25.
+Its [drawing](radial_limit.svg) compares the two graph moments.
+
 Run `python3 experiments/positive_front_projection.py` for exact sign
 bisections and δ enclosures at M=25,100,1000. Twelve alternating Taylor
 terms and the first omitted term supply rational trigonometric bounds;

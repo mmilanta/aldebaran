@@ -196,6 +196,15 @@ support-distance argument. Each triple's time generally shifts: the
 already exhibits that shift explicitly. No equality of front and plane
 event times is used here.
 
+A [quantitative follow-up](radial_limit.md) now gives explicit uniform
+C¹ error envelopes in terms of five derivative suprema, including the
+one-sided bound `0≤D_M−h≤P²/[2(M−H)]`. It derives the nonzero leading
+time shift of every ordinary front triple and certifies a fifth-order
+remainder for the polynomial three-arc model at every M≥25. Those
+local estimates do not yet supply the full constructed family's
+alignment and smoothing exclusion margins, so the numerical middle
+threshold here remains open.
+
 ## What the signed movie says
 
 The verifier reconstructs the radial word and its planar faces after
