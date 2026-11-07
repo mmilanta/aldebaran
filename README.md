@@ -63,6 +63,13 @@ python3 experiments/parabolic_retiming.py
 python3 experiments/retimed_pocket.py
 ```
 
+The [many-slope addendum](experiments/parabolic_triangle.md#more-than-three-slopes-add-the-gap-cubes)
+sums every bounded region of the limit-parabola arrangement: its area
+is the cube of the slope span minus the sum of the adjacent gap cubes,
+all divided by 24. Equal gaps maximize it. An independent exact line
+arrangement checks the formula with
+`python3 experiments/parabolic_pockets.py`.
+
 The browser code lives in `sketch.js` and `experiments/loop.js`. Check syntax with `node --check sketch.js` and `node --check experiments/loop.js`.
 
 [A region can count backwards](experiments/winding.html) turns the signed-area

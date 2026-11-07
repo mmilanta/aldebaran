@@ -190,6 +190,24 @@ approach the exact second-order formulas too. These quadratic graphs
 are local examples, not a proposed global route between the orbital
 drawings.
 
+For the explicit asymmetric quadratic family, one more Cartesian jet
+order gives `c₃=48503/3200`. Stopping at
+`s=3/(2M)+519/(160M²)` now gives
+
+```
+M⁵ × area → (2/3)(48503/3200)²
+           = 2352541009/15360000 ≈ 153.160221940104.
+```
+
+The numerical scaled areas are 159.39086258 at M=256,
+154.68942970 at M=1024, and 153.35035707 at M=8192. The other two
+quadratic families also show the two-power improvement after matching
+c₂. Their exact third coefficients come from substituting unknown
+third normal and clock coefficients in the Cartesian jets and solving
+the resulting rational four-variable system. This uses the **explicit
+quadratic support families**; a general smooth family needs its third
+derivatives too. Its Hessians alone do not determine c₃.
+
 ## The symmetric model leaves a fifth-order pocket
 
 Return to the [polynomial three-arc family](radial_limit.md#a-clock-we-can-enclose):
@@ -293,6 +311,50 @@ of the scaled area below its limit. These four exact finite examples
 support the analytic limit independently; they do not prove a uniform
 area remainder over the whole half-line. The numerical sampled area
 at M=25 agrees with the exact integral and is not used to accept a root.
+
+### The next coefficient, without a half-line remainder bound
+
+The stretched Cartesian family is analytic in τ=1/M²: f is odd,
+g is even, and the apparent negative powers cancel in the stretched
+coordinates. The outer root's earlier coefficients are
+
+```
+x = (15/8)/M − (1125/128)/M³ + (860625/8192)/M⁵ + O(M⁻⁷).
+```
+
+Substitute that series directly into
+`δ=f(x)−f′(x)tan(x/2)`. Exact Taylor composition gives
+
+```
+c₅ = 160228125/4194304,
+μ*(τ) = c₁+c₃τ+c₅τ²+O(τ³).
+```
+
+The direct root-equation jet also cancels exactly through τ².
+Writing a=15/8, the tangent-area check gives
+
+```
+L(μ*(τ),τ) = cot x/M = 1/a+aτ+O(τ²).
+```
+
+At τ=0, the entire parabolic movie has exactly quadratic area, so
+`L(μ,0)=1/a` throughout a neighborhood and its μ derivative vanishes.
+Since `μ*(τ)−c₁=O(τ)`, changing from μ*(τ) to c₁ affects L only
+at order τ². The same two displayed coefficients therefore apply to
+`L(c₁,τ)`. Substituting the squared clock error yields
+
+```
+A_M(c₁/M) = 1537734375/(134217728 M⁵)
+             − 638159765625/(4294967296 M⁷) + O(M⁻⁹).
+```
+
+The seventh-order coefficient is `a c₃²+2c₃c₅/a`, about
+−148.583148984471. For an independent finite check, the exact
+M=10²⁰ enclosure resolves
+`M²[1537734375/134217728−M⁵A_M]` near +148.583148984471.
+This closes another Taylor coefficient. It does **not** provide a
+uniform constant for the O(M⁻⁹) remainder or assert an inequality
+over every M≥25.
 
 ## Reproduce
 

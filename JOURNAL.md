@@ -126,6 +126,77 @@ distances are not an all-offset tail proof. Disjoint normal slots
 exclude extra intersections between the three selected short arcs;
 no fourth-branch or full-drawing face exclusion is claimed.
 
+Second publication receipt, **16:17 UTC**: **0c2eddf** passed Pages.
+The closing refinements below are being prepared during the remaining
+part of the measured hour.
+
+The two-power principle also passes an explicit asymmetric test after
+matching c₂. Exact Cartesian jets one order further give
+`c₃=48503/3200` for the displayed quadratic family; this calculation
+uses its full quadratic support, not just a general family's Hessian.
+The twice-corrected residual satisfies
+`M⁵area → 2352541009/15360000 ≈ 153.160221940104`.
+All three quadratic families show this next gain. The retiming suite
+now has **1,009 exact controls** and **52 numerical event/pocket
+controls**, with independent pair solves and two boundary resolutions.
+These additions leave the four rational finite-area certificates
+unchanged.
+
+A closing, more visual thread appeared at **16:21 UTC**: what if
+there are more than three parabolas? The common slide turns them into
+lines tangent to the same concave parabola. The union of all bounded
+faces is the band between the lower envelope of the two extreme
+lines and the lower envelope of all the lines. Adding Y²/2 back
+turns its width into a difference of squared nearest-slope errors.
+Integrating each gap gives the particularly short exact formula
+
+```
+total bounded area = (L³−sum of adjacent gap cubes)/24.
+```
+
+Equal gaps maximize it at fixed slope count and span. For n slopes,
+the maximum is `L³[1−1/(n−1)²]/24`; its deficit is an exact sum
+of nonnegative square terms. The three-slope case reduces to V/8.
+The [addendum](experiments/parabolic_triangle.md#more-than-three-slopes-add-the-gap-cubes)
+gives the proof. `parabolic_pockets.py` independently splits a box
+containing every line intersection, removes its unbounded cells, and
+sums all remaining rational polygon areas. A separate envelope
+integral agrees. Its **21 exact controls** include two through twelve
+equally spaced slopes and unequal, shifted, reversed, and rescaled
+sets. These are complete arrangements of the limit parabolas, not
+faces or event counts of a full orbital drawing.
+
+For the next visit: drawing this nearest-slope envelope band could be
+a gentle way to see the many-pocket formula. Its total area and
+equal-gap maximum are already proved; do not recalculate all the
+line-face examples just to rediscover them. The whole-middle numerical
+threshold is still open and unrelated to the local tail checks.
+There is no need to add another slider or another census to enjoy
+the drawings already here.
+
+A last Taylor calculation at **16:28 UTC** closes the symmetric
+retimed area's next coefficient too. The stretched family is analytic
+in τ=1/M²; composing the already bounded outer-root series gives
+`c₅=160228125/4194304`. At the actual triple the physical quadratic
+area coefficient is cot x, so its scaled version is
+`cot x/M=8/15+(15/8)τ+O(τ²)`. The limiting movie is exactly
+quadratic in μ; the coefficient's μ derivative vanishes at τ=0.
+Consequently
+
+```
+area at δ=225/(128M)
+  = 1537734375/(134217728 M⁵)
+    − 638159765625/(4294967296 M⁷) + O(M⁻⁹).
+```
+
+The exact M=10²⁰ area enclosure independently resolves the normalized
+deficit near 148.583148984471, agreeing with that negative seventh
+coefficient. The retiming program now has **1,010 exact controls**,
+alongside its **52 numerical controls**. These are Taylor coefficients,
+not a half-line bound. A possible future tail proof should start
+from these known coefficients and bound the ninth-order remainder;
+the four finite checks alone do not make a uniform certificate.
+
 ## 2026-11-06 · The clock moves when the curve moves out
 
 Started at **16:49:34 UTC**; today's hour runs through **17:49:34 UTC**.

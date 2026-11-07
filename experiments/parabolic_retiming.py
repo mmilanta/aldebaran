@@ -12,6 +12,7 @@ from math import atan, cos, factorial, fsum, sin
 
 from blend_cusps import require
 from parabolic_triangle import inputs
+from phase_unfolding import inverse
 from positive_front_projection import f, first, second
 from radial_limit import FIRST, THIRD, triple_drift
 from triple_area import coefficient, cross
@@ -69,6 +70,11 @@ def power(a, n):
 def cartesian_jet(p, b, k, d, e, h0, normal1, normal2, c1, c2):
     """Compose Cartesian q directly, without the radial graph expansion."""
     theta, route = {1: normal1, 2: normal2}, {1: c1, 2: c2}
+    return support_jet(p, b, k, d, e, h0, theta, route)
+
+
+def support_jet(p, b, k, d, e, h0, theta, route):
+    """Cartesian jets of an explicitly quadratic support family."""
     h = add({0: h0}, add(scale(theta, p), scale(route, b)))
     h = add(h, add(scale(power(theta, 2), k/2),
                    add(scale(multiply(theta, route), d), scale(power(route, 2), e/2))))
@@ -88,6 +94,63 @@ PROFILES = (
     ((-3, -1, 2), (1, 0, 2)),
     ((0, 2, 5), (-1, 3, 0)),
 )
+
+
+def quadratic_third(profile, height, seconds, mixed, route_seconds):
+    """Third clock coefficient for the explicit quadratic family only.
+
+    A general smooth family also needs its third derivatives. Here the
+    support graph is exactly the quadratic polynomial used by the
+    numerical model, so no higher support terms have been discarded.
+    """
+    p, b = [tuple(map(Q, v)) for v in profile]
+    k, d, e = [tuple(map(Q, v)) for v in (seconds, mixed, route_seconds)]
+    result = second_drift(p, b, k, d, e, height)
+    old = result["first"]
+    n, m = old["normal_angles"], result["normal_angles"]
+
+    def residual(extra):
+        route = {1: old["parameter"], 2: result["parameter"], 3: extra[3]}
+        jets = [support_jet(p[i], b[i], k[i], d[i], e[i], height,
+                            {1: n[i], 2: m[i], 3: extra[i]}, route) for i in range(3)]
+        return [jets[0][axis].get(order, Q(0))-jets[j][axis].get(order, Q(0))
+                for j in (1, 2) for axis, order in ((0, 3), (1, 2))]
+
+    zero = [Q(0)]*4
+    base, columns = residual(zero), []
+    for j in range(4):
+        unit = zero[:]
+        unit[j] = Q(1)
+        columns.append([x-y for x, y in zip(residual(unit), base)])
+    matrix = [[columns[j][i] for j in range(4)] for i in range(4)]
+    expected = [[n[0], -n[1], Q(0), b[0]-b[1]], [Q(-1), Q(1), Q(0), Q(0)],
+                [n[0], Q(0), -n[2], b[0]-b[2]], [Q(-1), Q(0), Q(1), Q(0)]]
+    require(matrix == expected, "The third-jet coefficient matrix misses the limiting event Jacobian.")
+    R = inverse(matrix)
+    answer = [-sum(R[i][j]*base[j] for j in range(4)) for i in range(4)]
+    require(residual(answer) == zero, "The exact third-order Cartesian event jets do not meet.")
+    return answer[3], tuple(answer[:3])
+
+
+def symmetric_next():
+    """Exact fifth clock and seventh area coefficients, not uniform tails."""
+    a = Q(15, 8)
+    x = {1: a, 3: Q(-1125, 128), 5: Q(860625, 8192)}
+    f = add(add(scale(x, a), scale(power(x, 3), Q(-5, 4))), scale(power(x, 5), Q(3, 8)))
+    p = add(add({0: a}, scale(power(x, 2), Q(-15, 4))), scale(power(x, 4), Q(15, 8)))
+    sine = add(add(x, scale(power(x, 3), Q(-1, 6))), scale(power(x, 5), Q(1, 120)))
+    cosine = add(add({0: Q(1)}, scale(power(x, 2), Q(-1, 2))), scale(power(x, 4), Q(1, 24)))
+    equation = add(multiply(add(f, {-1: Q(-1)}), sine), multiply(p, cosine))
+    require(all(equation.get(n, Q(0)) == 0 for n in (0, 2, 4)),
+            "The symmetric outer-root Taylor coefficients do not cancel.")
+    half = scale(x, Q(1, 2))
+    tangent = add(add(half, scale(power(half, 3), Q(1, 3))), scale(power(half, 5), Q(2, 15)))
+    delta = add(f, scale(multiply(p, tangent), -1))
+    require(delta[1] == FIRST and delta[3] == THIRD,
+            "The independently composed symmetric clock lost its earlier coefficients.")
+    fifth = delta[5]
+    seventh_area = a*THIRD**2+2*THIRD*fifth/a
+    return fifth, seventh_area
 
 
 def exact_controls():
@@ -161,6 +224,20 @@ def exact_controls():
     require(symmetric["quadratic_area"]*THIRD**2 == Q(1537734375, 134217728),
             "The symmetric fifth-order retimed area coefficient changed.")
     count += 1
+    fifth, seventh = symmetric_next()
+    require(fifth == Q(160228125, 4194304) and seventh == -Q(638159765625, 4294967296),
+            "The displayed next symmetric clock or area coefficient changed.")
+    count += 1
+    third = quadratic_third(PROFILES[0], Q(3, 5), k, d, e)
+    require(third[0] == Q(48503, 3200), "The displayed quadratic family's third clock coefficient changed.")
+    count += 1
+    for order in permutations(range(3)):
+        profile = tuple(tuple(v[i] for i in order) for v in PROFILES[0])
+        derivatives = [tuple(v[i] for i in order) for v in (k, d, e)]
+        other = quadratic_third(profile, Q(3, 5), *derivatives)
+        require(other[0] == third[0] and other[1] == tuple(third[1][i] for i in order),
+                "Relabeling changed the quadratic third-order clock or normal jets.")
+        count += 1
     for bad in (0, 0.0, True):
         try:
             second_drift(p, b, k, d, e, bad)
@@ -283,12 +360,15 @@ class SymmetricModel(QuadraticModel):
 def numerical_controls():
     count = 0
     models = [QuadraticModel(profile, Q(3, 5), (1, -2, 3), (-1, 2, 0), (2, 1, -1)) for profile in PROFILES]
-    for model in models:
+    for profile, model in zip(PROFILES, models):
         proof, first_order = model.proof, model.proof["first"]
         c, a = float(first_order["parameter"]), float(first_order["angle"])
         target = float(proof["retimed_area"])
+        third, _ = quadratic_third(profile, Q(3, 5), (1, -2, 3), (-1, 2, 0), (2, 1, -1))
+        target5 = float(proof["quadratic_area"]*third**2)
         require(target > 0, "Choose a nonzero generic retimed-area control.")
         previous = (float("inf"),)*3
+        previous5 = (float("inf"),)*2
         for offset in (64, 128, 256, 512, 1024, 2048, 4096, 8192):
             actual, polar = model.event(offset)
             clock_error = abs(offset*(actual[3]-c)-float(proof["parameter"]))
@@ -308,7 +388,20 @@ def numerical_controls():
                     "The finite second-clock and area errors did not decrease.")
             previous = errors
             count += 1
+            third_error = abs(offset**2*(actual[3]-c-float(proof["parameter"])/offset)-float(third))
+            corrected = c+float(proof["parameter"])/offset
+            area5 = pocket(model, offset, corrected, 64)*offset**4
+            fine5 = pocket(model, offset, corrected, 256)*offset**4
+            require(third_error < 100/offset and abs(area5-fine5) < target5*2e-5
+                    and abs(fine5-target5) < target5*200/offset,
+                    "Matching the quadratic family's second clock term did not give its fifth-order area law.")
+            errors5 = third_error, abs(fine5-target5)
+            require(all(x < y for x, y in zip(errors5, previous5)),
+                    "The third-clock and twice-corrected area errors did not decrease.")
+            previous5 = errors5
+            count += 1
         print(f"Generic model: c2={float(proof['parameter']):.9g}, M^3*area -> {target:.9g}; at M={offset}: {finer:.9g}.")
+        print(f"  Match c2 too: c3={float(third):.9g}, M^5*area -> {target5:.9g}; at M={offset}: {fine5:.9g}.")
     symmetric = SymmetricModel()
     target = float(Q(1537734375, 134217728))
     for offset in (25, 50, 100, 200):
@@ -330,6 +423,8 @@ def main():
     print(f"{numerical_controls()} numerical event/pocket controls passed, each with independent crossings and two boundary resolutions.")
     print("At the leading corrected clock, a generic selected pocket has area K*c2^2/M^3+O(M^-4).")
     print("The symmetric polynomial model has c2=0 and M^5*area -> 1537734375/134217728.")
+    fifth, seventh = symmetric_next()
+    print(f"Next symmetric coefficients: c5={fifth}; area's M^-7 coefficient {seventh}. These are Taylor coefficients, not a uniform tail.")
     print("These local asymptotics give neither finite-offset error bounds nor a full-drawing face census.")
 
 

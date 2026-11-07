@@ -198,6 +198,70 @@ translates by `(Cμ,Bμ)` and keeps its initial area. There is no finite
 limiting triple clock in this case; the ordinary-event formula must
 not divide by zero.
 
+## More than three slopes: add the gap cubes
+
+There is a further area identity for any finite collection of these
+parabolas at μ=0. This is a statement about the limit arrangement,
+separate from the ordinary three-branch event. Sort n distinct slopes
+`p₀<⋯<pₙ₋₁`, put `L=pₙ₋₁−p₀`, and let gᵢ be the adjacent gaps.
+The **sum of all bounded pocket areas** is
+
+```
+B = (L³−Σ gᵢ³)/24.
+```
+
+The horizontal slide still preserves area and sends every parabola
+to a line `Uᵢ=−pᵢY+pᵢ²/2`. All pairwise intersections lie on or
+below each of the two extreme-slope lines: at the ij crossing,
+
+```
+U_extreme(Yᵢⱼ)−Uᵢⱼ = (pᵢ−p_extreme)(pⱼ−p_extreme)/2 ≥ 0.
+```
+
+Every bounded face therefore lies below both extreme lines and above
+the lower envelope of all the lines. Conversely, any point strictly
+in that band is above some interior-slope line and below both extreme
+ones. Those three inequalities bound a triangle, so the arrangement
+face containing the point is bounded. Thus the band is exactly the
+union of bounded faces, apart from their edges.
+
+Add `Y²/2` back to both envelopes. The band's width at height Y is
+
+```
+½ distance(Y,{p₀,pₙ₋₁})² − ½ distance(Y,{all slopes})².
+```
+
+Outside `[p₀,pₙ₋₁]` the difference is zero. Over a gap of length g,
+the integral of half the squared distance to its nearer endpoint is
+g³/24. Using only the extreme endpoints gives L³/24; including every
+slope subtracts the sum of the gap cubes. This proves the formula.
+For three slopes it reduces to the earlier product of the three
+slope differences divided by eight.
+
+Equal gaps maximize the total area at fixed n and L. In fact, with
+`m=L/(n−1)`, the exact nonnegative deficit is
+
+```
+B_max = (L³/24)[1−1/(n−1)²],
+B_max−B = (1/24)Σ(gᵢ−m)²(gᵢ+2m).
+```
+
+The strict maximum requires every gap to equal m. Between slopes
+−2 and +2, three equally spaced slopes give area 2, four give 64/27,
+and five give 5/2. The maximum approaches 8/3 as more evenly spaced
+slopes fill the interval. The unequal five-slope set
+`(−2,−1,1/2,7/4,2)` instead gives 615/256.
+
+`parabolic_pockets.py` checks the identity by a separate rational
+line arrangement: split a box containing every line intersection,
+discard the cells touching its boundary, then sum the exact shoelace
+areas of every remaining face. A second calculation integrates the
+nearest-slope envelope directly. Both agree with the gap formula for
+two through twelve equally spaced slopes and for uneven, shifted,
+reversed, and rescaled examples. These are faces of the complete
+**limit-parabola arrangement**, with no assertion about faces of an
+orbital curve or about finite-distance event counts.
+
 ## Reproduce
 
 Only standard Python and Node runtimes are needed:
@@ -206,6 +270,7 @@ Only standard Python and Node runtimes are needed:
 python3 experiments/parabolic_triangle.py
 python3 experiments/parabolic_triangle.py --write
 node experiments/parabolic_triangle_figure.js
+python3 experiments/parabolic_pockets.py
 ```
 
 The [rational record](parabolic_triangle.json) stores the illustrated
