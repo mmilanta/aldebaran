@@ -1,0 +1,185 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1640" viewBox="0 0 1200 1640" role="img" aria-labelledby="title description">
+<title id="title">A curved triangle, read with a straight ruler</title><desc id="description">Three rows compare a pocket bounded by parabolas with the straight triangle obtained by U=X minus Y squared over two. This horizontal shear preserves every horizontal width and therefore area. All plots have the same scale on both axes. The outer slopes stay at minus two and plus two. The middle slopes are zero, one, and seven quarters; the exact areas in each pair are two, three halves, and fifteen thirty-seconds. Bringing two slopes close shrinks the area. These are limiting curves of three selected arcs, not finite-distance enclosures or a face census for a whole drawing.</desc>
+<rect width="1200" height="1640" fill="#101323"/><g font-family="ui-sans-serif,system-ui,sans-serif">
+<text x="35" y="60" font-size="45" fill="#f4f1e8" >A curved triangle,</text>
+<text x="35" y="120" font-size="45" fill="#f4f1e8" >read with a straight ruler.</text>
+<text x="35" y="164" font-size="23" fill="#c7c7d4" >Subtract the same parabola from every branch. The area stays the same.</text>
+<text x="35" y="198" font-size="19" fill="#9999ae" >Gold: first slope · blue: middle · lilac: last. Equal unit scales throughout.</text>
+<rect x="35" y="215" width="540" height="400" rx="14" fill="#141829" stroke="#383b50"/>
+<text x="60" y="251" font-size="27" fill="#f4f1e8" >Equal gaps · 2 and 2</text>
+<text x="60" y="279" font-size="18" fill="#c7c7d4" >Xᵢ = (Y − pᵢ)²/2 · p = (-2, 0, 2)</text>
+<defs><clipPath id="gap-0-false"><rect x="65" y="293" width="480" height="275"/></clipPath></defs>
+<g data-chart="gap-0-false" data-scale="60" data-straight="false">
+<rect x="65" y="293" width="480" height="275" fill="#0b0e1a"/>
+<path d="M65,550.5H545" stroke="#252b42" stroke-width="1"/>
+<text x="73" y="544.5" font-size="14" fill="#9999ae" >-2</text>
+<path d="M65,490.5H545" stroke="#252b42" stroke-width="1"/>
+<text x="73" y="484.5" font-size="14" fill="#9999ae" >-1</text>
+<path d="M65,430.5H545" stroke="#252b42" stroke-width="1"/>
+<text x="73" y="424.5" font-size="14" fill="#9999ae" >0</text>
+<path d="M65,370.5H545" stroke="#252b42" stroke-width="1"/>
+<text x="73" y="364.5" font-size="14" fill="#9999ae" >1</text>
+<path d="M65,310.5H545" stroke="#252b42" stroke-width="1"/>
+<g clip-path="url(#gap-0-false)">
+<path d="M113,293V568" stroke="#555b78" stroke-width="1" stroke-dasharray="4 6"/>
+<path d="M143,490.5Q83,430.5 143,370.5Q173,400.5 233,430.5Q173,460.5 143,490.5Z" fill="#f4f1e8" fill-opacity=".16" data-role="pocket"/>
+<path d="M114.2,562.5Q87.8,430.5 642.2,298.5" fill="none" stroke="#e8b66e" stroke-width="2.6" data-branch="0"/>
+<path d="M258.2,562.5Q-32.2,430.5 258.2,298.5" fill="none" stroke="#9fc7eb" stroke-width="2.6" data-branch="1"/>
+<path d="M642.2,562.5Q87.8,430.5 114.2,298.5" fill="none" stroke="#d1b6ea" stroke-width="2.6" data-branch="2"/>
+<circle cx="143" cy="490.5" r="4" fill="#f4f1e8" stroke="#0b0e1a" stroke-width="1.4" data-role="crossing"/>
+<circle cx="143" cy="370.5" r="4" fill="#f4f1e8" stroke="#0b0e1a" stroke-width="1.4" data-role="crossing"/>
+<circle cx="233" cy="430.5" r="4" fill="#f4f1e8" stroke="#0b0e1a" stroke-width="1.4" data-role="crossing"/>
+</g>
+<text x="535" y="597" font-size="17" fill="#c7c7d4" text-anchor="end">X →</text>
+<text x="73" y="315" font-size="17" fill="#c7c7d4" >Y ↑</text>
+</g>
+<text x="60" y="597" font-size="17" fill="#9999ae" >Three parabolas · one bounded pocket</text>
+<rect x="625" y="215" width="540" height="400" rx="14" fill="#141829" stroke="#383b50"/>
+<text x="650" y="251" font-size="27" fill="#f4f1e8" >Same area = 2</text>
+<text x="650" y="279" font-size="18" fill="#c7c7d4" >U = X − Y²/2</text>
+<defs><clipPath id="gap-0-true"><rect x="655" y="293" width="480" height="275"/></clipPath></defs>
+<g data-chart="gap-0-true" data-scale="60" data-straight="true">
+<rect x="655" y="293" width="480" height="275" fill="#0b0e1a"/>
+<path d="M655,550.5H1135" stroke="#252b42" stroke-width="1"/>
+<text x="663" y="544.5" font-size="14" fill="#9999ae" >-2</text>
+<path d="M655,490.5H1135" stroke="#252b42" stroke-width="1"/>
+<text x="663" y="484.5" font-size="14" fill="#9999ae" >-1</text>
+<path d="M655,430.5H1135" stroke="#252b42" stroke-width="1"/>
+<text x="663" y="424.5" font-size="14" fill="#9999ae" >0</text>
+<path d="M655,370.5H1135" stroke="#252b42" stroke-width="1"/>
+<text x="663" y="364.5" font-size="14" fill="#9999ae" >1</text>
+<path d="M655,310.5H1135" stroke="#252b42" stroke-width="1"/>
+<g clip-path="url(#gap-0-true)">
+<path d="M869,293V568" stroke="#555b78" stroke-width="1" stroke-dasharray="4 6"/>
+<path d="M869,490.5L869,370.5L989,430.5L869,490.5Z" fill="#f4f1e8" fill-opacity=".16" data-role="pocket"/>
+<path d="M725,562.5L1253,298.5" fill="none" stroke="#e8b66e" stroke-width="2.6" data-branch="0"/>
+<path d="M869,562.5L869,298.5" fill="none" stroke="#9fc7eb" stroke-width="2.6" data-branch="1"/>
+<path d="M1253,562.5L725,298.5" fill="none" stroke="#d1b6ea" stroke-width="2.6" data-branch="2"/>
+<circle cx="869" cy="490.5" r="4" fill="#f4f1e8" stroke="#0b0e1a" stroke-width="1.4" data-role="crossing"/>
+<circle cx="869" cy="370.5" r="4" fill="#f4f1e8" stroke="#0b0e1a" stroke-width="1.4" data-role="crossing"/>
+<circle cx="989" cy="430.5" r="4" fill="#f4f1e8" stroke="#0b0e1a" stroke-width="1.4" data-role="crossing"/>
+</g>
+<text x="1125" y="597" font-size="17" fill="#c7c7d4" text-anchor="end">U →</text>
+<text x="663" y="315" font-size="17" fill="#c7c7d4" >Y ↑</text>
+</g>
+<text x="650" y="597" font-size="17" fill="#9999ae" >Straight edges · unchanged horizontal widths</text>
+<rect x="35" y="635" width="540" height="400" rx="14" fill="#141829" stroke="#383b50"/>
+<text x="60" y="671" font-size="27" fill="#f4f1e8" >Unequal gaps · 3 and 1</text>
+<text x="60" y="699" font-size="18" fill="#c7c7d4" >Xᵢ = (Y − pᵢ)²/2 · p = (-2, 1, 2)</text>
+<defs><clipPath id="gap-1-false"><rect x="65" y="713" width="480" height="275"/></clipPath></defs>
+<g data-chart="gap-1-false" data-scale="60" data-straight="false">
+<rect x="65" y="713" width="480" height="275" fill="#0b0e1a"/>
+<path d="M65,970.5H545" stroke="#252b42" stroke-width="1"/>
+<text x="73" y="964.5" font-size="14" fill="#9999ae" >-2</text>
+<path d="M65,910.5H545" stroke="#252b42" stroke-width="1"/>
+<text x="73" y="904.5" font-size="14" fill="#9999ae" >-1</text>
+<path d="M65,850.5H545" stroke="#252b42" stroke-width="1"/>
+<text x="73" y="844.5" font-size="14" fill="#9999ae" >0</text>
+<path d="M65,790.5H545" stroke="#252b42" stroke-width="1"/>
+<text x="73" y="784.5" font-size="14" fill="#9999ae" >1</text>
+<path d="M65,730.5H545" stroke="#252b42" stroke-width="1"/>
+<g clip-path="url(#gap-1-false)">
+<path d="M113,713V988" stroke="#555b78" stroke-width="1" stroke-dasharray="4 6"/>
+<path d="M180.5,880.5Q90.5,820.5 120.5,760.5Q143,805.5 233,850.5Q203,865.5 180.5,880.5Z" fill="#f4f1e8" fill-opacity=".16" data-role="pocket"/>
+<path d="M114.2,982.5Q87.8,850.5 642.2,718.5" fill="none" stroke="#e8b66e" stroke-width="2.6" data-branch="0"/>
+<path d="M420.2,982.5Q-2.2,850.5 156.2,718.5" fill="none" stroke="#9fc7eb" stroke-width="2.6" data-branch="1"/>
+<path d="M642.2,982.5Q87.8,850.5 114.2,718.5" fill="none" stroke="#d1b6ea" stroke-width="2.6" data-branch="2"/>
+<circle cx="180.5" cy="880.5" r="4" fill="#f4f1e8" stroke="#0b0e1a" stroke-width="1.4" data-role="crossing"/>
+<circle cx="120.5" cy="760.5" r="4" fill="#f4f1e8" stroke="#0b0e1a" stroke-width="1.4" data-role="crossing"/>
+<circle cx="233" cy="850.5" r="4" fill="#f4f1e8" stroke="#0b0e1a" stroke-width="1.4" data-role="crossing"/>
+</g>
+<text x="535" y="1017" font-size="17" fill="#c7c7d4" text-anchor="end">X →</text>
+<text x="73" y="735" font-size="17" fill="#c7c7d4" >Y ↑</text>
+</g>
+<text x="60" y="1017" font-size="17" fill="#9999ae" >Three parabolas · one bounded pocket</text>
+<rect x="625" y="635" width="540" height="400" rx="14" fill="#141829" stroke="#383b50"/>
+<text x="650" y="671" font-size="27" fill="#f4f1e8" >Same area = 3/2</text>
+<text x="650" y="699" font-size="18" fill="#c7c7d4" >U = X − Y²/2</text>
+<defs><clipPath id="gap-1-true"><rect x="655" y="713" width="480" height="275"/></clipPath></defs>
+<g data-chart="gap-1-true" data-scale="60" data-straight="true">
+<rect x="655" y="713" width="480" height="275" fill="#0b0e1a"/>
+<path d="M655,970.5H1135" stroke="#252b42" stroke-width="1"/>
+<text x="663" y="964.5" font-size="14" fill="#9999ae" >-2</text>
+<path d="M655,910.5H1135" stroke="#252b42" stroke-width="1"/>
+<text x="663" y="904.5" font-size="14" fill="#9999ae" >-1</text>
+<path d="M655,850.5H1135" stroke="#252b42" stroke-width="1"/>
+<text x="663" y="844.5" font-size="14" fill="#9999ae" >0</text>
+<path d="M655,790.5H1135" stroke="#252b42" stroke-width="1"/>
+<text x="663" y="784.5" font-size="14" fill="#9999ae" >1</text>
+<path d="M655,730.5H1135" stroke="#252b42" stroke-width="1"/>
+<g clip-path="url(#gap-1-true)">
+<path d="M869,713V988" stroke="#555b78" stroke-width="1" stroke-dasharray="4 6"/>
+<path d="M929,880.5L809,760.5L989,850.5L929,880.5Z" fill="#f4f1e8" fill-opacity=".16" data-role="pocket"/>
+<path d="M725,982.5L1253,718.5" fill="none" stroke="#e8b66e" stroke-width="2.6" data-branch="0"/>
+<path d="M1031,982.5L767,718.5" fill="none" stroke="#9fc7eb" stroke-width="2.6" data-branch="1"/>
+<path d="M1253,982.5L725,718.5" fill="none" stroke="#d1b6ea" stroke-width="2.6" data-branch="2"/>
+<circle cx="929" cy="880.5" r="4" fill="#f4f1e8" stroke="#0b0e1a" stroke-width="1.4" data-role="crossing"/>
+<circle cx="809" cy="760.5" r="4" fill="#f4f1e8" stroke="#0b0e1a" stroke-width="1.4" data-role="crossing"/>
+<circle cx="989" cy="850.5" r="4" fill="#f4f1e8" stroke="#0b0e1a" stroke-width="1.4" data-role="crossing"/>
+</g>
+<text x="1125" y="1017" font-size="17" fill="#c7c7d4" text-anchor="end">U →</text>
+<text x="663" y="735" font-size="17" fill="#c7c7d4" >Y ↑</text>
+</g>
+<text x="650" y="1017" font-size="17" fill="#9999ae" >Straight edges · unchanged horizontal widths</text>
+<rect x="35" y="1055" width="540" height="400" rx="14" fill="#141829" stroke="#383b50"/>
+<text x="60" y="1091" font-size="27" fill="#f4f1e8" >Close slopes · 15/4 and 1/4</text>
+<text x="60" y="1119" font-size="18" fill="#c7c7d4" >Xᵢ = (Y − pᵢ)²/2 · p = (-2, 7/4, 2)</text>
+<defs><clipPath id="gap-2-false"><rect x="65" y="1133" width="480" height="275"/></clipPath></defs>
+<g data-chart="gap-2-false" data-scale="60" data-straight="false">
+<rect x="65" y="1133" width="480" height="275" fill="#0b0e1a"/>
+<path d="M65,1390.5H545" stroke="#252b42" stroke-width="1"/>
+<text x="73" y="1384.5" font-size="14" fill="#9999ae" >-2</text>
+<path d="M65,1330.5H545" stroke="#252b42" stroke-width="1"/>
+<text x="73" y="1324.5" font-size="14" fill="#9999ae" >-1</text>
+<path d="M65,1270.5H545" stroke="#252b42" stroke-width="1"/>
+<text x="73" y="1264.5" font-size="14" fill="#9999ae" >0</text>
+<path d="M65,1210.5H545" stroke="#252b42" stroke-width="1"/>
+<text x="73" y="1204.5" font-size="14" fill="#9999ae" >1</text>
+<path d="M65,1150.5H545" stroke="#252b42" stroke-width="1"/>
+<g clip-path="url(#gap-2-false)">
+<path d="M113,1133V1408" stroke="#555b78" stroke-width="1" stroke-dasharray="4 6"/>
+<path d="M218.46875,1278Q105.96875,1218 113.46875,1158Q120.5,1214.25 233,1270.5Q225.5,1274.25 218.46875,1278Z" fill="#f4f1e8" fill-opacity=".16" data-role="pocket"/>
+<path d="M114.2,1402.5Q87.8,1270.5 642.2,1138.5" fill="none" stroke="#e8b66e" stroke-width="2.6" data-branch="0"/>
+<path d="M581.075,1402.5Q59.675,1270.5 119.075,1138.5" fill="none" stroke="#9fc7eb" stroke-width="2.6" data-branch="1"/>
+<path d="M642.2,1402.5Q87.8,1270.5 114.2,1138.5" fill="none" stroke="#d1b6ea" stroke-width="2.6" data-branch="2"/>
+<circle cx="218.46875" cy="1278" r="4" fill="#f4f1e8" stroke="#0b0e1a" stroke-width="1.4" data-role="crossing"/>
+<circle cx="113.46875" cy="1158" r="4" fill="#f4f1e8" stroke="#0b0e1a" stroke-width="1.4" data-role="crossing"/>
+<circle cx="233" cy="1270.5" r="4" fill="#f4f1e8" stroke="#0b0e1a" stroke-width="1.4" data-role="crossing"/>
+</g>
+<text x="535" y="1437" font-size="17" fill="#c7c7d4" text-anchor="end">X →</text>
+<text x="73" y="1155" font-size="17" fill="#c7c7d4" >Y ↑</text>
+</g>
+<text x="60" y="1437" font-size="17" fill="#9999ae" >Three parabolas · one bounded pocket</text>
+<rect x="625" y="1055" width="540" height="400" rx="14" fill="#141829" stroke="#383b50"/>
+<text x="650" y="1091" font-size="27" fill="#f4f1e8" >Same area = 15/32</text>
+<text x="650" y="1119" font-size="18" fill="#c7c7d4" >U = X − Y²/2</text>
+<defs><clipPath id="gap-2-true"><rect x="655" y="1133" width="480" height="275"/></clipPath></defs>
+<g data-chart="gap-2-true" data-scale="60" data-straight="true">
+<rect x="655" y="1133" width="480" height="275" fill="#0b0e1a"/>
+<path d="M655,1390.5H1135" stroke="#252b42" stroke-width="1"/>
+<text x="663" y="1384.5" font-size="14" fill="#9999ae" >-2</text>
+<path d="M655,1330.5H1135" stroke="#252b42" stroke-width="1"/>
+<text x="663" y="1324.5" font-size="14" fill="#9999ae" >-1</text>
+<path d="M655,1270.5H1135" stroke="#252b42" stroke-width="1"/>
+<text x="663" y="1264.5" font-size="14" fill="#9999ae" >0</text>
+<path d="M655,1210.5H1135" stroke="#252b42" stroke-width="1"/>
+<text x="663" y="1204.5" font-size="14" fill="#9999ae" >1</text>
+<path d="M655,1150.5H1135" stroke="#252b42" stroke-width="1"/>
+<g clip-path="url(#gap-2-true)">
+<path d="M869,1133V1408" stroke="#555b78" stroke-width="1" stroke-dasharray="4 6"/>
+<path d="M974,1278L764,1158L989,1270.5L974,1278Z" fill="#f4f1e8" fill-opacity=".16" data-role="pocket"/>
+<path d="M725,1402.5L1253,1138.5" fill="none" stroke="#e8b66e" stroke-width="2.6" data-branch="0"/>
+<path d="M1191.875,1402.5L729.875,1138.5" fill="none" stroke="#9fc7eb" stroke-width="2.6" data-branch="1"/>
+<path d="M1253,1402.5L725,1138.5" fill="none" stroke="#d1b6ea" stroke-width="2.6" data-branch="2"/>
+<circle cx="974" cy="1278" r="4" fill="#f4f1e8" stroke="#0b0e1a" stroke-width="1.4" data-role="crossing"/>
+<circle cx="764" cy="1158" r="4" fill="#f4f1e8" stroke="#0b0e1a" stroke-width="1.4" data-role="crossing"/>
+<circle cx="989" cy="1270.5" r="4" fill="#f4f1e8" stroke="#0b0e1a" stroke-width="1.4" data-role="crossing"/>
+</g>
+<text x="1125" y="1437" font-size="17" fill="#c7c7d4" text-anchor="end">U →</text>
+<text x="663" y="1155" font-size="17" fill="#c7c7d4" >Y ↑</text>
+</g>
+<text x="650" y="1437" font-size="17" fill="#9999ae" >Straight edges · unchanged horizontal widths</text>
+<text x="35" y="1520" font-size="25" fill="#f4f1e8" >Area = (left gap × right gap × total gap) / 8.</text>
+<text x="35" y="1556" font-size="22" fill="#c7c7d4" >Fix the outer slopes: equal gaps give the largest pocket.</text>
+<text x="35" y="1594" font-size="18" fill="#9999ae" >Limit curves only. Their area is the leading coefficient of physical area × offset.</text>
+</g></svg>

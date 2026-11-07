@@ -1,0 +1,170 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1040" viewBox="0 0 1200 1040" role="img" aria-labelledby="title description">
+<title id="title">One clock, through a curved ruler</title><desc id="description">Before, at, and after the limiting plane triple for slopes minus two, one, and two and route rates zero, one, and zero. The scaled route parameters are zero, three halves, and three. Above, the straightened triangles shrink to a point and grow on the other side by a homothety centered at U=2,Y=0. Below, restoring Y squared over two bends their edges back into parabolas. Before and after both have exact area three halves, although the curved shapes look different. Every panel has equal unit scales, and the same scale is used in all six panels. The plane triple clock is a local limiting statement; these panels do not give a finite-offset threshold or a full-drawing face census.</desc>
+<rect width="1200" height="1040" fill="#101323"/><g font-family="ui-sans-serif,system-ui,sans-serif">
+<text x="35" y="61" font-size="44" fill="#f4f1e8" >One clock, through a curved ruler.</text>
+<text x="35" y="105" font-size="22" fill="#c7c7d4" >Lift only the middle branch: X₁ = (Y − 1)²/2 + μ. Slopes stay at −2, 1, 2.</text>
+<text x="35" y="143" font-size="22" fill="#c7c7d4" >The limiting meeting is at μ = 3/2. Both sides have area (3/2)(1 − 2μ/3)².</text>
+<text x="42" y="194" font-size="25" fill="#f4f1e8" >Before · μ = 0</text>
+<rect x="25" y="213" width="360" height="698" rx="14" fill="#141829" stroke="#383b50"/>
+<text x="45" y="248" font-size="23" fill="#f4f1e8" >Straight ruler</text>
+<defs><clipPath id="clock-straight-0"><rect x="55" y="263" width="300" height="235"/></clipPath></defs>
+<g data-chart="clock-straight-0" data-scale="42" data-straight="true">
+<rect x="55" y="263" width="300" height="235" fill="#0b0e1a"/>
+<path d="M55,464.5H355" stroke="#252b42" stroke-width="1"/>
+<text x="63" y="458.5" font-size="14" fill="#9999ae" >-2</text>
+<path d="M55,422.5H355" stroke="#252b42" stroke-width="1"/>
+<text x="63" y="416.5" font-size="14" fill="#9999ae" >-1</text>
+<path d="M55,380.5H355" stroke="#252b42" stroke-width="1"/>
+<text x="63" y="374.5" font-size="14" fill="#9999ae" >0</text>
+<path d="M55,338.5H355" stroke="#252b42" stroke-width="1"/>
+<text x="63" y="332.5" font-size="14" fill="#9999ae" >1</text>
+<path d="M55,296.5H355" stroke="#252b42" stroke-width="1"/>
+<g clip-path="url(#clock-straight-0)">
+<path d="M117,263V498" stroke="#555b78" stroke-width="1" stroke-dasharray="4 6"/>
+<path d="M159,401.5L75,317.5L201,380.5L159,401.5Z" fill="#f4f1e8" fill-opacity=".16" data-role="pocket"/>
+<path d="M16.2,472.9L385.8,288.1" fill="none" stroke="#e8b66e" stroke-width="2.6" data-branch="0"/>
+<path d="M230.4,472.9L45.6,288.1" fill="none" stroke="#9fc7eb" stroke-width="2.6" data-branch="1"/>
+<path d="M385.8,472.9L16.2,288.1" fill="none" stroke="#d1b6ea" stroke-width="2.6" data-branch="2"/>
+<circle cx="159" cy="401.5" r="4" fill="#f4f1e8" stroke="#0b0e1a" stroke-width="1.4" data-role="crossing"/>
+<circle cx="75" cy="317.5" r="4" fill="#f4f1e8" stroke="#0b0e1a" stroke-width="1.4" data-role="crossing"/>
+<circle cx="201" cy="380.5" r="4" fill="#f4f1e8" stroke="#0b0e1a" stroke-width="1.4" data-role="crossing"/>
+</g>
+<text x="345" y="527" font-size="17" fill="#c7c7d4" text-anchor="end">U →</text>
+<text x="63" y="285" font-size="17" fill="#c7c7d4" >Y ↑</text>
+</g>
+<text x="45" y="573" font-size="23" fill="#f4f1e8" >Curved ruler</text>
+<defs><clipPath id="clock-curved-0"><rect x="55" y="588" width="300" height="235"/></clipPath></defs>
+<g data-chart="clock-curved-0" data-scale="42" data-straight="false">
+<rect x="55" y="588" width="300" height="235" fill="#0b0e1a"/>
+<path d="M55,789.5H355" stroke="#252b42" stroke-width="1"/>
+<text x="63" y="783.5" font-size="14" fill="#9999ae" >-2</text>
+<path d="M55,747.5H355" stroke="#252b42" stroke-width="1"/>
+<text x="63" y="741.5" font-size="14" fill="#9999ae" >-1</text>
+<path d="M55,705.5H355" stroke="#252b42" stroke-width="1"/>
+<text x="63" y="699.5" font-size="14" fill="#9999ae" >0</text>
+<path d="M55,663.5H355" stroke="#252b42" stroke-width="1"/>
+<text x="63" y="657.5" font-size="14" fill="#9999ae" >1</text>
+<path d="M55,621.5H355" stroke="#252b42" stroke-width="1"/>
+<g clip-path="url(#clock-curved-0)">
+<path d="M61,588V823" stroke="#555b78" stroke-width="1" stroke-dasharray="4 6"/>
+<path d="M108.25,726.5Q45.25,684.5 66.25,642.5Q82,674 145,705.5Q124,716 108.25,726.5Z" fill="#f4f1e8" fill-opacity=".16" data-role="pocket"/>
+<path d="M61.84,797.9Q43.36,705.5 431.44,613.1" fill="none" stroke="#e8b66e" stroke-width="2.6" data-branch="0"/>
+<path d="M276.04,797.9Q-19.64,705.5 91.24,613.1" fill="none" stroke="#9fc7eb" stroke-width="2.6" data-branch="1"/>
+<path d="M431.44,797.9Q43.36,705.5 61.84,613.1" fill="none" stroke="#d1b6ea" stroke-width="2.6" data-branch="2"/>
+<circle cx="108.25" cy="726.5" r="4" fill="#f4f1e8" stroke="#0b0e1a" stroke-width="1.4" data-role="crossing"/>
+<circle cx="66.25" cy="642.5" r="4" fill="#f4f1e8" stroke="#0b0e1a" stroke-width="1.4" data-role="crossing"/>
+<circle cx="145" cy="705.5" r="4" fill="#f4f1e8" stroke="#0b0e1a" stroke-width="1.4" data-role="crossing"/>
+</g>
+<text x="345" y="852" font-size="17" fill="#c7c7d4" text-anchor="end">X →</text>
+<text x="63" y="610" font-size="17" fill="#c7c7d4" >Y ↑</text>
+</g>
+<text x="45" y="884" font-size="21" fill="#f4f1e8" >Exact limit area = 3/2</text>
+<text x="437" y="194" font-size="25" fill="#f4f1e8" >Meeting · μ = 3/2</text>
+<rect x="420" y="213" width="360" height="698" rx="14" fill="#141829" stroke="#383b50"/>
+<text x="440" y="248" font-size="23" fill="#f4f1e8" >Straight ruler</text>
+<defs><clipPath id="clock-straight-1"><rect x="450" y="263" width="300" height="235"/></clipPath></defs>
+<g data-chart="clock-straight-1" data-scale="42" data-straight="true">
+<rect x="450" y="263" width="300" height="235" fill="#0b0e1a"/>
+<path d="M450,464.5H750" stroke="#252b42" stroke-width="1"/>
+<text x="458" y="458.5" font-size="14" fill="#9999ae" >-2</text>
+<path d="M450,422.5H750" stroke="#252b42" stroke-width="1"/>
+<text x="458" y="416.5" font-size="14" fill="#9999ae" >-1</text>
+<path d="M450,380.5H750" stroke="#252b42" stroke-width="1"/>
+<text x="458" y="374.5" font-size="14" fill="#9999ae" >0</text>
+<path d="M450,338.5H750" stroke="#252b42" stroke-width="1"/>
+<text x="458" y="332.5" font-size="14" fill="#9999ae" >1</text>
+<path d="M450,296.5H750" stroke="#252b42" stroke-width="1"/>
+<g clip-path="url(#clock-straight-1)">
+<path d="M512,263V498" stroke="#555b78" stroke-width="1" stroke-dasharray="4 6"/>
+<path d="M596,380.5L596,380.5L596,380.5L596,380.5Z" fill="#f4f1e8" fill-opacity=".16" data-role="pocket"/>
+<path d="M411.2,472.9L780.8,288.1" fill="none" stroke="#e8b66e" stroke-width="2.6" data-branch="0"/>
+<path d="M688.4,472.9L503.6,288.1" fill="none" stroke="#9fc7eb" stroke-width="2.6" data-branch="1"/>
+<path d="M780.8,472.9L411.2,288.1" fill="none" stroke="#d1b6ea" stroke-width="2.6" data-branch="2"/>
+<circle cx="596" cy="380.5" r="4" fill="#f4f1e8" stroke="#0b0e1a" stroke-width="1.4" data-role="crossing"/>
+</g>
+<text x="740" y="527" font-size="17" fill="#c7c7d4" text-anchor="end">U →</text>
+<text x="458" y="285" font-size="17" fill="#c7c7d4" >Y ↑</text>
+</g>
+<text x="440" y="573" font-size="23" fill="#f4f1e8" >Curved ruler</text>
+<defs><clipPath id="clock-curved-1"><rect x="450" y="588" width="300" height="235"/></clipPath></defs>
+<g data-chart="clock-curved-1" data-scale="42" data-straight="false">
+<rect x="450" y="588" width="300" height="235" fill="#0b0e1a"/>
+<path d="M450,789.5H750" stroke="#252b42" stroke-width="1"/>
+<text x="458" y="783.5" font-size="14" fill="#9999ae" >-2</text>
+<path d="M450,747.5H750" stroke="#252b42" stroke-width="1"/>
+<text x="458" y="741.5" font-size="14" fill="#9999ae" >-1</text>
+<path d="M450,705.5H750" stroke="#252b42" stroke-width="1"/>
+<text x="458" y="699.5" font-size="14" fill="#9999ae" >0</text>
+<path d="M450,663.5H750" stroke="#252b42" stroke-width="1"/>
+<text x="458" y="657.5" font-size="14" fill="#9999ae" >1</text>
+<path d="M450,621.5H750" stroke="#252b42" stroke-width="1"/>
+<g clip-path="url(#clock-curved-1)">
+<path d="M456,588V823" stroke="#555b78" stroke-width="1" stroke-dasharray="4 6"/>
+<path d="M540,705.5Q540,705.5 540,705.5Q540,705.5 540,705.5Q540,705.5 540,705.5Z" fill="#f4f1e8" fill-opacity=".16" data-role="pocket"/>
+<path d="M456.84,797.9Q438.36,705.5 826.44,613.1" fill="none" stroke="#e8b66e" stroke-width="2.6" data-branch="0"/>
+<path d="M734.04,797.9Q438.36,705.5 549.24,613.1" fill="none" stroke="#9fc7eb" stroke-width="2.6" data-branch="1"/>
+<path d="M826.44,797.9Q438.36,705.5 456.84,613.1" fill="none" stroke="#d1b6ea" stroke-width="2.6" data-branch="2"/>
+<circle cx="540" cy="705.5" r="4" fill="#f4f1e8" stroke="#0b0e1a" stroke-width="1.4" data-role="crossing"/>
+</g>
+<text x="740" y="852" font-size="17" fill="#c7c7d4" text-anchor="end">X →</text>
+<text x="458" y="610" font-size="17" fill="#c7c7d4" >Y ↑</text>
+</g>
+<text x="440" y="884" font-size="21" fill="#f4f1e8" >Exact limit area = 0</text>
+<text x="832" y="194" font-size="25" fill="#f4f1e8" >After · μ = 3</text>
+<rect x="815" y="213" width="360" height="698" rx="14" fill="#141829" stroke="#383b50"/>
+<text x="835" y="248" font-size="23" fill="#f4f1e8" >Straight ruler</text>
+<defs><clipPath id="clock-straight-2"><rect x="845" y="263" width="300" height="235"/></clipPath></defs>
+<g data-chart="clock-straight-2" data-scale="42" data-straight="true">
+<rect x="845" y="263" width="300" height="235" fill="#0b0e1a"/>
+<path d="M845,464.5H1145" stroke="#252b42" stroke-width="1"/>
+<text x="853" y="458.5" font-size="14" fill="#9999ae" >-2</text>
+<path d="M845,422.5H1145" stroke="#252b42" stroke-width="1"/>
+<text x="853" y="416.5" font-size="14" fill="#9999ae" >-1</text>
+<path d="M845,380.5H1145" stroke="#252b42" stroke-width="1"/>
+<text x="853" y="374.5" font-size="14" fill="#9999ae" >0</text>
+<path d="M845,338.5H1145" stroke="#252b42" stroke-width="1"/>
+<text x="853" y="332.5" font-size="14" fill="#9999ae" >1</text>
+<path d="M845,296.5H1145" stroke="#252b42" stroke-width="1"/>
+<g clip-path="url(#clock-straight-2)">
+<path d="M907,263V498" stroke="#555b78" stroke-width="1" stroke-dasharray="4 6"/>
+<path d="M1033,359.5L1117,443.5L991,380.5L1033,359.5Z" fill="#f4f1e8" fill-opacity=".16" data-role="pocket"/>
+<path d="M806.2,472.9L1175.8,288.1" fill="none" stroke="#e8b66e" stroke-width="2.6" data-branch="0"/>
+<path d="M1146.4,472.9L961.6,288.1" fill="none" stroke="#9fc7eb" stroke-width="2.6" data-branch="1"/>
+<path d="M1175.8,472.9L806.2,288.1" fill="none" stroke="#d1b6ea" stroke-width="2.6" data-branch="2"/>
+<circle cx="1033" cy="359.5" r="4" fill="#f4f1e8" stroke="#0b0e1a" stroke-width="1.4" data-role="crossing"/>
+<circle cx="1117" cy="443.5" r="4" fill="#f4f1e8" stroke="#0b0e1a" stroke-width="1.4" data-role="crossing"/>
+<circle cx="991" cy="380.5" r="4" fill="#f4f1e8" stroke="#0b0e1a" stroke-width="1.4" data-role="crossing"/>
+</g>
+<text x="1135" y="527" font-size="17" fill="#c7c7d4" text-anchor="end">U →</text>
+<text x="853" y="285" font-size="17" fill="#c7c7d4" >Y ↑</text>
+</g>
+<text x="835" y="573" font-size="23" fill="#f4f1e8" >Curved ruler</text>
+<defs><clipPath id="clock-curved-2"><rect x="845" y="588" width="300" height="235"/></clipPath></defs>
+<g data-chart="clock-curved-2" data-scale="42" data-straight="false">
+<rect x="845" y="588" width="300" height="235" fill="#0b0e1a"/>
+<path d="M845,789.5H1145" stroke="#252b42" stroke-width="1"/>
+<text x="853" y="783.5" font-size="14" fill="#9999ae" >-2</text>
+<path d="M845,747.5H1145" stroke="#252b42" stroke-width="1"/>
+<text x="853" y="741.5" font-size="14" fill="#9999ae" >-1</text>
+<path d="M845,705.5H1145" stroke="#252b42" stroke-width="1"/>
+<text x="853" y="699.5" font-size="14" fill="#9999ae" >0</text>
+<path d="M845,663.5H1145" stroke="#252b42" stroke-width="1"/>
+<text x="853" y="657.5" font-size="14" fill="#9999ae" >1</text>
+<path d="M845,621.5H1145" stroke="#252b42" stroke-width="1"/>
+<g clip-path="url(#clock-curved-2)">
+<path d="M851,588V823" stroke="#555b78" stroke-width="1" stroke-dasharray="4 6"/>
+<path d="M982.25,684.5Q1003.25,726.5 1108.25,768.5Q998,737 935,705.5Q956,695 982.25,684.5Z" fill="#f4f1e8" fill-opacity=".16" data-role="pocket"/>
+<path d="M851.84,797.9Q833.36,705.5 1221.44,613.1" fill="none" stroke="#e8b66e" stroke-width="2.6" data-branch="0"/>
+<path d="M1192.04,797.9Q896.36,705.5 1007.24,613.1" fill="none" stroke="#9fc7eb" stroke-width="2.6" data-branch="1"/>
+<path d="M1221.44,797.9Q833.36,705.5 851.84,613.1" fill="none" stroke="#d1b6ea" stroke-width="2.6" data-branch="2"/>
+<circle cx="982.25" cy="684.5" r="4" fill="#f4f1e8" stroke="#0b0e1a" stroke-width="1.4" data-role="crossing"/>
+<circle cx="1108.25" cy="768.5" r="4" fill="#f4f1e8" stroke="#0b0e1a" stroke-width="1.4" data-role="crossing"/>
+<circle cx="935" cy="705.5" r="4" fill="#f4f1e8" stroke="#0b0e1a" stroke-width="1.4" data-role="crossing"/>
+</g>
+<text x="1135" y="852" font-size="17" fill="#c7c7d4" text-anchor="end">X →</text>
+<text x="853" y="610" font-size="17" fill="#c7c7d4" >Y ↑</text>
+</g>
+<text x="835" y="884" font-size="21" fill="#f4f1e8" >Exact limit area = 3/2</text>
+<text x="35" y="954" font-size="21" fill="#c7c7d4" >Straight triangles scale about their meeting. The common shear preserves the quadratic area law.</text>
+<text x="35" y="991" font-size="18" fill="#9999ae" >Equal unit scales in every panel. These are limit curves of three arcs, with no full-drawing face claim.</text>
+</g></svg>

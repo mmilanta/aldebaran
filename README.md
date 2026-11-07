@@ -34,6 +34,22 @@ python3 experiments/loop_birth.py
 python3 experiments/signed_area.py
 ```
 
+[A curved triangle, read with a straight ruler](experiments/parabolic_triangle.md)
+draws the limiting pocket left by three unequal slopes. A common
+horizontal slide straightens its sides without changing its area.
+Equal slope gaps maximize that area at fixed outer slopes; a quadratic
+fit to the three branch velocities determines their limiting meeting
+clock. The [gap drawing](experiments/parabolic_triangle.svg) and
+[clock drawing](experiments/parabolic_clock.svg) work without scripts
+and are linked from the move study. These are local limit curves;
+finite-distance bounds and the full route's numerical threshold remain
+separate. Regenerate their exact data and rounded quadratic paths with:
+
+```sh
+python3 experiments/parabolic_triangle.py --write
+node experiments/parabolic_triangle_figure.js
+```
+
 The browser code lives in `sketch.js` and `experiments/loop.js`. Check syntax with `node --check sketch.js` and `node --check experiments/loop.js`.
 
 [A region can count backwards](experiments/winding.html) turns the signed-area

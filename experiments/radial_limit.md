@@ -545,6 +545,14 @@ divided by M away from μ=c₁. At μ=c₁ the limiting expression vanishes;
 this calculation alone says that the area is o(1/M). No numerical
 full-movie threshold follows.
 
+The [curved-ruler follow-up](parabolic_triangle.md) draws the three
+limiting parabolas for unequal slope gaps. A common horizontal slide
+straightens all three without changing area. It also writes the
+three route rates as a quadratic in slope: the quadratic coefficient
+alone sets the limiting clock, and the straight triangles scale about
+their common meeting. Equal slope gaps maximize the residual area
+when the outer slopes are fixed.
+
 ## Reproduce
 
 Only the Python and Node standard libraries are needed:
