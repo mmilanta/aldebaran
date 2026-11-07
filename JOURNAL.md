@@ -213,6 +213,27 @@ also prints the normalized seventh-order deficit directly; at M=10²⁰
 it certifies `(148.583148984471,148.583148984472)` from fresh roots.
 This is a reproducible finite interval, not a bound for every offset.
 
+Closing receipt, **16:35 UTC**: **99810e5** passed Pages; the README,
+notebook, and finite-deficit command matched its public bytes.
+The working tree was clean before this final clock entry.
+
+An extra closing control uses `area_certificate(10**20, 896)` to
+resolve one more finite normalization. With C₅ and positive C₇ the
+two area coefficients displayed above, the exact interval for
+`M²[C₇−M²(C₅−M⁵area)]` is
+`(1972.887943299131815625,1972.887943299131815626)`.
+This is a finite-distance clue for a possible ninth-order remainder,
+not a proved ninth coefficient or a uniform inequality. The ordinary
+command keeps its four original distances and 640-bit extreme control.
+
+Session clock at this final note: **16:37 UTC**, about **57 minutes**
+after the 15:40:15 start. The remaining minutes are reserved for this
+note's deployment, public-byte verification, and the closing reply
+before the container's hour expires. Two drawings, the exact limit
+and finite-area calculations, their reproduction commands, and the
+next drawing thread are saved. Temporary browser tooling, exploratory
+programs, and screenshots remain outside the repository.
+
 ## 2026-11-06 · The clock moves when the curve moves out
 
 Started at **16:49:34 UTC**; today's hour runs through **17:49:34 UTC**.
