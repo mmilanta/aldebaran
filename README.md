@@ -34,42 +34,6 @@ python3 experiments/loop_birth.py
 python3 experiments/signed_area.py
 ```
 
-[A curved triangle, read with a straight ruler](experiments/parabolic_triangle.md)
-draws the limiting pocket left by three unequal slopes. A common
-horizontal slide straightens its sides without changing its area.
-Equal slope gaps maximize that area at fixed outer slopes; a quadratic
-fit to the three branch velocities determines their limiting meeting
-clock. The [gap drawing](experiments/parabolic_triangle.svg) and
-[clock drawing](experiments/parabolic_clock.svg) work without scripts
-and are linked from the move study. These are local limit curves;
-finite-distance bounds and the full route's numerical threshold remain
-separate. Regenerate their exact data and rounded quadratic paths with:
-
-```sh
-python3 experiments/parabolic_triangle.py --write
-node experiments/parabolic_triangle_figure.js
-```
-
-[Each clock correction squeezes the triangle twice](experiments/parabolic_retiming.md)
-computes the next meeting-time coefficient. At the leading corrected
-clock, a generic selected pocket has order 1/M³ area; the symmetric
-model cancels that term and leaves order 1/M⁵. Four fresh rational
-contraction and Green-integral certificates enclose the latter's
-finite areas through M=10²⁰. This is a local asymptotic with separate
-finite certificates, not a uniform area remainder. Run:
-
-```sh
-python3 experiments/parabolic_retiming.py
-python3 experiments/retimed_pocket.py
-```
-
-The [many-slope addendum](experiments/parabolic_triangle.md#more-than-three-slopes-add-the-gap-cubes)
-sums every bounded region of the limit-parabola arrangement: its area
-is the cube of the slope span minus the sum of the adjacent gap cubes,
-all divided by 24. Equal gaps maximize it. An independent exact line
-arrangement checks the formula with
-`python3 experiments/parabolic_pockets.py`.
-
 The browser code lives in `sketch.js` and `experiments/loop.js`. Check syntax with `node --check sketch.js` and `node --check experiments/loop.js`.
 
 [A region can count backwards](experiments/winding.html) turns the signed-area
@@ -472,6 +436,42 @@ integrals enclose its area. A second polynomial certificate proves
 illustration with
 `python3 experiments/radial_triangle.py --write` and
 `node experiments/radial_triangle_figure.js`.
+
+[A curved triangle, read with a straight ruler](experiments/parabolic_triangle.md)
+draws the limiting pocket left by three unequal slopes. A common
+horizontal slide straightens its sides without changing its area.
+Equal slope gaps maximize that area at fixed outer slopes; a quadratic
+fit to the three branch velocities determines their limiting meeting
+clock. The [gap drawing](experiments/parabolic_triangle.svg) and
+[clock drawing](experiments/parabolic_clock.svg) work without scripts
+and are linked from the move study. These are local limit curves;
+finite-distance bounds and the full route's numerical threshold remain
+separate. Regenerate their exact data and rounded quadratic paths with:
+
+```sh
+python3 experiments/parabolic_triangle.py --write
+node experiments/parabolic_triangle_figure.js
+```
+
+[Each clock correction squeezes the triangle twice](experiments/parabolic_retiming.md)
+computes the next meeting-time coefficient. At the leading corrected
+clock, a generic selected pocket has order 1/M³ area; the symmetric
+model cancels that term and leaves order 1/M⁵. Four fresh rational
+contraction and Green-integral certificates enclose the latter's
+finite areas through M=10²⁰. This is a local asymptotic with separate
+finite certificates, not a uniform area remainder. Run:
+
+```sh
+python3 experiments/parabolic_retiming.py
+python3 experiments/retimed_pocket.py
+```
+
+The [many-slope addendum](experiments/parabolic_triangle.md#more-than-three-slopes-add-the-gap-cubes)
+sums every bounded region of the limit-parabola arrangement: its area
+is the cube of the slope span minus the sum of the adjacent gap cubes,
+all divided by 24. Equal gaps maximize it. An independent exact line
+arrangement checks the formula with
+`python3 experiments/parabolic_pockets.py`.
 
 The [outward-offset plot](experiments/parallel_offset.svg) follows each
 endpoint from 40 crossing pairs to 106, through exactly 33 inverse

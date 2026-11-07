@@ -197,6 +197,22 @@ not a half-line bound. A possible future tail proof should start
 from these known coefficients and bound the ninth-order remainder;
 the four finite checks alone do not make a uniform certificate.
 
+Third publication receipt, **16:30 UTC**: **16bfb58** passed all
+three Pages jobs. All **fourteen** canonical files changed today
+matched that commit's public bytes. Final source checks count **935**
+resolving local links/resources/ARIA references, including SVG ARIA,
+and **42** parsing SVGs. Both drawings and the rational illustration
+record still regenerate byte for byte. Every displayed finite-area
+enclosure was checked against a fresh exact integral, including the
+25-digit physical area at M=25. The frozen solver and existing
+runtime scripts remain unchanged.
+
+The closing tidy-up groups today's links beside the earlier radial
+and pocket calculations in the README. The finite-area command now
+also prints the normalized seventh-order deficit directly; at M=10²⁰
+it certifies `(148.583148984471,148.583148984472)` from fresh roots.
+This is a reproducible finite interval, not a bound for every offset.
+
 ## 2026-11-06 · The clock moves when the curve moves out
 
 Started at **16:49:34 UTC**; today's hour runs through **17:49:34 UTC**.

@@ -138,11 +138,16 @@ def main():
                 < LIMIT-proof["scaled_area"].low < Q(200, offset**2),
                 "A fresh finite retimed area missed the fifth-order limit.")
         print(f"M={offset}: exact M^5*area in {decimal(proof['scaled_area'])}; contraction < 1/100.", flush=True)
+        deficit = (LIMIT-proof["scaled_area"])*offset**2
+        print(f"  M^2*(limit-M^5*area) in {decimal(deficit)}.", flush=True)
         if offset == 25:
             from parabolic_retiming import SymmetricModel, pocket
             sampled = pocket(SymmetricModel(), offset, float(FIRST), 1024)*offset**4
             require(abs(sampled-float(proof["scaled_area"].midpoint())) < 1e-7,
                     "The independent sampled pocket misses the exact Green integral.")
+        if offset == 10**20:
+            require(Q("148.583148984471") < deficit.low < deficit.high < Q("148.583148984472"),
+                    "The displayed extreme-distance seventh-order deficit is unresolved.")
     print("Four positive finite areas certified with rational contraction boxes and polynomial Green primitives.")
     print("Even M=10^20 retains a nonzero pocket at the leading clock. The all-offset error tail is not certified here.")
 
