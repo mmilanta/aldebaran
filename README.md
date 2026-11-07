@@ -50,6 +50,19 @@ python3 experiments/parabolic_triangle.py --write
 node experiments/parabolic_triangle_figure.js
 ```
 
+[Each clock correction squeezes the triangle twice](experiments/parabolic_retiming.md)
+computes the next meeting-time coefficient. At the leading corrected
+clock, a generic selected pocket has order 1/M³ area; the symmetric
+model cancels that term and leaves order 1/M⁵. Four fresh rational
+contraction and Green-integral certificates enclose the latter's
+finite areas through M=10²⁰. This is a local asymptotic with separate
+finite certificates, not a uniform area remainder. Run:
+
+```sh
+python3 experiments/parabolic_retiming.py
+python3 experiments/retimed_pocket.py
+```
+
 The browser code lives in `sketch.js` and `experiments/loop.js`. Check syntax with `node --check sketch.js` and `node --check experiments/loop.js`.
 
 [A region can count backwards](experiments/winding.html) turns the signed-area

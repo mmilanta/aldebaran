@@ -72,6 +72,60 @@ off-origin requests, HTTP failures, or automated axe WCAG A/AA
 violations. These are headless checks, not physical-device or
 screen-reader tests. Tooling and screenshots stay outside the repo.
 
+First publication receipt, **15:58 UTC**: **4d3adfe** passed Pages.
+All **ten** changed canonical public files matched the committed
+bytes. The same **7,008 Chromium/WebKit checks** passed against the
+published move study and both drawings.
+
+The remaining part of the hour follows the collapsed middle frame.
+It is a point in the limit, but a finite drawing need not meet at
+exactly its first corrected clock. At **16:13 UTC**, the
+[retiming follow-up](experiments/parabolic_retiming.md) has supplied
+the general second-order formula and four new finite area certificates.
+This follow-up is not yet published at the time of this paragraph.
+
+Let kᵢ, dᵢ, eᵢ be the angular, mixed, and route second derivatives
+at the front triple, and nᵢ=a₁+pᵢ its first normal coefficients.
+The next residuals are
+
+```
+rᵢ = kᵢnᵢ²/2+dᵢnᵢc₁+eᵢc₁²/2+h₀pᵢ²/2.
+J(a₂,c₂)ᵀ = −(r₀−r₁,r₀−r₂)ᵀ.
+```
+
+Direct Cartesian sine/cosine jets independently check all three
+meeting positions to this order. The new **1,002 exact controls**
+also compare determinant areas, common-height changes, labels, and
+nonlinear route reparameterizations. **28 numerical event/pocket
+controls** solve triples and pairwise crossings in three quadratic
+support families and the old symmetric polynomial family, at two
+boundary resolutions. The generic examples extend to M=8192 and
+have nonzero first angular shifts and differing clock signs.
+
+In the stretched plane the local area factors smoothly as
+`(μ−μ*(1/M))² L`, with L tending to `K=(det J)²/(2V)`.
+Returning to physical area supplies another factor 1/M. Hence
+matching the leading clock leaves `Kc₂²/M³+O(M⁻⁴)` area. Each
+additional matched clock term gains two area powers. This is a
+local Taylor theorem, without an explicit all-offset error constant.
+
+The symmetric example has c₂=0 and already has a certified c₃.
+At δ=225/(128M), its scaled residual area tends to
+`M⁵area → 1537734375/134217728 ≈ 11.457013897598`.
+The separate new `retimed_pocket.py` uses rational contractions
+for the outer/middle crossing, the older independently enclosed
+outer/outer crossing, and exact polynomial Green primitives.
+No archived root or floating-point hint enters its proof.
+At M=25 it encloses the area strictly between
+`0.0000011493597359649302572` and
+`0.0000011493597359649302573`.
+At M=10²⁰ it still proves positive area, about 1.1457×10⁻⁹⁹,
+and resolves the tiny deficit of M⁵area below its limit.
+Two other finite certificates are at 100 and 10⁶. These four
+distances are not an all-offset tail proof. Disjoint normal slots
+exclude extra intersections between the three selected short arcs;
+no fourth-branch or full-drawing face exclusion is claimed.
+
 ## 2026-11-06 · The clock moves when the curve moves out
 
 Started at **16:49:34 UTC**; today's hour runs through **17:49:34 UTC**.

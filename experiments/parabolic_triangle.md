@@ -186,6 +186,13 @@ triangle is a point. A finite-offset triangle at the leading clock
 need not have exactly zero area: its actual event has higher-order
 time corrections.
 
+The [retiming follow-up](parabolic_retiming.md) computes the next clock
+coefficient. Matching one more clock term gains two powers of distance
+in the residual area. A generic pocket at the leading corrected clock
+has order 1/M³; the symmetric polynomial model cancels that term too,
+leaving order 1/M⁵. Fresh exact integrals enclose four finite examples
+of the latter, including M=10²⁰.
+
 If A=0, the rates are affine in slope. The straight triangle simply
 translates by `(Cμ,Bμ)` and keeps its initial area. There is no finite
 limiting triple clock in this case; the ordinary-event formula must
