@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1040" viewBox="0 0 1200 1040" role="img" aria-labelledby="title description">
+<title id="title">Where should the next parabola go?</title><desc id="description">Three equal-scale panels show slopes minus two, zero, two; insertion of minus one; and redistribution to four equally spaced slopes minus two, minus two thirds, two thirds, two. Total areas are two, nine quarters, and 64 over 27. Splitting one existing gap at its midpoint adds the most area when the old slopes are held fixed: one quarter here. The green patch marks exactly the newly added area, inside the gold outer envelope. Moving all four slopes to equal spacing gives a larger global area. A best single insertion and a best complete arrangement solve different constrained problems. These are exact limiting parabolas at scaled route parameter zero.</desc>
+<rect width="1200" height="1040" fill="#101323"/><g font-family="ui-sans-serif,system-ui,sans-serif">
+<text x="35" y="65" font-size="45" fill="#f4f1e8" >Where should the next parabola go?</text>
+<text x="35" y="110" font-size="23" fill="#c7c7d4" >Split a wide gap at its midpoint. Then compare with spacing every slope again.</text>
+<g data-chart="insert-0" data-scale="56" data-origin="116.8" data-center="420" data-straight="false" data-slopes="-2,0,2">
+<rect x="25" y="205" width="360" height="400" rx="14" fill="#141829" stroke="#383b50"/>
+<text x="47" y="241" font-size="27" fill="#f4f1e8" >Keep three slopes</text>
+<text x="47" y="269" font-size="18" fill="#c7c7d4" >p = (-2, 0, 2)</text>
+<defs><clipPath id="insert-0-clip"><rect x="49" y="283" width="312" height="274"/></clipPath></defs>
+<rect x="49" y="283" width="312" height="274" fill="#0b0e1a"/>
+<path d="M49,532H361" stroke="#252b42"/>
+<text x="55" y="527" font-size="14" fill="#aaaabd" >-2</text>
+<path d="M49,476H361" stroke="#252b42"/>
+<text x="55" y="471" font-size="14" fill="#aaaabd" >-1</text>
+<path d="M49,420H361" stroke="#252b42"/>
+<text x="55" y="415" font-size="14" fill="#aaaabd" >0</text>
+<path d="M49,364H361" stroke="#252b42"/>
+<text x="55" y="359" font-size="14" fill="#aaaabd" >1</text>
+<path d="M49,308H361" stroke="#252b42"/>
+<text x="55" y="303" font-size="14" fill="#aaaabd" >2</text>
+<g clip-path="url(#insert-0-clip)">
+<path d="M144.8,476Q116.8,448 116.8,420Q116.8,392 144.8,364L144.8,364Q172.8,392 228.8,420Q172.8,448 144.8,476Z" fill="#9fc7eb" fill-opacity=".25" data-role="band"/>
+<path d="M117.92,543.2Q93.28,420 610.72,296.8" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<path d="M252.32,543.2Q-18.72,420 252.32,296.8" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<path d="M610.72,543.2Q93.28,420 117.92,296.8" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<path d="M144.8,476Q172.8,448 228.8,420Q172.8,392 144.8,364" fill="none" stroke="#e8b66e" stroke-width="3.2" stroke-linejoin="round" data-role="outer"/>
+<path d="M144.8,476Q116.8,448 116.8,420Q116.8,392 144.8,364" fill="none" stroke="#9fc7eb" stroke-width="3.2" stroke-linejoin="round" data-role="inner"/>
+</g>
+<text x="355" y="587" font-size="17" fill="#aaaabd" text-anchor="end">X →</text>
+<text x="355" y="269" font-size="17" fill="#aaaabd" text-anchor="end">Y ↑</text>
+</g>
+<text x="45" y="660" font-size="25" fill="#f4f1e8" >Total area = 2</text>
+<text x="45" y="698" font-size="19" fill="#c7c7d4" >One pocket</text>
+<text x="45" y="741" font-size="20" fill="#aaaabd" >Gaps: 2, 2</text>
+<g data-chart="insert-1" data-scale="56" data-origin="511.8" data-center="420" data-straight="false" data-slopes="-2,-1,0,2">
+<rect x="420" y="205" width="360" height="400" rx="14" fill="#141829" stroke="#383b50"/>
+<text x="442" y="241" font-size="27" fill="#f4f1e8" >Add one slope</text>
+<text x="442" y="269" font-size="18" fill="#c7c7d4" >p = (-2, -1, 0, 2)</text>
+<defs><clipPath id="insert-1-clip"><rect x="444" y="283" width="312" height="274"/></clipPath></defs>
+<rect x="444" y="283" width="312" height="274" fill="#0b0e1a"/>
+<path d="M444,532H756" stroke="#252b42"/>
+<text x="450" y="527" font-size="14" fill="#aaaabd" >-2</text>
+<path d="M444,476H756" stroke="#252b42"/>
+<text x="450" y="471" font-size="14" fill="#aaaabd" >-1</text>
+<path d="M444,420H756" stroke="#252b42"/>
+<text x="450" y="415" font-size="14" fill="#aaaabd" >0</text>
+<path d="M444,364H756" stroke="#252b42"/>
+<text x="450" y="359" font-size="14" fill="#aaaabd" >1</text>
+<path d="M444,308H756" stroke="#252b42"/>
+<text x="450" y="303" font-size="14" fill="#aaaabd" >2</text>
+<g clip-path="url(#insert-1-clip)">
+<path d="M518.8,504Q504.8,476 518.8,448Q511.8,434 511.8,420Q511.8,392 539.8,364L539.8,364Q567.8,392 623.8,420Q595.8,434 574.8,448Q532.8,476 518.8,504Z" fill="#9fc7eb" fill-opacity=".25" data-role="band"/>
+<path d="M512.92,543.2Q488.28,420 1005.72,296.8" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<path d="M552.12,543.2Q404.28,420 798.52,296.8" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<path d="M647.32,543.2Q376.28,420 647.32,296.8" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<path d="M1005.72,543.2Q488.28,420 512.92,296.8" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<path d="M518.8,504Q532.8,476 574.8,448Q595.8,434 623.8,420Q567.8,392 539.8,364" fill="none" stroke="#e8b66e" stroke-width="3.2" stroke-linejoin="round" data-role="outer"/>
+<path d="M518.8,504Q504.8,476 518.8,448Q511.8,434 511.8,420Q511.8,392 539.8,364" fill="none" stroke="#9fc7eb" stroke-width="3.2" stroke-linejoin="round" data-role="inner"/>
+</g>
+<text x="750" y="587" font-size="17" fill="#aaaabd" text-anchor="end">X →</text>
+<text x="750" y="269" font-size="17" fill="#aaaabd" text-anchor="end">Y ↑</text>
+</g>
+<g clip-path="url(#insert-1-clip)"><path d="M518.8,504Q504.8,476 518.8,448Q525.8,462 539.8,476Q525.8,490 518.8,504Z" fill="#a7d9bb" fill-opacity=".7" data-role="added-band"/></g>
+<text x="440" y="660" font-size="25" fill="#f4f1e8" >Total area = 9/4</text>
+<text x="440" y="698" font-size="19" fill="#c7c7d4" >Three pockets · gain 1/4</text>
+<text x="440" y="741" font-size="20" fill="#aaaabd" >Gaps: 1, 1, 2</text>
+<g data-chart="insert-2" data-scale="56" data-origin="906.8" data-center="420" data-straight="false" data-slopes="-2,-2/3,2/3,2">
+<rect x="815" y="205" width="360" height="400" rx="14" fill="#141829" stroke="#383b50"/>
+<text x="837" y="241" font-size="27" fill="#f4f1e8" >Move all four</text>
+<text x="837" y="269" font-size="18" fill="#c7c7d4" >p = (-2, -2/3, 2/3, 2)</text>
+<defs><clipPath id="insert-2-clip"><rect x="839" y="283" width="312" height="274"/></clipPath></defs>
+<rect x="839" y="283" width="312" height="274" fill="#0b0e1a"/>
+<path d="M839,532H1151" stroke="#252b42"/>
+<text x="845" y="527" font-size="14" fill="#aaaabd" >-2</text>
+<path d="M839,476H1151" stroke="#252b42"/>
+<text x="845" y="471" font-size="14" fill="#aaaabd" >-1</text>
+<path d="M839,420H1151" stroke="#252b42"/>
+<text x="845" y="415" font-size="14" fill="#aaaabd" >0</text>
+<path d="M839,364H1151" stroke="#252b42"/>
+<text x="845" y="359" font-size="14" fill="#aaaabd" >1</text>
+<path d="M839,308H1151" stroke="#252b42"/>
+<text x="845" y="303" font-size="14" fill="#aaaabd" >2</text>
+<g clip-path="url(#insert-2-clip)">
+<path d="M919.244444,494.666667Q894.355556,457.333333 919.244444,420Q894.355556,382.666667 919.244444,345.333333L919.244444,345.333333Q944.133333,382.666667 1018.8,420Q944.133333,457.333333 919.244444,494.666667Z" fill="#9fc7eb" fill-opacity=".25" data-role="band"/>
+<path d="M907.92,543.2Q883.28,420 1400.72,296.8" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<path d="M972.631111,543.2Q783.724444,420 1136.897778,296.8" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<path d="M1136.897778,543.2Q783.724444,420 972.631111,296.8" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<path d="M1400.72,543.2Q883.28,420 907.92,296.8" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<path d="M919.244444,494.666667Q944.133333,457.333333 1018.8,420Q944.133333,382.666667 919.244444,345.333333" fill="none" stroke="#e8b66e" stroke-width="3.2" stroke-linejoin="round" data-role="outer"/>
+<path d="M919.244444,494.666667Q894.355556,457.333333 919.244444,420Q894.355556,382.666667 919.244444,345.333333" fill="none" stroke="#9fc7eb" stroke-width="3.2" stroke-linejoin="round" data-role="inner"/>
+</g>
+<text x="1145" y="587" font-size="17" fill="#aaaabd" text-anchor="end">X →</text>
+<text x="1145" y="269" font-size="17" fill="#aaaabd" text-anchor="end">Y ↑</text>
+</g>
+<text x="835" y="660" font-size="25" fill="#f4f1e8" >Total area = 64/27</text>
+<text x="835" y="698" font-size="19" fill="#c7c7d4" >Three pockets · largest total</text>
+<text x="835" y="741" font-size="20" fill="#aaaabd" >Gaps: 4/3, 4/3, 4/3</text>
+<rect x="35" y="797" width="1130" height="156" rx="12" fill="#141829" stroke="#383b50"/>
+<text x="58" y="837" font-size="23" fill="#f4f1e8" >In a fixed gap of length g, insertion splits it into a + b = g.</text>
+<text x="58" y="879" font-size="27" fill="#a7d9bb" >Added area = abg/8 = g³/32 − (g/8)(a − g/2)².</text>
+<text x="58" y="924" font-size="21" fill="#c7c7d4" >The largest fixed-gap gain is at its midpoint; a larger gap gives a larger gain.</text>
+<text x="35" y="1000" font-size="20" fill="#aaaabd" >A best single addition keeps the old slopes fixed. The best full arrangement can move them.</text>
+</g></svg>

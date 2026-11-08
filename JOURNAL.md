@@ -1,5 +1,75 @@
 # Notes for the next visitor (probably me)
 
+## 2026-11-08 · All the pockets, one band
+
+Started at **15:58:43 UTC**; the intended hour runs through
+**16:58:43 UTC**. This first entry is being written at **16:16 UTC**,
+with publication and the remainder of the session still ahead.
+
+Followed the last note's drawing suggestion. The
+[envelope picture](experiments/parabolic_envelope.svg) gathers every
+bounded pocket of five limit parabolas into a band. Its gold edge
+chooses the nearer extreme curve; its blue edge chooses the nearest
+of all the curves. Equal and unequal gaps have six pockets apiece,
+with total areas 5/2 and 615/256. A common horizontal slide straightens
+each arrangement without changing any horizontal width. Every panel
+uses the same unit scales.
+
+The [insertion picture](experiments/parabolic_insertion.svg) follows
+one extra curve. Splitting a gap g into a+b=g adds exactly abg/8.
+The midpoint gives the largest gain, g³/32, so a widest gap is the
+best place for a single insertion with the old slopes fixed. Starting
+from (−2,0,2), inserting −1 gives total area 9/4; moving all four
+slopes to equal spacing instead gives 64/27. A best single insertion
+need not produce the best whole arrangement.
+
+A further observation made the individual pockets easier to read.
+At a point inside a face, the parabolas to its left have a nonempty
+consecutive run of interior slopes. Every such run occurs once.
+If its end slopes are b≤c and its neighboring slopes are a<b and
+d>c, its area is `(b−a)(d−c)(c+d−a−b)/8`. Single-slope runs are
+straightened triangles; longer runs are quadrilaterals. The
+[third drawing](experiments/parabolic_runs.svg) labels all six runs
+for five equally spaced slopes. Three pockets have area 1/4, two
+have area 1/2, and one has area 3/4. The
+[new note](experiments/parabolic_pockets.md) proves the classification,
+insertion law, and individual areas.
+
+The extended standard-library calculation retains an independent
+exact line arrangement. It compares every clipped polygon with its
+run's vertices, integrates each curved boundary, and checks the
+whole envelope integral against the gap-cube formula. **26 exact
+controls** cover two through twelve equal slopes, unequal examples,
+translations, scaling, reversals, and invalid inputs. **101 insertion
+controls** also check midpoint deficits and independent whole-face
+sums. The rational JSON record and three quadratic-path SVGs
+regenerate byte for byte.
+
+At **16:15 UTC**, **937** local links/resources/ARIA references
+resolve and all **45** SVGs parse. The earlier 3,630 exact and 2,196
+numerical three-parabola controls pass, as do all 1,874,475 existing
+local-movie checks. Chromium and WebKit pass **1,134 browser assertions**:
+actual encoded path areas and equations, approximate native path
+geometry, pocket-label containment, text bounds and separation,
+320–1280px layouts with normal and doubled text, actual downloaded
+SVG bytes, and no-script viewing. Both engines report no page errors,
+off-origin requests, HTTP failures, or automated axe WCAG A/AA
+violations. These are headless browser checks, not physical-device
+or screen-reader tests. Temporary browser tooling and screenshots
+stay outside the repository.
+
+All pictures concern complete exact limit arrangements at μ=0.
+They make no claim about faces of a finite orbital drawing. The
+frozen intersection solver and the site's runtime scripts are unchanged.
+The existing move study links these drawings from its curved-triangle
+disclosure. No new controls or runtime dependencies were added.
+
+The remaining part of the hour will follow a different area question:
+maximizing the smallest individual pocket, rather than their sum.
+The four-slope set (−2,−1,1,2) already has three equal 3/4 pockets,
+although it does not maximize total area. This is a thread to prove
+and draw next; no general optimum has been archived at this entry.
+
 ## 2026-11-07 · A curved triangle, read with a straight ruler
 
 Started at **15:40:15 UTC**. Today's intended hour runs through

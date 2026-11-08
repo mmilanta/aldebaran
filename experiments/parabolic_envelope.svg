@@ -1,0 +1,184 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1590" viewBox="0 0 1200 1590" role="img" aria-labelledby="title description">
+<title id="title">All the pockets, one band</title><desc id="description">Five limit parabolas with slopes between minus two and plus two. The gold edge is the nearer of the two extreme parabolas; the blue edge is the nearest of all five. Every bounded pocket, and no unbounded face, lies in the shaded band between them. In each row, subtracting Y squared over two straightens the complete arrangement without changing horizontal widths. Both arrangements have six bounded pockets. Equal gaps give total area five halves; gaps one, three halves, five quarters, and one quarter instead give 615 over 256. All four panels use equal and identical unit scales. White horizontal slices at Y=0 have unchanged widths. This is an exact arrangement of limiting parabolas, with no finite-offset or full-orbital-drawing claim.</desc>
+<rect width="1200" height="1590" fill="#101323"/><g font-family="ui-sans-serif,system-ui,sans-serif">
+<text x="35" y="65" font-size="48" fill="#f4f1e8" >All the pockets, one band.</text>
+<text x="35" y="110" font-size="23" fill="#c7c7d4" >Follow two envelopes. The shaded space gathers every bounded pocket.</text>
+<path d="M35,150h33" stroke="#e8b66e" stroke-width="4"/>
+<text x="80" y="157" font-size="21" fill="#c7c7d4" >Nearer outer curve</text>
+<path d="M380,150h33" stroke="#9fc7eb" stroke-width="4"/>
+<text x="425" y="157" font-size="21" fill="#c7c7d4" >Nearest of all curves</text>
+<rect x="760" y="138" width="30" height="18" fill="#9fc7eb" fill-opacity=".25"/>
+<text x="802" y="157" font-size="21" fill="#c7c7d4" >All bounded pockets</text>
+<text x="35" y="205" font-size="28" fill="#f4f1e8" >Equal gaps · 6 pockets · total area 5/2</text>
+<g data-chart="band-curved-0" data-scale="72" data-origin="172.7" data-center="460" data-straight="false" data-slopes="-2,-1,0,1,2">
+<rect x="35" y="225" width="540" height="440" rx="14" fill="#141829" stroke="#383b50"/>
+<text x="57" y="261" font-size="27" fill="#f4f1e8" >Curved pockets</text>
+<text x="57" y="289" font-size="18" fill="#c7c7d4" >Xᵢ = (Y − pᵢ)²/2</text>
+<defs><clipPath id="band-curved-0-clip"><rect x="59" y="303" width="492" height="314"/></clipPath></defs>
+<rect x="59" y="303" width="492" height="314" fill="#0b0e1a"/>
+<path d="M59,604H551" stroke="#252b42"/>
+<text x="65" y="599" font-size="14" fill="#aaaabd" >-2</text>
+<path d="M59,532H551" stroke="#252b42"/>
+<text x="65" y="527" font-size="14" fill="#aaaabd" >-1</text>
+<path d="M59,460H551" stroke="#252b42"/>
+<text x="65" y="455" font-size="14" fill="#aaaabd" >0</text>
+<path d="M59,388H551" stroke="#252b42"/>
+<text x="65" y="383" font-size="14" fill="#aaaabd" >1</text>
+<path d="M59,316H551" stroke="#252b42"/>
+<text x="65" y="311" font-size="14" fill="#aaaabd" >2</text>
+<g clip-path="url(#band-curved-0-clip)">
+<path d="M181.7,568Q163.7,532 181.7,496Q172.7,478 172.7,460Q172.7,442 181.7,424Q163.7,388 181.7,352L181.7,352Q199.7,388 253.7,424Q280.7,442 316.7,460Q280.7,478 253.7,496Q199.7,532 181.7,568Z" fill="#9fc7eb" fill-opacity=".25" data-role="band"/>
+<path d="M174.14,618.4Q142.46,460 807.74,301.6" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<path d="M224.54,618.4Q34.46,460 541.34,301.6" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<path d="M346.94,618.4Q-1.54,460 346.94,301.6" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<path d="M541.34,618.4Q34.46,460 224.54,301.6" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<path d="M807.74,618.4Q142.46,460 174.14,301.6" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<path d="M181.7,568Q199.7,532 253.7,496Q280.7,478 316.7,460Q280.7,442 253.7,424Q199.7,388 181.7,352" fill="none" stroke="#e8b66e" stroke-width="3.2" stroke-linejoin="round" data-role="outer"/>
+<path d="M181.7,568Q163.7,532 181.7,496Q172.7,478 172.7,460Q172.7,442 181.7,424Q163.7,388 181.7,352" fill="none" stroke="#9fc7eb" stroke-width="3.2" stroke-linejoin="round" data-role="inner"/>
+<path d="M172.7,460L316.7,460" stroke="#f4f1e8" stroke-width="2" stroke-dasharray="4 4" data-role="slice"/>
+<circle cx="172.7" cy="460" r="3" fill="#f4f1e8"/>
+<circle cx="316.7" cy="460" r="3" fill="#f4f1e8"/>
+</g>
+<text x="545" y="647" font-size="17" fill="#aaaabd" text-anchor="end">X →</text>
+<text x="545" y="289" font-size="17" fill="#aaaabd" text-anchor="end">Y ↑</text>
+</g>
+<g data-chart="band-straight-0" data-scale="72" data-origin="895" data-center="460" data-straight="true" data-slopes="-2,-1,0,1,2">
+<rect x="625" y="225" width="540" height="440" rx="14" fill="#141829" stroke="#383b50"/>
+<text x="647" y="261" font-size="27" fill="#f4f1e8" >Straightened</text>
+<text x="647" y="289" font-size="18" fill="#c7c7d4" >U = X − Y²/2 · same area</text>
+<defs><clipPath id="band-straight-0-clip"><rect x="649" y="303" width="492" height="314"/></clipPath></defs>
+<rect x="649" y="303" width="492" height="314" fill="#0b0e1a"/>
+<path d="M649,604H1141" stroke="#252b42"/>
+<text x="655" y="599" font-size="14" fill="#aaaabd" >-2</text>
+<path d="M649,532H1141" stroke="#252b42"/>
+<text x="655" y="527" font-size="14" fill="#aaaabd" >-1</text>
+<path d="M649,460H1141" stroke="#252b42"/>
+<text x="655" y="455" font-size="14" fill="#aaaabd" >0</text>
+<path d="M649,388H1141" stroke="#252b42"/>
+<text x="655" y="383" font-size="14" fill="#aaaabd" >1</text>
+<path d="M649,316H1141" stroke="#252b42"/>
+<text x="655" y="311" font-size="14" fill="#aaaabd" >2</text>
+<g clip-path="url(#band-straight-0-clip)">
+<path d="M823,568L895,496L895,460L895,424L823,352L823,352L967,424L1039,460L967,496L823,568Z" fill="#9fc7eb" fill-opacity=".25" data-role="band"/>
+<path d="M722.2,618.4L1355.8,301.6" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<path d="M772.6,618.4L1089.4,301.6" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<path d="M895,618.4L895,301.6" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<path d="M1089.4,618.4L772.6,301.6" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<path d="M1355.8,618.4L722.2,301.6" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<path d="M823,568L967,496L1039,460L967,424L823,352" fill="none" stroke="#e8b66e" stroke-width="3.2" stroke-linejoin="round" data-role="outer"/>
+<path d="M823,568L895,496L895,460L895,424L823,352" fill="none" stroke="#9fc7eb" stroke-width="3.2" stroke-linejoin="round" data-role="inner"/>
+<path d="M895,460L1039,460" stroke="#f4f1e8" stroke-width="2" stroke-dasharray="4 4" data-role="slice"/>
+<circle cx="895" cy="460" r="3" fill="#f4f1e8"/>
+<circle cx="1039" cy="460" r="3" fill="#f4f1e8"/>
+</g>
+<text x="1135" y="647" font-size="17" fill="#aaaabd" text-anchor="end">U →</text>
+<text x="1135" y="289" font-size="17" fill="#aaaabd" text-anchor="end">Y ↑</text>
+</g>
+<text x="35" y="685" font-size="18" fill="#aaaabd" >Slope positions</text>
+<circle cx="88" cy="725" r="4" fill="#f4f1e8"/>
+<text x="88" y="712" font-size="18" fill="#c7c7d4" text-anchor="middle">-2</text>
+<circle cx="344" cy="725" r="4" fill="#f4f1e8"/>
+<text x="344" y="712" font-size="18" fill="#c7c7d4" text-anchor="middle">-1</text>
+<circle cx="600" cy="725" r="4" fill="#f4f1e8"/>
+<text x="600" y="712" font-size="18" fill="#c7c7d4" text-anchor="middle">0</text>
+<circle cx="856" cy="725" r="4" fill="#f4f1e8"/>
+<text x="856" y="712" font-size="18" fill="#c7c7d4" text-anchor="middle">1</text>
+<circle cx="1112" cy="725" r="4" fill="#f4f1e8"/>
+<text x="1112" y="712" font-size="18" fill="#c7c7d4" text-anchor="middle">2</text>
+<path d="M94,725H338" stroke="#e8b66e" stroke-width="4"/>
+<text x="216" y="754" font-size="18" fill="#aaaabd" text-anchor="middle">g = 1</text>
+<path d="M350,725H594" stroke="#9fc7eb" stroke-width="4"/>
+<text x="472" y="754" font-size="18" fill="#aaaabd" text-anchor="middle">g = 1</text>
+<path d="M606,725H850" stroke="#e8b66e" stroke-width="4"/>
+<text x="728" y="754" font-size="18" fill="#aaaabd" text-anchor="middle">g = 1</text>
+<path d="M862,725H1106" stroke="#9fc7eb" stroke-width="4"/>
+<text x="984" y="754" font-size="18" fill="#aaaabd" text-anchor="middle">g = 1</text>
+<text x="35" y="795" font-size="24" fill="#f4f1e8" >(4³ − 1³ − 1³ − 1³ − 1³) / 24 = 5/2</text>
+<text x="35" y="855" font-size="28" fill="#f4f1e8" >Unequal gaps · 6 pockets · total area 615/256</text>
+<g data-chart="band-curved-1" data-scale="72" data-origin="172.7" data-center="1110" data-straight="false" data-slopes="-2,-1,1/2,7/4,2">
+<rect x="35" y="875" width="540" height="440" rx="14" fill="#141829" stroke="#383b50"/>
+<text x="57" y="911" font-size="27" fill="#f4f1e8" >Curved pockets</text>
+<text x="57" y="939" font-size="18" fill="#c7c7d4" >Xᵢ = (Y − pᵢ)²/2</text>
+<defs><clipPath id="band-curved-1-clip"><rect x="59" y="953" width="492" height="314"/></clipPath></defs>
+<rect x="59" y="953" width="492" height="314" fill="#0b0e1a"/>
+<path d="M59,1254H551" stroke="#252b42"/>
+<text x="65" y="1249" font-size="14" fill="#aaaabd" >-2</text>
+<path d="M59,1182H551" stroke="#252b42"/>
+<text x="65" y="1177" font-size="14" fill="#aaaabd" >-1</text>
+<path d="M59,1110H551" stroke="#252b42"/>
+<text x="65" y="1105" font-size="14" fill="#aaaabd" >0</text>
+<path d="M59,1038H551" stroke="#252b42"/>
+<text x="65" y="1033" font-size="14" fill="#aaaabd" >1</text>
+<path d="M59,966H551" stroke="#252b42"/>
+<text x="65" y="961" font-size="14" fill="#aaaabd" >2</text>
+<g clip-path="url(#band-curved-1-clip)">
+<path d="M181.7,1218Q159.2,1173 192.95,1128Q186.2,1119 181.7,1110Q161.45,1069.5 186.7625,1029Q169.8875,1002 173.2625,975L173.2625,975Q176.6375,1002 200.2625,1029Q235.7,1069.5 316.7,1110Q298.7,1119 282.95,1128Q204.2,1173 181.7,1218Z" fill="#9fc7eb" fill-opacity=".25" data-role="band"/>
+<path d="M174.14,1268.4Q142.46,1110 807.74,951.6" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<path d="M224.54,1268.4Q34.46,1110 541.34,951.6" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<path d="M435.14,1268.4Q7.46,1110 276.74,951.6" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<path d="M734.39,1268.4Q108.71,1110 179.99,951.6" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<path d="M807.74,1268.4Q142.46,1110 174.14,951.6" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<path d="M181.7,1218Q204.2,1173 282.95,1128Q298.7,1119 316.7,1110Q235.7,1069.5 200.2625,1029Q176.6375,1002 173.2625,975" fill="none" stroke="#e8b66e" stroke-width="3.2" stroke-linejoin="round" data-role="outer"/>
+<path d="M181.7,1218Q159.2,1173 192.95,1128Q186.2,1119 181.7,1110Q161.45,1069.5 186.7625,1029Q169.8875,1002 173.2625,975" fill="none" stroke="#9fc7eb" stroke-width="3.2" stroke-linejoin="round" data-role="inner"/>
+<path d="M181.7,1110L316.7,1110" stroke="#f4f1e8" stroke-width="2" stroke-dasharray="4 4" data-role="slice"/>
+<circle cx="181.7" cy="1110" r="3" fill="#f4f1e8"/>
+<circle cx="316.7" cy="1110" r="3" fill="#f4f1e8"/>
+</g>
+<text x="545" y="1297" font-size="17" fill="#aaaabd" text-anchor="end">X →</text>
+<text x="545" y="939" font-size="17" fill="#aaaabd" text-anchor="end">Y ↑</text>
+</g>
+<g data-chart="band-straight-1" data-scale="72" data-origin="895" data-center="1110" data-straight="true" data-slopes="-2,-1,1/2,7/4,2">
+<rect x="625" y="875" width="540" height="440" rx="14" fill="#141829" stroke="#383b50"/>
+<text x="647" y="911" font-size="27" fill="#f4f1e8" >Straightened</text>
+<text x="647" y="939" font-size="18" fill="#c7c7d4" >U = X − Y²/2 · same area</text>
+<defs><clipPath id="band-straight-1-clip"><rect x="649" y="953" width="492" height="314"/></clipPath></defs>
+<rect x="649" y="953" width="492" height="314" fill="#0b0e1a"/>
+<path d="M649,1254H1141" stroke="#252b42"/>
+<text x="655" y="1249" font-size="14" fill="#aaaabd" >-2</text>
+<path d="M649,1182H1141" stroke="#252b42"/>
+<text x="655" y="1177" font-size="14" fill="#aaaabd" >-1</text>
+<path d="M649,1110H1141" stroke="#252b42"/>
+<text x="655" y="1105" font-size="14" fill="#aaaabd" >0</text>
+<path d="M649,1038H1141" stroke="#252b42"/>
+<text x="655" y="1033" font-size="14" fill="#aaaabd" >1</text>
+<path d="M649,966H1141" stroke="#252b42"/>
+<text x="655" y="961" font-size="14" fill="#aaaabd" >2</text>
+<g clip-path="url(#band-straight-1-clip)">
+<path d="M823,1218L913,1128L904,1110L863.5,1029L769,975L769,975L877,1029L1039,1110L1003,1128L823,1218Z" fill="#9fc7eb" fill-opacity=".25" data-role="band"/>
+<path d="M722.2,1268.4L1355.8,951.6" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<path d="M772.6,1268.4L1089.4,951.6" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<path d="M983.2,1268.4L824.8,951.6" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<path d="M1282.45,1268.4L728.05,951.6" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<path d="M1355.8,1268.4L722.2,951.6" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<path d="M823,1218L1003,1128L1039,1110L877,1029L769,975" fill="none" stroke="#e8b66e" stroke-width="3.2" stroke-linejoin="round" data-role="outer"/>
+<path d="M823,1218L913,1128L904,1110L863.5,1029L769,975" fill="none" stroke="#9fc7eb" stroke-width="3.2" stroke-linejoin="round" data-role="inner"/>
+<path d="M904,1110L1039,1110" stroke="#f4f1e8" stroke-width="2" stroke-dasharray="4 4" data-role="slice"/>
+<circle cx="904" cy="1110" r="3" fill="#f4f1e8"/>
+<circle cx="1039" cy="1110" r="3" fill="#f4f1e8"/>
+</g>
+<text x="1135" y="1297" font-size="17" fill="#aaaabd" text-anchor="end">U →</text>
+<text x="1135" y="939" font-size="17" fill="#aaaabd" text-anchor="end">Y ↑</text>
+</g>
+<text x="35" y="1335" font-size="18" fill="#aaaabd" >Slope positions</text>
+<circle cx="88" cy="1375" r="4" fill="#f4f1e8"/>
+<text x="88" y="1362" font-size="18" fill="#c7c7d4" text-anchor="middle">-2</text>
+<circle cx="344" cy="1375" r="4" fill="#f4f1e8"/>
+<text x="344" y="1362" font-size="18" fill="#c7c7d4" text-anchor="middle">-1</text>
+<circle cx="728" cy="1375" r="4" fill="#f4f1e8"/>
+<text x="728" y="1362" font-size="18" fill="#c7c7d4" text-anchor="middle">1/2</text>
+<circle cx="1048" cy="1375" r="4" fill="#f4f1e8"/>
+<text x="1048" y="1362" font-size="18" fill="#c7c7d4" text-anchor="middle">7/4</text>
+<circle cx="1112" cy="1375" r="4" fill="#f4f1e8"/>
+<text x="1112" y="1362" font-size="18" fill="#c7c7d4" text-anchor="middle">2</text>
+<path d="M94,1375H338" stroke="#e8b66e" stroke-width="4"/>
+<text x="216" y="1404" font-size="18" fill="#aaaabd" text-anchor="middle">g = 1</text>
+<path d="M350,1375H722" stroke="#9fc7eb" stroke-width="4"/>
+<text x="536" y="1404" font-size="18" fill="#aaaabd" text-anchor="middle">g = 3/2</text>
+<path d="M734,1375H1042" stroke="#e8b66e" stroke-width="4"/>
+<text x="888" y="1404" font-size="18" fill="#aaaabd" text-anchor="middle">g = 5/4</text>
+<path d="M1054,1375H1106" stroke="#9fc7eb" stroke-width="4"/>
+<text x="1080" y="1404" font-size="18" fill="#aaaabd" text-anchor="middle">g = 1/4</text>
+<text x="35" y="1445" font-size="24" fill="#f4f1e8" >(4³ − 1³ − (3/2)³ − (5/4)³ − (1/4)³) / 24 = 615/256</text>
+<text x="35" y="1507" font-size="24" fill="#f4f1e8" >Equal gaps give the largest total area at fixed slope count and span.</text>
+<text x="35" y="1545" font-size="18" fill="#aaaabd" >Equal unit scales throughout. These are complete limit arrangements; finite drawings need separate bounds.</text>
+</g></svg>

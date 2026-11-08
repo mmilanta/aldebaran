@@ -6,10 +6,15 @@ parabolas at mu=0, not an event or face census of an orbital drawing.
 Standard library only; see the addendum to parabolic_triangle.md.
 """
 
+import argparse
 from fractions import Fraction as Q
 from itertools import combinations
+import json
+from pathlib import Path
 
 from blend_cusps import require
+
+HERE = Path(__file__).resolve().parent
 
 
 def ordered(slopes):
@@ -39,7 +44,7 @@ def clip(polygon, slope, sign):
     return out
 
 
-def arrangement(slopes):
+def bounded_faces(slopes):
     """Split a box containing every vertex; discard cells touching its edge.
 
     Every bounded line face lies strictly in this box, since all its
@@ -55,7 +60,11 @@ def arrangement(slopes):
                     if len(face := clip(polygon, slope, sign)) >= 3 and area(face) > 0]
     bounded = [polygon for polygon in polygons
                if not any(abs(x) == radius or abs(y) == radius for x, y in polygon)]
-    return [area(polygon) for polygon in bounded]
+    return bounded
+
+
+def arrangement(slopes):
+    return [area(polygon) for polygon in bounded_faces(slopes)]
 
 
 def gap_area(slopes):
@@ -64,23 +73,113 @@ def gap_area(slopes):
     return (span**3-sum((b-a)**3 for a, b in zip(p, p[1:])))/24
 
 
-def envelope_area(slopes):
-    """Integrate nearest-extreme squared distance minus nearest-slope error."""
+def envelope_cells(slopes):
+    """Exact intervals on which both nearest choices stay fixed."""
     p = ordered(slopes)
     cuts = sorted({p[0], p[-1], (p[0]+p[-1])/2, *((a+b)/2 for a, b in zip(p, p[1:]))})
-    total = Q(0)
+    cells = []
     for lo, hi in zip(cuts, cuts[1:]):
         middle = (lo+hi)/2
         near = min(p, key=lambda x: abs(x-middle))
         extreme = min((p[0], p[-1]), key=lambda x: abs(x-middle))
         # Half the difference of the two squares is linear in Y.
-        total += (near-extreme)*(hi*hi-lo*lo)/2+(extreme**2-near**2)*(hi-lo)/2
-    return total
+        integral = (near-extreme)*(hi*hi-lo*lo)/2+(extreme**2-near**2)*(hi-lo)/2
+        require(integral >= 0, "An envelope slice has negative area.")
+        cells.append({"lo": lo, "hi": hi, "inner": p.index(near),
+                      "outer": p.index(extreme), "area": integral})
+    return cells
+
+
+def envelope_area(slopes):
+    """Integrate nearest-extreme squared distance minus nearest-slope error."""
+    return sum((cell["area"] for cell in envelope_cells(slopes)), Q(0))
+
+
+def insertion_gain(slopes, new):
+    """Area added by a new slope strictly inside an existing gap."""
+    p = ordered(slopes)
+    require(type(new) is Q and p[0] < new < p[-1] and new not in p,
+            "Insert a new rational slope strictly inside a gap.")
+    left = max(x for x in p if x < new)
+    right = min(x for x in p if x > new)
+    a, b = new-left, right-new
+    return a*b*(a+b)/8
+
+
+def run_face(slopes, first, last):
+    """The face with precisely slopes first..last lying to its left.
+
+    Straight vertices are cyclic; branches[k] contains the edge from
+    vertices[k] to vertices[k+1]. The inverse slide bends those edges.
+    """
+    p = ordered(slopes)
+    require(type(first) is int and type(last) is int and 1 <= first <= last < len(p)-1,
+            "Choose a nonempty consecutive run of interior slope indices.")
+    a, b, c, d = first-1, first, last, last+1
+    pairs = ((a, b), (a, d), (b, d)) if first == last else ((a, c), (a, d), (b, d), (b, c))
+    branches = (a, d, b) if first == last else (a, d, b, c)
+    vertices = [(-p[i]*p[j]/2, (p[i]+p[j])/2) for i, j in pairs]
+    predicted = (p[b]-p[a])*(p[d]-p[c])*(p[c]+p[d]-p[a]-p[b])/8
+
+    def primitive(slope, y):
+        return y**3/6-slope*y*y/2+slope*slope*y/2
+
+    integral = sum((primitive(p[branch], vertices[(k+1) % len(vertices)][1])
+                    - primitive(p[branch], vertices[k][1])) for k, branch in enumerate(branches))
+    require(area(vertices) == abs(integral) == predicted > 0,
+            "The individual face's shoelace, curved integral, and gap product disagree.")
+    center = tuple(sum(v[k] for v in vertices)/len(vertices) for k in (0, 1))
+    require(all((center[0]+slope*center[1]-slope*slope/2)*(1 if first <= k <= last else -1) > 0
+                for k, slope in enumerate(p)), "The face's interior has the wrong run of slopes.")
+    return {"first": first, "last": last, "branches": branches,
+            "straight_vertices": vertices, "area": predicted}
+
+
+def run_faces(slopes):
+    p = ordered(slopes)
+    return [run_face(p, first, last) for first in range(1, len(p)-1)
+            for last in range(first, len(p)-1)]
+
+
+def example(name, slopes):
+    p = ordered(slopes)
+    faces, total = check(p)
+    gaps = [b-a for a, b in zip(p, p[1:])]
+    span, n = p[-1]-p[0], len(p)-1
+    maximum = span**3*(1-Q(1, n*n))/24
+    return {"name": name, "slopes": p, "gaps": gaps, "area": total,
+            "face_count": faces, "maximum": maximum, "deficit": maximum-total,
+            "cells": envelope_cells(p), "faces": run_faces(p)}
+
+
+def illustration_record():
+    before = tuple(map(Q, (-2, 0, 2)))
+    inserted = tuple(map(Q, (-2, -1, 0, 2)))
+    after = (Q(-2), Q(-2, 3), Q(2, 3), Q(2))
+    return {"scope": "Complete arrangements of exact limit parabolas at mu=0; no finite-offset or orbital face claim.",
+            "shear": "U=X-Y^2/2", "band_area": "(L^3-sum(gap^3))/24",
+            "band_examples": [example("Equal gaps", tuple(map(Q, (-2, -1, 0, 1, 2)))),
+                              example("Unequal gaps", (Q(-2), Q(-1), Q(1, 2), Q(7, 4), Q(2)))],
+            "insertion_examples": [example("Three slopes", before), example("Split one gap", inserted),
+                                   example("Space all four equally", after)],
+            "insertion": {"new_slope": Q(-1), "gain": insertion_gain(before, Q(-1)),
+                          "fixed_gap_maximum": Q(1, 4)}}
+
+
+def rational_strings(value):
+    if type(value) is Q:
+        return str(value)
+    if type(value) is dict:
+        return {key: rational_strings(item) for key, item in value.items()}
+    if type(value) in (tuple, list):
+        return [rational_strings(item) for item in value]
+    return value
 
 
 def check(slopes):
     p = ordered(slopes)
-    faces = arrangement(p)
+    polygons = bounded_faces(p)
+    faces = [area(polygon) for polygon in polygons]
     actual = sum(faces, Q(0))
     require(actual == envelope_area(p) == gap_area(p),
             "The exact face census, envelope integral, and gap formula disagree.")
@@ -90,10 +189,24 @@ def check(slopes):
     deficit = sum((b-a-mean)**2*(b-a+2*mean) for a, b in zip(p, p[1:]))/24
     require(maximum-actual == deficit >= 0,
             "The equal-gap maximum misses its exact square deficit.")
+    runs = run_faces(p)
+    require(len(polygons) == len(runs) == (len(p)-1)*(len(p)-2)//2
+            and {frozenset(polygon) for polygon in polygons}
+            == {frozenset(face["straight_vertices"]) for face in runs},
+            "The independent clipped faces and consecutive-run faces disagree.")
+    require(sum((face["area"] for face in runs), Q(0)) == actual,
+            "The individual gap products miss the total bounded area.")
+    if len(set(b-a for a, b in zip(p, p[1:]))) == 1:
+        g = p[1]-p[0]
+        require(all(face["area"] == (face["last"]-face["first"]+1)*g**3/4 for face in runs),
+                "An equally spaced face has the wrong run-length area.")
     return len(faces), actual
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--write", action="store_true", help="Regenerate the exact envelope illustration record.")
+    args = parser.parse_args()
     count = 0
     for size in range(2, 13):
         slopes = [Q(-2)+Q(4*k, size-1) for k in range(size)]
@@ -116,7 +229,46 @@ def main():
             count += 1
         else:
             raise ValueError("Invalid slope-arrangement input was accepted.")
-    print(f"{count} exact controls: full line-face clipping, nearest-slope integrals, gap cubes, equal-gap maxima, scaling, and invalid inputs.")
+    insertion_count = 0
+    for p in (tuple(map(Q, (-2, 0, 2))), (Q(-2), Q(-1), Q(1, 2), Q(7, 4), Q(2))):
+        for left, right in zip(p, p[1:]):
+            g = right-left
+            for k in range(1, 16):
+                new = left+Q(k, 16)*g
+                gain = insertion_gain(p, new)
+                enlarged = (*p, new)
+                require(gap_area(enlarged)-gap_area(p) == envelope_area(enlarged)-envelope_area(p) == gain,
+                        "The new envelope band misses its predicted gain.")
+                require(g**3/32-gain == g*(new-(left+right)/2)**2/8,
+                        "The midpoint insertion misses its exact square deficit.")
+                insertion_count += 1
+            require(sum(arrangement((*p, (left+right)/2)), Q(0))-sum(arrangement(p), Q(0)) == g**3/32,
+                    "The independent face census misses a midpoint insertion.")
+            insertion_count += 1
+    for bad in (Q(-3), Q(3), Q(0), -1, True):
+        try:
+            insertion_gain(tuple(map(Q, (-2, 0, 2))), bad)
+        except ValueError:
+            insertion_count += 1
+        else:
+            raise ValueError("An invalid inserted slope was accepted.")
+    for first, last in ((0, 1), (1, 3), (2, 1), (True, 1), (1, Q(1))):
+        try:
+            run_face(tuple(map(Q, (-2, -1, 0, 2))), first, last)
+        except ValueError:
+            count += 1
+        else:
+            raise ValueError("An invalid face run was accepted.")
+    record = rational_strings(illustration_record())
+    target = HERE/"parabolic_pockets.json"
+    if args.write:
+        target.write_text(json.dumps(record, indent=2)+"\n", encoding="utf-8")
+        print("Wrote parabolic_pockets.json from fresh rational envelope and line-face calculations.")
+    else:
+        require(target.exists() and json.loads(target.read_text(encoding="utf-8")) == record,
+                "The envelope record is stale; repeat with --write.")
+    print(f"{count} exact controls: full face clipping, consecutive-run vertices, individual curved integrals, envelope integrals, gap cubes, equal-gap maxima, scaling, and invalid inputs.")
+    print(f"{insertion_count} insertion controls: independent band gains, exact midpoint deficits, full face sums, and invalid inputs.")
     print("Subtracting Y^2/2 preserves these total areas for the limiting parabolas. No full-drawing face claim.")
 
 

@@ -262,6 +262,12 @@ reversed, and rescaled examples. These are faces of the complete
 **limit-parabola arrangement**, with no assertion about faces of an
 orbital curve or about finite-distance event counts.
 
+The [illustrated follow-up](parabolic_pockets.md) draws this envelope
+band, compares a best single insertion with the equal-gap maximum,
+and labels every pocket by a consecutive run of interior slopes.
+Its separate per-pocket formula also recovers the total by summing
+exact curved boundary integrals.
+
 ## Reproduce
 
 Only standard Python and Node runtimes are needed:
@@ -271,6 +277,8 @@ python3 experiments/parabolic_triangle.py
 python3 experiments/parabolic_triangle.py --write
 node experiments/parabolic_triangle_figure.js
 python3 experiments/parabolic_pockets.py
+python3 experiments/parabolic_pockets.py --write
+node experiments/parabolic_pockets_figure.js
 ```
 
 The [rational record](parabolic_triangle.json) stores the illustrated

@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1290" viewBox="0 0 1200 1290" role="img" aria-labelledby="title description">
+<title id="title">A pocket chooses a run</title><desc id="description">Six bounded pockets of the five parabolas with slopes minus two, minus one, zero, one, two. Each pocket is identified by the slopes of the curves lying to its left: a nonempty consecutive run of the three interior slopes. The same letters A through F mark the curved pockets and their straightened images. One-slope runs A, D, F are gold and have area one quarter each; two-slope runs B, E are blue and have area one half each; the three-slope run C is lilac and has area three quarters. The cards list every run and repeat these areas. Both panels use identical unit scales. In a straightened arrangement every one-slope face is a triangle and every longer-run face is a quadrilateral. The classification applies to distinct slopes, including unequal gaps; only these simple area multiples need equal spacing. These are complete exact limit arrangements, not a finite orbital drawing.</desc>
+<rect width="1200" height="1290" fill="#101323"/><g font-family="ui-sans-serif,system-ui,sans-serif">
+<text x="35" y="65" font-size="48" fill="#f4f1e8" >A pocket chooses a run.</text>
+<text x="35" y="110" font-size="23" fill="#c7c7d4" >Look left from inside a pocket. Those curves always have consecutive slopes.</text>
+<rect x="35" y="143" width="25" height="18" fill="#e8b66e" fill-opacity=".7"/>
+<text x="72" y="160" font-size="20" fill="#c7c7d4" >One slope · area 1/4</text>
+<rect x="410" y="143" width="25" height="18" fill="#9fc7eb" fill-opacity=".7"/>
+<text x="447" y="160" font-size="20" fill="#c7c7d4" >Two slopes · area 1/2</text>
+<rect x="785" y="143" width="25" height="18" fill="#d1b6ea" fill-opacity=".7"/>
+<text x="822" y="160" font-size="20" fill="#c7c7d4" >Three slopes · area 3/4</text>
+<g data-chart="runs-curved" data-scale="86" data-origin="172.7" data-center="480" data-straight="false" data-slopes="-2,-1,0,1,2">
+<rect x="35" y="205" width="540" height="520" rx="14" fill="#141829" stroke="#383b50"/>
+<text x="57" y="241" font-size="27" fill="#f4f1e8" >Curved pockets</text>
+<text x="57" y="269" font-size="18" fill="#c7c7d4" >Xᵢ = (Y − pᵢ)²/2</text>
+<defs><clipPath id="runs-curved-clip"><rect x="59" y="283" width="492" height="394"/></clipPath></defs>
+<rect x="59" y="283" width="492" height="394" fill="#0b0e1a"/>
+<path d="M59,652H551" stroke="#252b42"/>
+<text x="65" y="647" font-size="14" fill="#aaaabd" >-2</text>
+<path d="M59,566H551" stroke="#252b42"/>
+<text x="65" y="561" font-size="14" fill="#aaaabd" >-1</text>
+<path d="M59,480H551" stroke="#252b42"/>
+<text x="65" y="475" font-size="14" fill="#aaaabd" >0</text>
+<path d="M59,394H551" stroke="#252b42"/>
+<text x="65" y="389" font-size="14" fill="#aaaabd" >1</text>
+<path d="M59,308H551" stroke="#252b42"/>
+<text x="65" y="303" font-size="14" fill="#aaaabd" >2</text>
+<g clip-path="url(#runs-curved-clip)">
+<path d="M183.45,609Q194.2,587.5 215.7,566Q194.2,544.5 183.45,523Q161.95,566 183.45,609Z" fill="#e8b66e" fill-opacity=".55" data-role="face" data-face="0" data-area="1/4"/>
+<path d="M215.7,566Q237.2,544.5 269.45,523Q237.2,501.5 215.7,480Q194.2,501.5 183.45,523Q194.2,544.5 215.7,566Z" fill="#9fc7eb" fill-opacity=".55" data-role="face" data-face="1" data-area="1/2"/>
+<path d="M269.45,523Q301.7,501.5 344.7,480Q301.7,458.5 269.45,437Q237.2,458.5 215.7,480Q237.2,501.5 269.45,523Z" fill="#d1b6ea" fill-opacity=".55" data-role="face" data-face="2" data-area="3/4"/>
+<path d="M183.45,523Q194.2,501.5 215.7,480Q194.2,458.5 183.45,437Q161.95,480 183.45,523Z" fill="#e8b66e" fill-opacity=".55" data-role="face" data-face="3" data-area="1/4"/>
+<path d="M215.7,480Q237.2,458.5 269.45,437Q237.2,415.5 215.7,394Q194.2,415.5 183.45,437Q194.2,458.5 215.7,480Z" fill="#9fc7eb" fill-opacity=".55" data-role="face" data-face="4" data-area="1/2"/>
+<path d="M183.45,437Q194.2,415.5 215.7,394Q194.2,372.5 183.45,351Q161.95,394 183.45,437Z" fill="#e8b66e" fill-opacity=".55" data-role="face" data-face="5" data-area="1/4"/>
+<path d="M174.42,669.2Q136.58,480 931.22,290.8" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<path d="M234.62,669.2Q7.58,480 613.02,290.8" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<path d="M380.82,669.2Q-35.42,480 380.82,290.8" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<path d="M613.02,669.2Q7.58,480 234.62,290.8" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<path d="M931.22,669.2Q136.58,480 174.42,290.8" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<text x="187.033333" y="572" font-size="18" fill="#f4f1e8" text-anchor="middle" data-role="face-label">A</text>
+<text x="215.7" y="529" font-size="18" fill="#f4f1e8" text-anchor="middle" data-role="face-label">B</text>
+<text x="269.45" y="486" font-size="18" fill="#f4f1e8" text-anchor="middle" data-role="face-label">C</text>
+<text x="187.033333" y="486" font-size="18" fill="#f4f1e8" text-anchor="middle" data-role="face-label">D</text>
+<text x="215.7" y="443" font-size="18" fill="#f4f1e8" text-anchor="middle" data-role="face-label">E</text>
+<text x="187.033333" y="400" font-size="18" fill="#f4f1e8" text-anchor="middle" data-role="face-label">F</text>
+</g>
+<text x="545" y="707" font-size="17" fill="#aaaabd" text-anchor="end">X →</text>
+<text x="545" y="269" font-size="17" fill="#aaaabd" text-anchor="end">Y ↑</text>
+</g>
+<g data-chart="runs-straight" data-scale="86" data-origin="895" data-center="480" data-straight="true" data-slopes="-2,-1,0,1,2">
+<rect x="625" y="205" width="540" height="520" rx="14" fill="#141829" stroke="#383b50"/>
+<text x="647" y="241" font-size="27" fill="#f4f1e8" >Straightened</text>
+<text x="647" y="269" font-size="18" fill="#c7c7d4" >U = X − Y²/2 · same area</text>
+<defs><clipPath id="runs-straight-clip"><rect x="649" y="283" width="492" height="394"/></clipPath></defs>
+<rect x="649" y="283" width="492" height="394" fill="#0b0e1a"/>
+<path d="M649,652H1141" stroke="#252b42"/>
+<text x="655" y="647" font-size="14" fill="#aaaabd" >-2</text>
+<path d="M649,566H1141" stroke="#252b42"/>
+<text x="655" y="561" font-size="14" fill="#aaaabd" >-1</text>
+<path d="M649,480H1141" stroke="#252b42"/>
+<text x="655" y="475" font-size="14" fill="#aaaabd" >0</text>
+<path d="M649,394H1141" stroke="#252b42"/>
+<text x="655" y="389" font-size="14" fill="#aaaabd" >1</text>
+<path d="M649,308H1141" stroke="#252b42"/>
+<text x="655" y="303" font-size="14" fill="#aaaabd" >2</text>
+<g clip-path="url(#runs-straight-clip)">
+<path d="M809,609L895,566L895,523L809,609Z" fill="#e8b66e" fill-opacity=".55" data-role="face" data-face="0" data-area="1/4"/>
+<path d="M895,566L981,523L938,480L895,523L895,566Z" fill="#9fc7eb" fill-opacity=".55" data-role="face" data-face="1" data-area="1/2"/>
+<path d="M981,523L1067,480L981,437L938,480L981,523Z" fill="#d1b6ea" fill-opacity=".55" data-role="face" data-face="2" data-area="3/4"/>
+<path d="M895,523L938,480L895,437L895,523Z" fill="#e8b66e" fill-opacity=".55" data-role="face" data-face="3" data-area="1/4"/>
+<path d="M938,480L981,437L895,394L895,437L938,480Z" fill="#9fc7eb" fill-opacity=".55" data-role="face" data-face="4" data-area="1/2"/>
+<path d="M895,437L895,394L809,351L895,437Z" fill="#e8b66e" fill-opacity=".55" data-role="face" data-face="5" data-area="1/4"/>
+<path d="M688.6,669.2L1445.4,290.8" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<path d="M748.8,669.2L1127.2,290.8" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<path d="M895,669.2L895,290.8" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<path d="M1127.2,669.2L748.8,290.8" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<path d="M1445.4,669.2L688.6,290.8" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<text x="866.333333" y="572" font-size="18" fill="#f4f1e8" text-anchor="middle" data-role="face-label">A</text>
+<text x="927.25" y="529" font-size="18" fill="#f4f1e8" text-anchor="middle" data-role="face-label">B</text>
+<text x="991.75" y="486" font-size="18" fill="#f4f1e8" text-anchor="middle" data-role="face-label">C</text>
+<text x="909.333333" y="486" font-size="18" fill="#f4f1e8" text-anchor="middle" data-role="face-label">D</text>
+<text x="927.25" y="443" font-size="18" fill="#f4f1e8" text-anchor="middle" data-role="face-label">E</text>
+<text x="866.333333" y="400" font-size="18" fill="#f4f1e8" text-anchor="middle" data-role="face-label">F</text>
+</g>
+<text x="1135" y="707" font-size="17" fill="#aaaabd" text-anchor="end">U →</text>
+<text x="1135" y="269" font-size="17" fill="#aaaabd" text-anchor="end">Y ↑</text>
+</g>
+<text x="35" y="765" font-size="23" fill="#f4f1e8" >Every nonempty run of the interior slopes −1, 0, 1 appears exactly once:</text>
+<rect x="55" y="790" width="340" height="95" rx="10" fill="#141829" stroke="#383b50"/>
+<text x="75" y="819" font-size="21" fill="#f4f1e8" >A · one slope · area 1/4</text>
+<circle cx="110" cy="845" r="4" fill="#e8b66e"/>
+<text x="110" y="872" font-size="18" fill="#e8b66e" text-anchor="middle">-1</text>
+<circle cx="225" cy="845" r="4" fill="#555b78"/>
+<text x="225" y="872" font-size="18" fill="#aaaabd" text-anchor="middle">0</text>
+<circle cx="340" cy="845" r="4" fill="#555b78"/>
+<text x="340" y="872" font-size="18" fill="#aaaabd" text-anchor="middle">1</text>
+<rect x="430" y="790" width="340" height="95" rx="10" fill="#141829" stroke="#383b50"/>
+<text x="450" y="819" font-size="21" fill="#f4f1e8" >D · one slope · area 1/4</text>
+<circle cx="485" cy="845" r="4" fill="#555b78"/>
+<text x="485" y="872" font-size="18" fill="#aaaabd" text-anchor="middle">-1</text>
+<circle cx="600" cy="845" r="4" fill="#e8b66e"/>
+<text x="600" y="872" font-size="18" fill="#e8b66e" text-anchor="middle">0</text>
+<circle cx="715" cy="845" r="4" fill="#555b78"/>
+<text x="715" y="872" font-size="18" fill="#aaaabd" text-anchor="middle">1</text>
+<rect x="805" y="790" width="340" height="95" rx="10" fill="#141829" stroke="#383b50"/>
+<text x="825" y="819" font-size="21" fill="#f4f1e8" >F · one slope · area 1/4</text>
+<circle cx="860" cy="845" r="4" fill="#555b78"/>
+<text x="860" y="872" font-size="18" fill="#aaaabd" text-anchor="middle">-1</text>
+<circle cx="975" cy="845" r="4" fill="#555b78"/>
+<text x="975" y="872" font-size="18" fill="#aaaabd" text-anchor="middle">0</text>
+<circle cx="1090" cy="845" r="4" fill="#e8b66e"/>
+<text x="1090" y="872" font-size="18" fill="#e8b66e" text-anchor="middle">1</text>
+<rect x="242.5" y="900" width="340" height="95" rx="10" fill="#141829" stroke="#383b50"/>
+<text x="262.5" y="929" font-size="21" fill="#f4f1e8" >B · 2 slopes · area 1/2</text>
+<path d="M297.5,955H412.5" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="297.5" cy="955" r="4" fill="#9fc7eb"/>
+<text x="297.5" y="982" font-size="18" fill="#9fc7eb" text-anchor="middle">-1</text>
+<circle cx="412.5" cy="955" r="4" fill="#9fc7eb"/>
+<text x="412.5" y="982" font-size="18" fill="#9fc7eb" text-anchor="middle">0</text>
+<circle cx="527.5" cy="955" r="4" fill="#555b78"/>
+<text x="527.5" y="982" font-size="18" fill="#aaaabd" text-anchor="middle">1</text>
+<rect x="617.5" y="900" width="340" height="95" rx="10" fill="#141829" stroke="#383b50"/>
+<text x="637.5" y="929" font-size="21" fill="#f4f1e8" >E · 2 slopes · area 1/2</text>
+<path d="M787.5,955H902.5" stroke="#9fc7eb" stroke-width="3"/>
+<circle cx="672.5" cy="955" r="4" fill="#555b78"/>
+<text x="672.5" y="982" font-size="18" fill="#aaaabd" text-anchor="middle">-1</text>
+<circle cx="787.5" cy="955" r="4" fill="#9fc7eb"/>
+<text x="787.5" y="982" font-size="18" fill="#9fc7eb" text-anchor="middle">0</text>
+<circle cx="902.5" cy="955" r="4" fill="#9fc7eb"/>
+<text x="902.5" y="982" font-size="18" fill="#9fc7eb" text-anchor="middle">1</text>
+<rect x="430" y="1010" width="340" height="95" rx="10" fill="#141829" stroke="#383b50"/>
+<text x="450" y="1039" font-size="21" fill="#f4f1e8" >C · 3 slopes · area 3/4</text>
+<path d="M485,1065H715" stroke="#d1b6ea" stroke-width="3"/>
+<circle cx="485" cy="1065" r="4" fill="#d1b6ea"/>
+<text x="485" y="1092" font-size="18" fill="#d1b6ea" text-anchor="middle">-1</text>
+<circle cx="600" cy="1065" r="4" fill="#d1b6ea"/>
+<text x="600" y="1092" font-size="18" fill="#d1b6ea" text-anchor="middle">0</text>
+<circle cx="715" cy="1065" r="4" fill="#d1b6ea"/>
+<text x="715" y="1092" font-size="18" fill="#d1b6ea" text-anchor="middle">1</text>
+<text x="35" y="1165" font-size="27" fill="#f4f1e8" >Total = 3 × 1/4 + 2 × 1/2 + 1 × 3/4 = 5/2.</text>
+<text x="35" y="1210" font-size="23" fill="#c7c7d4" >n distinct slopes give (n − 1)(n − 2)/2 bounded pockets, even when gaps differ.</text>
+<text x="35" y="1250" font-size="18" fill="#aaaabd" >Equal unit scales in both panels. This classifies exact limit parabolas, with no finite-orbital face claim.</text>
+</g></svg>

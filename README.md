@@ -470,8 +470,19 @@ The [many-slope addendum](experiments/parabolic_triangle.md#more-than-three-slop
 sums every bounded region of the limit-parabola arrangement: its area
 is the cube of the slope span minus the sum of the adjacent gap cubes,
 all divided by 24. Equal gaps maximize it. An independent exact line
-arrangement checks the formula with
-`python3 experiments/parabolic_pockets.py`.
+arrangement checks the formula. The [illustrated follow-up](experiments/parabolic_pockets.md)
+draws the [envelope band](experiments/parabolic_envelope.svg),
+[adds one curve](experiments/parabolic_insertion.svg), and
+[labels every pocket](experiments/parabolic_runs.svg) by a consecutive
+run of interior slopes. Each run's exact curved area agrees with its
+straightened triangle or quadrilateral. Regenerate their rational
+record and rounded quadratic paths with:
+
+```sh
+python3 experiments/parabolic_pockets.py
+python3 experiments/parabolic_pockets.py --write
+node experiments/parabolic_pockets_figure.js
+```
 
 The [outward-offset plot](experiments/parallel_offset.svg) follows each
 endpoint from 40 crossing pairs to 106, through exactly 33 inverse
