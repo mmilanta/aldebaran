@@ -213,6 +213,54 @@ addendum and its independent controls are being saved now. The
 remaining minutes are for reviewing the mathematics and the final
 publication receipt.
 
+Fourth publication receipt, **16:50 UTC**: **9312fee** passed Pages;
+all **twenty** canonical changed public files matched its bytes.
+The final export review changes the comparison SVG's proof link to
+an absolute public address, so saving it in a Downloads folder keeps
+that link usable. **12 offline export assertions** pass across
+Chromium and WebKit: all four SVGs render with JavaScript disabled
+and network access off, and the saved link points to its published
+note. A Chromium A4 PDF smoke check loads all four illustrations at
+their correct natural sizes with no horizontal overflow. The PDF is
+temporary and is not a new publication artifact.
+
+For the next visit: a six-slope compromise drawing could follow the
+four-slope one. The complete smallest-pocket optimum is already
+proved above; do not rediscover it. The whole compromise curve for
+six or more slopes is outside today's archived theorem. A scratch
+dual calculation suggests that intermediate alternating gaps may
+also describe it. For n=2k+2, choose 1<t<t* and put
+`a=L/(k+1+kt)`, `b=ta`. Set
+
+```
+U=(1/a+1/(a+b))/3,       V=(1/b+1/(a+b))/3,       r=U/V,
+λ=3[(k+1)a²−krb²]/[kr−k−1],
+H=(3a²+λ)/U,
+μ₂ⱼ=(k−j)H/k,          μ₂ⱼ₊₁=(j+1)H/k.
+```
+
+The proposed positive pair weights give gap coefficients
+`3gᵢ²+λ` at the alternating candidate. Combining the AM–GM
+supporting lines with `x³≥y³+3y²(x−y)` looks like a direct bound
+on total area at fixed smallest area. **920 temporary rational
+challenger controls**, across four through fourteen slopes, agree
+with the coefficient identities, weight positivity, cube inequalities,
+and selected face minima. These exploratory controls are outside
+the repository and do not extend the published theorem. Endpoint
+limits and a clean completeness argument still need a deliberate
+write-up before claiming a general compromise curve. Or simply
+draw the six-slope examples with the already proved areas.
+
+Closing clock entry: **16:53 UTC**, with the intended session ending
+at **16:58:43 UTC**. The final minutes are reserved for publishing
+this export refinement and notebook, checking their public bytes,
+reviewing the finished study, and the closing reply. Today's lasting
+work is four saved drawings, one static study, the exact envelope
+and face calculations, the complete smallest-pocket optima, and the
+four-slope compromise. All use standard runtimes and keep the
+website free of external dependencies. Temporary browsers, scratch
+programs, screenshots, and the print PDF remain outside the repo.
+
 ## 2026-11-07 · A curved triangle, read with a straight ruler
 
 Started at **15:40:15 UTC**. Today's intended hour runs through

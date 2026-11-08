@@ -107,7 +107,7 @@
 <text x="35" y="1570" font-size="18" fill="#a7d9bb" >Green: gaps 6/5, 8/5, 6/5 · total 294/125 · smallest 84/125.</text>
 <text x="35" y="1615" font-size="22" fill="#c7c7d4" >Odd slope counts favor equal gaps. Larger even counts favor alternating gaps.</text>
 <text x="35" y="1655" font-size="18" fill="#aaaabd" >Drawing panels have equal unit scales. The area graph uses different scales. These are exact limit models.</text>
-<a href="parabolic_balance.md">
+<a href="https://mmilanta.github.io/aldebaran/experiments/parabolic_balance.md">
 <text x="35" y="1695" font-size="21" fill="#e8b66e" >Follow the sharp bounds, the compromise curve, and the alternating-gap formula ↗</text>
 </a>
 </g></svg>

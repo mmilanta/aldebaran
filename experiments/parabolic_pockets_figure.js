@@ -246,7 +246,7 @@ function balanceFigure() {
     text(35, 1570, 'Green: gaps 6/5, 8/5, 6/5 · total 294/125 · smallest 84/125.', 18, colors.green),
     text(35, 1615, 'Odd slope counts favor equal gaps. Larger even counts favor alternating gaps.', 22),
     text(35, 1655, 'Drawing panels have equal unit scales. The area graph uses different scales. These are exact limit models.', 18, colors.muted),
-    '<a href="parabolic_balance.md">', text(35, 1695, 'Follow the sharp bounds, the compromise curve, and the alternating-gap formula ↗', 21, colors.gold), '</a>',
+    '<a href="https://mmilanta.github.io/aldebaran/experiments/parabolic_balance.md">', text(35, 1695, 'Follow the sharp bounds, the compromise curve, and the alternating-gap formula ↗', 21, colors.gold), '</a>',
     '</g></svg>');
   fs.writeFileSync(path.join(__dirname, 'parabolic_balance.svg'), parts.join('\n') + '\n');
 }
