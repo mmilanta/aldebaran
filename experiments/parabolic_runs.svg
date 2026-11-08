@@ -37,12 +37,12 @@
 <path d="M380.82,669.2Q-35.42,480 380.82,290.8" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
 <path d="M613.02,669.2Q7.58,480 234.62,290.8" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
 <path d="M931.22,669.2Q136.58,480 174.42,290.8" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
-<text x="187.033333" y="572" font-size="18" fill="#f4f1e8" text-anchor="middle" data-role="face-label">A</text>
-<text x="215.7" y="529" font-size="18" fill="#f4f1e8" text-anchor="middle" data-role="face-label">B</text>
-<text x="269.45" y="486" font-size="18" fill="#f4f1e8" text-anchor="middle" data-role="face-label">C</text>
-<text x="187.033333" y="486" font-size="18" fill="#f4f1e8" text-anchor="middle" data-role="face-label">D</text>
-<text x="215.7" y="443" font-size="18" fill="#f4f1e8" text-anchor="middle" data-role="face-label">E</text>
-<text x="187.033333" y="400" font-size="18" fill="#f4f1e8" text-anchor="middle" data-role="face-label">F</text>
+<text x="189.422222" y="571.5" font-size="16" fill="#f4f1e8" text-anchor="middle" data-role="face-label">A</text>
+<text x="219.283333" y="528.5" font-size="16" fill="#f4f1e8" text-anchor="middle" data-role="face-label">B</text>
+<text x="273.033333" y="485.5" font-size="16" fill="#f4f1e8" text-anchor="middle" data-role="face-label">C</text>
+<text x="189.422222" y="485.5" font-size="16" fill="#f4f1e8" text-anchor="middle" data-role="face-label">D</text>
+<text x="219.283333" y="442.5" font-size="16" fill="#f4f1e8" text-anchor="middle" data-role="face-label">E</text>
+<text x="189.422222" y="399.5" font-size="16" fill="#f4f1e8" text-anchor="middle" data-role="face-label">F</text>
 </g>
 <text x="545" y="707" font-size="17" fill="#aaaabd" text-anchor="end">X →</text>
 <text x="545" y="269" font-size="17" fill="#aaaabd" text-anchor="end">Y ↑</text>
@@ -75,12 +75,12 @@
 <path d="M895,669.2L895,290.8" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
 <path d="M1127.2,669.2L748.8,290.8" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
 <path d="M1445.4,669.2L688.6,290.8" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
-<text x="866.333333" y="572" font-size="18" fill="#f4f1e8" text-anchor="middle" data-role="face-label">A</text>
-<text x="927.25" y="529" font-size="18" fill="#f4f1e8" text-anchor="middle" data-role="face-label">B</text>
-<text x="991.75" y="486" font-size="18" fill="#f4f1e8" text-anchor="middle" data-role="face-label">C</text>
-<text x="909.333333" y="486" font-size="18" fill="#f4f1e8" text-anchor="middle" data-role="face-label">D</text>
-<text x="927.25" y="443" font-size="18" fill="#f4f1e8" text-anchor="middle" data-role="face-label">E</text>
-<text x="866.333333" y="400" font-size="18" fill="#f4f1e8" text-anchor="middle" data-role="face-label">F</text>
+<text x="868.722222" y="571.5" font-size="16" fill="#f4f1e8" text-anchor="middle" data-role="face-label">A</text>
+<text x="930.833333" y="528.5" font-size="16" fill="#f4f1e8" text-anchor="middle" data-role="face-label">B</text>
+<text x="995.333333" y="485.5" font-size="16" fill="#f4f1e8" text-anchor="middle" data-role="face-label">C</text>
+<text x="911.722222" y="485.5" font-size="16" fill="#f4f1e8" text-anchor="middle" data-role="face-label">D</text>
+<text x="930.833333" y="442.5" font-size="16" fill="#f4f1e8" text-anchor="middle" data-role="face-label">E</text>
+<text x="868.722222" y="399.5" font-size="16" fill="#f4f1e8" text-anchor="middle" data-role="face-label">F</text>
 </g>
 <text x="1135" y="707" font-size="17" fill="#aaaabd" text-anchor="end">U →</text>
 <text x="1135" y="269" font-size="17" fill="#aaaabd" text-anchor="end">Y ↑</text>

@@ -1,6 +1,6 @@
 # Make the smallest pocket larger
 
-![Four equally spaced slopes give the largest total area, with smallest pockets of area 16/27. Gaps one, two, one instead give three equal 3/4 pockets and a smaller total area.](parabolic_balance.svg)
+![Four equally spaced slopes give the largest total area, with smallest pockets of area 16/27. Gaps one, two, one instead give three equal 3/4 pockets. Below, a descending curve follows every efficient compromise between the two objectives.](parabolic_balance.svg)
 
 Equal gaps maximize the **sum** of the bounded pocket areas. They do
 not always maximize the **smallest** pocket. With four slopes between
@@ -99,6 +99,53 @@ max smallest area = 3L³/256,       n=4.
 At L=4, this is the right panel's three 3/4 pockets. Its total area
 9/4 is less than the equal-gap maximum 64/27. Neither picture is
 better for both objectives.
+
+## Every four-slope compromise
+
+The two optimal arrangements are the ends of a whole curve of
+efficient compromises. No point on that curve can improve either
+area without reducing the other.
+
+Symmetrizing the outside gaps increases both measures. The total
+area gains exactly `(l+r)(l−r)²/32`; the smallest area increases as
+in the preceding argument. Thus any efficient arrangement must have
+gaps `(a,L−2a,a)`. Write z=a/L again. Its total and smallest areas are
+
+```
+B(z) = L³ z(1−z)²/4,
+S(z) = min(T(z),Q(z)).
+```
+
+Before z=1/4, both B and S increase, so z=1/4 improves both. After
+z=1/3, both decrease, so z=1/3 improves both. On the interval
+`1/4≤z≤1/3`, the smaller area is T and the two measures move in
+opposite directions:
+
+```
+S(z) = L³ z(1−2z)(1−z)/8,
+B′(z) = L³(1−z)(1−3z)/4 ≥ 0,
+S′(z) = L³(1−6z+6z²)/8 < 0.
+```
+
+B is strictly increasing on that whole interval despite its zero
+derivative at the right endpoint. This identifies every efficient
+compromise, including the endpoints. Asymmetric arrangements cannot
+add another one, because their symmetric replacements improve both
+objectives.
+
+The graph under the two drawings uses L=4. The green point is z=3/10,
+with gaps `(6/5,8/5,6/5)`, total area 294/125, and smallest area
+84/125. Both coordinates of `(B(z),S(z))` are cubic polynomials in z,
+so the whole graph is one exact cubic Bézier, before display rounding.
+Its four control points are
+
+```
+(9/4,3/4), (7/3,13/18), (64/27,2/3), (64/27,16/27).
+```
+
+Only the first and last controls are endpoints of the curve. The two
+middle controls set its derivatives. This area plot uses different
+axis scales; the two drawings above it retain equal coordinate scales.
 
 ## Larger even counts: alternate two gaps
 
@@ -224,6 +271,12 @@ span accounting, and cubic rescaling. A separate 474 controls use
 rational challengers, exact cubed AM–GM inequalities, four-slope
 symmetrization, independent curved integrals, and invalid inputs.
 The decimal readouts are illustrations.
+
+Another 66 exact controls check four-slope symmetrization in both
+measures, monotonicity along the compromise, its displayed coordinates,
+and invalid parameters. The recorded cubic also agrees with the
+independently integrated faces at 37 rational parameters. The proof
+of the whole interval is the derivative and dominance argument above.
 
 The bound for every n comes from the argument above; a finite list
 of checked slope counts would not prove it. Add `--max-slopes 40` to

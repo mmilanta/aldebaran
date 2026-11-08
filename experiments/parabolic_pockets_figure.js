@@ -95,10 +95,15 @@ function chart(parts, row, left, top, width, height, scale, straight, id, option
   if (options.faces) row.faces.forEach((face, i) => {
     const v = face.straight_vertices;
     const y = v.reduce((s, p) => s + p[1], 0) / v.length;
+    // Balance the polygon centroid with its horizontal slice midpoint;
+    // a small label then fits even the slanted triangles' narrow ends.
     const u = v.reduce((s, p) => s + p[0], 0) / v.length;
-    const p = map([straight ? u : u + y * y / 2, y]);
-    parts.push(text(n(p[0]), n(p[1] + 6), options.balance ? face.area : String.fromCharCode(65 + i),
-      options.balance ? 16 : 18, colors.white, 'text-anchor="middle" data-role="face-label"'));
+    const centroid = straight ? u : u + y * y / 2;
+    const lo = Math.max(...row.p.slice(face.first, face.last + 1).map(p => X(p, y, straight)));
+    const hi = Math.min(X(row.p[face.first - 1], y, straight), X(row.p[face.last + 1], y, straight));
+    const p = map([(2 * centroid + (lo + hi) / 2) / 3, y]);
+    parts.push(text(n(p[0]), n(p[1] + 5.5), options.balance ? face.area : String.fromCharCode(65 + i),
+      16, colors.white, 'text-anchor="middle" data-role="face-label"'));
   });
   parts.push('</g>', text(plot.x + plot.w - 6, top + height - 18, straight ? 'U →' : 'X →', 17, colors.muted, 'text-anchor="end"'),
     text(plot.x + plot.w - 6, top + 64, 'Y ↑', 17, colors.muted, 'text-anchor="end"'), '</g>');
@@ -195,8 +200,8 @@ function runsFigure() {
   fs.writeFileSync(path.join(__dirname, 'parabolic_runs.svg'), parts.join('\n') + '\n');
 }
 function balanceFigure() {
-  const parts = root(1130, 'Make the smallest pocket larger',
-    'Two four-parabola arrangements with fixed outer slopes minus two and plus two. Equal gaps maximize total area, 64 over 27, with individual pocket areas 16 over 27, 32 over 27, and 16 over 27. Gaps one, two, one instead make all three pocket areas exactly three quarters, with total nine quarters. This second arrangement uniquely maximizes the smallest pocket at this span, despite its smaller total. Gold marks the smallest pockets; blue marks a larger pocket. Exact areas are written inside the pockets. Both panels use identical unit scales. This is a complete limit-parabola arrangement, not a finite orbital drawing. The accompanying proof also gives the optimum for every larger slope count.');
+  const parts = root(1720, 'Make the smallest pocket larger',
+    'Two four-parabola arrangements with fixed outer slopes minus two and plus two. Equal gaps maximize total area, 64 over 27, with individual pocket areas 16 over 27, 32 over 27, and 16 over 27. Gaps one, two, one instead make all three pocket areas exactly three quarters, with total nine quarters. This second arrangement uniquely maximizes the smallest pocket at this span, despite its smaller total. Gold marks the smallest pockets; blue marks a larger pocket. Exact areas are written inside the pockets. Both drawing panels use identical unit scales. Below, a graph shows all efficient compromises: increasing total area reduces the smallest area. A green point at gaps six fifths, eight fifths, six fifths has total 294 over 125 and smallest area 84 over 125. This graph compares areas with different axis scales. Its curve is an exact cubic Bezier with rounded coordinates. These are complete limit arrangements, not finite orbital drawings.');
   parts.push(text(35, 65, 'Make the smallest pocket larger.', 46, colors.white),
     text(35, 110, 'The most total area and the largest smallest pocket can need different spacing.', 23));
   for (const [x, color, label] of [[35, colors.gold, 'Smallest pockets'], [410, colors.blue, 'A larger pocket']]) parts.push(
@@ -212,9 +217,36 @@ function balanceFigure() {
       text(left + 22, 894, `Gaps: ${entry.gaps.join(', ')}`, 22, colors.muted));
   });
   parts.push(text(35, 963, 'With span L and four slopes: no smallest pocket can exceed 3L³/256.', 25, colors.white),
-    text(35, 1004, 'Odd slope counts favor equal gaps. Larger even counts favor alternating gaps.', 22),
-    '<a href="parabolic_balance.md">', text(35, 1051, 'Follow the sharp bounds and the alternating-gap formula ↗', 22, colors.gold), '</a>',
-    text(35, 1095, 'Equal unit scales in both panels. Complete exact limit arrangements; finite drawings need separate bounds.', 18, colors.muted),
+    text(35, 1038, 'Between them, a smooth compromise.', 29, colors.white),
+    text(35, 1079, 'Along this curve, more total area always costs some of the smallest pocket.', 22));
+  const plot = { x: 110, y: 1130, w: 970, h: 370, low: 2.235, high: .77, sx: 970 / .15, sy: 370 / .195 };
+  const project = ([total, smallest]) => [plot.x + (total - plot.low) * plot.sx, plot.y + (plot.high - smallest) * plot.sy];
+  parts.push(`<g data-area-plot="compromise" data-left="${plot.x}" data-top="${plot.y}" data-low="${plot.low}" data-high="${plot.high}" data-x-scale="${plot.sx}" data-y-scale="${plot.sy}">`,
+    `<rect x="${plot.x}" y="${plot.y}" width="${plot.w}" height="${plot.h}" fill="#0b0e1a" stroke="#383b50"/>`);
+  for (const [value, label] of [[.75, '3/4'], [2 / 3, '2/3'], [16 / 27, '16/27']]) {
+    const y = project([plot.low, value])[1];
+    parts.push(`<path d="M${plot.x},${n(y)}h${plot.w}" stroke="#252b42"/>`,
+      text(plot.x - 14, y + 6, label, 18, colors.muted, 'text-anchor="end"'));
+  }
+  for (const [value, label] of [[9 / 4, '9/4'], [7 / 3, '7/3'], [64 / 27, '64/27']]) {
+    const x = project([value, .77])[0];
+    parts.push(`<path d="M${n(x)},${plot.y}v${plot.h}" stroke="#252b42"/>`,
+      text(x, plot.y + plot.h + 29, label, 18, colors.muted, 'text-anchor="middle"'));
+  }
+  const controls = record.compromise.bezier.map(p => project(p.map(rational)));
+  parts.push(`<path d="M${xy(controls[0])}C${xy(controls[1])} ${xy(controls[2])} ${xy(controls[3])}" fill="none" stroke="${colors.white}" stroke-width="3" data-role="compromise"/>`);
+  const middle = project(record.compromise.middle.areas.map(rational));
+  for (const [p, color] of [[controls[0], colors.gold], [middle, colors.green], [controls[3], colors.blue]]) parts.push(
+    `<circle cx="${n(p[0])}" cy="${n(p[1])}" r="5" fill="${color}" stroke="#0b0e1a" stroke-width="1.5"/>`);
+  parts.push(text(controls[0][0] + 19, controls[0][1] - 14, 'Equal pockets', 19, colors.gold),
+    text(middle[0] + 19, middle[1] - 14, 'A compromise', 19, colors.green),
+    text(controls[3][0] - 199, controls[3][1] - 14, 'Largest total', 19, colors.blue),
+    text(plot.x, plot.y - 15, 'Smallest area ↑', 18),
+    text(plot.x + plot.w, plot.y + plot.h + 70, 'Total area →', 18, colors.ink, 'text-anchor="end"'), '</g>',
+    text(35, 1570, 'Green: gaps 6/5, 8/5, 6/5 · total 294/125 · smallest 84/125.', 18, colors.green),
+    text(35, 1615, 'Odd slope counts favor equal gaps. Larger even counts favor alternating gaps.', 22),
+    text(35, 1655, 'Drawing panels have equal unit scales. The area graph uses different scales. These are exact limit models.', 18, colors.muted),
+    '<a href="parabolic_balance.md">', text(35, 1695, 'Follow the sharp bounds, the compromise curve, and the alternating-gap formula ↗', 21, colors.gold), '</a>',
     '</g></svg>');
   fs.writeFileSync(path.join(__dirname, 'parabolic_balance.svg'), parts.join('\n') + '\n');
 }

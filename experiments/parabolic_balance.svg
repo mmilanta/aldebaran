@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1130" viewBox="0 0 1200 1130" role="img" aria-labelledby="title description">
-<title id="title">Make the smallest pocket larger</title><desc id="description">Two four-parabola arrangements with fixed outer slopes minus two and plus two. Equal gaps maximize total area, 64 over 27, with individual pocket areas 16 over 27, 32 over 27, and 16 over 27. Gaps one, two, one instead make all three pocket areas exactly three quarters, with total nine quarters. This second arrangement uniquely maximizes the smallest pocket at this span, despite its smaller total. Gold marks the smallest pockets; blue marks a larger pocket. Exact areas are written inside the pockets. Both panels use identical unit scales. This is a complete limit-parabola arrangement, not a finite orbital drawing. The accompanying proof also gives the optimum for every larger slope count.</desc>
-<rect width="1200" height="1130" fill="#101323"/><g font-family="ui-sans-serif,system-ui,sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1720" viewBox="0 0 1200 1720" role="img" aria-labelledby="title description">
+<title id="title">Make the smallest pocket larger</title><desc id="description">Two four-parabola arrangements with fixed outer slopes minus two and plus two. Equal gaps maximize total area, 64 over 27, with individual pocket areas 16 over 27, 32 over 27, and 16 over 27. Gaps one, two, one instead make all three pocket areas exactly three quarters, with total nine quarters. This second arrangement uniquely maximizes the smallest pocket at this span, despite its smaller total. Gold marks the smallest pockets; blue marks a larger pocket. Exact areas are written inside the pockets. Both drawing panels use identical unit scales. Below, a graph shows all efficient compromises: increasing total area reduces the smallest area. A green point at gaps six fifths, eight fifths, six fifths has total 294 over 125 and smallest area 84 over 125. This graph compares areas with different axis scales. Its curve is an exact cubic Bezier with rounded coordinates. These are complete limit arrangements, not finite orbital drawings.</desc>
+<rect width="1200" height="1720" fill="#101323"/><g font-family="ui-sans-serif,system-ui,sans-serif">
 <text x="35" y="65" font-size="46" fill="#f4f1e8" >Make the smallest pocket larger.</text>
 <text x="35" y="110" font-size="23" fill="#c7c7d4" >The most total area and the largest smallest pocket can need different spacing.</text>
 <rect x="35" y="143" width="25" height="18" fill="#e8b66e" fill-opacity=".7"/>
@@ -32,9 +32,9 @@
 <path d="M273.797778,694.2Q-16.308889,505 526.064444,315.8" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
 <path d="M526.064444,694.2Q-16.308889,505 273.797778,315.8" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
 <path d="M931.22,694.2Q136.58,505 174.42,315.8" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
-<text x="198.181481" y="568.333333" font-size="16" fill="#f4f1e8" text-anchor="middle" data-role="face-label">16/27</text>
-<text x="249.144444" y="511" font-size="16" fill="#f4f1e8" text-anchor="middle" data-role="face-label">32/27</text>
-<text x="198.181481" y="453.666667" font-size="16" fill="#f4f1e8" text-anchor="middle" data-role="face-label">16/27</text>
+<text x="202.428395" y="567.833333" font-size="16" fill="#f4f1e8" text-anchor="middle" data-role="face-label">16/27</text>
+<text x="255.514815" y="510.5" font-size="16" fill="#f4f1e8" text-anchor="middle" data-role="face-label">32/27</text>
+<text x="202.428395" y="453.166667" font-size="16" fill="#f4f1e8" text-anchor="middle" data-role="face-label">16/27</text>
 </g>
 <text x="545" y="732" font-size="17" fill="#aaaabd" text-anchor="end">X →</text>
 <text x="545" y="294" font-size="17" fill="#aaaabd" text-anchor="end">Y ↑</text>
@@ -67,9 +67,9 @@
 <path d="M824.62,694.2Q597.58,505 1203.02,315.8" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
 <path d="M1203.02,694.2Q597.58,505 824.62,315.8" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
 <path d="M1521.22,694.2Q726.58,505 764.42,315.8" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
-<text x="796.144444" y="568.333333" font-size="16" fill="#f4f1e8" text-anchor="middle" data-role="face-label">3/4</text>
-<text x="859.45" y="511" font-size="16" fill="#f4f1e8" text-anchor="middle" data-role="face-label">3/4</text>
-<text x="796.144444" y="453.666667" font-size="16" fill="#f4f1e8" text-anchor="middle" data-role="face-label">3/4</text>
+<text x="798.533333" y="567.833333" font-size="16" fill="#f4f1e8" text-anchor="middle" data-role="face-label">3/4</text>
+<text x="863.033333" y="510.5" font-size="16" fill="#f4f1e8" text-anchor="middle" data-role="face-label">3/4</text>
+<text x="798.533333" y="453.166667" font-size="16" fill="#f4f1e8" text-anchor="middle" data-role="face-label">3/4</text>
 </g>
 <text x="1135" y="732" font-size="17" fill="#aaaabd" text-anchor="end">X →</text>
 <text x="1135" y="294" font-size="17" fill="#aaaabd" text-anchor="end">Y ↑</text>
@@ -78,9 +78,36 @@
 <text x="647" y="849" font-size="27" fill="#e8b66e" >Smallest pocket = 3/4</text>
 <text x="647" y="894" font-size="22" fill="#aaaabd" >Gaps: 1, 2, 1</text>
 <text x="35" y="963" font-size="25" fill="#f4f1e8" >With span L and four slopes: no smallest pocket can exceed 3L³/256.</text>
-<text x="35" y="1004" font-size="22" fill="#c7c7d4" >Odd slope counts favor equal gaps. Larger even counts favor alternating gaps.</text>
+<text x="35" y="1038" font-size="29" fill="#f4f1e8" >Between them, a smooth compromise.</text>
+<text x="35" y="1079" font-size="22" fill="#c7c7d4" >Along this curve, more total area always costs some of the smallest pocket.</text>
+<g data-area-plot="compromise" data-left="110" data-top="1130" data-low="2.235" data-high="0.77" data-x-scale="6466.666666666667" data-y-scale="1897.4358974358975">
+<rect x="110" y="1130" width="970" height="370" fill="#0b0e1a" stroke="#383b50"/>
+<path d="M110,1167.948718h970" stroke="#252b42"/>
+<text x="96" y="1173.948717948718" font-size="18" fill="#aaaabd" text-anchor="end">3/4</text>
+<path d="M110,1326.068376h970" stroke="#252b42"/>
+<text x="96" y="1332.0683760683762" font-size="18" fill="#aaaabd" text-anchor="end">2/3</text>
+<path d="M110,1466.619183h970" stroke="#252b42"/>
+<text x="96" y="1472.61918328585" font-size="18" fill="#aaaabd" text-anchor="end">16/27</text>
+<path d="M207,1130v370" stroke="#252b42"/>
+<text x="207.0000000000008" y="1529" font-size="18" fill="#aaaabd" text-anchor="middle">9/4</text>
+<path d="M745.888889,1130v370" stroke="#252b42"/>
+<text x="745.8888888888907" y="1529" font-size="18" fill="#aaaabd" text-anchor="middle">7/3</text>
+<path d="M985.395062,1130v370" stroke="#252b42"/>
+<text x="985.395061728395" y="1529" font-size="18" fill="#aaaabd" text-anchor="middle">64/27</text>
+<path d="M207,1167.948718C745.888889,1220.655271 985.395062,1326.068376 985.395062,1466.619183" fill="none" stroke="#f4f1e8" stroke-width="3" data-role="compromise"/>
+<circle cx="207" cy="1167.948718" r="5" fill="#e8b66e" stroke="#0b0e1a" stroke-width="1.5"/>
+<circle cx="866.6" cy="1315.948718" r="5" fill="#a7d9bb" stroke="#0b0e1a" stroke-width="1.5"/>
+<circle cx="985.395062" cy="1466.619183" r="5" fill="#9fc7eb" stroke="#0b0e1a" stroke-width="1.5"/>
+<text x="226.0000000000008" y="1153.948717948718" font-size="19" fill="#e8b66e" >Equal pockets</text>
+<text x="885.6" y="1301.9487179487178" font-size="19" fill="#a7d9bb" >A compromise</text>
+<text x="786.395061728395" y="1452.61918328585" font-size="19" fill="#9fc7eb" >Largest total</text>
+<text x="110" y="1115" font-size="18" fill="#c7c7d4" >Smallest area ↑</text>
+<text x="1080" y="1570" font-size="18" fill="#c7c7d4" text-anchor="end">Total area →</text>
+</g>
+<text x="35" y="1570" font-size="18" fill="#a7d9bb" >Green: gaps 6/5, 8/5, 6/5 · total 294/125 · smallest 84/125.</text>
+<text x="35" y="1615" font-size="22" fill="#c7c7d4" >Odd slope counts favor equal gaps. Larger even counts favor alternating gaps.</text>
+<text x="35" y="1655" font-size="18" fill="#aaaabd" >Drawing panels have equal unit scales. The area graph uses different scales. These are exact limit models.</text>
 <a href="parabolic_balance.md">
-<text x="35" y="1051" font-size="22" fill="#e8b66e" >Follow the sharp bounds and the alternating-gap formula ↗</text>
+<text x="35" y="1695" font-size="21" fill="#e8b66e" >Follow the sharp bounds, the compromise curve, and the alternating-gap formula ↗</text>
 </a>
-<text x="35" y="1095" font-size="18" fill="#aaaabd" >Equal unit scales in both panels. Complete exact limit arrangements; finite drawings need separate bounds.</text>
 </g></svg>

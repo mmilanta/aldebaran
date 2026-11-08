@@ -14,7 +14,7 @@ from math import isqrt, sqrt
 from random import Random
 
 from blend_cusps import require
-from parabolic_pockets import run_faces
+from parabolic_pockets import compromise, compromise_record, run_faces
 
 
 @total_ordering
@@ -189,6 +189,45 @@ def rational_controls(maximum):
     return count
 
 
+def compromise_controls():
+    count = 0
+    for step in range(1, 25):
+        # Any asymmetric three-gap arrangement improves in both measures
+        # when the two outside gaps are replaced by their average.
+        left, middle, right = Q(step, 20), Q(3, 2), Q(5, 4)
+        original = [left, middle, right]
+        symmetric = [(left+right)/2, middle, (left+right)/2]
+        span = sum(original)
+        total = lambda gs: (span**3-sum(g**3 for g in gs))/24
+        require(total(symmetric) >= total(original)
+                and min(face_areas(symmetric)) >= min(face_areas(original)),
+                "Symmetrization misses one of the two objectives.")
+        count += 1
+    previous = None
+    for step in range(37):
+        z = Q(1, 4)+Q(step, 432)
+        point = compromise(z)
+        if previous:
+            require(point[0] > previous[0] and point[1] < previous[1],
+                    "The compromise curve does not exchange total and smallest area.")
+        previous = point
+        count += 1
+    record = compromise_record()
+    require(record["bezier"][0] == (Q(9, 4), Q(3, 4))
+            and record["bezier"][-1] == (Q(64, 27), Q(16, 27))
+            and record["middle"]["areas"] == (Q(294, 125), Q(84, 125)),
+            "The illustrated compromises miss their exact coordinates.")
+    count += 1
+    for z in (Q(0), Q(1, 2), Q(1, 3)+Q(1, 1000), .3):
+        try:
+            compromise(z)
+        except ValueError:
+            count += 1
+        else:
+            raise ValueError("An invalid compromise parameter was accepted.")
+    return count
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--max-slopes", type=int, default=20, help="Largest slope count in the finite exact controls (at least 6).")
@@ -201,7 +240,9 @@ def main():
         require(all(y == Q(7, 12)*x for x, y in zip(gaps, other)) and scaled == Q(7, 12)**3*smallest,
                 "The optimum does not scale cubically with the slope span.")
     controls = rational_controls(args.max_slopes)
+    compromise_count = compromise_controls()
     print(f"{2*(args.max_slopes-2)} exact optimal-arrangement controls and {controls} rational challenger/symmetrization/invalid controls passed.")
+    print(f"{compromise_count} exact compromise controls and 37 cubic-path matches passed.")
     print("The all-count argument is weighted AM-GM; the decimal readouts are not proof predicates.")
 
 

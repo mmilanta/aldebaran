@@ -124,6 +124,54 @@ record, four drawings, new cover, and illustrated sheet regenerate
 byte for byte. The general optimum and reading page are being
 published now; the hour still has about 28 minutes remaining.
 
+Second publication receipt, **16:32 UTC**: **862e92f** passed Pages;
+all **twenty** canonical public files changed today matched the
+committed bytes.
+
+The last drawing gained a further curve at **16:38 UTC**. For four
+slopes, every efficient compromise between total and smallest area
+has symmetric gaps `(a,L−2a,a)`, with `z=a/L` between 1/4 and 1/3.
+The two coordinates are
+
+```
+B(z)=L³ z(1−z)²/4,
+S(z)=L³ z(1−2z)(1−z)/8.
+```
+
+Total area strictly increases along that interval while the smallest
+strictly decreases. Symmetrizing any asymmetric arrangement improves
+both measures; arrangements outside the interval are dominated by an
+endpoint. This proves completeness of the compromise curve, as well
+as the two separate optima. At span four it is one cubic Bézier with
+exact rational controls `(9/4,3/4)`, `(7/3,13/18)`, `(64/27,2/3)`,
+and `(64/27,16/27)`. The green point has gaps `(6/5,8/5,6/5)` and
+areas 294/125 and 84/125. Only the graph compares different axis
+scales; the two pocket drawings retain their common equal scales.
+
+Another **66 exact controls** check symmetrization in both measures,
+monotonicity, shown coordinates, and invalid parameters. **37 exact
+cubic matches** agree with independent curved face integrals. The
+new graph is part of the fourth still drawing; the reading page
+continues to have four pictures and no runtime script.
+
+A stricter label audit found two letters' bounding rectangles crossing
+a slanted triangle edge, even though their centers were inside.
+Labels are now slightly smaller and their placements balance the
+polygon centroid with a horizontal-slice midpoint. All bounding-box
+corners and edge midpoints fit in their corresponding paths in both
+engines. At **16:39 UTC**, Chromium and WebKit pass **1,828 assertions**,
+including the actual cubic graph's two area coordinates. Firefox was
+downloaded but could not launch with a usable profile in this container;
+there is no Firefox result for this session. The passing engines still
+report no page errors, off-origin requests, HTTP failures, or axe
+WCAG A/AA violations.
+
+All **47** SVGs parse with unique ids. Before this notebook update,
+**993** local links/resources/ARIA references resolve. All exact data,
+four drawings, cover, and sheet still regenerate byte for byte.
+The new graph and label refinements are being published with about
+sixteen minutes left in the measured hour.
+
 ## 2026-11-07 · A curved triangle, read with a straight ruler
 
 Started at **15:40:15 UTC**. Today's intended hour runs through

@@ -152,6 +152,40 @@ def example(name, slopes):
             "cells": envelope_cells(p), "faces": run_faces(p)}
 
 
+def compromise(z, span=Q(4)):
+    """Total and smallest area on the four-slope compromise curve."""
+    require(type(z) is Q and Q(1, 4) <= z <= Q(1, 3)
+            and type(span) is Q and span > 0, "Use a rational quarter-to-third parameter and positive span.")
+    a = span*z
+    slopes = (-span/2, -span/2+a, span/2-a, span/2)
+    faces = run_faces(slopes)
+    total = span**3*z*(1-z)**2/4
+    smallest = span**3*z*(1-2*z)*(1-z)/8
+    require(sum((face["area"] for face in faces), Q(0)) == total
+            and min(face["area"] for face in faces) == smallest,
+            "The compromise curve misses its integrated face areas.")
+    return (total, smallest)
+
+
+def compromise_record():
+    start, end = Q(1, 4), Q(1, 3)
+    first, last = compromise(start), compromise(end)
+
+    def derivative(z):
+        return (16*(1-4*z+3*z*z), 8*(1-6*z+6*z*z))
+
+    first_control = tuple(x+(end-start)*v/3 for x, v in zip(first, derivative(start)))
+    last_control = tuple(x-(end-start)*v/3 for x, v in zip(last, derivative(end)))
+    controls = (first, first_control, last_control, last)
+    for step in range(37):
+        t = Q(step, 36)
+        actual = tuple((1-t)**3*controls[0][i]+3*t*(1-t)**2*controls[1][i]
+                       +3*t*t*(1-t)*controls[2][i]+t**3*controls[3][i] for i in (0, 1))
+        require(actual == compromise(start+t*(end-start)), "The exact cubic drawing misses the compromise curve.")
+    return {"span": Q(4), "parameter_interval": (start, end), "bezier": controls,
+            "middle": {"parameter": Q(3, 10), "areas": compromise(Q(3, 10))}}
+
+
 def illustration_record():
     before = tuple(map(Q, (-2, 0, 2)))
     inserted = tuple(map(Q, (-2, -1, 0, 2)))
@@ -164,6 +198,7 @@ def illustration_record():
                                    example("Space all four equally", after)],
             "balance_examples": [example("Largest total", after),
                                  example("Largest smallest pocket", tuple(map(Q, (-2, -1, 1, 2))))],
+            "compromise": compromise_record(),
             "insertion": {"new_slope": Q(-1), "gain": insertion_gain(before, Q(-1)),
                           "fixed_gap_maximum": Q(1, 4)}}
 
