@@ -14,7 +14,7 @@ from math import isqrt, sqrt
 from random import Random
 
 from blend_cusps import require
-from parabolic_pockets import compromise, compromise_record, run_faces
+from parabolic_pockets import area, bounded_faces, compromise, compromise_record, run_faces
 
 
 @total_ordering
@@ -145,6 +145,12 @@ def certificate(size, span=Q(4)):
                 and coefficients == [k*(k+1)]*(2*k+1),
                 "The positive AM-GM weights fail to account for the full span.")
         require(smallest > (span/(size-1))**3/4, "Even counts should improve on equal gaps.")
+        m = size-1
+        u = (b-a)/(2*span)
+        gain = smallest/((span/m)**3/4)
+        require(3-2*(m*m-3)*u-3*(m*m-1)*u*u == 0
+                and gain == 2*(1+u)**3/(2+3*u),
+                "The normalized even-count gain misses its exact stationary identity.")
         root = Quadratic(k*k+k+1, Q(0), Q(1))
         require(root*root == k*k+k+1 and (1/root)*root == 1
                 and k < root < k+1, "The exact field arithmetic failed a root control.")
@@ -202,6 +208,8 @@ def compromise_controls():
         require(total(symmetric) >= total(original)
                 and min(face_areas(symmetric)) >= min(face_areas(original)),
                 "Symmetrization misses one of the two objectives.")
+        require(total(symmetric)-total(original) == (left+right)*(left-right)**2/32,
+                "Symmetrization misses the exact total-area gain.")
         count += 1
     previous = None
     for step in range(37):
@@ -228,9 +236,39 @@ def compromise_controls():
     return count
 
 
+def near_optimum_controls():
+    """Fresh clipped rational arrangements close to two irrational optima."""
+    count = 0
+    for size in (6, 8):
+        k = (size-2)//2
+        d = k*k+k+1
+        exact, bound = certificate(size)
+        for bits in (12, 24, 48, 96):
+            scale = 2**bits
+            root_lo = Q(isqrt(d*scale*scale), scale)
+            root_hi = root_lo+Q(1, scale)
+            require(root_lo*root_lo < d < root_hi*root_hi, "A rational square-root bracket failed.")
+            lo = 4*(k+2-root_hi)/(3*(k+1))
+            hi = 4*(k+2-root_lo)/(3*(k+1))
+            require(lo < exact[0] < hi, "The optimal short gap escaped its exact bracket.")
+            a = (lo+hi)/2
+            b = (4-(k+1)*a)/k
+            gaps = [a if i % 2 == 0 else b for i in range(size-1)]
+            slopes = [Q(-2)]
+            for g in gaps:
+                slopes.append(slopes[-1]+g)
+            polygons = bounded_faces(slopes)
+            actual = sorted(area(polygon) for polygon in polygons)
+            require(slopes[-1] == 2 and len(polygons) == (size-1)*(size-2)//2
+                    and actual == sorted(face_areas(gaps)) and bound-actual[0] > 0,
+                    "A near-optimal clipped arrangement misses the sharp algebraic bound.")
+            count += 1
+    return count
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--max-slopes", type=int, default=20, help="Largest slope count in the finite exact controls (at least 6).")
+    parser.add_argument("--max-slopes", type=int, default=20, help="Largest slope count in the main exact table (at least 6).")
     args = parser.parse_args()
     require(args.max_slopes >= 6, "Check through at least six slopes.")
     for size in range(3, args.max_slopes+1):
@@ -241,8 +279,10 @@ def main():
                 "The optimum does not scale cubically with the slope span.")
     controls = rational_controls(args.max_slopes)
     compromise_count = compromise_controls()
+    near_count = near_optimum_controls()
     print(f"{2*(args.max_slopes-2)} exact optimal-arrangement controls and {controls} rational challenger/symmetrization/invalid controls passed.")
     print(f"{compromise_count} exact compromise controls and 37 cubic-path matches passed.")
+    print(f"{near_count} independent clipped rational arrangements approach the six- and eight-slope optima from below.")
     print("The all-count argument is weighted AM-GM; the decimal readouts are not proof predicates.")
 
 

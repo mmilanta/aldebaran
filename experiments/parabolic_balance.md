@@ -252,6 +252,45 @@ For six slopes, equal gaps instead give minimum 0.128. The larger
 minimum costs some total area, just as in the four-slope picture.
 For odd counts the two objectives share the same equal-gap optimum.
 
+## Why the even-count advantage gets small
+
+For even n≥6, let m=n−1 be the number of gaps. Compare the optimal
+minimum with the equal-gap minimum `L³/(4m³)`. Put
+
+```
+c = (a+b)/2,       h = (b−a)/2,       u = h/L.
+```
+
+There is one more short gap than long gap, so `L=mc−h` and
+`c=(L+h)/m`. The normalized minimum is
+
+```
+R = T / [L³/(4m³)]
+  = (1+u)³ − m²u²(1+u).
+```
+
+The optimal ratio gives
+
+```
+3 − 2(m²−3)u − 3(m²−1)u² = 0,
+u = [m√(m²+3) − m² + 3] / [3(m²−1)],
+R = 2(1+u)³/(2+3u).
+```
+
+Expanding the positive square root at 1/m²=0 gives
+`u=3/(2m²)+O(m⁻⁴)` and therefore
+
+```
+R = 1 + 9/(4m²) + O(m⁻⁴).
+```
+
+The relative advantage of alternating gaps shrinks quadratically in
+the number of gaps. The absolute area gain is
+`9L³/(16m⁵)+O(m⁻⁷)`. These are asymptotics in slope count, unrelated
+to an orbital drawing's outward offset. No numerical remainder bound
+for all finite m is asserted here. The exact program checks the two
+stationary identities before printing any approximate areas.
+
 ## Reproduce
 
 Only standard runtimes are needed:
@@ -271,6 +310,13 @@ span accounting, and cubic rescaling. A separate 474 controls use
 rational challengers, exact cubed AM–GM inequalities, four-slope
 symmetrization, independent curved integrals, and invalid inputs.
 The decimal readouts are illustrations.
+
+Eight further controls bracket the six- and eight-slope optima by
+rational square-root bounds at 12, 24, 48, and 96 bits. Each midpoint
+gives a rational arrangement with exactly the required span. A fresh
+complete line clipping computes all its faces; their smallest areas
+lie strictly below the exact algebraic optima. These provide independent
+geometric controls near the irrational candidates.
 
 Another 66 exact controls check four-slope symmetrization in both
 measures, monotonicity along the compromise, its displayed coordinates,

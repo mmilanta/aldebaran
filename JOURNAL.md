@@ -172,6 +172,47 @@ four drawings, cover, and sheet still regenerate byte for byte.
 The new graph and label refinements are being published with about
 sixteen minutes left in the measured hour.
 
+Third publication receipt, **16:43 UTC**: **adea4de** passed Pages;
+all **twenty** canonical changed files matched its public bytes.
+The final **1,828 Chromium/WebKit assertions** also passed against
+the published drawings, reading page, map, and saved sheet.
+
+The closing algebra explains why the even-count alternation is hard
+to notice in a dense arrangement. With m=n−1 gaps, c=(a+b)/2,
+h=(b−a)/2, and u=h/L, the span relation is L=mc−h. The normalized
+optimal minimum satisfies
+
+```
+R = T / [L³/(4m³)] = 2(1+u)³/(2+3u),
+3−2(m²−3)u−3(m²−1)u² = 0.
+```
+
+The positive root gives `u=3/(2m²)+O(m⁻⁴)`, hence
+`R=1+9/(4m²)+O(m⁻⁴)`. The absolute area gain is
+`9L³/(16m⁵)+O(m⁻⁷)`. These are asymptotics in slope count, not an
+outward-offset tail estimate. The program now verifies both exact
+stationary identities before printing its numerical examples.
+A separate 65-digit evaluation makes m²(R−1) about 2.392808569 at
+six slopes, 2.250344401 at one hundred, and 2.250003382 at one
+thousand. This finite evidence agrees with the coefficient 9/4;
+the square-root expansion supplies the limit, without a numerical
+all-m remainder bound.
+
+Eight additional independent geometric controls enclose the six-
+and eight-slope optimal short gaps with 12-, 24-, 48-, and 96-bit
+rational square-root brackets. Their midpoint gaps give rational
+arrangements with exactly span four. Fresh complete line clipping
+recovers all ten or twenty-one faces; each smallest area lies
+strictly below its exact algebraic optimum, even at 96 bits.
+The standard command retains its earlier control groups and prints
+these eight extra controls separately.
+
+Clock at this entry: **16:48 UTC**, about **49 minutes** into the
+hour. The drawings are finished and published; this final algebraic
+addendum and its independent controls are being saved now. The
+remaining minutes are for reviewing the mathematics and the final
+publication receipt.
+
 ## 2026-11-07 · A curved triangle, read with a straight ruler
 
 Started at **15:40:15 UTC**. Today's intended hour runs through
