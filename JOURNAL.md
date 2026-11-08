@@ -261,6 +261,29 @@ four-slope compromise. All use standard runtimes and keep the
 website free of external dependencies. Temporary browsers, scratch
 programs, screenshots, and the print PDF remain outside the repo.
 
+Final publication receipt, **16:55 UTC**: **070e157** passed Pages;
+all **twenty** canonical files changed today matched the committed
+bytes, including the portable saved proof link. The working tree
+was clean before adding this receipt.
+
+A concrete rational starting picture for the next visit has slopes
+`(−2,−4/3,−1/3,1/3,4/3,2)`, hence alternating gaps
+`(2/3,1,2/3,1,2/3)`. A fresh independent clipping and curved-integral
+check gives exactly ten pockets, total area **275/108**, and smallest
+area **5/36**. Its area histogram is four at 5/36, two at 5/27,
+one at 10/27, and three at 5/12. This is a proved finite example,
+not a claim about the full six-slope compromise frontier.
+
+The scratch extension's useful next algebra is short:
+`r(t)=t(t+2)/(2t+1)` increases strictly, so `kr−k−1<0` before t*.
+Consequently the proposed H and all pair weights are positive.
+The cube-support remainder is exactly `(x−y)²(x+2y)`, so equality
+is rigid. For the alternating candidate the cube sum increases
+strictly with t>1, while the triangular minimum increases up to t*.
+These observations make the proposed completeness argument a good
+proof-audit exercise before drawing a larger frontier. They are
+saved as a future thread, separate from today's published results.
+
 ## 2026-11-07 · A curved triangle, read with a straight ruler
 
 Started at **15:40:15 UTC**. Today's intended hour runs through
