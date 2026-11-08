@@ -162,6 +162,8 @@ def illustration_record():
                               example("Unequal gaps", (Q(-2), Q(-1), Q(1, 2), Q(7, 4), Q(2)))],
             "insertion_examples": [example("Three slopes", before), example("Split one gap", inserted),
                                    example("Space all four equally", after)],
+            "balance_examples": [example("Largest total", after),
+                                 example("Largest smallest pocket", tuple(map(Q, (-2, -1, 1, 2))))],
             "insertion": {"new_slope": Q(-1), "gain": insertion_gain(before, Q(-1)),
                           "fixed_gap_maximum": Q(1, 4)}}
 

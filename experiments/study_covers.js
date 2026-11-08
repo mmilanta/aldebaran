@@ -79,7 +79,7 @@ function write(name, title, description, body) {
 
 function sheet() {
   const destinations = ['../index.html', 'loop.html', 'winding.html', 'two_lobes.html',
-    'blend.html', 'arm_detour.html', 'phase.html', 'cubic.html', 'strangeness.html', 'weave.html', 'touch.html', 'normal_front.html', 'positive_front.html', 'parallel_offset.html', 'four_visits.html'];
+    'blend.html', 'arm_detour.html', 'phase.html', 'cubic.html', 'strangeness.html', 'weave.html', 'touch.html', 'normal_front.html', 'positive_front.html', 'parallel_offset.html', 'four_visits.html', 'parabolic_pockets.html'];
   const height = 242 + 332 * Math.ceil(covers.length / 3);
   const root = 'https://mmilanta.github.io/aldebaran/experiments/';
   const escape = s => s.replaceAll('&', '&amp;').replaceAll('<', '&lt;');
@@ -103,11 +103,11 @@ function sheet() {
       lines.map((line, j) => `<text x="${x + 18}" y="${y + 276 + j * 24}" fill="${white}" font-size="19" font-weight="600">${escape(line)}</text>`).join('') + '</a>';
   });
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="${height}" viewBox="0 0 1200 ${height}" role="group" aria-labelledby="title description">\n` +
-    '<title id="title">Follow a line: fifteen studies</title>\n' +
-    '<desc id="description">An illustrated sheet of Aldebaran’s fifteen studies, in reading order. Each picture links to its study. The small previews use numerical geometry; some graphs use different axes or scales.</desc>\n' +
+    '<title id="title">Follow a line: sixteen studies</title>\n' +
+    '<desc id="description">An illustrated sheet of Aldebaran’s sixteen studies, in study-number order. Each picture links to its study. The small previews use numerical geometry; some graphs use different axes or scales.</desc>\n' +
     '<style>text{font-family:ui-sans-serif,system-ui,sans-serif}.card:focus .frame{stroke:#e8b66e;stroke-width:3}.card:hover .frame{stroke:#9999ae}</style>\n' +
     `<rect width="1200" height="${height}" fill="#101323"/>\n` +
-    `<text x="45" y="53" fill="${gold}" font-size="13" letter-spacing="3">ALDEBARAN · FIFTEEN STUDIES</text>` +
+    `<text x="45" y="53" fill="${gold}" font-size="13" letter-spacing="3">ALDEBARAN · SIXTEEN STUDIES</text>` +
     `<text x="45" y="112" fill="${white}" font-size="55" font-weight="650" letter-spacing="-2">Follow a line.</text>` +
     '<text x="45" y="143" fill="#c7c7d4" font-size="18">Circles, crossings, and the small spaces between. Choose a picture to explore.</text>\n' +
     pieces.join('\n') +
@@ -274,6 +274,28 @@ function main() {
             selected ? '' : 'opacity=".3" stroke-dasharray="4 5"');
         }).join('') + state.crossings.map(c => dot(project(c.point), white, 3)).join('') + '</g>';
     }).join(''));
+
+  const pockets = require('./parabolic_pockets.json').band_examples[0];
+  const rational = s => { const [a, b = '1'] = s.split('/'); return Number(a) / Number(b); };
+  const slopes = pockets.slopes.map(rational);
+  const project = ([x, y]) => [220 + 80 * x, 200 - 80 * y];
+  const pair = p => project(p).map(number).join(',');
+  const parabola = (slope, low, high, move = true) => {
+    const x = (low - slope) ** 2 / 2;
+    return (move ? `M${pair([x, low])}` : '') +
+      `Q${pair([x + (low - slope) * (high - low) / 2, (low + high) / 2])} ${pair([(high - slope) ** 2 / 2, high])}`;
+  };
+  const cells = pockets.cells.filter(c => rational(c.area) > 0);
+  const boundary = (which, reverse = false) => (reverse ? cells.slice().reverse() : cells).map((c, i) =>
+    parabola(slopes[c[which]], rational(reverse ? c.hi : c.lo), rational(reverse ? c.lo : c.hi), i === 0)).join('');
+  const inner = boundary('inner'), outer = boundary('outer');
+  write('016', 'All the pockets, one band',
+    'Five limit parabolas enclose six pockets, gathered into the band between the nearer outer curve in gold and the nearest of all five in blue. A white horizontal slice marks its width. The axes have equal scales.',
+    '<defs><clipPath id="preview-pockets"><rect x="40" y="30" width="560" height="340"/></clipPath></defs><g clip-path="url(#preview-pockets)">' +
+    `<path d="${inner}${boundary('outer', true).replace(/^M/, 'L')}Z" fill="${blue}" fill-opacity=".25"/>` +
+    slopes.map(p => `<path d="${parabola(p, -2.2, 2.2)}" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.4"/>`).join('') +
+    `<path d="${outer}" fill="none" stroke="${gold}" stroke-width="3.4"/><path d="${inner}" fill="none" stroke="${blue}" stroke-width="3.4"/>` +
+    '<path d="M220,200H380" stroke="#f4f1e8" stroke-width="2" stroke-dasharray="4 5"/></g>');
 
   sheet();
   console.log(`Wrote ${covers.length} study covers and their standalone sheet; the negative-count probe has smooth-curve clearance.`);

@@ -70,7 +70,11 @@ function chart(parts, row, left, top, width, height, scale, straight, id, option
   }
   parts.push(`<g clip-path="url(#${id}-clip)">`);
   if (options.faces) {
-    row.faces.forEach((face, i) => parts.push(`<path d="${pocket(row, face, map, straight)}" fill="${faceColors[face.last - face.first]}" fill-opacity=".55" data-role="face" data-face="${i}" data-area="${face.area}"/>`));
+    const minimum = Math.min(...row.faces.map(f => rational(f.area)));
+    row.faces.forEach((face, i) => {
+      const color = options.balance ? (rational(face.area) === minimum ? colors.gold : colors.blue) : faceColors[face.last - face.first];
+      parts.push(`<path d="${pocket(row, face, map, straight)}" fill="${color}" fill-opacity=".48" data-role="face" data-face="${i}" data-area="${face.area}"/>`);
+    });
   } else parts.push(`<path d="${band(row, map, straight)}" fill="${colors.blue}" fill-opacity=".25" data-role="band"/>`);
   for (const p of row.p) parts.push(`<path d="${arc(p, -2.2, 2.2, map, straight)}" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>`);
   for (const [which, color] of options.faces ? [] : [['outer', colors.gold], ['inner', colors.blue]]) {
@@ -93,7 +97,8 @@ function chart(parts, row, left, top, width, height, scale, straight, id, option
     const y = v.reduce((s, p) => s + p[1], 0) / v.length;
     const u = v.reduce((s, p) => s + p[0], 0) / v.length;
     const p = map([straight ? u : u + y * y / 2, y]);
-    parts.push(text(n(p[0]), n(p[1] + 6), String.fromCharCode(65 + i), 18, colors.white, 'text-anchor="middle" data-role="face-label"'));
+    parts.push(text(n(p[0]), n(p[1] + 6), options.balance ? face.area : String.fromCharCode(65 + i),
+      options.balance ? 16 : 18, colors.white, 'text-anchor="middle" data-role="face-label"'));
   });
   parts.push('</g>', text(plot.x + plot.w - 6, top + height - 18, straight ? 'U →' : 'X →', 17, colors.muted, 'text-anchor="end"'),
     text(plot.x + plot.w - 6, top + 64, 'Y ↑', 17, colors.muted, 'text-anchor="end"'), '</g>');
@@ -189,6 +194,30 @@ function runsFigure() {
     '</g></svg>');
   fs.writeFileSync(path.join(__dirname, 'parabolic_runs.svg'), parts.join('\n') + '\n');
 }
+function balanceFigure() {
+  const parts = root(1130, 'Make the smallest pocket larger',
+    'Two four-parabola arrangements with fixed outer slopes minus two and plus two. Equal gaps maximize total area, 64 over 27, with individual pocket areas 16 over 27, 32 over 27, and 16 over 27. Gaps one, two, one instead make all three pocket areas exactly three quarters, with total nine quarters. This second arrangement uniquely maximizes the smallest pocket at this span, despite its smaller total. Gold marks the smallest pockets; blue marks a larger pocket. Exact areas are written inside the pockets. Both panels use identical unit scales. This is a complete limit-parabola arrangement, not a finite orbital drawing. The accompanying proof also gives the optimum for every larger slope count.');
+  parts.push(text(35, 65, 'Make the smallest pocket larger.', 46, colors.white),
+    text(35, 110, 'The most total area and the largest smallest pocket can need different spacing.', 23));
+  for (const [x, color, label] of [[35, colors.gold, 'Smallest pockets'], [410, colors.blue, 'A larger pocket']]) parts.push(
+    `<rect x="${x}" y="143" width="25" height="18" fill="${color}" fill-opacity=".7"/>`, text(x + 37, 160, label, 21));
+  record.balance_examples.forEach((entry, i) => {
+    const row = data(entry), left = 35 + 590 * i;
+    parts.push(text(left, 210, entry.name, 28, colors.white));
+    chart(parts, row, left, 230, 540, 520, 86, false, `balance-${i}`,
+      { faces: true, slice: false, balance: true, title: i ? 'Gaps in the ratio 1 : 2 : 1' : 'Equal gaps', subtitle: `p = (${entry.slopes.join(', ')})` });
+    const minimum = entry.faces.reduce((a, f) => rational(f.area) < rational(a) ? f.area : a, entry.faces[0].area);
+    parts.push(text(left + 22, 804, `Total area = ${entry.area}`, 27, colors.white),
+      text(left + 22, 849, `Smallest pocket = ${minimum}`, 27, colors.gold),
+      text(left + 22, 894, `Gaps: ${entry.gaps.join(', ')}`, 22, colors.muted));
+  });
+  parts.push(text(35, 963, 'With span L and four slopes: no smallest pocket can exceed 3L³/256.', 25, colors.white),
+    text(35, 1004, 'Odd slope counts favor equal gaps. Larger even counts favor alternating gaps.', 22),
+    '<a href="parabolic_balance.md">', text(35, 1051, 'Follow the sharp bounds and the alternating-gap formula ↗', 22, colors.gold), '</a>',
+    text(35, 1095, 'Equal unit scales in both panels. Complete exact limit arrangements; finite drawings need separate bounds.', 18, colors.muted),
+    '</g></svg>');
+  fs.writeFileSync(path.join(__dirname, 'parabolic_balance.svg'), parts.join('\n') + '\n');
+}
 if (record.shear !== 'U=X-Y^2/2' || record.band_examples.map(e => e.area).join(',') !== '5/2,615/256'
     || record.insertion_examples.map(e => e.area).join(',') !== '2,9/4,64/27') {
   throw new Error('Regenerate the rational envelope record first.');
@@ -196,4 +225,5 @@ if (record.shear !== 'U=X-Y^2/2' || record.band_examples.map(e => e.area).join('
 bandFigure();
 insertionFigure();
 runsFigure();
-console.log('Wrote parabolic_envelope.svg, parabolic_insertion.svg, and parabolic_runs.svg from rational intervals, faces, and quadratic arcs.');
+balanceFigure();
+console.log('Wrote the envelope, insertion, run, and balance SVGs from rational intervals, faces, and quadratic arcs.');

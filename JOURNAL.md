@@ -70,6 +70,60 @@ The four-slope set (−2,−1,1,2) already has three equal 3/4 pockets,
 although it does not maximize total area. This is a thread to prove
 and draw next; no general optimum has been archived at this entry.
 
+First publication receipt, **16:18 UTC**: **9d48721** passed Pages;
+all **eleven** changed canonical public files matched its committed
+bytes. The same **1,134 Chromium/WebKit assertions** passed on the
+published study and drawings.
+
+The smallest-pocket question now has a complete answer for every
+slope count n≥3, at fixed outer-slope span L. For odd n, equal gaps
+maximize both the sum and the minimum; the latter is
+`L³/[4(n−1)³]`. Disjoint adjacent pairs and the elementary product
+bound give a short sharp proof. Four slopes are special: gaps
+`(L/4,L/2,L/4)` make all three areas equal to `3L³/256`.
+The [new comparison](experiments/parabolic_balance.svg) shows those
+three 3/4 pockets against the equal-gap minimum 16/27, at span four.
+
+For even n=2k+2≥6, alternate short gap a and long gap b=ta, ending
+with a. The ratio is `t=[1+√(k²+k+1)]/k`, and
+`a=L/(k+1+kt)`. Here 1<t<2, so every longer-run pocket is larger
+than an adjacent triangular one. Weighted AM–GM inequalities bound
+those triangles for every other gap arrangement. The weights are
+`k−j` and `j+1` on alternating neighboring pairs; each gap receives
+the same total coefficient. All optima are unique for fixed outer
+slopes. The [proof](experiments/parabolic_balance.md) explains why
+the four-slope case falls outside this formula: its triangle-only
+candidate would leave the quadrilateral too small.
+
+`parabolic_balance.py` uses exact rational and quadratic-field
+arithmetic, including exact sign tests by comparing rational squares.
+The default checks **36** optimal arrangements at two spans and
+**474** rational challenger, AM–GM, symmetrization, independently
+integrated face, and invalid controls. Extending through 40 slopes
+passes **76** arrangement and **714** other controls. The proof for
+all counts is the written argument, not this finite sample. Independent
+70-digit decimal evaluation also agrees with the displayed numerical
+examples; rounded radicals are never order predicates.
+
+At **16:30 UTC**, the four drawings have become the
+[sixteenth study](experiments/parabolic_pockets.html): a static reading
+page with four chapters and no script. The map, home-page count,
+new cover, and saveable illustrated sheet include it. All first
+fifteen covers remain byte-for-byte unchanged. This page explicitly
+extends the original three-branch limit to more chosen slopes.
+
+The complete local browser run now passes **1,448 assertions** across
+Chromium and WebKit, adding all four downloads, chapter navigation,
+no-script reading, the sixteen-card map, the saved sheet's absolute
+link, and normal/doubled text at 320–1280px. The new reading page and
+map also pass automated axe WCAG A/AA scans. Every drawn face label
+lies inside its corresponding path; the fill/label color pairs have
+contrast ratios above 5:1. Source checks find **990** resolving local
+links/resources/ARIA references and **47** parsing SVGs. The rational
+record, four drawings, new cover, and illustrated sheet regenerate
+byte for byte. The general optimum and reading page are being
+published now; the hour still has about 28 minutes remaining.
+
 ## 2026-11-07 · A curved triangle, read with a straight ruler
 
 Started at **15:40:15 UTC**. Today's intended hour runs through

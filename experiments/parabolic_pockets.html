@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101323">
+  <meta name="description" content="Four drawings of the spaces between parabolas. Gather their pockets into a band, add a curve, name each pocket, and give the smallest one more room.">
+  <title>Aldebaran · All the pockets, one band</title>
+  <style>
+    :root { color-scheme: dark; font-family: ui-sans-serif, system-ui, sans-serif; color: #f4f1e8; background: #101323; }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    main { max-width: 72rem; padding: clamp(1.2rem, 4vw, 3rem); margin: auto; overflow-wrap: anywhere; }
+    a { color: #e8b66e; text-underline-offset: .2em; }
+    :focus-visible { outline: 3px solid #e8b66e; outline-offset: 5px; }
+    .back { display: inline-block; margin-bottom: 2.5rem; font-size: .85rem; }
+    .eyebrow { color: #e8b66e; font-size: .75rem; font-weight: 700; letter-spacing: .17em; text-transform: uppercase; }
+    h1 { max-width: 14ch; font-size: clamp(3rem, 7vw, 6rem); line-height: 1.02; letter-spacing: -.055em; font-weight: 650; margin: .9rem 0 1.3rem; }
+    p { max-width: 48rem; color: #c7c7d4; line-height: 1.8; }
+    .intro { font-size: 1.15rem; }
+    .chapters { display: flex; flex-wrap: wrap; gap: .5rem 1.8rem; padding: 1.2rem 0; margin-top: 2rem; border-block: 1px solid #383b50; }
+    .chapters a { display: inline-block; padding: .4rem 0; font-size: .9rem; }
+    section { margin-top: 4rem; scroll-margin-top: 1.5rem; }
+    h2 { max-width: 28ch; font-size: clamp(1.8rem, 4vw, 2.7rem); letter-spacing: -.035em; line-height: 1.2; margin: 0 0 1rem; font-weight: 650; scroll-margin-top: 1.5rem; }
+    figure { margin: 1.7rem 0 0; }
+    a.picture { display: block; border: 1px solid #383b50; border-radius: .85rem; overflow: hidden; }
+    img { display: block; width: 100%; height: auto; background: #101323; }
+    figcaption { max-width: 54rem; color: #aaaabd; font-size: .85rem; line-height: 1.8; margin-top: .8rem; }
+    .formula { max-width: 48rem; padding: 1rem 1.2rem; border-left: 2px solid #9fc7eb; background: #141829; color: #f4f1e8; font-size: 1.1rem; }
+    details { max-width: 50rem; border-top: 1px solid #383b50; margin-top: 3rem; padding-top: 1.3rem; }
+    summary { cursor: pointer; color: #e8b66e; font-weight: 600; line-height: 1.7; }
+    footer { border-top: 1px solid #383b50; margin-top: 3rem; padding-top: 1.2rem; color: #aaaabd; font-size: .85rem; line-height: 1.9; }
+    @media print {
+      :root { color-scheme: light; background: white; color: #101323; }
+      main { max-width: none; padding: 0; }
+      nav, footer { display: none; }
+      p, a, figcaption, .eyebrow, summary { color: #101323; }
+      h1 { font-size: 3.5rem; }
+      h2 { font-size: 2rem; }
+      figure { break-inside: avoid; }
+      section { margin-top: 2rem; }
+      .formula { background: #f4f1e8; color: #101323; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <nav aria-label="Sketchbook navigation"><a class="back" href="index.html">← All studies</a></nav>
+    <header>
+      <div class="eyebrow">Study 016 · The spaces between parabolas</div>
+      <h1>All the pockets,<br>one band.</h1>
+      <p class="intro">Five parabolas leave six small spaces between them. Follow two edges to gather every pocket into one band. Then add a curve, give each pocket a name, and make the smallest one larger.</p>
+      <p>These are four still drawings. Each opens at full size and can be saved. Start with the parabolas that appear when magnifying <a href="positive_front.html">a pocket between three moving branches</a>, then explore what more curves can make.</p>
+    </header>
+    <nav class="chapters" aria-label="Follow the drawings">
+      <a href="#band">One band</a>
+      <a href="#addition">One new curve</a>
+      <a href="#runs">Each pocket</a>
+      <a href="#balance">The smallest pocket</a>
+    </nav>
+
+    <section aria-labelledby="band">
+      <h2 id="band">Follow two edges.</h2>
+      <p>At each height, the nearest parabola makes the blue edge. The nearer of the two outer parabolas makes the gold edge. Every bounded pocket lies in the shaded space between them.</p>
+      <p>Slide each horizontal row sideways by the same amount. The parabolas straighten into lines. No row changes width, so the total area stays the same. Equal gaps between slopes give the largest area; both pictured arrangements have six pockets.</p>
+      <p class="formula">Total area = (span³ − sum of gap cubes) / 24.</p>
+      <figure>
+        <a class="picture" href="parabolic_envelope.svg"><img src="parabolic_envelope.svg" width="1200" height="1590" alt="Five parabolas with equal gaps have total pocket area five halves. Unequal gaps give 615 over 256. Each row compares the curved band with its straightened version at the same scale."></a>
+        <figcaption>The two arrangements share outer slopes −2 and +2. The white slices keep their widths after the slide. <a href="parabolic_envelope.svg">Open full size ↗</a> · <a href="parabolic_envelope.svg" download>Save the drawing ↓</a> · <a href="parabolic_pockets.md#follow-the-nearest-slope">Follow the area calculation ↗</a></figcaption>
+      </figure>
+    </section>
+
+    <section aria-labelledby="addition">
+      <h2 id="addition">Put a new curve in a wide gap.</h2>
+      <p>A new parabola brings part of the blue edge closer. The band grows by the green patch. Keep the old slopes fixed: the best place for one new curve is the midpoint of a widest gap.</p>
+      <p>That single choice need not give the best complete arrangement. Moving all four slopes to equal spacing makes a larger band than adding one curve while the other three stay put.</p>
+      <figure>
+        <a class="picture" href="parabolic_insertion.svg"><img src="parabolic_insertion.svg" width="1200" height="1040" loading="lazy" alt="Three slopes enclose total area two. Adding minus one at the midpoint of an existing gap adds a green patch of area one quarter. Redistributing all four slopes equally gives the larger total 64 over 27."></a>
+        <figcaption>Split a gap of length g into a+b=g. The gain is exactly abg/8, largest at a=b. <a href="parabolic_insertion.svg">Open full size ↗</a> · <a href="parabolic_insertion.svg" download>Save the drawing ↓</a> · <a href="parabolic_pockets.md#where-should-the-next-curve-go">Read the insertion argument ↗</a></figcaption>
+      </figure>
+    </section>
+
+    <section aria-labelledby="runs">
+      <h2 id="runs">Give each pocket a name.</h2>
+      <p>Stand inside a pocket and look horizontally to the left. The curves there have consecutive slopes. That run names your pocket: every nonempty run of interior slopes appears exactly once.</p>
+      <p>In this five-slope drawing, three pockets belong to one slope, two belong to a pair, and one belongs to all three interior slopes. Their areas are 1/4, 1/2, and 3/4 respectively. The letters let you follow each pocket through the horizontal slide.</p>
+      <figure>
+        <a class="picture" href="parabolic_runs.svg"><img src="parabolic_runs.svg" width="1200" height="1290" loading="lazy" alt="Letters A through F mark six pockets before and after straightening. Three gold pockets of area one quarter correspond to single interior slopes; two blue pockets of area one half correspond to pairs; one lilac pocket of area three quarters corresponds to all three."></a>
+        <figcaption>The six cards list every possible run of −1, 0, 1. With n distinct slopes, there are (n−1)(n−2)/2 bounded pockets, including when gaps differ. <a href="parabolic_runs.svg">Open full size ↗</a> · <a href="parabolic_runs.svg" download>Save the drawing ↓</a> · <a href="parabolic_pockets.md#each-pocket-chooses-a-consecutive-run">Identify every pocket ↗</a></figcaption>
+      </figure>
+    </section>
+
+    <section aria-labelledby="balance">
+      <h2 id="balance">Give the smallest pocket more room.</h2>
+      <p>The widest band and the largest smallest pocket can need different spacing. Four equally spaced slopes give a maximum total area of 64/27, with smallest pockets of area 16/27. Gaps in the ratio 1:2:1 instead make all three pockets equal to 3/4.</p>
+      <p>For four slopes, no arrangement with those same outer slopes can make its smallest pocket larger. For odd slope counts, equal gaps do maximize both the total and the smallest area. Larger even counts favor alternating short and long gaps.</p>
+      <figure>
+        <a class="picture" href="parabolic_balance.svg"><img src="parabolic_balance.svg" width="1200" height="1130" loading="lazy" alt="At left, four equally spaced slopes give pocket areas 16 over 27, 32 over 27, and 16 over 27. At right, gaps one, two, one give three equal three-quarter pockets. Gold marks the smallest pockets; blue marks a larger one."></a>
+        <figcaption>Both panels use the same scale. At a fixed slope span L, the four-slope smallest-pocket bound is 3L³/256. <a href="parabolic_balance.svg">Open full size ↗</a> · <a href="parabolic_balance.svg" download>Save the drawing ↓</a> · <a href="parabolic_balance.md">Read the sharp bound for every slope count ↗</a></figcaption>
+      </figure>
+    </section>
+
+    <details>
+      <summary>Where do these parabolas come from?</summary>
+      <p>Near a meeting of three tangent-line graphs, move their original branches a long distance along their normals. Magnify the thin horizontal direction. The branches approach these parabolas. Each slope label comes from an original graph’s direction of change. The <a href="parabolic_triangle.md">three-branch drawing and calculation</a> explain this limit.</p>
+      <p>Here we extend that three-curve model to more chosen slopes.</p>
+      <p>The areas here are exact for the complete limit arrangements. A finite orbital drawing has corrections and may have other branches in the same place. Those need separate bounds. The <a href="radial_limit.md">finite-distance study</a> follows one selected three-branch model.</p>
+    </details>
+    <footer>Aldebaran · Four drawings of the spaces between.<br><a href="index.html">All studies ↗</a> · <a href="positive_front.html">The moving branches ↗</a> · <a href="parabolic_pockets.md">The area notes ↗</a> · <a href="../JOURNAL.md">Notebook ↗</a></footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1130" viewBox="0 0 1200 1130" role="img" aria-labelledby="title description">
+<title id="title">Make the smallest pocket larger</title><desc id="description">Two four-parabola arrangements with fixed outer slopes minus two and plus two. Equal gaps maximize total area, 64 over 27, with individual pocket areas 16 over 27, 32 over 27, and 16 over 27. Gaps one, two, one instead make all three pocket areas exactly three quarters, with total nine quarters. This second arrangement uniquely maximizes the smallest pocket at this span, despite its smaller total. Gold marks the smallest pockets; blue marks a larger pocket. Exact areas are written inside the pockets. Both panels use identical unit scales. This is a complete limit-parabola arrangement, not a finite orbital drawing. The accompanying proof also gives the optimum for every larger slope count.</desc>
+<rect width="1200" height="1130" fill="#101323"/><g font-family="ui-sans-serif,system-ui,sans-serif">
+<text x="35" y="65" font-size="46" fill="#f4f1e8" >Make the smallest pocket larger.</text>
+<text x="35" y="110" font-size="23" fill="#c7c7d4" >The most total area and the largest smallest pocket can need different spacing.</text>
+<rect x="35" y="143" width="25" height="18" fill="#e8b66e" fill-opacity=".7"/>
+<text x="72" y="160" font-size="21" fill="#c7c7d4" >Smallest pockets</text>
+<rect x="410" y="143" width="25" height="18" fill="#9fc7eb" fill-opacity=".7"/>
+<text x="447" y="160" font-size="21" fill="#c7c7d4" >A larger pocket</text>
+<text x="35" y="210" font-size="28" fill="#f4f1e8" >Largest total</text>
+<g data-chart="balance-0" data-scale="86" data-origin="172.7" data-center="505" data-straight="false" data-slopes="-2,-2/3,2/3,2">
+<rect x="35" y="230" width="540" height="520" rx="14" fill="#141829" stroke="#383b50"/>
+<text x="57" y="266" font-size="27" fill="#f4f1e8" >Equal gaps</text>
+<text x="57" y="294" font-size="18" fill="#c7c7d4" >p = (-2, -2/3, 2/3, 2)</text>
+<defs><clipPath id="balance-0-clip"><rect x="59" y="308" width="492" height="394"/></clipPath></defs>
+<rect x="59" y="308" width="492" height="394" fill="#0b0e1a"/>
+<path d="M59,677H551" stroke="#252b42"/>
+<text x="65" y="672" font-size="14" fill="#aaaabd" >-2</text>
+<path d="M59,591H551" stroke="#252b42"/>
+<text x="65" y="586" font-size="14" fill="#aaaabd" >-1</text>
+<path d="M59,505H551" stroke="#252b42"/>
+<text x="65" y="500" font-size="14" fill="#aaaabd" >0</text>
+<path d="M59,419H551" stroke="#252b42"/>
+<text x="65" y="414" font-size="14" fill="#aaaabd" >1</text>
+<path d="M59,333H551" stroke="#252b42"/>
+<text x="65" y="328" font-size="14" fill="#aaaabd" >2</text>
+<g clip-path="url(#balance-0-clip)">
+<path d="M191.811111,619.666667Q210.922222,591 249.144444,562.333333Q210.922222,533.666667 191.811111,505Q153.588889,562.333333 191.811111,619.666667Z" fill="#e8b66e" fill-opacity=".48" data-role="face" data-face="0" data-area="16/27"/>
+<path d="M249.144444,562.333333Q287.366667,533.666667 344.7,505Q287.366667,476.333333 249.144444,447.666667Q210.922222,476.333333 191.811111,505Q210.922222,533.666667 249.144444,562.333333Z" fill="#9fc7eb" fill-opacity=".48" data-role="face" data-face="1" data-area="32/27"/>
+<path d="M191.811111,505Q210.922222,476.333333 249.144444,447.666667Q210.922222,419 191.811111,390.333333Q153.588889,447.666667 191.811111,505Z" fill="#e8b66e" fill-opacity=".48" data-role="face" data-face="2" data-area="16/27"/>
+<path d="M174.42,694.2Q136.58,505 931.22,315.8" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<path d="M273.797778,694.2Q-16.308889,505 526.064444,315.8" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<path d="M526.064444,694.2Q-16.308889,505 273.797778,315.8" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<path d="M931.22,694.2Q136.58,505 174.42,315.8" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<text x="198.181481" y="568.333333" font-size="16" fill="#f4f1e8" text-anchor="middle" data-role="face-label">16/27</text>
+<text x="249.144444" y="511" font-size="16" fill="#f4f1e8" text-anchor="middle" data-role="face-label">32/27</text>
+<text x="198.181481" y="453.666667" font-size="16" fill="#f4f1e8" text-anchor="middle" data-role="face-label">16/27</text>
+</g>
+<text x="545" y="732" font-size="17" fill="#aaaabd" text-anchor="end">X →</text>
+<text x="545" y="294" font-size="17" fill="#aaaabd" text-anchor="end">Y ↑</text>
+</g>
+<text x="57" y="804" font-size="27" fill="#f4f1e8" >Total area = 64/27</text>
+<text x="57" y="849" font-size="27" fill="#e8b66e" >Smallest pocket = 16/27</text>
+<text x="57" y="894" font-size="22" fill="#aaaabd" >Gaps: 4/3, 4/3, 4/3</text>
+<text x="625" y="210" font-size="28" fill="#f4f1e8" >Largest smallest pocket</text>
+<g data-chart="balance-1" data-scale="86" data-origin="762.7" data-center="505" data-straight="false" data-slopes="-2,-1,1,2">
+<rect x="625" y="230" width="540" height="520" rx="14" fill="#141829" stroke="#383b50"/>
+<text x="647" y="266" font-size="27" fill="#f4f1e8" >Gaps in the ratio 1 : 2 : 1</text>
+<text x="647" y="294" font-size="18" fill="#c7c7d4" >p = (-2, -1, 1, 2)</text>
+<defs><clipPath id="balance-1-clip"><rect x="649" y="308" width="492" height="394"/></clipPath></defs>
+<rect x="649" y="308" width="492" height="394" fill="#0b0e1a"/>
+<path d="M649,677H1141" stroke="#252b42"/>
+<text x="655" y="672" font-size="14" fill="#aaaabd" >-2</text>
+<path d="M649,591H1141" stroke="#252b42"/>
+<text x="655" y="586" font-size="14" fill="#aaaabd" >-1</text>
+<path d="M649,505H1141" stroke="#252b42"/>
+<text x="655" y="500" font-size="14" fill="#aaaabd" >0</text>
+<path d="M649,419H1141" stroke="#252b42"/>
+<text x="655" y="414" font-size="14" fill="#aaaabd" >1</text>
+<path d="M649,333H1141" stroke="#252b42"/>
+<text x="655" y="328" font-size="14" fill="#aaaabd" >2</text>
+<g clip-path="url(#balance-1-clip)">
+<path d="M773.45,634Q794.95,591 859.45,548Q827.2,526.5 805.7,505Q741.2,569.5 773.45,634Z" fill="#e8b66e" fill-opacity=".48" data-role="face" data-face="0" data-area="3/4"/>
+<path d="M859.45,548Q891.7,526.5 934.7,505Q891.7,483.5 859.45,462Q827.2,483.5 805.7,505Q827.2,526.5 859.45,548Z" fill="#e8b66e" fill-opacity=".48" data-role="face" data-face="1" data-area="3/4"/>
+<path d="M805.7,505Q827.2,483.5 859.45,462Q794.95,419 773.45,376Q741.2,440.5 805.7,505Z" fill="#e8b66e" fill-opacity=".48" data-role="face" data-face="2" data-area="3/4"/>
+<path d="M764.42,694.2Q726.58,505 1521.22,315.8" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<path d="M824.62,694.2Q597.58,505 1203.02,315.8" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<path d="M1203.02,694.2Q597.58,505 824.62,315.8" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<path d="M1521.22,694.2Q726.58,505 764.42,315.8" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<text x="796.144444" y="568.333333" font-size="16" fill="#f4f1e8" text-anchor="middle" data-role="face-label">3/4</text>
+<text x="859.45" y="511" font-size="16" fill="#f4f1e8" text-anchor="middle" data-role="face-label">3/4</text>
+<text x="796.144444" y="453.666667" font-size="16" fill="#f4f1e8" text-anchor="middle" data-role="face-label">3/4</text>
+</g>
+<text x="1135" y="732" font-size="17" fill="#aaaabd" text-anchor="end">X →</text>
+<text x="1135" y="294" font-size="17" fill="#aaaabd" text-anchor="end">Y ↑</text>
+</g>
+<text x="647" y="804" font-size="27" fill="#f4f1e8" >Total area = 9/4</text>
+<text x="647" y="849" font-size="27" fill="#e8b66e" >Smallest pocket = 3/4</text>
+<text x="647" y="894" font-size="22" fill="#aaaabd" >Gaps: 1, 2, 1</text>
+<text x="35" y="963" font-size="25" fill="#f4f1e8" >With span L and four slopes: no smallest pocket can exceed 3L³/256.</text>
+<text x="35" y="1004" font-size="22" fill="#c7c7d4" >Odd slope counts favor equal gaps. Larger even counts favor alternating gaps.</text>
+<a href="parabolic_balance.md">
+<text x="35" y="1051" font-size="22" fill="#e8b66e" >Follow the sharp bounds and the alternating-gap formula ↗</text>
+</a>
+<text x="35" y="1095" font-size="18" fill="#aaaabd" >Equal unit scales in both panels. Complete exact limit arrangements; finite drawings need separate bounds.</text>
+</g></svg>

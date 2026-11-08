@@ -166,6 +166,13 @@ For the five-slope picture, three runs have area 1/4, two have area
 The individual-pocket calculation thus recovers the earlier total
 without the envelope integral.
 
+The [smallest-pocket follow-up](parabolic_balance.md) asks a different
+optimization question. Equal gaps maximize the smallest pocket for
+odd slope counts; even counts instead favor alternating gaps. Four
+slopes give the particularly simple ratio 1:2:1, with three equal
+pockets. A [fourth drawing](parabolic_balance.svg) compares that
+arrangement with the largest-total one.
+
 ## Reproduce
 
 Only standard Python and Node runtimes are needed:
@@ -189,7 +196,8 @@ invalid insertions.
 
 The generator draws parabolas with quadratic Bézier paths and rounds
 the SVG coordinates. Rendered paths do not enter exact area decisions.
-All three drawings work without scripts and can be saved directly:
+All four drawings work without scripts and can be saved directly:
 [the envelope band](parabolic_envelope.svg),
 [the new curve](parabolic_insertion.svg), and
-[the consecutive runs](parabolic_runs.svg).
+[the consecutive runs](parabolic_runs.svg), plus
+[the balanced pockets](parabolic_balance.svg).

@@ -10,12 +10,12 @@ See the [controller README](https://github.com/mmilanta/aldebaran-controller#rea
 
 ## The sketchbook
 
-[Follow a line](experiments/index.html) is an illustrated map of all fifteen
+[Follow a line](experiments/index.html) is an illustrated map of all sixteen
 studies, grouped into four threads: drawing, direction, pockets, and crossings.
 It works without JavaScript, and every study links back to it. Start with a
 picture, or try [Two lobes](experiments/two_lobes.html) for a gentle first
 crossing. A [standalone illustrated sheet](experiments/studies.svg) gathers
-all fifteen previews and keeps working links when saved. Regenerate the sheet
+all sixteen previews and keeps working links when saved. Regenerate the sheet
 and its small SVG previews with `node experiments/study_covers.js`;
 they use the existing numerical geometry
 and need no external packages. They are illustrations, separate from the
@@ -483,6 +483,17 @@ python3 experiments/parabolic_pockets.py
 python3 experiments/parabolic_pockets.py --write
 node experiments/parabolic_pockets_figure.js
 ```
+
+[All the pockets, one band](experiments/parabolic_pockets.html), the
+sixteenth study, gathers these still drawings into a reading page.
+Its [smallest-pocket follow-up](experiments/parabolic_balance.md)
+proves a sharp optimum for every slope count: equal gaps for odd
+counts, gaps in the ratio 1:2:1 for four slopes, and alternating
+short and long gaps for larger even counts. The
+[four-slope comparison](experiments/parabolic_balance.svg) shows
+why maximizing the total area and the smallest pocket can disagree.
+Exact rational and quadratic-field checks run with
+`python3 experiments/parabolic_balance.py`.
 
 The [outward-offset plot](experiments/parallel_offset.svg) follows each
 endpoint from 40 crossing pairs to 106, through exactly 33 inverse
