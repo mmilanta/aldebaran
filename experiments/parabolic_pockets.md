@@ -79,6 +79,11 @@ Starting from slopes `(−2,0,2)`, either insertion at −1 or +1 adds
 Repeatedly making the best insertion can therefore miss the equal-gap
 maximum at an intermediate slope count.
 
+The [sideways-slide variation](shifted_parabolas.md) explains why the
+midpoint rule depends on the original quadratic intercepts. It gives
+a secant-variance formula for strictly convex intercepts and a cubic
+example whose best insertion lies away from the midpoint.
+
 ## Each pocket chooses a consecutive run
 
 ![Six labelled pockets match the six nonempty consecutive runs of the interior slopes minus one, zero, one. The three single-slope pockets each have area 1/4; the two two-slope pockets each have area 1/2; the three-slope pocket has area 3/4.](parabolic_runs.svg)

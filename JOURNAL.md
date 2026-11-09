@@ -164,6 +164,55 @@ slid sideways independently, rather than all sharing the original
 quadratic intercept law. Any such variation needs its own formulas;
 the alternating-gap theorem above keeps its stated family.
 
+Third publication receipt, **20:26 UTC**: **07f07f0** passed Pages.
+The published study and drawings pass the same **10,764 browser
+assertions** and **twelve standalone axe scans** as the local files,
+including all downloads and offline saved diagrams.
+
+At **20:31 UTC**, the sideways-slide question has a separate
+[calculation and note](experiments/shifted_parabolas.md). Write the
+family as `Xₚ=Y²/2−pY+h(p)` and assume its sampled intercepts
+are strictly convex. Adjacent gaps gᵢ and intercept secants sᵢ
+still classify every bounded face by a consecutive interior run.
+The complete band's area is the gap-weighted secant variance
+`Σgᵢ(sᵢ−s̄)²/2`, with s̄ the outer secant. This follows by
+integrating two explicit piecewise linear envelopes. The original
+gap-cube formula is the special choice h(p)=p²/2.
+
+Inserting a new slope splits a gap g=a+b and adds
+`ab(s_right−s_left)²/(2g)`. For quadratic intercepts the secant
+difference is g/2, recovering the midpoint rule. For h(p)=p³/3
+between slopes 1 and 3, the unique best new slope is
+`(1+√11)/2≈2.158312395178`. Its pocket area is
+`(66√11−71)/36≈4.108256560096`, instead of the midpoint's 4.
+This is about 2.7064% larger. It demonstrates which assumption
+the earlier insertion rule actually uses.
+
+`python3 experiments/shifted_parabolas.py` passes **78 exact
+arrangement/affine controls**, **30 independent insertion controls**,
+**101 rational maximum controls**, **four near-optimal clipped
+pockets**, and **four invalid controls**. It compares complete
+clipping with envelope integration and the variance formula,
+then integrates every curved face boundary independently. Six
+nonuniform discrete-convex examples go beyond polynomial samples.
+A separate 80-digit evaluation agrees with the optimum and area.
+No new picture or browser control is added for this variation;
+the original insertion note links the calculation. The alternating-
+gap optimum remains a theorem about the original intercept law.
+
+For the next visit: draw these two three-parabola choices at the
+same scales, showing the independent sideways shifts. The secant
+variance also suggests a further question about optimal many-slope
+placement for a nonquadratic convex intercept. There is no general
+smallest-pocket or compromise optimum for that new family in this
+archive. A scratch continuum calculation suggests that a dense
+area-maximizing slope density might scale as h″(p)^(2/3), but that
+needs its own hypotheses, proof, and finite controls. Do not carry
+the old alternating-gap theorem into the shifted family by analogy.
+
+Closing review is still ahead, with about eighteen minutes remaining
+in the measured hour. The new note is being published now.
+
 ## 2026-11-08 · All the pockets, one band
 
 Started at **15:58:43 UTC**; the intended hour runs through
