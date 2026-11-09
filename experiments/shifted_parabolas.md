@@ -154,7 +154,8 @@ choice. No numerical optimizer is needed to identify it.
 There is an asymptotic total-area optimum for a smooth intercept
 law, even though a general finite smallest-pocket problem is not
 settled here. Suppose h is C² on [a,b] and
-`0<c≤h″(p)≤C`. Write L=b−a and use m gaps. Define
+`0<c≤h″(p)≤C`. Here h″ measures the intercept law’s curvature.
+Write L=b−a and use m gaps. Define
 
 ```
 B∞ = [∫[a,b] h′(p)² dp − (h(b)−h(a))²/L]/2,
@@ -190,8 +191,8 @@ c_I² g³/24 ≤ E(I) ≤ C_I² g³/24.
 ```
 
 Equal spacing already gives deficit O(m⁻²). Consequently any
-sequence within o(m⁻²) of the infimum has mesh tending to zero: the largest
-gap's lower bound is at least c² times its cube over 24. Put
+sequence within o(m⁻²) of the infimum has mesh tending to zero:
+the largest gap's lower bound is at least c² times its cube over 24. Put
 `z_I=g min_I w`. Then
 
 ```
@@ -227,7 +228,7 @@ E(I) = q²g³/6 + g⁵/360.
 ```
 
 The program compares the sum of these independent interval
-integrals with B∞ minus the secant-variance area. Its displayed
+integrals with B∞ minus the secant-variance area. Its control
 nodes are rational approximations enclosed using cube- and
 fifth-root bisections, with exact power comparisons. The theorem
 above concerns the exact equidistributed sequence; the finite

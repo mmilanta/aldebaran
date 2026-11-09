@@ -307,7 +307,7 @@ function tradeoffFigure() {
     `<circle cx="${n(p[0])}" cy="${n(p[1])}" r="5" fill="${color}" stroke="#0b0e1a" stroke-width="1.5" data-point="${role}"/>`);
   parts.push(text(controls[0][0] - 155, controls[0][1] - 15, 'Largest total', 19, colors.blue),
     text(middle[0] + 18, middle[1] - 18, 'The rational example', 19, colors.green),
-    text(controls[3][0] + 19, controls[3][1] - 15, 'Largest minimum', 19, colors.gold),
+    text(controls[3][0] + 19, controls[3][1] + 29, 'Largest minimum', 19, colors.gold),
     text(plot.x, plot.y - 15, 'Smallest area ↑', 18),
     text(plot.x + plot.w, plot.y + plot.h + 70, 'Total area →', 18, colors.ink, 'text-anchor="end"'), '</g>',
     text(35, 1795, 'Green: total 275/108 · smallest 5/36 · gaps 2/3, 1, 2/3, 1, 2/3.', 21, colors.green),

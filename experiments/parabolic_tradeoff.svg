@@ -143,7 +143,7 @@
 <circle cx="175.097811" cy="1304.45021" r="5" fill="#e8b66e" stroke="#0b0e1a" stroke-width="1.5" data-point="optimal"/>
 <text x="869.5714285714262" y="1627.413793103448" font-size="19" fill="#9fc7eb" >Largest total</text>
 <text x="662.7830687830646" y="1324.0306513409955" font-size="19" fill="#a7d9bb" >The rational example</text>
-<text x="194.09781111070936" y="1289.4502103239904" font-size="19" fill="#e8b66e" >Largest minimum</text>
+<text x="194.09781111070936" y="1333.4502103239904" font-size="19" fill="#e8b66e" >Largest minimum</text>
 <text x="110" y="1255" font-size="18" fill="#c7c7d4" >Smallest area ↑</text>
 <text x="1080" y="1740" font-size="18" fill="#c7c7d4" text-anchor="end">Total area →</text>
 </g>

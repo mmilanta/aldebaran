@@ -236,7 +236,7 @@ def main():
     print(f'Its area (66*sqrt(11)-71)/36 ≈ {float(maximum):.12f}; midpoint area is exactly 4.')
     lower, upper, rows = density_controls()
     print(f'{len(rows)} rational density partitions verify independent interval variances and exact constant brackets.')
-    print(f'Cubic density constant is enclosed near {float((lower+upper)/2):.12f}; equal-gap limit is 52/9.')
+    print(f'Cubic density constant ≈ {float((lower+upper)/2):.12f} (rational bounds checked); equal-gap limit is 52/9.')
     for gaps, lo, hi in rows:
         print(f'  {gaps} gaps: scaled deficit excess ≈ {float((lo+hi)/2):.12g} (rational enclosure checked).')
     print('The written envelope, derivative, and partition inequalities prove the general statements.')
