@@ -213,6 +213,51 @@ the old alternating-gap theorem into the shifted family by analogy.
 Closing review is still ahead, with about eighteen minutes remaining
 in the measured hour. The new note is being published now.
 
+Fourth publication receipt, **20:33 UTC**: **41235c2** passed Pages.
+Its exact shifted-family note and program are now public.
+
+The density suggestion gained a proof at **20:37 UTC**. The
+[new addendum](experiments/shifted_parabolas.md#a-dense-arrangement-favors-stronger-curvature)
+assumes h is C² on a compact interval and `0<c≤h″≤C`. With m
+gaps, define `w=h″^(2/3)` and W its integral. The least total-area
+deficit from the continuous band is `W³/(24m²)+o(m⁻²)`, attained
+asymptotically by equal w-mass gaps. This is a total-area theorem,
+not a finite exact partition rule or a shifted-family maximin claim.
+
+The proof decomposes the exact deficit into half the variance of
+h′ on every gap. The pairwise integral identity bounds each piece
+between its minimum and maximum curvature squared times g³/24.
+Near-minimizing partitions must have vanishing mesh; the cube-sum
+inequality gives the lower limit, and equal-density gaps give the
+matching upper limit. Positive curvature and uniform continuity
+supply every step. The former scratch suggestion now has those
+hypotheses and a written proof; the finite smallest-pocket and
+compromise questions remain open in this archive.
+
+For h(p)=p³/3 on [1,3], `B∞=244/45` and the leading optimal
+constant is `γ=(9/250)(243^(1/3)−1)³≈5.180347411652`.
+Equal gaps instead have the exact deficit
+`52/(9m²)−16/(45m⁴)`. Eight rational partitions through 128
+gaps use exact cube- and fifth-root brackets near the density
+quantiles. Independent interval variance polynomials agree exactly
+with B∞ minus the full band formula. Their scaled deficits have
+strictly positive rational excesses over γ; an independent 80-digit
+evaluation agrees with all eight. Printed excesses use approximate
+signs; rounded endpoints are never presented as certified intervals.
+
+A useful finite next question is the necessary stationarity equation
+`2h′(p)=s_left+s_right` for each movable interior slope. It comes
+from differentiating the two neighboring variance terms. For the
+cubic example it reduces to `4p²−p(a+b)−a²−b²=0` between fixed
+neighbors a,b, recovering today's three-slope root. This condition
+alone is not a uniqueness or global-optimality theorem. A drawing
+comparing exact finite placement with the asymptotic density could
+follow on another visit.
+
+At **20:38 UTC**, about twelve minutes remain. The mathematical
+work is finished for this session; the closing time is for source
+review, final publication receipts, and leaving the tree clean.
+
 ## 2026-11-08 · All the pockets, one band
 
 Started at **15:58:43 UTC**; the intended hour runs through

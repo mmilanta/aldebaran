@@ -124,6 +124,47 @@ def cubic_area(r):
     return (r-1)*(3-r)*(r+4)**2/9
 
 
+def root_bracket(value, power, lo, hi, bits=96):
+    """Rational enclosures only; no rounded root makes an order test."""
+    require(lo**power <= value <= hi**power, "The root needs a valid starting bracket.")
+    for _ in range(bits):
+        middle = (lo+hi)/2
+        if middle**power <= value:
+            lo = middle
+        else:
+            hi = middle
+    require(lo**power <= value <= hi**power, "The rational root bracket failed.")
+    return lo, hi
+
+
+def density_controls():
+    """Rational nodes near equal mass for density p^(2/3) on [1,3]."""
+    lo, hi = root_bracket(Q(243), 3, Q(6), Q(7))
+    lower, upper = Q(9, 250)*(lo-1)**3, Q(9, 250)*(hi-1)**3
+    require(upper < Q(52, 9), "The density constant should improve on equally spaced slopes.")
+    rows = []
+    for gaps in (2, 3, 4, 8, 16, 32, 64, 128):
+        nodes = [Q(1)]
+        for j in range(1, gaps):
+            low_mass = 1+(lo-1)*Q(j, gaps)
+            high_mass = 1+(hi-1)*Q(j, gaps)
+            low_node = root_bracket(low_mass**3, 5, Q(1), Q(3))[0]
+            high_node = root_bracket(high_mass**3, 5, Q(1), Q(3))[1]
+            nodes.append((low_node+high_node)/2)
+        nodes.append(Q(3))
+        points = [(p, p**3/3) for p in nodes]
+        deficit = Q(244, 45)-variance_area(points)
+        integrated = sum(((a+b)/2)**2*(b-a)**3/6+(b-a)**5/360 for a, b in zip(nodes, nodes[1:]))
+        require(deficit == integrated > 0, "The exact interval variance misses the full-band deficit.")
+        equally_spaced = [Q(1)+Q(2*j, gaps) for j in range(gaps+1)]
+        uniform = Q(244, 45)-variance_area([(p, p**3/3) for p in equally_spaced])
+        require(gaps*gaps*uniform == Q(52, 9)-Q(16, 45*gaps*gaps)
+                and deficit < uniform and gaps*gaps*deficit > upper,
+                "The rational density control misses its constant or equal-gap comparison.")
+        rows.append((gaps, gaps*gaps*deficit-upper, gaps*gaps*deficit-lower))
+    return lower, upper, rows
+
+
 def main():
     examples = insertions = invalid = 0
     for size in range(2, 10):
@@ -193,7 +234,12 @@ def main():
     print(f'101 rational maximum controls, four near-optimal clipped pockets, and {invalid} invalid controls passed.')
     print(f'Cubic intercept h(p)=p^3/3 on [1,3]: best insertion (1+sqrt(11))/2 ≈ {float(best):.12f}.')
     print(f'Its area (66*sqrt(11)-71)/36 ≈ {float(maximum):.12f}; midpoint area is exactly 4.')
-    print('The weighted secant-variance identity and the written derivative prove the general statements.')
+    lower, upper, rows = density_controls()
+    print(f'{len(rows)} rational density partitions verify independent interval variances and exact constant brackets.')
+    print(f'Cubic density constant is enclosed near {float((lower+upper)/2):.12f}; equal-gap limit is 52/9.')
+    for gaps, lo, hi in rows:
+        print(f'  {gaps} gaps: scaled deficit excess ≈ {float((lo+hi)/2):.12g} (rational enclosure checked).')
+    print('The written envelope, derivative, and partition inequalities prove the general statements.')
 
 
 if __name__ == '__main__':

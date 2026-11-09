@@ -149,6 +149,107 @@ The midpoint r=2 instead gives exactly 4. The shift increases the
 best attainable pocket by about 2.71% relative to that midpoint
 choice. No numerical optimizer is needed to identify it.
 
+## A dense arrangement favors stronger curvature
+
+There is an asymptotic total-area optimum for a smooth intercept
+law, even though a general finite smallest-pocket problem is not
+settled here. Suppose h is C² on [a,b] and
+`0<c≤h″(p)≤C`. Write L=b−a and use m gaps. Define
+
+```
+B∞ = [∫[a,b] h′(p)² dp − (h(b)−h(a))²/L]/2,
+w(p) = h″(p)^(2/3),       W = ∫[a,b] w(p) dp.
+```
+
+Among all m-gap partitions, the least area deficit satisfies
+
+```
+inf (B∞−B) = W³/(24m²) + o(m⁻²).
+```
+
+An asymptotically optimal placement gives every gap the same
+w-mass W/m. Thus the slope density is proportional to h″^(2/3).
+This is an asymptotic construction, not a finite exact placement
+rule. Constant curvature recovers equal gaps and the original
+exact gap-cube deficit.
+
+Here is a proof with the hypotheses visible. On a gap I of length
+g, its secant s is the average of h′. The exact deficit decomposes as
+
+```
+B∞−B = Σ E(I),
+E(I) = (1/2)∫[I] (h′−s)²
+     = (1/(4g))∫[I]∫[I] (h′(x)−h′(y))² dx dy.
+```
+
+Let c_I and C_I be the minimum and maximum of h″ on I. The
+mean-value bound and `∫∫(x−y)²=g⁴/6` give
+
+```
+c_I² g³/24 ≤ E(I) ≤ C_I² g³/24.
+```
+
+Equal spacing already gives deficit O(m⁻²). Consequently any
+sequence within o(m⁻²) of the infimum has mesh tending to zero: the largest
+gap's lower bound is at least c² times its cube over 24. Put
+`z_I=g min_I w`. Then
+
+```
+B∞−B ≥ Σ z_I³/24 ≥ (Σ z_I)³/(24m²).
+```
+
+Uniform continuity and the vanishing mesh make `Σz_I→W`, proving
+the required lower limit. For the upper limit, choose gaps of equal
+w-mass. Since w is bounded away from zero, their mesh is O(1/m).
+On each such gap, `max_I w/min_I w→1` uniformly. Its upper bound
+is therefore at most `(1+o(1))(W/m)³/24`. Summing gives the matching
+upper limit. These inequalities prove the assertion over arbitrary
+partitions, rather than just a guessed density.
+
+## Exact cubic-intercept controls for that limit
+
+For h(p)=p³/3 on [1,3], put R=243^(1/3). Equal-density nodes are
+
+```
+p_j = [1+(R−1)j/m]^(3/5),       j=0,…,m.
+```
+
+Here `B∞=244/45` and the optimal leading deficit constant is
+
+```
+γ = W³/24 = (9/250)(R−1)³.
+```
+
+For a gap of length g and midpoint q, direct integration gives
+
+```
+E(I) = q²g³/6 + g⁵/360.
+```
+
+The program compares the sum of these independent interval
+integrals with B∞ minus the secant-variance area. Its displayed
+nodes are rational approximations enclosed using cube- and
+fifth-root bisections, with exact power comparisons. The theorem
+above concerns the exact equidistributed sequence; the finite
+96-bit rational controls do not themselves define an all-m limit.
+
+For this cubic example γ/m² is also a strict finite lower bound
+for every partition. Since w(p)=(2p)^(2/3) is concave,
+`(∫[I]w)³/24≤q²g³/6<E(I)`. Summing and applying the cube-sum
+inequality gives `B∞−B>γ/m²`.
+
+Equal gaps instead have the exact deficit
+
+```
+B∞−B_equal = 52/(9m²) − 16/(45m⁴).
+```
+
+Its leading constant 52/9 is larger than γ. More generally,
+Hölder gives `W³≤L²∫h″²`, with strict inequality for nonconstant
+curvature, explaining why equal spacing loses asymptotically.
+The new density theorem concerns total area only; it supplies no
+general shifted-family maximin or compromise curve.
+
 ## Reproduce
 
 ```sh
@@ -168,6 +269,11 @@ The cubic maximum is retained in an exact quadratic field. Another
 approaching its irrational slope agree with the bound. The written
 envelope identity and derivative prove the general formula and
 specific optimum; a finite list of controls alone would not do so.
+
+Eight further rational density partitions, with two through 128 gaps,
+check the cubic interval integrals, exact root brackets, the constant
+γ, and the equal-gap comparison. Rounded readouts are illustrations;
+all enclosure predicates use rationals.
 
 The alternating-gap theorem continues to concern the original
 h(p)=p²/2. A general strictly convex intercept law has the same run
