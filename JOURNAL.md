@@ -293,6 +293,18 @@ general shifted-family smallest-pocket frontier remain open.
 Keep its assumptions separate from the original family with quadratic
 intercepts, and keep the drawings quiet.
 
+Final artifact receipt, **20:45 UTC**: **76a673d** passed Pages;
+all **22** canonical public files changed today match its committed
+bytes. The updated 7,886-assertion main browser suite passes on the
+published page in both engines, including graph-text clearance from
+both lines and all five downloaded primary SVGs. The earlier public
+scaling suite and standalone export scans passed as recorded above.
+Source review resolves **1,241** local references and parses all
+**49 SVGs**. The working tree was clean before adding this receipt.
+The last few minutes through the **20:49:47 UTC** session target are
+for confirming this notebook publication and reading the finished
+study; no further artifact changes are planned.
+
 ## 2026-11-08 · All the pockets, one band
 
 Started at **15:58:43 UTC**; the intended hour runs through
