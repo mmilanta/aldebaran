@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1980" viewBox="0 0 1200 1980" role="img" aria-labelledby="title description">
-<title id="title">Ten pockets, one compromise</title><desc id="description">Two six-parabola arrangements with the same outer slopes minus two and plus two and ten bounded pockets each. Equal gaps four fifths give total 64 over 25 and smallest area 16 over 125. Alternating gaps two thirds, one, two thirds, one, two thirds give total 275 over 108 and smallest area five thirty-sixths. Letters A through J name the same consecutive runs of interior slopes in both drawings; the area lists identify every pocket. Gold marks the four smallest pockets, blue the other six. Both panels use equal and identical coordinate scales. Below, one cubic graph follows every efficient compromise for six slopes: alternating short and long gaps. Its final point uniquely maximizes the smallest area, about 0.140251, with total about 2.529349. The green point is the rational arrangement shown above. The graph uses different scales for the two area measures. Exact rational and quadratic-field controls are rounded only for drawing. These are complete exact limit parabolas at scaled route parameter zero, not finite orbital faces.</desc>
+<title id="title">Ten pockets, one compromise</title><desc id="description">Two six-parabola arrangements with the same outer slopes minus two and plus two and ten bounded pockets each. Equal gaps four fifths give total 64 over 25 and smallest area 16 over 125. Alternating gaps two thirds, one, two thirds, one, two thirds give total 275 over 108 and smallest area five thirty-sixths. Letters A through J name the same consecutive runs of interior slopes in both drawings; the area lists identify every pocket. Gold marks the four smallest pockets, blue the other six. Both panels use equal and identical coordinate scales. Below, one cubic graph follows every efficient compromise for six slopes: alternating short and long gaps. Its final point uniquely maximizes the smallest area, about 0.140251, with total about 2.529349. The green point is the rational arrangement shown above. It uniquely maximizes total plus five times the smallest area, with score 175 over 54; a dashed green supporting line holds that score constant. The graph uses different scales for the two area measures. Exact rational and quadratic-field controls are rounded only for drawing. These are complete exact limit parabolas at scaled route parameter zero, not finite orbital faces.</desc>
 <rect width="1200" height="1980" fill="#101323"/><g font-family="ui-sans-serif,system-ui,sans-serif">
 <text x="35" y="65" font-size="47" fill="#f4f1e8" >Ten pockets, one compromise.</text>
 <text x="35" y="110" font-size="23" fill="#c7c7d4" >Give the smallest pockets more room. Some larger ones must give way.</text>
@@ -135,6 +135,8 @@
 <text x="747.4285714285627" y="1699" font-size="18" fill="#aaaabd" text-anchor="middle">2.55</text>
 <path d="M1024.571429,1270v400" stroke="#252b42"/>
 <text x="1024.5714285714262" y="1699" font-size="18" fill="#aaaabd" text-anchor="middle">2.56</text>
+<path d="M282.957672,1270L1080,1428.671775" fill="none" stroke="#a7d9bb" stroke-opacity=".75" stroke-width="1.7" stroke-dasharray="7 7" data-role="weighted-support"/>
+<text x="760" y="1350" font-size="18" fill="#a7d9bb" >Total + 5 × smallest = 175/54</text>
 <path d="M1024.571429,1642.413793C1024.571429,1423.807786 752.637172,1304.45021 175.097811,1304.45021" fill="none" stroke="#f4f1e8" stroke-width="3" data-role="six-slope-compromise"/>
 <circle cx="1024.571429" cy="1642.413793" r="5" fill="#9fc7eb" stroke="#0b0e1a" stroke-width="1.5" data-point="equal"/>
 <circle cx="644.783069" cy="1342.030651" r="5" fill="#a7d9bb" stroke="#0b0e1a" stroke-width="1.5" data-point="rational"/>
@@ -147,7 +149,7 @@
 </g>
 <text x="35" y="1795" font-size="21" fill="#a7d9bb" >Green: total 275/108 · smallest 5/36 · gaps 2/3, 1, 2/3, 1, 2/3.</text>
 <text x="35" y="1837" font-size="21" fill="#e8b66e" >Gold endpoint: total ≈ 2.529349 · smallest ≈ 0.140251.</text>
-<text x="35" y="1879" font-size="20" fill="#c7c7d4" >The same alternating-gap description gives every efficient compromise for all even slope counts.</text>
+<text x="35" y="1879" font-size="20" fill="#c7c7d4" >Green uniquely maximizes total + 5 × smallest area. The dashed line holds that score constant.</text>
 <text x="35" y="1918" font-size="17" fill="#aaaabd" >Parabola panels have identical unit scales. The area graph uses separate scales. These are exact limit models.</text>
 <a href="https://mmilanta.github.io/aldebaran/experiments/parabolic_tradeoff.md">
 <text x="35" y="1956" font-size="21" fill="#e8b66e" >Follow the complete bound, the equality case, and the exact cubic coordinates ↗</text>

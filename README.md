@@ -511,6 +511,11 @@ python3 experiments/parabolic_tradeoff.py --write
 node experiments/parabolic_pockets_figure.js
 ```
 
+The same calculation selects the unique optimum of
+`total + price × smallest`. For example,
+`python3 experiments/parabolic_tradeoff.py --slopes 6 --price 5`
+recovers the rational green arrangement and exact score 175/54.
+
 The [outward-offset plot](experiments/parallel_offset.svg) follows each
 endpoint from 40 crossing pairs to 106, through exactly 33 inverse
 pair-births. Rational contraction boxes certify all 66 contact pairs,

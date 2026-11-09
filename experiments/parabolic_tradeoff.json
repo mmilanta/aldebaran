@@ -773,5 +773,19 @@
       "radical": "28/243",
       "radicand": 7
     }
+  },
+  "weighted_example": {
+    "gaps": [
+      "2/3",
+      "1",
+      "2/3",
+      "1",
+      "2/3"
+    ],
+    "total": "275/108",
+    "smallest": "5/36",
+    "parameter": "1/24",
+    "price": "5",
+    "score": "175/54"
   }
 }

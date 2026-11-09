@@ -256,7 +256,7 @@ function balanceFigure() {
 }
 function tradeoffFigure() {
   const parts = root(1980, 'Ten pockets, one compromise',
-    'Two six-parabola arrangements with the same outer slopes minus two and plus two and ten bounded pockets each. Equal gaps four fifths give total 64 over 25 and smallest area 16 over 125. Alternating gaps two thirds, one, two thirds, one, two thirds give total 275 over 108 and smallest area five thirty-sixths. Letters A through J name the same consecutive runs of interior slopes in both drawings; the area lists identify every pocket. Gold marks the four smallest pockets, blue the other six. Both panels use equal and identical coordinate scales. Below, one cubic graph follows every efficient compromise for six slopes: alternating short and long gaps. Its final point uniquely maximizes the smallest area, about 0.140251, with total about 2.529349. The green point is the rational arrangement shown above. The graph uses different scales for the two area measures. Exact rational and quadratic-field controls are rounded only for drawing. These are complete exact limit parabolas at scaled route parameter zero, not finite orbital faces.');
+    'Two six-parabola arrangements with the same outer slopes minus two and plus two and ten bounded pockets each. Equal gaps four fifths give total 64 over 25 and smallest area 16 over 125. Alternating gaps two thirds, one, two thirds, one, two thirds give total 275 over 108 and smallest area five thirty-sixths. Letters A through J name the same consecutive runs of interior slopes in both drawings; the area lists identify every pocket. Gold marks the four smallest pockets, blue the other six. Both panels use equal and identical coordinate scales. Below, one cubic graph follows every efficient compromise for six slopes: alternating short and long gaps. Its final point uniquely maximizes the smallest area, about 0.140251, with total about 2.529349. The green point is the rational arrangement shown above. It uniquely maximizes total plus five times the smallest area, with score 175 over 54; a dashed green supporting line holds that score constant. The graph uses different scales for the two area measures. Exact rational and quadratic-field controls are rounded only for drawing. These are complete exact limit parabolas at scaled route parameter zero, not finite orbital faces.');
   parts.push(text(35, 65, 'Ten pockets, one compromise.', 47, colors.white),
     text(35, 110, 'Give the smallest pockets more room. Some larger ones must give way.', 23));
   for (const [x, color, label] of [[35, colors.gold, 'Four smallest pockets'], [465, colors.blue, 'Six larger pockets']]) parts.push(
@@ -296,6 +296,11 @@ function tradeoffFigure() {
       text(x, plot.y + plot.h + 29, tick.toFixed(2), 18, colors.muted, 'text-anchor="middle"'));
   }
   const controls = tradeoff.bezier.map(p => project(p.map(value)));
+  const score = value(tradeoff.weighted_example.score), price = value(tradeoff.weighted_example.price);
+  const lineStart = project([score - price * plot.high, plot.high]);
+  const lineEnd = project([plot.low + plot.w / plot.sx, (score - plot.low - plot.w / plot.sx) / price]);
+  parts.push(`<path d="M${xy(lineStart)}L${xy(lineEnd)}" fill="none" stroke="${colors.green}" stroke-opacity=".75" stroke-width="1.7" stroke-dasharray="7 7" data-role="weighted-support"/>`,
+    text(760, 1350, 'Total + 5 × smallest = 175/54', 18, colors.green));
   parts.push(`<path d="M${xy(controls[0])}C${xy(controls[1])} ${xy(controls[2])} ${xy(controls[3])}" fill="none" stroke="${colors.white}" stroke-width="3" data-role="six-slope-compromise"/>`);
   const middle = project([rational(tradeoff.examples[1].area), rational(tradeoff.examples[1].smallest)]);
   for (const [p, color, role] of [[controls[0], colors.blue, 'equal'], [middle, colors.green, 'rational'], [controls[3], colors.gold, 'optimal']]) parts.push(
@@ -307,7 +312,7 @@ function tradeoffFigure() {
     text(plot.x + plot.w, plot.y + plot.h + 70, 'Total area →', 18, colors.ink, 'text-anchor="end"'), '</g>',
     text(35, 1795, 'Green: total 275/108 · smallest 5/36 · gaps 2/3, 1, 2/3, 1, 2/3.', 21, colors.green),
     text(35, 1837, 'Gold endpoint: total ≈ 2.529349 · smallest ≈ 0.140251.', 21, colors.gold),
-    text(35, 1879, 'The same alternating-gap description gives every efficient compromise for all even slope counts.', 20),
+    text(35, 1879, 'Green uniquely maximizes total + 5 × smallest area. The dashed line holds that score constant.', 20),
     text(35, 1918, 'Parabola panels have identical unit scales. The area graph uses separate scales. These are exact limit models.', 17, colors.muted),
     '<a href="https://mmilanta.github.io/aldebaran/experiments/parabolic_tradeoff.md">',
     text(35, 1956, 'Follow the complete bound, the equality case, and the exact cubic coordinates ↗', 21, colors.gold), '</a>',

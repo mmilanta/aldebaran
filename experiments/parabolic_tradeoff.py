@@ -11,6 +11,7 @@ from fractions import Fraction as Q
 import json
 from pathlib import Path
 from random import Random
+from math import isqrt
 
 from blend_cusps import require
 from parabolic_balance import Quadratic, face_areas, optimum
@@ -29,10 +30,15 @@ def endpoint(size, span=Q(4)):
 
 def frontier(size, u, span=Q(4)):
     """Exact gaps and the two areas along the complete efficient curve."""
-    top = endpoint(size, span)
-    require(type(u) in (Q, Quadratic) and 0 <= u <= top,
+    endpoint(size, span)  # Validate the count and rational span.
+    require(type(u) in (Q, Quadratic) and 0 <= u,
             "Use an exact parameter on the closed compromise interval.")
     m = size-1
+    # The polynomial test compares parameters from *any* quadratic field
+    # with the endpoint, without mixing two unrelated quadratic fields.
+    require(u <= Q(1, 8) if size == 4 else
+            3-2*(m*m-3)*u-3*(m*m-1)*u*u >= 0,
+            "The parameter is beyond the efficient interval.")
     c, h = span*(1+u)/m, span*u
     a, b = c-h, c+h
     gaps = [a if i % 2 == 0 else b for i in range(m)]
@@ -58,7 +64,10 @@ def derivatives(size, u, span=Q(4)):
 def support(size, u, span=Q(4)):
     """A positive weighted AM-GM support at an interior candidate."""
     candidate = frontier(size, u, span)
-    require(0 < u < endpoint(size, span), "Use an interior compromise for the finite support.")
+    m = size-1
+    require(u > 0 and (u < Q(1, 8) if size == 4 else
+            3-2*(m*m-3)*u-3*(m*m-1)*u*u > 0),
+            "Use an interior compromise for the finite support.")
     k = (size-2)//2
     a, b = candidate["gaps"][:2]
     U, V = (1/a+1/(a+b))/3, (1/b+1/(a+b))/3
@@ -78,6 +87,70 @@ def support(size, u, span=Q(4)):
             and sum(weights) == (k+1)*H,
             "The pair weights miss a gap's cube gradient.")
     return {**candidate, "U": U, "V": V, "lambda": lam, "H": H, "weights": weights}
+
+
+def priced_optimum(size, price, span=Q(4)):
+    """Unique global maximizer of total + price * smallest, exactly."""
+    require(type(size) is int and size >= 3 and type(price) is Q and price >= 0
+            and type(span) is Q and span > 0,
+            "Use at least three slopes, a nonnegative rational price, and a positive rational span.")
+    if size % 2:
+        gaps = optimum(size, span)
+        point = {"gaps": gaps, "total": (span**3-sum(g**3 for g in gaps))/24,
+                 "smallest": min(face_areas(gaps))}
+        u = Q(0)
+    else:
+        if price == 0:
+            u = Q(0)
+        elif size == 4 and price >= 3:
+            u = Q(1, 8)
+        else:
+            m = size-1
+            p, q = price.numerator, price.denominator
+            A = (m*m-1)*(3*p+m*q)
+            B = 2*p*(m*m-3)+m*(m*m-1)*q
+            discriminant = B*B+12*p*A
+            root = isqrt(discriminant)
+            u = (Q(root-B, 2*A) if root*root == discriminant else
+                 Quadratic(discriminant, Q(-B, 2*A), Q(1, 2*A)))
+            require(A*u*u+B*u == 3*p, "The exact price-selection quadratic has the wrong root.")
+        point = frontier(size, u, span)
+        dB, dS = derivatives(size, u, span)
+        interior = price > 0 and not (size == 4 and price >= 3)
+        require(dB+price*dS == 0 if interior else dB+price*dS >= 0,
+                "The selected parameter does not maximize its weighted score.")
+    return {**point, "parameter": u, "price": price, "score": point["total"]+price*point["smallest"]}
+
+
+def price_controls():
+    count = 0
+    random = Random(5112026)
+    for size in range(3, 13):
+        for price in (Q(0), Q(1, 1000), Q(1, 3), Q(3), Q(5), Q(1000)):
+            point = priced_optimum(size, price)
+            for _ in range(3):
+                integers = [random.randrange(1, 21) for _ in range(size-1)]
+                gaps = [Q(4*x, sum(integers)) for x in integers]
+                total = (64-sum(g**3 for g in gaps))/24
+                score = total+price*min(face_areas(gaps))
+                require(score <= point["score"], "A rational challenger beats the selected weighted optimum.")
+            if size % 2 == 0 and price > 0 and not (size == 4 and price >= 3):
+                m, u = size-1, point["parameter"]
+                D = 3-2*(m*m-3)*u-3*(m*m-1)*u*u
+                require(price*D == m*(m*m-1)*u*(1+u), "The selected price misses the marginal-cost identity.")
+            count += 1
+    green = priced_optimum(6, Q(5))
+    require(green["parameter"] == Q(1, 24) and green["score"] == Q(175, 54),
+            "The rational six-slope example is not the price-five optimum.")
+    count += 1
+    for size, price in ((2, Q(1)), (True, Q(1)), (6, Q(-1)), (6, 5), (6, 1.5)):
+        try:
+            priced_optimum(size, price)
+        except ValueError:
+            count += 1
+        else:
+            raise ValueError("An invalid price-selection problem was accepted.")
+    return count
 
 
 def challenger_control(size, u, gaps, span=Q(4)):
@@ -216,7 +289,7 @@ def record():
     return {"scope": "Complete exact limit parabolas at mu=0; no finite-offset or orbital face claim.",
             "slopes": 6, "span": Q(4), "parameter": "u=(b-a)/(2L)",
             "interval": (Q(0), top), "examples": rows, "bezier": bezier(6),
-            "endpoint": optimal}
+            "endpoint": optimal, "weighted_example": priced_optimum(6, Q(5))}
 
 
 def serialize(value):
@@ -235,9 +308,12 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--max-slopes", type=int, default=20, help="Largest even count to audit (at least 12).")
     parser.add_argument("--write", action="store_true", help="Regenerate exact six-slope drawing data.")
+    parser.add_argument("--price", type=Q, help="Also select the exact optimum of total + PRICE * smallest.")
+    parser.add_argument("--slopes", type=int, default=6, help="Slope count for --price (default 6).")
     args = parser.parse_args()
     require(args.max_slopes >= 12, "Check through at least twelve slopes.")
     counts = exact_controls(args.max_slopes)
+    price_count = price_controls()
     for size in (4, 6, 8, 10, 12):
         bezier(size)
     data = record()
@@ -246,10 +322,15 @@ def main():
     print(f"{counts['arrangements']} exact frontier arrangements, {counts['challengers']} weighted-support challengers,")
     print(f"{counts['clipped']} independent clipped/curved arrangements, and {counts['invalid']} invalid controls passed.")
     print("185 exact cubic matches passed across four through twelve slopes.")
+    print(f"{price_count} exact price-selection/invalid controls passed, with 180 rational score challengers.")
     for row in data["examples"]:
         print(f"Six slopes, {row['name'].lower()}: total {row['area']}, smallest {row['smallest']}.")
     print(f"Six-slope endpoint: total ≈ {float(data['endpoint']['total']):.12f}; smallest ≈ {float(data['endpoint']['smallest']):.12f}.")
     print("The complete frontier follows from positive AM-GM supports and the exact cube remainder; finite controls audit the algebra.")
+    if args.price is not None:
+        point = priced_optimum(args.slopes, args.price)
+        print(f"Selected {args.slopes}-slope optimum for total + {args.price} * smallest:")
+        print(json.dumps(serialize(point), indent=2))
 
 
 if __name__ == "__main__":

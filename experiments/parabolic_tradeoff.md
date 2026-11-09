@@ -238,12 +238,80 @@ controls. Rounding occurs only when generating the SVG. The two
 parabola panels have identical unit scales on both axes. Only the
 area graph uses separate scales for its two different measures.
 
+## Put a price on a larger minimum
+
+Suppose an extra unit of smallest-pocket area is worth η units of
+total area. Maximize `B+ηS`, with η≥0. This question has a unique
+global answer as well, not merely a stationary alternating candidate.
+
+Write `D=3−2(m²−3)u−3(m²−1)u²`. At an interior point, its marginal
+price is
+
+```
+η(u) = −B′(u)/S′(u) = m(m²−1)u(1+u)/D,
+η′(u) = m(m²−1)[3+6u+(m²+3)u²]/D² > 0.
+```
+
+Thus B, considered as a function of S, is strictly concave: the
+price of the next increment of minimum strictly increases. Its
+tangent line bounds the whole efficient curve from above, and the
+complete-frontier theorem bounds every other arrangement below it.
+Consequently the tangent point uniquely maximizes `B+ηS`.
+
+One can also select it directly. The derivative of `B+ηS` has the
+sign of
+
+```
+3η − [2η(m²−3)+m(m²−1)]u − (m²−1)(3η+m)u².
+```
+
+For η>0 this is strictly decreasing for u≥0 and has one positive
+zero. At larger-even counts that zero lies before u_end, because
+the derivative at u_end is B′<0. With four slopes, use that root
+until η=3, and use the endpoint u=1/8 for every η≥3. For η=0,
+equal gaps uniquely maximize the total. Odd counts always keep
+their shared equal-gap optimum.
+
+If η=p/q is rational, multiply that quadratic by q. Its integer
+coefficients give the selected u by an exact square root. The
+program retains that quadratic field and compares the endpoint
+using D(u)≥0, so it need not mix unrelated radical fields or round
+an algebraic order test.
+
+For the six-slope rational example, u=1/24 gives
+`B′=−2/3`, `S′=2/15`, hence η=5. It is the **unique global
+maximizer of B+5S**, with value 175/54. The dashed green line in
+the drawing holds that score constant; the whole curve lies below
+it and touches it just at the green point.
+
+## The first gain costs only quadratically
+
+Normalize the total loss and minimum gain by their equal-gap values:
+
+```
+δ = (B(0)−B(u))/B(0) = 3u²+2u³,
+ρ = (S(u)−S(0))/S(0) = 3u−(m²−3)u²−(m²−1)u³.
+```
+
+The relative total loss has the same expression for every even
+count. For a fixed count and a very small positive u,
+`ρ=3u+O(u²)` while `δ=3u²+O(u³)`. Eliminating u gives
+`δ=ρ²/3+O(ρ³)`: the first relative gain in the minimum costs only
+quadratically in relative total area.
+
+This expansion fixes m. It is not a uniform statement as the number
+of slopes grows: the coefficient of u² in ρ itself grows like m².
+For example, the maximin end has `u_end≈3/(2m²)`, relative minimum
+gain `9/(4m²)+O(m⁻⁴)`, and relative total loss
+`27/(4m⁴)+O(m⁻⁶)`. The two different limits should not be interchanged.
+
 ## Reproduce
 
 ```sh
 python3 experiments/parabolic_tradeoff.py
 python3 experiments/parabolic_tradeoff.py --write
 node experiments/parabolic_pockets_figure.js
+python3 experiments/parabolic_tradeoff.py --slopes 6 --price 5
 ```
 
 Only standard runtimes are needed. The default calculation checks
@@ -255,6 +323,10 @@ include algebraic candidates, permutations, and rational challengers
 on either side of the target minimum. They verify cubed AM–GM bounds,
 positive weights, every gap coefficient, and the exact square remainder.
 No rounded radical or numerical optimizer determines an inequality.
+Another 66 exact price-selection/invalid controls include 180 rational
+score challengers, odd counts, the four-slope cutoff, and the exact
+price-five rational example. The optional price command prints its
+selected gaps and score as exact rational-plus-radical values.
 
 The finite controls audit formulas; the weighted inequality and
 endpoint/dominance argument above prove the complete all-count result.
