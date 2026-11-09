@@ -495,6 +495,22 @@ why maximizing the total area and the smallest pocket can disagree.
 Exact rational and quadratic-field checks run with
 `python3 experiments/parabolic_balance.py`.
 
+The [complete compromise curve](experiments/parabolic_tradeoff.md)
+now classifies every efficient choice of total and smallest area,
+for every slope count. Even counts alternate short and long gaps;
+odd counts have just the shared equal-gap optimum. A
+[six-slope drawing](experiments/parabolic_tradeoff.svg) follows ten
+named pockets and its exact cubic boundary, as a fifth chapter in
+the reading page. Positive AM–GM supports and an exact square
+remainder give the global bound and uniqueness. Reproduce its
+exact rational/quadratic data and rounded paths with:
+
+```sh
+python3 experiments/parabolic_tradeoff.py
+python3 experiments/parabolic_tradeoff.py --write
+node experiments/parabolic_pockets_figure.js
+```
+
 The [outward-offset plot](experiments/parallel_offset.svg) follows each
 endpoint from 40 crossing pairs to 106, through exactly 33 inverse
 pair-births. Rational contraction boxes certify all 66 contact pairs,

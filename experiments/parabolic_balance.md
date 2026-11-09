@@ -147,6 +147,12 @@ Only the first and last controls are endpoints of the curve. The two
 middle controls set its derivatives. This area plot uses different
 axis scales; the two drawings above it retain equal coordinate scales.
 
+The [complete compromise follow-up](parabolic_tradeoff.md) extends
+this classification to every slope count. Every even-count frontier
+alternates two gap lengths and is also one exact cubic in the area
+coordinates. A [six-slope drawing](parabolic_tradeoff.svg) compares
+ten named pockets along it.
+
 ## Larger even counts: alternate two gaps
 
 Let n=2k+2 with k≥2. Define

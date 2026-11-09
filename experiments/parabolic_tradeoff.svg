@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1980" viewBox="0 0 1200 1980" role="img" aria-labelledby="title description">
+<title id="title">Ten pockets, one compromise</title><desc id="description">Two six-parabola arrangements with the same outer slopes minus two and plus two and ten bounded pockets each. Equal gaps four fifths give total 64 over 25 and smallest area 16 over 125. Alternating gaps two thirds, one, two thirds, one, two thirds give total 275 over 108 and smallest area five thirty-sixths. Letters A through J name the same consecutive runs of interior slopes in both drawings; the area lists identify every pocket. Gold marks the four smallest pockets, blue the other six. Both panels use equal and identical coordinate scales. Below, one cubic graph follows every efficient compromise for six slopes: alternating short and long gaps. Its final point uniquely maximizes the smallest area, about 0.140251, with total about 2.529349. The green point is the rational arrangement shown above. The graph uses different scales for the two area measures. Exact rational and quadratic-field controls are rounded only for drawing. These are complete exact limit parabolas at scaled route parameter zero, not finite orbital faces.</desc>
+<rect width="1200" height="1980" fill="#101323"/><g font-family="ui-sans-serif,system-ui,sans-serif">
+<text x="35" y="65" font-size="47" fill="#f4f1e8" >Ten pockets, one compromise.</text>
+<text x="35" y="110" font-size="23" fill="#c7c7d4" >Give the smallest pockets more room. Some larger ones must give way.</text>
+<rect x="35" y="143" width="25" height="18" fill="#e8b66e" fill-opacity=".7"/>
+<text x="72" y="160" font-size="21" fill="#c7c7d4" >Four smallest pockets</text>
+<rect x="465" y="143" width="25" height="18" fill="#9fc7eb" fill-opacity=".7"/>
+<text x="502" y="160" font-size="21" fill="#c7c7d4" >Six larger pockets</text>
+<text x="35" y="200" font-size="28" fill="#f4f1e8" >Largest total</text>
+<g data-chart="tradeoff-0" data-scale="112" data-origin="172.7" data-center="535" data-straight="false" data-slopes="-2,-6/5,-2/5,2/5,6/5,2">
+<rect x="35" y="220" width="540" height="600" rx="14" fill="#141829" stroke="#383b50"/>
+<text x="57" y="256" font-size="27" fill="#f4f1e8" >Equal gaps</text>
+<text x="57" y="284" font-size="18" fill="#c7c7d4" >p = (-2, -6/5, -2/5, 2/5, 6/5, 2)</text>
+<defs><clipPath id="tradeoff-0-clip"><rect x="59" y="298" width="492" height="474"/></clipPath></defs>
+<rect x="59" y="298" width="492" height="474" fill="#0b0e1a"/>
+<path d="M59,759H551" stroke="#252b42"/>
+<text x="65" y="754" font-size="14" fill="#aaaabd" >-2</text>
+<path d="M59,647H551" stroke="#252b42"/>
+<text x="65" y="642" font-size="14" fill="#aaaabd" >-1</text>
+<path d="M59,535H551" stroke="#252b42"/>
+<text x="65" y="530" font-size="14" fill="#aaaabd" >0</text>
+<path d="M59,423H551" stroke="#252b42"/>
+<text x="65" y="418" font-size="14" fill="#aaaabd" >1</text>
+<path d="M59,311H551" stroke="#252b42"/>
+<text x="65" y="306" font-size="14" fill="#aaaabd" >2</text>
+<g clip-path="url(#tradeoff-0-clip)">
+<path d="M181.66,714.2Q190.62,691.8 208.54,669.4Q190.62,647 181.66,624.6Q163.74,669.4 181.66,714.2Z" fill="#e8b66e" fill-opacity=".48" data-role="face" data-face="0" data-area="16/125"/>
+<path d="M208.54,669.4Q226.46,647 253.34,624.6Q226.46,602.2 208.54,579.8Q190.62,602.2 181.66,624.6Q190.62,647 208.54,669.4Z" fill="#9fc7eb" fill-opacity=".48" data-role="face" data-face="1" data-area="32/125"/>
+<path d="M253.34,624.6Q280.22,602.2 316.06,579.8Q280.22,557.4 253.34,535Q226.46,557.4 208.54,579.8Q226.46,602.2 253.34,624.6Z" fill="#9fc7eb" fill-opacity=".48" data-role="face" data-face="2" data-area="48/125"/>
+<path d="M316.06,579.8Q351.9,557.4 396.7,535Q351.9,512.6 316.06,490.2Q280.22,512.6 253.34,535Q280.22,557.4 316.06,579.8Z" fill="#9fc7eb" fill-opacity=".48" data-role="face" data-face="3" data-area="64/125"/>
+<path d="M181.66,624.6Q190.62,602.2 208.54,579.8Q190.62,557.4 181.66,535Q163.74,579.8 181.66,624.6Z" fill="#e8b66e" fill-opacity=".48" data-role="face" data-face="4" data-area="16/125"/>
+<path d="M208.54,579.8Q226.46,557.4 253.34,535Q226.46,512.6 208.54,490.2Q190.62,512.6 181.66,535Q190.62,557.4 208.54,579.8Z" fill="#9fc7eb" fill-opacity=".48" data-role="face" data-face="5" data-area="32/125"/>
+<path d="M253.34,535Q280.22,512.6 316.06,490.2Q280.22,467.8 253.34,445.4Q226.46,467.8 208.54,490.2Q226.46,512.6 253.34,535Z" fill="#9fc7eb" fill-opacity=".48" data-role="face" data-face="6" data-area="48/125"/>
+<path d="M181.66,535Q190.62,512.6 208.54,490.2Q190.62,467.8 181.66,445.4Q163.74,490.2 181.66,535Z" fill="#e8b66e" fill-opacity=".48" data-role="face" data-face="7" data-area="16/125"/>
+<path d="M208.54,490.2Q226.46,467.8 253.34,445.4Q226.46,423 208.54,400.6Q190.62,423 181.66,445.4Q190.62,467.8 208.54,490.2Z" fill="#9fc7eb" fill-opacity=".48" data-role="face" data-face="8" data-area="32/125"/>
+<path d="M181.66,445.4Q190.62,423 208.54,400.6Q190.62,378.2 181.66,355.8Q163.74,400.6 181.66,445.4Z" fill="#e8b66e" fill-opacity=".48" data-role="face" data-face="9" data-area="16/125"/>
+<path d="M174.94,781.4Q125.66,535 1160.54,288.6" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<path d="M228.7,781.4Q-17.7,535 820.06,288.6" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<path d="M354.14,781.4Q-89.38,535 551.26,288.6" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<path d="M551.26,781.4Q-89.38,535 354.14,288.6" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<path d="M820.06,781.4Q-17.7,535 228.7,288.6" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<path d="M1160.54,781.4Q125.66,535 174.94,288.6" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<text x="186.637778" y="674.9" font-size="16" fill="#f4f1e8" text-anchor="middle" data-role="face-label">A</text>
+<text x="211.526667" y="630.1" font-size="16" fill="#f4f1e8" text-anchor="middle" data-role="face-label">B</text>
+<text x="256.326667" y="585.3" font-size="16" fill="#f4f1e8" text-anchor="middle" data-role="face-label">C</text>
+<text x="319.046667" y="540.5" font-size="16" fill="#f4f1e8" text-anchor="middle" data-role="face-label">D</text>
+<text x="186.637778" y="585.3" font-size="16" fill="#f4f1e8" text-anchor="middle" data-role="face-label">E</text>
+<text x="211.526667" y="540.5" font-size="16" fill="#f4f1e8" text-anchor="middle" data-role="face-label">F</text>
+<text x="256.326667" y="495.7" font-size="16" fill="#f4f1e8" text-anchor="middle" data-role="face-label">G</text>
+<text x="186.637778" y="495.7" font-size="16" fill="#f4f1e8" text-anchor="middle" data-role="face-label">H</text>
+<text x="211.526667" y="450.9" font-size="16" fill="#f4f1e8" text-anchor="middle" data-role="face-label">I</text>
+<text x="186.637778" y="406.1" font-size="16" fill="#f4f1e8" text-anchor="middle" data-role="face-label">J</text>
+</g>
+<text x="545" y="802" font-size="17" fill="#aaaabd" text-anchor="end">X →</text>
+<text x="545" y="284" font-size="17" fill="#aaaabd" text-anchor="end">Y ↑</text>
+</g>
+<text x="57" y="865" font-size="27" fill="#f4f1e8" >Total area = 64/25</text>
+<text x="57" y="908" font-size="27" fill="#e8b66e" >Smallest pocket = 16/125</text>
+<text x="57" y="950" font-size="20" fill="#aaaabd" >Gaps: 4/5, 4/5, 4/5, 4/5, 4/5</text>
+<text x="57" y="1010" font-size="21" fill="#e8b66e" data-role="area-list">A, E, H, J: 16/125 each</text>
+<text x="57" y="1042" font-size="21" fill="#c7c7d4" data-role="area-list">B, F, I: 32/125 each</text>
+<text x="57" y="1074" font-size="21" fill="#c7c7d4" data-role="area-list">C, G: 48/125 each</text>
+<text x="57" y="1106" font-size="21" fill="#c7c7d4" data-role="area-list">D: 64/125 each</text>
+<text x="625" y="200" font-size="28" fill="#f4f1e8" >A rational compromise</text>
+<g data-chart="tradeoff-1" data-scale="112" data-origin="762.7" data-center="535" data-straight="false" data-slopes="-2,-4/3,-1/3,1/3,4/3,2">
+<rect x="625" y="220" width="540" height="600" rx="14" fill="#141829" stroke="#383b50"/>
+<text x="647" y="256" font-size="27" fill="#f4f1e8" >Short, long, short, long, short</text>
+<text x="647" y="284" font-size="18" fill="#c7c7d4" >p = (-2, -4/3, -1/3, 1/3, 4/3, 2)</text>
+<defs><clipPath id="tradeoff-1-clip"><rect x="649" y="298" width="492" height="474"/></clipPath></defs>
+<rect x="649" y="298" width="492" height="474" fill="#0b0e1a"/>
+<path d="M649,759H1141" stroke="#252b42"/>
+<text x="655" y="754" font-size="14" fill="#aaaabd" >-2</text>
+<path d="M649,647H1141" stroke="#252b42"/>
+<text x="655" y="642" font-size="14" fill="#aaaabd" >-1</text>
+<path d="M649,535H1141" stroke="#252b42"/>
+<text x="655" y="530" font-size="14" fill="#aaaabd" >0</text>
+<path d="M649,423H1141" stroke="#252b42"/>
+<text x="655" y="418" font-size="14" fill="#aaaabd" >1</text>
+<path d="M649,311H1141" stroke="#252b42"/>
+<text x="655" y="306" font-size="14" fill="#aaaabd" >2</text>
+<g clip-path="url(#tradeoff-1-clip)">
+<path d="M768.922222,721.666667Q778.255556,693.666667 801.588889,665.666667Q786.033333,647 776.7,628.333333Q753.366667,675 768.922222,721.666667Z" fill="#e8b66e" fill-opacity=".48" data-role="face" data-face="0" data-area="5/36"/>
+<path d="M801.588889,665.666667Q817.144444,647 838.922222,628.333333Q817.144444,609.666667 801.588889,591Q786.033333,609.666667 776.7,628.333333Q786.033333,647 801.588889,665.666667Z" fill="#9fc7eb" fill-opacity=".48" data-role="face" data-face="1" data-area="5/27"/>
+<path d="M838.922222,628.333333Q871.588889,600.333333 918.255556,572.333333Q887.144444,553.666667 862.255556,535Q824.922222,563 801.588889,591Q817.144444,609.666667 838.922222,628.333333Z" fill="#9fc7eb" fill-opacity=".48" data-role="face" data-face="2" data-area="5/12"/>
+<path d="M918.255556,572.333333Q949.366667,553.666667 986.7,535Q949.366667,516.333333 918.255556,497.666667Q887.144444,516.333333 862.255556,535Q887.144444,553.666667 918.255556,572.333333Z" fill="#9fc7eb" fill-opacity=".48" data-role="face" data-face="3" data-area="10/27"/>
+<path d="M776.7,628.333333Q786.033333,609.666667 801.588889,591Q778.255556,563 768.922222,535Q753.366667,581.666667 776.7,628.333333Z" fill="#e8b66e" fill-opacity=".48" data-role="face" data-face="4" data-area="5/36"/>
+<path d="M801.588889,591Q824.922222,563 862.255556,535Q824.922222,507 801.588889,479Q778.255556,507 768.922222,535Q778.255556,563 801.588889,591Z" fill="#9fc7eb" fill-opacity=".48" data-role="face" data-face="5" data-area="5/12"/>
+<path d="M862.255556,535Q887.144444,516.333333 918.255556,497.666667Q871.588889,469.666667 838.922222,441.666667Q817.144444,460.333333 801.588889,479Q824.922222,507 862.255556,535Z" fill="#9fc7eb" fill-opacity=".48" data-role="face" data-face="6" data-area="5/12"/>
+<path d="M768.922222,535Q778.255556,507 801.588889,479Q786.033333,460.333333 776.7,441.666667Q753.366667,488.333333 768.922222,535Z" fill="#e8b66e" fill-opacity=".48" data-role="face" data-face="7" data-area="5/36"/>
+<path d="M801.588889,479Q817.144444,460.333333 838.922222,441.666667Q817.144444,423 801.588889,404.333333Q786.033333,423 776.7,441.666667Q786.033333,460.333333 801.588889,479Z" fill="#9fc7eb" fill-opacity=".48" data-role="face" data-face="8" data-area="5/27"/>
+<path d="M776.7,441.666667Q786.033333,423 801.588889,404.333333Q778.255556,376.333333 768.922222,348.333333Q753.366667,395 776.7,441.666667Z" fill="#e8b66e" fill-opacity=".48" data-role="face" data-face="9" data-area="5/36"/>
+<path d="M764.94,781.4Q715.66,535 1750.54,288.6" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<path d="M804.762222,781.4Q591.215556,535 1461.828889,288.6" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<path d="M957.828889,781.4Q497.882222,535 1122.095556,288.6" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<path d="M1122.095556,781.4Q497.882222,535 957.828889,288.6" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<path d="M1461.828889,781.4Q591.215556,535 804.762222,288.6" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<path d="M1750.54,781.4Q715.66,535 764.94,288.6" fill="none" stroke="#c7c7d4" stroke-opacity=".4" stroke-width="1.5" data-role="branch"/>
+<text x="777.218519" y="677.388889" font-size="16" fill="#f4f1e8" text-anchor="middle" data-role="face-label">A</text>
+<text x="803.662963" y="633.833333" font-size="16" fill="#f4f1e8" text-anchor="middle" data-role="face-label">B</text>
+<text x="852.274074" y="587.166667" font-size="16" fill="#f4f1e8" text-anchor="middle" data-role="face-label">C</text>
+<text x="920.32963" y="540.5" font-size="16" fill="#f4f1e8" text-anchor="middle" data-role="face-label">D</text>
+<text x="777.218519" y="590.277778" font-size="16" fill="#f4f1e8" text-anchor="middle" data-role="face-label">E</text>
+<text x="806.255556" y="540.5" font-size="16" fill="#f4f1e8" text-anchor="middle" data-role="face-label">F</text>
+<text x="852.274074" y="493.833333" font-size="16" fill="#f4f1e8" text-anchor="middle" data-role="face-label">G</text>
+<text x="777.218519" y="490.722222" font-size="16" fill="#f4f1e8" text-anchor="middle" data-role="face-label">H</text>
+<text x="803.662963" y="447.166667" font-size="16" fill="#f4f1e8" text-anchor="middle" data-role="face-label">I</text>
+<text x="777.218519" y="403.611111" font-size="16" fill="#f4f1e8" text-anchor="middle" data-role="face-label">J</text>
+</g>
+<text x="1135" y="802" font-size="17" fill="#aaaabd" text-anchor="end">X →</text>
+<text x="1135" y="284" font-size="17" fill="#aaaabd" text-anchor="end">Y ↑</text>
+</g>
+<text x="647" y="865" font-size="27" fill="#f4f1e8" >Total area = 275/108</text>
+<text x="647" y="908" font-size="27" fill="#e8b66e" >Smallest pocket = 5/36</text>
+<text x="647" y="950" font-size="20" fill="#aaaabd" >Gaps: 2/3, 1, 2/3, 1, 2/3</text>
+<text x="647" y="1010" font-size="21" fill="#e8b66e" data-role="area-list">A, E, H, J: 5/36 each</text>
+<text x="647" y="1042" font-size="21" fill="#c7c7d4" data-role="area-list">B, I: 5/27 each</text>
+<text x="647" y="1074" font-size="21" fill="#c7c7d4" data-role="area-list">D: 10/27 each</text>
+<text x="647" y="1106" font-size="21" fill="#c7c7d4" data-role="area-list">C, F, G: 5/12 each</text>
+<text x="35" y="1180" font-size="30" fill="#f4f1e8" >Every efficient choice lies on this curve.</text>
+<text x="35" y="1221" font-size="22" fill="#c7c7d4" >More total area means a smaller minimum. Alternating gaps give the whole boundary.</text>
+<g data-area-plot="six-slope" data-left="110" data-top="1270" data-low="2.527" data-high="0.1415" data-x-scale="27714.28571428571" data-y-scale="27586.20689655172">
+<rect x="110" y="1270" width="970" height="400" fill="#0b0e1a" stroke="#383b50"/>
+<path d="M110,1642.413793h970" stroke="#252b42"/>
+<text x="96" y="1648.413793103448" font-size="18" fill="#aaaabd" text-anchor="end">0.128</text>
+<path d="M110,1449.310345h970" stroke="#252b42"/>
+<text x="96" y="1455.3103448275856" font-size="18" fill="#aaaabd" text-anchor="end">0.135</text>
+<path d="M110,1311.37931h970" stroke="#252b42"/>
+<text x="96" y="1317.3793103448268" font-size="18" fill="#aaaabd" text-anchor="end">0.140</text>
+<path d="M193.142857,1270v400" stroke="#252b42"/>
+<text x="193.14285714284796" y="1699" font-size="18" fill="#aaaabd" text-anchor="middle">2.53</text>
+<path d="M470.285714,1270v400" stroke="#252b42"/>
+<text x="470.2857142857115" y="1699" font-size="18" fill="#aaaabd" text-anchor="middle">2.54</text>
+<path d="M747.428571,1270v400" stroke="#252b42"/>
+<text x="747.4285714285627" y="1699" font-size="18" fill="#aaaabd" text-anchor="middle">2.55</text>
+<path d="M1024.571429,1270v400" stroke="#252b42"/>
+<text x="1024.5714285714262" y="1699" font-size="18" fill="#aaaabd" text-anchor="middle">2.56</text>
+<path d="M1024.571429,1642.413793C1024.571429,1423.807786 752.637172,1304.45021 175.097811,1304.45021" fill="none" stroke="#f4f1e8" stroke-width="3" data-role="six-slope-compromise"/>
+<circle cx="1024.571429" cy="1642.413793" r="5" fill="#9fc7eb" stroke="#0b0e1a" stroke-width="1.5" data-point="equal"/>
+<circle cx="644.783069" cy="1342.030651" r="5" fill="#a7d9bb" stroke="#0b0e1a" stroke-width="1.5" data-point="rational"/>
+<circle cx="175.097811" cy="1304.45021" r="5" fill="#e8b66e" stroke="#0b0e1a" stroke-width="1.5" data-point="optimal"/>
+<text x="869.5714285714262" y="1627.413793103448" font-size="19" fill="#9fc7eb" >Largest total</text>
+<text x="662.7830687830646" y="1324.0306513409955" font-size="19" fill="#a7d9bb" >The rational example</text>
+<text x="194.09781111070936" y="1289.4502103239904" font-size="19" fill="#e8b66e" >Largest minimum</text>
+<text x="110" y="1255" font-size="18" fill="#c7c7d4" >Smallest area ↑</text>
+<text x="1080" y="1740" font-size="18" fill="#c7c7d4" text-anchor="end">Total area →</text>
+</g>
+<text x="35" y="1795" font-size="21" fill="#a7d9bb" >Green: total 275/108 · smallest 5/36 · gaps 2/3, 1, 2/3, 1, 2/3.</text>
+<text x="35" y="1837" font-size="21" fill="#e8b66e" >Gold endpoint: total ≈ 2.529349 · smallest ≈ 0.140251.</text>
+<text x="35" y="1879" font-size="20" fill="#c7c7d4" >The same alternating-gap description gives every efficient compromise for all even slope counts.</text>
+<text x="35" y="1918" font-size="17" fill="#aaaabd" >Parabola panels have identical unit scales. The area graph uses separate scales. These are exact limit models.</text>
+<a href="https://mmilanta.github.io/aldebaran/experiments/parabolic_tradeoff.md">
+<text x="35" y="1956" font-size="21" fill="#e8b66e" >Follow the complete bound, the equality case, and the exact cubic coordinates ↗</text>
+</a>
+</g></svg>

@@ -4,7 +4,11 @@
 // separately by rational envelope integrals and complete line arrangements.
 const fs = require('node:fs'), path = require('node:path');
 const record = require('./parabolic_pockets.json');
+const tradeoff = require('./parabolic_tradeoff.json');
 const rational = s => { const [a, b = '1'] = s.split('/'); return Number(a) / Number(b); };
+// Quadratic-field values stay exact in the record; only the SVG is rounded.
+const value = x => typeof x === 'string' ? rational(x)
+  : rational(x.rational) + rational(x.radical) * Math.sqrt(x.radicand);
 const n = x => {
   if (!Number.isFinite(x)) throw new Error('A drawing coordinate is not finite.');
   return String(Math.round(x * 1e6) / 1e6);
@@ -102,7 +106,7 @@ function chart(parts, row, left, top, width, height, scale, straight, id, option
     const lo = Math.max(...row.p.slice(face.first, face.last + 1).map(p => X(p, y, straight)));
     const hi = Math.min(X(row.p[face.first - 1], y, straight), X(row.p[face.last + 1], y, straight));
     const p = map([(2 * centroid + (lo + hi) / 2) / 3, y]);
-    parts.push(text(n(p[0]), n(p[1] + 5.5), options.balance ? face.area : String.fromCharCode(65 + i),
+    parts.push(text(n(p[0]), n(p[1] + 5.5), options.balance && !options.letters ? face.area : String.fromCharCode(65 + i),
       16, colors.white, 'text-anchor="middle" data-role="face-label"'));
   });
   parts.push('</g>', text(plot.x + plot.w - 6, top + height - 18, straight ? 'U →' : 'X →', 17, colors.muted, 'text-anchor="end"'),
@@ -250,6 +254,66 @@ function balanceFigure() {
     '</g></svg>');
   fs.writeFileSync(path.join(__dirname, 'parabolic_balance.svg'), parts.join('\n') + '\n');
 }
+function tradeoffFigure() {
+  const parts = root(1980, 'Ten pockets, one compromise',
+    'Two six-parabola arrangements with the same outer slopes minus two and plus two and ten bounded pockets each. Equal gaps four fifths give total 64 over 25 and smallest area 16 over 125. Alternating gaps two thirds, one, two thirds, one, two thirds give total 275 over 108 and smallest area five thirty-sixths. Letters A through J name the same consecutive runs of interior slopes in both drawings; the area lists identify every pocket. Gold marks the four smallest pockets, blue the other six. Both panels use equal and identical coordinate scales. Below, one cubic graph follows every efficient compromise for six slopes: alternating short and long gaps. Its final point uniquely maximizes the smallest area, about 0.140251, with total about 2.529349. The green point is the rational arrangement shown above. The graph uses different scales for the two area measures. Exact rational and quadratic-field controls are rounded only for drawing. These are complete exact limit parabolas at scaled route parameter zero, not finite orbital faces.');
+  parts.push(text(35, 65, 'Ten pockets, one compromise.', 47, colors.white),
+    text(35, 110, 'Give the smallest pockets more room. Some larger ones must give way.', 23));
+  for (const [x, color, label] of [[35, colors.gold, 'Four smallest pockets'], [465, colors.blue, 'Six larger pockets']]) parts.push(
+    `<rect x="${x}" y="143" width="25" height="18" fill="${color}" fill-opacity=".7"/>`, text(x + 37, 160, label, 21));
+  tradeoff.examples.forEach((entry, i) => {
+    const row = data(entry), left = 35 + 590 * i;
+    parts.push(text(left, 200, entry.name, 28, colors.white));
+    chart(parts, row, left, 220, 540, 600, 112, false, `tradeoff-${i}`,
+      { faces: true, slice: false, balance: true, letters: true,
+        title: i ? 'Short, long, short, long, short' : 'Equal gaps', subtitle: `p = (${entry.slopes.join(', ')})` });
+    parts.push(text(left + 22, 865, `Total area = ${entry.area}`, 27, colors.white),
+      text(left + 22, 908, `Smallest pocket = ${entry.smallest}`, 27, colors.gold),
+      text(left + 22, 950, `Gaps: ${entry.gaps.join(', ')}`, 20, colors.muted));
+    const groups = new Map();
+    entry.faces.forEach((face, j) => {
+      if (!groups.has(face.area)) groups.set(face.area, []);
+      groups.get(face.area).push(String.fromCharCode(65 + j));
+    });
+    [...groups.entries()].sort((a, b) => rational(a[0]) - rational(b[0])).forEach(([area, letters], j) =>
+      parts.push(text(left + 22, 1010 + 32 * j, `${letters.join(', ')}: ${area} each`, 21,
+        area === entry.smallest ? colors.gold : colors.ink, 'data-role="area-list"')));
+  });
+  parts.push(text(35, 1180, 'Every efficient choice lies on this curve.', 30, colors.white),
+    text(35, 1221, 'More total area means a smaller minimum. Alternating gaps give the whole boundary.', 22));
+  const plot = { x: 110, y: 1270, w: 970, h: 400, low: 2.527, high: .1415, sx: 970 / .035, sy: 400 / .0145 };
+  const project = ([total, smallest]) => [plot.x + (total - plot.low) * plot.sx, plot.y + (plot.high - smallest) * plot.sy];
+  parts.push(`<g data-area-plot="six-slope" data-left="${plot.x}" data-top="${plot.y}" data-low="${plot.low}" data-high="${plot.high}" data-x-scale="${plot.sx}" data-y-scale="${plot.sy}">`,
+    `<rect x="${plot.x}" y="${plot.y}" width="${plot.w}" height="${plot.h}" fill="#0b0e1a" stroke="#383b50"/>`);
+  for (const tick of [.128, .135, .14]) {
+    const y = project([plot.low, tick])[1];
+    parts.push(`<path d="M${plot.x},${n(y)}h${plot.w}" stroke="#252b42"/>`,
+      text(plot.x - 14, y + 6, tick.toFixed(3), 18, colors.muted, 'text-anchor="end"'));
+  }
+  for (const tick of [2.53, 2.54, 2.55, 2.56]) {
+    const x = project([tick, plot.high])[0];
+    parts.push(`<path d="M${n(x)},${plot.y}v${plot.h}" stroke="#252b42"/>`,
+      text(x, plot.y + plot.h + 29, tick.toFixed(2), 18, colors.muted, 'text-anchor="middle"'));
+  }
+  const controls = tradeoff.bezier.map(p => project(p.map(value)));
+  parts.push(`<path d="M${xy(controls[0])}C${xy(controls[1])} ${xy(controls[2])} ${xy(controls[3])}" fill="none" stroke="${colors.white}" stroke-width="3" data-role="six-slope-compromise"/>`);
+  const middle = project([rational(tradeoff.examples[1].area), rational(tradeoff.examples[1].smallest)]);
+  for (const [p, color, role] of [[controls[0], colors.blue, 'equal'], [middle, colors.green, 'rational'], [controls[3], colors.gold, 'optimal']]) parts.push(
+    `<circle cx="${n(p[0])}" cy="${n(p[1])}" r="5" fill="${color}" stroke="#0b0e1a" stroke-width="1.5" data-point="${role}"/>`);
+  parts.push(text(controls[0][0] - 155, controls[0][1] - 15, 'Largest total', 19, colors.blue),
+    text(middle[0] + 18, middle[1] - 18, 'The rational example', 19, colors.green),
+    text(controls[3][0] + 19, controls[3][1] - 15, 'Largest minimum', 19, colors.gold),
+    text(plot.x, plot.y - 15, 'Smallest area ↑', 18),
+    text(plot.x + plot.w, plot.y + plot.h + 70, 'Total area →', 18, colors.ink, 'text-anchor="end"'), '</g>',
+    text(35, 1795, 'Green: total 275/108 · smallest 5/36 · gaps 2/3, 1, 2/3, 1, 2/3.', 21, colors.green),
+    text(35, 1837, 'Gold endpoint: total ≈ 2.529349 · smallest ≈ 0.140251.', 21, colors.gold),
+    text(35, 1879, 'The same alternating-gap description gives every efficient compromise for all even slope counts.', 20),
+    text(35, 1918, 'Parabola panels have identical unit scales. The area graph uses separate scales. These are exact limit models.', 17, colors.muted),
+    '<a href="https://mmilanta.github.io/aldebaran/experiments/parabolic_tradeoff.md">',
+    text(35, 1956, 'Follow the complete bound, the equality case, and the exact cubic coordinates ↗', 21, colors.gold), '</a>',
+    '</g></svg>');
+  fs.writeFileSync(path.join(__dirname, 'parabolic_tradeoff.svg'), parts.join('\n') + '\n');
+}
 if (record.shear !== 'U=X-Y^2/2' || record.band_examples.map(e => e.area).join(',') !== '5/2,615/256'
     || record.insertion_examples.map(e => e.area).join(',') !== '2,9/4,64/27') {
   throw new Error('Regenerate the rational envelope record first.');
@@ -258,4 +322,5 @@ bandFigure();
 insertionFigure();
 runsFigure();
 balanceFigure();
-console.log('Wrote the envelope, insertion, run, and balance SVGs from rational intervals, faces, and quadratic arcs.');
+tradeoffFigure();
+console.log('Wrote five pocket SVGs from exact face data and quadratic/cubic paths; SVG coordinates are rounded.');
