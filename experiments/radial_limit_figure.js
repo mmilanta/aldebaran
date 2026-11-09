@@ -60,7 +60,7 @@ if (Math.abs(triple(25) - delta) > 1e-14) throw new Error('The illustrative loca
 function line(points, close = false) {
   return points.map(([x, y], i) => `${i ? 'L' : 'M'}${n(x)},${n(y)}`).join('') + (close ? 'Z' : '');
 }
-const parts = ['<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1120" viewBox="0 0 1200 1120" role="img" aria-labelledby="title description">',
+const parts = ['<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1120" viewBox="0 0 1200 1120" role="group" aria-labelledby="title description">',
   '<title id="title">The clock moves when the curve moves out</title>',
   '<desc id="description">Two graphs compare the same polar-angle coordinates at offset 25. Dashed curves are tangent-line heights; solid curves are radial deficits of the plane drawing. At the front triple, parameter zero, the solid curves form a triangle. They meet together later, at parameter about 0.07001970943. The three plane visits then have different normal angles, about 0.074448, zero, and minus 0.074448 radians. A lower graph shows distance times the triple parameter approaching 225 over 128. Its shaded band also multiplies the delay bounds by distance: M delta lies between 225/128 minus 151875/(32768 M squared) and that value plus 40/M to the fourth power, for every M at least 25. Graph axes use different units. Rounded paths illustrate separate rational proofs; no whole-movie offset threshold is claimed.</desc>',
   '<rect width="1200" height="1120" fill="#101323"/><g font-family="ui-sans-serif,system-ui,sans-serif">',
@@ -130,7 +130,7 @@ record.examples.forEach((row, i) => {
   parts.push(text(795, 863 + i * 38, `M = ${row.offset.toLocaleString('en-US')}`, 18),
     text(1160, 863 + i * 38, decimalPrefix(row.parameter), 19, '#e8b66e', 'text-anchor="end"'));
 });
-parts.push('<a href="radial_limit.md">',
+parts.push('<a href="https://mmilanta.github.io/aldebaran/experiments/radial_limit.md">',
   text(35, 1091, 'Every M ≥ 25:  δ = 225/(128M) − 151875/(32768M³) + R,  with 0 < R < 40/M⁵.  Proof ↗', 19),
   '</a></g></svg>');
 fs.writeFileSync(path.join(__dirname, 'radial_limit.svg'), parts.join('\n') + '\n');

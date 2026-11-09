@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1450" viewBox="0 0 1200 1450" role="group" aria-labelledby="title description">
+<title id="title">The advantage fades twice</title>
+<desc id="description">Every even-count efficient pocket arrangement alternates short and long slope gaps. With m gaps, the relative smallest-area gain is order one over m squared, while relative total-area loss is order one over m to the fourth. Rescaling those two measures brings the six-, ten-, and twenty-slope efficient curves close to one universal quadratic arc. Its parameter v runs from zero to three halves, with coordinates three v squared and three v minus v squared. The endpoint is 27 over 4 horizontally and nine over 4 vertically. A table gives the actual unscaled percentage changes at four maximin endpoints. Each percentage uses its own equal-gap area as baseline. These are exact complete limit-parabola arrangements and a limit in slope count, not an outward-offset estimate for orbital curves.</desc>
+<rect width="1200" height="1450" fill="#101323"/><g font-family="ui-sans-serif,system-ui,sans-serif">
+<text x="35" y="65" font-size="47" fill="#f4f1e8" >The advantage fades twice.</text>
+<text x="35" y="110" font-size="23" fill="#c7c7d4" >The smallest pockets gain less. The relative cost in total area fades faster.</text>
+<text x="35" y="151" font-size="23" fill="#c7c7d4" >Rescale both changes to see one common curve emerge.</text>
+<path d="M45,198h32" stroke="#e8b66e" stroke-width="3"/>
+<text x="90" y="205" font-size="21" fill="#c7c7d4" >6 slopes</text>
+<path d="M315,198h32" stroke="#9fc7eb" stroke-width="3"/>
+<text x="360" y="205" font-size="21" fill="#c7c7d4" >10 slopes</text>
+<path d="M585,198h32" stroke="#a7d9bb" stroke-width="3"/>
+<text x="630" y="205" font-size="21" fill="#c7c7d4" >20 slopes</text>
+<path d="M900,198h32" stroke="#f4f1e8" stroke-width="3" stroke-dasharray="6 5"/>
+<text x="945" y="205" font-size="21" fill="#c7c7d4" >Limit</text>
+<g data-scaled-plot="frontier" data-left="110" data-bottom="800" data-x-scale="125" data-y-scale="200">
+<rect x="110" y="290" width="1000" height="510" fill="#0b0e1a" stroke="#383b50"/>
+<path d="M110,290v510" stroke="#252b42"/>
+<text x="110" y="832" font-size="18" fill="#aaaabd" text-anchor="middle">0</text>
+<path d="M360,290v510" stroke="#252b42"/>
+<text x="360" y="832" font-size="18" fill="#aaaabd" text-anchor="middle">2</text>
+<path d="M610,290v510" stroke="#252b42"/>
+<text x="610" y="832" font-size="18" fill="#aaaabd" text-anchor="middle">4</text>
+<path d="M860,290v510" stroke="#252b42"/>
+<text x="860" y="832" font-size="18" fill="#aaaabd" text-anchor="middle">6</text>
+<path d="M1110,290v510" stroke="#252b42"/>
+<text x="1110" y="832" font-size="18" fill="#aaaabd" text-anchor="middle">8</text>
+<path d="M110,800h1000" stroke="#252b42"/>
+<text x="95" y="806" font-size="18" fill="#aaaabd" text-anchor="end">0</text>
+<path d="M110,600h1000" stroke="#252b42"/>
+<text x="95" y="606" font-size="18" fill="#aaaabd" text-anchor="end">1</text>
+<path d="M110,400h1000" stroke="#252b42"/>
+<text x="95" y="406" font-size="18" fill="#aaaabd" text-anchor="end">2</text>
+<path d="M110,350h1000" stroke="#252b42"/>
+<text x="95" y="356" font-size="18" fill="#aaaabd" text-anchor="end">9/4</text>
+<path d="M110,800C110,490.450478 409.440332,321.438286 1045.397641,321.438286" fill="none" stroke="#e8b66e" stroke-width="2.5" data-slopes="6"/>
+<circle cx="1045.397641" cy="321.438286" r="4.8" fill="#e8b66e" stroke="#101323" stroke-width="1.5"/>
+<path d="M110,800C110,497.170531 396.580273,341.523029 980.455012,341.523029" fill="none" stroke="#9fc7eb" stroke-width="2.5" data-slopes="10"/>
+<circle cx="980.455012" cy="341.523029" r="4.8" fill="#9fc7eb" stroke="#101323" stroke-width="1.5"/>
+<path d="M110,800C110,499.374139 392.424714,348.123048 959.626057,348.123048" fill="none" stroke="#a7d9bb" stroke-width="2.5" data-slopes="20"/>
+<circle cx="959.626057" cy="348.123048" r="4.8" fill="#a7d9bb" stroke="#101323" stroke-width="1.5"/>
+<path d="M110,800Q110,350 953.75,350" fill="none" stroke="#f4f1e8" stroke-width="2.5" stroke-dasharray="6 5" data-role="limit"/>
+<text x="110" y="265" font-size="20" fill="#c7c7d4" >m² × relative smallest-area gain ↑</text>
+<text x="1110" y="876" font-size="20" fill="#c7c7d4" text-anchor="end">m⁴ × relative total-area loss →</text>
+</g>
+<text x="35" y="940" font-size="29" fill="#f4f1e8" >At the largest possible minimum:</text>
+<text x="55" y="995" font-size="21" fill="#aaaabd" >Slopes</text>
+<text x="295" y="995" font-size="21" fill="#aaaabd" >Minimum gain</text>
+<text x="615" y="995" font-size="21" fill="#aaaabd" >Total loss</text>
+<text x="920" y="995" font-size="21" fill="#aaaabd" >Gaps m</text>
+<text x="55" y="1040" font-size="23" fill="#f4f1e8" >6</text>
+<text x="295" y="1040" font-size="23" fill="#c7c7d4" >+9.571234%</text>
+<text x="615" y="1040" font-size="23" fill="#c7c7d4" >−1.197309%</text>
+<text x="920" y="1040" font-size="23" fill="#c7c7d4" >5</text>
+<text x="55" y="1086" font-size="23" fill="#f4f1e8" >10</text>
+<text x="295" y="1086" font-size="23" fill="#c7c7d4" >+2.830105%</text>
+<text x="615" y="1086" font-size="23" fill="#c7c7d4" >−0.106137%</text>
+<text x="920" y="1086" font-size="23" fill="#c7c7d4" >9</text>
+<text x="55" y="1132" font-size="23" fill="#f4f1e8" >20</text>
+<text x="295" y="1132" font-size="23" fill="#c7c7d4" >+0.625868%</text>
+<text x="615" y="1132" font-size="23" fill="#c7c7d4" >−0.005216%</text>
+<text x="920" y="1132" font-size="23" fill="#c7c7d4" >19</text>
+<text x="55" y="1178" font-size="23" fill="#f4f1e8" >100</text>
+<text x="295" y="1178" font-size="23" fill="#c7c7d4" >+0.022960%</text>
+<text x="615" y="1178" font-size="23" fill="#c7c7d4" >−0.00000703%</text>
+<text x="920" y="1178" font-size="23" fill="#c7c7d4" >99</text>
+<text x="35" y="1255" font-size="22" fill="#f4f1e8" >Gain and loss use different baselines: their own equal-gap minimum and total.</text>
+<text x="35" y="1297" font-size="21" fill="#c7c7d4" >The graph rescales relative changes, not absolute pocket areas. Axis scales differ.</text>
+<text x="35" y="1338" font-size="23" fill="#c7c7d4" >Limit: X = 3v², Y = 3v − v², 0 ≤ v ≤ 3/2. End: (27/4, 9/4).</text>
+<text x="35" y="1377" font-size="20" fill="#aaaabd" >Uniform rational error bounds and finite endpoint bounds accompany the limit.</text>
+<a href="https://mmilanta.github.io/aldebaran/experiments/parabolic_tradeoff_limit.md">
+<text x="35" y="1420" font-size="21" fill="#e8b66e" >Follow the scaling calculation and its bounds ↗</text>
+</a>
+</g></svg>

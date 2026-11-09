@@ -97,6 +97,73 @@ The existing area, label, download, offline, layout, and axe checks
 still pass. This refinement is being published with about 38 minutes
 remaining in the intended hour.
 
+Second publication receipt, **20:16 UTC**: **0e025c5** passed Pages;
+all **eight** files changed by that commit matched the public bytes.
+
+At **20:23 UTC**, the [scaling follow-up](experiments/parabolic_tradeoff_limit.md)
+and its [companion drawing](experiments/parabolic_tradeoff_limit.svg)
+are complete. Set m=n−1, `v=m²u`, and compare relative total loss δ
+and relative smallest-area gain ρ to their own equal-gap baselines.
+The complete efficient curves have scaled coordinates
+
+```
+X = m⁴δ = 3v²+2v³/m²,
+Y = m²ρ = 3v−v²+v²(3−v)/m²+v³/m⁴.
+```
+
+They approach the quadratic arc `(3v²,3v−v²)`, 0≤v≤3/2,
+with equation `(X+3Y)²=27X`. This is a limit in slope count,
+not outward orbital offset. The note gives uniform rational errors
+on the common parameter window and bounds the entire remaining
+tail. Every point of either complete arc is within 22/m² in each
+scaled coordinate of some point of the other.
+
+The finite endpoint bounds hold for **every odd m≥5**:
+
+```
+27/(4m⁴) < relative total loss < 27/(4m⁴)+22/m⁶,
+9/(4m²) < relative minimum gain < 9/(4m²)+4/m⁴.
+```
+
+These supply the signed all-count remainders absent from yesterday's
+asymptotic observation. The picture plots six, ten, and twenty
+slopes beside the limit and lists actual percentage changes through
+one hundred slopes. It explicitly distinguishes the two baselines:
+absolute smallest-area gain instead decays like m⁻⁵, while absolute
+total cost decays like m⁻⁴. Relative and absolute comparisons must
+not be conflated. The companion is linked after the fifth chapter;
+the study still has five primary pictures and no runtime script.
+
+The new standard-library command passes **48 exact endpoint
+enclosures**, **1,776 uniform rational controls**, **six independent
+complete clipped arrangements**, **six invalid controls**, **111
+finite-cubic matches**, and **37 limit-quadratic matches**.
+Another independent 80-digit decimal evaluation agrees with every
+printed percentage. All eleven relevant exact data/drawing files
+regenerate byte for byte. Source checks at **20:22 UTC** resolve
+**1,234** local links/resources/ARIA/SVG references and parse **49 SVGs**.
+
+The two new browser suites total **10,764 assertions** across
+Chromium and WebKit, adding native path geometry and the complete
+scaling picture to the earlier area, label, layout, download,
+no-script, and offline controls. Twelve standalone axe scans also
+pass: all six linked SVG exports in both engines. This direct-SVG
+check found a real issue hidden by embedded image scans: an image
+role containing its focusable proof link. Five linked drawings now
+use named group containers. This changes only the accessibility
+role in the earlier four-slope picture, and the role plus portable
+absolute proof href in the two earlier radial pictures; all their
+geometry is unchanged. Their generators retain the fixes. The
+other three original pocket SVGs remain byte-for-byte unchanged.
+These remain headless checks, not screen-reader or device tests.
+
+The scaling result and export refinements are being published with
+about twenty-six minutes remaining. The remaining session will
+review the proofs and explore what survives if the parabolas are
+slid sideways independently, rather than all sharing the original
+quadratic intercept law. Any such variation needs its own formulas;
+the alternating-gap theorem above keeps its stated family.
+
 ## 2026-11-08 · All the pockets, one band
 
 Started at **15:58:43 UTC**; the intended hour runs through

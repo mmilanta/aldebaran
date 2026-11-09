@@ -1,0 +1,371 @@
+{
+  "scope": "Complete exact limit-parabola arrangements; a limit in slope count, not finite orbital offset.",
+  "horizontal": "m^4 * relative total-area loss",
+  "vertical": "m^2 * relative smallest-area gain",
+  "parameter": "v=m^2*(b-a)/(2L)",
+  "common_window": [
+    "0",
+    "3/2"
+  ],
+  "curves": [
+    {
+      "slopes": 6,
+      "gaps": 5,
+      "parameter_end": {
+        "rational": "-275/36",
+        "radical": "125/36",
+        "radicand": 7
+      },
+      "scaled_end": [
+        {
+          "rational": "2774375/11664",
+          "radical": "-1015625/11664",
+          "radicand": 7
+        },
+        {
+          "rational": "-27775/486",
+          "radical": "21875/972",
+          "radicand": 7
+        }
+      ],
+      "relative_loss": {
+        "rational": "4439/11664",
+        "radical": "-1625/11664",
+        "radicand": 7
+      },
+      "relative_gain": {
+        "rational": "-1111/486",
+        "radical": "875/972",
+        "radicand": 7
+      },
+      "bezier": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          {
+            "rational": "0",
+            "radical": "0",
+            "radicand": 7
+          },
+          {
+            "rational": "-275/36",
+            "radical": "125/36",
+            "radicand": 7
+          }
+        ],
+        [
+          {
+            "rational": "23125/162",
+            "radical": "-34375/648",
+            "radicand": 7
+          },
+          {
+            "rational": "-27775/486",
+            "radical": "21875/972",
+            "radicand": 7
+          }
+        ],
+        [
+          {
+            "rational": "2774375/11664",
+            "radical": "-1015625/11664",
+            "radicand": 7
+          },
+          {
+            "rational": "-27775/486",
+            "radical": "21875/972",
+            "radicand": 7
+          }
+        ]
+      ]
+    },
+    {
+      "slopes": 10,
+      "gaps": 9,
+      "parameter_end": {
+        "rational": "-1053/40",
+        "radical": "243/40",
+        "radicand": 21
+      },
+      "scaled_end": [
+        {
+          "rational": "9769329/4000",
+          "radical": "-531441/1000",
+          "radicand": 21
+        },
+        {
+          "rational": "-209547/400",
+          "radical": "45927/400",
+          "radicand": 21
+        }
+      ],
+      "relative_loss": {
+        "rational": "1489/4000",
+        "radical": "-81/1000",
+        "radicand": 21
+      },
+      "relative_gain": {
+        "rational": "-2587/400",
+        "radical": "567/400",
+        "radicand": 21
+      },
+      "bezier": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          {
+            "rational": "0",
+            "radical": "0",
+            "radicand": 21
+          },
+          {
+            "rational": "-1053/40",
+            "radical": "243/40",
+            "radicand": 21
+          }
+        ],
+        [
+          {
+            "rational": "1174419/800",
+            "radical": "-255879/800",
+            "radicand": 21
+          },
+          {
+            "rational": "-209547/400",
+            "radical": "45927/400",
+            "radicand": 21
+          }
+        ],
+        [
+          {
+            "rational": "9769329/4000",
+            "radical": "-531441/1000",
+            "radicand": 21
+          },
+          {
+            "rational": "-209547/400",
+            "radical": "45927/400",
+            "radicand": 21
+          }
+        ]
+      ]
+    },
+    {
+      "slopes": 20,
+      "gaps": 19,
+      "parameter_end": {
+        "rational": "-64619/540",
+        "radical": "6859/540",
+        "radicand": 91
+      },
+      "scaled_end": [
+        {
+          "rational": "1901786994137/39366000",
+          "radical": "-199333397797/39366000",
+          "radicand": 91
+        },
+        {
+          "rational": "-537242366/54675",
+          "radical": "225325009/218700",
+          "radicand": 91
+        }
+      ],
+      "relative_loss": {
+        "rational": "14593097/39366000",
+        "radical": "-1529557/39366000",
+        "radicand": 91
+      },
+      "relative_gain": {
+        "rational": "-1488206/54675",
+        "radical": "624169/218700",
+        "radicand": 91
+      },
+      "bezier": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          {
+            "rational": "0",
+            "radical": "0",
+            "radicand": 91
+          },
+          {
+            "rational": "-64619/540",
+            "radical": "6859/540",
+            "radicand": 91
+          }
+        ],
+        [
+          {
+            "rational": "2114197583/72900",
+            "radical": "-443221721/145800",
+            "radicand": 91
+          },
+          {
+            "rational": "-537242366/54675",
+            "radical": "225325009/218700",
+            "radicand": 91
+          }
+        ],
+        [
+          {
+            "rational": "1901786994137/39366000",
+            "radical": "-199333397797/39366000",
+            "radicand": 91
+          },
+          {
+            "rational": "-537242366/54675",
+            "radical": "225325009/218700",
+            "radicand": 91
+          }
+        ]
+      ]
+    }
+  ],
+  "limit_quadratic": [
+    [
+      "0",
+      "0"
+    ],
+    [
+      "0",
+      "9/4"
+    ],
+    [
+      "27/4",
+      "9/4"
+    ]
+  ],
+  "table": [
+    {
+      "slopes": 6,
+      "gaps": 5,
+      "parameter_end": {
+        "rational": "-275/36",
+        "radical": "125/36",
+        "radicand": 7
+      },
+      "scaled_end": [
+        {
+          "rational": "2774375/11664",
+          "radical": "-1015625/11664",
+          "radicand": 7
+        },
+        {
+          "rational": "-27775/486",
+          "radical": "21875/972",
+          "radicand": 7
+        }
+      ],
+      "relative_loss": {
+        "rational": "4439/11664",
+        "radical": "-1625/11664",
+        "radicand": 7
+      },
+      "relative_gain": {
+        "rational": "-1111/486",
+        "radical": "875/972",
+        "radicand": 7
+      }
+    },
+    {
+      "slopes": 10,
+      "gaps": 9,
+      "parameter_end": {
+        "rational": "-1053/40",
+        "radical": "243/40",
+        "radicand": 21
+      },
+      "scaled_end": [
+        {
+          "rational": "9769329/4000",
+          "radical": "-531441/1000",
+          "radicand": 21
+        },
+        {
+          "rational": "-209547/400",
+          "radical": "45927/400",
+          "radicand": 21
+        }
+      ],
+      "relative_loss": {
+        "rational": "1489/4000",
+        "radical": "-81/1000",
+        "radicand": 21
+      },
+      "relative_gain": {
+        "rational": "-2587/400",
+        "radical": "567/400",
+        "radicand": 21
+      }
+    },
+    {
+      "slopes": 20,
+      "gaps": 19,
+      "parameter_end": {
+        "rational": "-64619/540",
+        "radical": "6859/540",
+        "radicand": 91
+      },
+      "scaled_end": [
+        {
+          "rational": "1901786994137/39366000",
+          "radical": "-199333397797/39366000",
+          "radicand": 91
+        },
+        {
+          "rational": "-537242366/54675",
+          "radical": "225325009/218700",
+          "radicand": 91
+        }
+      ],
+      "relative_loss": {
+        "rational": "14593097/39366000",
+        "radical": "-1529557/39366000",
+        "radicand": 91
+      },
+      "relative_gain": {
+        "rational": "-1488206/54675",
+        "radical": "624169/218700",
+        "radicand": 91
+      }
+    },
+    {
+      "slopes": 100,
+      "gaps": 99,
+      "parameter_end": {
+        "rational": "-16005033/4900",
+        "radical": "323433/4900",
+        "radicand": 2451
+      },
+      "scaled_end": [
+        {
+          "rational": "1046450272706679951/29412250000",
+          "radical": "-21137170834201851/29412250000",
+          "radicand": 2451
+        },
+        {
+          "rational": "-10684815985503/1500625",
+          "radical": "863287634187/6002500",
+          "radicand": 2451
+        }
+      ],
+      "relative_loss": {
+        "rational": "10893760351/29412250000",
+        "radical": "-220042251/29412250000",
+        "radicand": 2451
+      },
+      "relative_gain": {
+        "rational": "-1090176103/1500625",
+        "radical": "88081587/6002500",
+        "radicand": 2451
+      }
+    }
+  ]
+}

@@ -305,6 +305,11 @@ For example, the maximin end has `u_end≈3/(2m²)`, relative minimum
 gain `9/(4m²)+O(m⁻⁴)`, and relative total loss
 `27/(4m⁴)+O(m⁻⁶)`. The two different limits should not be interchanged.
 
+The [scaling follow-up](parabolic_tradeoff_limit.md) gives explicit
+signed finite bounds for both endpoint changes and a uniform limit
+for the complete frontier. Its [companion drawing](parabolic_tradeoff_limit.svg)
+rescales three finite curves toward one limiting parabola.
+
 ## Reproduce
 
 ```sh

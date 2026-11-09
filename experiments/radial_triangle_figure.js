@@ -46,7 +46,7 @@ const line = (points, map, close = false) => points.map((p, i) => {
   const [x, y] = map(p);
   return `${i ? 'L' : 'M'}${n(x)},${n(y)}`;
 }).join('') + (close ? 'Z' : '');
-const parts = ['<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="920" viewBox="0 0 1200 920" role="img" aria-labelledby="title description">',
+const parts = ['<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="920" viewBox="0 0 1200 920" role="group" aria-labelledby="title description">',
   '<title id="title">How much triangle is left?</title>',
   `<desc id="description">At the front triple moment, parameter zero, the three selected offset-25 plane arcs still enclose a thin curved pocket. The left panel uses equal physical coordinate scales: its width is about 0.07002 units and its height about ${height.toFixed(5)}. The right panel shows the same pocket after stretching horizontal distances by exactly 25; vertical distances are unchanged. The original area is about 0.0656428042557 square drawing units. Multiplying the area by distance tends to 3375 over 2048. For every real M at least 25, the area is below 3375/(2048M) by a positive amount less than 5/M cubed. Exact arc integrals and a uniform polynomial certificate are separate from these rounded paths. This is an isolated three-arc model, with no assertion that the full movie has an empty face here.</desc>`,
   '<rect width="1200" height="920" fill="#101323"/><g font-family="ui-sans-serif,system-ui,sans-serif">',
@@ -81,7 +81,7 @@ parts.push(`<path d="M125,446H265L${n(target[0] - 6)},${n(target[1])}" fill="non
   text(35, 758, 'The pocket shrinks as the offset grows.', 26, '#f4f1e8'),
   text(35, 805, 'In the stretched coordinates, its boundaries approach three parabolas.', 22),
   text(35, 845, 'Integrating between them gives:  M × area → 3375/2048 = 1.64794921875.', 23),
-  '<a href="radial_limit.md#the-triangle-left-at-the-front-triple">',
+  '<a href="https://mmilanta.github.io/aldebaran/experiments/radial_limit.md#the-triangle-left-at-the-front-triple">',
   text(35, 891, 'Every M ≥ 25:  0 < 3375/(2048M) − area < 5/M³.  Exact proof ↗', 19, '#e8b66e'),
   '</a></g></svg>');
 fs.writeFileSync(path.join(__dirname, 'radial_triangle.svg'), parts.join('\n') + '\n');

@@ -516,6 +516,15 @@ The same calculation selects the unique optimum of
 `python3 experiments/parabolic_tradeoff.py --slopes 6 --price 5`
 recovers the rational green arrangement and exact score 175/54.
 
+The [scaling follow-up](experiments/parabolic_tradeoff_limit.md)
+bounds the complete frontier as the even slope count grows.
+Relative minimum gain is quadratic in the inverse gap count;
+relative total loss is quartic. A
+[companion plot](experiments/parabolic_tradeoff_limit.svg) rescales
+both toward one limiting parabola, with explicit uniform and finite
+endpoint errors. Reproduce the exact data and standalone SVG with
+`python3 experiments/parabolic_tradeoff_limit.py --write --figure`.
+
 The [outward-offset plot](experiments/parallel_offset.svg) follows each
 endpoint from 40 crossing pairs to 106, through exactly 33 inverse
 pair-births. Rational contraction boxes certify all 66 contact pairs,
