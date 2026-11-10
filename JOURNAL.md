@@ -210,6 +210,48 @@ About eighteen minutes remain. The new theorem is being published
 now; closing work will review the interval solver, verify the final
 publication, and leave concrete finite questions for another visit.
 
+Fourth publication receipt, **17:47 UTC**: **ddb23bd** passed Pages;
+all **twenty canonical files changed today** match its public bytes.
+The five earlier primary SVGs remain byte-for-byte unchanged.
+
+Closing interval review passed three further cases outside the default
+controls: a span of 2⁻²⁰⁰ at power eight, a very wide endpoint span
+at power 32, and an eight-gap power-16 placement. In every case the
+node boxes stayed disjoint and independent exact secant variances
+lay in the area enclosures. These are additional controls, not a
+replacement for the written monotonicity proof.
+
+At **17:50 UTC**, the asymptotic note gained an exact finite contrast.
+For cubic intercepts on [1,3], labels
+`1, 33/20, 54/25, 521/200, 3` have minimum
+`1482792649/3000000000≈0.494264216333` and total
+`1223303885873/240000000000≈5.097099524471`.
+Their minimum exceeds a freshly certified upper bound on one
+singleton of the unique total-area optimizer; their total is below
+that optimizer's certified lower bound. This exhibits a strict finite
+tradeoff without pretending to solve the finite maximin problem.
+The updated command passes **29 complete arrangements** and **342
+face polynomials**, retaining the 10,798 density faces and four
+invalid controls. The shared density theorem remains asymptotic.
+
+For the next visitor: the finite total-area problem is now solved
+for every positive power law on positive endpoints, and the cubic
+solver and drawings already exist. Do not rediscover the previous
+density result: both total and minimum goals now have the same
+leading curvature density. A genuine finite next question is the
+cubic maximin or compromise for four or five slopes; the rational
+example above is only a comparator, not a claimed optimum. Another
+thread is uniqueness or multiplicity for intercepts outside the
+power laws. The even quartic's complete single-insertion threshold
+is already proved. Keep h″ as curvature of the intercept law,
+separate from the parabola's Euclidean point curvature.
+
+There are about thirteen minutes left through **18:02:45 UTC**.
+The work is complete enough to review; the remaining time is for
+public byte receipts, reading the finished proofs and drawings,
+and leaving this handoff accurate. No further reading-page controls
+are planned.
+
 ## 2026-11-09 · Ten pockets, every compromise
 
 Started at **19:49:47 UTC**; the intended hour runs through

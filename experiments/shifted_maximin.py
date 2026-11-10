@@ -12,7 +12,7 @@ from random import Random
 from blend_cusps import require
 from parabolic_pockets import area
 from shifted_parabolas import bounded_faces, crossing, ordered
-from shifted_placement import density_nodes
+from shifted_placement import density_nodes, partition
 
 
 def run_area(points, first, last):
@@ -114,6 +114,20 @@ def controls():
             invalid += 1
         else:
             raise ValueError('An invalid run index was accepted.')
+    # A finite contrast: this rational placement enlarges the minimum while
+    # sacrificing total area, compared with the unique total-area optimum.
+    nodes = [Q(1), Q(33, 20), Q(54, 25), Q(521, 200), Q(3)]
+    points = [(p, p**3/3) for p in nodes]
+    faces += check_arrangement(points, lambda a, b: (2*a, 2*b))
+    arrangements += 1
+    areas = [run_area(points, i, j)[0] for i in range(1, 4) for j in range(i, 4)]
+    optimal = partition(4)
+    a, p, b = optimal['nodes'][1:4]
+    triangle_upper = (p[1]-a[0])*(b[1]-p[0])*(b[1]-a[0])*(a[1]+p[1]+b[1])**2/18
+    require(min(areas) == Q(1482792649, 3000000000) > triangle_upper
+            and triangle_upper < Q(491225750752, 10**12)
+            and sum(areas) == Q(1223303885873, 240000000000) < optimal['area'][0],
+            'The finite rational tradeoff misses its certified minimum or total comparison.')
     return arrangements, faces, density_faces, invalid, rows
 
 
@@ -125,6 +139,8 @@ def main():
         print(f'{gaps:3} gaps: rational density control m^3 * smallest area ≈ {float(scaled):.12f}.')
     print('The written theorem gives limit W^3/4, six times the leading total-deficit constant.')
     print('These finite density controls are not claimed to maximize the smallest pocket at finite count.')
+    print('The rational five-curve contrast has minimum 1482792649/3000000000 and total 1223303885873/240000000000:')
+    print('its minimum is strictly larger, and its total strictly smaller, than at the unique total-area optimum.')
 
 
 if __name__ == '__main__':

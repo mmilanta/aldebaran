@@ -194,6 +194,32 @@ Together the long and short cases cover the entire face list.
 The smallest area of this particular placement is at least
 `(1−o(1))W³/(4m³)`, proving the matching lower limit and theorem.
 
+## The finite goals still differ
+
+For cubic intercepts h(p)=p³/3 on [1,3], choose these five rational
+slope labels:
+
+```
+1, 33/20, 54/25, 521/200, 3.
+```
+
+Their six pockets have smallest area
+`1482792649/3000000000≈0.494264216333` and total area
+`1223303885873/240000000000≈5.097099524471`.
+
+The [unique total-area optimum](shifted_placement.svg) instead has
+total approximately 5.097121872422 and one singleton pocket of area
+at most 0.491225750752. The command freshly repeats the rational
+shooting proof for this four-gap optimum, then bounds that singleton
+with the exact positive cubic triangle polynomial. The rational
+competitor's **smallest** pocket exceeds that upper bound, while its
+total is below the optimum's certified lower bound.
+
+Thus this exact finite arrangement trades a little total for a
+larger minimum. It is a comparison, not a claimed finite maximin
+optimizer. The shared asymptotic density does not identify the
+finite compromise.
+
 ## Exact controls
 
 For cubic intercepts on [1,3], the limit is
@@ -222,8 +248,8 @@ to maximize the smallest area at their finite counts.
 python3 experiments/shifted_maximin.py
 ```
 
-Only the standard library is needed. It checks 28 complete clipped
-arrangements and their 336 exact face polynomials, including quadratic,
+Only the standard library is needed. It checks 29 complete clipped
+arrangements and their 342 exact face polynomials, including quadratic,
 cubic, quartic, and discrete-convex intercept data. Smooth examples
 exercise the local curvature sandwich. Eight rational density
 placements check **all 10,798 faces**, not only the singleton ones.
