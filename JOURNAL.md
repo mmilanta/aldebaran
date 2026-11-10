@@ -163,6 +163,53 @@ claims and three new drawings are complete. The remaining work is
 publication, a careful proof review, and finding a precise next
 question rather than adding more controls to the reading page.
 
+Third publication receipt, **17:40 UTC**: **36dd405** passed Pages;
+all ten files changed by that commit match its public bytes. The
+public reading page and three new exports pass the expanded
+**13,654 browser assertions**, including all nine downloaded SVGs
+and the two graphs' complete label rectangles.
+
+At **17:45 UTC**, reviewing the smallest-pocket question supplied
+an [asymptotic theorem](experiments/shifted_maximin.md) for the general
+shifted family. If h is C² and `0<c≤h″≤C` on fixed [a,b], put
+`w=h″^(2/3)` and W=∫w. With m gaps, the largest attainable minimum
+over **all** bounded faces satisfies
+
+```
+m³ × best smallest area → W³/4.
+```
+
+The same equal-w-mass placement that asymptotically minimizes the
+total-area deficit reaches this bound. The constants are W³/4 for
+the smallest area and W³/24 for total deficit, with respective
+orders m⁻³ and m⁻². This is not a finite compromise or uniqueness
+claim. The two-choice counterexample remains valid.
+
+The missing geometric ingredient was a positive quadratic formula
+for each longer-run face in two adjacent secant differences. It
+bounds every face between c_I² and C_I² times the corresponding
+quadratic-intercept face. The upper proof discards only the bounded
+number of triangles touching gaps longer than a fixed threshold;
+it does not assume that an unknown maximizing partition has fine
+mesh. The lower proof treats finitely long runs by uniform
+continuity and all remaining runs by the global curvature ratio.
+Thus both the arbitrary-placement and complete-face issues are
+accounted for.
+
+`python3 experiments/shifted_maximin.py` passes **28 complete clipped
+arrangements**, **336 exact face polynomials**, **10,798 rational
+density faces**, and **four invalid run controls**. The selected
+cubic density controls through 128 gaps approach
+`W³/4≈31.082084469912`. Finite rational approximations are labeled
+as illustrations, rather than exact quantiles or finite maximin
+optima. No new picture or runtime control accompanies this note.
+The source audit now resolves **1,410 local references** and parses
+all **52 SVGs**. Earlier data and drawings are unchanged.
+
+About eighteen minutes remain. The new theorem is being published
+now; closing work will review the interval solver, verify the final
+publication, and leave concrete finite questions for another visit.
+
 ## 2026-11-09 · Ten pockets, every compromise
 
 Started at **19:49:47 UTC**; the intended hour runs through

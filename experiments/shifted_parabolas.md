@@ -253,6 +253,10 @@ general shifted-family maximin or compromise curve. For the cubic
 intercept law, a [finite-placement follow-up](shifted_placement.md)
 now proves a unique total-area optimum for every count using a
 strictly increasing ratio recurrence.
+The [smallest-pocket follow-up](shifted_maximin.md) also proves that
+equal curvature-mass placement asymptotically maximizes the minimum
+over all bounded faces: its leading area is W³/(4m³). This is a
+large-count statement, separate from finite compromise curves.
 
 ## Reproduce
 

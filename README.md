@@ -551,6 +551,12 @@ over the midpoint. Its [short proof](experiments/two_choices.md) gives
 the complete parameter threshold at which the two choices merge.
 Regenerate its exact data and SVG with
 `python3 experiments/two_choices.py --write`.
+For every C² intercept with uniformly positive curvature, the
+[asymptotic smallest-pocket proof](experiments/shifted_maximin.md)
+shows that the same density reaches both area goals at leading order.
+Every bounded face has a local curvature sandwich, including longer
+runs. Check its exact face formulas and complete arrangements with
+`python3 experiments/shifted_maximin.py`.
 
 The [outward-offset plot](experiments/parallel_offset.svg) follows each
 endpoint from 40 crossing pairs to 106, through exactly 33 inverse

@@ -364,3 +364,9 @@ discrete-convex intercepts and the general asymptotic density theorem.
 Finite placement for intercept laws outside the power families,
 smallest-pocket optima, and a shifted-family compromise frontier remain
 separate questions.
+
+The [asymptotic smallest-pocket follow-up](shifted_maximin.md) proves
+that the same curvature density reaches both goals at leading order
+for every C² intercept with uniformly positive curvature. It bounds
+all longer-run faces as well as the singleton triangles. This supplies
+no general finite maximin or compromise formula.
