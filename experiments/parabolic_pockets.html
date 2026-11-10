@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#101323">
-  <meta name="description" content="Five drawings of the spaces between parabolas. Gather their pockets into a band, add a curve, name each pocket, and follow the balance between total and smallest area.">
+  <meta name="description" content="Six drawings of the spaces between parabolas. Gather their pockets into a band, follow the balance between total and smallest area, then slide the curves sideways.">
   <title>Aldebaran · All the pockets, one band</title>
   <style>
     :root { color-scheme: dark; font-family: ui-sans-serif, system-ui, sans-serif; color: #f4f1e8; background: #101323; }
@@ -50,7 +50,7 @@
       <div class="eyebrow">Study 016 · The spaces between parabolas</div>
       <h1>All the pockets,<br>one band.</h1>
       <p class="intro">Five parabolas leave six small spaces between them. Follow two edges to gather every pocket into one band. Then add a curve, give each pocket a name, and make the smallest one larger.</p>
-      <p>These are five still drawings. Each opens at full size and can be saved. Start with the parabolas that appear when magnifying <a href="positive_front.html">a pocket between three moving branches</a>, then explore what more curves can make.</p>
+      <p>These are six still drawings. Each opens at full size and can be saved. Start with the parabolas that appear when magnifying <a href="positive_front.html">a pocket between three moving branches</a>, then explore what more curves can make.</p>
     </header>
     <nav class="chapters" aria-label="Follow the drawings">
       <a href="#band">One band</a>
@@ -58,6 +58,7 @@
       <a href="#runs">Each pocket</a>
       <a href="#balance">The smallest pocket</a>
       <a href="#compromise">A compromise</a>
+      <a href="#sideways">A midpoint moves</a>
     </nav>
 
     <section aria-labelledby="band">
@@ -116,13 +117,26 @@
 
     <p>With more slopes in the same span, the percentage advantage in the minimum gets smaller. Its percentage cost in total area fades faster still. A <a href="parabolic_tradeoff_limit.svg">companion drawing</a> rescales both changes to reveal a common curve; the <a href="parabolic_tradeoff_limit.md">calculation gives bounds for every count</a>. <a href="parabolic_tradeoff_limit.svg" download>Save the companion drawing ↓</a></p>
 
+    <section aria-labelledby="sideways">
+      <h2 id="sideways">Slide the curves. Move the best choice.</h2>
+      <p>The first five drawings use one particular rule for placing each parabola. Change that rule by sliding the curves sideways independently. They keep their shape, but the midpoint can lose its advantage.</p>
+      <p>Here the outer slope labels stay at 1 and 3. A new curve at the midpoint, 2, makes a pocket of area 4. Put it a little farther toward 3 instead: the largest pocket has area about 4.108257, a gain of 2.7064%.</p>
+      <p>The earlier equal-gap and alternating-gap rules apply to their original placement. This new family has its own area calculation. Its unique best insertion is exactly (1 + √11)/2.</p>
+      <figure>
+        <a class="picture" href="shifted_parabolas.svg"><img src="shifted_parabolas.svg" width="1200" height="1370" loading="lazy" alt="Two pockets use the cubic intercept rule with outer slopes one and three. The midpoint slope two gives area four. A slope about 2.158312 gives the maximum, about 4.108257. Both panels use the same coordinates and unit scale; the old midpoint remains dashed in the right panel. Below, an area graph shows the unique peak."></a>
+        <figcaption>Every curve has equation X = Y²/2 − pY + p³/3. Only the inserted slope changes between panels. The pocket arcs are quadratic; the area graph is sampled from an exact quartic and uses different axis scales. <a href="shifted_parabolas.svg">Open full size ↗</a> · <a href="shifted_parabolas.svg" download>Save the drawing ↓</a> · <a href="shifted_parabolas.md">Follow the new area formula ↗</a></figcaption>
+      </figure>
+    </section>
+
+    <p>With several new curves, where should they all go? For these cubic intercepts, every finite count has a unique placement with the largest total area. A <a href="shifted_placement.svg">companion drawing</a> compares five equally spaced curves with that optimum and the earlier density prediction. The <a href="shifted_placement.md">finite-placement argument</a> locates every slope by one increasing recurrence. <a href="shifted_placement.svg" download>Save the placement drawing ↓</a></p>
+
     <details>
       <summary>Where do these parabolas come from?</summary>
       <p>Near a meeting of three tangent-line graphs, move their original branches a long distance along their normals. Magnify the thin horizontal direction. The branches approach these parabolas. Each slope label comes from an original graph’s direction of change. The <a href="parabolic_triangle.md">three-branch drawing and calculation</a> explain this limit.</p>
       <p>Here we extend that three-curve model to more chosen slopes.</p>
       <p>The areas here are exact for the complete limit arrangements. A finite orbital drawing has corrections and may have other branches in the same place. Those need separate bounds. The <a href="radial_limit.md">finite-distance study</a> follows one selected three-branch model.</p>
     </details>
-    <footer>Aldebaran · Five drawings of the spaces between.<br><a href="index.html">All studies ↗</a> · <a href="positive_front.html">The moving branches ↗</a> · <a href="parabolic_pockets.md">The area notes ↗</a> · <a href="../JOURNAL.md">Notebook ↗</a></footer>
+    <footer>Aldebaran · Six drawings of the spaces between.<br><a href="index.html">All studies ↗</a> · <a href="positive_front.html">The moving branches ↗</a> · <a href="parabolic_pockets.md">The area notes ↗</a> · <a href="../JOURNAL.md">Notebook ↗</a></footer>
   </main>
 </body>
 </html>

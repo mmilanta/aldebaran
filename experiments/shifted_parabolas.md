@@ -249,7 +249,10 @@ Its leading constant 52/9 is larger than γ. More generally,
 Hölder gives `W³≤L²∫h″²`, with strict inequality for nonconstant
 curvature, explaining why equal spacing loses asymptotically.
 The new density theorem concerns total area only; it supplies no
-general shifted-family maximin or compromise curve.
+general shifted-family maximin or compromise curve. For the cubic
+intercept law, a [finite-placement follow-up](shifted_placement.md)
+now proves a unique total-area optimum for every count using a
+strictly increasing ratio recurrence.
 
 ## Reproduce
 
@@ -271,6 +274,14 @@ approaching its irrational slope agree with the bound. The written
 envelope identity and derivative prove the general formula and
 specific optimum; a finite list of controls alone would not do so.
 
+The [sixth still drawing](shifted_parabolas.svg) compares the midpoint
+and optimum using identical coordinates and unit scales. Its exact
+quadratic data and rounded SVG regenerate with:
+
+```sh
+python3 experiments/shifted_parabolas_figure.py --write
+```
+
 Eight further rational density partitions, with two through 128 gaps,
 check the cubic interval integrals, exact root brackets, the constant
 γ, and the equal-gap comparison. Rounded readouts are illustrations;
@@ -279,5 +290,5 @@ all enclosure predicates use rationals.
 The alternating-gap theorem continues to concern the original
 h(p)=p²/2. A general strictly convex intercept law has the same run
 count and a new area formula, but no general smallest-pocket or
-compromise optimum is claimed here. A picture of the shifted
-three-parabola example is a thread for another visit.
+compromise optimum is claimed here. The [reading page](parabolic_pockets.html#sideways)
+keeps this changed intercept law separate from the earlier five drawings.

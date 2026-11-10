@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1630" viewBox="0 0 1200 1630" role="group" aria-labelledby="title description">
+<title id="title">Put more curves where the intercept bends</title>
+<desc id="description">Five parabolas with cubic intercepts share outer slopes one and three. Equal slope gaps give total bounded area 5.0625. The unique finite optimum uses interior labels about 1.650241, 2.162146, and 2.603607, giving area about 5.097122 and decreasing gaps. Both arrangement panels use identical coordinates and unit scale. Three slope rulers compare equal spacing, the asymptotic density quantiles, and the finite optimum. A table resolves the small differences between the latter two. This is a total-area optimum, not a smallest-pocket theorem, and applies to the cubic intercept family.</desc>
+<rect width="1200" height="1630" fill="#101323"/><g font-family="ui-sans-serif,system-ui,sans-serif">
+<text x="35" y="65" font-size="43" fill="#f4f1e8" >Put more curves where the intercept bends.</text>
+<text x="35" y="111" font-size="25" fill="#c7c7d4" >Five parabolas. Six pockets. One unique largest total.</text>
+<text x="35" y="153" font-size="23" fill="#c7c7d4" >Cubic intercepts: Xₚ = Y²/2 − pY + p³/3. The outer labels stay at 1 and 3.</text>
+<g data-arrangement="0" data-slopes="1,1.5,2,2.5,3" data-origin="63" data-center="620" data-scale="29">
+<rect x="35" y="202" width="550" height="484" rx="14" fill="#141829" stroke="#383b50"/>
+<text x="57" y="242" font-size="28" fill="#f4f1e8" >Equal slope gaps.</text>
+<text x="57" y="277" font-size="21" fill="#9fc7eb" >1, 1.5, 2, 2.5, 3</text>
+<defs><clipPath id="arrangement-0-clip"><rect x="53" y="298" width="514" height="290"/></clipPath></defs>
+<rect x="53" y="298" width="514" height="290" fill="#0b0e1a"/>
+<g clip-path="url(#arrangement-0-clip)">
+<path d="M63.100694,574.083333Q64.913194,552.333333 99.350694,530.583333Q130.767361,501.583333 220.184028,472.583333Q313.829861,436.333333 498.100694,400.083333Q282.111111,447.208333 219.277778,494.333333Q86.361111,534.208333 63.100694,574.083333Z" fill="#9fc7eb" fill-opacity=".3" data-role="band"/>
+<path d="M58.166667,591Q58.166667,460.5 1232.666667,330" fill="none" stroke="#e8b66e" stroke-width="2.4" data-role="branch" data-slope="1"/>
+<path d="M66.625,591Q1.375,460.5 1110.625,330" fill="none" stroke="#9fc7eb" stroke-width="1.9" data-role="branch" data-slope="1.5"/>
+<path d="M96.833333,591Q-33.666667,460.5 1010.333333,330" fill="none" stroke="#9fc7eb" stroke-width="1.9" data-role="branch" data-slope="2"/>
+<path d="M156.041667,591Q-39.708333,460.5 939.041667,330" fill="none" stroke="#9fc7eb" stroke-width="1.9" data-role="branch" data-slope="2.5"/>
+<path d="M251.5,591Q-9.5,460.5 904,330" fill="none" stroke="#e8b66e" stroke-width="2.4" data-role="branch" data-slope="3"/>
+</g>
+<text x="57" y="628" font-size="25" fill="#f4f1e8" >Total = 81/16 = 5.0625</text>
+<text x="57" y="664" font-size="21" fill="#c7c7d4" >All six bounded pockets are shaded.</text>
+</g>
+<g data-arrangement="1" data-slopes="1.0,1.6502407664751184,2.1621461314384454,2.603606875834442,3.0" data-origin="643" data-center="620" data-scale="29">
+<rect x="615" y="202" width="550" height="484" rx="14" fill="#141829" stroke="#383b50"/>
+<text x="637" y="242" font-size="28" fill="#f4f1e8" >The finite optimum.</text>
+<text x="637" y="277" font-size="21" fill="#a7d9bb" >Gaps decrease toward the right.</text>
+<defs><clipPath id="arrangement-1-clip"><rect x="633" y="298" width="514" height="290"/></clipPath></defs>
+<rect x="633" y="298" width="514" height="290" fill="#0b0e1a"/>
+<g clip-path="url(#arrangement-1-clip)">
+<path d="M647.243135,568.055825Q651.052874,541.024457 705.25536,513.993089Q749.402966,484.428599 853.830508,454.864109Q951.029163,423.415706 1116.434858,391.967303Q867.521798,443.150318 799.277778,494.333333Q676.406958,531.194579 647.243135,568.055825Z" fill="#a7d9bb" fill-opacity=".3" data-role="band"/>
+<path d="M638.166667,591Q638.166667,460.5 1812.666667,330" fill="none" stroke="#e8b66e" stroke-width="2.4" data-role="branch" data-slope="1.0"/>
+<path d="M653.085905,591Q568.229485,460.5 1657.873065,330" fill="none" stroke="#a7d9bb" stroke-width="1.9" data-role="branch" data-slope="1.6502407664751184"/>
+<path d="M692.506156,591Q540.846085,460.5 1563.686015,330" fill="none" stroke="#a7d9bb" stroke-width="1.9" data-role="branch" data-slope="2.1621461314384454"/>
+<path d="M752.604807,591Q543.33411,460.5 1508.563413,330" fill="none" stroke="#a7d9bb" stroke-width="1.9" data-role="branch" data-slope="2.603606875834442"/>
+<path d="M831.5,591Q570.5,460.5 1484,330" fill="none" stroke="#e8b66e" stroke-width="2.4" data-role="branch" data-slope="3.0"/>
+</g>
+<text x="637" y="628" font-size="25" fill="#f4f1e8" >Total ≈ 5.097121872</text>
+<text x="637" y="664" font-size="21" fill="#c7c7d4" >All six bounded pockets are shaded.</text>
+</g>
+<text x="35" y="733" font-size="22" fill="#c7c7d4" >The optimized total gains about 0.6839%. Both panels use identical unit scales.</text>
+<text x="35" y="770" font-size="22" fill="#c7c7d4" >This maximizes the whole band; it does not maximize the smallest pocket.</text>
+<text x="35" y="833" font-size="31" fill="#f4f1e8" >Three ways to place the same five slopes.</text>
+<text x="35" y="900" font-size="22" fill="#9fc7eb" >Equal gaps</text>
+<path d="M100,930h1000" stroke="#555b78" stroke-width="1.5"/>
+<path d="M100,921v18" stroke="#9fc7eb" stroke-width="2" data-role="slope-tick"/>
+<circle cx="100" cy="930" r="4" fill="#9fc7eb"/>
+<text x="100" y="965" font-size="18" fill="#aaaabd" text-anchor="middle">1</text>
+<path d="M350,921v18" stroke="#9fc7eb" stroke-width="2" data-role="slope-tick"/>
+<circle cx="350" cy="930" r="4" fill="#9fc7eb"/>
+<text x="350" y="965" font-size="18" fill="#aaaabd" text-anchor="middle">1.5</text>
+<path d="M600,921v18" stroke="#9fc7eb" stroke-width="2" data-role="slope-tick"/>
+<circle cx="600" cy="930" r="4" fill="#9fc7eb"/>
+<text x="600" y="965" font-size="18" fill="#aaaabd" text-anchor="middle">2</text>
+<path d="M850,921v18" stroke="#9fc7eb" stroke-width="2" data-role="slope-tick"/>
+<circle cx="850" cy="930" r="4" fill="#9fc7eb"/>
+<text x="850" y="965" font-size="18" fill="#aaaabd" text-anchor="middle">2.5</text>
+<path d="M1100,921v18" stroke="#9fc7eb" stroke-width="2" data-role="slope-tick"/>
+<circle cx="1100" cy="930" r="4" fill="#9fc7eb"/>
+<text x="1100" y="965" font-size="18" fill="#aaaabd" text-anchor="middle">3</text>
+<text x="35" y="1012" font-size="22" fill="#e8b66e" >Asymptotic density</text>
+<path d="M100,1042h1000" stroke="#555b78" stroke-width="1.5"/>
+<path d="M100,1033v18" stroke="#e8b66e" stroke-width="2" data-role="slope-tick"/>
+<circle cx="100" cy="1042" r="4" fill="#e8b66e"/>
+<text x="100" y="1077" font-size="18" fill="#aaaabd" text-anchor="middle">1</text>
+<path d="M426.312426,1033v18" stroke="#e8b66e" stroke-width="2" data-role="slope-tick"/>
+<circle cx="426.312426" cy="1042" r="4" fill="#e8b66e"/>
+<path d="M681.942541,1033v18" stroke="#e8b66e" stroke-width="2" data-role="slope-tick"/>
+<circle cx="681.942541" cy="1042" r="4" fill="#e8b66e"/>
+<path d="M902.231284,1033v18" stroke="#e8b66e" stroke-width="2" data-role="slope-tick"/>
+<circle cx="902.231284" cy="1042" r="4" fill="#e8b66e"/>
+<path d="M1100,1033v18" stroke="#e8b66e" stroke-width="2" data-role="slope-tick"/>
+<circle cx="1100" cy="1042" r="4" fill="#e8b66e"/>
+<text x="1100" y="1077" font-size="18" fill="#aaaabd" text-anchor="middle">3</text>
+<text x="35" y="1124" font-size="22" fill="#a7d9bb" >Finite optimum</text>
+<path d="M100,1154h1000" stroke="#555b78" stroke-width="1.5"/>
+<path d="M100,1145v18" stroke="#a7d9bb" stroke-width="2" data-role="slope-tick"/>
+<circle cx="100" cy="1154" r="4" fill="#a7d9bb"/>
+<text x="100" y="1189" font-size="18" fill="#aaaabd" text-anchor="middle">1</text>
+<path d="M425.120383,1145v18" stroke="#a7d9bb" stroke-width="2" data-role="slope-tick"/>
+<circle cx="425.120383" cy="1154" r="4" fill="#a7d9bb"/>
+<path d="M681.073066,1145v18" stroke="#a7d9bb" stroke-width="2" data-role="slope-tick"/>
+<circle cx="681.073066" cy="1154" r="4" fill="#a7d9bb"/>
+<path d="M901.803438,1145v18" stroke="#a7d9bb" stroke-width="2" data-role="slope-tick"/>
+<circle cx="901.803438" cy="1154" r="4" fill="#a7d9bb"/>
+<path d="M1100,1145v18" stroke="#a7d9bb" stroke-width="2" data-role="slope-tick"/>
+<circle cx="1100" cy="1154" r="4" fill="#a7d9bb"/>
+<text x="1100" y="1189" font-size="18" fill="#aaaabd" text-anchor="middle">3</text>
+<text x="35" y="1240" font-size="22" fill="#c7c7d4" >Density and finite placement almost agree. The table resolves the difference:</text>
+<text x="35" y="1295" font-size="20" fill="#aaaabd" >Interior label</text>
+<text x="300" y="1295" font-size="20" fill="#9fc7eb" >Equal gaps</text>
+<text x="540" y="1295" font-size="20" fill="#e8b66e" >Density quantile</text>
+<text x="850" y="1295" font-size="20" fill="#a7d9bb" >Finite optimum</text>
+<text x="35" y="1345" font-size="23" fill="#c7c7d4" >1</text>
+<text x="300" y="1345" font-size="23" fill="#c7c7d4" >1.5</text>
+<text x="540" y="1345" font-size="23" fill="#c7c7d4" >1.652624853</text>
+<text x="850" y="1345" font-size="23" fill="#f4f1e8" >1.650240766</text>
+<text x="35" y="1391" font-size="23" fill="#c7c7d4" >2</text>
+<text x="300" y="1391" font-size="23" fill="#c7c7d4" >2</text>
+<text x="540" y="1391" font-size="23" fill="#c7c7d4" >2.163885082</text>
+<text x="850" y="1391" font-size="23" fill="#f4f1e8" >2.162146131</text>
+<text x="35" y="1437" font-size="23" fill="#c7c7d4" >3</text>
+<text x="300" y="1437" font-size="23" fill="#c7c7d4" >2.5</text>
+<text x="540" y="1437" font-size="23" fill="#c7c7d4" >2.604462568</text>
+<text x="850" y="1437" font-size="23" fill="#f4f1e8" >2.603606876</text>
+<text x="35" y="1500" font-size="22" fill="#c7c7d4" >An increasing ratio recurrence selects the unique finite optimum for every count.</text>
+<text x="35" y="1541" font-size="21" fill="#c7c7d4" >The saved node and area bounds are rational. These coordinates and decimals are rounded.</text>
+<a href="https://mmilanta.github.io/aldebaran/experiments/shifted_placement.md">
+<text x="35" y="1592" font-size="22" fill="#e8b66e" >Follow the finite-placement proof and its exact enclosures ↗</text>
+</a>
+</g></svg>

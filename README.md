@@ -525,6 +525,22 @@ both toward one limiting parabola, with explicit uniform and finite
 endpoint errors. Reproduce the exact data and standalone SVG with
 `python3 experiments/parabolic_tradeoff_limit.py --write --figure`.
 
+Sliding those parabolas sideways independently changes the placement
+problem. The [sixth drawing](experiments/shifted_parabolas.svg) compares
+the midpoint with the exact best insertion for cubic intercepts:
+the largest pocket gains about 2.7064%. The
+[shifted-family note](experiments/shifted_parabolas.md) derives the
+total area as a weighted secant variance and proves the dense-placement
+law. Regenerate the exact quadratic data and standalone picture with
+`python3 experiments/shifted_parabolas_figure.py --write`.
+For cubic intercepts, the [finite-placement proof](experiments/shifted_placement.md)
+finds the unique total-area optimum for every count by a monotone
+ratio recurrence. `python3 experiments/shifted_placement.py --write`
+regenerates rational enclosures of its slopes and areas through 128 gaps.
+The [five-curve comparison](experiments/shifted_placement.svg) shows its
+complete band beside equal spacing and compares both with the density
+prediction. Regenerate it with `python3 experiments/shifted_placement_figure.py`.
+
 The [outward-offset plot](experiments/parallel_offset.svg) follows each
 endpoint from 40 crossing pairs to 106, through exactly 33 inverse
 pair-births. Rational contraction boxes certify all 66 contact pairs,
