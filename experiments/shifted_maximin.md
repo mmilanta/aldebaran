@@ -35,7 +35,7 @@ Then
 lim[m→∞] m³ S_m* = W³/4.
 ```
 
-The equal-w-mass placement, `∫[p_j,p_j+1]w=W/m` for every gap,
+The equal-w-mass placement, `∫[p_j,p_{j+1}]w=W/m` for every gap,
 attains this leading constant. The earlier total-area result says
 the same placement has deficit `W³/(24m²)+o(m⁻²)`. Thus the smallest
 area's leading constant is six times the total deficit's, with one
@@ -52,7 +52,7 @@ The [run classification](shifted_parabolas.md#the-band-is-still-all-the-bounded-
 names every bounded face by a consecutive interior run i,…,j. Let
 
 ```
-α = p_i−p_i−1,       β = p_j+1−p_j,
+α = p_i−p_{i−1},       β = p_{j+1}−p_j,
 H = p_j−p_i.
 ```
 
@@ -89,7 +89,7 @@ Their shoelace area is the displayed positive quadratic form. The
 common horizontal slide `X=U+Y²/2` preserves this area exactly.
 
 Let c_I,C_I be the minimum and maximum of h″ on the run's outer
-interval I=[p_i−1,p_j+1]. Subtracting `c_I p²/2` leaves a convex
+interval I=[p_{i−1},p_{j+1}]. Subtracting `c_I p²/2` leaves a convex
 intercept law, while subtracting `C_I p²/2` leaves a concave one.
 The selected secant differences therefore obey
 

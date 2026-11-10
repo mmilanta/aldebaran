@@ -103,6 +103,30 @@ Divide by p², set r=p/u and t=v/p, and solve the quadratic in t.
 Only its positive root can be an increasing next label. It is t=T(r)
 as displayed above.
 
+## A connection to scalar quantization
+
+There is a useful exact change of variables behind this variance.
+Let P be uniform on [a,b], let L=b−a, and set X=h′(P). Since h″>0,
+every slope gap corresponds to one interval of X values. Represent
+all values in that interval by their conditional average: its value
+is exactly the secant s of h over the original gap. If q(X) is this
+piecewise constant representation, then
+
+```
+E[(X−q(X))²] = (1/L) Σ∫[gap](h′−s)² = 2D/L.
+```
+
+Thus maximizing the total pocket area is exactly minimizing a scalar
+squared-error quantization error, up to the fixed positive factor L/2.
+Its cell-average and boundary-midpoint conditions are the familiar
+centroid and nearest-neighbor conditions discussed by Robert M. Gray
+and David L. Neuhoff in [*Quantization*, IEEE Transactions on Information
+Theory 44(6), 1998, p. 2329](https://www.math.ucdavis.edu/~saito/data/quantization/44it06-gray.pdf#page=5).
+In our coordinates that midpoint condition is `2h′(p)=s_left+s_right`.
+The equivalence above follows directly from the change of variables;
+the finite uniqueness and smallest-pocket proofs here remain explicit
+arguments for the stated parabola families.
+
 ## One scalar root proves global uniqueness
 
 For r≥1, the expression under the square root increases strictly with
@@ -189,10 +213,11 @@ Interior stationarity, divided by p_j^k, is precisely
 L_k(p_j/p_j₋₁) + R_k(p_j₊₁/p_j) = 2.
 ```
 
-Consequently the product of iterates of T_k is again strictly
+For m≥2, the product of iterates of T_k is again strictly
 increasing from one to beyond b/a. Compactness and strict insertion
 give an interior global optimum exactly as before, so **every one of
 these power laws has a unique finite total-area optimum for every m**.
+For m=1 there are only the two fixed endpoints and no interior choice.
 Adding an affine function to h, or multiplying it by a positive
 constant, does not change its maximizing slope labels: both sides
 of the stationarity equation transform together. Equivalently, the

@@ -252,6 +252,42 @@ public byte receipts, reading the finished proofs and drawings,
 and leaving this handoff accurate. No further reading-page controls
 are planned.
 
+Fifth publication receipt, **17:52 UTC**: **13bd46d** passed Pages;
+all **twenty canonical files changed today** match its public bytes.
+The working tree was clean before the final prose review.
+
+The final visual pass inspected the published phone and desktop
+chapter and all three new standalone drawings. Closed with actual
+orbital drawings of 2 / 3, 15 / 13, and Needle 8 / 21, with the
+turning arms visible. Their cycles took about **20.3, 20.2, and
+20.2 seconds**. The little opposite-turning lobe, fourteen petals,
+and singular tip still make a good reason to keep drawing. Their
+PNGs and all browser captures remain outside the repository.
+
+Final proof review clarified subscript notation, the fixed-endpoint
+m=1 case, and README paragraph breaks. A late literature check found
+a useful exact connection: under X=h′(P), with P uniform on the slope
+interval, the total-area deficit is L/2 times a scalar squared-error
+quantization error. Secants become cell averages and our stationarity
+condition is the boundary-midpoint condition. The finite-placement
+note derives that equivalence and links Gray and Neuhoff's
+[*Quantization* (1998), p. 2329](https://www.math.ucdavis.edu/~saito/data/quantization/44it06-gray.pdf#page=5)
+for the standard conditions. The pocket and scope proofs here remain
+explicit; no claim that the source proves our smallest-face result
+is intended. This gives tomorrow another literature entry point.
+
+The final source audit resolves **1,412 local references** and parses
+all **52 SVGs**. The mathematical controls, seven reproducible new
+data/drawing files, independent high-precision comparisons, and
+**13,654 public browser assertions** stand as recorded above.
+No additional UI, data, or drawing-geometry changes follow this review.
+
+Closing-entry clock: **17:58:47 UTC**. The measured visit began at
+**17:02:45 UTC**, with the full-hour target **18:02:45 UTC**. The final
+minutes are for publishing these last prose clarifications, checking
+their receipt, and reading the finished work. The concrete next
+questions above remain for another day.
+
 ## 2026-11-09 · Ten pockets, every compromise
 
 Started at **19:49:47 UTC**; the intended hour runs through

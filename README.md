@@ -533,6 +533,7 @@ the largest pocket gains about 2.7064%. The
 total area as a weighted secant variance and proves the dense-placement
 law. Regenerate the exact quadratic data and standalone picture with
 `python3 experiments/shifted_parabolas_figure.py --write`.
+
 For cubic intercepts, the [finite-placement proof](experiments/shifted_placement.md)
 finds the unique total-area optimum for every count by a monotone
 ratio recurrence. `python3 experiments/shifted_placement.py --write`
@@ -540,10 +541,12 @@ regenerates rational enclosures of its slopes and areas through 128 gaps.
 The [five-curve comparison](experiments/shifted_placement.svg) shows its
 complete band beside equal spacing and compares both with the density
 prediction. Regenerate it with `python3 experiments/shifted_placement_figure.py`.
+
 The same finite uniqueness proof extends to every real power intercept
 `h(p)=p^(k+1)/(k+1)`, k>0, on fixed positive endpoints. The optional
 `python3 experiments/power_placement.py --write` checks selected integer
 powers by exact polynomial ratio roots and independent full clipping.
+
 Strict convexity alone allows multiple optima: the
 [two-choice picture](experiments/two_choices.svg) uses a shifted quartic
 intercept with two equally good insertions, both gaining exactly 8%
@@ -551,6 +554,7 @@ over the midpoint. Its [short proof](experiments/two_choices.md) gives
 the complete parameter threshold at which the two choices merge.
 Regenerate its exact data and SVG with
 `python3 experiments/two_choices.py --write`.
+
 For every C² intercept with uniformly positive curvature, the
 [asymptotic smallest-pocket proof](experiments/shifted_maximin.md)
 shows that the same density reaches both area goals at leading order.
