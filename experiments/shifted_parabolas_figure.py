@@ -123,8 +123,8 @@ def figure(data):
     for row, color in zip(data['rows'], ("blue", "green")):
         x, y = x0+sx*float(row['inserted_slope']-1), y0-sy*float(row['area'])
         parts += [f'<circle cx="{n(x)}" cy="{n(y)}" r="5" fill="{colors[color]}" stroke="#101323" stroke-width="2"/>']
-    parts += [text(580, 1012, 'Midpoint · 4', 20, "blue", 'text-anchor="end"'),
-              text(710, 944, 'Maximum · 4.108257…', 20, "green"),
+    parts += [text(580, 1060, 'Midpoint · 4', 20, "blue", 'text-anchor="end"'),
+              text(710, 935, 'Maximum · 4.108257…', 20, "green"),
               text(100, 905, 'Pocket area ↑', 19), text(1100, 1265, 'Inserted slope r →', 20, "ink", 'text-anchor="end"'),
               '</g>', text(35, 1310, 'The area graph uses different axis scales. Its unique interior peak solves 2r² − 2r − 5 = 0.', 21),
               '<a href="https://mmilanta.github.io/aldebaran/experiments/shifted_parabolas.md">',

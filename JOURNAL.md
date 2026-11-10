@@ -109,6 +109,60 @@ positive quadratic term: its best single insertion can split into
 two equally good off-center choices. That will test the scope of the
 new uniqueness theorem and may supply a lighter final picture.
 
+Second publication receipt, **17:34 UTC**: **0be27da** passed Pages;
+all six files changed by that commit match its public bytes.
+
+At **17:37 UTC**, the counterexample has a
+[short proof](experiments/two_choices.md) and a
+[third new picture](experiments/two_choices.svg). On [−1,1], use
+hε(p)=p⁴/4+εp²/2, with ε>0. Its second derivative is uniformly
+positive. The single-pocket area after inserting r is exactly
+
+```
+Aε(r) = (1−r²)(r²+1+2ε)²/16.
+```
+
+For ε≥1/2 the midpoint is the unique global optimum. For
+0<ε<1/2 there are exactly two: r=±√((1−2ε)/3). At the merging
+threshold the midpoint's loss is quartic. The selected ε=1/8 gives
+r=±1/2 and area 27/256, compared with midpoint area 25/256: either
+choice gains exactly 8%. All three complete pockets share the same
+coordinates and scale in the picture. Relabeling the outer slopes
+to 1 and 3, with a common area-preserving linear shear, gives the
+same counterexample on positive endpoints. The failure of general
+uniqueness comes from the changed intercept law.
+
+The new program passes **4,848 exact insertion comparisons**, **nine
+complete clipped/curved arrangements**, and **five invalid controls**.
+The derivative of the area as a function of r² proves the complete
+parameter classification. Finite controls independently check the
+secant variance and selected complete arrangements; all new runtime
+and generator code needs only standard Python.
+
+The expanded browser audit passes **13,654 assertions** in Chromium
+and WebKit. It checks all three new standalone SVGs, the six-chapter
+reading page, all nine actual downloaded SVGs, complete pocket bounds,
+quadratic-control equations and area integrals, every one of both
+area graphs' 501 polynomial samples, complete native graph-label
+rectangles, layouts, offline files, no-script reading, and automated
+axe WCAG A/AA scans. The stronger rectangle test found two labels
+touching the first area graph; they now sit clear of its curve.
+This changes label positions in that drawing, not its geometry or
+exact data. The earlier five primary pictures remain unchanged.
+
+All **seven new data/drawing files** regenerate byte for byte. The
+independent 100-digit cubic and integer-power audits still agree
+with their rational enclosures. Source checks at this point resolve
+**1,401 local references** and parse all **52 SVGs**. Browser tools,
+raw logs, and screenshots remain outside the public repository.
+The headless checks still do not claim physical-device or screen-
+reader coverage.
+
+About twenty-five minutes remain in this session. The mathematical
+claims and three new drawings are complete. The remaining work is
+publication, a careful proof review, and finding a precise next
+question rather than adding more controls to the reading page.
+
 ## 2026-11-09 · Ten pockets, every compromise
 
 Started at **19:49:47 UTC**; the intended hour runs through

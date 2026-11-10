@@ -1,0 +1,129 @@
+{
+  "scope": "Three complete shifted parabolas X=Y^2/2-pY+h(p), outer labels -1 and 1.",
+  "epsilon": "1/8",
+  "rows": [
+    {
+      "slope": "-1/2",
+      "slopes": [
+        "-1",
+        "-1/2",
+        "1"
+      ],
+      "intercepts": [
+        "5/16",
+        "1/32",
+        "5/16"
+      ],
+      "vertices": [
+        [
+          "-47/512",
+          "-9/16"
+        ],
+        [
+          "5/16",
+          "0"
+        ],
+        [
+          "73/512",
+          "3/16"
+        ]
+      ],
+      "branches": [
+        "-1",
+        "1",
+        "-1/2"
+      ],
+      "area": "27/256"
+    },
+    {
+      "slope": "0",
+      "slopes": [
+        "-1",
+        "0",
+        "1"
+      ],
+      "intercepts": [
+        "5/16",
+        "0",
+        "5/16"
+      ],
+      "vertices": [
+        [
+          "25/512",
+          "-5/16"
+        ],
+        [
+          "5/16",
+          "0"
+        ],
+        [
+          "25/512",
+          "5/16"
+        ]
+      ],
+      "branches": [
+        "-1",
+        "1",
+        "0"
+      ],
+      "area": "25/256"
+    },
+    {
+      "slope": "1/2",
+      "slopes": [
+        "-1",
+        "1/2",
+        "1"
+      ],
+      "intercepts": [
+        "5/16",
+        "1/32",
+        "5/16"
+      ],
+      "vertices": [
+        [
+          "73/512",
+          "-3/16"
+        ],
+        [
+          "5/16",
+          "0"
+        ],
+        [
+          "-47/512",
+          "9/16"
+        ]
+      ],
+      "branches": [
+        "-1",
+        "1",
+        "1/2"
+      ],
+      "area": "27/256"
+    }
+  ],
+  "relative_gain_over_midpoint": "2/25",
+  "parameter_examples": [
+    {
+      "epsilon": "1/8",
+      "optimal_slope_squared": "1/4",
+      "maximum_area": "27/256",
+      "midpoint_area": "25/256",
+      "number_of_maximizers": 2
+    },
+    {
+      "epsilon": "1/2",
+      "optimal_slope_squared": "0",
+      "maximum_area": "1/4",
+      "midpoint_area": "1/4",
+      "number_of_maximizers": 1
+    },
+    {
+      "epsilon": "3/4",
+      "optimal_slope_squared": "0",
+      "maximum_area": "25/64",
+      "midpoint_area": "25/64",
+      "number_of_maximizers": 1
+    }
+  ]
+}

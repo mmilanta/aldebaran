@@ -544,6 +544,13 @@ The same finite uniqueness proof extends to every real power intercept
 `h(p)=p^(k+1)/(k+1)`, k>0, on fixed positive endpoints. The optional
 `python3 experiments/power_placement.py --write` checks selected integer
 powers by exact polynomial ratio roots and independent full clipping.
+Strict convexity alone allows multiple optima: the
+[two-choice picture](experiments/two_choices.svg) uses a shifted quartic
+intercept with two equally good insertions, both gaining exactly 8%
+over the midpoint. Its [short proof](experiments/two_choices.md) gives
+the complete parameter threshold at which the two choices merge.
+Regenerate its exact data and SVG with
+`python3 experiments/two_choices.py --write`.
 
 The [outward-offset plot](experiments/parallel_offset.svg) follows each
 endpoint from 40 crossing pairs to 106, through exactly 33 inverse

@@ -195,7 +195,9 @@ give an interior global optimum exactly as before, so **every one of
 these power laws has a unique finite total-area optimum for every m**.
 Adding an affine function to h, or multiplying it by a positive
 constant, does not change its maximizing slope labels: both sides
-of the stationarity equation transform together.
+of the stationarity equation transform together. Equivalently, the
+secant variance multiplies every candidate's area by that same
+positive constant squared; the affine term cancels.
 
 The physical gap direction also has a direct proof. At a fixed p, let
 
@@ -351,6 +353,11 @@ all-count proof above; they do not replace it.
 An additional exact-rational solution, a=2, p₁=17, b=26, exercises
 the overlapping-midpoint branch of the bisection. Another endpoint
 span of only 2⁻¹²⁰ exercises the precision adjustment.
+
+The [two-choice example](two_choices.md) shows why the family matters:
+a different intercept law with uniformly positive second derivative
+has exactly two global best insertions. Its
+[standalone picture](two_choices.svg) compares both with the midpoint.
 
 The [earlier note](shifted_parabolas.md) continues to cover general
 discrete-convex intercepts and the general asymptotic density theorem.
