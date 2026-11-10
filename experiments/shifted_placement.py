@@ -3,13 +3,16 @@
 Monotone ratio shooting locates every slope using rational enclosures.
 The proof covers every count and every fixed positive endpoint pair;
 finite controls audit the interval arithmetic and independent areas.
-Only the standard library. See shifted_placement.md.
+The shared solver also supports integer derivative powers; the separate
+power_placement.py audits that extension. Only the standard library.
+See shifted_placement.md.
 """
 
 import argparse
 from fractions import Fraction as Q
+from functools import lru_cache
 import json
-from math import isqrt
+from math import comb, isqrt
 from pathlib import Path
 from random import Random
 
@@ -33,14 +36,51 @@ def sqrt_bounds(value, bits):
     return lower, upper
 
 
-def next_ratio(r, bits):
+def next_ratio(r, bits, power=2):
     """T(r) is strictly increasing for r>=1; its rational bounds are exact."""
-    require(type(r) is Q and r >= 1, "Use a rational ratio at least one.")
-    low, high = sqrt_bounds(17-4/r-4/(r*r), bits)
-    return (low-1)/2, (high-1)/2
+    require(type(r) is Q and r >= 1 and type(power) is int and power >= 1
+            and type(bits) is int and bits >= 1,
+            "Use a rational ratio at least one, a positive integer power, and positive precision.")
+    if power == 2:
+        low, high = sqrt_bounds(17-4/r-4/(r*r), bits)
+        return (low-1)/2, (high-1)/2
+    if power == 1:
+        exact = 2-1/r
+        return exact, exact
+    # For f(p)=p^power, stationarity says sum(t^j)+sum(r^-j)
+    # =2(power+1). Its t polynomial is increasing and convex on [1,2].
+    target = 2*(power+1)-sum(r**(-j) for j in range(power+1))
+    def polynomial(t):
+        value, derivative = Q(1), Q(0)
+        for _ in range(power):
+            derivative, value = derivative*t+value, value*t+1
+        return value-target, derivative
+    lo, hi, grid = Q(1), Q(2), 1 << bits
+    while hi-lo > Q(2, grid):
+        flo, _ = polynomial(lo)
+        fhi, dhi = polynomial(hi)
+        require(flo <= 0 <= fhi, "The monotone power-law root lost its bracket.")
+        if flo == 0:
+            return lo, lo
+        if fhi == 0:
+            return hi, hi
+        chord = lo-flo*(hi-lo)/(fhi-flo)
+        tangent = hi-fhi/dhi
+        lower = max(lo, Q((chord*grid).__floor__(), grid))
+        upper = min(hi, Q((tangent*grid).__ceil__(), grid))
+        if lower == lo and upper == hi:
+            middle = (lo+hi)/2
+            value, _ = polynomial(middle)
+            if value <= 0:
+                lower = middle
+            else:
+                upper = middle
+        lo, hi = lower, upper
+    require(polynomial(lo)[0] <= 0 <= polynomial(hi)[0], "A power-law root has invalid exact signs.")
+    return lo, hi
 
 
-def orbit(initial, gaps, bits):
+def orbit(initial, gaps, bits, power=2):
     """Enclose all p_j/p_0, including accumulated product roundoff."""
     lo, hi = initial
     require(type(gaps) is int and gaps >= 1 and type(bits) is int and bits >= 8
@@ -55,32 +95,47 @@ def orbit(initial, gaps, bits):
         low = Q((low*grid).__floor__(), grid)
         high = Q((high*grid).__ceil__(), grid)
         nodes.append((low, high))
-        rlo = next_ratio(rlo, bits)[0]
-        rhi = next_ratio(rhi, bits)[1]
+        rlo = next_ratio(rlo, bits, power)[0]
+        rhi = next_ratio(rhi, bits, power)[1]
     return nodes
 
 
-def interval_error(left, right):
+@lru_cache(maxsize=None)
+def variance_coefficients(power):
+    """Positive coefficients of E(a,a+g) for f(p)=p^power."""
+    return tuple((2*power-i-j, i+j+1,
+                  Q(comb(power, i)*comb(power, j)*i*j,
+                    2*(i+j+1)*(i+1)*(j+1)))
+                 for i in range(1, power+1) for j in range(1, power+1))
+
+
+def interval_error(left, right, power=2):
     """Positive interval polynomial for E(a,b), when a<b throughout."""
     a, A = left
     b, B = right
     require(0 < a <= A < b <= B, "The interval gap endpoints must be positive and separated.")
     g, G = b-A, B-a
+    if power != 2:
+        terms = variance_coefficients(power)
+        return (sum(c*a**i*g**j for i, j, c in terms),
+                sum(c*A**i*G**j for i, j, c in terms))
     q, R = (a+b)/2, (A+B)/2
     return q*q*g**3/6+g**5/360, R*R*G**3/6+G**5/360
 
 
-def continuous_area(left, right):
-    return ((right**5-left**5)/5-(right**3-left**3)**2/(9*(right-left)))/2
+def continuous_area(left, right, power=2):
+    return ((right**(2*power+1)-left**(2*power+1))/(2*power+1)
+            -(right**(power+1)-left**(power+1))**2/((power+1)**2*(right-left)))/2
 
 
-def partition(gaps, left=Q(1), right=Q(3), bits=80):
+def partition(gaps, left=Q(1), right=Q(3), bits=80, power=2):
     require(type(gaps) is int and gaps >= 1 and type(bits) is int and bits >= 16
-            and type(left) is Q and type(right) is Q and 0 < left < right,
-            "Use a positive gap count, at least 16 bits, and positive ordered rational endpoints.")
+            and type(left) is Q and type(right) is Q and 0 < left < right
+            and type(power) is int and power >= 1,
+            "Use a positive gap count and integer power, at least 16 bits, and positive ordered rational endpoints.")
     if gaps == 1:
         nodes = [(left, left), (right, right)]
-        total = continuous_area(left, right)
+        total = continuous_area(left, right, power)
         return {"gaps": gaps, "endpoints": (left, right), "initial_ratio": (right/left, right/left),
                 "nodes": nodes, "deficit": (total, total), "area": (Q(0), Q(0))}
     target = right/left
@@ -93,7 +148,7 @@ def partition(gaps, left=Q(1), right=Q(3), bits=80):
     work = bits+48+2*gaps.bit_length()+narrow
     while hi-lo > tolerance:
         middle = (lo+hi)/2
-        low, high = orbit((middle, middle), gaps, work)[-1]
+        low, high = orbit((middle, middle), gaps, work, power)[-1]
         if high < target:
             lo = middle
         elif low > target:
@@ -102,19 +157,19 @@ def partition(gaps, left=Q(1), right=Q(3), bits=80):
             # This also handles an exact rational shooting root: do not infer
             # a sign from interval overlap or from a rounded midpoint.
             newlo, newhi = max(lo, middle-tolerance/2), min(hi, middle+tolerance/2)
-            if (orbit((newlo, newlo), gaps, work)[-1][1] < target
-                    < orbit((newhi, newhi), gaps, work)[-1][0]):
+            if (orbit((newlo, newlo), gaps, work, power)[-1][1] < target
+                    < orbit((newhi, newhi), gaps, work, power)[-1][0]):
                 lo, hi = newlo, newhi
             else:
                 work += 32
-    require(orbit((lo, lo), gaps, work)[-1][1] < target
-            < orbit((hi, hi), gaps, work)[-1][0],
+    require(orbit((lo, lo), gaps, work, power)[-1][1] < target
+            < orbit((hi, hi), gaps, work, power)[-1][0],
             "Shooting endpoints must have strictly certified opposite signs.")
-    nodes = [(left*a, left*b) for a, b in orbit((lo, hi), gaps, work)]
+    nodes = [(left*a, left*b) for a, b in orbit((lo, hi), gaps, work, power)]
     nodes[0], nodes[-1] = (left, left), (right, right)
-    errors = [interval_error(a, b) for a, b in zip(nodes, nodes[1:])]
+    errors = [interval_error(a, b, power) for a, b in zip(nodes, nodes[1:])]
     lower, upper = sum(a for a, _ in errors), sum(b for _, b in errors)
-    total = continuous_area(left, right)
+    total = continuous_area(left, right, power)
     return {"gaps": gaps, "endpoints": (left, right), "initial_ratio": (lo, hi),
             "nodes": nodes, "deficit": (lower, upper), "area": (total-upper, total-lower)}
 

@@ -153,6 +153,132 @@ five-curve bands and gives all three placements on common slope rulers.
 The density quantiles and finite optimum almost coincide at that scale;
 the table retains their visible decimal differences.
 
+## The same argument covers every positive power
+
+The square-root formula is special to the cubic, but global uniqueness
+does not depend on it. For **every real k>0**, take
+
+```
+h(p) = p^(k+1)/(k+1),       f(p) = p^k,
+0 < a < b.
+```
+
+Define continuous functions, with value one at r=t=1,
+
+```
+L_k(r) = [1−r^(−k−1)] / [(k+1)(1−1/r)],
+R_k(t) = [t^(k+1)−1] / [(k+1)(t−1)].
+```
+
+L_k(r) is the average of x^k over [1/r,1]. It decreases strictly from
+one toward 1/(k+1) as r increases from one. R_k(t) is the average over
+[1,t]. It increases strictly from one to infinity. Thus
+
+```
+T_k(r) = R_k⁻¹(2−L_k(r))
+```
+
+exists for every r≥1, is continuous and strictly increasing, has
+T_k(1)=1, and exceeds one for r>1. These average-value descriptions
+prove the monotonicity without relying on signs of complicated
+derivatives or on integer exponents.
+
+Interior stationarity, divided by p_j^k, is precisely
+
+```
+L_k(p_j/p_j₋₁) + R_k(p_j₊₁/p_j) = 2.
+```
+
+Consequently the product of iterates of T_k is again strictly
+increasing from one to beyond b/a. Compactness and strict insertion
+give an interior global optimum exactly as before, so **every one of
+these power laws has a unique finite total-area optimum for every m**.
+Adding an affine function to h, or multiplying it by a positive
+constant, does not change its maximizing slope labels: both sides
+of the stationarity equation transform together.
+
+The physical gap direction also has a direct proof. At a fixed p, let
+
+```
+left(g)  = f(p) − average_[p−g,p] f,
+right(g) = average_[p,p+g] f − f(p).
+```
+
+Both quantities increase strictly with g. Stationarity equates the
+left quantity at the preceding gap with the right quantity at the
+following gap. If k>1, f is strictly convex, and `right(g)>left(g)`
+where both are defined. Hence the next gap is strictly smaller.
+If 0<k<1, strict concavity reverses that comparison and the next gap
+is strictly larger. At k=1 they are equal, recovering the quadratic
+intercept family's equal spacing.
+
+To justify each comparison within the interval, suppose the claimed
+gap order fails and compare both averages at the smaller of the two
+gaps. That smaller gap fits on both sides of p. Monotonicity in gap
+length then contradicts stationarity. The argument requires neither
+extension of f beyond [a,b] nor equal proposed neighboring gaps.
+
+For four gaps on [1,3], the unique interior labels are approximately:
+
+| Intercept h(p) | First | Second | Third |
+| --- | ---: | ---: | ---: |
+| p²/2 | 1.5 | 2 | 2.5 |
+| p³/3 | 1.650240766475 | 2.162146131438 | 2.603606875834 |
+| p⁴/4 | 1.802083323788 | 2.296155858153 | 2.678868751049 |
+| p⁵/5 | 1.940517811241 | 2.401702260899 | 2.733432897682 |
+| p⁹/9 | 2.310895451970 | 2.639549474460 | 2.846032161103 |
+
+The [power-law record](power_placement.json) encloses these nodes and
+their areas by rationals. As the power grows, the intercept bends
+much more strongly near the right endpoint and the slopes gather there.
+This table compares labels; its different families do not share a
+common area scale.
+
+## Exact polynomial controls for integer powers
+
+The theorem above includes noninteger k. The optional rational program
+below supports **positive integer k**. In that case stationarity reduces
+to the increasing polynomial equation
+
+```
+Σ[j=0,…,k] t^j = 2(k+1) − Σ[j=0,…,k] r^(−j).
+```
+
+Its solution lies in [1,2]. At t=1 the left side is k+1, while the
+right side is at least that and less than 2k+1. At t=2 the left side
+is 2^(k+1)−1≥2k+1. The polynomial increases and is convex there.
+Its chord gives a lower root bound; its upper tangent gives an upper
+bound. Outward dyadic rounding retains both signs. The k=1 case uses
+the exact rational expression T₁(r)=2−1/r; k=2 retains the earlier
+square-root implementation.
+
+The interval variance also has an exact positive polynomial. Write
+v=u+g and expand f(u+x)=(u+x)^k. Its constant term has no variance;
+integrating every other pair of monomials gives
+
+```
+E(u,u+g) = Σ[i,j=1,…,k] cᵢⱼ u^(2k−i−j) g^(i+j+1),
+cᵢⱼ = binom(k,i) binom(k,j) ij /
+       [2(i+j+1)(i+1)(j+1)] > 0.
+```
+
+All powers are nonnegative on these positive endpoints. This supplies
+simple rational upper and lower interval evaluations, independent of
+the cancellation-prone difference of its two integral terms. Direct
+integration of f² and of f checks the identity separately.
+
+```sh
+python3 experiments/power_placement.py
+python3 experiments/power_placement.py --write
+```
+
+The calculation audits k=1,2,3,4,8, with two through 32 gaps. It also
+compares complete clipped arrangements for the smaller counts and
+exactly brackets the associated density quantiles, whose
+`p^((2k+1)/3)` coordinates are equally spaced. The implemented
+integer-power arithmetic does not claim to enclose noninteger powers;
+those are covered by the continuous proof above.
+
 ## Numbers with a rational certificate
 
 For [a,b]=[1,3], the two-gap case recovers the independently known
@@ -228,5 +354,6 @@ span of only 2⁻¹²⁰ exercises the precision adjustment.
 
 The [earlier note](shifted_parabolas.md) continues to cover general
 discrete-convex intercepts and the general asymptotic density theorem.
-General finite placement, smallest-pocket optima, and a shifted-family
-compromise frontier remain separate questions.
+Finite placement for intercept laws outside the power families,
+smallest-pocket optima, and a shifted-family compromise frontier remain
+separate questions.

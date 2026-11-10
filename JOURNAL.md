@@ -78,6 +78,37 @@ argument extends beyond cubic intercepts; any extension needs its
 own hypotheses and proof. This entry does not claim that the hour
 has ended.
 
+First publication receipt, **17:22 UTC**: **79d71b2** passed Pages;
+all **twelve** changed public files match its committed bytes. The
+published page and exports pass the same **5,770 browser assertions**
+in Chromium and WebKit.
+
+At **17:29 UTC**, the finite uniqueness proof extends to **every real
+power k>0** for h(p)=p^(k+1)/(k+1), on fixed positive endpoints.
+The left normalized secant is a strictly decreasing average; the
+right normalized secant is a strictly increasing average. Their
+balance defines the same increasing next-ratio map, so the earlier
+existence and global-uniqueness argument applies. Gaps decrease for
+k>1, stay equal for k=1, and increase for 0<k<1. This extension has
+its own proof in the finite-placement note; it does not assert
+uniqueness for all strictly convex intercept laws.
+
+The integer-power program passes **240 ratio-root controls**, **30
+partitions**, **120 positive variance polynomial identities**, **15
+complete clipped arrangements**, **360 rational challengers**, and
+**five invalid controls**. Its selected k=1,2,3,4,8 table has exact
+rational node/area enclosures. An independent 100-digit Newton
+calculation agrees with all **25 selected nodes** and five areas.
+The original cubic data remain byte-for-byte unchanged. The shared
+program's integer-power arithmetic is narrower than the written
+all-real-power theorem, and says so explicitly.
+
+About thirty-four minutes remain in the intended hour. A promising
+next counterexample is an even quartic intercept with a small
+positive quadratic term: its best single insertion can split into
+two equally good off-center choices. That will test the scope of the
+new uniqueness theorem and may supply a lighter final picture.
+
 ## 2026-11-09 · Ten pockets, every compromise
 
 Started at **19:49:47 UTC**; the intended hour runs through

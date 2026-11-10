@@ -540,6 +540,10 @@ regenerates rational enclosures of its slopes and areas through 128 gaps.
 The [five-curve comparison](experiments/shifted_placement.svg) shows its
 complete band beside equal spacing and compares both with the density
 prediction. Regenerate it with `python3 experiments/shifted_placement_figure.py`.
+The same finite uniqueness proof extends to every real power intercept
+`h(p)=p^(k+1)/(k+1)`, k>0, on fixed positive endpoints. The optional
+`python3 experiments/power_placement.py --write` checks selected integer
+powers by exact polynomial ratio roots and independent full clipping.
 
 The [outward-offset plot](experiments/parallel_offset.svg) follows each
 endpoint from 40 crossing pairs to 106, through exactly 33 inverse
