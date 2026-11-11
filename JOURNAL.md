@@ -70,6 +70,51 @@ publish; the next investigation is whether the five-curve cubic case
 admits a comparably clean global support. Yesterday's rational
 five-curve comparator remains only a comparator until proved otherwise.
 
+First publication receipt, **17:26 UTC**: **c70c66a** passed Pages;
+all **nine** changed public files match the committed bytes. The
+published reading page and new export pass the same **3,646 browser
+assertions** in Chromium and WebKit.
+
+At **17:32 UTC**, the [five-curve companion](experiments/cubic_five.md)
+also has a global proof. On the same cubic [1,3] family, its unique
+maximin labels are approximately `1, 1.648370786436389,
+2.160107434272252, 2.603183034847801, 3`. The three triangles all
+have area **0.494437008327896680…**, and the other three faces
+are strictly larger. Total area is about **5.097115943716227**.
+Relative to the largest-total arrangement, the minimum gains about
+**0.653723%**, for a total-area cost of about **0.000116315%**.
+
+The three triangular log-areas are concave, and any positive weighted
+sum is strictly concave in the three interior labels. A five-variable
+rational contraction certifies equal triangle areas and a zero combined
+gradient with positive weights about `0.496343048058099,
+0.000762037190085, 0.502894914751817`. The tiny middle weight matters.
+The complete remaining face list is bounded strictly above that common
+triangle value, so the upper bound from triangles is attained for all
+six faces. This is a global maximum and uniqueness proof, not merely
+a locally stationary candidate.
+
+The new standard-library command passes **24 complete arrangements**,
+**144 independently checked faces**, **five certified precisions**,
+**one nearby nonroot rejection**, and **five invalid controls**.
+The two precision limits exposed a certificate-presentation issue:
+fixed 192-bit outward rounding was too coarse to retain a strict
+self-map when the box itself had 192-bit radius. Extra output bits
+now scale with requested precision, and both 48 and 192 bits pass.
+The default area enclosure has width below 9×10⁻²⁹.
+
+Independent symbolic differentiation agrees exactly with all five
+equations and **all 25 Jacobian entries**. Independent 100-digit
+root solving and six polygon shoelace integrals lie inside every
+saved node, weight, area, minimum, and total enclosure. The new JSON
+reproduces byte for byte. No further drawing or runtime control is
+needed for this companion theorem.
+
+About thirty-six minutes remain through **18:08:33 UTC**. Both finite
+cases are now solved. Next work is a deliberate proof and implementation
+review, looking for a simpler geometric explanation or a useful precise
+next question, with publication and artifact receipts still to finish.
+
 ## 2026-11-10 · A midpoint moves
 
 Started at **17:02:45 UTC**; the intended hour runs through

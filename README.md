@@ -577,6 +577,15 @@ python3 experiments/cubic_maximin.py --write
 python3 experiments/cubic_maximin_figure.py
 ```
 
+The [five-curve companion](experiments/cubic_five.md) proves a unique
+cubic maximin on the same endpoints. Its three triangles have area
+about 0.494437008328; all other faces are larger. The middle triangle's
+positive supporting weight is very small, but the full five-dimensional
+rational contraction includes it. Run
+`python3 experiments/cubic_five.py --write`
+for the root box, all six area enclosures, and a freshly
+certified comparison with the total-area optimum.
+
 The [outward-offset plot](experiments/parallel_offset.svg) follows each
 endpoint from 40 crossing pairs to 106, through exactly 33 inverse
 pair-births. Rational contraction boxes certify all 66 contact pairs,
