@@ -215,6 +215,46 @@ There are about twenty minutes left through **18:08:33 UTC**. The
 remaining review will check the final public artifacts and revisit
 the actual drawings that started this notebook.
 
+At **17:57 UTC**, the endpoint review actually resolves one more
+question: the [four-curve theorem](experiments/cubic_four_general.md)
+now holds for **every fixed positive endpoint pair** a<b, still for
+h(p)=p³/3. Put L=b−a and q=1+3a/L. The unique normalized root is
+
+```
+32u³+(32q+8)u²−(4q+13)u−q=0,   1/4<u<2/5.
+```
+
+The labels are `a, a+Lu, a+L·9u/(8u+1), b`. All three areas equal
+`L⁵u(1−u)(q+u)²/36`. This extension does not generalize the separate
+five-curve theorem beyond [1,3] and does not solve the frontier.
+
+The global log-concavity certificate is especially clean in positive
+gap coordinates. Differentiate at fixed outer labels with
+`∂x=∂U−∂V`, `∂y=∂V−∂W`. The two Hessian-sign polynomials have
+**80 and 431 positive coefficients** before specializing any endpoints.
+The three supporting weights factor into four everywhere-positive
+quadratics and a negative quartic; its five exact Bernstein coefficients
+on [1/4,2/5] are all negative. Continuous rational-function identities
+prove equal areas and zero weighted gradient. Thus this is a global
+all-endpoint proof, not extrapolation from the first [1,3] result.
+
+The new standard-library command reconstructs all **511 coefficients**
+and the support identities, then passes **six complete rational
+arrangements**, **eighteen enclosed faces**, **four invalid controls**,
+and agreement with the independent [1,3] certificate. Its controls
+include a span of 2⁻¹²⁰ and very wide positive endpoint ratios.
+Independent symbolic differentiation and substitution agree with
+**every one of the 511 coefficients**. Independent 250-digit roots,
+all **24 nodes**, and **18 original-coordinate polygon areas** lie
+inside the rational bounds, including that very narrow span.
+
+The earlier prospective question about arbitrary four-curve endpoints
+is now answered; keep the five-curve endpoint question, other counts,
+and full compromise classification for another visit. About eleven
+minutes remain. No further mathematical or UI work is planned in this
+hour: the remaining minutes are for final receipts, proof reading,
+and enjoying the actual drawings.
+
 ## 2026-11-10 · A midpoint moves
 
 Started at **17:02:45 UTC**; the intended hour runs through

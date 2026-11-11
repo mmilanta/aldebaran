@@ -1,0 +1,4825 @@
+{
+  "scope": "Unique four-curve cubic maximin on every fixed positive endpoint pair.",
+  "gap_coordinate_concavity": [
+    {
+      "polynomial": "negative_log_hessian_xx_numerator",
+      "degree": 8,
+      "positive_terms": 80,
+      "coefficients": [
+        {
+          "powers_a_u_v_w": [
+            0,
+            0,
+            0,
+            8
+          ],
+          "coefficient": "1/324"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            0,
+            1,
+            7
+          ],
+          "coefficient": "2/81"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            0,
+            2,
+            6
+          ],
+          "coefficient": "7/81"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            0,
+            3,
+            5
+          ],
+          "coefficient": "14/81"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "coefficient": "17/81"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            0,
+            5,
+            3
+          ],
+          "coefficient": "4/27"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            0,
+            6,
+            2
+          ],
+          "coefficient": "4/81"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            1,
+            0,
+            7
+          ],
+          "coefficient": "5/162"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            1,
+            1,
+            6
+          ],
+          "coefficient": "35/162"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            1,
+            2,
+            5
+          ],
+          "coefficient": "35/54"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            1,
+            3,
+            4
+          ],
+          "coefficient": "85/81"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            1,
+            4,
+            3
+          ],
+          "coefficient": "25/27"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            1,
+            5,
+            2
+          ],
+          "coefficient": "10/27"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            2,
+            0,
+            6
+          ],
+          "coefficient": "11/81"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            2,
+            1,
+            5
+          ],
+          "coefficient": "22/27"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            2,
+            2,
+            4
+          ],
+          "coefficient": "107/54"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            2,
+            3,
+            3
+          ],
+          "coefficient": "7/3"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            2,
+            4,
+            2
+          ],
+          "coefficient": "7/6"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            3,
+            0,
+            5
+          ],
+          "coefficient": "55/162"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            3,
+            1,
+            4
+          ],
+          "coefficient": "133/81"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            3,
+            2,
+            3
+          ],
+          "coefficient": "26/9"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            3,
+            3,
+            2
+          ],
+          "coefficient": "52/27"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            4,
+            0,
+            4
+          ],
+          "coefficient": "163/324"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            4,
+            1,
+            3
+          ],
+          "coefficient": "95/54"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            4,
+            2,
+            2
+          ],
+          "coefficient": "95/54"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            5,
+            0,
+            3
+          ],
+          "coefficient": "4/9"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            5,
+            1,
+            2
+          ],
+          "coefficient": "8/9"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            6,
+            0,
+            2
+          ],
+          "coefficient": "2/9"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            0,
+            0,
+            7
+          ],
+          "coefficient": "1/27"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            0,
+            1,
+            6
+          ],
+          "coefficient": "7/27"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            0,
+            2,
+            5
+          ],
+          "coefficient": "7/9"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            0,
+            3,
+            4
+          ],
+          "coefficient": "34/27"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            0,
+            4,
+            3
+          ],
+          "coefficient": "10/9"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            0,
+            5,
+            2
+          ],
+          "coefficient": "4/9"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            1,
+            0,
+            6
+          ],
+          "coefficient": "8/27"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            1,
+            1,
+            5
+          ],
+          "coefficient": "16/9"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            1,
+            2,
+            4
+          ],
+          "coefficient": "13/3"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            1,
+            3,
+            3
+          ],
+          "coefficient": "46/9"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            1,
+            4,
+            2
+          ],
+          "coefficient": "23/9"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            2,
+            0,
+            5
+          ],
+          "coefficient": "1"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            2,
+            1,
+            4
+          ],
+          "coefficient": "44/9"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            2,
+            2,
+            3
+          ],
+          "coefficient": "26/3"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            2,
+            3,
+            2
+          ],
+          "coefficient": "52/9"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            3,
+            0,
+            4
+          ],
+          "coefficient": "49/27"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            3,
+            1,
+            3
+          ],
+          "coefficient": "58/9"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            3,
+            2,
+            2
+          ],
+          "coefficient": "58/9"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            4,
+            0,
+            3
+          ],
+          "coefficient": "17/9"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            4,
+            1,
+            2
+          ],
+          "coefficient": "34/9"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            5,
+            0,
+            2
+          ],
+          "coefficient": "10/9"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            0,
+            0,
+            6
+          ],
+          "coefficient": "1/6"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            0,
+            1,
+            5
+          ],
+          "coefficient": "1"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            0,
+            2,
+            4
+          ],
+          "coefficient": "22/9"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            0,
+            3,
+            3
+          ],
+          "coefficient": "26/9"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            0,
+            4,
+            2
+          ],
+          "coefficient": "13/9"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            1,
+            0,
+            5
+          ],
+          "coefficient": "1"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            1,
+            1,
+            4
+          ],
+          "coefficient": "89/18"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            1,
+            2,
+            3
+          ],
+          "coefficient": "53/6"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            1,
+            3,
+            2
+          ],
+          "coefficient": "53/9"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            2,
+            0,
+            4
+          ],
+          "coefficient": "43/18"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            2,
+            1,
+            3
+          ],
+          "coefficient": "26/3"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "coefficient": "26/3"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            3,
+            0,
+            3
+          ],
+          "coefficient": "53/18"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            3,
+            1,
+            2
+          ],
+          "coefficient": "53/9"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            4,
+            0,
+            2
+          ],
+          "coefficient": "37/18"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            0,
+            0,
+            5
+          ],
+          "coefficient": "1/3"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            0,
+            1,
+            4
+          ],
+          "coefficient": "5/3"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            0,
+            2,
+            3
+          ],
+          "coefficient": "3"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            0,
+            3,
+            2
+          ],
+          "coefficient": "2"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            1,
+            0,
+            4
+          ],
+          "coefficient": "4/3"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            1,
+            1,
+            3
+          ],
+          "coefficient": "5"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            1,
+            2,
+            2
+          ],
+          "coefficient": "5"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            2,
+            0,
+            3
+          ],
+          "coefficient": "2"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            2,
+            1,
+            2
+          ],
+          "coefficient": "4"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            3,
+            0,
+            2
+          ],
+          "coefficient": "5/3"
+        },
+        {
+          "powers_a_u_v_w": [
+            4,
+            0,
+            0,
+            4
+          ],
+          "coefficient": "1/4"
+        },
+        {
+          "powers_a_u_v_w": [
+            4,
+            0,
+            1,
+            3
+          ],
+          "coefficient": "1"
+        },
+        {
+          "powers_a_u_v_w": [
+            4,
+            0,
+            2,
+            2
+          ],
+          "coefficient": "1"
+        },
+        {
+          "powers_a_u_v_w": [
+            4,
+            1,
+            0,
+            3
+          ],
+          "coefficient": "1/2"
+        },
+        {
+          "powers_a_u_v_w": [
+            4,
+            1,
+            1,
+            2
+          ],
+          "coefficient": "1"
+        },
+        {
+          "powers_a_u_v_w": [
+            4,
+            2,
+            0,
+            2
+          ],
+          "coefficient": "1/2"
+        }
+      ]
+    },
+    {
+      "polynomial": "log_hessian_determinant_numerator",
+      "degree": 16,
+      "positive_terms": 431,
+      "coefficients": [
+        {
+          "powers_a_u_v_w": [
+            0,
+            2,
+            2,
+            12
+          ],
+          "coefficient": "1/8748"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            2,
+            3,
+            11
+          ],
+          "coefficient": "1/729"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            2,
+            4,
+            10
+          ],
+          "coefficient": "11/1458"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            2,
+            5,
+            9
+          ],
+          "coefficient": "55/2187"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            2,
+            6,
+            8
+          ],
+          "coefficient": "370/6561"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            2,
+            7,
+            7
+          ],
+          "coefficient": "584/6561"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            2,
+            8,
+            6
+          ],
+          "coefficient": "658/6561"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            2,
+            9,
+            5
+          ],
+          "coefficient": "524/6561"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            2,
+            10,
+            4
+          ],
+          "coefficient": "284/6561"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            2,
+            11,
+            3
+          ],
+          "coefficient": "32/2187"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            2,
+            12,
+            2
+          ],
+          "coefficient": "16/6561"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            3,
+            1,
+            12
+          ],
+          "coefficient": "5/17496"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            3,
+            2,
+            11
+          ],
+          "coefficient": "5/972"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            3,
+            3,
+            10
+          ],
+          "coefficient": "55/1458"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            3,
+            4,
+            9
+          ],
+          "coefficient": "1375/8748"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            3,
+            5,
+            8
+          ],
+          "coefficient": "925/2187"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            3,
+            6,
+            7
+          ],
+          "coefficient": "5110/6561"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            3,
+            7,
+            6
+          ],
+          "coefficient": "6580/6561"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            3,
+            8,
+            5
+          ],
+          "coefficient": "655/729"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            3,
+            9,
+            4
+          ],
+          "coefficient": "3550/6561"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            3,
+            10,
+            3
+          ],
+          "coefficient": "440/2187"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            3,
+            11,
+            2
+          ],
+          "coefficient": "80/2187"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            4,
+            0,
+            12
+          ],
+          "coefficient": "1/6561"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            4,
+            1,
+            11
+          ],
+          "coefficient": "107/17496"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            4,
+            2,
+            10
+          ],
+          "coefficient": "1205/17496"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            4,
+            3,
+            9
+          ],
+          "coefficient": "20255/52488"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "coefficient": "8549/6561"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            4,
+            5,
+            7
+          ],
+          "coefficient": "37853/13122"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            4,
+            6,
+            6
+          ],
+          "coefficient": "1054/243"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            4,
+            7,
+            5
+          ],
+          "coefficient": "29146/6561"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            4,
+            8,
+            4
+          ],
+          "coefficient": "19744/6561"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            4,
+            9,
+            3
+          ],
+          "coefficient": "8155/6561"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            4,
+            10,
+            2
+          ],
+          "coefficient": "1631/6561"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            5,
+            0,
+            11
+          ],
+          "coefficient": "5/2187"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            5,
+            1,
+            10
+          ],
+          "coefficient": "475/8748"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            5,
+            2,
+            9
+          ],
+          "coefficient": "1016/2187"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            5,
+            3,
+            8
+          ],
+          "coefficient": "55307/26244"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            5,
+            4,
+            7
+          ],
+          "coefficient": "307169/52488"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            5,
+            5,
+            6
+          ],
+          "coefficient": "555007/52488"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            5,
+            6,
+            5
+          ],
+          "coefficient": "663281/52488"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            5,
+            7,
+            4
+          ],
+          "coefficient": "256603/26244"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            5,
+            8,
+            3
+          ],
+          "coefficient": "13237/2916"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            5,
+            9,
+            2
+          ],
+          "coefficient": "13237/13122"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            6,
+            0,
+            10
+          ],
+          "coefficient": "34/2187"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            6,
+            1,
+            9
+          ],
+          "coefficient": "2395/8748"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            6,
+            2,
+            8
+          ],
+          "coefficient": "24725/13122"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            6,
+            3,
+            7
+          ],
+          "coefficient": "15331/2187"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            6,
+            4,
+            6
+          ],
+          "coefficient": "832339/52488"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            6,
+            5,
+            5
+          ],
+          "coefficient": "298333/13122"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            6,
+            6,
+            4
+          ],
+          "coefficient": "358567/17496"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            6,
+            7,
+            3
+          ],
+          "coefficient": "142445/13122"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            6,
+            8,
+            2
+          ],
+          "coefficient": "142445/52488"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            7,
+            0,
+            9
+          ],
+          "coefficient": "46/729"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            7,
+            1,
+            8
+          ],
+          "coefficient": "46279/52488"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            7,
+            2,
+            7
+          ],
+          "coefficient": "129889/26244"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            7,
+            3,
+            6
+          ],
+          "coefficient": "43597/2916"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            7,
+            4,
+            5
+          ],
+          "coefficient": "1405073/52488"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            7,
+            5,
+            4
+          ],
+          "coefficient": "758137/26244"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            7,
+            6,
+            3
+          ],
+          "coefficient": "116809/6561"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            7,
+            7,
+            2
+          ],
+          "coefficient": "33374/6561"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            8,
+            0,
+            8
+          ],
+          "coefficient": "1105/6561"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            8,
+            1,
+            7
+          ],
+          "coefficient": "99913/52488"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            8,
+            2,
+            6
+          ],
+          "coefficient": "453431/52488"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            8,
+            3,
+            5
+          ],
+          "coefficient": "1080925/52488"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            8,
+            4,
+            4
+          ],
+          "coefficient": "1453525/52488"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            8,
+            5,
+            3
+          ],
+          "coefficient": "357077/17496"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            8,
+            6,
+            2
+          ],
+          "coefficient": "357077/52488"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            9,
+            0,
+            7
+          ],
+          "coefficient": "671/2187"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            9,
+            1,
+            6
+          ],
+          "coefficient": "2035/729"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            9,
+            2,
+            5
+          ],
+          "coefficient": "21806/2187"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            9,
+            3,
+            4
+          ],
+          "coefficient": "116935/6561"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            9,
+            4,
+            3
+          ],
+          "coefficient": "35785/2187"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            9,
+            5,
+            2
+          ],
+          "coefficient": "14314/2187"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            10,
+            0,
+            6
+          ],
+          "coefficient": "842/2187"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            10,
+            1,
+            5
+          ],
+          "coefficient": "12047/4374"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            10,
+            2,
+            4
+          ],
+          "coefficient": "16132/2187"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            10,
+            3,
+            3
+          ],
+          "coefficient": "6571/729"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            10,
+            4,
+            2
+          ],
+          "coefficient": "6571/1458"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            11,
+            0,
+            5
+          ],
+          "coefficient": "722/2187"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            11,
+            1,
+            4
+          ],
+          "coefficient": "3880/2187"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            11,
+            2,
+            3
+          ],
+          "coefficient": "88/27"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            11,
+            3,
+            2
+          ],
+          "coefficient": "176/81"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            12,
+            0,
+            4
+          ],
+          "coefficient": "1234/6561"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            12,
+            1,
+            3
+          ],
+          "coefficient": "1522/2187"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            12,
+            2,
+            2
+          ],
+          "coefficient": "1522/2187"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            13,
+            0,
+            3
+          ],
+          "coefficient": "16/243"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            13,
+            1,
+            2
+          ],
+          "coefficient": "32/243"
+        },
+        {
+          "powers_a_u_v_w": [
+            0,
+            14,
+            0,
+            2
+          ],
+          "coefficient": "8/729"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            2,
+            1,
+            12
+          ],
+          "coefficient": "1/2916"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            2,
+            2,
+            11
+          ],
+          "coefficient": "1/162"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            2,
+            3,
+            10
+          ],
+          "coefficient": "11/243"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            2,
+            4,
+            9
+          ],
+          "coefficient": "275/1458"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            2,
+            5,
+            8
+          ],
+          "coefficient": "370/729"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            2,
+            6,
+            7
+          ],
+          "coefficient": "2044/2187"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            2,
+            7,
+            6
+          ],
+          "coefficient": "2632/2187"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            2,
+            8,
+            5
+          ],
+          "coefficient": "262/243"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            2,
+            9,
+            4
+          ],
+          "coefficient": "1420/2187"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            2,
+            10,
+            3
+          ],
+          "coefficient": "176/729"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            2,
+            11,
+            2
+          ],
+          "coefficient": "32/729"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            3,
+            0,
+            12
+          ],
+          "coefficient": "1/2916"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            3,
+            1,
+            11
+          ],
+          "coefficient": "7/486"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            3,
+            2,
+            10
+          ],
+          "coefficient": "79/486"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            3,
+            3,
+            9
+          ],
+          "coefficient": "1325/1458"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            3,
+            4,
+            8
+          ],
+          "coefficient": "8927/2916"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            3,
+            5,
+            7
+          ],
+          "coefficient": "548/81"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            3,
+            6,
+            6
+          ],
+          "coefficient": "22220/2187"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            3,
+            7,
+            5
+          ],
+          "coefficient": "7580/729"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            3,
+            8,
+            4
+          ],
+          "coefficient": "1711/243"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            3,
+            9,
+            3
+          ],
+          "coefficient": "2120/729"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            3,
+            10,
+            2
+          ],
+          "coefficient": "424/729"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            4,
+            0,
+            11
+          ],
+          "coefficient": "23/2916"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            4,
+            1,
+            10
+          ],
+          "coefficient": "275/1458"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            4,
+            2,
+            9
+          ],
+          "coefficient": "4687/2916"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            4,
+            3,
+            8
+          ],
+          "coefficient": "15875/2187"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            4,
+            4,
+            7
+          ],
+          "coefficient": "58577/2916"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            4,
+            5,
+            6
+          ],
+          "coefficient": "316783/8748"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            4,
+            6,
+            5
+          ],
+          "coefficient": "378067/8748"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            4,
+            7,
+            4
+          ],
+          "coefficient": "48727/1458"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            4,
+            8,
+            3
+          ],
+          "coefficient": "7541/486"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            4,
+            9,
+            2
+          ],
+          "coefficient": "7541/2187"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            5,
+            0,
+            10
+          ],
+          "coefficient": "103/1458"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            5,
+            1,
+            9
+          ],
+          "coefficient": "901/729"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            5,
+            2,
+            8
+          ],
+          "coefficient": "12317/1458"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            5,
+            3,
+            7
+          ],
+          "coefficient": "68387/2187"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            5,
+            4,
+            6
+          ],
+          "coefficient": "154187/2187"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            5,
+            5,
+            5
+          ],
+          "coefficient": "73549/729"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            5,
+            6,
+            4
+          ],
+          "coefficient": "795065/8748"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            5,
+            7,
+            3
+          ],
+          "coefficient": "35101/729"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            5,
+            8,
+            2
+          ],
+          "coefficient": "35101/2916"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            6,
+            0,
+            9
+          ],
+          "coefficient": "1525/4374"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            6,
+            1,
+            8
+          ],
+          "coefficient": "42185/8748"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            6,
+            2,
+            7
+          ],
+          "coefficient": "58787/2187"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            6,
+            3,
+            6
+          ],
+          "coefficient": "58937/729"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            6,
+            4,
+            5
+          ],
+          "coefficient": "1263319/8748"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            6,
+            5,
+            4
+          ],
+          "coefficient": "340568/2187"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            6,
+            6,
+            3
+          ],
+          "coefficient": "209965/2187"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            6,
+            7,
+            2
+          ],
+          "coefficient": "59990/2187"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            7,
+            0,
+            8
+          ],
+          "coefficient": "9443/8748"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            7,
+            1,
+            7
+          ],
+          "coefficient": "8810/729"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            7,
+            2,
+            6
+          ],
+          "coefficient": "119275/2187"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            7,
+            3,
+            5
+          ],
+          "coefficient": "283495/2187"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            7,
+            4,
+            4
+          ],
+          "coefficient": "28211/162"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            7,
+            5,
+            3
+          ],
+          "coefficient": "93599/729"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            7,
+            6,
+            2
+          ],
+          "coefficient": "93599/2187"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            8,
+            0,
+            7
+          ],
+          "coefficient": "19381/8748"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            8,
+            1,
+            6
+          ],
+          "coefficient": "87545/4374"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            8,
+            2,
+            5
+          ],
+          "coefficient": "207691/2916"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            8,
+            3,
+            4
+          ],
+          "coefficient": "556121/4374"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            8,
+            4,
+            3
+          ],
+          "coefficient": "340475/2916"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            8,
+            5,
+            2
+          ],
+          "coefficient": "68095/1458"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            9,
+            0,
+            6
+          ],
+          "coefficient": "6724/2187"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            9,
+            1,
+            5
+          ],
+          "coefficient": "10643/486"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            9,
+            2,
+            4
+          ],
+          "coefficient": "42680/729"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            9,
+            3,
+            3
+          ],
+          "coefficient": "52159/729"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            9,
+            4,
+            2
+          ],
+          "coefficient": "52159/1458"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            10,
+            0,
+            5
+          ],
+          "coefficient": "2101/729"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            10,
+            1,
+            4
+          ],
+          "coefficient": "11270/729"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            10,
+            2,
+            3
+          ],
+          "coefficient": "6902/243"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            10,
+            3,
+            2
+          ],
+          "coefficient": "13804/729"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            11,
+            0,
+            4
+          ],
+          "coefficient": "1300/729"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            11,
+            1,
+            3
+          ],
+          "coefficient": "1604/243"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            11,
+            2,
+            2
+          ],
+          "coefficient": "1604/243"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            12,
+            0,
+            3
+          ],
+          "coefficient": "164/243"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            12,
+            1,
+            2
+          ],
+          "coefficient": "328/243"
+        },
+        {
+          "powers_a_u_v_w": [
+            1,
+            13,
+            0,
+            2
+          ],
+          "coefficient": "88/729"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            2,
+            0,
+            12
+          ],
+          "coefficient": "1/5832"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            2,
+            1,
+            11
+          ],
+          "coefficient": "2/243"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            2,
+            2,
+            10
+          ],
+          "coefficient": "23/243"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            2,
+            3,
+            9
+          ],
+          "coefficient": "775/1458"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            2,
+            4,
+            8
+          ],
+          "coefficient": "5227/2916"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            2,
+            5,
+            7
+          ],
+          "coefficient": "2888/729"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            2,
+            6,
+            6
+          ],
+          "coefficient": "4336/729"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            2,
+            7,
+            5
+          ],
+          "coefficient": "4436/729"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            2,
+            8,
+            4
+          ],
+          "coefficient": "1001/243"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            2,
+            9,
+            3
+          ],
+          "coefficient": "1240/729"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            2,
+            10,
+            2
+          ],
+          "coefficient": "248/729"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            3,
+            0,
+            11
+          ],
+          "coefficient": "17/1944"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            3,
+            1,
+            10
+          ],
+          "coefficient": "209/972"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            3,
+            2,
+            9
+          ],
+          "coefficient": "3575/1944"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            3,
+            3,
+            8
+          ],
+          "coefficient": "24197/2916"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            3,
+            4,
+            7
+          ],
+          "coefficient": "16715/729"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            3,
+            5,
+            6
+          ],
+          "coefficient": "10030/243"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            3,
+            6,
+            5
+          ],
+          "coefficient": "35875/729"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            3,
+            7,
+            4
+          ],
+          "coefficient": "9242/243"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            3,
+            8,
+            3
+          ],
+          "coefficient": "1430/81"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            3,
+            9,
+            2
+          ],
+          "coefficient": "2860/729"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            4,
+            0,
+            10
+          ],
+          "coefficient": "115/972"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            4,
+            1,
+            9
+          ],
+          "coefficient": "1343/648"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            4,
+            2,
+            8
+          ],
+          "coefficient": "2287/162"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            4,
+            3,
+            7
+          ],
+          "coefficient": "37963/729"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            4,
+            4,
+            6
+          ],
+          "coefficient": "170741/1458"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            4,
+            5,
+            5
+          ],
+          "coefficient": "162619/972"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            4,
+            6,
+            4
+          ],
+          "coefficient": "439127/2916"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            4,
+            7,
+            3
+          ],
+          "coefficient": "19385/243"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            4,
+            8,
+            2
+          ],
+          "coefficient": "19385/972"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            5,
+            0,
+            9
+          ],
+          "coefficient": "247/324"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            5,
+            1,
+            8
+          ],
+          "coefficient": "30509/2916"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            5,
+            2,
+            7
+          ],
+          "coefficient": "169043/2916"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            5,
+            3,
+            6
+          ],
+          "coefficient": "42196/243"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            5,
+            4,
+            5
+          ],
+          "coefficient": "451133/1458"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            5,
+            5,
+            4
+          ],
+          "coefficient": "647945/1944"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            5,
+            6,
+            3
+          ],
+          "coefficient": "1198421/5832"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            5,
+            7,
+            2
+          ],
+          "coefficient": "171203/2916"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            6,
+            0,
+            8
+          ],
+          "coefficient": "16633/5832"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            6,
+            1,
+            7
+          ],
+          "coefficient": "15367/486"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            6,
+            2,
+            6
+          ],
+          "coefficient": "206791/1458"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            6,
+            3,
+            5
+          ],
+          "coefficient": "163265/486"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            6,
+            4,
+            4
+          ],
+          "coefficient": "657011/1458"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            6,
+            5,
+            3
+          ],
+          "coefficient": "322939/972"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            6,
+            6,
+            2
+          ],
+          "coefficient": "322939/2916"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            7,
+            0,
+            7
+          ],
+          "coefficient": "39379/5832"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            7,
+            1,
+            6
+          ],
+          "coefficient": "14696/243"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            7,
+            2,
+            5
+          ],
+          "coefficient": "1249057/5832"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            7,
+            3,
+            4
+          ],
+          "coefficient": "278092/729"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            7,
+            4,
+            3
+          ],
+          "coefficient": "2042575/5832"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            7,
+            5,
+            2
+          ],
+          "coefficient": "408515/2916"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            8,
+            0,
+            6
+          ],
+          "coefficient": "15307/1458"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            8,
+            1,
+            5
+          ],
+          "coefficient": "433429/5832"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            8,
+            2,
+            4
+          ],
+          "coefficient": "32089/162"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            8,
+            3,
+            3
+          ],
+          "coefficient": "705443/2916"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            8,
+            4,
+            2
+          ],
+          "coefficient": "705443/5832"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            9,
+            0,
+            5
+          ],
+          "coefficient": "65/6"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            9,
+            1,
+            4
+          ],
+          "coefficient": "4691/81"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            9,
+            2,
+            3
+          ],
+          "coefficient": "25837/243"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            9,
+            3,
+            2
+          ],
+          "coefficient": "51674/729"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            10,
+            0,
+            4
+          ],
+          "coefficient": "1777/243"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            10,
+            1,
+            3
+          ],
+          "coefficient": "6575/243"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            10,
+            2,
+            2
+          ],
+          "coefficient": "6575/243"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            11,
+            0,
+            3
+          ],
+          "coefficient": "730/243"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            11,
+            1,
+            2
+          ],
+          "coefficient": "1460/243"
+        },
+        {
+          "powers_a_u_v_w": [
+            2,
+            12,
+            0,
+            2
+          ],
+          "coefficient": "422/729"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            2,
+            0,
+            11
+          ],
+          "coefficient": "1/324"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            2,
+            1,
+            10
+          ],
+          "coefficient": "13/162"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            2,
+            2,
+            9
+          ],
+          "coefficient": "25/36"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            2,
+            3,
+            8
+          ],
+          "coefficient": "509/162"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            2,
+            4,
+            7
+          ],
+          "coefficient": "2110/243"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            2,
+            5,
+            6
+          ],
+          "coefficient": "3796/243"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            2,
+            6,
+            5
+          ],
+          "coefficient": "4522/243"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            2,
+            7,
+            4
+          ],
+          "coefficient": "388/27"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            2,
+            8,
+            3
+          ],
+          "coefficient": "20/3"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            2,
+            9,
+            2
+          ],
+          "coefficient": "40/27"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            3,
+            0,
+            10
+          ],
+          "coefficient": "7/81"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            3,
+            1,
+            9
+          ],
+          "coefficient": "55/36"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            3,
+            2,
+            8
+          ],
+          "coefficient": "3371/324"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            3,
+            3,
+            7
+          ],
+          "coefficient": "9308/243"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            3,
+            4,
+            6
+          ],
+          "coefficient": "20890/243"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            3,
+            5,
+            5
+          ],
+          "coefficient": "9932/81"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            3,
+            6,
+            4
+          ],
+          "coefficient": "8930/81"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            3,
+            7,
+            3
+          ],
+          "coefficient": "1576/27"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            3,
+            8,
+            2
+          ],
+          "coefficient": "394/27"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            4,
+            0,
+            9
+          ],
+          "coefficient": "89/108"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            4,
+            1,
+            8
+          ],
+          "coefficient": "2732/243"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            4,
+            2,
+            7
+          ],
+          "coefficient": "60229/972"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            4,
+            3,
+            6
+          ],
+          "coefficient": "179701/972"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            4,
+            4,
+            5
+          ],
+          "coefficient": "319351/972"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            4,
+            5,
+            4
+          ],
+          "coefficient": "114493/324"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            4,
+            6,
+            3
+          ],
+          "coefficient": "70553/324"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            4,
+            7,
+            2
+          ],
+          "coefficient": "10079/162"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            5,
+            0,
+            8
+          ],
+          "coefficient": "1931/486"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            5,
+            1,
+            7
+          ],
+          "coefficient": "3530/81"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            5,
+            2,
+            6
+          ],
+          "coefficient": "188719/972"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            5,
+            3,
+            5
+          ],
+          "coefficient": "74183/162"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            5,
+            4,
+            4
+          ],
+          "coefficient": "148928/243"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            5,
+            5,
+            3
+          ],
+          "coefficient": "146315/324"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            5,
+            6,
+            2
+          ],
+          "coefficient": "146315/972"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            6,
+            0,
+            7
+          ],
+          "coefficient": "10927/972"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            6,
+            1,
+            6
+          ],
+          "coefficient": "8068/81"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            6,
+            2,
+            5
+          ],
+          "coefficient": "85166/243"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            6,
+            3,
+            4
+          ],
+          "coefficient": "604685/972"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            6,
+            4,
+            3
+          ],
+          "coefficient": "138650/243"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            6,
+            5,
+            2
+          ],
+          "coefficient": "55460/243"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            7,
+            0,
+            6
+          ],
+          "coefficient": "9697/486"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            7,
+            1,
+            5
+          ],
+          "coefficient": "45365/324"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            7,
+            2,
+            4
+          ],
+          "coefficient": "180481/486"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            7,
+            3,
+            3
+          ],
+          "coefficient": "220061/486"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            7,
+            4,
+            2
+          ],
+          "coefficient": "220061/972"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            8,
+            0,
+            5
+          ],
+          "coefficient": "22229/972"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            8,
+            1,
+            4
+          ],
+          "coefficient": "59081/486"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            8,
+            2,
+            3
+          ],
+          "coefficient": "12029/54"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            8,
+            3,
+            2
+          ],
+          "coefficient": "12029/81"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            9,
+            0,
+            4
+          ],
+          "coefficient": "457/27"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            9,
+            1,
+            3
+          ],
+          "coefficient": "5065/81"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            9,
+            2,
+            2
+          ],
+          "coefficient": "5065/81"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            10,
+            0,
+            3
+          ],
+          "coefficient": "614/81"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            10,
+            1,
+            2
+          ],
+          "coefficient": "1228/81"
+        },
+        {
+          "powers_a_u_v_w": [
+            3,
+            11,
+            0,
+            2
+          ],
+          "coefficient": "128/81"
+        },
+        {
+          "powers_a_u_v_w": [
+            4,
+            2,
+            0,
+            10
+          ],
+          "coefficient": "5/216"
+        },
+        {
+          "powers_a_u_v_w": [
+            4,
+            2,
+            1,
+            9
+          ],
+          "coefficient": "5/12"
+        },
+        {
+          "powers_a_u_v_w": [
+            4,
+            2,
+            2,
+            8
+          ],
+          "coefficient": "461/162"
+        },
+        {
+          "powers_a_u_v_w": [
+            4,
+            2,
+            3,
+            7
+          ],
+          "coefficient": "848/81"
+        },
+        {
+          "powers_a_u_v_w": [
+            4,
+            2,
+            4,
+            6
+          ],
+          "coefficient": "1900/81"
+        },
+        {
+          "powers_a_u_v_w": [
+            4,
+            2,
+            5,
+            5
+          ],
+          "coefficient": "2705/81"
+        },
+        {
+          "powers_a_u_v_w": [
+            4,
+            2,
+            6,
+            4
+          ],
+          "coefficient": "2428/81"
+        },
+        {
+          "powers_a_u_v_w": [
+            4,
+            2,
+            7,
+            3
+          ],
+          "coefficient": "428/27"
+        },
+        {
+          "powers_a_u_v_w": [
+            4,
+            2,
+            8,
+            2
+          ],
+          "coefficient": "107/27"
+        },
+        {
+          "powers_a_u_v_w": [
+            4,
+            3,
+            0,
+            9
+          ],
+          "coefficient": "95/216"
+        },
+        {
+          "powers_a_u_v_w": [
+            4,
+            3,
+            1,
+            8
+          ],
+          "coefficient": "3869/648"
+        },
+        {
+          "powers_a_u_v_w": [
+            4,
+            3,
+            2,
+            7
+          ],
+          "coefficient": "884/27"
+        },
+        {
+          "powers_a_u_v_w": [
+            4,
+            3,
+            3,
+            6
+          ],
+          "coefficient": "7880/81"
+        },
+        {
+          "powers_a_u_v_w": [
+            4,
+            3,
+            4,
+            5
+          ],
+          "coefficient": "55835/324"
+        },
+        {
+          "powers_a_u_v_w": [
+            4,
+            3,
+            5,
+            4
+          ],
+          "coefficient": "4993/27"
+        },
+        {
+          "powers_a_u_v_w": [
+            4,
+            3,
+            6,
+            3
+          ],
+          "coefficient": "3073/27"
+        },
+        {
+          "powers_a_u_v_w": [
+            4,
+            3,
+            7,
+            2
+          ],
+          "coefficient": "878/27"
+        },
+        {
+          "powers_a_u_v_w": [
+            4,
+            4,
+            0,
+            8
+          ],
+          "coefficient": "83/27"
+        },
+        {
+          "powers_a_u_v_w": [
+            4,
+            4,
+            1,
+            7
+          ],
+          "coefficient": "799/24"
+        },
+        {
+          "powers_a_u_v_w": [
+            4,
+            4,
+            2,
+            6
+          ],
+          "coefficient": "31777/216"
+        },
+        {
+          "powers_a_u_v_w": [
+            4,
+            4,
+            3,
+            5
+          ],
+          "coefficient": "223625/648"
+        },
+        {
+          "powers_a_u_v_w": [
+            4,
+            4,
+            4,
+            4
+          ],
+          "coefficient": "37286/81"
+        },
+        {
+          "powers_a_u_v_w": [
+            4,
+            4,
+            5,
+            3
+          ],
+          "coefficient": "36577/108"
+        },
+        {
+          "powers_a_u_v_w": [
+            4,
+            4,
+            6,
+            2
+          ],
+          "coefficient": "36577/324"
+        },
+        {
+          "powers_a_u_v_w": [
+            4,
+            5,
+            0,
+            7
+          ],
+          "coefficient": "793/72"
+        },
+        {
+          "powers_a_u_v_w": [
+            4,
+            5,
+            1,
+            6
+          ],
+          "coefficient": "62351/648"
+        },
+        {
+          "powers_a_u_v_w": [
+            4,
+            5,
+            2,
+            5
+          ],
+          "coefficient": "72497/216"
+        },
+        {
+          "powers_a_u_v_w": [
+            4,
+            5,
+            3,
+            4
+          ],
+          "coefficient": "192025/324"
+        },
+        {
+          "powers_a_u_v_w": [
+            4,
+            5,
+            4,
+            3
+          ],
+          "coefficient": "351475/648"
+        },
+        {
+          "powers_a_u_v_w": [
+            4,
+            5,
+            5,
+            2
+          ],
+          "coefficient": "70295/324"
+        },
+        {
+          "powers_a_u_v_w": [
+            4,
+            6,
+            0,
+            6
+          ],
+          "coefficient": "620/27"
+        },
+        {
+          "powers_a_u_v_w": [
+            4,
+            6,
+            1,
+            5
+          ],
+          "coefficient": "12892/81"
+        },
+        {
+          "powers_a_u_v_w": [
+            4,
+            6,
+            2,
+            4
+          ],
+          "coefficient": "90497/216"
+        },
+        {
+          "powers_a_u_v_w": [
+            4,
+            6,
+            3,
+            3
+          ],
+          "coefficient": "82495/162"
+        },
+        {
+          "powers_a_u_v_w": [
+            4,
+            6,
+            4,
+            2
+          ],
+          "coefficient": "82495/324"
+        },
+        {
+          "powers_a_u_v_w": [
+            4,
+            7,
+            0,
+            5
+          ],
+          "coefficient": "3197/108"
+        },
+        {
+          "powers_a_u_v_w": [
+            4,
+            7,
+            1,
+            4
+          ],
+          "coefficient": "16843/108"
+        },
+        {
+          "powers_a_u_v_w": [
+            4,
+            7,
+            2,
+            3
+          ],
+          "coefficient": "30751/108"
+        },
+        {
+          "powers_a_u_v_w": [
+            4,
+            7,
+            3,
+            2
+          ],
+          "coefficient": "30751/162"
+        },
+        {
+          "powers_a_u_v_w": [
+            4,
+            8,
+            0,
+            4
+          ],
+          "coefficient": "5219/216"
+        },
+        {
+          "powers_a_u_v_w": [
+            4,
+            8,
+            1,
+            3
+          ],
+          "coefficient": "57659/648"
+        },
+        {
+          "powers_a_u_v_w": [
+            4,
+            8,
+            2,
+            2
+          ],
+          "coefficient": "57659/648"
+        },
+        {
+          "powers_a_u_v_w": [
+            4,
+            9,
+            0,
+            3
+          ],
+          "coefficient": "320/27"
+        },
+        {
+          "powers_a_u_v_w": [
+            4,
+            9,
+            1,
+            2
+          ],
+          "coefficient": "640/27"
+        },
+        {
+          "powers_a_u_v_w": [
+            4,
+            10,
+            0,
+            2
+          ],
+          "coefficient": "145/54"
+        },
+        {
+          "powers_a_u_v_w": [
+            5,
+            2,
+            0,
+            9
+          ],
+          "coefficient": "5/54"
+        },
+        {
+          "powers_a_u_v_w": [
+            5,
+            2,
+            1,
+            8
+          ],
+          "coefficient": "5/4"
+        },
+        {
+          "powers_a_u_v_w": [
+            5,
+            2,
+            2,
+            7
+          ],
+          "coefficient": "184/27"
+        },
+        {
+          "powers_a_u_v_w": [
+            5,
+            2,
+            3,
+            6
+          ],
+          "coefficient": "544/27"
+        },
+        {
+          "powers_a_u_v_w": [
+            5,
+            2,
+            4,
+            5
+          ],
+          "coefficient": "1919/54"
+        },
+        {
+          "powers_a_u_v_w": [
+            5,
+            2,
+            5,
+            4
+          ],
+          "coefficient": "38"
+        },
+        {
+          "powers_a_u_v_w": [
+            5,
+            2,
+            6,
+            3
+          ],
+          "coefficient": "70/3"
+        },
+        {
+          "powers_a_u_v_w": [
+            5,
+            2,
+            7,
+            2
+          ],
+          "coefficient": "20/3"
+        },
+        {
+          "powers_a_u_v_w": [
+            5,
+            3,
+            0,
+            8
+          ],
+          "coefficient": "5/4"
+        },
+        {
+          "powers_a_u_v_w": [
+            5,
+            3,
+            1,
+            7
+          ],
+          "coefficient": "719/54"
+        },
+        {
+          "powers_a_u_v_w": [
+            5,
+            3,
+            2,
+            6
+          ],
+          "coefficient": "524/9"
+        },
+        {
+          "powers_a_u_v_w": [
+            5,
+            3,
+            3,
+            5
+          ],
+          "coefficient": "7321/54"
+        },
+        {
+          "powers_a_u_v_w": [
+            5,
+            3,
+            4,
+            4
+          ],
+          "coefficient": "2159/12"
+        },
+        {
+          "powers_a_u_v_w": [
+            5,
+            3,
+            5,
+            3
+          ],
+          "coefficient": "132"
+        },
+        {
+          "powers_a_u_v_w": [
+            5,
+            3,
+            6,
+            2
+          ],
+          "coefficient": "44"
+        },
+        {
+          "powers_a_u_v_w": [
+            5,
+            4,
+            0,
+            7
+          ],
+          "coefficient": "683/108"
+        },
+        {
+          "powers_a_u_v_w": [
+            5,
+            4,
+            1,
+            6
+          ],
+          "coefficient": "2927/54"
+        },
+        {
+          "powers_a_u_v_w": [
+            5,
+            4,
+            2,
+            5
+          ],
+          "coefficient": "20173/108"
+        },
+        {
+          "powers_a_u_v_w": [
+            5,
+            4,
+            3,
+            4
+          ],
+          "coefficient": "1309/4"
+        },
+        {
+          "powers_a_u_v_w": [
+            5,
+            4,
+            4,
+            3
+          ],
+          "coefficient": "895/3"
+        },
+        {
+          "powers_a_u_v_w": [
+            5,
+            4,
+            5,
+            2
+          ],
+          "coefficient": "358/3"
+        },
+        {
+          "powers_a_u_v_w": [
+            5,
+            5,
+            0,
+            6
+          ],
+          "coefficient": "65/4"
+        },
+        {
+          "powers_a_u_v_w": [
+            5,
+            5,
+            1,
+            5
+          ],
+          "coefficient": "332/3"
+        },
+        {
+          "powers_a_u_v_w": [
+            5,
+            5,
+            2,
+            4
+          ],
+          "coefficient": "7775/27"
+        },
+        {
+          "powers_a_u_v_w": [
+            5,
+            5,
+            3,
+            3
+          ],
+          "coefficient": "18797/54"
+        },
+        {
+          "powers_a_u_v_w": [
+            5,
+            5,
+            4,
+            2
+          ],
+          "coefficient": "18797/108"
+        },
+        {
+          "powers_a_u_v_w": [
+            5,
+            6,
+            0,
+            5
+          ],
+          "coefficient": "24"
+        },
+        {
+          "powers_a_u_v_w": [
+            5,
+            6,
+            1,
+            4
+          ],
+          "coefficient": "13469/108"
+        },
+        {
+          "powers_a_u_v_w": [
+            5,
+            6,
+            2,
+            3
+          ],
+          "coefficient": "4073/18"
+        },
+        {
+          "powers_a_u_v_w": [
+            5,
+            6,
+            3,
+            2
+          ],
+          "coefficient": "4073/27"
+        },
+        {
+          "powers_a_u_v_w": [
+            5,
+            7,
+            0,
+            4
+          ],
+          "coefficient": "1175/54"
+        },
+        {
+          "powers_a_u_v_w": [
+            5,
+            7,
+            1,
+            3
+          ],
+          "coefficient": "4303/54"
+        },
+        {
+          "powers_a_u_v_w": [
+            5,
+            7,
+            2,
+            2
+          ],
+          "coefficient": "4303/54"
+        },
+        {
+          "powers_a_u_v_w": [
+            5,
+            8,
+            0,
+            3
+          ],
+          "coefficient": "47/4"
+        },
+        {
+          "powers_a_u_v_w": [
+            5,
+            8,
+            1,
+            2
+          ],
+          "coefficient": "47/2"
+        },
+        {
+          "powers_a_u_v_w": [
+            5,
+            9,
+            0,
+            2
+          ],
+          "coefficient": "157/54"
+        },
+        {
+          "powers_a_u_v_w": [
+            6,
+            2,
+            0,
+            8
+          ],
+          "coefficient": "5/24"
+        },
+        {
+          "powers_a_u_v_w": [
+            6,
+            2,
+            1,
+            7
+          ],
+          "coefficient": "13/6"
+        },
+        {
+          "powers_a_u_v_w": [
+            6,
+            2,
+            2,
+            6
+          ],
+          "coefficient": "28/3"
+        },
+        {
+          "powers_a_u_v_w": [
+            6,
+            2,
+            3,
+            5
+          ],
+          "coefficient": "43/2"
+        },
+        {
+          "powers_a_u_v_w": [
+            6,
+            2,
+            4,
+            4
+          ],
+          "coefficient": "1019/36"
+        },
+        {
+          "powers_a_u_v_w": [
+            6,
+            2,
+            5,
+            3
+          ],
+          "coefficient": "62/3"
+        },
+        {
+          "powers_a_u_v_w": [
+            6,
+            2,
+            6,
+            2
+          ],
+          "coefficient": "62/9"
+        },
+        {
+          "powers_a_u_v_w": [
+            6,
+            3,
+            0,
+            7
+          ],
+          "coefficient": "47/24"
+        },
+        {
+          "powers_a_u_v_w": [
+            6,
+            3,
+            1,
+            6
+          ],
+          "coefficient": "49/3"
+        },
+        {
+          "powers_a_u_v_w": [
+            6,
+            3,
+            2,
+            5
+          ],
+          "coefficient": "1327/24"
+        },
+        {
+          "powers_a_u_v_w": [
+            6,
+            3,
+            3,
+            4
+          ],
+          "coefficient": "3445/36"
+        },
+        {
+          "powers_a_u_v_w": [
+            6,
+            3,
+            4,
+            3
+          ],
+          "coefficient": "260/3"
+        },
+        {
+          "powers_a_u_v_w": [
+            6,
+            3,
+            5,
+            2
+          ],
+          "coefficient": "104/3"
+        },
+        {
+          "powers_a_u_v_w": [
+            6,
+            4,
+            0,
+            6
+          ],
+          "coefficient": "245/36"
+        },
+        {
+          "powers_a_u_v_w": [
+            6,
+            4,
+            1,
+            5
+          ],
+          "coefficient": "3253/72"
+        },
+        {
+          "powers_a_u_v_w": [
+            6,
+            4,
+            2,
+            4
+          ],
+          "coefficient": "1039/9"
+        },
+        {
+          "powers_a_u_v_w": [
+            6,
+            4,
+            3,
+            3
+          ],
+          "coefficient": "2489/18"
+        },
+        {
+          "powers_a_u_v_w": [
+            6,
+            4,
+            4,
+            2
+          ],
+          "coefficient": "2489/36"
+        },
+        {
+          "powers_a_u_v_w": [
+            6,
+            5,
+            0,
+            5
+          ],
+          "coefficient": "427/36"
+        },
+        {
+          "powers_a_u_v_w": [
+            6,
+            5,
+            1,
+            4
+          ],
+          "coefficient": "4345/72"
+        },
+        {
+          "powers_a_u_v_w": [
+            6,
+            5,
+            2,
+            3
+          ],
+          "coefficient": "867/8"
+        },
+        {
+          "powers_a_u_v_w": [
+            6,
+            5,
+            3,
+            2
+          ],
+          "coefficient": "289/4"
+        },
+        {
+          "powers_a_u_v_w": [
+            6,
+            6,
+            0,
+            4
+          ],
+          "coefficient": "217/18"
+        },
+        {
+          "powers_a_u_v_w": [
+            6,
+            6,
+            1,
+            3
+          ],
+          "coefficient": "175/4"
+        },
+        {
+          "powers_a_u_v_w": [
+            6,
+            6,
+            2,
+            2
+          ],
+          "coefficient": "175/4"
+        },
+        {
+          "powers_a_u_v_w": [
+            6,
+            7,
+            0,
+            3
+          ],
+          "coefficient": "173/24"
+        },
+        {
+          "powers_a_u_v_w": [
+            6,
+            7,
+            1,
+            2
+          ],
+          "coefficient": "173/12"
+        },
+        {
+          "powers_a_u_v_w": [
+            6,
+            8,
+            0,
+            2
+          ],
+          "coefficient": "47/24"
+        },
+        {
+          "powers_a_u_v_w": [
+            7,
+            2,
+            0,
+            7
+          ],
+          "coefficient": "1/4"
+        },
+        {
+          "powers_a_u_v_w": [
+            7,
+            2,
+            1,
+            6
+          ],
+          "coefficient": "2"
+        },
+        {
+          "powers_a_u_v_w": [
+            7,
+            2,
+            2,
+            5
+          ],
+          "coefficient": "79/12"
+        },
+        {
+          "powers_a_u_v_w": [
+            7,
+            2,
+            3,
+            4
+          ],
+          "coefficient": "67/6"
+        },
+        {
+          "powers_a_u_v_w": [
+            7,
+            2,
+            4,
+            3
+          ],
+          "coefficient": "10"
+        },
+        {
+          "powers_a_u_v_w": [
+            7,
+            2,
+            5,
+            2
+          ],
+          "coefficient": "4"
+        },
+        {
+          "powers_a_u_v_w": [
+            7,
+            3,
+            0,
+            6
+          ],
+          "coefficient": "3/2"
+        },
+        {
+          "powers_a_u_v_w": [
+            7,
+            3,
+            1,
+            5
+          ],
+          "coefficient": "115/12"
+        },
+        {
+          "powers_a_u_v_w": [
+            7,
+            3,
+            2,
+            4
+          ],
+          "coefficient": "95/4"
+        },
+        {
+          "powers_a_u_v_w": [
+            7,
+            3,
+            3,
+            3
+          ],
+          "coefficient": "28"
+        },
+        {
+          "powers_a_u_v_w": [
+            7,
+            3,
+            4,
+            2
+          ],
+          "coefficient": "14"
+        },
+        {
+          "powers_a_u_v_w": [
+            7,
+            4,
+            0,
+            5
+          ],
+          "coefficient": "13/4"
+        },
+        {
+          "powers_a_u_v_w": [
+            7,
+            4,
+            1,
+            4
+          ],
+          "coefficient": "16"
+        },
+        {
+          "powers_a_u_v_w": [
+            7,
+            4,
+            2,
+            3
+          ],
+          "coefficient": "113/4"
+        },
+        {
+          "powers_a_u_v_w": [
+            7,
+            4,
+            3,
+            2
+          ],
+          "coefficient": "113/6"
+        },
+        {
+          "powers_a_u_v_w": [
+            7,
+            5,
+            0,
+            4
+          ],
+          "coefficient": "15/4"
+        },
+        {
+          "powers_a_u_v_w": [
+            7,
+            5,
+            1,
+            3
+          ],
+          "coefficient": "161/12"
+        },
+        {
+          "powers_a_u_v_w": [
+            7,
+            5,
+            2,
+            2
+          ],
+          "coefficient": "161/12"
+        },
+        {
+          "powers_a_u_v_w": [
+            7,
+            6,
+            0,
+            3
+          ],
+          "coefficient": "5/2"
+        },
+        {
+          "powers_a_u_v_w": [
+            7,
+            6,
+            1,
+            2
+          ],
+          "coefficient": "5"
+        },
+        {
+          "powers_a_u_v_w": [
+            7,
+            7,
+            0,
+            2
+          ],
+          "coefficient": "3/4"
+        },
+        {
+          "powers_a_u_v_w": [
+            8,
+            2,
+            0,
+            6
+          ],
+          "coefficient": "1/8"
+        },
+        {
+          "powers_a_u_v_w": [
+            8,
+            2,
+            1,
+            5
+          ],
+          "coefficient": "3/4"
+        },
+        {
+          "powers_a_u_v_w": [
+            8,
+            2,
+            2,
+            4
+          ],
+          "coefficient": "7/4"
+        },
+        {
+          "powers_a_u_v_w": [
+            8,
+            2,
+            3,
+            3
+          ],
+          "coefficient": "2"
+        },
+        {
+          "powers_a_u_v_w": [
+            8,
+            2,
+            4,
+            2
+          ],
+          "coefficient": "1"
+        },
+        {
+          "powers_a_u_v_w": [
+            8,
+            3,
+            0,
+            5
+          ],
+          "coefficient": "3/8"
+        },
+        {
+          "powers_a_u_v_w": [
+            8,
+            3,
+            1,
+            4
+          ],
+          "coefficient": "7/4"
+        },
+        {
+          "powers_a_u_v_w": [
+            8,
+            3,
+            2,
+            3
+          ],
+          "coefficient": "3"
+        },
+        {
+          "powers_a_u_v_w": [
+            8,
+            3,
+            3,
+            2
+          ],
+          "coefficient": "2"
+        },
+        {
+          "powers_a_u_v_w": [
+            8,
+            4,
+            0,
+            4
+          ],
+          "coefficient": "1/2"
+        },
+        {
+          "powers_a_u_v_w": [
+            8,
+            4,
+            1,
+            3
+          ],
+          "coefficient": "7/4"
+        },
+        {
+          "powers_a_u_v_w": [
+            8,
+            4,
+            2,
+            2
+          ],
+          "coefficient": "7/4"
+        },
+        {
+          "powers_a_u_v_w": [
+            8,
+            5,
+            0,
+            3
+          ],
+          "coefficient": "3/8"
+        },
+        {
+          "powers_a_u_v_w": [
+            8,
+            5,
+            1,
+            2
+          ],
+          "coefficient": "3/4"
+        },
+        {
+          "powers_a_u_v_w": [
+            8,
+            6,
+            0,
+            2
+          ],
+          "coefficient": "1/8"
+        }
+      ]
+    }
+  ],
+  "negative_middle_quartic_bernstein": [
+    "-27",
+    "-162/5",
+    "-936/25",
+    "-5184/125",
+    "-25137/625"
+  ],
+  "examples": [
+    {
+      "endpoints": [
+        "1",
+        "3"
+      ],
+      "q": "5/2",
+      "normalized_root": [
+        "24981415526352678411569233351/79228162514264337593543950336",
+        "62453538815881696028923083379/198070406285660843983859875840"
+      ],
+      "nodes": [
+        [
+          "1",
+          "1"
+        ],
+        [
+          "64595496783484847208341208519/39614081257132168796771975168",
+          "161488741958712118020853021299/99035203142830421991929937920"
+        ],
+        [
+          "121457494366572329382390669577/46513247787514294147682969524",
+          "101214578638810274485325557983/38761039822928578456402474604"
+        ],
+        [
+          "3",
+          "3"
+        ]
+      ],
+      "smallest_area": [
+        "18728361859747048692489479832422163611861621370343153121872036581171673605284119032676813839456568039283295172138899/12313126936373274753837200031294879314087418522020452083733841688826788053592878316066958204651536137752071246970880",
+        "70231356974051432596835549374424557743587682443402883596588542051114086994847611063213582757372517249002473463688061/46174226011399780326889500117355797427827819457576695314001906333100455200973293685251093267443260516570267176140800"
+      ]
+    },
+    {
+      "endpoints": [
+        "1/1000",
+        "1"
+      ],
+      "q": "334/333",
+      "normalized_root": [
+        "149390329674268287197356684151/396140812571321687967719751680",
+        "74695164837134143598678342077/198070406285660843983859875840"
+      ],
+      "nodes": [
+        [
+          "1/1000",
+          "1/1000"
+        ],
+        [
+          "149637080157165340598127047218529/396140812571321687967719751680000",
+          "74818540078582670299063523610763/198070406285660843983859875840000"
+        ],
+        [
+          "448253239183770546058993506808843/530421149988489328515524408296000",
+          "74708873197295091009832251136307/88403524998081554752587401384000"
+        ],
+        [
+          "1",
+          "1"
+        ]
+      ],
+      "smallest_area": [
+        "609069082201788969448118581006830362953097473891529595550144522680516603495424026097246898864530349399995379132576134692887683673883/49252507745493099015348800125179517256349674088081808334935366755307152214371513264267832818606144551008284987883520000000000000000000",
+        "152267270550447242362029645258287695362159240237048543949921482426090757520794633179906958599110882911353608272483134305071881896067/12313126936373274753837200031294879314087418522020452083733841688826788053592878316066958204651536137752071246970880000000000000000000"
+      ]
+    },
+    {
+      "endpoints": [
+        "1",
+        "1000"
+      ],
+      "q": "334/333",
+      "normalized_root": [
+        "149390329674268287197356684151/396140812571321687967719751680",
+        "74695164837134143598678342077/198070406285660843983859875840"
+      ],
+      "nodes": [
+        [
+          "1",
+          "1"
+        ],
+        [
+          "149637080157165340598127047218529/396140812571321687967719751680",
+          "74818540078582670299063523610763/198070406285660843983859875840"
+        ],
+        [
+          "448253239183770546058993506808843/530421149988489328515524408296",
+          "74708873197295091009832251136307/88403524998081554752587401384"
+        ],
+        [
+          "1000",
+          "1000"
+        ]
+      ],
+      "smallest_area": [
+        "609069082201788969448118581006830362953097473891529595550144522680516603495424026097246898864530349399995379132576134692887683673883/49252507745493099015348800125179517256349674088081808334935366755307152214371513264267832818606144551008284987883520000",
+        "152267270550447242362029645258287695362159240237048543949921482426090757520794633179906958599110882911353608272483134305071881896067/12313126936373274753837200031294879314087418522020452083733841688826788053592878316066958204651536137752071246970880000"
+      ]
+    },
+    {
+      "endpoints": [
+        "10",
+        "11"
+      ],
+      "q": "31",
+      "normalized_root": [
+        "50705571591563193261008477029/198070406285660843983859875840",
+        "101411143183126386522016954061/396140812571321687967719751680"
+      ],
+      "nodes": [
+        [
+          "10",
+          "10"
+        ],
+        [
+          "2031409634448171633099607235429/198070406285660843983859875840",
+          "4062819268896343266199214470861/396140812571321687967719751680"
+        ],
+        [
+          "2164499978168577546689451071327/201238326339388796690642564024",
+          "1442999985445718364459634047581/134158884226259197793761709352"
+        ],
+        [
+          "11",
+          "11"
+        ]
+      ],
+      "smallest_area": [
+        "63641872336521544143873016540151371672876530791173771206640535920304065770221599201450311285930353893781504515330896079/12313126936373274753837200031294879314087418522020452083733841688826788053592878316066958204651536137752071246970880000",
+        "763702468038258529726476198512552391546372101916567359975362121444300377111357516790030368221175019750707336263497432317/147757523236479297046046400375538551769049022264245425004806100265921456643114539792803498455818433653024854963650560000"
+      ]
+    },
+    {
+      "endpoints": [
+        "100",
+        "101"
+      ],
+      "q": "301",
+      "normalized_root": [
+        "99281762796579603892223787239/396140812571321687967719751680",
+        "49640881398289801946111893621/198070406285660843983859875840"
+      ],
+      "nodes": [
+        [
+          "100",
+          "100"
+        ],
+        [
+          "39713363019928748400664198955239/396140812571321687967719751680",
+          "19856681509964374200332099477621/198070406285660843983859875840"
+        ],
+        [
+          "13325891928840563149509002116039/132266101660439835456167783288",
+          "19988837893260844724263503174463/198399152490659753184251674936"
+        ],
+        [
+          "101",
+          "101"
+        ]
+      ],
+      "smallest_area": [
+        "69955780137149492824696846105579677078764818227786511597102428264416606598243516223550485964952723708823512011657262204767/147757523236479297046046400375538551769049022264245425004806100265921456643114539792803498455818433653024854963650560000",
+        "5829648344762457735391403842367000811249460101756455866221791606313838398095370735843405561519924108858790169495699332509/12313126936373274753837200031294879314087418522020452083733841688826788053592878316066958204651536137752071246970880000"
+      ]
+    },
+    {
+      "endpoints": [
+        "1",
+        "1329227995784915872903807060280344577/1329227995784915872903807060280344576"
+      ],
+      "q": "3987683987354747618711421180841033729",
+      "normalized_root": [
+        "1/4",
+        "99035203142830421991929937923/396140812571321687967719751680"
+      ],
+      "nodes": [
+        [
+          "1",
+          "1"
+        ],
+        [
+          "5316911983139663491615228241121378305/5316911983139663491615228241121378304",
+          "526561458342785933489590138418352161693510680145575978263484825603/526561458342785933489590138418352161594475477002745556271554887680"
+        ],
+        [
+          "5316911983139663491615228241121378307/5316911983139663491615228241121378304",
+          "526561458342785933489590138428985985857860413414467278729587458057/526561458342785933489590138428985985560754803985976012753797644288"
+        ],
+        [
+          "1329227995784915872903807060280344577/1329227995784915872903807060280344576",
+          "1329227995784915872903807060280344577/1329227995784915872903807060280344576"
+        ]
+      ],
+      "smallest_area": [
+        "25197128349500297368771225656140572167337268250713390432205601271954558360442675989470030897030696533991/1262432616371609641737837571891230879732081552677561726279587416736495717031299397307279968706621228294475912525482772251124663740044112927150675544956451403989253681070826703565999301892237452145110380416587530240",
+        "247132715764701949739348428774416364150760863611235228414742160855770644257265618483262464727147359797446147305019694677798234974664587804585703033027430868582427/12381903073492154211382963708980857965285484203971598174874079117812669591173238893931654434866965341281431132654463953411305020925844192279309507307725146333790312906226681660204644945541244712180255458786199728222219413111364728254024927314852417417723560489790734336000"
+      ]
+    }
+  ]
+}

@@ -577,6 +577,13 @@ python3 experiments/cubic_maximin.py --write
 python3 experiments/cubic_maximin_figure.py
 ```
 
+The [general four-curve extension](experiments/cubic_four_general.md)
+proves the same unique equal-area maximum for every fixed positive
+endpoint pair. A normalized cubic selects both interior labels;
+511 positive gap-polynomial coefficients and factored positive
+supports give an endpoint-independent proof. Run
+`python3 experiments/cubic_four_general.py --write` to reproduce it.
+
 The [five-curve companion](experiments/cubic_five.md) proves a unique
 cubic maximin on the same endpoints. Its three triangles have area
 about 0.494437008328; all other faces are larger. The middle triangle's

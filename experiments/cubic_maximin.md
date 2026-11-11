@@ -23,6 +23,8 @@ This is a finite theorem about **four complete curves**
 `Xₚ(Y)=Y²/2−pY+p³/3`, on the fixed slope interval [1,3]. It neither
 classifies their full compromise curve nor solves other finite counts.
 The shared [asymptotic density](shifted_maximin.md) is a different result.
+The [general four-curve extension](cubic_four_general.md) separately proves
+the unique maximin for every fixed positive endpoint pair.
 The [five-curve companion](cubic_five.md) separately solves the next count
 on these same endpoints by a rational stationary-support certificate.
 

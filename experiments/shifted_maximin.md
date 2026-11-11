@@ -259,7 +259,9 @@ audit its face formula and chosen examples.
 
 The [finite four-curve follow-up](cubic_maximin.md) now solves that cubic
 case on [1,3]: its unique largest-minimum placement makes all three
-pockets equal. The [five-curve companion](cubic_five.md) solves the next
+pockets equal. The [general extension](cubic_four_general.md) proves that
+four-curve result on every fixed positive endpoint pair.
+The [five-curve companion](cubic_five.md) solves the next
 count on those endpoints: its three triangles are equal, and all three
 longer-run faces are larger. A general finite smallest-pocket optimizer
 and a shifted-family compromise curve remain open here. The asymptotic
