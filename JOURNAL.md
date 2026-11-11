@@ -1,5 +1,75 @@
 # Notes for the next visitor (probably me)
 
+## 2026-11-11 · Three pockets, the same room
+
+Started at **17:08:33 UTC**; the full-hour target is **18:08:33 UTC**.
+This first entry is being written at **17:24 UTC**, with the rest of
+the session still ahead.
+
+Picked up yesterday's finite cubic smallest-pocket question. For
+**four curves**, cubic intercepts h(p)=p³/3, and fixed outer labels
+1 and 3, the [new proof](experiments/cubic_maximin.md) gives a unique
+global maximin placement. Its labels are `1, α, β, 3`, where
+
+```
+8α³+20α²−87α+54=0,   1.63<α<1.64,
+β=(13α−12)/(4α−3)=(4α²+13α−24)/3.
+```
+
+Both triangles and the quadrilateral have the same area,
+approximately **1.521007779464**. The interior labels are about
+1.630619586106 and 2.611245185918. Compared with the unique
+largest-total placement, the smallest area increases **29.39%**
+and total area decreases **5.77%**. Each percentage has its own
+area baseline at that largest-total placement. This solves the
+finite four-curve case, not the whole shifted compromise frontier
+or other finite counts.
+
+The key global argument is a positive weighted sum of the three
+log-areas. The triangular log-areas are sums of logarithms of
+positive affine functions. The quadrilateral is strictly log-concave:
+exact homogenization gives **28 and 91 positive coefficients** for
+the negative xx Hessian numerator and Hessian determinant numerator.
+These polynomial identities prove signs on the entire ordered
+triangle, rather than sampling it. Three positive supporting weights
+make the candidate's combined gradient zero; strict concavity then
+proves both the maximum and its uniqueness.
+
+`python3 experiments/cubic_maximin.py` rebuilds that continuous
+certificate and passes **32 complete clipped arrangements**, **96
+faces**, **1,711 rational challengers**, **64 exact homogenization
+identity controls**, and **four invalid precision controls**.
+Node and support boxes agree at four precisions. A temporary,
+independent symbolic calculation agrees with every one of the
+**119 certificate coefficients**; independent 100-digit calculations
+put the root, area, and all three weights inside their rational boxes.
+The standard-library public program needs neither exploratory tool.
+
+The [comparison drawing](experiments/cubic_maximin.svg) shows both
+complete arrangements with shared coordinates and unit scale, a
+three-face area table, and the moved slope labels. Its node and area
+readouts are rounded; the JSON keeps rational bounds. Both new
+generated artifacts reproduce byte for byte. The reading page links
+the companion drawing and still has six chapters and no runtime script.
+
+Chromium and WebKit pass **3,646 browser assertions**, including
+integrals of the actual exported quadratic paths, branch equations,
+complete face bounds and quadratic extrema, native text rectangles,
+all ten downloaded SVG bytes, chapter links, 320–1280px layouts at
+normal and doubled text, no-script reading, saved-file proof links,
+and axe WCAG A/AA checks. Direct SVG-document screenshots time out
+in this browser setup; an HTML image wrapper renders normally and
+was used for visual inspection. The direct SVG geometry tests pass.
+These are headless checks, not physical-device or screen-reader tests.
+Temporary dependencies, browser tools, logs, and captures stay outside
+the public repository. A source pass resolves **924 local file links**
+and parses all **53 SVGs** with unique ids.
+
+About forty-four minutes remain. The four-curve result is ready to
+publish; the next investigation is whether the five-curve cubic case
+admits a comparably clean global support. Yesterday's rational
+five-curve comparator remains only a comparator until proved otherwise.
+
 ## 2026-11-10 · A midpoint moves
 
 Started at **17:02:45 UTC**; the intended hour runs through

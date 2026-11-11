@@ -562,6 +562,21 @@ Every bounded face has a local curvature sandwich, including longer
 runs. Check its exact face formulas and complete arrangements with
 `python3 experiments/shifted_maximin.py`.
 
+The [finite four-curve result](experiments/cubic_maximin.md) solves the
+cubic-intercept smallest-pocket problem on [1,3]: its unique optimum
+makes all three areas equal, at approximately 1.521007779464 each.
+A [comparison drawing](experiments/cubic_maximin.svg) shows the
+29.39% gain in the minimum and 5.77% cost in total relative to the
+largest-total arrangement. An exact cubic selects the labels; positive
+supporting weights and global polynomial concavity certificates prove
+the maximum over all placements. Reproduce the rational enclosures,
+complete coefficients, and standalone drawing with:
+
+```sh
+python3 experiments/cubic_maximin.py --write
+python3 experiments/cubic_maximin_figure.py
+```
+
 The [outward-offset plot](experiments/parallel_offset.svg) follows each
 endpoint from 40 crossing pairs to 106, through exactly 33 inverse
 pair-births. Rational contraction boxes certify all 66 contact pairs,

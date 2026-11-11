@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1510" viewBox="0 0 1200 1510" role="group" aria-labelledby="title description">
+<title id="title">Three pockets, the same room</title>
+<desc id="description">Four parabolas with cubic intercepts and fixed outer slope labels one and three make three bounded pockets: triangles A and B and quadrilateral C. Two complete arrangements use the same coordinates and unit scale. The unique largest-total placement has total area about 4.842587 and smallest area about 1.175535. The unique largest-minimum placement makes all three areas about 1.521008, at total about 4.563023. Its interior labels are about 1.630620 and 2.611245. The smallest pocket grows about 29.39 percent, while total area falls about 5.77 percent, each relative to the largest-total arrangement and its respective area baseline. A table compares every pocket; two slope rulers show which curves moved. An exact cubic equation and global concavity certificate prove the finite four-curve result. These coordinates and printed decimals are rounded.</desc>
+<rect width="1200" height="1510" fill="#101323"/><g font-family="ui-sans-serif,system-ui,sans-serif">
+<text x="35" y="65" font-size="47" fill="#f4f1e8" >Three pockets, the same room.</text>
+<text x="35" y="111" font-size="25" fill="#c7c7d4" >Give the smallest one more room by equalizing all three.</text>
+<text x="35" y="153" font-size="23" fill="#c7c7d4" >Four curves: Xₚ = Y²/2 − pY + p³/3. Outer slope labels: 1 and 3.</text>
+<g data-arrangement="0" data-slopes="1.0,1.8298622357993086,2.4615789032197237,3.0" data-origin="66.3327307520582" data-center="596.0223089194159" data-scale="29.44293693949721">
+<rect x="35" y="200" width="550" height="514" rx="14" fill="#141829" stroke="#383b50"/>
+<text x="57" y="242" font-size="29" fill="#f4f1e8" >The largest total.</text>
+<text x="57" y="280" font-size="21" fill="#c7c7d4" >Keep as much area as possible.</text>
+<rect x="53" y="304" width="514" height="300" fill="#0b0e1a"/>
+<defs><clipPath id="panel-0"><rect x="53" y="304" width="514" height="300"/></clipPath></defs>
+<g clip-path="url(#panel-0)">
+<path d="M63.9387893,554.4141411Q105.4278981,454 831.8350736,353.5858589" fill="none" stroke="#555b78" stroke-width="1.4" data-role="branch" data-slope="1.0"/>
+<path d="M79.7287325,554.4141411Q37.8879377,454 680.9652096,353.5858589" fill="none" stroke="#555b78" stroke-width="1.4" data-role="branch" data-slope="1.8298622357993086"/>
+<path d="M139.6974006,554.4141411Q34.4233192,454 614.0673046,353.5858589" fill="none" stroke="#555b78" stroke-width="1.4" data-role="branch" data-slope="2.4615789032197237"/>
+<path d="M235.8945737,554.4141411Q76.5554004,454 602.1342938,353.5858589" fill="none" stroke="#555b78" stroke-width="1.4" data-role="branch" data-slope="3.0"/>
+<path d="M77.9484996,535.386955Q95.3262711,518.9838455 130.9808878,502.580736Q146.3246948,481.032593 193.2090012,459.48445Q86.6604795,497.4357025 77.9484996,535.386955Z" fill="#e8b66e" fill-opacity=".3" stroke="#e8b66e" stroke-width="1.8" stroke-linejoin="round" data-role="face" data-run="1,1" data-letter="A"/>
+<path d="M130.9808878,502.580736Q168.0899679,485.5084924 224.9974465,468.4362488Q256.6517607,444.6955132 326.5918295,420.9547775Q247.295222,440.2196137 193.2090012,459.48445Q146.3246948,481.032593 130.9808878,502.580736Z" fill="#9fc7eb" fill-opacity=".3" stroke="#9fc7eb" stroke-width="1.8" stroke-linejoin="round" data-role="face" data-run="1,2" data-letter="C"/>
+<path d="M193.2090012,459.48445Q247.295222,440.2196137 326.5918295,420.9547775Q393.1800596,398.3518034 494.4723303,375.7488292Q284.3047048,417.6166396 193.2090012,459.48445Z" fill="#a7d9bb" fill-opacity=".3" stroke="#a7d9bb" stroke-width="1.8" stroke-linejoin="round" data-role="face" data-run="2,2" data-letter="B"/>
+<circle cx="117.6401422" cy="499.1507137" r="11" fill="#101323"/>
+<text x="117.6401422" y="505.1507137" font-size="17" fill="#e8b66e" text-anchor="middle">A</text>
+<circle cx="204.6108214" cy="462.8640531" r="11" fill="#101323"/>
+<text x="204.6108214" y="468.8640531" font-size="17" fill="#9fc7eb" text-anchor="middle">C</text>
+<circle cx="318.2036815" cy="418.7293522" r="11" fill="#101323"/>
+<text x="318.2036815" y="424.7293522" font-size="17" fill="#a7d9bb" text-anchor="middle">B</text>
+</g>
+<text x="57" y="651" font-size="25" fill="#f4f1e8" >Total ≈ 4.842587246</text>
+<text x="57" y="691" font-size="24" fill="#c7c7d4" >Smallest ≈ 1.175535213</text>
+</g>
+<g data-arrangement="1" data-slopes="1.0,1.630619586106266,2.611245185918313,3.0" data-origin="646.3327307520582" data-center="596.0223089194159" data-scale="29.44293693949721">
+<rect x="615" y="200" width="550" height="514" rx="14" fill="#141829" stroke="#383b50"/>
+<text x="637" y="242" font-size="29" fill="#f4f1e8" >The largest minimum.</text>
+<text x="637" y="280" font-size="21" fill="#c7c7d4" >Every pocket has the same area.</text>
+<rect x="633" y="304" width="514" height="300" fill="#0b0e1a"/>
+<defs><clipPath id="panel-1"><rect x="633" y="304" width="514" height="300"/></clipPath></defs>
+<g clip-path="url(#panel-1)">
+<path d="M643.9387893,554.4141411Q685.4278981,454 1411.8350736,353.5858589" fill="none" stroke="#555b78" stroke-width="1.4" data-role="branch" data-slope="1.0"/>
+<path d="M650.4373417,554.4141411Q628.6033265,454 1291.6873779,353.5858589" fill="none" stroke="#555b78" stroke-width="1.4" data-role="branch" data-slope="1.630619586106266"/>
+<path d="M741.8277414,554.4141411Q621.5250489,454 1186.140423,353.5858589" fill="none" stroke="#555b78" stroke-width="1.4" data-role="branch" data-slope="2.611245185918313"/>
+<path d="M815.8945737,554.4141411Q656.5554004,454 1182.1342938,353.5858589" fill="none" stroke="#555b78" stroke-width="1.4" data-role="branch" data-slope="3.0"/>
+<path d="M650,544.1091131Q669.2506707,518.884825 731.7215344,493.6605369Q745.7588854,477.4393307 777.6699649,461.2181244Q655.4940294,502.6636188 650,544.1091131Z" fill="#e8b66e" fill-opacity=".3" stroke="#e8b66e" stroke-width="1.8" stroke-linejoin="round" data-role="face" data-run="1,1" data-letter="A"/>
+<path d="M731.7215344,493.6605369Q762.9569663,481.0483929 804.9974465,468.4362488Q828.2297491,451.0120219 872.0852449,433.5877949Q818.3952768,447.4029596 777.6699649,461.2181244Q745.7588854,477.4393307 731.7215344,493.6605369Z" fill="#9fc7eb" fill-opacity=".3" stroke="#9fc7eb" stroke-width="1.8" stroke-linejoin="round" data-role="face" data-run="1,2" data-letter="C"/>
+<path d="M777.6699649,461.2181244Q818.3952768,447.4029596 872.0852449,433.5877949Q959.7962363,398.7393409 1130,363.8908869Q873.4032036,412.5545056 777.6699649,461.2181244Z" fill="#a7d9bb" fill-opacity=".3" stroke="#a7d9bb" stroke-width="1.8" stroke-linejoin="round" data-role="face" data-run="2,2" data-letter="B"/>
+<circle cx="700.0442967" cy="499.6625915" r="11" fill="#101323"/>
+<text x="700.0442967" y="505.6625915" font-size="17" fill="#e8b66e" text-anchor="middle">A</text>
+<circle cx="788.8413637" cy="464.2256763" r="11" fill="#101323"/>
+<text x="788.8413637" y="470.2256763" font-size="17" fill="#9fc7eb" text-anchor="middle">C</text>
+<circle cx="898.1049604" cy="419.5656021" r="11" fill="#101323"/>
+<text x="898.1049604" y="425.5656021" font-size="17" fill="#a7d9bb" text-anchor="middle">B</text>
+</g>
+<text x="637" y="651" font-size="25" fill="#f4f1e8" >Total ≈ 4.563023338</text>
+<text x="637" y="691" font-size="24" fill="#c7c7d4" >Smallest ≈ 1.521007779</text>
+</g>
+<text x="35" y="761" font-size="28" fill="#f4f1e8" >Smallest area: +29.39%. Total area: −5.77%.</text>
+<text x="35" y="802" font-size="21" fill="#c7c7d4" >Each change uses its own area at the largest-total placement as its baseline.</text>
+<text x="35" y="841" font-size="21" fill="#c7c7d4" >Both drawings share coordinates and unit scale. All three complete pockets are shaded.</text>
+<text x="55" y="904" font-size="22" fill="#aaaabd" >Pocket</text>
+<text x="330" y="904" font-size="22" fill="#aaaabd" >Largest total</text>
+<text x="770" y="904" font-size="22" fill="#aaaabd" >Largest minimum</text>
+<text x="55" y="953" font-size="22" fill="#e8b66e" >A · triangle</text>
+<text x="330" y="953" font-size="24" fill="#c7c7d4" >1.191862174</text>
+<text x="770" y="953" font-size="24" fill="#f4f1e8" >1.521007779</text>
+<text x="55" y="999" font-size="22" fill="#9fc7eb" >C · quadrilateral</text>
+<text x="330" y="999" font-size="24" fill="#c7c7d4" >2.475189859</text>
+<text x="770" y="999" font-size="24" fill="#f4f1e8" >1.521007779</text>
+<text x="55" y="1045" font-size="22" fill="#a7d9bb" >B · triangle</text>
+<text x="330" y="1045" font-size="24" fill="#c7c7d4" >1.175535213</text>
+<text x="770" y="1045" font-size="24" fill="#f4f1e8" >1.521007779</text>
+<text x="35" y="1122" font-size="29" fill="#f4f1e8" >The outer labels stay put. Move both interior curves.</text>
+<text x="35" y="1166" font-size="20" fill="#9fc7eb" >Largest total</text>
+<path d="M120,1190h980" stroke="#555b78"/>
+<path d="M120,1181v18" stroke="#9fc7eb" stroke-width="2" data-role="slope-tick"/>
+<text x="120" y="1224" font-size="19" fill="#9fc7eb" text-anchor="middle">1</text>
+<path d="M526.6324955,1181v18" stroke="#9fc7eb" stroke-width="2" data-role="slope-tick"/>
+<text x="526.6324955" y="1224" font-size="19" fill="#9fc7eb" text-anchor="middle">1.829862</text>
+<path d="M836.1736626,1181v18" stroke="#9fc7eb" stroke-width="2" data-role="slope-tick"/>
+<text x="836.1736626" y="1224" font-size="19" fill="#9fc7eb" text-anchor="middle">2.461579</text>
+<path d="M1100,1181v18" stroke="#9fc7eb" stroke-width="2" data-role="slope-tick"/>
+<text x="1100" y="1224" font-size="19" fill="#9fc7eb" text-anchor="middle">3</text>
+<text x="35" y="1266" font-size="20" fill="#a7d9bb" >Largest minimum</text>
+<path d="M120,1290h980" stroke="#555b78"/>
+<path d="M120,1281v18" stroke="#a7d9bb" stroke-width="2" data-role="slope-tick"/>
+<text x="120" y="1324" font-size="19" fill="#a7d9bb" text-anchor="middle">1</text>
+<path d="M429.0035972,1281v18" stroke="#a7d9bb" stroke-width="2" data-role="slope-tick"/>
+<text x="429.0035972" y="1324" font-size="19" fill="#a7d9bb" text-anchor="middle">1.630620</text>
+<path d="M909.5101411,1281v18" stroke="#a7d9bb" stroke-width="2" data-role="slope-tick"/>
+<text x="909.5101411" y="1324" font-size="19" fill="#a7d9bb" text-anchor="middle">2.611245</text>
+<path d="M1100,1281v18" stroke="#a7d9bb" stroke-width="2" data-role="slope-tick"/>
+<text x="1100" y="1324" font-size="19" fill="#a7d9bb" text-anchor="middle">3</text>
+<text x="35" y="1383" font-size="22" fill="#c7c7d4" >A cubic equation selects this unique finite maximum. The proof covers all placements.</text>
+<text x="35" y="1424" font-size="21" fill="#c7c7d4" >The saved area and node bounds are rational. These coordinates and decimals are rounded.</text>
+<a href="https://mmilanta.github.io/aldebaran/experiments/cubic_maximin.md">
+<text x="35" y="1473" font-size="22" fill="#e8b66e" >Follow the exact four-curve proof and its global certificate ↗</text>
+</a></g></svg>

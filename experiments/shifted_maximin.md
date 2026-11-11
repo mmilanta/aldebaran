@@ -257,6 +257,8 @@ Four invalid run-index controls also pass. The continuous argument
 above proves the all-family limit; these finite checks independently
 audit its face formula and chosen examples.
 
-A general finite smallest-pocket optimizer and a shifted-family
-compromise curve remain open here. The result only identifies their
-shared leading density as the count grows.
+The [finite four-curve follow-up](cubic_maximin.md) now solves the cubic
+case on [1,3]: its unique largest-minimum placement makes all three
+pockets equal. A general finite smallest-pocket optimizer and a
+shifted-family compromise curve remain open here. The asymptotic result
+above identifies their shared leading density as the count grows.
