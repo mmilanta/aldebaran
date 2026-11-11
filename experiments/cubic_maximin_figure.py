@@ -126,6 +126,49 @@ def figure():
     return '\n'.join(parts)+'\n'
 
 
+def equal_shape():
+    """The exact affine shape of any four lines with three equal faces."""
+    number = lambda a: f'{a:g}'
+    point = lambda p: f'{number(430+110*p[0])},{number(495-110*p[1])}'
+    text = lambda x, y, s, size=21, color='ink', extra='': (
+        f'<text x="{x}" y="{y}" font-size="{size}" fill="{COLORS[color]}" {extra}>{escape(str(s))}</text>')
+    parts = ['<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1080" viewBox="0 0 1200 1080" role="group" aria-labelledby="title description">',
+             '<title id="title">Four lines, one equal-area shape</title>',
+             '<desc id="description">Use the two middle straightened lines as coordinate axes and rescale those axes. Any four-line arrangement with strictly convex intercepts and three equal bounded areas becomes this diagram. One outer line joins one zero to zero minus three; the other joins minus three zero to zero one. They meet at three halves three halves. The two triangles and central quadrilateral each have area three halves. Every affine change multiplies all three areas by the same factor. The slope gaps obey eight times the two outer gaps equals the middle gap times their total span. This explains the candidate placement; global optimality for a specified intercept law needs a separate proof.</desc>',
+             '<rect width="1200" height="1080" fill="#101323"/><g font-family="ui-sans-serif,system-ui,sans-serif">',
+             text(35, 65, 'Four lines. One equal-area shape.', 46, 'white'),
+             text(35, 111, 'Straighten the parabolas, then use their two middle lines as axes.', 24),
+             text(35, 153, 'Rescale those axes. Equal pockets always give this same arrangement.', 23),
+             '<rect x="35" y="215" width="650" height="670" rx="14" fill="#0b0e1a" stroke="#383b50"/>',
+             '<defs><clipPath id="shape-clip"><rect x="37" y="217" width="646" height="666"/></clipPath></defs>',
+             '<g clip-path="url(#shape-clip)">']
+    faces = (((0, -3), (1, 0), (0, 0)), ((0, 0), (1, 0), (1.5, 1.5), (0, 1)),
+             ((-3, 0), (0, 0), (0, 1)))
+    for letter, color, vertices in zip(LETTERS, ('gold', 'blue', 'green'), faces):
+        parts += [f'<polygon points="{" ".join(point(p) for p in vertices)}" fill="{COLORS[color]}" fill-opacity=".25" data-role="equal-face" data-letter="{letter}"/>']
+    for start, end in (((-3.5, 0), (2.5, 0)), ((0, -3.5), (0, 2.6)),
+                       ((-.3, -3.9), (1.9, 2.7)), ((-3.9, -.3), (2.7, 1.9))):
+        parts += [f'<path d="M{point(start)}L{point(end)}" stroke="#c7c7d4" stroke-width="1.8"/>']
+    for p in ((0, -3), (1, 0), (-3, 0), (0, 1), (1.5, 1.5)):
+        parts += [f'<circle cx="{number(430+110*p[0])}" cy="{number(495-110*p[1])}" r="4" fill="#f4f1e8"/>']
+    parts += [text(465, 625, 'A', 30, 'gold'), text(493, 430, 'C', 30, 'blue'), text(305, 465, 'B', 30, 'green'), '</g>',
+              text(535, 530, '(1, 0)', 19), text(76, 530, '(−3, 0)', 19),
+              text(341, 831, '(0, −3)', 19), text(340, 389, '(0, 1)', 19),
+              text(495, 301, '(3/2, 3/2)', 19), text(652, 483, 'r', 20, 'muted'),
+              text(447, 250, 's', 20, 'muted'),
+              text(735, 290, 'Two triangles.', 30, 'white'), text(735, 331, 'One quadrilateral.', 30, 'white'),
+              text(735, 399, 'A = 3/2', 27, 'gold'), text(735, 446, 'C = 3/2', 27, 'blue'), text(735, 493, 'B = 3/2', 27, 'green'),
+              text(735, 572, 'Affine changes multiply', 22), text(735, 607, 'every area by one factor.', 22),
+              text(735, 681, 'For slope gaps u, v, w:', 22), text(735, 728, '8uw = v(u + v + w)', 25, 'white'),
+              text(35, 940, 'Equal areas share this shape. The cubic family’s separate proof establishes optimality.', 22),
+              text(35, 980, 'These are straightened lines in affine coordinates, not the original Euclidean frame.', 21),
+              '<a href="https://mmilanta.github.io/aldebaran/experiments/cubic_maximin.md#why-does-the-second-label-have-that-rational-formula">',
+              text(35, 1034, 'Follow the geometric derivation and the cubic maximum ↗', 22, 'gold'), '</a></g></svg>']
+    return '\n'.join(parts)+'\n'
+
+
 if __name__ == '__main__':
     (HERE/'cubic_maximin.svg').write_text(figure())
+    (HERE/'cubic_equal_shape.svg').write_text(equal_shape())
     print('Wrote the complete four-curve comparison with shared coordinates and unit scale.')
+    print('Wrote the affine equal-area shape shared by four-line convex arrangements.')

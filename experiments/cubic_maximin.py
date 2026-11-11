@@ -15,7 +15,7 @@ from random import Random
 
 from blend_cusps import require, add, product, remainder, scale, value
 from shifted_maximin import check_arrangement, run_area
-from shifted_parabolas import variance_area
+from shifted_parabolas import crossing, variance_area
 from shifted_placement import partition
 
 HERE = Path(__file__).resolve().parent
@@ -156,7 +156,68 @@ def candidate_identities():
             'The cubic candidate does not make all three face areas equal.')
     require(remainder(add(product((Q(-3), Q(4)), beta), (Q(12), Q(-13))), ROOT) == (0,),
             'The rational and polynomial formulas for beta disagree.')
+    require(remainder(add(scale(product((Q(-1), Q(1)), add((Q(3),), scale(beta, -1))), 8),
+                          scale(add(beta, (Q(0), Q(-1))), -2)), ROOT) == (0,),
+            'The equal-area slope gaps miss the universal 8uw=vL relation.')
     return beta, S
+
+
+def geometric_controls():
+    """Audit the universal affine argument independently of cubic intercepts."""
+    def univariate_power(p, n):
+        result = (Q(1),)
+        for _ in range(n):
+            result = product(result, p)
+        return result
+    # Prove the displayed continuous factorization after y=N(x)/D(x).
+    N, D = (Q(-12), Q(13)), (Q(-3), Q(4))
+    F = tuple(Q(c, 9) for c in (-48, 40, 13, -4, -1))
+    substituted = (Q(0),)
+    for i, c in enumerate(F):
+        substituted = add(substituted, scale(product(univariate_power(N, i), univariate_power(D, 4-i)), c))
+    left = add(product(F, univariate_power(D, 4)), scale(substituted, -1))
+    right = scale(product(product(product(product((Q(-3), Q(1)), (Q(-1), Q(1))),
+                                          (Q(3), Q(2))), (Q(-3), Q(2), Q(2))), ROOT), Q(-8, 9))
+    require(left == right, 'The geometric reduction does not factor by the displayed cubic.')
+    random = Random(2026111104)
+    examples = []
+    for _ in range(40):
+        points = [(Q(1), Q(random.randrange(-8, 9), 3))]
+        secant = Q(random.randrange(-20, 4), 7)
+        for _ in range(3):
+            gap = Q(random.randrange(1, 16), 11)
+            p, h = points[-1]
+            points.append((p+gap, h+gap*secant))
+            secant += Q(random.randrange(1, 12), 5)
+        examples.append((points, False))
+    for step in range(1, 21):
+        x = 1+Q(2*step, 21)
+        y = (13*x-12)/(4*x-3)
+        v = y-x
+        points = [(Q(1), (y-1)/v), (x, Q(0)), (y, Q(0)), (Q(3), 3*(3-y)/v)]
+        examples.append((points, True))
+    for points, equal in examples:
+        a, x, y, b = [p for p, h in points]
+        def axes(vertex):
+            U, Y = vertex
+            return U-points[1][1]+x*Y, U-points[2][1]+y*Y
+        R, zero = axes(crossing(points[0], points[2]))
+        zero2, minusS = axes(crossing(points[0], points[1]))
+        minusT, zero3 = axes(crossing(points[2], points[3]))
+        zero4, V = axes(crossing(points[1], points[3]))
+        S, T = -minusS, -minusT
+        require(zero == zero2 == zero3 == zero4 == 0 and min(R, S, T, V) > 0 and S*T > R*V,
+                'The affine axes or positive outer intercepts are incorrect.')
+        require(S/R == (y-a)/(x-a) and T/V == (b-x)/(b-y),
+                'The affine intercept ratios miss the slope directions.')
+        v = y-x
+        predicted = [R*S/(2*v), R*V*(S*R+2*S*T+T*V)/(2*(S*T-R*V)*v), T*V/(2*v)]
+        actual = [run_area(points, i, j)[0] for i, j in ((1, 1), (1, 2), (2, 2))]
+        require(actual == predicted, 'Affine triangle and quadrilateral areas miss the complete faces.')
+        if equal:
+            require(actual[0] == actual[1] == actual[2] and S == 3*V and T == 3*R
+                    and 8*(x-a)*(b-y) == (y-x)*(b-a), 'A canonical equal-area arrangement lost its geometry.')
+    return len(examples)
 
 
 def root_bounds(bits=96):
@@ -290,7 +351,7 @@ def controls():
             raise ValueError('An invalid root precision was accepted.')
     return {'complete_arrangements': arrangements, 'clipped_faces': faces,
             'rational_challengers': challengers, 'homogeneous_identity_controls': identities,
-            'invalid_controls': invalid}
+            'invalid_controls': invalid, 'affine_geometry_controls': geometric_controls()}
 
 
 def serialize(obj):

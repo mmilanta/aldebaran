@@ -115,6 +115,48 @@ cases are now solved. Next work is a deliberate proof and implementation
 review, looking for a simpler geometric explanation or a useful precise
 next question, with publication and artifact receipts still to finish.
 
+Second publication receipt, **17:35 UTC**: **947079d** passed Pages;
+all seven changed files match their public bytes.
+
+At **17:42 UTC**, the four-curve note has a geometric explanation for
+its rational relation between the two unknown labels. Straighten the
+curves and use the two middle lines as axes. If the two outer lines
+meet those axes at `(R,0),(0,−S)` and `(−T,0),(0,V)`, equal triangular
+areas give `S=qV`, `T=qR`. The quadrilateral has area `RVq/(q−1)`,
+while each triangle has area `RVq/2`; equality forces q=3. Every such
+equal-area arrangement therefore has one affine shape. Its
+[small schematic](experiments/cubic_equal_shape.svg) shows both
+triangles and the quadrilateral with area 3/2 in normalized coordinates.
+
+The direction ratios give **8uw=vL** for outer gaps u,w, middle gap v,
+and total span L. On [1,3], that is precisely
+`y=(13x−12)/(4x−3)`. Substituting into the difference of triangle
+areas factors by the already proved cubic. The factorization is now
+checked as an exact polynomial identity. **Sixty additional affine
+controls**, including twenty exact equal-area examples, agree with
+the universal triangle and quadrilateral formulas for general
+discrete-convex intercepts. This geometric lemma explains equality;
+the family-specific concavity support still proves optimality.
+
+Both browsers pass **82 further schematic assertions** for native
+text bounds, exact exported polygon areas, complete face bounds,
+the reading-page links, and proof text. All **four** generated artifacts
+reproduce byte for byte; the earlier certificate and main comparison
+SVG are unchanged by this addition. The source pass resolves **937
+local file links** and parses **54 SVGs** with unique ids. The final
+smallest allowed four-curve precision also retains positive support.
+
+A brief primary-source reading checked the supporting-tangent step
+against Boyd and Vandenberghe's
+[*Convex Optimization*, §3.1.3, pp. 69–70](https://web.stanford.edu/~boyd/cvxbook/bv_cvxbook.pdf#page=83).
+The note now links that standard concavity criterion; the pocket
+identities and sign certificates are proved here explicitly.
+
+About twenty-six minutes remain through **18:08:33 UTC**. The two
+finite results and the geometric explanation are ready. Remaining
+work is publication, review of scope and edge cases, and a concrete
+handoff rather than another study or another control on the page.
+
 ## 2026-11-10 · A midpoint moves
 
 Started at **17:02:45 UTC**; the intended hour runs through

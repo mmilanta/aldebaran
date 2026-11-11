@@ -54,6 +54,62 @@ and 164/100 are opposite. Thus `1.63<α<1.64`, and the displayed
 formula gives `α<β<3`. Rational bisection encloses the root and
 all reported areas; no rounded root decides a proof inequality.
 
+## Why does the second label have that rational formula?
+
+There is a geometric reason, valid for **any four discrete strictly
+convex intercepts** when their three bounded areas are equal. It
+explains the candidate; global optimality still needs the cubic
+family's proof below.
+
+![Two middle lines become coordinate axes. One outer line joins
+(1,0) to (0,−3), and the other joins (−3,0) to (0,1). They meet at
+(3/2,3/2). The two triangles and central quadrilateral each have
+area 3/2.](cubic_equal_shape.svg)
+
+Straighten the parabolas, and use the two middle lines as axes.
+Explicitly, if `Lᵢ(Y)=hᵢ−pᵢY`, put `r=U−L₁(Y)` and
+`s=U−L₂(Y)`. This affine map has positive area factor `p₂−p₁`,
+so it preserves area ratios. Write the outer lines' axis intercepts
+as `(R,0),(0,−S)` and `(−T,0),(0,V)`, with R,S,T,V positive.
+Convexity puts their meeting in the positive quadrant and gives
+`ST>RV`.
+
+The triangles have areas RS/2 and TV/2 in these coordinates.
+If they are equal, write `S=qV`, `T=qR`, with q>1. The two outer
+lines meet at `(Rq/(q−1),Vq/(q−1))`, so their central
+quadrilateral has area `RVq/(q−1)`. Equality with either triangle
+forces `q−1=2`. Thus `S=3V`, `T=3R`, and rescaling the two axes
+gives exactly the diagram. Every equal-area four-line arrangement
+has this one affine shape.
+
+For gaps `u=p₁−p₀`, `v=p₂−p₁`, `w=p₃−p₂`, the line directions
+give
+
+```
+S/R = (u+v)/u,       T/V = (v+w)/w.
+```
+
+Their product is 9 at equal areas. Since
+`(u+v)(v+w)=uw+v(u+v+w)`, this is precisely
+
+```
+8uw = vL,       L=u+v+w.
+```
+
+On [1,3], with labels 1,x,y,3, solving this relation gives
+`y=(13x−12)/(4x−3)`. It always lies strictly between x and 3
+when 1<x<3. Along that relation, equality of the two triangle
+areas reduces to the cubic above: the difference `F(x)−F(y)`
+from the next section factors as
+
+```
+−8(x−3)(x−1)(2x+3)(2x²+2x−3)
+  × (8x³+20x²−87x+54) / [9(4x−3)⁴].
+```
+
+All factors outside the cubic are nonzero in 1<x<3. This explains
+both the rational formula for β and the equation selecting α.
+
 ## Name the three areas
 
 Use arbitrary labels `1<x<y<3`. The consecutive-run classification
@@ -152,6 +208,12 @@ is strictly concave, and has zero gradient at `(α,β)`. The tangent
 inequality for a concave differentiable function proves that this
 point is its unique global maximizer on the convex domain.
 
+This supporting-tangent step is the standard differentiable
+concavity criterion; see Boyd and Vandenberghe,
+[*Convex Optimization*, §3.1.3, pp. 69–70](https://web.stanford.edu/~boyd/cvxbook/bv_cvxbook.pdf#page=83).
+The face formulas, global polynomial signs, and positive weights
+needed to apply it here are established above.
+
 If any placement had all three areas at least S*, its G value
 would be at least `(ω₁+ω₂+ω₃)log S*`, the value at `(α,β)`.
 Strict concavity therefore forces that placement to be `(α,β)`.
@@ -175,9 +237,15 @@ exact evaluations of the homogenization identities, four invalid
 precision controls, and overlapping node and support enclosures
 at four precisions. The challenger grid is an implementation check;
 the concavity and positive-weight argument proves the global result.
+Sixty additional affine controls check general discrete-convex
+intercepts and twenty exact equal-area examples among them. The
+geometric reduction's displayed univariate factorization is checked
+as an exact polynomial identity.
 
 The drawing uses rounded coordinates from the rational node boxes.
 Both panels share coordinates and unit scale. The areas in its table
 are rounded readouts; the JSON retains rational lower and upper
 bounds. The comparison's total-area optimum is freshly certified
 by the earlier monotone shooting calculation.
+The same figure command also regenerates the affine shape diagram;
+its three polygon areas are exactly 3/2 in its labeled coordinates.

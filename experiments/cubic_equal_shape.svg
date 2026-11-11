@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1080" viewBox="0 0 1200 1080" role="group" aria-labelledby="title description">
+<title id="title">Four lines, one equal-area shape</title>
+<desc id="description">Use the two middle straightened lines as coordinate axes and rescale those axes. Any four-line arrangement with strictly convex intercepts and three equal bounded areas becomes this diagram. One outer line joins one zero to zero minus three; the other joins minus three zero to zero one. They meet at three halves three halves. The two triangles and central quadrilateral each have area three halves. Every affine change multiplies all three areas by the same factor. The slope gaps obey eight times the two outer gaps equals the middle gap times their total span. This explains the candidate placement; global optimality for a specified intercept law needs a separate proof.</desc>
+<rect width="1200" height="1080" fill="#101323"/><g font-family="ui-sans-serif,system-ui,sans-serif">
+<text x="35" y="65" font-size="46" fill="#f4f1e8" >Four lines. One equal-area shape.</text>
+<text x="35" y="111" font-size="24" fill="#c7c7d4" >Straighten the parabolas, then use their two middle lines as axes.</text>
+<text x="35" y="153" font-size="23" fill="#c7c7d4" >Rescale those axes. Equal pockets always give this same arrangement.</text>
+<rect x="35" y="215" width="650" height="670" rx="14" fill="#0b0e1a" stroke="#383b50"/>
+<defs><clipPath id="shape-clip"><rect x="37" y="217" width="646" height="666"/></clipPath></defs>
+<g clip-path="url(#shape-clip)">
+<polygon points="430,825 540,495 430,495" fill="#e8b66e" fill-opacity=".25" data-role="equal-face" data-letter="A"/>
+<polygon points="430,495 540,495 595,330 430,385" fill="#9fc7eb" fill-opacity=".25" data-role="equal-face" data-letter="C"/>
+<polygon points="100,495 430,495 430,385" fill="#a7d9bb" fill-opacity=".25" data-role="equal-face" data-letter="B"/>
+<path d="M45,495L705,495" stroke="#c7c7d4" stroke-width="1.8"/>
+<path d="M430,880L430,209" stroke="#c7c7d4" stroke-width="1.8"/>
+<path d="M397,924L639,198" stroke="#c7c7d4" stroke-width="1.8"/>
+<path d="M1,528L727,286" stroke="#c7c7d4" stroke-width="1.8"/>
+<circle cx="430" cy="825" r="4" fill="#f4f1e8"/>
+<circle cx="540" cy="495" r="4" fill="#f4f1e8"/>
+<circle cx="100" cy="495" r="4" fill="#f4f1e8"/>
+<circle cx="430" cy="385" r="4" fill="#f4f1e8"/>
+<circle cx="595" cy="330" r="4" fill="#f4f1e8"/>
+<text x="465" y="625" font-size="30" fill="#e8b66e" >A</text>
+<text x="493" y="430" font-size="30" fill="#9fc7eb" >C</text>
+<text x="305" y="465" font-size="30" fill="#a7d9bb" >B</text>
+</g>
+<text x="535" y="530" font-size="19" fill="#c7c7d4" >(1, 0)</text>
+<text x="76" y="530" font-size="19" fill="#c7c7d4" >(−3, 0)</text>
+<text x="341" y="831" font-size="19" fill="#c7c7d4" >(0, −3)</text>
+<text x="340" y="389" font-size="19" fill="#c7c7d4" >(0, 1)</text>
+<text x="495" y="301" font-size="19" fill="#c7c7d4" >(3/2, 3/2)</text>
+<text x="652" y="483" font-size="20" fill="#aaaabd" >r</text>
+<text x="447" y="250" font-size="20" fill="#aaaabd" >s</text>
+<text x="735" y="290" font-size="30" fill="#f4f1e8" >Two triangles.</text>
+<text x="735" y="331" font-size="30" fill="#f4f1e8" >One quadrilateral.</text>
+<text x="735" y="399" font-size="27" fill="#e8b66e" >A = 3/2</text>
+<text x="735" y="446" font-size="27" fill="#9fc7eb" >C = 3/2</text>
+<text x="735" y="493" font-size="27" fill="#a7d9bb" >B = 3/2</text>
+<text x="735" y="572" font-size="22" fill="#c7c7d4" >Affine changes multiply</text>
+<text x="735" y="607" font-size="22" fill="#c7c7d4" >every area by one factor.</text>
+<text x="735" y="681" font-size="22" fill="#c7c7d4" >For slope gaps u, v, w:</text>
+<text x="735" y="728" font-size="25" fill="#f4f1e8" >8uw = v(u + v + w)</text>
+<text x="35" y="940" font-size="22" fill="#c7c7d4" >Equal areas share this shape. The cubic family’s separate proof establishes optimality.</text>
+<text x="35" y="980" font-size="21" fill="#c7c7d4" >These are straightened lines in affine coordinates, not the original Euclidean frame.</text>
+<a href="https://mmilanta.github.io/aldebaran/experiments/cubic_maximin.md#why-does-the-second-label-have-that-rational-formula">
+<text x="35" y="1034" font-size="22" fill="#e8b66e" >Follow the geometric derivation and the cubic maximum ↗</text>
+</a></g></svg>
