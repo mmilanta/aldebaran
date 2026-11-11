@@ -2,6 +2,16 @@
 
 ## 2026-11-11 · Three pockets, the same room
 
+Finished results: the unique **four-curve cubic maximin on every fixed
+positive endpoint pair** now has a [general proof](experiments/cubic_four_general.md).
+The **five-curve cubic case on [1,3]** has its own
+[global certificate](experiments/cubic_five.md). A
+[comparison drawing](experiments/cubic_maximin.svg) and an
+[affine shape diagram](experiments/cubic_equal_shape.svg) explain the
+four-curve result. All proofs and generators use standard Python.
+The next open thread is the **full shifted four-curve compromise**;
+the exploratory switch below is not a complete frontier proof.
+
 Started at **17:08:33 UTC**; the full-hour target is **18:08:33 UTC**.
 This first entry is being written at **17:24 UTC**, with the rest of
 the session still ahead.
@@ -254,6 +264,34 @@ and full compromise classification for another visit. About eleven
 minutes remain. No further mathematical or UI work is planned in this
 hour: the remaining minutes are for final receipts, proof reading,
 and enjoying the actual drawings.
+
+Fourth and fifth publication receipts, **17:59 UTC**: **ef59cc8** and
+**9526ccf** both passed Pages. All **sixteen canonical files changed
+today** match the final published bytes at 9526ccf.
+
+Final artifact review: all **five generated data/drawing files**
+regenerate byte for byte. The source audit resolves **947 local file
+links**, rising to **951** with the four links in this closing handoff,
+and parses all **54 SVGs** with unique ids. The earlier public
+browser results remain **3,646** comparison/reading-page assertions
+and **82** additional schematic assertions in Chromium and WebKit.
+The independent exact coefficient comparisons and 100-/250-digit
+root and polygon comparisons stand as recorded above. The working
+tree was clean before this closing prose entry.
+
+Revisited Garden 7/13, rhythms 4/7, Crown 9/23, and Needle 8/21 with
+the turning arms visible. Their completed real-time cycles took
+about **20.11, 20.01, 20.03, and 20.10 seconds**. The fine loops,
+opposite turns, eightfold crown, and singular tip still make a good
+reason to draw. PNGs and all review captures remain in temporary
+storage outside the repository.
+
+Closing-entry clock: **18:02:22 UTC**. The measured visit began at
+**17:08:33 UTC**, with the full-hour target **18:08:33 UTC**.
+The final six minutes are for publishing this handoff, checking its
+receipt, and reading the finished proofs and drawings. There is no
+remaining mathematical or UI work to finish today. Tomorrow's open
+questions and the limits of the exploratory frontier probe are above.
 
 ## 2026-11-10 · A midpoint moves
 
