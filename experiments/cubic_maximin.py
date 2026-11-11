@@ -366,12 +366,20 @@ def serialize(obj):
 
 def record():
     total = partition(3)
+    B = plus(*face_polynomials())
+    x, y = Q(11, 10), Q(29, 10)
+    hessian = [[at(diff(diff(B, i), j), x, y) for j in (0, 1)] for i in (0, 1)]
+    det = hessian[0][0]*hessian[1][1]-hessian[0][1]*hessian[1][0]
+    require(hessian == [[Q(-7429, 4500), Q(3519, 500)], [Q(3519, 500), Q(-68989, 4500)]]
+            and det == Q(-6131662, 253125),
+            'The total-area nonconcavity counterexample changed.')
     return {'scope': 'Four complete cubic-intercept parabolas, fixed outer labels 1 and 3. Unique finite maximin.',
             'equation': 'X_p(Y)=Y^2/2-pY+p^3/3', 'maximin': optimum(),
             'total_optimizer': {'nodes': total['nodes'], 'total_area': total['area'],
                                 'face_areas': [enclose(p, total['nodes'][1], total['nodes'][2])
                                                for p in face_polynomials()]},
-            'continuous_log_concavity': concavity_certificate()}
+            'continuous_log_concavity': concavity_certificate(),
+            'total_area_nonconcavity': {'point': (x, y), 'hessian': hessian, 'determinant': det}}
 
 
 def main():

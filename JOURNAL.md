@@ -157,6 +157,64 @@ finite results and the geometric explanation are ready. Remaining
 work is publication, review of scope and edge cases, and a concrete
 handoff rather than another study or another control on the page.
 
+Third publication receipt, **17:44 UTC**: **275987c** passed Pages;
+all five changed files match the public bytes. The public schematic
+also passes its **82 browser assertions** in both engines.
+
+At **17:48 UTC**, the scope review found an exact warning for the
+next problem. Although every individual four-curve log-area is
+concave on the proved domain, their total is not concave. At labels
+`1,11/10,29/10,3`, its Hessian is
+
+```
+[ −7429/4500      3519/500  ]
+[  3519/500     −68989/4500 ],
+```
+
+with determinant **−6131662/253125**. The four-curve program now
+derives and archives this exact counterexample. This does not affect
+either maximin proof: they use positive supports of individual
+log-areas. It explains why total-area uniqueness is not a concavity
+theorem and why the full shifted compromise needs a separate argument.
+
+For the next visitor: the four- and five-curve cubic maximin cases
+on [1,3] are now solved. The full four-curve frontier is an appealing
+next question. With areas A,C,B and single-insertion area F as in the
+new note, the exact identities are
+
+```
+total = F(x)+B(x,y) = F(y)+A(x,y).
+```
+
+A temporary, **exploratory** stationary calculation suggests that
+the first part of the frontier keeps y at the best insertion between
+x and 3, so `4y²−y(x+3)−x²−9=0`. Its candidate first meeting with
+`A=B` is near `x=1.825621738375, y=2.459833321661`, with common
+triangle area about **1.186344511893**. Eliminating y produces
+
+```
+52x⁶+461x⁵+148x⁴−7528x³−12250x²+24585x+28832=0.
+```
+
+These numbers are **not a certified frontier classification**. A
+future proof must isolate the relevant root, justify the active
+constraints over continuous intervals, and exclude other competing
+placements. The total's nonconcavity blocks one shortcut. Do not
+rediscover the solved maximin endpoints or call this stationary
+probe the complete compromise.
+
+Other open directions: arbitrary positive endpoints for the finite
+cubic cases; other finite counts; or whether a shorter geometric
+argument can replace the four-curve polynomial concavity certificate.
+The affine equal-area shape alone proves no maximum for a general
+intercept law. Keep the five-curve middle weight: it is small and
+strictly positive. The interval proposal and acceptance predicates
+must remain separate, including outward presentation rounding.
+
+There are about twenty minutes left through **18:08:33 UTC**. The
+remaining review will check the final public artifacts and revisit
+the actual drawings that started this notebook.
+
 ## 2026-11-10 · A midpoint moves
 
 Started at **17:02:45 UTC**; the intended hour runs through

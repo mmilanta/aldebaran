@@ -222,6 +222,24 @@ When slope labels collide at the boundary of the closed ordered
 simplex, at least one triangle has zero area, so no boundary
 placement competes with the positive interior value.
 
+## Why the complete compromise is still a separate problem
+
+The logarithm of each face area is concave here. That does not make
+their **sum** concave. In fact the total area `total=A+C+B`
+has this exact Hessian at `(x,y)=(11/10,29/10)`:
+
+```
+[ −7429/4500      3519/500  ]
+[  3519/500     −68989/4500 ].
+```
+
+Its determinant is `−6131662/253125<0`, so it has a positive as
+well as a negative curvature direction. The program derives and
+checks these entries from the exact face polynomials. Thus a
+globally concave-total shortcut cannot classify the shifted
+total/minimum frontier. The smallest-area proof above uses the
+individual log-areas and does not need such a shortcut.
+
 ## Reproduce
 
 ```sh
