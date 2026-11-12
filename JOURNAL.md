@@ -67,6 +67,27 @@ About forty minutes remain through **18:36:34 UTC**. The result is ready
 to publish; the remaining session is for receipts, careful review, and
 following the geometry rather than adding controls to the site.
 
+First publication receipt, **17:58 UTC**: **c94d34e** passed Pages.
+All nine changed public files match the commit, and both engines
+pass the same **1,471 assertions each** against the public site.
+
+At **18:02 UTC**, the equal-triangle branch also has a direct
+[midpoint parameter](experiments/cubic_frontier.md#the-tied-branch-also-has-a-radical-parameter).
+Write x=m−d, y=m+d. The quartic difference factors to give
+
+```
+d² = 19/2 − (m+1)² + 3/[2(m+1)].
+```
+
+The midpoint selects every point on that branch exactly once.
+At m=17/8 the interior labels are `(85±7√7)/40`; the two
+triangles each have exact area `288463√7/512000`. The remaining
+face is `2019241/640000` minus that triangle area. Its strict
+ordering and branch membership pass exact Q(√7) checks. An
+independent symbolic calculation agrees with the factorization
+and all radical coordinates and areas. The standalone drawing
+has not changed; this is a simpler description of its second branch.
+
 ## 2026-11-11 · Three pockets, the same room
 
 Finished results: the unique **four-curve cubic maximin on every fixed

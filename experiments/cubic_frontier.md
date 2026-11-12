@@ -235,6 +235,44 @@ second branch `dT/dx=Aₓ+BᵧF′(x)/F′(y)>0`, and x moves downward.
 Each point is therefore efficient, and the unique supports exclude
 every competing placement. This is the complete frontier.
 
+## The tied branch also has a radical parameter
+
+The implicit equation `F(x)=F(y)` has a direct geometric parameter.
+Write `x=m−d`, `y=m+d`, so m is the labels' midpoint and d>0 is
+their half-gap. Subtracting the two quartics gives
+
+```
+F(m−d)−F(m+d)
+  = (4d/9)[2(m+1)d²+2m³+6m²−13m−20].
+```
+
+Thus the tied-triangle branch is
+
+```
+d = √[19/2−(m+1)²+3/(2(m+1))],
+x=m−d,  y=m+d.
+```
+
+The midpoint runs from `(α+β)/2` to `(σ+η)/2`, approximately
+2.120932386012 to 2.142727530018; the frontier travels in the
+decreasing direction. The radicand decreases with m, so `m−d`
+increases strictly. The midpoint therefore selects every point
+on the second branch exactly once. The support proof above still
+provides global optimality; this formula makes the labels explicit.
+
+For example m=17/8 gives the exact labels
+
+```
+1, (85−7√7)/40, (85+7√7)/40, 3.
+```
+
+Put `S=288463√7/512000` and `P=2019241/640000`. Its face areas
+are exactly `S, P−S, S`, with `P−S>S`. The minimum is about
+1.490627657116 and total is about 4.645691719616. The program
+checks the midpoint factorization as a polynomial identity and this
+example in the exact quadratic field Q(√7), including its membership
+in the proved frontier interval.
+
 ## Reproduce
 
 ```sh
@@ -248,7 +286,7 @@ Only the Python standard library is needed. All accepted signs and
 root enclosures use exact rational arithmetic. The program checks
 64 reconstructions of the Bernstein identities, eight complete
 clipped arrangements and their 24 faces, five endpoint precisions,
-and seven invalid controls. These finite checks audit the implementation;
+one exact radical example, and seven invalid controls. These finite checks audit the implementation;
 the continuous sign identities and the supporting argument prove the
 classification.
 

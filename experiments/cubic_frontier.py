@@ -18,6 +18,7 @@ from blend_cusps import (Interval as I, add, bound, isolate_roots,
                         product, remainder, require, scale, value)
 from cubic_maximin import (at, constant, diff, enclose, face_polynomials,
                            optimum, plus, power, scaled, serialize, times)
+from parabolic_balance import Quadratic
 from shifted_maximin import check_arrangement, run_area
 from shifted_parabolas import variance_area
 from shifted_placement import partition, sqrt_bounds
@@ -126,6 +127,17 @@ def global_certificate():
     for p in (ey, plus(A, scaled(B, -1))):
         require(remainder(substitute_numerator(p, numerator, denominator), SWITCH) == (0,),
                 'The switch polynomial misses a defining equation.')
+    # Reinterpret the two polynomial variables as midpoint m and half-gap d.
+    # F(m-d)-F(m+d) factors by d and a polynomial linear in d^2.
+    m, d = x, y
+    substituted = plus(*(scaled(times(power(plus(m, scaled(d, -1)), i),
+                                     power(plus(m, d), j)), c)
+                         for (i, j), c in plus(A, scaled(B, -1)).items()))
+    midpoint_factor = scaled(times(d, plus(
+        scaled(times(power(d, 2), plus(m, constant(1))), 2),
+        scaled(power(m, 3), 2), scaled(power(m, 2), 6),
+        scaled(m, -13), constant(-20))), Q(4, 9))
+    require(substituted == midpoint_factor, 'The equal-triangle midpoint identity failed.')
     return {'localization': localization, 'continuous_signs': certificates,
             'switch_polynomial_ascending': SWITCH,
             'switch_y_numerator_ascending': numerator,
@@ -281,6 +293,15 @@ def controls():
         for old, new in zip(endpoints(), endpoints(bits)):
             for a, b in zip(old['nodes'], new['nodes']):
                 require(max(a[0], b[0]) <= min(a[1], b[1]), 'Endpoint precisions give disjoint root boxes.')
+    # An exact radical point on the second branch, independent of bisection.
+    radical = Quadratic(7, Q(0), Q(1))
+    x, y = Q(17, 8)-7*radical/40, Q(17, 8)+7*radical/40
+    exact = [at(p, x, y) for p in (A, C, B)]
+    triangle, single = 288463*radical/512000, Q(2019241, 640000)
+    require(exact == [triangle, single-triangle, triangle]
+            and exact[1] > triangle
+            and endpoints()[2]['nodes'][1][1] < x < endpoints()[1]['nodes'][1][0],
+            'The exact radical example leaves the certified tied-triangle branch.')
     invalid = 0
     for call in (lambda: sample(Q(1)), lambda: sample(Q(2)), lambda: sample(1.75),
                  lambda: endpoints(True), lambda: endpoints(47), lambda: endpoints(513),
@@ -292,7 +313,8 @@ def controls():
         else:
             raise ValueError('An invalid control was accepted.')
     return {'Bernstein_identity_controls': identities, 'complete_arrangements': len(rows),
-            'clipped_faces': count, 'endpoint_precisions': 5, 'invalid_controls': invalid}
+            'clipped_faces': count, 'endpoint_precisions': 5, 'exact_radical_examples': 1,
+            'invalid_controls': invalid}
 
 
 def record():
@@ -302,6 +324,13 @@ def record():
             'branches': ['B only: y is the best insertion between x and 3.',
                          'A and B: F(x)=F(y), with y above (1+sqrt(11))/2.'],
             'endpoints': endpoints(), 'samples': [sample(x) for x in SAMPLES],
+            'exact_radical_example': {
+                'representation': 'Each pair (a,b) means a+b*sqrt(7).',
+                'nodes': [(Q(1), Q(0)), (Q(17, 8), Q(-7, 40)),
+                          (Q(17, 8), Q(7, 40)), (Q(3), Q(0))],
+                'face_areas_A_C_B': [(Q(0), Q(288463, 512000)),
+                                     (Q(2019241, 640000), Q(-288463, 512000)),
+                                     (Q(0), Q(288463, 512000))]},
             'global_certificate': global_certificate()}
 
 

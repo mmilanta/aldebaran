@@ -577,6 +577,41 @@
       ]
     }
   ],
+  "exact_radical_example": {
+    "representation": "Each pair (a,b) means a+b*sqrt(7).",
+    "nodes": [
+      [
+        "1",
+        "0"
+      ],
+      [
+        "17/8",
+        "-7/40"
+      ],
+      [
+        "17/8",
+        "7/40"
+      ],
+      [
+        "3",
+        "0"
+      ]
+    ],
+    "face_areas_A_C_B": [
+      [
+        "0",
+        "288463/512000"
+      ],
+      [
+        "2019241/640000",
+        "-288463/512000"
+      ],
+      [
+        "0",
+        "288463/512000"
+      ]
+    ]
+  },
   "global_certificate": {
     "localization": {
       "F_at_left_edge": "24037/12288",
