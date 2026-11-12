@@ -88,6 +88,49 @@ independent symbolic calculation agrees with the factorization
 and all radical coordinates and areas. The standalone drawing
 has not changed; this is a simpler description of its second branch.
 
+Second publication receipt, **18:09 UTC**: **1bd2fe6** passed Pages;
+all four changed files match the published bytes.
+
+At **18:11 UTC**, the [constant-curvature limit](experiments/cubic_frontier_limit.md)
+explains the tiny first branch. For positive endpoints a<b, put
+`ε=(b−a)/(b+2a)`. For every sufficiently small positive ε, the first
+triangle tie is an actual global frontier point, with
+
+```
+relative minimum gain = (8/27) ε³ + O(ε⁴),
+relative total cost = (16/2187) ε⁶ + O(ε⁷),
+cost / gain² → 1/12.
+```
+
+Both normalized label pairs agree through second order, then differ
+by `(-16,-8)ε³/243`. Stationarity squares that cubic displacement
+in the total-area cost. Two nonsingular implicit systems give smooth
+root families; compactness localizes every near-optimal competitor
+to a concave neighborhood of the equal-gap quadratic arrangement.
+Positive one-triangle supports then give global optimality on the
+short initial branch. This proves a local asymptotic theorem,
+**not a numerical ε threshold or the full general-endpoint frontier**.
+In particular [1,3]'s exact percentages still come from its separate
+finite certificate, rather than an error estimate from this limit.
+
+The new standard-library program reconstructs rational jets through
+order six, checks **28 zero residual coefficients**, and verifies the
+cost coefficient by an independent Hessian quadratic form. A separate
+symbolic construction agrees with **all 28 node coefficients**.
+Seven independent 110-digit root comparisons, from ε=1/5 to 1/1000,
+approach the stated gain, cost, and 1/12 ratio. They audit the algebra;
+the implicit-function and compactness argument supplies the theorem.
+Primary-source reading checked the supporting tangent criterion in
+Boyd–Vandenberghe and the implicit-function statement in the
+[Toronto course notes](https://www.math.toronto.edu/courses/mat237y1/20199/notes/Chapter3/S3.1.html).
+
+Also ran fourteen completed real-time drawings, with one through
+fourteen folds, at about **20.15–20.65 seconds per orbit**, and inspected
+their contact sheet. The chosen
+pairs are 2/3, 3/3, 4/5, then m/(m−2) for m=5,…,15. Their thin loops
+make an appealing progression. Captures and the temporary contact
+sheet remain outside the repository.
+
 ## 2026-11-11 · Three pockets, the same room
 
 Finished results: the unique **four-curve cubic maximin on every fixed

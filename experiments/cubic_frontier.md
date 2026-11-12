@@ -293,3 +293,9 @@ classification.
 At x=7/4, the second label is about 2.520561337966. Both triangular
 areas are about 1.356168525976, and total area is about 4.800178942642.
 The rational JSON keeps bounds, rather than trusting these decimals.
+
+The [constant-curvature follow-up](cubic_frontier_limit.md) explains
+why the first branch becomes nearly invisible as the endpoint span
+shrinks relative to its location. Its minimum gain is cubic in the
+normalized perturbation; its total cost is sixth order. This is a
+separate local asymptotic result with no numerical perturbation cutoff.

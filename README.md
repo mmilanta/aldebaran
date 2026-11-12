@@ -597,6 +597,12 @@ python3 experiments/cubic_frontier.py --write
 python3 experiments/cubic_frontier_figure.py
 ```
 
+A [constant-curvature follow-up](experiments/cubic_frontier_limit.md)
+explains the small first branch: its relative minimum gain is cubic
+in the perturbation, and its relative total cost is sixth order.
+Run `python3 experiments/cubic_frontier_limit.py` for the exact Taylor
+coefficients. This local theorem asserts no numerical perturbation cutoff.
+
 The [five-curve companion](experiments/cubic_five.md) proves a unique
 cubic maximin on the same endpoints. Its three triangles have area
 about 0.494437008328; all other faces are larger. The middle triangle's
