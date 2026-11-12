@@ -285,14 +285,22 @@ python3 experiments/cubic_frontier_figure.py
 Only the Python standard library is needed. All accepted signs and
 root enclosures use exact rational arithmetic. The program checks
 64 reconstructions of the Bernstein identities, eight complete
-clipped arrangements and their 24 faces, five endpoint precisions,
-one exact radical example, and seven invalid controls. These finite checks audit the implementation;
+clipped arrangements and their 24 faces, agreement at five endpoint precisions,
+one exact radical example, four very close rational inputs, and ten
+rejected-input and precision controls. These finite checks audit the implementation;
 the continuous sign identities and the supporting argument prove the
 classification.
 
 At x=7/4, the second label is about 2.520561337966. Both triangular
 areas are about 1.356168525976, and total area is about 4.800178942642.
 The rational JSON keeps bounds, rather than trusting these decimals.
+
+The `--x` calculator automatically refines its rational boxes when an
+input overlaps an endpoint or switch enclosure, or when a required
+strict sign is undecided. Controls within about 2⁻¹⁶⁰ of the special
+labels pass at 160 or 192 bits. At its 512-bit cap, a still-undecided
+input receives an explicit precision-limit error; no sign is inferred
+from overlap. The JSON samples record the actual working precision.
 
 The [constant-curvature follow-up](cubic_frontier_limit.md) explains
 why the first branch becomes nearly invisible as the endpoint span

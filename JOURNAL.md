@@ -131,6 +131,30 @@ pairs are 2/3, 3/3, 4/5, then m/(m−2) for m=5,…,15. Their thin loops
 make an appealing progression. Captures and the temporary contact
 sheet remain outside the repository.
 
+Third publication receipt, **18:18 UTC**: **a053ed1** passed Pages;
+all five changed files match the published commit bytes.
+
+The boundary review found and fixed a calculator issue. A valid rational
+very close to a special label could be rejected because a default root
+box overlapped it, or because the interval gradient could not separate
+a very small positive multiplier from zero. The query now refines on
+undecided exact predicates. Four valid rationals about **2⁻¹⁶⁰** from
+the total endpoint, either side of the switch, and the maximin endpoint
+pass at **160 or 192 bits**. Two equally close outside inputs reject;
+an undecided input at the **512-bit cap** gets an explicit precision-limit
+error. No rounded value decides a branch or proof sign. The command now
+checks a requested query before writing the canonical record.
+
+The complete command passes **four adaptive boundary refinements and
+ten rejected-input/precision controls**, alongside its earlier exact
+identities and clipped arrangements. Independent 110-digit roots and
+polygon shoelaces now check **30 node, 75 area, and 24 support bounds**,
+including those four close inputs. Every mathematical field in the JSON
+is unchanged; the samples add working-precision metadata. The SVG is
+byte-identical to the first publication, and both generated artifacts
+still regenerate byte for byte. The earlier public browser results
+stand: this calculator refinement changes neither HTML nor SVG.
+
 ## 2026-11-11 · Three pockets, the same room
 
 Finished results: the unique **four-curve cubic maximin on every fixed

@@ -38,6 +38,15 @@ def precision(bits):
             'Use an integer precision from 48 through 512 bits.')
 
 
+class NeedMorePrecision(Exception):
+    """A required strict inequality is not yet separated by rational boxes."""
+
+
+def decided(condition, message):
+    if not condition:
+        raise NeedMorePrecision(message)
+
+
 def bernstein_rectangle(p, box):
     """Exact tensor Bernstein coefficients after an affine rectangle map."""
     (xl, xh), (yl, yh) = box
@@ -200,12 +209,24 @@ def sample(x, bits=96):
     """Enclose an interior frontier point at an exact rational first label."""
     precision(bits)
     require(type(x) is Q, 'The first interior label must be an exact rational.')
+    while True:
+        try:
+            return _sample_at_precision(x, bits)
+        except NeedMorePrecision as error:
+            if bits == 512:
+                raise ValueError(f'{error} The calculator reached its 512-bit precision limit.') from None
+            bits = min(512, bits+32)
+
+
+def _sample_at_precision(x, bits):
+    """Accept only decided exact predicates; the caller can refine boxes."""
     start, switch, finish = endpoints(bits)
-    require(finish['nodes'][1][1] < x < start['nodes'][1][0],
-            'Use a first label strictly between the certified maximin and total labels.')
-    if switch['nodes'][1][0] <= x <= switch['nodes'][1][1]:
-        require(bits < 512, 'The rational label needs more than the maximum switch precision.')
-        return sample(x, min(512, bits+32))
+    require(finish['nodes'][1][0] < x < start['nodes'][1][1],
+            'Use a first label strictly between the maximin and total labels.')
+    decided(finish['nodes'][1][1] < x < start['nodes'][1][0],
+            'The label overlaps an endpoint enclosure.')
+    decided(not switch['nodes'][1][0] <= x <= switch['nodes'][1][1],
+            'The label overlaps the switch enclosure.')
     if x > switch['nodes'][1][1]:
         y = insertion(x, Q(3), bits)
         branch = 'B only'
@@ -230,23 +251,23 @@ def sample(x, bits=96):
                        for p in (diff(A, 0), diff(A, 1), diff(B, 0), diff(B, 1))]
     if branch == 'B only':
         wa, wb = I.wrap(0), -ax/bx
-        require(wb.low > 0, 'A first-branch constraint multiplier is not positive.')
+        decided(wb.low > 0, 'A first-branch constraint multiplier has an undecided sign.')
     else:
         J = ax*by-ay*bx
         wa, wb = by*(bx-ax)/J, ax*(ay-by)/J
-        require(min(wa.low, wb.low, ax.low, -by.high, J.low) > 0,
-                'An equal-triangle branch support lost a strict sign.')
+        decided(min(wa.low, wb.low, ax.low, -by.high, J.low) > 0,
+                'An equal-triangle branch support has an undecided sign.')
     row = pack(f'x={x}', [(Q(1), Q(1)), (x, x), y, (Q(3), Q(3))], branch,
                ((wa.low, wa.high), (wb.low, wb.high)))
     areas = row['face_areas_A_C_B']
-    require(areas[1][0] > max(areas[0][1], areas[2][1])
-            and row['smallest_area'][0] > 1, 'An interior sample has a different active face.')
+    decided(areas[1][0] > max(areas[0][1], areas[2][1])
+            and row['smallest_area'][0] > 1, 'The active face ordering is undecided.')
     if branch == 'B only':
-        require(areas[0][0] > areas[2][1], 'The first branch lost its strict triangle order.')
+        decided(areas[0][0] > areas[2][1], 'The first branch triangle ordering is undecided.')
     else:
         require(max(areas[0][0], areas[2][0]) <= min(areas[0][1], areas[2][1]),
                 'The equal triangles have disjoint area enclosures.')
-    return row
+    return dict(row, working_precision_bits=bits)
 
 
 def controls():
@@ -302,19 +323,41 @@ def controls():
             and exact[1] > triangle
             and endpoints()[2]['nodes'][1][1] < x < endpoints()[1]['nodes'][1][0],
             'The exact radical example leaves the certified tied-triangle branch.')
+    # These valid rationals are much closer to the special labels than
+    # the default boxes can decide. Refinement must never infer a sign.
+    total_fine, switch_fine, finish_fine = endpoints(256)
+    delta = Q(1, 2**160)
+    near_total, near_switch, near_finish = [sum(row['nodes'][1])/2
+                                          for row in (total_fine, switch_fine, finish_fine)]
+    close_inputs = (near_total-delta, near_switch+delta, near_switch-delta, near_finish+delta)
+    close_rows = [sample(x) for x in close_inputs]
+    require(all(row['working_precision_bits'] > 96 for row in close_rows)
+            and [row['branch'] for row in close_rows] == ['B only', 'B only', 'A and B', 'A and B'],
+            'A close valid rational failed to refine or received the wrong branch.')
     invalid = 0
     for call in (lambda: sample(Q(1)), lambda: sample(Q(2)), lambda: sample(1.75),
                  lambda: endpoints(True), lambda: endpoints(47), lambda: endpoints(513),
-                 lambda: positive_certificate('negative control', constant(-1), BOX)):
+                 lambda: positive_certificate('negative control', constant(-1), BOX),
+                 lambda: sample(near_total+delta), lambda: sample(near_finish-delta)):
         try:
             call()
         except ValueError:
             invalid += 1
         else:
             raise ValueError('An invalid control was accepted.')
+    # A rational inside the final switch box cannot be decided at this
+    # resource limit. Reject explicitly, rather than guessing its side.
+    cap_input = sum(endpoints(512)[1]['nodes'][1])/2
+    try:
+        sample(cap_input, bits=512)
+    except ValueError as error:
+        require('512-bit precision limit' in str(error), 'An unresolved input lost its precision-limit explanation.')
+        invalid += 1
+    else:
+        raise ValueError('An undecided switch input was accepted at the precision cap.')
     return {'Bernstein_identity_controls': identities, 'complete_arrangements': len(rows),
             'clipped_faces': count, 'endpoint_precisions': 5, 'exact_radical_examples': 1,
-            'invalid_controls': invalid}
+            'close_rational_refinements': len(close_rows), 'rejected_controls': invalid}
 
 
 def record():
@@ -339,13 +382,14 @@ def main():
     parser.add_argument('--write', action='store_true', help='Regenerate exact rational endpoints, samples, and continuous sign certificates.')
     parser.add_argument('--x', type=Q, help='Enclose an interior frontier point at this exact rational first label.')
     args = parser.parse_args()
+    query = sample(args.x) if args.x is not None else None
     counts = controls()
     data = record()
     if args.write:
         (HERE/'cubic_frontier.json').write_text(json.dumps(serialize(data), indent=2)+'\n')
     print('Complete two-branch frontier: strict total concavity on the localized competitor rectangle.')
     print(', '.join(f'{v} {k.replace("_", " ")}' for k, v in counts.items())+'.')
-    for row in data['endpoints']+([sample(args.x)] if args.x is not None else []):
+    for row in data['endpoints']+([query] if query is not None else []):
         mid = lambda pair: float(sum(pair)/2)
         print(f'{row["name"]}: x={mid(row["nodes"][1]):.12f}, y={mid(row["nodes"][2]):.12f}; '
               f'min={mid(row["smallest_area"]):.12f}, total={mid(row["total_area"]):.12f}.')
