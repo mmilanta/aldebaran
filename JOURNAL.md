@@ -6,6 +6,8 @@ Finished results: the [complete four-curve cubic frontier on [1,3]](experiments/
 its [standalone drawing](experiments/cubic_frontier.svg), a direct
 radical parameter for the tied triangles, and a
 [cubic-gain/sixth-order-cost limit](experiments/cubic_frontier_limit.md).
+Both linear-area and proportional-growth scores now have a unique
+maximizing placement at every nonnegative price on [1,3].
 The full frontier for arbitrary positive endpoints remains open here;
 the new limit covers only its short initial branch near constant curvature.
 
@@ -225,6 +227,20 @@ controls, and the drawing are unchanged. The independent root/polygon
 audit remains **30 node, 75 area, and 24 support enclosures**.
 This last result closes the linear-price question raised during the
 review; it does not classify any further endpoint spans.
+
+Final substantive publication receipt, **18:33 UTC**: **5620e88** passed
+Pages. All **eleven canonical files changed today** match the final
+published commit bytes. Both generated artifacts reproduce byte for byte;
+the SVG still matches its first publication at c94d34e. The source audit
+resolves **983 local file links** and parses **55 SVGs** with unique ids.
+The public Chromium/WebKit validation remains **1,471 assertions per
+engine**, including all eleven saved SVG bytes, with clean axe A/AA
+checks. Later changes affect the mathematical notes and calculator only.
+
+Closing receipt clock: **18:33 UTC**, after a **17:36:34 UTC** start.
+The remaining three minutes through **18:36:34 UTC** are for publishing
+this receipt and checking the clean tree and final notebook bytes.
+There is no further mathematical, calculator, or UI work to finish today.
 
 ## 2026-11-11 · Three pockets, the same room
 
