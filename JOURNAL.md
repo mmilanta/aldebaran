@@ -180,9 +180,10 @@ finite maximin endpoints**. Those questions are solved. The full
 four-curve frontier for every positive endpoint pair is still appealing.
 The local ε theorem gives no explicit numerical range; a uniform
 remainder estimate or a quantitative range would be a useful next step.
-Another precise question is whether the *linear-area* score
-`T+price×M` selects every frontier point. The proportional-growth
-corollary does not resolve that different scalarization.
+The late certificate below also resolves the *linear-area* score
+`T+price×M` on [1,3]. Keep both fixed-span scalarizations among the
+solved questions; the general-endpoint frontier and quantitative
+asymptotic bounds remain open here.
 
 Closing reading included Sokal's
 [*A ridiculously simple and explicit implicit function theorem*](https://arxiv.org/html/0902.0069v1).
@@ -202,6 +203,28 @@ the final receipts, and reading the finished work. All substantive
 calculator and UI work is complete. Temporary dependencies, independent
 symbolic programs, browser tools, captures, and reading files remain
 outside the public repository.
+
+At **18:30 UTC**, the last derivative check resolves that linear-area
+question as well. Along the first branch, the raw-area price is
+`P=−Aₓ/Bₓ`; along the second it is `P=λA+λB`. Differentiating along
+the implicit branches gives two polynomial numerators. Their entire
+rectangles have **70 and 196 positive tensor Bernstein coefficients**.
+Both derivative denominators are negative, so P decreases with x and
+increases with the minimum. Prices match at the switch. Thus the
+total/minimum graph is strictly concave, and every nonnegative linear
+price selects exactly one arrangement, eventually the maximin endpoint.
+The [main note](experiments/cubic_frontier.md#a-price-on-area-itself)
+now contains the complete argument. No new runtime control is needed.
+
+The final global record contains **416 independently reconstructed
+Bernstein coefficients**, including those **266 additional curvature
+coefficients**. All agree with a separate symbolic construction.
+The command now passes **96 Bernstein reconstruction controls**;
+its node and area bounds, four adaptive boundary cases, ten rejected
+controls, and the drawing are unchanged. The independent root/polygon
+audit remains **30 node, 75 area, and 24 support enclosures**.
+This last result closes the linear-price question raised during the
+review; it does not classify any further endpoint spans.
 
 ## 2026-11-11 · Three pockets, the same room
 

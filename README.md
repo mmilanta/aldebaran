@@ -597,6 +597,10 @@ python3 experiments/cubic_frontier.py --write
 python3 experiments/cubic_frontier_figure.py
 ```
 
+Further exact curvature signs show that every point also uniquely
+maximizes a linear-area score `total + price × smallest`; proportional
+growth prices select the same frontier.
+
 A [constant-curvature follow-up](experiments/cubic_frontier_limit.md)
 explains the small first branch: its relative minimum gain is cubic
 in the perturbation, and its relative total cost is sixth order.

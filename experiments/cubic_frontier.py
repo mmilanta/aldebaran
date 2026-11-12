@@ -2,8 +2,9 @@
 
 Exact Bernstein bounds localize every relevant competitor to a rectangle
 where total area is strictly concave. Positive constraint supports then
-prove two complete branches, with one algebraic switch. Standard library
-only; see cubic_frontier.md. Numerical samples are controls, not the proof.
+prove two complete branches, with one algebraic switch. Further curvature
+signs select every linear-area price. Standard library only; see
+cubic_frontier.md. Numerical samples are controls, not the proof.
 """
 
 import argparse
@@ -90,6 +91,23 @@ def substitute_numerator(p, numerator, denominator):
     return out
 
 
+def linear_price_polynomials():
+    """Positive numerators make the raw-area price increase with minimum."""
+    A, C, B = face_polynomials()
+    T = plus(A, C, B)
+    ax, ay, bx, by = diff(A, 0), diff(A, 1), diff(B, 0), diff(B, 1)
+    J = plus(times(ax, by), scaled(times(ay, bx), -1))
+    N = plus(times(bx, by), times(ax, ay), scaled(times(ax, by), -2))
+    fx, fy = plus(ax, scaled(bx, -1)), plus(by, scaled(ay, -1))
+    second = plus(times(plus(times(diff(N, 0), J), scaled(times(N, diff(J, 0)), -1)), fy),
+                  times(plus(times(diff(N, 1), J), scaled(times(N, diff(J, 1)), -1)), fx))
+    U, D = scaled(ax, -1), bx
+    tyy, txy = diff(diff(T, 1), 1), diff(diff(T, 0), 1)
+    first = plus(times(plus(times(diff(U, 0), D), scaled(times(U, diff(D, 0)), -1)), tyy),
+                 scaled(times(plus(times(diff(U, 1), D), scaled(times(U, diff(D, 1)), -1)), txy), -1))
+    return first, second
+
+
 @lru_cache(maxsize=1)
 def global_certificate():
     A, C, B = face_polynomials()
@@ -121,6 +139,11 @@ def global_certificate():
                     positive_certificate('first_branch_C_minus_B', plus(C, scaled(B, -1)), FIRST_BOX)]
     require([c['positive_coefficients'] for c in certificates[:3]] == [12, 49, 64],
             'The main continuous certificates changed size.')
+    first_price, second_price = linear_price_polynomials()
+    certificates += [positive_certificate('first_branch_linear_price_derivative_numerator', first_price, FIRST_BOX),
+                     positive_certificate('second_branch_linear_price_derivative_numerator', second_price, EQUAL_BOX)]
+    require([c['positive_coefficients'] for c in certificates[-2:]] == [70, 196],
+            'The linear-price certificates changed size.')
     # Any minimum >=1 has F(x)=A+C>=2 and F(y)=B+C>=2.
     # F increases up to (1+sqrt(11))/2 and decreases thereafter.
     localization = {'F_at_left_edge': value(F, BOX[0][0]),
@@ -280,7 +303,7 @@ def controls():
     xx, yy, xy = diff(tx, 0), diff(ty, 1), diff(tx, 1)
     polys = (scaled(xx, -1), plus(times(xx, yy), scaled(times(xy, xy), -1)),
              plus(times(diff(A, 0), diff(B, 1)), scaled(times(diff(A, 1), diff(B, 0)), -1)),
-             plus(C, scaled(B, -1)))
+             plus(C, scaled(B, -1)))+linear_price_polynomials()
     identities = 0
     random = Random(20261112)
     for p, certificate in zip(polys, proof['continuous_signs']):
@@ -361,7 +384,7 @@ def controls():
 
 
 def record():
-    return {'scope': 'Complete efficient total-area/smallest-area frontier for four complete cubic-intercept parabolas, outer labels 1 and 3.',
+    return {'scope': 'Complete efficient total-area/smallest-area frontier and unique linear-area and proportional-growth priced maxima for four complete cubic-intercept parabolas, outer labels 1 and 3.',
             'equation': 'X_p(Y)=Y^2/2-pY+p^3/3',
             'parameter_direction': 'First interior label x decreases from total optimum to maximin.',
             'branches': ['B only: y is the best insertion between x and 3.',
@@ -388,6 +411,7 @@ def main():
     if args.write:
         (HERE/'cubic_frontier.json').write_text(json.dumps(serialize(data), indent=2)+'\n')
     print('Complete two-branch frontier: strict total concavity on the localized competitor rectangle.')
+    print('Linear-area price proof: 70 + 196 positive Bernstein coefficients; unique optimum at every nonnegative price.')
     print(', '.join(f'{v} {k.replace("_", " ")}' for k, v in counts.items())+'.')
     for row in data['endpoints']+([query] if query is not None else []):
         mid = lambda pair: float(sum(pair)/2)

@@ -272,8 +272,57 @@ maximin endpoint: it already wins at κ*, and increasing the price
 adds a positive multiple of log M, which is largest there. Thus
 every κ≥0 has exactly one maximizing placement.
 
-This prices proportional minimum growth. The analogous linear-area
-objective `T + price×M` remains a separate question here.
+This prices proportional minimum growth. The next certificate also
+settles a price directly proportional to the minimum area.
+
+## A price on area itself
+
+Every point is also the unique maximizing placement for an appropriate
+linear-area score `T+P M`. Along the frontier its price is
+
+```
+P = λA+λB = −dT/ds.
+```
+
+It increases strictly with s, so the frontier is strictly concave
+when plotted against the minimum area itself. Here is a continuous
+certificate; a picture alone would not prove that curvature.
+
+On the first branch, put `U=−Aₓ`, `D=Bₓ`, so P=U/D. Define
+
+```
+K₁ = (UₓD−UDₓ)Tᵧᵧ − (UᵧD−UDᵧ)Tₓᵧ.
+```
+
+Along `Tᵧ=0`, its derivative is `dP/dx=K₁/(D²Tᵧᵧ)`.
+On the second branch, put
+
+```
+N = BₓBᵧ + AₓAᵧ − 2AₓBᵧ,     P=N/J,
+K₂ = (NₓJ−NJₓ)F′(y) + (NᵧJ−NJᵧ)F′(x).
+```
+
+Along `F(x)=F(y)`, `dP/dx=K₂/[J²F′(y)]`.
+The program rebuilds two further tensor Bernstein identities:
+
+```
+K₁: 70 positive coefficients, bidegree (9,6), on the first-branch rectangle;
+K₂: 196 positive coefficients, bidegree (13,13), on the tied-branch rectangle.
+```
+
+Both denominators are negative, since Tᵧᵧ<0 and F′(y)<0.
+Thus dP/dx<0, while ds/dx<0, proving dP/ds>0 on both open
+branches. Their prices agree at the switch. The price starts at zero
+and ends at `P*=λA(α,β)+λB(α,β)`, a finite positive number.
+
+The resulting strictly concave total/minimum graph has a supporting
+line of slope −P at each point. That point uniquely maximizes
+`T+P M` over the entire frontier. Every other placement is dominated
+by a frontier placement, so the maximum is global. Each price in
+[0,P*] selects exactly one point; every larger price selects the
+maximin endpoint. The JSON includes all **266 additional positive
+coefficients**. These price certificates do not alter the frontier
+or its drawing.
 
 ## The tied branch also has a radical parameter
 
@@ -324,7 +373,7 @@ python3 experiments/cubic_frontier_figure.py
 
 Only the Python standard library is needed. All accepted signs and
 root enclosures use exact rational arithmetic. The program checks
-64 reconstructions of the Bernstein identities, eight complete
+96 reconstructions of the Bernstein identities, eight complete
 clipped arrangements and their 24 faces, agreement at five endpoint precisions,
 one exact radical example, four very close rational inputs, and ten
 rejected-input and precision controls. These finite checks audit the implementation;
