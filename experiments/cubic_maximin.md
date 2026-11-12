@@ -20,8 +20,9 @@ placement, using the same coordinates and unit scale. The latter's three
 pockets have equal area.](cubic_maximin.svg)
 
 This is a finite theorem about **four complete curves**
-`Xₚ(Y)=Y²/2−pY+p³/3`, on the fixed slope interval [1,3]. It neither
-classifies their full compromise curve nor solves other finite counts.
+`Xₚ(Y)=Y²/2−pY+p³/3`, on the fixed slope interval [1,3]. A separate
+[complete compromise proof](cubic_frontier.md) now connects the total
+and minimum optima through two branches. Other finite counts remain separate.
 The shared [asymptotic density](shifted_maximin.md) is a different result.
 The [general four-curve extension](cubic_four_general.md) separately proves
 the unique maximin for every fixed positive endpoint pair.
@@ -241,6 +242,11 @@ checks these entries from the exact face polynomials. Thus a
 globally concave-total shortcut cannot classify the shifted
 total/minimum frontier. The smallest-area proof above uses the
 individual log-areas and does not need such a shortcut.
+
+The [frontier proof](cubic_frontier.md#a-smaller-room-restores-concavity)
+instead confines every relevant competitor to a smaller rectangle,
+where total area is strictly concave. That localization leads to a
+complete two-branch classification without a global concavity claim.
 
 ## Reproduce
 

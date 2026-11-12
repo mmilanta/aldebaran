@@ -584,6 +584,19 @@ endpoint pair. A normalized cubic selects both interior labels;
 supports give an endpoint-independent proof. Run
 `python3 experiments/cubic_four_general.py --write` to reproduce it.
 
+The [complete four-curve frontier](experiments/cubic_frontier.md) on [1,3]
+connects the total and minimum optima: first the smaller triangle grows,
+then both triangles grow together. A [companion drawing](experiments/cubic_frontier.svg)
+shows both branches, an enlarged transition, and two complete arrangements
+at one scale. Exact rational localization and Bernstein signs prove the
+unique best total for every smallest-pocket requirement. Reproduce the
+certificate and drawing with:
+
+```sh
+python3 experiments/cubic_frontier.py --write
+python3 experiments/cubic_frontier_figure.py
+```
+
 The [five-curve companion](experiments/cubic_five.md) proves a unique
 cubic maximin on the same endpoints. Its three triangles have area
 about 0.494437008328; all other faces are larger. The middle triangle's
