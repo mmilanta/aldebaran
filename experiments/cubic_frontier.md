@@ -235,6 +235,46 @@ second branch `dT/dx=Aₓ+BᵧF′(x)/F′(y)>0`, and x moves downward.
 Each point is therefore efficient, and the unique supports exclude
 every competing placement. This is the complete frontier.
 
+## A price on proportional growth
+
+The same supports give another way to choose every frontier point.
+Put `M=min(A,C,B)` and value the arrangement by
+
+```
+T + κ log(M/s₀),     κ≥0.
+```
+
+For a frontier requirement s, choose `κ=s(λA+λB)` using its support
+above. Write `μA=sλA`, `μB=sλB`. For any competitor in R,
+
+```
+κ log(M/s₀) ≤ μA log(A/s₀) + μB log(B/s₀).
+```
+
+Adding T gives the same strictly concave stationary support, up to
+an additive constant. Equality holds at the candidate because every
+positively weighted face has area s. Thus the candidate uniquely
+maximizes this priced objective within R. A placement outside R has
+M<s₀ and is dominated by the total optimizer for every κ>0; at
+κ=0 the total optimizer already has global uniqueness.
+
+These prices are continuous through the switch and strictly increase
+with s. To see strict increase, take s₁<s₂. Uniqueness of the two
+priced maxima gives
+
+```
+κ₁ log(s₂/s₁) < T₁−T₂ < κ₂ log(s₂/s₁),
+```
+
+so κ₁<κ₂. They start at zero and reach the finite value
+`κ*=S*[λA(α,β)+λB(α,β)]`. Every larger price still selects the
+maximin endpoint: it already wins at κ*, and increasing the price
+adds a positive multiple of log M, which is largest there. Thus
+every κ≥0 has exactly one maximizing placement.
+
+This prices proportional minimum growth. The analogous linear-area
+objective `T + price×M` remains a separate question here.
+
 ## The tied branch also has a radical parameter
 
 The implicit equation `F(x)=F(y)` has a direct geometric parameter.

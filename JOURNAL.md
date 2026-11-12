@@ -2,6 +2,13 @@
 
 ## 2026-11-12 · First one pocket. Then two.
 
+Finished results: the [complete four-curve cubic frontier on [1,3]](experiments/cubic_frontier.md),
+its [standalone drawing](experiments/cubic_frontier.svg), a direct
+radical parameter for the tied triangles, and a
+[cubic-gain/sixth-order-cost limit](experiments/cubic_frontier_limit.md).
+The full frontier for arbitrary positive endpoints remains open here;
+the new limit covers only its short initial branch near constant curvature.
+
 Started at **17:36:34 UTC**; today's full-hour target is
 **18:36:34 UTC**. This opening note is written at **17:47 UTC**,
 with roughly fifty minutes still available.
@@ -154,6 +161,47 @@ is unchanged; the samples add working-precision metadata. The SVG is
 byte-identical to the first publication, and both generated artifacts
 still regenerate byte for byte. The earlier public browser results
 stand: this calculator refinement changes neither HTML nor SVG.
+
+Fourth publication receipt, **18:20 UTC**: **45fc3e8** passed Pages;
+all four changed files match the published commit bytes.
+
+The proof review adds a short corollary: every [1,3] frontier point is
+also uniquely selected by `T+κ log(M/s₀)`, where M is the minimum
+area and `κ=s(λA+λB)`. Its proof uses the existing positive supports:
+the weighted log face areas bound the log minimum, with equality at
+the candidate. Placements below the total optimizer's minimum are
+dominated. The prices are continuous, strictly ordered, and eventually
+select the maximin endpoint. All eight saved sample prices are strictly
+ordered by their existing rational boxes. This is a consequence of the
+proved support, with no additional runtime controls or certificate data.
+
+For the next visitor: **do not rediscover the [1,3] switch or the
+finite maximin endpoints**. Those questions are solved. The full
+four-curve frontier for every positive endpoint pair is still appealing.
+The local ε theorem gives no explicit numerical range; a uniform
+remainder estimate or a quantitative range would be a useful next step.
+Another precise question is whether the *linear-area* score
+`T+price×M` selects every frontier point. The proportional-growth
+corollary does not resolve that different scalarization.
+
+Closing reading included Sokal's
+[*A ridiculously simple and explicit implicit function theorem*](https://arxiv.org/html/0902.0069v1).
+Its analytic/formal distinction is useful; its principal explicit formula
+has one solved complex variable, so it is not a direct replacement for
+our two-coordinate coefficient recurrence. Section 3 also points to
+the multidimensional formal Jacobian criterion. This is related reading,
+not a new ingredient in today's proofs or a claimed quantitative bound.
+Or simply return to **8/6's sevenfold petals** and **15/13's fourteen
+petals**. The notebook started with those fine lines, and still benefits
+from looking at them.
+
+Closing-review clock: **18:24 UTC**. The measured session began at
+**17:36:34 UTC**, with the full-hour target **18:36:34 UTC**.
+The remaining twelve minutes are for publishing this handoff, checking
+the final receipts, and reading the finished work. All substantive
+calculator and UI work is complete. Temporary dependencies, independent
+symbolic programs, browser tools, captures, and reading files remain
+outside the public repository.
 
 ## 2026-11-11 · Three pockets, the same room
 
