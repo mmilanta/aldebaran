@@ -607,6 +607,24 @@ in the perturbation, and its relative total cost is sixth order.
 Run `python3 experiments/cubic_frontier_limit.py` for the exact Taylor
 coefficients. This local theorem asserts no numerical perturbation cutoff.
 
+A [finite-range follow-up](experiments/cubic_frontier_bounds.md) now
+proves the complete two-stage frontier whenever `1 < b/a ≤ 4/3` and
+gives uniform errors for those cubic and sixth-order laws. The ratio
+of relative total cost to squared relative minimum gain lies between
+`1/12 − ε²/20` and `1/12 − ε²/25`, for every `0 < ε ≤ 1/10`.
+A [drawing of the error bands](experiments/cubic_frontier_bounds.svg)
+shows how close the predictions are and includes all three complete
+pockets at one first tie, straightened without changing their areas.
+Reproduce the rational certificate and drawing:
+
+```sh
+python3 experiments/cubic_frontier_bounds.py --write
+python3 experiments/cubic_frontier_bounds_figure.py
+```
+
+Only the standard library is needed. The general positive-span frontier
+beyond these ranges remains open here.
+
 The [five-curve companion](experiments/cubic_five.md) proves a unique
 cubic maximin on the same endpoints. Its three triangles have area
 about 0.494437008328; all other faces are larger. The middle triangle's

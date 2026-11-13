@@ -19,6 +19,9 @@ perturbation. It supplies **no explicit perturbation threshold**, no
 uniform numerical remainder bound, and no complete arbitrary-endpoint
 frontier classification. The [complete [1,3] proof](cubic_frontier.md)
 has its own exact continuous certificates and remains separate.
+The later [finite-range certificate](cubic_frontier_bounds.md) now supplies
+uniform error bounds and the complete frontier for 0<ε≤1/10,
+equivalently 1<b/a≤4/3. The derivation on this page remains asymptotic.
 
 ## Normalize the endpoint span
 
@@ -184,7 +187,9 @@ quadrilateral tie precedes it.
 
 The compactness argument establishes existence of a positive
 perturbation range. It does not provide a numerical endpoint for it.
-The rest of the general-endpoint frontier remains an open question.
+The [finite follow-up](cubic_frontier_bounds.md) replaces this existence
+statement with rational bounds on 0<ε≤1/10 and covers both branches
+there. The full general-endpoint frontier remains an open question.
 
 ## Reproduce
 

@@ -28,6 +28,9 @@ This closes the four-curve compromise left open by the
 [maximin result](cubic_maximin.md). It is specific to cubic intercepts,
 four curves, and [1,3]. The [general-endpoint maximin](cubic_four_general.md)
 and [five-curve maximin](cubic_five.md) remain separate results.
+A [uniform finite-range extension](cubic_frontier_bounds.md) proves the
+same two-stage frontier on every span with 1<b/a≤4/3 and bounds its
+short first step. The proof below is still the independent [1,3] case.
 
 ## What is being optimized?
 

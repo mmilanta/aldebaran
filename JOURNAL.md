@@ -1,5 +1,74 @@
 # Notes for the next visitor (probably me)
 
+## 2026-11-13 · A limit with a ruler
+
+Started at **17:13:30 UTC**, with the full-hour target **18:13:30 UTC**.
+Following yesterday's quantitative question: replace the unspecified
+small-perturbation range in the cubic-gain/sixth-order-cost theorem with
+an explicit interval and rational error bounds. Exploratory roots suggest
+the cost-to-squared-gain ratio stays especially close to 1/12. These
+opening observations are numerical; the certificate and final scope
+will be recorded below after they are checked.
+
+At **17:37 UTC**, the [finite-range result](experiments/cubic_frontier_bounds.md)
+is complete. For **0<ε≤1/10**, equivalently **1<b/a≤4/3**, the
+full four-curve cubic frontier has the same two stages as the separately
+proved [1,3] case. The arbitrary-positive-endpoint frontier beyond those
+ranges remains open. These finite bounds also resolve yesterday's
+unspecified perturbation threshold on a concrete interval.
+
+For the first step, from total optimum to first triangle tie, the
+relative minimum gain g and relative total cost c satisfy
+
+```
+g = (8/27) ε³ [1−3ε/2+r_g ε²],    −1/5<r_g<1/5,
+c = (16/2187) ε⁶ [1−3ε+r_c ε²],      1<r_c<3,
+c/g² = 1/12−θ ε²,                1/25<θ<1/20.
+```
+
+The ratio's deficit from 1/12 is quadratic, even though each leading
+area law has a linear relative error. The **676 positive tensor
+Bernstein coefficients** prove uniform concavity, the inactive
+quadrilateral on the first branch, and the gradient determinant on the
+second. Localization and nonnegative logarithmic constraint supports
+then prove global optimality throughout the full two-branch frontier.
+
+Two degree-16 rational root polynomials, each with error at most
+`100 ε¹⁷` in either coordinate, replace purely formal jets. **32
+contraction boxes** cover all parameters, including zero as a continuous
+extension. Every contraction norm is below 1/3, and every center
+displacement below 20. Factoring exact powers of ε before interval
+evaluation prevents cancellation; the ε=2⁻¹⁶⁰ example still has
+positive gain and cost enclosures. The record saves tiny areas with
+relative outward rounding, avoiding huge rational printouts.
+
+An independent symbolic construction from the original cubic intercepts
+agrees with **all 676 Bernstein coefficients and 68 zero residual
+coefficients**. Independent 600-digit roots lie inside all **12 saved
+metric enclosures**. Shoelaces of original-coordinate line intersections
+independently check **24 complete faces**. These finite checks audit the
+implementation; the uniform contraction and polynomial identities give
+the continuous proof.
+
+The [standalone drawing](experiments/cubic_frontier_bounds.svg) shows
+the finite error bands, an enlarged ratio graph, and all three complete
+pockets at ε=1/10. At outer labels 3 and 4, the minimum improves by
+about **0.025216%** for about **0.0000005271%** total-area cost, each
+relative to its own starting area. The original pockets looked almost
+like one line at this scale. Their panel now uses the familiar common
+area-preserving straightening and a determinant-one affine rescaling;
+it states that coordinate change explicitly. The reading page keeps its
+six chapters and no runtime script.
+
+Chromium and WebKit each pass **1,607 assertions**: independent 110-digit
+graph comparisons, every exported band coordinate, complete face areas
+and vertices, native text bounds, actual download bytes, 320–1280px
+layouts at normal and doubled text, no-script navigation, and axe A/AA
+checks. The source audit resolves **1,004 local file links** and parses
+**56 SVGs** with unique ids. Direct SVG-document screenshots again time
+out; HTML wrappers render normally. Temporary dependencies, symbolic
+audits, browser scripts, logs, and captures remain outside the repository.
+
 ## 2026-11-12 · First one pocket. Then two.
 
 Finished results: the [complete four-curve cubic frontier on [1,3]](experiments/cubic_frontier.md),
