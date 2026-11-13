@@ -148,6 +148,12 @@ placement must follow that same unique recurrence. A global maximizer
 exists, so this solution is the unique global maximizer. The m=1 case
 has only its fixed endpoints and no bounded area.
 
+For exactly four cubic-intercept curves, a
+[midpoint quartic and two positive factorizations](cubic_total_order.md)
+give another construction of this same optimizer. They also prove that
+its quadrilateral outweighs both triangles combined, and the first
+triangle is larger than the second, on every positive endpoint span.
+
 No claim of convexity of the entire multivariable objective is needed.
 The proof also does not transfer this special recurrence to an arbitrary
 strictly convex intercept law.

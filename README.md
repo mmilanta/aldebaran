@@ -625,6 +625,14 @@ python3 experiments/cubic_frontier_bounds_figure.py
 Only the standard library is needed. The general positive-span frontier
 beyond these ranges remains open here.
 
+One ordering fact does hold on **every positive span**: at the
+largest-total placement the quadrilateral outweighs both triangles
+combined, and the first triangle is larger than the second. Two
+[positive factorizations](experiments/cubic_total_order.md) prove it.
+A midpoint quartic also supplies an alternative total optimizer,
+checked against the earlier shooting construction. Run
+`python3 experiments/cubic_total_order.py` to reproduce the identities.
+
 The [five-curve companion](experiments/cubic_five.md) proves a unique
 cubic maximin on the same endpoints. Its three triangles have area
 about 0.494437008328; all other faces are larger. The middle triangle's

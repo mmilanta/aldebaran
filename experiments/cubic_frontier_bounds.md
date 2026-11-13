@@ -17,6 +17,9 @@ Everything below holds for **0<ε≤1/10**, equivalently
 **1<b/a≤4/3**. It does not classify every positive endpoint pair.
 The separate [finite [1,3] certificate](cubic_frontier.md) still
 covers its larger span.
+An independent [ordering theorem](cubic_total_order.md) does cover every
+positive span at the total optimum: C>A+B and A>B. That one-point
+ordering does not by itself extend the full frontier classification.
 
 Let g be the relative increase in the smallest area from the
 largest-total placement to the first triangle tie. Let c be the

@@ -69,6 +69,37 @@ checks. The source audit resolves **1,004 local file links** and parses
 out; HTML wrappers render normally. Temporary dependencies, symbolic
 audits, browser scripts, logs, and captures remain outside the repository.
 
+First publication receipt: **bef7a8c** passed Pages. All ten changed
+public files match the commit, and both public browser engines pass the
+same **1,607 assertions each**. The JSON and SVG regenerate byte for byte.
+
+At **17:45 UTC**, following the geometry gave a smaller theorem with
+broader scope. At the unique largest-total placement on **every positive
+endpoint span**, **C>A+B and A>B**: the quadrilateral outweighs both
+triangles combined, and B is the only smallest face. The
+[midpoint calculation](experiments/cubic_total_order.md) proves both
+inequalities by positive factorizations, rather than by extending the
+finite-range frontier certificate. It leaves the full arbitrary-span
+frontier open.
+
+Write the outer labels c±l and the interior labels c+h±d. The decreasing
+optimal gaps give h>0. Two stationarity equations reduce to
+`d=l(3c+h)/(9c+10h)` and a rational expression for l². Under that relation,
+both area differences have manifestly positive numerator factors.
+Each cleared numerator has twelve positive terms. Setting v=h/c and
+τ=l/c also gives a quartic with exactly one positive root, bracketed
+between τ²/4 and τ²/3. A relative stopping tolerance resolves h even when
+the original span is 2⁻¹²⁰; a fixed absolute tolerance would not.
+
+`python3 experiments/cubic_total_order.py` checks both exact identities,
+six agreements with the independent shooting optimizer, eighteen complete
+clipped faces, and five invalid controls. Separate symbolic reduction
+agrees with both positive factorizations. Independent 600-digit roots
+and direct original-area subtraction lie inside **24 node and small-area
+enclosures**, including the tiny span. The rational midpoint clipping
+controls audit the geometry; the signs are proved at the exact optimum
+by the factorizations. There is no new runtime control or changed drawing.
+
 ## 2026-11-12 · First one pocket. Then two.
 
 Finished results: the [complete four-curve cubic frontier on [1,3]](experiments/cubic_frontier.md),
