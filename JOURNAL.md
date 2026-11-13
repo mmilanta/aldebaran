@@ -2,13 +2,17 @@
 
 ## 2026-11-13 · A limit with a ruler
 
+Finished results: [finite error bounds and the complete short-span
+frontier](experiments/cubic_frontier_bounds.md), a
+[universal ordering at the total optimum](experiments/cubic_total_order.md),
+and a [six-drawing orbital sheet](experiments/fold_variations.svg)
+with an [ellipse explanation](experiments/fold_variations.md).
+
 Started at **17:13:30 UTC**, with the full-hour target **18:13:30 UTC**.
-Following yesterday's quantitative question: replace the unspecified
+Started with yesterday's quantitative question: replace the unspecified
 small-perturbation range in the cubic-gain/sixth-order-cost theorem with
-an explicit interval and rational error bounds. Exploratory roots suggest
-the cost-to-squared-gain ratio stays especially close to 1/12. These
-opening observations are numerical; the certificate and final scope
-will be recorded below after they are checked.
+an explicit interval and rational error bounds. The verified results
+and their scopes follow below.
 
 At **17:37 UTC**, the [finite-range result](experiments/cubic_frontier_bounds.md)
 is complete. For **0<ε≤1/10**, equivalently **1<b/a≤4/3**, the
@@ -150,6 +154,49 @@ speed bound rules out stationary points throughout the phase route;
 branch contacts and triples could still reorganize its crossings.
 The local phase study's older orbital branch is a different family.
 Do not conflate its certified contact with this new drawing sheet.
+
+Third publication receipt: **0b7d0fd** is public, and all **seventeen
+canonical files changed today** match their committed bytes. The public
+Chromium/WebKit checks pass for both the mathematical reading page
+(**1,607 assertions each**) and the orbital sheet and home-page link
+(**24,653 each**, mostly unclipped-vertex checks). All three generated
+artifacts reproduce byte for byte. There are no new runtime dependencies.
+
+Closing reading revisited Krawczyk and Neumaier's
+[*An improved interval Newton operator*](https://arnold-neumaier.at/scan/45.pdf),
+especially the distinction between an interval operator's fixinterval
+and an ordinary point fixed point. Today's certificate uses an ordinary
+point contraction for each parameter, with explicit norm and center bounds;
+the paper is related background. Root uniqueness is inside the stated
+error square. Global optimality comes from the separate localization and
+support argument. A wording review also makes the logarithmic support's
+domain explicit: **R∩{x<y}**. The total Hessian bounds hold on the whole
+closed rectangle, while its zero-gap corner does not admit log areas.
+
+Four **numerical contact seeds** may save tomorrow some searching.
+A 3,000-vertex phase scan suggested crossing-count changes; Newton's
+method then solved the smooth position-equality and velocity-determinant
+equations. Times are in radians, and phase is given as φ/π:
+
+| Rhythms | φ/π | First visit t | Second visit s | Numerical travel directions |
+| --- | --- | --- | --- | --- |
+| 8/6 | 0.341592201887 | 4.135414805966 | 3.056947948643 | opposing |
+| 8/6 | 0.951535764936 | 2.519999237409 | 1.808820283348 | matching |
+| 15/13 | 0.914296764567 | 3.960631470808 | 3.563992363130 | matching |
+| 15/13 | 0.962912214409 | 5.747704515643 | 4.953919744825 | matching |
+
+At 60-digit working precision, scaled residuals are below 6×10⁻⁵²
+and all four numerical Jacobians are nonzero. **These are seeds, not
+certified contacts, an event census, or a proof that no triple passage
+occurs elsewhere.** The equations are `z(t,φ)=z(s,φ)` and
+`Im(conj(z_t(t,φ)) z_t(s,φ))=0`; the position and velocity formulas
+are already in the ellipse note. Rational contraction boxes and a
+continuous exclusion cover would be a distinct future project.
+
+Closing-review clock: **18:08 UTC**, after the **17:13:30 UTC** start.
+All drawing, proof, and calculator work is complete. The remaining
+minutes through **18:13:30 UTC** are for publishing this handoff,
+checking the final notebook bytes, and reading the finished work.
 
 ## 2026-11-12 · First one pocket. Then two.
 
