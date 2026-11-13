@@ -222,9 +222,12 @@ so Tₓ=Aₓ>0 before that endpoint. Choose
 λA=0,       λB=−Aₓ/Bₓ>0.
 ```
 
-They satisfy `∇T+λB∇B=0`. For a smallest-area requirement
+They satisfy `∇T+λB∇B=0`. The formulas for A and B are products
+of positive affine factors, so log A and log B are concave on
+the ordered-label domain. For a smallest-area requirement
 `s=B`, the function `T+sλB log(B/s)` is strictly concave on
-R and stationary at this placement. Every feasible competitor
+the convex set `R∩{x<y}` and stationary at this placement.
+Every feasible competitor
 has this function at least as large as its own total area;
 the candidate has it equal to its total. This proves the
 candidate's unique global optimality, because all feasible

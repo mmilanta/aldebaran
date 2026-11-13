@@ -100,6 +100,57 @@ enclosures**, including the tiny span. The rational midpoint clipping
 controls audit the geometry; the signs are proved at the exact optimum
 by the factorizations. There is no new runtime control or changed drawing.
 
+Second publication receipt: **1a21c41** is public; all seven changed
+files match its committed bytes. Local Chromium and WebKit retain
+the same **1,607 assertions each** after the added reading-page link.
+
+Returned to the original orbital drawings. The new
+[six-drawing sheet](experiments/fold_variations.svg), **Keep the folds.
+Turn one arm.**, compares rhythms 8/6 and 15/13 at zero, quarter-turn,
+and half-turn backward starting angles. The fine lines move from petals
+to overlapping rings. All six panels have one scale and the original
+lengths. The home page links to the sheet; the interactive drawing keeps
+its original controls.
+
+The [short explanation](experiments/fold_variations.md) factors out an
+offset ellipse. For d=7 or 14, write m=d+1 and n=d−1. With
+θ=dt−φ/2, the bracket is `245+exp(iφ/2)(205 cos θ+75i sin θ)`.
+The outer exp(it) rotates it. Both rows have the same complete radial
+range in each column: **40–450** at zero phase, and
+**170–sqrt(23155775/208) ≈ 333.6553** at a half turn. This explains
+the widening empty centers without claiming a crossing census.
+
+The velocity has another ellipse, with semiaxes 205+75d and 75+205d.
+It stays at least 485 or 1,010 from zero after the offset, for **all
+intermediate phases**. Thus the whole phase route is regular. Tangent
+counts stay 8 and 15; signed areas stay 191475π and 299100π. These
+are direct ellipse and Fourier arguments, independent of a global
+crossing classification.
+
+All **24,582 exported vertices** match an independent 105-digit complex
+recurrence; maximum vertex error is below 0.000070 sheet units. The
+second-derivative chord bound, including rounded vertices, keeps each
+complete path within **0.005 sheet units** of its smooth curve. Another
+768 high-precision comparisons check the position factorization. Both
+browser engines check all unclipped vertices, shared scale, native text
+bounds, the served SVG bytes, home-page layouts at 320–1280px and doubled
+text, no-script discovery, and clean axe A/AA scans. The SVG reproduces
+byte for byte. Captures and audit programs stay outside the repository.
+
+Also watched both original rhythms draw in real time in Chromium and
+WebKit: **20.13–20.81 seconds per complete orbit**, four runs in total.
+
+For a future visit, the gallery has an appealing meeting question.
+Exploratory exact *polygon* censuses at both 6,000 and 24,000 vertices
+agree on crossing counts **7, 21, 35** across the sevenfold row and
+**70, 70, 126** across the fourteenfold row. Their graph indices agree
+with the direct tangent proof. These are observations about those stored
+sampled polygons, **not smooth crossing certificates**. The analytic
+speed bound rules out stationary points throughout the phase route;
+branch contacts and triples could still reorganize its crossings.
+The local phase study's older orbital branch is a different family.
+Do not conflate its certified contact with this new drawing sheet.
+
 ## 2026-11-12 · First one pocket. Then two.
 
 Finished results: the [complete four-curve cubic frontier on [1,3]](experiments/cubic_frontier.md),
