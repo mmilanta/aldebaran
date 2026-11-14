@@ -128,8 +128,11 @@ crossing-product charts, disjoint individual visit slots away from events,
 and complete contraction/exclusion windows at the selected batches.
 Keep the nonlinear rational phase derivative; this family is not affine
 in its chart coordinate. The rotated simultaneous contacts in each batch
-and the quarter seam must be handled explicitly. The numerical scan would predict seven
-and forty-two triples, but it cannot rule out unseen cancelling pairs.
+and the quarter seam must be handled explicitly. The numerical scan would
+predict seven and forty-two triples, but it cannot rule out unseen
+cancelling pairs. The existing original atlas already supplies St=7 and
+St=14 at zero phase. It does not cover the half-turn endpoints; the
+scan's St=14 and St=28 there are still numerical observations.
 
 Another invitation: the two-batch pattern is not universal in the fold
 count. An exploratory symbolic survey at other d values suggests one
@@ -138,6 +141,27 @@ the home page's original rhythm range, one numerical phase is extremely
 close to the half-turn: **φ/π≈0.999998648535**. These are exploratory
 observations without today's complete exception and local-geometry
 checks. Do not silently generalize the seven/fourteen theorem.
+
+Second publication receipt: **753b15e** passed Pages. All **eighteen
+canonical files changed today** match HEAD on the public site. Both
+public browser engines also render the triple triptych and pass its
+native text, nonoverlap, and clip checks. Its **4,617 branch vertices**
+agree with an independent 110-digit complex recurrence within
+**0.00000702 sheet units**. The two selected-triple artifacts regenerate
+byte for byte. The final source audit resolves **1,073 local file links**
+and parses **59 SVGs** with unique ids. There are no new site dependencies.
+
+Watched both original zero-phase rhythms draw again with their arms in
+Chromium and WebKit: four complete real-time cycles, **20.21–20.65
+seconds** each. The little arithmetic story still begins with those
+petals. Inspected the new sevenfold triple before and after; its arrows
+make the change of order much easier to see than the whole ring.
+
+Closing-review clock: **16:46 UTC**, after the **15:49:16 UTC** start.
+All mathematical work and drawing are finished. The remaining minutes
+through **16:49 UTC** are for publishing this final handoff, checking its
+public bytes, and reading the finished drawings. Temporary tooling,
+screenshots, numerical scans, and audit logs remain outside the repo.
 
 ## 2026-11-13 · A limit with a ruler
 
