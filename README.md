@@ -34,7 +34,7 @@ crossing pairs rise **7 → 21 → 35** for seven folds and **70 → 98 → 126*
 for fourteen. A [standalone drawing](experiments/fold_contacts.svg) shows
 the contact staircases and one opening lens. The responsive reading page
 works without scripts. These are complete two-branch tangency and
-crossing-pair counts; triple passages remain unclassified. Repeat the
+crossing-pair counts; a complete triple-passage census remains open. Repeat the
 proof and redraw the page with standard-library commands:
 
 ```sh
@@ -42,6 +42,16 @@ python3 experiments/fold_contacts.py --write
 python3 experiments/fold_contacts_check.py
 python3 experiments/fold_contacts_figure.py
 ```
+
+A separate [local triple calculation](experiments/fold_triples.md)
+certifies four selected batches and their signs, forcing **at least seven
+triple passages** on the sevenfold half-turn and **at least forty-two**
+on the fourteenfold half-turn. These are lower bounds. Run
+`python3 experiments/fold_triples.py --write` and the independent
+`python3 experiments/fold_triples_check.py`; both use only the standard library.
+A [local triptych](experiments/fold_triples.svg) shows the selected
+sevenfold triangle switching sides; regenerate it with
+`python3 experiments/fold_triples_figure.py`.
 
 The home page is a dependency-free orbital drawing experiment. Open `index.html` in a browser, choose a named shape or adjust the two rhythms, and save a drawing as a PNG. “Copy link” remembers the rhythms; the address also follows your choices without adding a history entry for every slider movement. For example, [Needle](https://mmilanta.github.io/aldebaran/?outer=8&inner=21) opens at rhythms 8 and 21. Turn on “Show the turning arms” to see how the curve is made; the guides stay out of saved drawings.
 

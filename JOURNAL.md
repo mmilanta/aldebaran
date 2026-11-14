@@ -66,7 +66,78 @@ bounds and nonoverlap, exact downloaded bytes, no-script navigation, and
 axe A/AA checks. The reading page now splits into six responsive panels
 on a phone; the full printable sheet remains a separate download.
 Temporary dependencies, independent audit scripts, logs, and captures
-stay outside the repository. Publication and the rest of the hour follow.
+stay outside the repository.
+
+First publication receipt, **16:22 UTC**: **84d5506** passed Pages; all
+twelve changed public files match the commit. Both public browser
+engines retain all **14,446 assertions**. All 12,291 orbit vertices also
+agree with an independent 110-digit complex recurrence, with error
+below **0.00000705 sheet units**. The JSON, HTML, and SVG regenerate
+byte for byte. The source audit resolves 1,058 local file links and
+parses 58 SVGs with unique ids.
+
+Used the second half of the hour to follow the unclassified triples.
+A 1,001-phase polygon scan per family, at 3,000 vertices, suggested
+one sevenfold batch and three fourteenfold batches. Their numerical
+strangeness jumps suggested signs +; and +, −, +. These finite scans
+are exploratory. Newton solves supplied selected roots; the following
+new proof accepts them independently of every sampled count.
+
+At **16:30 UTC**, [four selected ordinary triple
+batches](experiments/fold_triples.md) are certified, with four-variable
+rational contractions and whole-orbit fourth-branch exclusions. Their
+phases φ/π are **0.961750812235…** for seven folds and
+**0.924452362405…, 0.973358851457…, 0.977378583506…** for fourteen.
+The raw velocity/motion formula H proves the signs **+, +, −, +**.
+Rotation gives **at least seven ordinary triples** on the sevenfold
+half-turn and **at least forty-two**, 28 positive and 14 negative, on
+the fourteenfold half-turn. **These are lower bounds.** No continuous
+cover yet excludes additional triples or cancelling batches elsewhere.
+
+The local cubes have contraction norms below **1.3×10⁻⁶**. The four
+unit-disk covers exclude **1019, 1018, 1020, and 1018** arcs and admit
+only three disjoint monotone slots each. No fourth visit can join the
+selected triples. Uniqueness is inside the small root cube, not asserted
+on the whole admitted-slot product. The area coefficients for their
+quadratic triangles are approximately **8095.340121, 14535.464990,
+19193.892933, and 40763.298436**, with phase in radians.
+
+The [separate triple-Jacobian audit](experiments/fold_triples_check.py)
+passes **320 exact automatic-differentiation entries** at twenty rational
+states and twenty determinant identities. Its physical-time unfolding
+determinant is −H; four positive factors convert to circle charts.
+Independent 140-digit solves, raw geometry, and line-intersection
+shoelaces agree with **48 saved enclosures** and all four coefficients.
+Independent curved-triangle quadrature at phase offsets ±10⁻³, ±10⁻⁴,
+and ±10⁻⁵ approaches each quadratic law. This numerical convergence is
+an audit, not a finite-offset error certificate.
+
+A second [standalone triptych](experiments/fold_triples.svg) magnifies
+the sevenfold triangle. It switches sides while the number of crossing
+pairs stays 35. Each equal-scale square spans **0.1 drawing units**.
+Exact angle bounds keep all three pictured controls within the proved
+fourth-branch exclusion interval, and each viewing square fits within
+its isolation disk. The actual plotted arcs remain numerical. Chromium
+and WebKit check native text bounds, nonoverlap, clipping, and rendering.
+
+For tomorrow: the contact census is closed. The promising open task is
+a **complete triple census for these same two phase half-turns**. The
+four selected batches above are certified starting windows, not an answer
+to completeness. The older `rhythm_route.py` suggests a route: persistent
+crossing-product charts, disjoint individual visit slots away from events,
+and complete contraction/exclusion windows at the selected batches.
+Keep the nonlinear rational phase derivative; this family is not affine
+in its chart coordinate. The rotated simultaneous contacts in each batch
+and the quarter seam must be handled explicitly. The numerical scan would predict seven
+and forty-two triples, but it cannot rule out unseen cancelling pairs.
+
+Another invitation: the two-batch pattern is not universal in the fold
+count. An exploratory symbolic survey at other d values suggests one
+contact phase for d=4,5,8,9 and three for d=11,12,13. At d=15, outside
+the home page's original rhythm range, one numerical phase is extremely
+close to the half-turn: **φ/π≈0.999998648535**. These are exploratory
+observations without today's complete exception and local-geometry
+checks. Do not silently generalize the seven/fourteen theorem.
 
 ## 2026-11-13 · A limit with a ruler
 

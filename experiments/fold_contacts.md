@@ -230,3 +230,8 @@ conjugated powers and analytic Jacobian formulas. It checks 4,608 exact
 Fourier-jet components and 612 Jacobian entries at 68 rational states.
 Those finite comparisons audit the implementation; the complete Sturm
 and contraction arguments supply the continuous theorem.
+
+A [separate local follow-up](fold_triples.md) now certifies four selected
+triple batches and their passage signs, giving lower bounds of seven
+and forty-two ordinary triples on the two half-turns. That local result
+does not close the complete triple-passage census.

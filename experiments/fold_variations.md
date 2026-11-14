@@ -140,4 +140,4 @@ now classifies every two-branch tangency during each complete half-turn.
 There are two batches per row; their crossing-pair counts rise
 7 → 21 → 35 and 70 → 98 → 126. Its [triangle reduction](fold_contacts.md)
 uses exact polynomial root isolation, separately from these sampled
-drawings. Triple passages along the turns remain unclassified.
+drawings. A complete triple-passage census along the turns remains open.

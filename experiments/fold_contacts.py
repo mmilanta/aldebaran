@@ -216,6 +216,8 @@ def hint_chart(hint):
 def contract(d, quarters, center, radius=Q(1, 10**11)):
     require(len(quarters) == len(center) == 3 and radius > 0,
             'A contact needs two visits, a phase, and a positive radius.')
+    require(type(radius) is Q and all(type(c) is Q for c in center),
+            'Use exact rational contact centers and radius.')
     require(quarters[0] != quarters[1] or abs(center[0]-center[1]) > 2*radius,
             'Coincident visits are excluded.')
     require(quarters[2] in (0, 1), 'Use a phase in (0,pi).')

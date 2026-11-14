@@ -6,14 +6,14 @@ fold_contacts.py repeats the complete geometric certificate.
 """
 
 from fractions import Fraction as Q
-from itertools import product
+from itertools import product, zip_longest
 
 from fold_contacts import HINTS, equations, evaluate, hint_chart
 from blend_cusps import Interval as I, require
 
 
 class Jet:
-    """A rational value and three formal first derivatives."""
+    """A rational value and formal first derivatives, padded for constants."""
 
     def __init__(self, value, gradient=(0, 0, 0)):
         self.value, self.gradient = Q(value), tuple(map(Q, gradient))
@@ -24,7 +24,8 @@ class Jet:
 
     def __add__(self, other):
         other = self.wrap(other)
-        return Jet(self.value+other.value, tuple(a+b for a, b in zip(self.gradient, other.gradient)))
+        return Jet(self.value+other.value, tuple(a+b for a, b in
+                                               zip_longest(self.gradient, other.gradient, fillvalue=0)))
 
     __radd__ = __add__
 
@@ -40,7 +41,8 @@ class Jet:
     def __mul__(self, other):
         other = self.wrap(other)
         return Jet(self.value*other.value,
-                   tuple(a*other.value+self.value*b for a, b in zip(self.gradient, other.gradient)))
+                   tuple(a*other.value+self.value*b for a, b in
+                         zip_longest(self.gradient, other.gradient, fillvalue=0)))
 
     __rmul__ = __mul__
 
@@ -48,7 +50,7 @@ class Jet:
         other = self.wrap(other)
         return Jet(self.value/other.value,
                    tuple((a*other.value-self.value*b)/other.value**2
-                         for a, b in zip(self.gradient, other.gradient)))
+                         for a, b in zip_longest(self.gradient, other.gradient, fillvalue=0)))
 
 
 def mul(z, w):
