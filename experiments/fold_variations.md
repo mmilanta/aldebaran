@@ -134,3 +134,10 @@ error at most `max|z″|·(2π/4096)²/8`. At the sheet's common scale,
 even the fourteenfold row stays below **0.005 sheet units**, including
 rounded vertex coordinates. These paths illustrate the smooth curves;
 the small sampling bound is not an intersection certificate.
+
+The follow-up [The folds stay. The crossings change.](fold_contacts.html)
+now classifies every two-branch tangency during each complete half-turn.
+There are two batches per row; their crossing-pair counts rise
+7 → 21 → 35 and 70 → 98 → 126. Its [triangle reduction](fold_contacts.md)
+uses exact polynomial root isolation, separately from these sampled
+drawings. Triple passages along the turns remain unclassified.

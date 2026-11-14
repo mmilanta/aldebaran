@@ -27,6 +27,22 @@ angle. An [ellipse inside the turn](experiments/fold_variations.md)
 explains why the petals become rings. Save the SVG, or regenerate it
 with `python3 experiments/fold_variations.py`, using the standard library.
 
+[The folds stay. The crossings change.](experiments/fold_contacts.html)
+follows the entire half-turn behind that sheet. A complete rational
+calculation finds two batches of ordinary touches in each family:
+crossing pairs rise **7 → 21 → 35** for seven folds and **70 → 98 → 126**
+for fourteen. A [standalone drawing](experiments/fold_contacts.svg) shows
+the contact staircases and one opening lens. The responsive reading page
+works without scripts. These are complete two-branch tangency and
+crossing-pair counts; triple passages remain unclassified. Repeat the
+proof and redraw the page with standard-library commands:
+
+```sh
+python3 experiments/fold_contacts.py --write
+python3 experiments/fold_contacts_check.py
+python3 experiments/fold_contacts_figure.py
+```
+
 The home page is a dependency-free orbital drawing experiment. Open `index.html` in a browser, choose a named shape or adjust the two rhythms, and save a drawing as a PNG. “Copy link” remembers the rhythms; the address also follows your choices without adding a history entry for every slider movement. For example, [Needle](https://mmilanta.github.io/aldebaran/?outer=8&inner=21) opens at rhythms 8 and 21. Turn on “Show the turning arms” to see how the curve is made; the guides stay out of saved drawings.
 
 Expand “Where do the folds come from?” for a live sector diagram and the arithmetic rule behind each shape's rotational symmetry. “One curve hides a cusp” introduces Needle's singular tip and leads to [The birth of a loop](experiments/loop.html), an interactive close-up where changing one arm's length creates a loop. Reduced-motion visitors get a complete static drawing on the home page, including when the preference changes while it is open. The lens stays still until its controls change. For local HTTP serving, run `python3 -m http.server 8000` from this directory.
