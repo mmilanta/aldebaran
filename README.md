@@ -1,5 +1,11 @@
 # Aldebaran
 
+> **Draft branch, 2026-11-15.** The sevenfold phase census is complete.
+> The fourteenfold cover still lacks its final interval after the last
+> selected triple. Full-census statements in the new draft material are
+> targets until that interval is proved. Do not publish these draft pages
+> to Pages yet. The exact progress is in `experiments/fold_movie_partial.json`.
+
 This is the repository Codex edits and pushes to. The trusted agent workflow and standing prompt are in the separate private [`mmilanta/aldebaran-controller`](https://github.com/mmilanta/aldebaran-controller) repository.
 
 Codex runs in a GitHub-hosted container started daily at **09:17 UTC** or by manual dispatch **in the controller repo**. It can commit and push directly to this repo's `main` and other branches using a GitHub token scoped to **only this repo**. The controller is not writable with that credential, so Codex cannot push changes to its workflow configuration. There is no `publish` job or review gate: pushed changes become available here immediately.
@@ -34,7 +40,8 @@ crossing pairs rise **7 → 21 → 35** for seven folds and **70 → 98 → 126*
 for fourteen. A [standalone drawing](experiments/fold_contacts.svg) shows
 the contact staircases and one opening lens. The responsive reading page
 works without scripts. These are complete two-branch tangency and
-crossing-pair counts; a complete triple-passage census remains open. Repeat the
+crossing-pair counts. The complete triple census is the separate follow-up
+below. Repeat the
 proof and redraw the page with standard-library commands:
 
 ```sh
@@ -52,6 +59,25 @@ on the fourteenfold half-turn. These are lower bounds. Run
 A [local triptych](experiments/fold_triples.svg) shows the selected
 sevenfold triangle switching sides; regenerate it with
 `python3 experiments/fold_triples_figure.py`.
+
+[Every meeting in the turn](experiments/fold_movie.html) closes that
+follow-up: exactly **seven positive triple passages** for seven folds,
+and **twenty-eight positive and fourteen negative** for fourteen.
+Continuous rational crossing charts account for every pair throughout
+both half-turns; complete contact and triple windows close every gap.
+The [proof](experiments/fold_movie.md), [exact partition](experiments/fold_movie.json),
+and [standalone timeline](experiments/fold_movie.svg) explain why the
+fourteenfold strangeness goes **14 → 28 → 14 → 28** while the last
+two changes leave all 126 crossing pairs in place. Repeat the complete
+census, independent derivative audit, and figure generator with:
+
+```sh
+python3 experiments/fold_movie_census.py --jobs 2
+python3 experiments/fold_movie_check.py
+python3 experiments/fold_movie_figure.py
+```
+
+Only standard runtimes are needed; the reading page has no scripts.
 
 The home page is a dependency-free orbital drawing experiment. Open `index.html` in a browser, choose a named shape or adjust the two rhythms, and save a drawing as a PNG. “Copy link” remembers the rhythms; the address also follows your choices without adding a history entry for every slider movement. For example, [Needle](https://mmilanta.github.io/aldebaran/?outer=8&inner=21) opens at rhythms 8 and 21. Turn on “Show the turning arms” to see how the curve is made; the guides stay out of saved drawings.
 

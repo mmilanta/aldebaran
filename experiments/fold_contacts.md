@@ -235,3 +235,9 @@ A [separate local follow-up](fold_triples.md) now certifies four selected
 triple batches and their passage signs, giving lower bounds of seven
 and forty-two ordinary triples on the two half-turns. That local result
 does not close the complete triple-passage census.
+
+The later [Every meeting in the turn](fold_movie.md) closes it with
+continuous crossing charts and complete event windows. It proves exactly
+seven positive triples for seven folds, and twenty-eight positive and
+fourteen negative for fourteen. The [reading page](fold_movie.html)
+puts crossing pairs and strangeness on the same timeline.

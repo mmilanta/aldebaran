@@ -310,6 +310,7 @@ def page(record, svg):
     <p>The graph axes have different scales. Each horizontal axis runs from −4 to +4 drawing units along the common tangent; normal separation runs from −0.12 to +0.36. A zero means the branches meet.</p>
     <h2>A pair is a pair of visits</h2>
     <p>Three visits can meet at one point. That point counts as three pairs, one for each choice of two visits. The calculation counts all tangencies between two visits; it does not locate all triple passages or count every winding region through the turn. At each certified touch, a separate whole-orbit calculation rules out a third branch.</p>
+    <p>The separate <a href="fold_movie.html">Every meeting in the turn</a> now closes the triple census too. It follows seven positive triple passages for seven folds, and twenty-eight positive and fourteen negative for fourteen. The crossing counts stay fixed while those little triangles switch sides.</p>
     <p>The small graph shows the selected sevenfold branches at a phase offset of −0.006, approximately zero, and +0.006 radians from their first touch. It is a numerical illustration. Its wider window is separate from the small disk used to prove that the exact contact has only two branches.</p>
     <aside class="reading">
       <h2>Two visits make a triangle</h2>

@@ -15,6 +15,11 @@ a separate calculation now certifies **four selected ordinary triple
 batches**. These are local existence results, **not a complete triple
 census** or an exclusion of other events elsewhere in the half-turns.
 
+The later [complete phase movie](fold_movie.md) supplies that missing
+continuous exclusion and proves these lower bounds are exact. Its
+[reading page](fold_movie.html) follows every batch. The local program
+and area laws below retain their stated scope.
+
 ![Three equal-scale close-ups of a selected sevenfold triple. A blue,
 gold, and green branch bound a small triangle before the meeting, meet
 approximately at one point, then enclose a triangle on the other side.
@@ -143,11 +148,9 @@ exclusion, without reading the [archived record](fold_triples.json).
 All commands use the standard library. The signs are rational interval
 decisions, not deductions from the numerical scan's invariant jumps.
 
-For a future complete census, cover the phase intervals with regular
-crossing product charts and prove their individual visit slots disjoint,
-as in the older [whole rhythm route](rhythm_route.md). The certified
-contact phases and these four triple batches provide candidate event
-windows. Unlike that older affine family, the phase parameter follows
-a rational unit circle; its derivative bounds and nonlinear Jacobian
-column need to be retained. The continuous global exclusion is still
-work to do.
+The [complete follow-up](fold_movie.md) covers both phase half-turns
+with regular crossing product charts, complete triple windows, and
+isolated contact patches. It retains the rational circle's nonlinear
+phase derivative and proves uniqueness over the whole candidate products
+of each event window. Run `python3 experiments/fold_movie_census.py --jobs 2`
+to repeat that global proof separately from these local certificates.
