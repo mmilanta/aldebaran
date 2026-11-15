@@ -27,7 +27,7 @@ The remaining interval is in phase quarter 1, with circle-chart control
 
 This is the tail after approximately 0.97737862π. **The full
 fourteenfold census is still open.** No result from an unfinished
-search excludes cancelling passages in that tail. Its whole-turn
+search excludes cancelling passages in that tail. Its half-turn
 lower bound remains forty-two selected triples, twenty-eight positive
 and fourteen negative. The new cover excludes additional events
 before the tail; it does not promote that lower bound to a full count.
