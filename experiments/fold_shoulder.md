@@ -125,6 +125,27 @@ positive h, the three θ remain distinct, λ(h)>0, and φ stays below π.
 Taking h=1/d along sufficiently large positive integers gives the claimed
 common spatial point. Finally λ(h)=C+O(h) proves the stated phase law.
 
+The first correction follows without another full system solve. Write
+`y_i(h)=y_i(0)+h z_i+O(h²)` and `λ(h)=C+hL+O(h²)`. In Q₂ the quadratic
+angular term vanishes because `y_2²=y_0²`; its first-order equation is
+`κ(z_2−z_0)+2s=0`. In F₂ the fourth-order radial terms vanish for the
+same symmetry: they involve differences of fourth or second powers.
+Its first-order equation is
+
+```
+2as²(z_2−z_0)+2bsL = 0.
+```
+
+Consequently `L=−2C/κ`, and the sharper law is
+
+```
+φ_d = φ* + C/d² − 2C/(κd³) + O(d⁻⁴)
+    = φ* + C/(d+1/κ)² + O(d⁻⁴).
+```
+
+The cubic correction divided by π is approximately −75.18036746292648.
+These are asymptotic remainders, with no asserted finite-d error bound.
+
 This argument concerns the selected three visits. A fourth radius
 preimage exists nearby in phase and is not tested for spatial alignment.
 Likewise a nonzero four-equation Jacobian does not by itself assert all

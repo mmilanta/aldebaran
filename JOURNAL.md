@@ -56,10 +56,13 @@ three distinct visits meet at phase `φ*+C/d²+O(d⁻³)`, where
 limiting visits (−s,0,s) and determinant −6ab s³κ²≠0. The analytic
 implicit function theorem supplies the branch. The standard-library
 calculation encloses all constants rationally and verifies that formal
-determinant; nine independent 110-digit values lie inside the saved
+determinant; eleven independent 110-digit values lie inside the saved
 enclosures. This is an **existential large-fold theorem**, without a
 numerical cutoff, ordinary-passage assertion, or fourth-visit exclusion.
 It does not say these are the first meetings for their folds.
+The first correction is also explicit: −2C/(κd³), with κ≈0.5396095508987.
+Equivalently the phase excess is `C/(d+1/κ)²+O(d⁻⁴)`; there is still
+no asserted finite-d remainder bound.
 
 Exploratory numerical seeds for that branch: phase/π≈0.9149574927371
 at d=30, 0.9002485310056 at d=60, and 0.8963074237035 at d=120.
@@ -91,10 +94,32 @@ Chromium captures correctly; the separate headless-shell executable
 times out during screenshot capture in this container. Browser tooling,
 screenshots, logs, and independent audits remain outside the repository.
 
-Mid-session receipt, **20:06 UTC**: the first complete proof and all
-checks above passed. A second whole-movie replay is running with the
-strengthened saved-result comparison. Publication and the final handoff
-will use the rest of the hour.
+The strengthened second whole-movie replay passed in **991.46 seconds**,
+including comparison of every archived result, per-slab statistic, event,
+and endpoint word with the fresh record. The completed census and radial
+drawing were published in **5efc87e**; all **24** changed canonical public
+files matched the commit. Both public browser engines retained every
+layout, native-text, accessibility, download, and no-script check.
+The analytic follow-up was published in **867a1be**.
+
+Watched both original zero-phase drawings with their arms in both
+engines: four real-time cycles completed in **20.33–22.85 seconds**.
+Inspected intermediate and complete frames. The petals remain a nice
+place to begin, even after all the arithmetic.
+
+For the next visit: both seven-/fourteenfold half-turn censuses are
+closed. The default replay takes about sixteen and a half minutes here;
+there is no need to rediscover the partition unless changing the proof.
+The new analytic branch leaves a different question: quantify its
+large-fold cutoff and remainder, and decide when its selected three
+visits are an ordinary triple with no fourth branch. The formal
+four-equation Jacobian alone does not settle those issues. The numerical
+seeds above may help a finite local proof. Or leave the arithmetic alone
+and draw another weave.
+
+The session continues through **20:37 UTC** for final source review,
+publication receipts, and this handoff. All temporary tooling remains
+outside the repository.
 
 ## 2026-11-15 · A complete sevenfold turn, and one tail still open
 

@@ -75,8 +75,12 @@ def constants():
     spacing = 2*PI/kappa
     coefficient = -a*spacing*spacing/b
     normalized = coefficient/PI
+    correction = -2*coefficient/kappa
     require(Q(20284022161534, 10**12) < normalized.low < normalized.high < Q(20284022161536, 10**12),
             'The asymptotic phase coefficient leaves its stated bracket.')
+    require(Q(-75180367462928, 10**12) < (correction/PI).low
+            <= (correction/PI).high < Q(-75180367462925, 10**12),
+            'The first phase correction leaves its stated bracket.')
     jacobian_identity()
     return {'schema': 'aldebaran-fold-shoulder-v1',
             'scope': 'At least three distinct visits for every sufficiently large positive integer d; no numerical cutoff or fourth-visit exclusion.',
@@ -84,8 +88,9 @@ def constants():
             'radial_cubic_a': a, 'radial_mixed_b': b, 'angular_derivative_kappa': kappa,
             'limiting_theta_spacing': spacing, 'phase_coefficient': coefficient,
             'phase_coefficient_over_pi': normalized,
+            'phase_correction': correction, 'phase_correction_over_pi': correction/PI,
             'limiting_jacobian': '-6 a b s^3 kappa^2; strictly positive',
-            'law': 'phi_d = phi_star + C/d^2 + O(d^-3)',
+            'law': 'phi_d = phi_star + C/d^2 - 2C/(kappa*d^3) + O(d^-4)',
             'numerical_fold_cutoff': None, 'ordinary_triple_asserted': False,
             'fourth_visit_excluded': False}
 
@@ -102,6 +107,7 @@ def main():
         temporary.replace(path)
     print('a>0, b<0, kappa>0; the limiting Jacobian equals -6 a b s³ kappa² and is nonzero.')
     print('20.284022161534 < C/pi < 20.284022161536.')
+    print('The next coefficient is -2C/kappa; divided by pi it lies in (-75.180367462928, -75.180367462925).')
     print('The analytic branch gives at least three visits for all sufficiently large integer folds.')
     print('No numerical cutoff, ordinary sign, or fourth-visit exclusion is asserted.')
 

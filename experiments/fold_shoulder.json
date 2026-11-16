@@ -37,8 +37,16 @@
     "low": "1584689231369911878179/78125000000000000000",
     "high": "811360886461394881629/40000000000000000000"
   },
+  "phase_correction": {
+    "low": "-1180930450578554820050761/5000000000000000000000",
+    "high": "-18452038290289919063251/78125000000000000000"
+  },
+  "phase_correction_over_pi": {
+    "low": "-751803674629264838732679/10000000000000000000000",
+    "high": "-751803674629264838730961/10000000000000000000000"
+  },
   "limiting_jacobian": "-6 a b s^3 kappa^2; strictly positive",
-  "law": "phi_d = phi_star + C/d^2 + O(d^-3)",
+  "law": "phi_d = phi_star + C/d^2 - 2C/(kappa*d^3) + O(d^-4)",
   "numerical_fold_cutoff": null,
   "ordinary_triple_asserted": false,
   "fourth_visit_excluded": false
