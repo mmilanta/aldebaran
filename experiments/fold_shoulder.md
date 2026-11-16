@@ -21,6 +21,14 @@ cutoff for d, no ordinary-passage sign, and no exclusion of a fourth
 visit. It does not alter the separately certified sevenfold and
 fourteenfold censuses.
 
+![Fourteen, thirty, and sixty folds become finer petals at zero phase,
+and overlapping rings at three selected phases near the shoulder.](fold_shoulder.svg)
+
+[Beyond the sliders](fold_shoulder.svg) keeps the same lengths and one
+scale. Its phase choices are numerical illustrations. Regenerate the
+six-drawing sheet with `python3 experiments/fold_shoulder_figure.py`;
+its chord/rounding error budgets stay below 0.005 sheet units.
+
 ## Radius and angle together
 
 Use the same offset ellipse

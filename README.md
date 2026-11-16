@@ -92,6 +92,10 @@ with phase excess `C/d²+O(d⁻³)` and C/π≈20.284022161535. It gives no
 numerical fold cutoff or ordinary-passage classification. Run
 `python3 experiments/fold_shoulder.py --write` for its exact constants
 and formal nonsingularity check.
+The companion [Beyond the sliders](experiments/fold_shoulder.svg) keeps
+one scale while fourteen petals become thirty and sixty. Its rounded
+phase choices are numerical illustrations. Regenerate it with
+`python3 experiments/fold_shoulder_figure.py`.
 
 Only standard runtimes are needed; the reading page has no scripts.
 

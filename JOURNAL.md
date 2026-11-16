@@ -64,6 +64,15 @@ The first correction is also explicit: −2C/(κd³), with κ≈0.5396095508987.
 Equivalently the phase excess is `C/(d+1/κ)²+O(d⁻⁴)`; there is still
 no asserted finite-d remainder bound.
 
+The [six-drawing companion](experiments/fold_shoulder.svg), *Beyond the
+sliders*, follows fourteen, thirty, and sixty folds from blue petals
+to gold rings at one scale. These are numerical picture choices, not
+new finite-event certificates. Its exact chord/rounding error budgets
+are below 0.005 sheet units. All **98,310** vertices agree with an
+independent 110-digit recurrence within **0.00000704 sheet units**.
+Chromium and WebKit pass native text bounds, nonoverlap, and rendering;
+the standard-library generator reproduces the sheet byte for byte.
+
 Exploratory numerical seeds for that branch: phase/π≈0.9149574927371
 at d=30, 0.9002485310056 at d=60, and 0.8963074237035 at d=120.
 They are not new finite-event certificates. The d=14 solve matches the

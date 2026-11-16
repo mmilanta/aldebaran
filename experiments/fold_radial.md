@@ -117,6 +117,14 @@ The unique cosine root determines φ*. Rational square-root and arctangent
 bounds give the stated phase bracket; the [exact record](fold_radial.json)
 keeps tighter bounds.
 
+Uniqueness also has a short calculus proof. Write
+`H(ψ)=X^(2/3)+Y^(2/3)`. On the open quadrant, the sign of H′ is the
+sign of `B^(2/3)cos(ψ)^(4/3)−A^(2/3)sin(ψ)^(4/3)`. It is positive
+until `tan ψ=√(B/A)` and negative afterward. Moreover H(0)>1 because
+245A>D, while H(π/2)<1 because 245B<D. The level one is therefore
+crossed exactly once, on the decreasing part. The cubic isolation
+independently verifies that count and encloses its location.
+
 ## At the threshold, two points still suffice
 
 Away from φ*, no radial critical point is degenerate. On the compact
