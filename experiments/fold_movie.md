@@ -1,12 +1,5 @@
 # Every meeting in the turn
 
-> **Draft: the complete fourteenfold theorem below is not yet established.**
-> Seven folds are completely certified. Fourteen folds are covered through
-> the last selected triple window, but its final tail to π remains open.
-> [The partial record](fold_movie_partial.json) preserves every completed
-> slab and the exact remaining interval. Statements below about the full
-> fourteenfold census are intended conclusions pending that last cover.
-
 Keep the three lengths and turn the backward arm's starting angle:
 
 ```
@@ -169,6 +162,12 @@ event window, closing the scope left open by the earlier local result.
 The accepted overlap components have only three pair charts each;
 there is no fourth visit at an event.
 
+The exact partition uses **696 regular slabs for seven folds and 1,075
+for fourteen**, together with three and five event windows respectively.
+The fourteenfold tail after the last triple contributes 113 of those
+regular slabs. Both closed phase quarters tile exactly; no interval
+after the last event is left to a limiting or sampled argument.
+
 ## Closing a contact window
 
 A regular crossing chart cannot span the birth of two crossings.
@@ -236,6 +235,13 @@ of ordinary touches. Both endpoints of each half-turn are regular.
 
 ## A four-visit ceiling without a census
 
+The [radial follow-up](fold_radial.md) sharpens this ceiling on a closed
+initial interval: **every positive integer d has at most two visits per
+point for 0≤φ≤φ***, where φ*/π≈0.8949408271717914. Hence no triple
+can occur there. Its ellipse-radius profile acquires a flat shoulder at
+φ*; after that, four points can share a radius. The argument below gives
+the uniform four-visit ceiling for the entire turn.
+
 There is a short independent bound that works for **every positive
 integer d**, with these same lengths. Put θ=dt−φ/2 and factor the
 position as in the [ellipse note](fold_variations.md). Its squared
@@ -272,6 +278,7 @@ other fold counts is a separate question.
 ```sh
 python3 experiments/fold_movie_census.py --jobs 2
 python3 experiments/fold_movie_check.py
+python3 experiments/fold_movie_resume_check.py
 python3 experiments/fold_movie_figure.py
 ```
 
@@ -280,17 +287,43 @@ The first command reads the exact phase partition from
 contraction, every triple exclusion, all eight complete event windows,
 and all four endpoint proofs. It reruns the exhaustive contact
 elimination; archived counts, event results, and endpoint words are
-never accepted in place of fresh proofs. Empty, incomplete, and
+never accepted in place of fresh proofs. It compares every saved result
+and per-slab statistic against the rebuilt record. Empty, incomplete, and
 overlapping partitions are rejected. An existing triple is accepted as
 a root; a displaced copy is excluded. Invalid phase inputs are rejected.
 
 Add `--write` to rediscover a partition and atomically replace the record
-only after all proofs pass. Discovery may choose either chart seam and
+only after all proofs pass. Discovery saves an atomic proposal checkpoint
+after every accepted slab or subdivision. It is explicitly unverified,
+and cannot overwrite the complete archive. Resume interrupted work with:
+
+```sh
+python3 experiments/fold_movie_census.py --write \
+  --resume experiments/fold_movie_checkpoint.json --jobs 2
+```
+
+`--checkpoint PATH` chooses a different snapshot location. Discovery is
+sequential; `--jobs` controls the independent proof replay. Resumed slabs
+are proposals: their proofs, all event windows, and all endpoint words
+are repeated before writing a complete record. The old
+`fold_movie_partial.json` remains a historical proposal accepted by this
+same resume option. Every proposed regular slab and pending gap must
+tile the full domain exactly, with neither gaps nor overlaps.
+
+Discovery may choose either chart seam and
 may subdivide a proposed slab. Its numerical scans and Newton iterates
 suggest boxes only. Work limits reject attempts; they never certify one.
 The two phase quarters tile each half-turn exactly, with all boundary
 phases included. Their event-window centers are fixed rational constants;
 platform-dependent trigonometric rounding never defines the partition.
+
+Near either phase endpoint, the numerical elimination factors its residual
+before evaluation and inserts cuts at the coalescing roots P±Q=0.
+This avoids stepping over a narrow root pair. These cuts only suggest
+crossing charts: all accepted charts still pass the rational contraction
+and disjointness tests against the exhaustive pair count. The resume
+audit interrupts a real slab search, rejects malformed progress and
+altered saved results, and certifies 966 crossing charts close to π.
 
 The separate evaluator audit compares **4,480 exact components at 560
 rational states**, including both seams, phase endpoints, raw physical

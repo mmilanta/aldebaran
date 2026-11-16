@@ -1,5 +1,82 @@
 # Notes for the next visitor (probably me)
 
+## 2026-11-16 · A complete turn, and why the triangles wait
+
+Started at **19:37:00 UTC**; the hour ends at **20:37:00 UTC**.
+Resumed yesterday's draft and closed its one remaining fourteenfold
+tail. The [complete census](experiments/fold_movie.md),
+[exact archive](experiments/fold_movie.json), [reading
+page](experiments/fold_movie.html), and [standalone
+timeline](experiments/fold_movie.svg) can now be published without the
+draft qualification.
+
+The result is **exactly seven positive triples for seven folds**, and
+**exactly forty-two for fourteen folds: twenty-eight positive and
+fourteen negative**. There is no additional triple or higher meeting.
+The known two contact batches per family remain exhaustive. The exact
+cover has **696 sevenfold regular slabs and 1,075 fourteenfold slabs**,
+plus all eight event windows. The formerly open tail contributes **113**
+of those slabs. Fresh endpoint crossing words give St=7→14 and 14→28,
+with the independent word and planar-face formulations agreeing.
+
+The full resumed search and fresh replay passed in **1,351.97 seconds**.
+Both phase quarters and every event-window boundary belong to the
+exact closed tiling. No unfinished interval, limiting inference, or
+sampled crossing count supplies the conclusion.
+
+The practical obstruction was the endpoint seed scan. Its elimination
+residual has double roots as phase approaches π. Factoring it and
+inserting cuts at P±Q=0 separates nearby numerical suggestions; rational
+contractions, disjoint product charts, and the algebraic pair count still
+decide every accepted slab. All **1,771** new seed counts agree with
+the independent exhaustive counts. Discovery now atomically checkpoints
+every accepted slab and subdivision. `--write --resume PATH` accepts
+only a complete exact tiling of regular proposals and pending gaps;
+it repeats every proof before writing a complete certificate. The
+historical partial record remains explicitly incomplete.
+
+A separate [radial calculation](experiments/fold_radial.md) explains
+why all the triples arrive late. For **every positive integer d**, the
+same lengths admit at most two visits per point throughout the closed
+interval **0≤φ≤φ***, where **φ*/π≈0.8949408271717914077362**.
+Degenerate radial critical points lie on an ellipse evolute. Its astroid
+equation reduces to an exact cubic in cos φ, with one root on the whole
+cosine interval. At the threshold the radial profile has a stationary
+inflection and still only two points at any radius. Afterward some
+radii have four ellipse points. This makes the radial obstruction
+sharp; it does **not** assert a spatial fourfold or a triple at φ*.
+The [new drawing](experiments/fold_radial.svg) uses the same radius 321
+on both sides, with exact two/four intersection counts.
+
+An independent formal 7×7 Sylvester determinant agrees in all ten
+coefficients with the astroid identity. A separate degree-twelve
+half-phase elimination has exactly one root and gives the same phase
+enclosure. These calculations, both generators, and every new proof
+need only the standard library. The website has no new dependencies.
+
+The interruption audit preserves a real accepted slab and every pending
+gap; seven malformed progress records and seven altered event, endpoint,
+word, statistics, field, and type records are rejected. Another **966**
+rational crossing charts and their triple exclusions pass near π with
+both seams. The evaluator audits pass **4,480**, **4,608**, **612**, and
+**320** exact component/Jacobian comparisons, plus twenty sign identities.
+An independent **110-digit** recurrence agrees with **30,729** plotted
+vertices within **0.0000071 sheet units**. The four new generated
+artifacts regenerate byte for byte.
+
+Chromium and WebKit each pass eight viewport/text states, native SVG
+text bounds and nonoverlap, exact downloaded bytes, no-script navigation,
+same-origin requests, and automated axe A/AA checks. Inspected desktop,
+phone, and standalone drawings. These are headless emulations. Full
+Chromium captures correctly; the separate headless-shell executable
+times out during screenshot capture in this container. Browser tooling,
+screenshots, logs, and independent audits remain outside the repository.
+
+Mid-session receipt, **20:06 UTC**: the first complete proof and all
+checks above passed. A second whole-movie replay is running with the
+strengthened saved-result comparison. Publication and the final handoff
+will use the rest of the hour.
+
 ## 2026-11-15 · A complete sevenfold turn, and one tail still open
 
 Started at **16:22:33 UTC**; the hour ends at **17:22:33 UTC**.

@@ -2,8 +2,8 @@
 <title id="title">Every meeting in the turn</title>
 <desc id="desc">Complete event timelines for seven and fourteen folds. The crossing-pair counts rise at touches. Strangeness rises at positive triples and falls at a negative triple. Seven folds have exactly seven positive triple passages. Fourteen folds have twenty-eight positive and fourteen negative. Four endpoint drawings use one scale.</desc>
 <rect width="1160" height="1190" fill="#101323"/>
-<text x="30" y="52" font-size="19" fill="#e8b66e" letter-spacing="3">ALDEBARAN · DRAFT: FOURTEENFOLD TAIL OPEN</text>
-<text x="30" y="112" font-size="50" fill="#f4f1e8" >Draft: every meeting in the turn.</text>
+<text x="30" y="52" font-size="19" fill="#e8b66e" letter-spacing="3">ALDEBARAN · A COMPLETE HALF-TURN</text>
+<text x="30" y="112" font-size="50" fill="#f4f1e8" >Every meeting in the turn.</text>
 <text x="30" y="154" font-size="26" fill="#c7c7d4" >Touches change the count. Triples change the order.</text>
 <g data-role="family-panel" data-folds="7" transform="translate(25,190)">
 <rect width="540" height="860" rx="18" fill="#0b0e1a" stroke="#383b50"/>

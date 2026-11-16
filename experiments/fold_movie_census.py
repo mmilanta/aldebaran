@@ -4,7 +4,10 @@ Run: python3 experiments/fold_movie_census.py --jobs 2
      python3 experiments/fold_movie_census.py --write --jobs 2
 Standard library only. The default repeats rational proofs on the saved
 partition, all eight event windows, and four endpoint crossing words.
---write discovers a new partition and saves it only after every proof passes.
+--write discovers a new partition, checkpointing after each accepted slab,
+and saves the complete record only after every proof passes.
+--write --resume PATH reuses a partial partition as proposals, freshly
+verifies every slab, and checkpoints discovery after each accepted slab.
 """
 
 import argparse
@@ -15,6 +18,7 @@ from fractions import Fraction as Q
 from io import StringIO
 import json
 from math import pi
+from pathlib import Path
 from time import monotonic
 
 from blend_cusps import Interval as I, require
@@ -116,29 +120,6 @@ def discover_leaf(d, quarter, low, high, proof):
     raise ValueError(' | '.join(errors))
 
 
-def discover_gap(job):
-    d, quarter, low, high, proof = job
-    rows = []
-    started = monotonic()
-
-    def visit(a, b, depth=0):
-        try:
-            rows.append(discover_leaf(d, quarter, a, b, proof))
-            if len(rows) % 50 == 0:
-                print(f'Discovery: {d} folds, quarter {quarter}, {len(rows)} slabs; '
-                      f'chart endpoint {float(b):.10f}; {monotonic()-started:.1f}s.', flush=True)
-        except ValueError as error:
-            require(depth < 28, f'Unresolved phase slab: {d}, {quarter}, {a}, {b}: {error}')
-            middle = (a+b)/2
-            visit(a, middle, depth+1)
-            visit(middle, b, depth+1)
-
-    visit(low, high)
-    print(f'Discovered {len(rows)} regular slabs: {d} folds, quarter {quarter}, '
-          f'{float(low):.8f} .. {float(high):.8f}.', flush=True)
-    return rows
-
-
 def gaps(proofs):
     for d, proof in proofs.items():
         for quarter in (0, 1):
@@ -148,6 +129,91 @@ def gaps(proofs):
                     yield d, quarter, previous, Q(event['low']), proof
                     previous = Q(event['high'])
             yield d, quarter, previous, Q(1), proof
+
+
+def atomic_json(path, record):
+    temporary = path.with_suffix(path.suffix+'.tmp')
+    temporary.write_text(json.dumps(serialize(record), indent=2)+'\n')
+    temporary.replace(path)
+
+
+def compare_archive(archive, record):
+    """Check saved answers only after rebuilding them from fresh proofs."""
+    canonical = lambda obj: json.dumps(obj, sort_keys=True, separators=(',', ':'))
+    require(canonical(archive) == canonical(serialize(record)),
+            'The saved proof results differ from the fresh census.')
+
+
+def audit_proposal(rows, pending):
+    """A checkpoint is a tiling proposal, never a proof certificate."""
+    placeholders = []
+    for gap in pending:
+        require(set(gap) == {'folds', 'quarter', 'low', 'high', 'depth'},
+                'Unexpected pending-gap fields.')
+        require(type(gap['depth']) is int and 0 <= gap['depth'] <= 28,
+                'A pending gap has an invalid discovery depth.')
+        placeholders.append({k: gap[k] for k in ('folds', 'quarter', 'low', 'high')}
+                            | {'shift': '0', 'crossings': None, 'stats': {}})
+    audit_partition(rows+placeholders)
+
+
+def read_proposal(path, windows):
+    record = json.loads(path.read_text())
+    require(record.get('event_windows') == windows, 'The proposal has different event windows.')
+    schema = record.get('schema')
+    if schema == 'aldebaran-fold-movie-partial-v1':
+        pending = [record['pending_regular_gap'] | {'depth': 0}]
+    elif schema == 'aldebaran-fold-movie-proposal-v1':
+        pending = record['pending_regular_gaps']
+    elif schema == 'aldebaran-fold-movie-v1':
+        pending = []
+    else:
+        raise ValueError('Unknown discovery proposal schema.')
+    rows = record['regular_windows']
+    audit_proposal(rows, pending)
+    return rows, pending
+
+
+def discover_checkpointed(rows, pending, proofs, windows, path):
+    """Depth-first search with atomic, exact-tiling progress snapshots.
+
+    A resumed slab remains only a proposal until the main verifier reruns
+    its proof. A stopped run cannot overwrite the complete proof archive.
+    """
+    rows, pending = list(rows), list(pending)
+    started = monotonic()
+
+    def save():
+        atomic_json(path, {'schema': 'aldebaran-fold-movie-proposal-v1',
+                          'status': 'Unverified proposals; never accept as a complete certificate.',
+                          'event_windows': windows, 'regular_windows': rows,
+                          'pending_regular_gaps': pending})
+
+    audit_proposal(rows, pending)
+    save()
+    accepted = 0
+    while pending:
+        gap = pending[0]
+        d, quarter, low, high, depth = (gap[k] for k in ('folds', 'quarter', 'low', 'high', 'depth'))
+        low, high = Q(low), Q(high)
+        try:
+            row = discover_leaf(d, quarter, low, high, proofs[d])
+        except ValueError as error:
+            require(depth < 28, f'Unresolved phase slab: {d}, {quarter}, {low}, {high}: {error}')
+            middle = (low+high)/2
+            pending[:1] = [gap | {'low': str(a), 'high': str(b), 'depth': depth+1}
+                           for a, b in ((low, middle), (middle, high))]
+        else:
+            rows.append(row)
+            pending.pop(0)
+            accepted += 1
+            if accepted % 25 == 0:
+                print(f'Checkpoint: {accepted} new slabs; {d} folds, quarter {quarter}, '
+                      f'endpoint {float(high):.10f}; {len(pending)} gaps; '
+                      f'{monotonic()-started:.1f}s.', flush=True)
+        save()
+    audit_partition(rows)
+    return rows
 
 
 def contact_window(row, proof):
@@ -325,14 +391,26 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--write', action='store_true', help='Rediscover and atomically replace the proof record.')
     parser.add_argument('--jobs', type=int, default=2, help='Independent proof processes.')
+    parser.add_argument('--resume', type=Path, help='Reuse a partial record or checkpoint as proposals; requires --write.')
+    parser.add_argument('--checkpoint', type=Path,
+                        help='Discovery snapshot (default: experiments/fold_movie_checkpoint.json); requires --write.')
     args = parser.parse_args()
     require(args.jobs > 0, 'Use a positive number of proof processes.')
+    require(args.write or not (args.resume or args.checkpoint), '--resume and --checkpoint require --write.')
+    require(args.checkpoint is None or args.checkpoint.resolve() != ARCHIVE.resolve(),
+            'A discovery checkpoint cannot replace the complete proof archive.')
     started = monotonic()
     proofs = {d: census(d) for d in (7, 14)}
     windows = [row for d in (7, 14) for row in event_windows(d)]
     if args.write:
-        with ProcessPoolExecutor(max_workers=args.jobs) as pool:
-            rows = [row for result in pool.map(discover_gap, gaps(proofs)) for row in result]
+        if args.resume:
+            rows, pending = read_proposal(args.resume, windows)
+        else:
+            rows = []
+            pending = [{'folds': d, 'quarter': q, 'low': str(a), 'high': str(b), 'depth': 0}
+                       for d, q, a, b, _ in gaps(proofs)]
+        checkpoint = args.checkpoint or HERE/'fold_movie_checkpoint.json'
+        rows = discover_checkpointed(rows, pending, proofs, windows, checkpoint)
         rows.sort(key=lambda row: (row['folds'], row['quarter'], Q(row['low'])))
     else:
         archive = json.loads(ARCHIVE.read_text())
@@ -343,15 +421,17 @@ def main():
     require(controls(rows) == 8, 'A failure control was skipped.')
     totals = Counter()
     events = []
+    fresh_rows = []
     with ProcessPoolExecutor(max_workers=args.jobs) as pool:
-        tasks = {pool.submit(verify_regular, row, proofs[row['folds']]): False for row in rows}
-        tasks.update({pool.submit(verify_event, row, proofs[row['folds']]): True for row in windows})
+        tasks = {pool.submit(verify_regular, row, proofs[row['folds']]): row for row in rows}
+        tasks.update({pool.submit(verify_event, row, proofs[row['folds']]): None for row in windows})
         for n, task in enumerate(as_completed(tasks), 1):
             result = task.result()
-            if tasks[task]:
+            if tasks[task] is None:
                 events.append(result)
             else:
                 totals.update(result)
+                fresh_rows.append(tasks[task] | {'stats': result})
             if n % 100 == 0 or n == len(tasks):
                 print(f'Fresh proof tasks {n}/{len(tasks)}; {monotonic()-started:.1f}s elapsed.', flush=True)
     ends = [endpoint(d, turn) for d in (7, 14) for turn in (False, True)]
@@ -365,14 +445,15 @@ def main():
         require([a['crossing_pairs'], b['crossing_pairs']] == proofs[d]['endpoint_pairs'],
                 'The endpoint crossing words disagree with the exhaustive elimination.')
     events.sort(key=lambda row: (row['folds'], row['kind'], row['index']))
+    fresh_rows.sort(key=lambda row: (row['folds'], row['quarter'], Q(row['low'])))
     record = {'schema': 'aldebaran-fold-movie-v1',
               'scope': 'Every two-visit tangency and triple passage for d=7,14 on 0<=phase<=pi; no other multiple meeting.',
-              'event_windows': windows, 'regular_windows': rows, 'event_proofs': events,
+              'event_windows': windows, 'regular_windows': fresh_rows, 'event_proofs': events,
               'endpoints': ends, 'invalid_controls': 8, 'regular_totals': dict(totals)}
     if args.write:
-        temporary = ARCHIVE.with_suffix('.json.tmp')
-        temporary.write_text(json.dumps(serialize(record), indent=2)+'\n')
-        temporary.replace(ARCHIVE)
+        atomic_json(ARCHIVE, record)
+    else:
+        compare_archive(archive, record)
     print(f'{len(rows)} regular slabs and eight complete event windows cover both half-turns.')
     print('Exactly 7 positive triples for seven folds; 28 positive and 14 negative for fourteen.')
     print('Endpoint strangeness: 7 -> 14 and 14 -> 28; independent exact crossing words agree.')

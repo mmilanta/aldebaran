@@ -1,0 +1,48 @@
+{
+  "schema": "aldebaran-fold-radial-v1",
+  "scope": "All positive integer d, lengths 245/140/65: no triple or higher meeting for 0<=phi<=phi_star.",
+  "threshold_polynomial_in_cos_phase": [
+    265240041066937,
+    1261235890824,
+    -252094190659584,
+    45392319784448
+  ],
+  "cos_phase": {
+    "low": "-2365062818073722753769/2500000000000000000000",
+    "high": "-378410050891795640603/400000000000000000000"
+  },
+  "phase_quarter": 1,
+  "phase_chart": {
+    "low": "3572350742007769933423/5000000000000000000000",
+    "high": "7144701484015539866847/10000000000000000000000"
+  },
+  "phase_over_pi": {
+    "low": "89494082717179140773/100000000000000000000",
+    "high": "44747041358589570387/50000000000000000000"
+  },
+  "radial_critical_counts": [
+    {
+      "half_phase_chart": "1/2",
+      "simple_radial_critical_points": 2
+    },
+    {
+      "half_phase_chart": "9/10",
+      "simple_radial_critical_points": 4
+    }
+  ],
+  "circle_examples": [
+    {
+      "half_phase_chart": "4/5",
+      "radius": 321,
+      "ellipse_points": 2
+    },
+    {
+      "half_phase_chart": "19/20",
+      "radius": 321,
+      "ellipse_points": 4
+    }
+  ],
+  "before_and_at_threshold_maximum_visits": 2,
+  "after_threshold_maximum_radial_preimages": 4,
+  "after_threshold_maximum_visits": 4
+}

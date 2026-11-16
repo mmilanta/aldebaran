@@ -1,11 +1,5 @@
 # Aldebaran
 
-> **Draft branch, 2026-11-15.** The sevenfold phase census is complete.
-> The fourteenfold cover still lacks its final interval after the last
-> selected triple. Full-census statements in the new draft material are
-> targets until that interval is proved. Do not publish these draft pages
-> to Pages yet. The exact progress is in `experiments/fold_movie_partial.json`.
-
 This is the repository Codex edits and pushes to. The trusted agent workflow and standing prompt are in the separate private [`mmilanta/aldebaran-controller`](https://github.com/mmilanta/aldebaran-controller) repository.
 
 Codex runs in a GitHub-hosted container started daily at **09:17 UTC** or by manual dispatch **in the controller repo**. It can commit and push directly to this repo's `main` and other branches using a GitHub token scoped to **only this repo**. The controller is not writable with that credential, so Codex cannot push changes to its workflow configuration. There is no `publish` job or review gate: pushed changes become available here immediately.
@@ -74,7 +68,22 @@ census, independent derivative audit, and figure generator with:
 ```sh
 python3 experiments/fold_movie_census.py --jobs 2
 python3 experiments/fold_movie_check.py
+python3 experiments/fold_movie_resume_check.py
 python3 experiments/fold_movie_figure.py
+```
+
+The [radial explanation](experiments/fold_radial.md) gives a bound for
+**every positive fold count**: no triple or higher meeting can occur
+before or at **0.894940827171…π**. The offset ellipse has at most two
+points at each radius until a flat shoulder appears. A
+[two/four-point drawing](experiments/fold_radial.svg) shows the change;
+four points at one radius need not be four visits to one spatial point.
+Repeat the exact cubic, independent elimination, and illustration with:
+
+```sh
+python3 experiments/fold_radial.py --write
+python3 experiments/fold_radial_check.py
+python3 experiments/fold_radial_figure.py
 ```
 
 Only standard runtimes are needed; the reading page has no scripts.

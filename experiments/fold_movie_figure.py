@@ -124,8 +124,8 @@ def diagram(rows):
              'Strangeness rises at positive triples and falls at a negative triple. Seven folds have exactly seven positive '
              'triple passages. Fourteen folds have twenty-eight positive and fourteen negative. Four endpoint drawings use one scale.</desc>',
              f'<rect width="1160" height="1190" fill="{BG}"/>',
-             text(30, 52, 'ALDEBARAN · DRAFT: FOURTEENFOLD TAIL OPEN', 19, GOLD, 'letter-spacing="3"'),
-             text(30, 112, 'Draft: every meeting in the turn.', 50, INK),
+             text(30, 52, 'ALDEBARAN · A COMPLETE HALF-TURN', 19, GOLD, 'letter-spacing="3"'),
+             text(30, 112, 'Every meeting in the turn.', 50, INK),
              text(30, 154, 'Touches change the count. Triples change the order.', 26)]
     parts.extend(family_panel(d, x, rows) for d, x in ((7, 25), (14, 595)))
     for x, event, label in ((45, {'kind': 'touch'}, 'Touch'),
@@ -198,7 +198,6 @@ def page(rows, svg):
 <body>
   <main>
     <nav aria-label="Sketchbook navigation"><a href="index.html">← All studies</a><a href="../index.html">Make a drawing ↗</a></nav>
-    <p><strong>Draft.</strong> Seven folds are completely certified. The final fourteenfold interval after the last triple is still open. Full fourteenfold timelines are provisional; this page is not ready for publication.</p>
     <header>
       <div class="eyebrow">A complete half-turn</div>
       <h1>Every meeting in the turn.</h1>
@@ -220,6 +219,8 @@ def page(rows, svg):
     <h2>No room for another meeting</h2>
     <p>The earlier calculation found <a href="fold_contacts.html">every touch</a> and proved how many crossing pairs exist between them. Small moving charts now account for every one of those pairs across closed phase intervals. Checking which charts can share visits rules out any additional triple.</p>
     <p>The result is exact: <strong>seven positive triples</strong> for seven folds; <strong>twenty-eight positive and fourteen negative</strong> for fourteen. The half-turn endpoints have freshly certified crossing words too. The result concerns these two families and their fixed arm lengths.</p>
+    <h2>Why the triangles wait</h2>
+    <p>The ellipse supplies a reason for those late meetings. For <em>every</em> positive fold count, there can be at most two visits per point through phase <strong>0.894940827171…π</strong>. Then its radial profile gains a flat shoulder. <a href="fold_radial.svg">See two ellipse points become four at the same radius ↗</a>, or <a href="fold_radial.md">read the short calculation ↗</a>. Sharing a radius alone does not make a spatial crossing.</p>
     <aside class="reading">
       <h2>Follow the count</h2>
       <p><a href="fold_movie.md">Read the continuous proof and its scope ↗</a> · <a href="fold_movie_census.py">Repeat the standard-library certificate ↗</a> · <a href="fold_movie.json">Read the exact partition and endpoint words ↗</a></p>

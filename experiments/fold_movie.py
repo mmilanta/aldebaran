@@ -98,10 +98,44 @@ class PhaseCurve(IntersectionCertificate):
         self.phase_motion.cache_clear()
 
 
+@lru_cache(maxsize=4)
+def endpoint_cuts(d, steps):
+    """Suggestions separating roots that coalesce at a phase endpoint.
+
+    At phi=pi the residual factors as (Q-P)^2 ((Q+P)^2-49^2),
+    and at phi=0 as (Q+P)^2 ((Q-P)^2-49^2). Include zeros of P-Q
+    and P+Q so a fixed scan cannot step over a narrow pair of roots.
+    These floating-point cuts carry no proof status.
+    """
+    cuts = [pi/2*j/steps for j in range(1, steps+1)]
+    for sign in (-1, 1):
+        def f(b):
+            return 28*sin((d+1)*b)+sign*13*sin((d-1)*b)
+
+        previous, fp = 1e-12, f(1e-12)
+        for b in cuts[:steps]:
+            fb = f(b)
+            if fp*fb < 0:
+                a, z, fa = previous, b, fp
+                for _ in range(48):
+                    m = (a+z)/2
+                    fm = f(m)
+                    if fa*fm < 0:
+                        z = m
+                    else:
+                        a, fa = m, fm
+                cuts.append((a+z)/2)
+            previous, fp = b, fb
+    return sorted(cuts+[abs(t-u)/2 for t, u, _ in CONTACT_HINTS[d]])
+
+
 def pair_hints(d, phase_quarter, phase, shift=Q(0), steps=2048):
     """Numerical suggestions from the complete pair elimination, never proof."""
     phi = phase_quarter*pi/2+2*atan(float(phase))
-    c, s = cos(phi), sin(phi)
+    c, s = [float(x.low) for x in circle(phase_quarter, Q(phase))]
+    # Preserve 1+cos(phi) near pi and 1-cos(phi) near zero, where a
+    # subtraction would lose the small residual that splits double roots.
+    endpoint_distance = s*s/(1-c if c < 0 else 1+c)
     require(0 < phi < pi, 'Interior hint search only.')
 
     def triangle(b):
@@ -109,11 +143,11 @@ def pair_hints(d, phase_quarter, phase, shift=Q(0), steps=2048):
 
     def residual(b):
         P, Qb = triangle(b)
-        delta = Qb*Qb-P*P
-        return delta*delta-2401*(P*P+Qb*Qb)-4802*P*Qb*c
+        if c < 0:
+            return (Qb-P)**2*((Qb+P)**2-2401)-4802*P*Qb*endpoint_distance
+        return (Qb+P)**2*((Qb-P)**2-2401)+4802*P*Qb*endpoint_distance
 
-    cuts = sorted([pi/2*j/steps for j in range(1, steps+1)]
-                  + [abs(t-u)/2 for t, u, _ in CONTACT_HINTS[d]])
+    cuts = endpoint_cuts(d, steps)
     # The excluded diagonal has a strictly positive analytic speed bound.
     previous, fprevious = 1e-12, residual(1e-12)
     roots = []
