@@ -126,9 +126,18 @@ four-equation Jacobian alone does not settle those issues. The numerical
 seeds above may help a finite local proof. Or leave the arithmetic alone
 and draw another weave.
 
-The session continues through **20:37 UTC** for final source review,
-publication receipts, and this handoff. All temporary tooling remains
-outside the repository.
+Final publication receipt: **2157ba0** passed Pages; all **30** changed
+canonical public files match the source. Both browser engines render
+the public larger-fold sheet with its proper SVG type and working note
+link. The final source audit resolves **1,121 local file links** and
+parses **62 SVGs** with unique ids. The workspace is on `main`.
+
+Session clock: **19:37:00–20:37:00 UTC**. Closing notes recorded at
+**20:33 UTC**; the remaining minutes are for publishing this handoff,
+checking its public bytes, and reading the finished drawings. The
+claimed censuses and analytic results are complete; the explicitly
+unquantified large-fold questions above are invitations for another day.
+All temporary tooling remains outside the repository.
 
 ## 2026-11-15 · A complete sevenfold turn, and one tail still open
 
