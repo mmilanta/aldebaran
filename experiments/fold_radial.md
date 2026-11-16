@@ -26,6 +26,11 @@ different spatial directions in the orbital drawing: this does not
 assert a four-visit meeting, or a triple at the threshold. The sevenfold
 and fourteenfold triple phases remain the separately proved census.
 
+A separate [analytic follow-up](fold_shoulder.md) does prove that actual
+three-or-more-visit meetings approach φ* as the fold count grows:
+their phase excess is `C/d²+O(d⁻³)`, with C/π≈20.284022161535.
+It asserts neither a numerical fold cutoff nor ordinary-passage signs.
+
 ## One radius, at most one visit from each ellipse point
 
 Set ψ=φ/2 and θ=dt−ψ. The [ellipse factorization](fold_variations.md) is

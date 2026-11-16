@@ -38,7 +38,7 @@ historical partial record remains explicitly incomplete.
 A separate [radial calculation](experiments/fold_radial.md) explains
 why all the triples arrive late. For **every positive integer d**, the
 same lengths admit at most two visits per point throughout the closed
-interval **0≤φ≤φ***, where **φ*/π≈0.8949408271717914077362**.
+interval `0≤φ≤φ*`, where **φ*/π≈0.8949408271717914077362**.
 Degenerate radial critical points lie on an ellipse evolute. Its astroid
 equation reduces to an exact cubic in cos φ, with one root on the whole
 cosine interval. At the threshold the radial profile has a stationary
@@ -47,6 +47,25 @@ radii have four ellipse points. This makes the radial obstruction
 sharp; it does **not** assert a spatial fourfold or a triple at φ*.
 The [new drawing](experiments/fold_radial.svg) uses the same radius 321
 on both sides, with exact two/four intersection counts.
+
+The later [analytic follow-up](experiments/fold_shoulder.md) proves
+that this threshold is also sharp for actual spatial meetings when
+the fold count is unbounded. For every sufficiently large integer d,
+three distinct visits meet at phase `φ*+C/d²+O(d⁻³)`, where
+**C/π≈20.2840221615348720407**. A rescaled four-equation system has
+limiting visits (−s,0,s) and determinant −6ab s³κ²≠0. The analytic
+implicit function theorem supplies the branch. The standard-library
+calculation encloses all constants rationally and verifies that formal
+determinant; nine independent 110-digit values lie inside the saved
+enclosures. This is an **existential large-fold theorem**, without a
+numerical cutoff, ordinary-passage assertion, or fourth-visit exclusion.
+It does not say these are the first meetings for their folds.
+
+Exploratory numerical seeds for that branch: phase/π≈0.9149574927371
+at d=30, 0.9002485310056 at d=60, and 0.8963074237035 at d=120.
+They are not new finite-event certificates. The d=14 solve matches the
+already certified negative batch numerically, without a certified
+continuation identifying it with the large-fold analytic branch.
 
 An independent formal 7×7 Sylvester determinant agrees in all ten
 coefficients with the astroid identity. A separate degree-twelve

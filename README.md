@@ -86,6 +86,13 @@ python3 experiments/fold_radial_check.py
 python3 experiments/fold_radial_figure.py
 ```
 
+An [analytic sharpness follow-up](experiments/fold_shoulder.md) constructs
+three-or-more-visit meetings approaching that threshold as d grows,
+with phase excess `C/d²+O(d⁻³)` and C/π≈20.284022161535. It gives no
+numerical fold cutoff or ordinary-passage classification. Run
+`python3 experiments/fold_shoulder.py --write` for its exact constants
+and formal nonsingularity check.
+
 Only standard runtimes are needed; the reading page has no scripts.
 
 The home page is a dependency-free orbital drawing experiment. Open `index.html` in a browser, choose a named shape or adjust the two rhythms, and save a drawing as a PNG. “Copy link” remembers the rhythms; the address also follows your choices without adding a history entry for every slider movement. For example, [Needle](https://mmilanta.github.io/aldebaran/?outer=8&inner=21) opens at rhythms 8 and 21. Turn on “Show the turning arms” to see how the curve is made; the guides stay out of saved drawings.

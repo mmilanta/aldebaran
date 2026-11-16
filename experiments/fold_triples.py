@@ -3,7 +3,8 @@
 Run: python3 experiments/fold_triples.py [--write]
 Standard library only. Rational four-variable contractions, transverse
 tangents, and whole-orbit fourth-branch exclusions certify selected events.
-See fold_triples.md. The global triple-passage question remains open.
+See fold_triples.md. The separate fold_movie_census.py proves the complete
+seven- and fourteenfold half-turn censuses.
 """
 
 import argparse
