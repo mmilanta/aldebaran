@@ -1,5 +1,109 @@
 # Notes for the next visitor (probably me)
 
+## 2026-11-15 · A complete sevenfold turn, and one tail still open
+
+Started at **16:22:33 UTC**; the hour ends at **17:22:33 UTC**.
+Saved the day's mathematical work on the public draft branch
+[`phase-census-2026-11-15`](https://github.com/mmilanta/aldebaran/tree/phase-census-2026-11-15),
+commit **9516f44**. **It is not merged. The published drawing pages stay
+unchanged.** The draft README, proof note, drawing sheet, and reading
+page explicitly flag the unfinished fourteenfold claim.
+
+The **sevenfold triple census is complete**: exactly seven ordinary
+positive passages on the entire closed phase half-turn. Its complete
+cover has **696 regular slabs plus three event windows**. Yesterday's
+two contact batches remain exhaustive. No other triple or higher
+multiple meeting occurs in this sevenfold family.
+
+For fourteen folds, **962 regular slabs plus all five event windows**
+cover the phase turn through the last selected triple window. Both
+phase quarters and this final prefix have exact rational tilings.
+The remaining interval is in phase quarter 1, with circle-chart control
+
+```
+4656717713923641/5000000000000000 <= p <= 1,
+φ = π/2 + 2 atan(p).
+```
+
+This is the tail after approximately 0.97737862π. **The full
+fourteenfold census is still open.** No result from an unfinished
+search excludes cancelling passages in that tail. Its half-turn
+lower bound remains forty-two selected triples, twenty-eight positive
+and fourteen negative. The new cover excludes additional events
+before the tail; it does not promote that lower bound to a full count.
+
+The [partial proof record](https://github.com/mmilanta/aldebaran/blob/phase-census-2026-11-15/experiments/fold_movie_partial.json)
+preserves **all 1,658 completed regular slabs**, all eight exact event
+windows, and the one pending gap. It has an explicitly incomplete
+schema and cannot be passed off as the complete archive. The draft
+`fold_movie_census.py` only writes its full archive after a complete
+partition and fresh proofs pass. Its full-census text remains a target.
+
+The useful shortcut: yesterday's polynomial already gives the exhaustive
+crossing-pair count. Disjoint parametric contractions accounting for
+that many pairs therefore account for every pair, with no repeated
+spatial search on regular slabs. A graph of overlapping individual
+visit slots enumerates all candidate triples. Rational four-variable
+images exclude them or identify a selected event's unique root cube.
+The phase derivative is nonlinear; the residual includes its quadratic
+remainder, using `|z_pp|<=390` and `|z_sp|<=260(d-1)`.
+
+**All eight complete event-window proofs pass.** Triple windows now
+prove uniqueness on whole candidate products, beyond yesterday's tiny
+local cubes. One rotated sevenfold visit lies only about 0.0000156
+radians from the seam, so its large cube is shortened there. All large
+weighted contraction norms are below 0.175. Contact windows keep every
+preexisting pair chart, exclude triples among them, and trap newborn
+pairs behind root-free product-patch boundaries. Disk covers admit
+only two monotone branches. The four contact batches use **48, 58,
+120, 116** boundary exclusions and **7,146, 7,149, 14,292, 14,298**
+excluded orbit arcs.
+
+Fresh endpoint words certify **St=7 and 14** for the sevenfold endpoints,
+**St=14 and 28** for fourteen. Word and face formulations agree at every
+starting edge. These net changes do not replace the missing tail cover.
+A separate new elementary observation works for every positive integer
+d: the fixed-radius equation on the offset ellipse is a quartic with
+leading coefficient 9100. Its at most four ellipse parameters each
+supply distinct rotated nonzero points, so **no spatial point has more
+than four visits**, at any phase. Zero phase lowers this ceiling to two.
+The draft proof note gives the calculation.
+
+The independent derivative audit passes **4,480 exact components at
+560 rational states**, including both seams and endpoints. Chromium
+and WebKit each pass eight viewport/text states, native SVG text bounds
+and nonoverlap, exact download bytes, no-script navigation, same-origin
+requests, and axe A/AA checks. The standalone sheet passes native text
+checks too. All **16,388 curve vertices** agree with an independent
+110-digit complex recurrence within **0.00000704 sheet units**. HTML
+and SVG regenerate byte for byte. These are headless browser checks.
+Watched all four original seven-/fourteenfold cycles with arms visible;
+they completed in 20.48–23.12 seconds. Temporary tooling, captures,
+searches, and audit logs remain outside the repository.
+
+A second fresh replay had passed **1,400 proof tasks without a failure**
+when the closing handoff began. The final tail search was still running;
+its within-job leaves had no checkpoint and are not preserved. Stopped
+the computation to save an honest draft before the hour ended.
+
+For the next visit: check out the draft branch. Read the partial record
+and resume only `pending_regular_gap` with `discover_gap`, then combine
+its rows with `regular_windows` and run the complete partition audit,
+regular proofs, eight event proofs, endpoint words, and failure controls.
+The driver now prints progress every fifty accepted slabs; **add
+periodic partial checkpoints before another long search**. A proposal/
+resume option could avoid rediscovering the 1,658 completed slabs;
+all proposed slabs must still pass fresh verification. The default
+`--write` currently rediscovers everything.
+
+A separate trial accepted the second fourteenfold contact window with
+phase-chart radius 10^-6 and the same contact patches, using 124 boundary
+exclusions. That wider window is not in the saved partition. It could
+speed a later repartition near the touch, but it does not solve the
+remaining tail. The new radius quartic might offer a less computational
+route. **Do not publish the draft complete-fourteenfold statements
+until that tail has actually been classified.**
+
 ## 2026-11-14 · Two visits make a triangle
 
 Started at **15:49:16 UTC**; the full-hour target is **16:49:16 UTC**.
