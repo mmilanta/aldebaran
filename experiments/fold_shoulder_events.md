@@ -186,3 +186,25 @@ contraction and fourth exclusion, recomputes the angular and chord
 bounds, and compares every archived field. No floating-point discovery
 or external package is needed. The main independent checker includes
 this replay too.
+
+A later selected-branch numerical scan through 100,000 folds supplied
+an even closer lead at **79,866 folds**. Its
+[separate exact local certificate](fold_shoulder_near_79866.json) now
+proves another negative ordinary triple and the point-distance bounds
+
+```
+0.00000008555 < distance < 0.00000008556.
+```
+
+It has the same point-to-point interpretation, without a whole-branch
+clearance, event census, or claim of a globally closest near miss. The
+numerical scan supplies no proof about its other sampled fold counts.
+Repeat this selected certificate with
+
+```sh
+python3 experiments/fold_shoulder_events.py --replay experiments/fold_shoulder_near_79866.json
+```
+
+The independent checker includes both near-fourth records. Independent
+110-digit event solves and direct nearest-copy calculations agree with
+both sets of saved root and distance bounds.

@@ -120,6 +120,11 @@ rotational copy of its fourth equal-radius candidate misses by between
 0.0000035508 and 0.0000035509 drawing units. This measures one candidate
 point, without a whole-branch clearance bound. Repeat it with
 `python3 experiments/fold_shoulder_events.py --replay experiments/fold_shoulder_close.json`.
+Another [local certificate at 79,866 folds](experiments/fold_shoulder_near_79866.json)
+reduces that point-to-point miss to between 0.00000008555 and
+0.00000008556 units. Repeat it with
+`python3 experiments/fold_shoulder_events.py --replay experiments/fold_shoulder_near_79866.json`;
+the same scope limits apply.
 
 The [flattening calculation](experiments/fold_shoulder_tangents.md)
 strengthens analytic sharpness: **infinitely many ordinary negative

@@ -200,12 +200,14 @@ def main():
     require(tangent_record == json.loads((HERE/'fold_shoulder_tangents.json').read_text()),
             'The archived analytic coefficients differ from the fresh record.')
     print('The analytic coefficients, formal expansions, radial factorization, and fourth-direction signs agree too.')
-    close = replay_close(HERE/'fold_shoulder_close.json')
-    distance = close['nearest_equal_radius_point_distance']
-    require(close['event']['folds'] == 10115
-            and Q(35508, 10**10) < distance.low <= distance.high < Q(35509, 10**10),
-            'The selected near-fourth point leaves its advertised distance bracket.')
-    print('The 10,115-fold near-fourth certificate and every archived field pass a fresh replay.')
+    for name, d, low, high in (
+            ('fold_shoulder_close.json', 10115, Q(35508, 10**10), Q(35509, 10**10)),
+            ('fold_shoulder_near_79866.json', 79866, Q(8555, 10**11), Q(8556, 10**11))):
+        close = replay_close(HERE/name)
+        distance = close['nearest_equal_radius_point_distance']
+        require(close['event']['folds'] == d and low < distance.low <= distance.high < high,
+                'A selected near-fourth point leaves its advertised distance bracket.')
+        print(f'The {d:,}-fold near-fourth certificate and every archived field pass a fresh replay.')
 
 
 if __name__ == '__main__':
