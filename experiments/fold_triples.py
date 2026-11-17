@@ -29,10 +29,10 @@ HINTS = (
 )
 
 
-def equations(d, quarters, box):
+def equations(d, quarters, box, evaluator=evaluate):
     phase = box[3]
     points, velocities, motions = [
-        [evaluate(d, q, x, quarters[3], phase, order, motion)
+        [evaluator(d, q, x, quarters[3], phase, order, motion)
          for q, x in zip(quarters[:3], box[:3])]
         for order, motion in ((0, False), (1, False), (0, True))]
     factors = [I.wrap(2)/(1+x*x) for x in box]
@@ -54,9 +54,9 @@ def chart(times, phase):
     return quarters, centers
 
 
-def contract(d, quarters, center, radius=Q(1, 10**11)):
-    require(type(d) is int and d in (7, 14) and radius > 0 and len(quarters) == len(center) == 4,
-            'Use three visits, a phase, supported folds, and a positive radius.')
+def contract(d, quarters, center, radius=Q(1, 10**11), *, evaluator=evaluate):
+    require(type(d) is int and d >= 2 and radius > 0 and len(quarters) == len(center) == 4,
+            'Use three visits, a phase, at least two folds, and a positive radius.')
     require(type(radius) is Q and all(type(c) is Q for c in center),
             'Use exact rational triple centers and radius.')
     require(quarters[3] in (0, 1), 'Use phase between zero and pi.')
@@ -64,8 +64,8 @@ def contract(d, quarters, center, radius=Q(1, 10**11)):
     require(all(quarters[i] < quarters[i+1] or quarters[i] == quarters[i+1]
                 and box[i].high < box[i+1].low for i in range(2)),
             'The three visit boxes must be distinct and in orbit order.')
-    f, J0 = equations(d, quarters, list(map(I.wrap, center)))
-    _, J = equations(d, quarters, box)
+    f, J0 = equations(d, quarters, list(map(I.wrap, center)), evaluator)
+    _, J = equations(d, quarters, box, evaluator)
     R = inverse([[x.midpoint() for x in row] for row in J0])
     defect = [[Q(i == j)-sum(R[i][k]*J[k][j] for k in range(4))
                for j in range(4)] for i in range(4)]
@@ -79,7 +79,7 @@ def contract(d, quarters, center, radius=Q(1, 10**11)):
     require(all(box[j].low < x.low <= x.high < box[j].high for j, x in enumerate(image)),
             'Outward rounding left the triple cube.')
     velocities, motions = [
-        [evaluate(d, q, x, quarters[3], image[3], order, motion)
+        [evaluator(d, q, x, quarters[3], image[3], order, motion)
          for q, x in zip(quarters[:3], image[:3])]
         for order, motion in ((1, False), (0, True))]
     determinants, H = linear_data(velocities, motions)
@@ -91,7 +91,7 @@ def contract(d, quarters, center, radius=Q(1, 10**11)):
             'contraction_norm': round_interval(norm).high,
             'phase_over_pi': angle(quarters[3], image[3])/PI,
             'times': [angle(q, x) for q, x in zip(quarters[:3], image[:3])],
-            'position': evaluate(d, quarters[0], image[0], quarters[3], image[3]),
+            'position': evaluator(d, quarters[0], image[0], quarters[3], image[3]),
             'tangent_determinant_signs': signs, 'passage_sign': H.sign(),
             'unfolding_H': H, 'area_coefficient': K}
 

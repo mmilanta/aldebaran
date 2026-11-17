@@ -21,6 +21,14 @@ cutoff for d, no ordinary-passage sign, and no exclusion of a fourth
 visit. It does not alter the separately certified sevenfold and
 fourteenfold censuses.
 
+A [tangent and fourth-direction follow-up](fold_shoulder_tangents.md)
+now strengthens sharpness to **ordinary negative triples**: infinitely
+many approach the same threshold, and at least one selected batch is
+ordinary in every two consecutive sufficiently large fold counts.
+In fact their integer fold counts form a set of natural density one.
+That result still has no numerical cutoff or uniform fourth-visit
+exclusion at every fold count.
+
 ![Fourteen, thirty, and sixty folds become finer petals at zero phase,
 and overlapping rings at three selected phases near the shoulder.](fold_shoulder.svg)
 
@@ -174,8 +182,11 @@ Jacobian identity without floating-point evaluation. The
 and unproved ordinary/fourth-visit statuses.
 
 Exploratory Newton solves suggest this branch passes through the already
-certified negative fourteenfold batch at 0.9733588514569π. Selected
-higher-fold suggestions are 0.9149574927371π for d=30,
-0.9002485310056π for d=60, and 0.8963074237035π for d=120.
-These finite values are **numerical leads**, not consequences of an
-asserted numerical cutoff or new finite-event certificates.
+certified negative fourteenfold batch at 0.9733588514569π. The higher-fold
+leads 0.9149574927371π for d=30, 0.9002485310056π for d=60, and
+0.8963074237035π for d=120 now have
+[separate rational local certificates](fold_shoulder_events.md), with a
+[radius-and-direction drawing](fold_shoulder_events.html). Each selected
+meeting is an ordinary negative triple with its fourth visit excluded.
+Those local results do not supply a cutoff or certified continuation
+for this analytic branch.

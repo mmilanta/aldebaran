@@ -1,0 +1,77 @@
+{
+  "schema": "aldebaran-fold-shoulder-tangents-v1",
+  "scope": "Ordinary negative triples approach the shoulder at a density-one set of integer fold counts; no numerical cutoff or uniform fourth-visit exclusion.",
+  "angular_second_derivative": {
+    "low": "2602737687183128503/7812500000000000000",
+    "high": "3331504239594404483843/10000000000000000000000"
+  },
+  "radial_quartic_coefficient": {
+    "low": "-11669560173847999009229187/5000000000000000000000",
+    "high": "-23339120347695998018436501/10000000000000000000000"
+  },
+  "outer_positive_coefficient_T": {
+    "low": "201003809410102402250183569/10000000000000000000000",
+    "high": "201003809410102402250397149/10000000000000000000000"
+  },
+  "inner_determinant_limit": {
+    "low": "19304902240748498852303532883/10000000000000000000000",
+    "high": "19304902240748498852345748213/10000000000000000000000"
+  },
+  "outer_determinant_times_d_limit": {
+    "low": "317325526656524166041397014633/10000000000000000000000",
+    "high": "317325526656524166042327406913/10000000000000000000000"
+  },
+  "unfolding_magnitude_limit": {
+    "low": "4539836850280639654659088705604111/10000000000000000000000",
+    "high": "4539836850280639654675113088920627/10000000000000000000000"
+  },
+  "area_coefficient_over_d_limit": {
+    "low": "8713853875466640259198003/10000000000000000000000",
+    "high": "4356926937733320129612619/5000000000000000000000"
+  },
+  "fourth_limiting_cos_theta": {
+    "low": "1844960349138888665503/2000000000000000000000",
+    "high": "922480174569444332753/1000000000000000000000"
+  },
+  "fourth_limiting_sin_theta": {
+    "low": "965111157867085760833/2500000000000000000000",
+    "high": "1930222315734171521667/5000000000000000000000"
+  },
+  "fourth_radial_derivative": {
+    "low": "-8217050290515768289101907/125000000000000000000",
+    "high": "-328682011620630731563560543/5000000000000000000000"
+  },
+  "fourth_direction_ratio_real": {
+    "low": "2279749131528302091673/5000000000000000000000",
+    "high": "1139874565764151045839/2500000000000000000000"
+  },
+  "fourth_direction_ratio_imaginary": {
+    "low": "278126712756636006563/312500000000000000000",
+    "high": "8900054808212352210031/10000000000000000000000"
+  },
+  "fourth_direction_increment": {
+    "low": "5486785950246276615301/5000000000000000000000",
+    "high": "5486785950246276615311/5000000000000000000000"
+  },
+  "fourth_direction_increment_over_two_pi": {
+    "low": "43662455283442851393/250000000000000000000",
+    "high": "436624552834428513931/2500000000000000000000"
+  },
+  "fourth_direction_irrationality": {
+    "twice_cos_polynomial_ascending": [
+      -92658189484824233,
+      110833317006886032,
+      -10221212798424576,
+      117219944697856
+    ],
+    "irreducibility_prime": 31,
+    "twice_cos_trace": "698970843/8016008"
+  },
+  "selected_pairwise_transversality_for_large_d": true,
+  "conditional_passage_sign_in_time_order": -1,
+  "ordinary_negative_triples_at_infinitely_many_folds": true,
+  "at_least_one_ordinary_batch_in_each_two_consecutive_large_folds": true,
+  "ordinary_negative_triples_at_density_one_of_fold_counts": true,
+  "numerical_fold_cutoff": null,
+  "uniform_fourth_visit_exclusion": false
+}

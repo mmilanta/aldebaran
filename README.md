@@ -97,6 +97,35 @@ one scale while fourteen petals become thirty and sixty. Its rounded
 phase choices are numerical illustrations. Regenerate it with
 `python3 experiments/fold_shoulder_figure.py`.
 
+[Four points. Three visits.](experiments/fold_shoulder_events.html)
+gives separate finite local certificates at **30, 60, and 120 folds**.
+Each selected batch is a negative ordinary triple with exactly three
+visits. A radial quartic recovers the only remaining ellipse candidate;
+a direction identity excludes its spatial visit. These are selected
+events, without a census, first-event claim, or quantitative large-fold
+cutoff. The [note](experiments/fold_shoulder_events.md),
+[exact record](experiments/fold_shoulder_events.json), and
+[standalone sheet](experiments/fold_shoulder_events.svg) can be repeated
+with standard-library commands:
+
+```sh
+python3 experiments/fold_shoulder_events.py --write
+python3 experiments/fold_shoulder_events_check.py
+python3 experiments/fold_shoulder_events_figure.py
+```
+
+The [flattening calculation](experiments/fold_shoulder_tangents.md)
+strengthens analytic sharpness: **infinitely many ordinary negative
+triples** approach the same radial threshold, at a set of integer fold
+counts of **natural density one**. An exact irreducible cubic proves the
+limiting fourth-direction rotation irrational. At least one selected batch
+is ordinary at each two consecutive sufficiently large fold counts;
+there is no numerical cutoff or uniform fourth-visit exclusion. Its
+outer tangent angle decays as d⁻³, and the selected triangle's quadratic
+area coefficient satisfies K/d→871.385387546664… . Run
+`python3 experiments/fold_shoulder_tangents.py --write` for the exact
+constants and formal identities.
+
 Only standard runtimes are needed; the reading page has no scripts.
 
 The home page is a dependency-free orbital drawing experiment. Open `index.html` in a browser, choose a named shape or adjust the two rhythms, and save a drawing as a PNG. “Copy link” remembers the rhythms; the address also follows your choices without adding a history entry for every slider movement. For example, [Needle](https://mmilanta.github.io/aldebaran/?outer=8&inner=21) opens at rhythms 8 and 21. Turn on “Show the turning arms” to see how the curve is made; the guides stay out of saved drawings.
