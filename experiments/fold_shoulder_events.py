@@ -1,6 +1,7 @@
 """Selected finite triple passages near the radial shoulder.
 
 Run: python3 experiments/fold_shoulder_events.py [--write]
+     python3 experiments/fold_shoulder_events.py --replay experiments/fold_shoulder_close.json
 Standard library only. Rational contractions prove selected events, and
 the radial quartic supplies the sole possible fourth ellipse preimage.
 These are local certificates, not event censuses or a large-fold cutoff.
@@ -10,11 +11,13 @@ import argparse
 from fractions import Fraction as Q
 from itertools import combinations
 import json
+from pathlib import Path
 from time import monotonic
 
 from blend_cusps import Interval as I, require
-from fold_contacts import HERE, circle, dot, multiply, round_interval, serialize
+from fold_contacts import HERE, PI, angle, circle, dot, multiply, round_interval, serialize
 from fold_triples import chart, contract
+from phase_unfolding import sqrt_interval
 
 # Numerical leads only. Nothing is accepted without the rational proof.
 HINTS = (
@@ -108,12 +111,54 @@ def fourth_visit(event):
             'direction_residual': residual, 'excluded_component': axis}
 
 
-def certify(d, times, phase):
-    qs, cs = chart(times, phase)
-    event = contract(d, qs, cs, radius=Q(1, 10**12), evaluator=evaluate)
+def certify_chart(d, qs, cs, radius):
+    event = contract(d, qs, cs, radius=radius, evaluator=evaluate)
     require(event['passage_sign'] == -1, 'The selected passage is not negative.')
     event['fourth_visit'] = fourth_visit(event)
     return event
+
+
+def certify(d, times, phase):
+    return certify_chart(d, *chart(times, phase), Q(1, 10**12))
+
+
+def close_record(event):
+    """Bound the nearest rotated equal-radius candidate, not branch clearance."""
+    fourth = event['fourth_visit']
+    v = fourth['fourth_half_angle_parameter']
+    den = 1+v*v
+    u = ((1-v*v)/den, 2*v/den)
+    # M=(z/B4)^d exp(-iu4) is unit length at the actual event. The saved
+    # residual is (z/B4)^d-exp(iu4), so M=1+residual*exp(-iu4).
+    residual = multiply(fourth['direction_residual'], (u[0], -u[1]))
+    real, imaginary = 1+residual[0], residual[1]
+    require(real.low > 0, 'The near candidate must lie in the right phase half-circle.')
+    sign = imaginary.sign()
+    half_angle = sign*imaginary/(1+real)
+    gap = angle(0, half_angle)/(2*PI)
+    require(0 < gap.low <= gap.high < Q(1, 10),
+            'The selected equal-radius copy must be within one tenth of a fold sector.')
+    x = PI*gap/event['folds']
+    require(0 < x.low <= x.high < 1, 'The chord bound needs a small positive half-angle.')
+    sine = I(x.low-x.low**3/6, x.high)
+    distance = 2*sqrt_interval(fourth['radius_squared'], bits=140)*sine
+    return {'schema': 'aldebaran-fold-shoulder-close-v1',
+            'scope': 'One selected negative ordinary triple batch and the nearest rotational copy of its fourth equal-radius candidate; no whole-branch clearance or event census.',
+            'event': event, 'nearest_equal_radius_sector_offset': -sign*gap,
+            'nearest_equal_radius_point_distance': distance}
+
+
+def replay_close(path):
+    archived = json.loads(path.read_text())
+    require(archived.get('schema') == 'aldebaran-fold-shoulder-close-v1',
+            'Use a selected near-fourth certificate.')
+    event = archived['event']
+    fresh = certify_chart(event['folds'], event['quarters'],
+                          list(map(Q, event['center'])), Q(event['radius']))
+    result = close_record(fresh)
+    require(serialize(result) == archived,
+            'The archived near-fourth certificate differs from the fresh proof.')
+    return result
 
 
 def run():
@@ -135,9 +180,18 @@ def run():
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--write', action='store_true', help='Save freshly proved events.')
+    action = parser.add_mutually_exclusive_group()
+    action.add_argument('--write', action='store_true', help='Save freshly proved events.')
+    action.add_argument('--replay', type=Path, help='Repeat a saved near-fourth certificate, comparing every field.')
     args = parser.parse_args()
     start = monotonic()
+    if args.replay is not None:
+        record = replay_close(args.replay)
+        distance = record['nearest_equal_radius_point_distance']
+        print(f'{record["event"]["folds"]} folds: a negative ordinary triple; the nearest fourth equal-radius '
+              f'point is ~ {float(distance.midpoint()):.12g} drawing units away.')
+        print(f'All near-fourth fields agree with the fresh rational proof in {monotonic()-start:.2f}s.')
+        return
     record = run()
     if args.write:
         target = HERE/'fold_shoulder_events.json'

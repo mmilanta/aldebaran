@@ -18,7 +18,7 @@ from blend_cusps import (Interval as I, add as poly_add, product as poly_product
 from fold_contacts import HERE, serialize
 from fold_contacts_check import Jet, independent
 from fold_radial_check import formal_add, formal_product, formal_scale
-from fold_shoulder_events import HINTS, evaluate, power, radial_quartic, run
+from fold_shoulder_events import HINTS, evaluate, power, radial_quartic, replay_close, run
 from fold_shoulder_tangents import coefficients
 from fold_triples import chart, contract, equations
 
@@ -200,6 +200,12 @@ def main():
     require(tangent_record == json.loads((HERE/'fold_shoulder_tangents.json').read_text()),
             'The archived analytic coefficients differ from the fresh record.')
     print('The analytic coefficients, formal expansions, radial factorization, and fourth-direction signs agree too.')
+    close = replay_close(HERE/'fold_shoulder_close.json')
+    distance = close['nearest_equal_radius_point_distance']
+    require(close['event']['folds'] == 10115
+            and Q(35508, 10**10) < distance.low <= distance.high < Q(35509, 10**10),
+            'The selected near-fourth point leaves its advertised distance bracket.')
+    print('The 10,115-fold near-fourth certificate and every archived field pass a fresh replay.')
 
 
 if __name__ == '__main__':

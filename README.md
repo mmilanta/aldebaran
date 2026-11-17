@@ -114,6 +114,13 @@ python3 experiments/fold_shoulder_events_check.py
 python3 experiments/fold_shoulder_events_figure.py
 ```
 
+A separate [near-fourth certificate](experiments/fold_shoulder_close.json)
+at **10,115 folds** still proves exactly three visits: the nearest
+rotational copy of its fourth equal-radius candidate misses by between
+0.0000035508 and 0.0000035509 drawing units. This measures one candidate
+point, without a whole-branch clearance bound. Repeat it with
+`python3 experiments/fold_shoulder_events.py --replay experiments/fold_shoulder_close.json`.
+
 The [flattening calculation](experiments/fold_shoulder_tangents.md)
 strengthens analytic sharpness: **infinitely many ordinary negative
 triples** approach the same radial threshold, at a set of integer fold

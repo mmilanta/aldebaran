@@ -147,3 +147,42 @@ expands the quartic, compares Fourier jets and automatic derivatives,
 checks degenerate controls, repeats all three proofs, and compares
 every archived field. All use only the standard library. Rounded
 picture geometry supplies no proof predicate.
+
+## A fourth candidate comes very close
+
+A separate [saved local certificate](fold_shoulder_close.json) uses
+**10,115 folds**. It too proves a selected negative ordinary triple
+with exactly three visits. The nearest rotational copy of its fourth
+equal-radius ellipse candidate lies only
+
+```
+0.0000035508 < distance < 0.0000035509
+```
+
+drawing units from the triple point. The original first arm is 245
+units long. This small distance is a rationally bounded near miss,
+rather than a numerical fourth visit. This is another selected batch,
+without a census or a certified continuation to the analytic branch.
+
+The direction residual gives the unit complex ratio
+`M=(z/B₄)^d exp(−iu₄)`. Its small argument, divided by −2π, is the
+signed offset in one fold sector. The absolute offset g is strictly
+between zero and one tenth, so the closest rotational copy is unique.
+Its spatial distance is `2ρ sin(πg/d)`. Rational square-root and
+arctangent enclosures, followed by `x−x³/6 ≤ sin x ≤ x` for 0<x<1,
+give the bounds above.
+
+This measures a **particular equal-radius point on the fourth branch**.
+It is not a lower bound on the distance from the entire fourth branch.
+The no-fourth-visit conclusion uses the exact direction mismatch,
+independently of this distance interpretation.
+
+```sh
+python3 experiments/fold_shoulder_events.py --replay experiments/fold_shoulder_close.json
+```
+
+The replay treats stored centers as suggestions, repeats the rational
+contraction and fourth exclusion, recomputes the angular and chord
+bounds, and compares every archived field. No floating-point discovery
+or external package is needed. The main independent checker includes
+this replay too.
