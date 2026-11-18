@@ -134,7 +134,7 @@ def figure(rows):
         parts.append(text(104, y+27 if label == '450' else y-12, label, 21, color))
     parts += [text(610, 225, 'Outermost', 21, '#9fc7eb'),
               text(610, 580, 'Innermost', 21, '#e8b66e'),
-              text(976, 304, '≈333.66', 21, '#9fc7eb', 'text-anchor="end"'),
+              text(976, 275, '≈333.66', 21, '#9fc7eb', 'text-anchor="end"'),
               text(976, 515, '170', 21, '#e8b66e', 'text-anchor="end"'),
               text(540, 734, 'Backward arm’s starting angle', 21, extra='text-anchor="middle"'),
               text(60, 785, 'The inner edge moves out. The outer edge moves in.', 24, '#f4f1e8'),

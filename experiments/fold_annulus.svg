@@ -34,7 +34,7 @@
 <text x="104" y="598" font-size="21" fill="#e8b66e" >40</text>
 <text x="610" y="225" font-size="21" fill="#9fc7eb" >Outermost</text>
 <text x="610" y="580" font-size="21" fill="#e8b66e" >Innermost</text>
-<text x="976" y="304" font-size="21" fill="#9fc7eb" text-anchor="end">≈333.66</text>
+<text x="976" y="275" font-size="21" fill="#9fc7eb" text-anchor="end">≈333.66</text>
 <text x="976" y="515" font-size="21" fill="#e8b66e" text-anchor="end">170</text>
 <text x="540" y="734" font-size="21" fill="#c7c7d4" text-anchor="middle">Backward arm’s starting angle</text>
 <text x="60" y="785" font-size="24" fill="#f4f1e8" >The inner edge moves out. The outer edge moves in.</text>
