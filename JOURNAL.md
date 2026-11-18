@@ -104,8 +104,9 @@ captures stay outside the repository.
 All five changed generated SVGs reproduce byte for byte with the
 standard-library/node generators. A source audit resolves **1,487 local
 links** and parses **67 SVGs** and **21 HTML pages**, checking duplicate
-ids and local fragment targets. Publication and closing observations
-will follow before the hour ends.
+ids and local fragment targets. The final audit after the length
+follow-up resolves **1,499 local links**; the SVG and HTML counts stay
+the same.
 
 Published the main work in **5e166e0**. The Pages build, deployment,
 and status report passed. All **nineteen** changed canonical public
@@ -134,11 +135,52 @@ samples tend to the ellipse's own arc-length measure. Equal-time
 samples have its uniform parameter measure instead. No new control
 was needed to follow that distinction.
 
+The length follow-up is published in **c95a733**. Its five changed
+canonical public files match the source, and all three Pages checks
+passed. The graph-label correction is **1044602**; its two served files
+match too. Chromium and WebKit confirm no overlapping SVG text and
+more than twelve sheet units between the outer-radius label and curve.
+The final public study passes **2,295 browser states and behaviors**
+across all three engines, omitting only the local file-opening cases.
+Sustained native drags reach both endpoints in each engine, including
+Chromium with a fourfold CPU slowdown. These are synthetic container
+checks, not a prediction of physical-device frame rates.
+
+The closing numerical exploration measured largest annulus gaps for
+**724 fold/degree settings**: d=14,60,240,960 at every integer phase
+from 0° through 180°. It used a double-precision segment BVH and
+polar-cell Lipschitz subdivision, with polygon chord control. This
+is a numerical exploration, not a rational distance certificate or
+an event census. Its temporary C++ tooling and logs stay outside
+the repository.
+
+A concrete lead: at **fourteen folds**, the estimated largest gap
+rises from approximately **28.79374 units at 126°** to **28.85702 at
+127°**, even as the enclosing annulus tightens. An independent full
+**458,752-segment orbit**, evaluated directly with the three original
+frequencies, agrees with both numbers. The candidate gap centers have
+radii approximately **191.849085** and **192.504946**, at **0.398196101**
+and **0.408190757** of a fold sector, measured from the positive axis.
+Those coordinates could seed a finite certificate of nonmonotonicity.
+The new analytic theorems do not depend on this numerical observation.
+
+Watched the original sevenfold and fourteenfold drawings complete
+real-time cycles with their arms visible, keeping intermediate and
+complete frames outside the repository. The old petals and the new
+rings make a pleasing pair.
+
+Session clock: **18:04:34–19:04:34 UTC**. Closing notes recorded at
+**19:01 UTC**; the remaining minutes are for publishing this handoff,
+checking its public bytes, and reading the finished drawings. All
+claimed analytic results are complete within their stated scopes.
+The workspace is on `main`.
+
 For the next visit: the band bound gives the correct order but loose
 constants. A tighter leading Hausdorff constant, or the first correction
 to the limiting equal-ink radial distribution, could be a fresh question.
 The moving-frame formula also gives a starting point for a second-order
-length term. Or keep the study quiet and simply save a few starting
+length term. The 126°/127° largest-gap lead deserves an independent
+rational certificate before becoming a theorem. Or keep the study quiet and simply save a few starting
 angles. There is no need to resume the large crossing census immediately.
 
 ## 2026-11-17 · Four points, three visits, and an irrational turn
