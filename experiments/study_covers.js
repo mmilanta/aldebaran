@@ -22,6 +22,7 @@ const PositiveFront = require('./positive_front_math.js');
 const PositiveFrontData = require('./positive_front_data.js');
 const Offset = require('./parallel_offset_math.js');
 const FourVisits = require('./four_visits_math.js');
+const FoldTurn = require('./fold_turn_math.js');
 
 const blue = '#9fc7eb', gold = '#e8b66e', white = '#f4f1e8', muted = '#555b78';
 const cycle = 2 * Math.PI;
@@ -79,7 +80,7 @@ function write(name, title, description, body) {
 
 function sheet() {
   const destinations = ['../index.html', 'loop.html', 'winding.html', 'two_lobes.html',
-    'blend.html', 'arm_detour.html', 'phase.html', 'cubic.html', 'strangeness.html', 'weave.html', 'touch.html', 'normal_front.html', 'positive_front.html', 'parallel_offset.html', 'four_visits.html', 'parabolic_pockets.html'];
+    'blend.html', 'arm_detour.html', 'phase.html', 'cubic.html', 'strangeness.html', 'weave.html', 'touch.html', 'normal_front.html', 'positive_front.html', 'parallel_offset.html', 'four_visits.html', 'parabolic_pockets.html', 'fold_turn.html'];
   const height = 242 + 332 * Math.ceil(covers.length / 3);
   const root = 'https://mmilanta.github.io/aldebaran/experiments/';
   const escape = s => s.replaceAll('&', '&amp;').replaceAll('<', '&lt;');
@@ -103,11 +104,11 @@ function sheet() {
       lines.map((line, j) => `<text x="${x + 18}" y="${y + 276 + j * 24}" fill="${white}" font-size="19" font-weight="600">${escape(line)}</text>`).join('') + '</a>';
   });
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="${height}" viewBox="0 0 1200 ${height}" role="group" aria-labelledby="title description">\n` +
-    '<title id="title">Follow a line: sixteen studies</title>\n' +
-    '<desc id="description">An illustrated sheet of Aldebaran’s sixteen studies, in study-number order. Each picture links to its study. The small previews use numerical geometry; some graphs use different axes or scales.</desc>\n' +
+    '<title id="title">Follow a line: seventeen studies</title>\n' +
+    '<desc id="description">An illustrated sheet of Aldebaran’s seventeen studies, in study-number order. Each picture links to its study. The small previews use numerical geometry; some graphs use different axes or scales.</desc>\n' +
     '<style>text{font-family:ui-sans-serif,system-ui,sans-serif}.card:focus .frame{stroke:#e8b66e;stroke-width:3}.card:hover .frame{stroke:#9999ae}</style>\n' +
     `<rect width="1200" height="${height}" fill="#101323"/>\n` +
-    `<text x="45" y="53" fill="${gold}" font-size="13" letter-spacing="3">ALDEBARAN · SIXTEEN STUDIES</text>` +
+    `<text x="45" y="53" fill="${gold}" font-size="13" letter-spacing="3">ALDEBARAN · SEVENTEEN STUDIES</text>` +
     `<text x="45" y="112" fill="${white}" font-size="55" font-weight="650" letter-spacing="-2">Follow a line.</text>` +
     '<text x="45" y="143" fill="#c7c7d4" font-size="18">Circles, crossings, and the small spaces between. Choose a picture to explore.</text>\n' +
     pieces.join('\n') +
@@ -297,7 +298,21 @@ function main() {
     `<path d="${outer}" fill="none" stroke="${gold}" stroke-width="3.4"/><path d="${inner}" fill="none" stroke="${blue}" stroke-width="3.4"/>` +
     '<path d="M220,200H380" stroke="#f4f1e8" stroke-width="2" stroke-dasharray="4 5"/></g>');
 
+  const foldPhase = Math.PI / 2;
+  const ellipseMap = points => map(points, 420, 200, .43);
+  const foldPosition = t => FoldTurn.position(t, 14, foldPhase);
+  write('017', 'One ellipse. Many folds.',
+    'A fourteenfold orbital drawing at ninety degrees. One repeat is gold. Beside it, the ellipse seen from the first arm shows the same point. The views have different fixed scales.',
+    line(map(samples(foldPosition, 0, cycle, FoldTurn.segmentCount(14)), 200, 200, .39), blue, 1.5) +
+    line(map(samples(foldPosition, 0, cycle / 14, 512), 200, 200, .39), gold, 2.5) +
+    '<path d="M400,50V350" stroke="#383b50"/>' +
+    line(ellipseMap(samples(u => FoldTurn.ellipse(u, foldPhase), 0, cycle, 1024)), blue, 2) +
+    line(ellipseMap(FoldTurn.joints(cycle / 56, 14, foldPhase).fixed), muted, 1.5) +
+    dot(map([foldPosition(cycle / 56)], 200, 200, .39)[0]) +
+    dot(ellipseMap([FoldTurn.ellipse(Math.PI / 2, foldPhase)])[0]));
+
   sheet();
+  fs.writeFileSync(path.join(__dirname, 'fold_turn.svg'), FoldTurn.drawing(14, 90));
   console.log(`Wrote ${covers.length} study covers and their standalone sheet; the negative-count probe has smooth-curve clearance.`);
 }
 

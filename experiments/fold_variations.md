@@ -6,6 +6,14 @@ fourteen. Moving across either row, the backward arm begins at zero,
 a quarter turn, and a half turn. The arm lengths stay 245, 140, and 65.
 Every panel has the same scale.
 
+The interactive companion [One ellipse. Many folds.](fold_turn.html)
+lets you turn the arm through the slider's degree steps and
+follow one repeat from the first arm's moving frame. It adds thirty and
+sixty folds, keeps each view's scale fixed, and can save a standalone SVG.
+The [radial follow-up](fold_annulus.md) proves that the inner edge moves
+strictly outward and the outer edge strictly inward throughout the whole
+half-turn, for every positive integer fold count.
+
 ![Sevenfold and fourteenfold drawings at three starting angles, moving
 from open petals to overlapping rings.](fold_variations.svg)
 

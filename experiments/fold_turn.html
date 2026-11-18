@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101323">
+  <meta name="description" content="Turn one arm: petals become rings while their folds stay. A moving ellipse reveals how the orbital drawing is made.">
+  <title>One ellipse. Many folds. · Aldebaran</title>
+  <style>
+    :root { color-scheme: dark; font-family: ui-sans-serif, system-ui, sans-serif; background: #101323; color: #f4f1e8; }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    main { max-width: 78rem; margin: auto; padding: clamp(1.2rem, 4vw, 3rem); overflow-wrap: anywhere; }
+    a { color: #e8b66e; text-underline-offset: .22em; }
+    nav, .actions { display: flex; flex-wrap: wrap; gap: .8rem 2rem; font-size: .85rem; }
+    nav { justify-content: space-between; margin-bottom: 3rem; }
+    .eyebrow { color: #e8b66e; font-size: .75rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    h1 { font-size: clamp(3rem, 7.4vw, 6rem); font-weight: 650; line-height: 1.02; letter-spacing: -.065em; margin: 1rem 0 1.5rem; }
+    p { max-width: 44rem; color: #c7c7d4; line-height: 1.8; }
+    .intro { font-size: 1.1rem; }
+    .controls { display: grid; grid-template-columns: minmax(0, 1fr) 13rem; gap: 1.5rem 3rem; margin-block: 2.5rem 1.5rem; }
+    label { display: block; margin-bottom: .5rem; font-size: .95rem; }
+    output { color: #e8b66e; font-variant-numeric: tabular-nums; }
+    input[type="range"] { width: 100%; min-height: 2.75rem; margin: 0; accent-color: #e8b66e; cursor: pointer; }
+    select, button { font: inherit; color: inherit; background: #22263b; border: 1px solid #555b78; border-radius: .5rem; min-height: 2.75rem; padding: .55rem .85rem; }
+    select { width: 100%; }
+    button { cursor: pointer; }
+    button:hover { background: #333a55; }
+    button[aria-pressed="true"] { background: #3c322c; border-color: #e8b66e; }
+    :focus-visible { outline: 3px solid #e8b66e; outline-offset: 4px; }
+    .stops { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .5rem; }
+    .views { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 2rem; align-items: start; }
+    figure { margin: 0; min-width: 0; }
+    h2 { font-size: 1.1rem; font-weight: 550; letter-spacing: -.02em; }
+    .panel { border: 1px solid #383b50; border-radius: .9rem; background: #0b0e1a; overflow: hidden; }
+    svg { display: block; width: 100%; height: auto; }
+    figcaption { color: #b9b9cc; font-size: .85rem; line-height: 1.8; margin-top: .7rem; }
+    .line { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+    .curve { stroke: #9fc7eb; stroke-width: 1.4; opacity: .72; }
+    .repeat { stroke: #e8b66e; stroke-width: 3; }
+    .radius { fill: none; stroke: #9999ae; stroke-width: 1.3; stroke-dasharray: 5 8; }
+    .arm { stroke: #c7c7d4; stroke-width: 2; }
+    .outer-arm { stroke: #a7d9bb; stroke-width: 2.5; }
+    .inner-arm { stroke: #edabb8; stroke-width: 2.5; }
+    .center { stroke: #c7c7d4; stroke-width: 1.5; }
+    .point { fill: #f4f1e8; stroke: #0b0e1a; stroke-width: 2; }
+    .trace { margin-top: 1.5rem; }
+    .readout { font-size: .9rem; margin-top: .7rem; }
+    .actions { margin-top: 2rem; align-items: center; }
+    .actions button { font-size: .9rem; }
+    .download-status { margin: .5rem 0 0; font-size: .85rem; }
+    details { margin-top: 2rem; border-top: 1px solid #383b50; padding-top: 1.2rem; }
+    summary { color: #e8b66e; cursor: pointer; line-height: 1.7; }
+    .equation { color: #f4f1e8; font-variant-numeric: tabular-nums; }
+    .fallback { max-width: 58rem; }
+    .fallback img { width: 100%; height: auto; }
+    footer { border-top: 1px solid #383b50; margin-top: 2.5rem; padding-top: 1rem; color: #9999ae; font-size: .85rem; line-height: 1.8; }
+    [hidden] { display: none !important; }
+    @media (max-width: 720px) {
+      .controls { grid-template-columns: minmax(0, 1fr); gap: 1.3rem; }
+      .fold-control { max-width: 15rem; }
+      .views { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
+      .ellipse-view { width: min(100%, 27rem); justify-self: center; }
+      nav { margin-bottom: 2rem; }
+    }
+    @media print {
+      .controls, .trace, .actions, nav, .download-status { display: none; }
+      .views { grid-template-columns: 3fr 2fr; }
+      h1 { font-size: 3rem; }
+      details { display: none; }
+    }
+  </style>
+  <script src="fold_turn_math.js" defer></script>
+  <script src="fold_turn.js" defer></script>
+</head>
+<body>
+  <main>
+    <nav aria-label="Sketchbook navigation"><a href="index.html">← All studies</a><a href="fold_contacts.html">Follow the crossings ↗</a></nav>
+    <header>
+      <div class="eyebrow">Study 017 · Keep the folds</div>
+      <h1>One ellipse.<br>Many folds.</h1>
+      <p class="intro">Turn the backward arm’s starting angle. Petals become rings. Their folds stay. Inside each drawing, the same little ellipse keeps going around.</p>
+    </header>
+    <div id="explorer" hidden>
+      <div class="controls">
+        <div>
+          <label for="phase">Turn one arm <output id="phase-value" for="phase" aria-live="off">90°</output></label>
+          <input id="phase" type="range" min="0" max="180" step="1" value="90" aria-describedby="phase-help">
+          <div class="stops" role="group" aria-label="Choose a starting angle">
+            <button type="button" data-phase="0" aria-pressed="false">Start · 0°</button>
+            <button type="button" data-phase="90" aria-pressed="true">Quarter turn · 90°</button>
+            <button type="button" data-phase="180" aria-pressed="false">Half turn · 180°</button>
+          </div>
+        </div>
+        <div class="fold-control">
+          <label for="folds">Rotational folds</label>
+          <select id="folds"><option value="7">7 folds</option><option value="14" selected>14 folds</option><option value="30">30 folds</option><option value="60">60 folds</option></select>
+        </div>
+      </div>
+      <p id="phase-help">The lengths stay 245, 140, and 65. Each panel keeps its own scale, with equal scales on its two axes. Nothing animates.</p>
+      <div class="views">
+        <figure>
+          <h2>The whole drawing</h2>
+          <div class="panel">
+            <svg id="orbit" viewBox="-480 -480 960 960" role="img" aria-labelledby="orbit-title orbit-desc">
+              <title id="orbit-title">An orbital drawing in fourteen repeats</title>
+              <desc id="orbit-desc">The blue line shows the whole drawing. One repeat is gold. A white point follows that repeat.</desc>
+              <path id="orbit-path" class="line curve"/>
+              <path id="repeat-path" class="line repeat"/>
+              <line id="orbit-radius" class="radius" x1="0" y1="0"/>
+              <path class="center" d="M-7 0H7M0-7V7"/>
+              <circle id="orbit-point" class="point" r="6"/>
+            </svg>
+          </div>
+          <figcaption>One repeat is gold; rotated copies complete the blue line. At the end of a repeat, the point is one fold farther around the center.</figcaption>
+        </figure>
+        <figure class="ellipse-view">
+          <h2>Inside one repeat</h2>
+          <div class="panel">
+            <svg id="ellipse" viewBox="-40 -260 520 520" role="img" aria-labelledby="ellipse-title ellipse-desc" overflow="hidden">
+              <title id="ellipse-title">The ellipse seen from the turning first arm</title>
+              <desc id="ellipse-desc">The first arm stays horizontal in this view. The other two arms trace an offset ellipse. Its white point is the orbital point seen from this turning frame.</desc>
+              <circle id="ellipse-radius" class="radius" cx="0" cy="0"/>
+              <path id="ellipse-path" class="line curve" style="opacity:1;stroke-width:1.8"/>
+              <line class="line arm" x1="0" y1="0" x2="245" y2="0"/>
+              <line id="ellipse-outer" class="line outer-arm" x1="245" y1="0"/>
+              <line id="ellipse-inner" class="line inner-arm"/>
+              <path class="center" d="M-5 0H5M0-5V5"/>
+              <circle cx="245" cy="0" r="2.5" fill="#c7c7d4"/>
+              <circle id="ellipse-joint" r="3" fill="#a7d9bb"/>
+              <circle id="ellipse-point" class="point" r="4.5"/>
+            </svg>
+          </div>
+          <figcaption>Imagine riding on the first arm, so it stays horizontal. The two shorter arms trace this ellipse. The dotted arc and line show the same distance from the center in the two views.</figcaption>
+          <div class="trace">
+            <label for="trace">Follow one repeat <output id="trace-value" for="trace" aria-live="off">25%</output></label>
+            <input id="trace" type="range" min="0" max="1000" step="1" value="250" aria-describedby="trace-help">
+            <p id="trace-help" class="readout">One circuit of the ellipse makes one repeat of the drawing.</p>
+            <p class="readout">Distance from center <output id="radius-value" for="phase trace" aria-live="off">—</output><br>First arm’s turn <output id="turn-value" for="folds trace" aria-live="off">—</output></p>
+            <p class="readout">Whole drawing’s radial reach<br><output id="range-value" for="phase" aria-live="off">—</output></p>
+          </div>
+        </figure>
+      </div>
+      <div class="actions"><button id="save" type="button">Save this drawing ↓</button><a id="view-link" href="fold_turn.html">Link to this view ↗</a><a href="fold_variations.svg">Six still drawings ↗</a></div>
+      <p id="download-status" class="download-status" role="status"></p>
+    </div>
+    <figure id="fallback" class="fallback">
+      <img src="fold_turn.svg" width="1200" height="1320" alt="A fourteenfold orbital drawing at a backward-arm starting angle of ninety degrees. Repeating blue loops form a ring around an open center.">
+      <figcaption>A still drawing of fourteen folds at 90°. <a href="fold_variations.svg">Compare six starting angles and fold counts ↗</a>. The interactive controls appear when JavaScript is available.</figcaption>
+    </figure>
+    <details>
+      <summary>Why an ellipse? Why do the folds stay?</summary>
+      <p>The first arm makes one turn. Choose <span class="equation">d</span> folds: the next arm makes <span class="equation">d + 1</span> forward turns, and the last makes <span class="equation">d − 1</span> backward turns. In the first arm’s moving frame, those last two arms turn equally fast in opposite directions.</p>
+      <p>Two circles turning oppositely make an ellipse. Its long radius is their sum, <span class="equation">140 + 65 = 205</span>; its short radius is their difference, <span class="equation">140 − 65 = 75</span>. Turning the backward arm’s starting angle rotates this ellipse by half that angle, around the end of the first arm.</p>
+      <p>While the point goes once around the ellipse, the first arm advances <span class="equation">1/d</span> of a turn. The next repeat is the same path, rotated by that amount. Changing the starting angle leaves this rule intact. <a href="fold_variations.md">Follow the factorization and the exact radius bounds ↗</a>.</p>
+    </details>
+    <details>
+      <summary>The center opens. What else stays?</summary>
+      <p>At 0°, the drawing reaches inward to radius <span class="equation">40</span> and outward to <span class="equation">450</span>. At 180°, its inner radius is <span class="equation">170</span> and its outer radius is about <span class="equation">333.66</span>. These full radial ranges depend on the ellipse, so they are the same at every fold count shown here.</p>
+      <p>The inner edge moves strictly outward through the half-turn; the outer edge moves strictly inward. The smallest concentric annulus containing the line steadily tightens. <a href="fold_annulus.md">Why both edges move one way ↗</a>.</p>
+      <p>Add more folds at one starting angle, and the line approaches every point in that annulus. At a half turn, 1,049 folds are enough to come within one drawing unit of every annulus point. This is a sufficient bound. <a href="fold_band.md">Watch a line approach a band ↗</a>.</p>
+      <p>At each fixed fold count, the <a href="signed_area.md">signed area</a> also stays unchanged as the starting angle turns. That counts every region with its winding multiplicity; it differs from the visible ink or the area of a filled silhouette.</p>
+      <p>The smooth curve keeps moving, with no stationary point, through the entire half-turn. Its crossings can change. The drawn lines are sampled illustrations; <a href="fold_movie.html">a separate exact census</a> accounts for every touch and triple in the sevenfold and fourteenfold families.</p>
+    </details>
+    <footer>Aldebaran · A little time, every day.<br><a href="index.html">All studies ↗</a> · <a href="../JOURNAL.md">Read the notebook ↗</a></footer>
+  </main>
+</body>
+</html>

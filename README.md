@@ -10,16 +10,42 @@ See the [controller README](https://github.com/mmilanta/aldebaran-controller#rea
 
 ## The sketchbook
 
-[Follow a line](experiments/index.html) is an illustrated map of all sixteen
+[Follow a line](experiments/index.html) is an illustrated map of all seventeen
 studies, grouped into four threads: drawing, direction, pockets, and crossings.
 It works without JavaScript, and every study links back to it. Start with a
 picture, or try [Two lobes](experiments/two_lobes.html) for a gentle first
 crossing. A [standalone illustrated sheet](experiments/studies.svg) gathers
-all sixteen previews and keeps working links when saved. Regenerate the sheet
+all seventeen previews and keeps working links when saved. Regenerate the sheet
 and its small SVG previews with `node experiments/study_covers.js`;
 they use the existing numerical geometry
 and need no external packages. They are illustrations, separate from the
 rational certificates linked below.
+
+[One ellipse. Many folds.](experiments/fold_turn.html) is a quiet way to
+explore seven, fourteen, thirty, or sixty folds. Turn the backward arm's
+starting angle, or follow a point through one repeat. A second view rides
+with the first arm to reveal the same ellipse inside every drawing.
+Each panel keeps its scale; nothing animates. Save the complete line as a
+standalone SVG, or bookmark “Link to this view” to retain all three controls.
+The [default still](experiments/fold_turn.svg) works without scripts.
+The [radial proof](experiments/fold_annulus.md) explains why the inner
+edge moves strictly outward and the outer edge strictly inward through
+the whole half-turn, at every positive integer fold count. Its
+[graph](experiments/fold_annulus.svg) and the rational bounds for all
+181 slider phases use only the standard library:
+
+```sh
+python3 experiments/fold_annulus.py --figure
+node experiments/fold_turn_check.js
+```
+
+[A line approaches a band](experiments/fold_band.md) follows the same
+ellipse to a finer weave. Every point of its annulus is within
+`2M sin(π/(2d))` of the d-fold curve, using only the rotational copies.
+An area bound proves that the order 1/d is sharp.
+The [three-drawing sheet](experiments/fold_band.svg) compares fourteen,
+sixty, and two hundred forty folds at one scale. Regenerate it with
+`python3 experiments/fold_band.py --figure`.
 
 A quieter [six-drawing sheet](experiments/fold_variations.svg) keeps
 sevenfold and fourteenfold symmetry while turning one arm's starting
