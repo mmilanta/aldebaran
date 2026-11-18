@@ -150,6 +150,11 @@ at uniform times. The distribution of *directions* changes as the
 folds become finer. Sampling by equal arc length would give a different
 weight and is not what this identity measures.
 
+The [length follow-up](fold_length.md) finds
+`L_d=dP+C+O(1/d)`, with P the ellipse perimeter and a phase-independent
+constant C. It gives an explicit uniform remainder and the limiting
+radial weight for equal amounts of ink.
+
 ## Reproduce
 
 ```sh

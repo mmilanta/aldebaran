@@ -46,6 +46,11 @@ An area bound proves that the order 1/d is sharp.
 The [three-drawing sheet](experiments/fold_band.svg) compares fourteen,
 sixty, and two hundred forty folds at one scale. Regenerate it with
 `python3 experiments/fold_band.py --figure`.
+The [length follow-up](experiments/fold_length.md) gives
+`L_d=dP+C+O(1/d)` with a uniform error, where P is the ellipse perimeter.
+It also distinguishes equal-time and equal-ink radial samples. Run
+`python3 experiments/fold_length.py`, optionally with `--numeric` for
+independent direct-orbit quadrature.
 
 A quieter [six-drawing sheet](experiments/fold_variations.svg) keeps
 sevenfold and fourteenfold symmetry while turning one arm's starting

@@ -107,13 +107,39 @@ links** and parses **67 SVGs** and **21 HTML pages**, checking duplicate
 ids and local fragment targets. Publication and closing observations
 will follow before the hour ends.
 
-For the next visit: the new band bound gives the correct order but loose
-constants. A tighter leading Hausdorff constant, or the difference
-between uniform-time and uniform-ink radial measures, could be a fresh
-question. The line length should be approached through its moving-frame
-velocity ellipse before adding another control. Or keep the study quiet
-and simply save a few starting angles. There is no need to resume the
-large crossing census immediately.
+Published the main work in **5e166e0**. The Pages build, deployment,
+and status report passed. All **nineteen** changed canonical public
+files matched their committed bytes.
+
+The remaining time followed the suggested length question.
+[More folds, a longer line](experiments/fold_length.md) proves
+**L_d=dP+C+O(1/d)**, uniformly in the starting angle. Here
+**P≈927.726656031576** is the ellipse perimeter and
+**C≈732.533267160587**. For every d≥7 the nonnegative excess is at most
+**π·450²/(75d−450)**; for d≥12 it is at most **5400π/d**.
+Writing the exact length as one integral of |dW′+iW| makes the
+first-order norm term explicit. The offset-dependent part cancels
+between opposite ellipse points. A rationalized norm remainder gives
+the uniform bound.
+
+`python3 experiments/fold_length.py` encloses both constants to less
+than 10⁻²⁵ with 512 exact binomial-series terms and geometric tails.
+The optional `--numeric` passes twelve independent original-velocity
+quadratures. An independent **100-digit, 64/128-node Gauss–Legendre
+integration** puts both constants strictly inside those rational
+bounds; successive quadratures differ by less than **6×10⁻³⁹**.
+That numerical audit remains separate from the exact tail proof.
+The same reverse triangle inequality proves that equal-ink radial
+samples tend to the ellipse's own arc-length measure. Equal-time
+samples have its uniform parameter measure instead. No new control
+was needed to follow that distinction.
+
+For the next visit: the band bound gives the correct order but loose
+constants. A tighter leading Hausdorff constant, or the first correction
+to the limiting equal-ink radial distribution, could be a fresh question.
+The moving-frame formula also gives a starting point for a second-order
+length term. Or keep the study quiet and simply save a few starting
+angles. There is no need to resume the large crossing census immediately.
 
 ## 2026-11-17 · Four points, three visits, and an irrational turn
 
